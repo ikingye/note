@@ -3,13 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ikingye.github.io/note/docs/note/hugo/</loc>
-    <lastmod>2020-03-01T13:33:51+08:00</lastmod>
+    <loc>https://ikingye.github.io/note/docs/document/excel/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/note/docs/note/onenote/</loc>
-    <lastmod>2020-03-01T13:33:51+08:00</lastmod>
+    <loc>https://ikingye.github.io/note/docs/document/hugo/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/note/docs/document/onenote/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/note/docs/document/ppt/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/note/docs/document/word/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
   </url>
   
   <url>
@@ -18,8 +33,8 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/note/docs/note/imagehost/</loc>
-    <lastmod>2020-03-01T13:33:51+08:00</lastmod>
+    <loc>https://ikingye.github.io/note/docs/document/imagehost/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
   </url>
   
   <url>
@@ -33,13 +48,18 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/note/docs/document/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/note/docs/movie/doubantop250/The-Shawshank-Redemption/</loc>
     <lastmod>2020-03-01T13:33:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/note/docs/note/</loc>
-    <lastmod>2020-03-01T13:33:51+08:00</lastmod>
+    <loc>https://ikingye.github.io/note/docs/document/markdown/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
   </url>
   
   <url>
@@ -58,8 +78,8 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/note/docs/note/hugo/config/</loc>
-    <lastmod>2020-03-01T13:33:51+08:00</lastmod>
+    <loc>https://ikingye.github.io/note/docs/document/hugo/config/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
   </url>
   
   <url>
@@ -68,8 +88,8 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/note/docs/note/hugo/theme/</loc>
-    <lastmod>2020-03-01T13:33:51+08:00</lastmod>
+    <loc>https://ikingye.github.io/note/docs/document/hugo/theme/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
   </url>
   
   <url>
@@ -90,6 +110,26 @@
   <url>
     <loc>https://ikingye.github.io/note/docs/live/</loc>
     <lastmod>2020-03-01T13:33:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/note/docs/document/pdf/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/note/docs/document/epub/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/note/docs/document/mobi/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/note/docs/document/azw3/</loc>
+    <lastmod>2020-03-06T23:55:35+08:00</lastmod>
   </url>
   
   <url>
