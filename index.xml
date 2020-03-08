@@ -27,24 +27,5 @@
       <description>肖申克的救赎 —— 自由 豆瓣</description>
     </item>
     
-    <item>
-      <title>配置</title>
-      <link>https://ikingye.github.io/note/docs/document/hugo/config/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/note/docs/document/hugo/config/</guid>
-      <description>Hugo 配置 参考：https://themes.gohugo.io/hugo-book</description>
-    </item>
-    
-    <item>
-      <title>主题</title>
-      <link>https://ikingye.github.io/note/docs/document/hugo/theme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/note/docs/document/hugo/theme/</guid>
-      <description>Hugo 主题 https://themes.gohugo.io
-hugo-book 配置 Site Configuration # (Optional) Set Google Analytics if you use it to track your website. # Always put it on the top of the configuration file, otherwise it won&amp;#39;t work googleAnalytics = &amp;#34;UA-XXXXXXXXX-X&amp;#34; # (Optional) If you provide a Disqus shortname, comments will be enabled on # all pages. disqusShortname = &amp;#34;my-site&amp;#34; # (Optional) Set this to true if you use capital letters in file names disablePathToLower = true # (Optional) Set this to true to enable &amp;#39;Last Modified by&amp;#39; date and git author # information on &amp;#39;doc&amp;#39; type pages.</description>
-    </item>
-    
   </channel>
 </rss>
