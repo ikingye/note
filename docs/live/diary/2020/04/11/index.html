@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2020 年 4 月 11 日（星期六） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 架构设计 HA 高可用 High Availability
+LB 负载均衡 Load Balance
+产品设计 POC 概念验证 Proof Of Concept
+MVP 最小化可行产品 Minimum Viable Product
+需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Paxos https://raft.github.io
+由于 Paxos 难以理解，所以才有了 Raft
+Raft 以可理解性和易于实现为目标：
+ Leader 选举（Leader election） 日志同步（Log replication） 安全性（Safety） 日志压缩（Log compaction） 成员变更（Membership change）  shell top htop
+brew install htop"><meta property="og:title" content="2020-04-11" />
+<meta property="og:description" content="2020 年 4 月 11 日（星期六） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 架构设计 HA 高可用 High Availability
+LB 负载均衡 Load Balance
+产品设计 POC 概念验证 Proof Of Concept
+MVP 最小化可行产品 Minimum Viable Product
+需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Paxos https://raft.github.io
+由于 Paxos 难以理解，所以才有了 Raft
+Raft 以可理解性和易于实现为目标：
+ Leader 选举（Leader election） 日志同步（Log replication） 安全性（Safety） 日志压缩（Log compaction） 成员变更（Membership change）  shell top htop
+brew install htop" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/11/" />
+
+<title>2020-04-11 | 叶王笔记</title>
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/note/book.min.2b565af4d61986071164f1ead48c719f32bb138a148802dc3943b967fc4f20c6.css" integrity="sha256-K1Za9NYZhgcRZPHq1IxxnzK7E4oUiALcOUO5Z/xPIMY=">
+
+
+<script defer src="/note/en.search.min.faca0806c52845adaeca274e618cdf5bfc3f65563c1472ea1278edd03d3e7990.js" integrity="sha256-&#43;soIBsUoRa2uyidOYYzfW/w/ZVY8FHLqEnjt0D0&#43;eZA="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/note"><span>叶王笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me">博客</a></li>
+  <li><a href="https://github.com/ikingye">Github</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip">知乎</a></li>
+  <li><a href="https://weibo.com/kingyip15215">微博</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/natural/math/" class="collapsed ">数学</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/music/" class="collapsed ">音乐</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/movie/" class="collapsed ">电影</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/social/history/" class="collapsed ">历史</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/" class="collapsed ">第四部分 学习</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/book/" class="collapsed ">第五部分 读书</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/course/" class="collapsed ">第六部分 课程</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/" class="collapsed ">第七部分 生活</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>下厨房</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/parenting/" class="collapsed ">教育</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/travel/" class="collapsed ">旅行</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/" class="collapsed ">日记</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/04/" class="">4 月</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/16/" class="">2020-04-16</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/14/" class="">2020-04-14</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/11/" class="active">2020-04-11</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/10/" class="">2020-04-10</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/09/" class="">2020-04-09</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/domain/" class="collapsed ">领域</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2020-04-11</strong>
+
+  <label for="toc-control">
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2020-年-4-月-11-日星期六">2020 年 4 月 11 日（星期六）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#架构设计">架构设计</a>
+              <ul>
+                <li><a href="#ha-高可用">HA 高可用</a></li>
+                <li><a href="#lb-负载均衡">LB 负载均衡</a></li>
+              </ul>
+            </li>
+            <li><a href="#产品设计">产品设计</a>
+              <ul>
+                <li><a href="#poc-概念验证">POC 概念验证</a></li>
+                <li><a href="#mvp-最小化可行产品">MVP 最小化可行产品</a></li>
+              </ul>
+            </li>
+            <li><a href="#需求管理">需求管理</a>
+              <ul>
+                <li><a href="#kano-模型">KANO 模型</a></li>
+                <li><a href="#价值-vs-复杂度矩阵">价值 vs 复杂度矩阵</a></li>
+              </ul>
+            </li>
+            <li><a href="#分布式一致性">分布式一致性</a>
+              <ul>
+                <li><a href="#paxos">Paxos</a></li>
+                <li><a href="#paxos-1">Paxos</a></li>
+              </ul>
+            </li>
+            <li><a href="#shell">shell</a>
+              <ul>
+                <li><a href="#top">top</a></li>
+              </ul>
+            </li>
+            <li><a href="#kubernetes">Kubernetes</a></li>
+            <li><a href="#kafka">kafka</a>
+              <ul>
+                <li><a href="#序列化">序列化</a></li>
+              </ul>
+            </li>
+            <li><a href="#docker">Docker</a>
+              <ul>
+                <li><a href="#docker-for-mac">docker for mac</a></li>
+                <li><a href="#镜像加速">镜像加速</a></li>
+              </ul>
+            </li>
+            <li><a href="#tomcat">tomcat</a></li>
+          </ul>
+        </li>
+        <li><a href="#书影音">书影音</a>
+          <ul>
+            <li><a href="#读书">读书</a>
+              <ul>
+                <li><a href="#书评">书评</a></li>
+              </ul>
+            </li>
+            <li><a href="#电影">电影</a></li>
+            <li><a href="#音乐">音乐</a>
+              <ul>
+                <li><a href="#碧昂丝-beyonce">碧昂丝 Beyonce</a></li>
+                <li><a href="#feat">feat</a></li>
+                <li><a href="#katy-perry-水果姐">Katy Perry 水果姐</a>
+                  <ul>
+                    <li><a href="#凯蒂佩里为什么叫水果姐">凯蒂·佩里为什么叫“水果姐”</a></li>
+                  </ul>
+                </li>
+                <li><a href="#空降冠军">空降冠军</a></li>
+                <li><a href="#歌手绰号">歌手绰号</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#语言文化">语言文化</a>
+          <ul>
+            <li><a href="#最古老的姓氏">最古老的姓氏</a></li>
+            <li><a href="#僭-jiàn">僭 [jiàn]</a></li>
+            <li><a href="#诺贝尔文学奖httpswwwwikiwandcomzh-cne8abbee8b29de788bee69687e5adb8e78d8ee5be97e4b8bbe58897e8a1a8"><a href="https://www.wikiwand.com/zh-cn/%E8%AB%BE%E8%B2%9D%E7%88%BE%E6%96%87%E5%AD%B8%E7%8D%8E%E5%BE%97%E4%B8%BB%E5%88%97%E8%A1%A8">诺贝尔文学奖</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#数学">数学</a></li>
+        <li><a href="#政经法史地">政经法史地</a>
+          <ul>
+            <li><a href="#经济">经济</a>
+              <ul>
+                <li><a href="#中石油和中石化的区别">中石油和中石化的区别</a></li>
+                <li><a href="#基金定投">基金定投</a></li>
+                <li><a href="#等额配比基金">等额配比基金</a></li>
+                <li><a href="#企业融资httpwwwwikiwandcomzh-cne4bc81e4b89ae89e8de8b584和投资银行httpwwwwikiwandcomzh-cne68a95e8b584e993b6e8a18c"><a href="http://www.wikiwand.com/zh-cn/%E4%BC%81%E4%B8%9A%E8%9E%8D%E8%B5%84">企业融资</a>和<a href="http://www.wikiwand.com/zh-cn/%E6%8A%95%E8%B5%84%E9%93%B6%E8%A1%8C">投资银行</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#法律">法律</a>
+              <ul>
+                <li><a href="#美国宪法修正案">美国宪法修正案</a></li>
+              </ul>
+            </li>
+            <li><a href="#历史">历史</a>
+              <ul>
+                <li><a href="#朱元璋的祖辈">朱元璋的祖辈</a></li>
+                <li><a href="#中国历史">中国历史</a>
+                  <ul>
+                    <li><a href="#如何理清">如何理清</a></li>
+                  </ul>
+                </li>
+                <li><a href="#欧洲史">欧洲史</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#物化生">物化生</a>
+          <ul>
+            <li><a href="#生命科学的四大基础学科">生命科学的四大基础学科</a>
+              <ul>
+                <li><a href="#细胞生物学">细胞生物学</a></li>
+                <li><a href="#遗传学">遗传学</a></li>
+                <li><a href="#发育生物学">发育生物学</a></li>
+                <li><a href="#生物化学">生物化学</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#娱乐">娱乐</a>
+          <ul>
+            <li><a href="#游戏">游戏</a>
+              <ul>
+                <li><a href="#魔兽系列">魔兽系列</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#生活">生活</a></li>
+        <li><a href="#今日总结">今日总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="2020-年-4-月-11-日星期六">2020 年 4 月 11 日（星期六）</h1>
+<h2 id="今日待办">今日待办</h2>
+<ul>
+<li><input disabled="" type="checkbox"><a href="https://github.com/servicemesher/istio-handbook">Istio Handbook</a> 周报
+<ul>
+<li>周一发布到钉钉群</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="编程">编程</h2>
+<h3 id="架构设计">架构设计</h3>
+<h4 id="ha-高可用">HA 高可用</h4>
+<p>High Availability</p>
+<h4 id="lb-负载均衡">LB 负载均衡</h4>
+<p>Load Balance</p>
+<h3 id="产品设计">产品设计</h3>
+<h4 id="poc-概念验证">POC 概念验证</h4>
+<p>Proof Of Concept</p>
+<h4 id="mvp-最小化可行产品">MVP 最小化可行产品</h4>
+<p>Minimum Viable Product</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200411132151.png" alt="" /></p>
+<h3 id="需求管理">需求管理</h3>
+<h4 id="kano-模型">KANO 模型</h4>
+<h4 id="价值-vs-复杂度矩阵">价值 vs 复杂度矩阵</h4>
+<h3 id="分布式一致性">分布式一致性</h3>
+<h4 id="paxos">Paxos</h4>
+<h4 id="paxos-1">Paxos</h4>
+<p><a href="https://raft.github.io">https://raft.github.io</a></p>
+<p>由于 Paxos 难以理解，所以才有了 Raft</p>
+<p>Raft 以可理解性和易于实现为目标：</p>
+<ul>
+<li>Leader 选举（Leader election）</li>
+<li>日志同步（Log replication）</li>
+<li>安全性（Safety）</li>
+<li>日志压缩（Log compaction）</li>
+<li>成员变更（Membership change）</li>
+</ul>
+<h3 id="shell">shell</h3>
+<h4 id="top">top</h4>
+<p>htop</p>
+<p>brew install htop</p>
+<p>排序：</p>
+<ul>
+<li>Linux:
+<ul>
+<li>CPU：大写字母 P</li>
+<li>内存：大写字母 M</li>
+</ul>
+</li>
+<li>Mac:
+<ul>
+<li>cpu: o cpu</li>
+<li>内存：o vsize</li>
+</ul>
+</li>
+</ul>
+<p>显示数据是所有 cpu 的平均值，如果想看每一个 cpu 的处理情况，按 1 即可；</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/me115/p/3842081.html">Linux 命令工具 top 详解</a></li>
+</ul>
+<h3 id="kubernetes">Kubernetes</h3>
+<p><a href="https://k8smeetup.github.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/">使用 CRD (CustomResourceDefinitions) 扩展 Kubernetes API</a></p>
+<p><a href="https://blog.csdn.net/boling_cavalry/article/details/88917818">k8s 自定义 controller 三部曲之一：创建 CRD（Custom Resource Definition）</a></p>
+<p><a href="https://blog.csdn.net/boling_cavalry/article/details/88924194">k8s 自定义 controller 三部曲之二：自动生成代码</a></p>
+<p><a href="https://blog.csdn.net/boling_cavalry/article/details/88934063">k8s 自定义 controller 三部曲之三：编写 controller 代码</a></p>
+<h3 id="kafka">kafka</h3>
+<h4 id="序列化">序列化</h4>
+<p>StringSerializer 序列化，写入时使用
+dest.kafka.1&amp;key.serializer=org.apache.kafka.common.serialization.StringSerializer
+dest.kafka.1&amp;value.serializer=org.apache.kafka.common.serialization.StringSerializer</p>
+<p>StringDeserializer 反序列化，读出时使用
+source.kafka.2&amp;key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+source.kafka.2&amp;value.deserializer=org.apache.kafka.common.serialization.StringDeserializer</p>
+<h3 id="docker">Docker</h3>
+<h4 id="docker-for-mac">docker for mac</h4>
+<p>下载： <a href="https://download.docker.com/mac/stable/Docker.dmg">https://download.docker.com/mac/stable/Docker.dmg</a></p>
+<h4 id="镜像加速">镜像加速</h4>
+<p>阿里云
+加速地址： <a href="https://pjuig8sx.mirror.aliyuncs.com">https://pjuig8sx.mirror.aliyuncs.com</a></p>
+<p><a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors</a>
+针对安装了 Docker for Mac 的用户，您可以参考以下配置步骤：
+右键点击桌面顶栏的 docker 图标，选择 Preferences ，在 Daemon 标签（Docker 17.03 之前版本为 Advanced 标签）下的 Registry mirrors 列表中将
+<a href="https://pjuig8sx.mirror.aliyuncs.com">https://pjuig8sx.mirror.aliyuncs.com</a>  加到 &ldquo;registry-mirrors&rdquo; 的数组里，点击 Apply &amp; Restart 按钮，等待 Docker 重启并应用配置的镜像加速器。</p>
+<h3 id="tomcat">tomcat</h3>
+<p>入口文件</p>
+<p>In any web application, there will be a web.xml in the WEB-INF/ folder.
+If you dont have one in your web app, as it seems to be the case in your folder structure, the default Tomcat web.xml is under TOMCAT_HOME/conf/web.xml
+Either way, the relevant lines of the web.xml are</p>
+<pre><code>&lt;welcome-file-list&gt;
+        &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+        &lt;welcome-file&gt;index.htm&lt;/welcome-file&gt;
+        &lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;
+    &lt;/welcome-file-list&gt;
+</code></pre><p>so any file matching this pattern when found will be shown as the home page.
+In Tomcat, a web.xml setting within your web app will override the default, if present.</p>
+<p>Further Reading
+<a href="http://wiki.apache.org/tomcat/HowTo#How_do_I_override_the_default_home_page_loaded_by_Tomcat.3F">How do I override the default home page loaded by Tomcat?</a></p>
+<hr>
+<h2 id="书影音">书影音</h2>
+<h3 id="读书">读书</h3>
+<h4 id="书评">书评</h4>
+<p><a href="https://www.wikiwand.com/en/Goodreads">Goodreads</a></p>
+<p><a href="https://www.wikiwand.com/en/LibraryThing">LibraryThing</a></p>
+<p><a href="https://www.wikiwand.com/en/Shelfari">Shelfari</a></p>
+<h3 id="电影">电影</h3>
+<h3 id="音乐">音乐</h3>
+<h4 id="碧昂丝-beyonce">碧昂丝 Beyonce</h4>
+<p>Beyonce Giselle Knowles</p>
+<p>碧昂丝·吉赛尔·诺斯</p>
+<p>1981 年 9 月 4 日生于美国德克萨斯州休斯顿。</p>
+<p>1993 年与拉塔薇亚·罗伯森、凯莉·罗兰成立组合“天命真女”。
+2003 年，推出了首张个人专辑《Dangerously in Love》。
+2006 年 9 月 4 日，推出专辑《B&rsquo;Day》登上公告牌二百强专辑榜的榜首。
+2008 年 4 月 4 日与 Jay-Z 两人完婚。
+2008 年 11 月 18 日，发售第三张个人专辑《双面碧昂丝》获最佳当代 R&amp;B 专辑。
+2012 年 1 月 7 日生下女儿 Blue Ivy Carter。</p>
+<h4 id="feat">feat</h4>
+<p>feat 是 Featuring 简写，</p>
+<p>指的是后面这个歌手（或者组合）他在这首单曲里面或者这张专辑里面并不是主角，前面那个人才是这首歌的灵魂或者主人。</p>
+<h4 id="katy-perry-水果姐">Katy Perry 水果姐</h4>
+<p>凯蒂·佩里 水果姐
+1984 年 10 月 25 日出生于美国加利福尼亚州圣巴巴拉，美国流行女歌手、演员兼词曲创作者。</p>
+<p>2007 年凭借歌曲《Ur So Gay》成名。
+2008 发行首张专辑《One of the Boys》。
+2010 年发行第二张专辑《Teenage Dream》，专辑包括《California Gurls》、《Firework》、《E.T》等歌曲，成为首位在美国公告牌热门单曲榜中有 5 首冠军单曲来自同一专辑的女歌手。
+2012 年发行专辑《Teenage Dream》的改版专辑《Teenage Dream：TCC》，获得美国公告牌该年年度女性和全美音乐奖最受欢迎流行女歌手奖，专辑单曲《Part Of Me》空降公告牌冠军，成为美国公告牌上第十九支空降冠军单曲。
+2013 年 10 月 22 日发行第三张录音室专辑《PRISM》。</p>
+<h5 id="凯蒂佩里为什么叫水果姐">凯蒂·佩里为什么叫“水果姐”</h5>
+<p>尽管听起来有些奇怪，但你一定知道人们谈论的是哪位明星。中国人说的“水果姐”就是凯蒂·佩里。原因是凯蒂非常喜欢水果元素的服装，有时登台表演也要带上巨型水果道具。她还透露自己亲自种水果然后把它们吃掉。这样看来，“水果姐”倒是个非常贴切的昵称。</p>
+<h4 id="空降冠军">空降冠军</h4>
+<p>第一次上榜就是冠军！</p>
+<h4 id="歌手绰号">歌手绰号</h4>
+<p>“臀王”珍妮弗·洛佩兹。洛佩兹在中国很多地区被称为“洛霸”，对应的英文“Lord of Butt”翻译过来就是“臀王”。这个昵称一语双关。“洛霸”与汉语直译的“洛佩兹”中的“洛”发音一致。对这位在自己歌曲的 MV 中大秀电臀的超级明星来说，“洛霸”再合适不过。
+“大表姐”詹妮弗·劳伦斯。2011 年奥斯卡颁奖礼前夕，数百名中国网友开玩笑地提前“揭晓”获奖名单，且都宣称自己从“美国电影艺术与科学学院的表姐”那里知道的结果。一名网友更夸张，称自己的表姐就是劳伦斯，并透露她将“封后”。虽然劳伦斯最终未能拿到最佳女主角大奖，但“大表姐”这个昵称就此流传开。
+“皮卡丘”莱昂纳多·迪卡普里奥。中国台湾的民众把迪卡普里奥叫做“皮卡丘”。这个昵称来自 2011 年的一个笑话，当时一名台湾主播把“莱昂纳多·迪卡普里奥”口误读成“李奥纳多·皮卡丘”。直到现在，充满娱乐精神的台湾媒体以及香港同行依然用《口袋妖怪》里的这个名字称呼迪卡普里奥。</p>
+<hr>
+<h2 id="语言文化">语言文化</h2>
+<h3 id="最古老的姓氏">最古老的姓氏</h3>
+<p><a href="https://www.zhihu.com/question/26581035">中国最古老的姓氏起源是怎样的？</a></p>
+<h3 id="僭-jiàn">僭 [jiàn]</h3>
+<p>僭越，指超越本份，古时指地位低下的冒用在上的名义或器物等等， 尤指用皇家专用的。</p>
+<h3 id="诺贝尔文学奖httpswwwwikiwandcomzh-cne8abbee8b29de788bee69687e5adb8e78d8ee5be97e4b8bbe58897e8a1a8"><a href="https://www.wikiwand.com/zh-cn/%E8%AB%BE%E8%B2%9D%E7%88%BE%E6%96%87%E5%AD%B8%E7%8D%8E%E5%BE%97%E4%B8%BB%E5%88%97%E8%A1%A8">诺贝尔文学奖</a></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200411145035.png" alt="" /></p>
+<hr>
+<h2 id="数学">数学</h2>
+<hr>
+<h2 id="政经法史地">政经法史地</h2>
+<h3 id="经济">经济</h3>
+<h4 id="中石油和中石化的区别">中石油和中石化的区别</h4>
+<ul>
+<li>
+<p>中石油</p>
+<ul>
+<li>中石油的原油是国内开采的，</li>
+<li>中石油重点业务是上游板块，也就是勘探与生产。</li>
+</ul>
+</li>
+<li>
+<p>中石化</p>
+<ul>
+<li>中石化的原油是国外进口的。</li>
+<li>中石化重点业务是下游板块，也就是炼化与销售。</li>
+</ul>
+</li>
+</ul>
+<h4 id="基金定投">基金定投</h4>
+<p>基金定投是定期定额投资基金的简称，是指在固定的时间（如每月 8 日）以固定的金额（如 500 元）投资到指定的开放式基金中，类似于银行的零存整取方式。人们平常所说的基金主要是指证券投资基金。证券投资的分析方法主要有如下三种：基本分析、技术分析、演化分析，其中基本分析主要应用于投资标的物的选择上，技术分析和演化分析则主要应用于具体投资操作的时间和空间判断上，作为提高投资分析有效性和可靠性的重要补充。</p>
+<h4 id="等额配比基金">等额配比基金</h4>
+<p>一种捐赠形式。2006 年 9 月，段永平将 3000 万美元捐给浙江大学。其中有一项 1000 万美元的等额配比基金，即凡有人在浙江大学投入一笔钱，不管用于哪一方面，等额捐赠基金中就会抽出相同数量的钱，同时投入浙大。不管对方捐多少，基金单笔支出不超过 100 万美元，时间跨度为 10 年。</p>
+<h4 id="企业融资httpwwwwikiwandcomzh-cne4bc81e4b89ae89e8de8b584和投资银行httpwwwwikiwandcomzh-cne68a95e8b584e993b6e8a18c"><a href="http://www.wikiwand.com/zh-cn/%E4%BC%81%E4%B8%9A%E8%9E%8D%E8%B5%84">企业融资</a>和<a href="http://www.wikiwand.com/zh-cn/%E6%8A%95%E8%B5%84%E9%93%B6%E8%A1%8C">投资银行</a></h4>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200411154735.png" alt="" /></p>
+<h3 id="法律">法律</h3>
+<h4 id="美国宪法修正案">美国宪法修正案</h4>
+<p>宪法修正案是美国宪法规定的唯一正式改变宪法的形式，是美国宪法的重要组成部分，代表了美国宪法制度的基本发展方向。其中具有重大影响的是关于公民权利的宪法前 10 条修正案（即“权利法案”）。
+自宪法签署完成后，已有二十七项修正案经批准，其中前十项统称权利法案。对美国宪法的修正程序受美国宪法第五条所规定。另有其他许多已向国会提议，但是未向各州提交的美国宪法修正提议。</p>
+<hr>
+<h3 id="历史">历史</h3>
+<h4 id="朱元璋的祖辈">朱元璋的祖辈</h4>
+<p><a href="https://www.wikiwand.com/zh-cn/%E6%9C%B1%E4%BB%B2%E5%85%AB">朱仲八</a></p>
+<p><a href="https://www.wikiwand.com/zh-cn/%E6%9C%B1%E7%99%BE%E5%85%AD">朱百六</a></p>
+<p><a href="https://www.wikiwand.com/zh-cn/%E6%9C%B1%E5%9B%9B%E4%B9%9D">朱四九</a></p>
+<p><a href="https://www.wikiwand.com/zh-cn/%E6%9C%B1%E5%88%9D%E4%B8%80">朱初一</a></p>
+<p><a href="https://www.wikiwand.com/zh-cn/%E6%9C%B1%E4%B8%96%E7%8F%8D">朱世珍</a>，朱五四</p>
+<p><a href="https://www.wikiwand.com/zh-cn/%E6%9C%B1%E5%85%83%E7%92%8B">朱元璋</a>，朱重八</p>
+<h4 id="中国历史">中国历史</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200411153236.png" alt="" /></p>
+<h5 id="如何理清">如何理清</h5>
+<ul>
+<li><a href="https://www.zhihu.com/question/30376558">如何理清春秋战国的历史？</a></li>
+<li><a href="https://www.zhihu.com/question/30467324/answer/84996810">如何理清五胡十六国的脉络关系？</a></li>
+<li><a href="https://www.zhihu.com/question/20689758/answer/46052840">怎样理清魏晋南北朝那段的历史？</a></li>
+<li><a href="https://www.zhihu.com/question/30046079/answer/47765961">如何理清五代十国的历史？</a></li>
+<li><a href="https://www.zhihu.com/question/38786702">如何理清民国时军阀混战的历史？</a></li>
+<li><a href="https://www.zhihu.com/question/34856776">怎么有效的区分和理顺历史上中国北方的各游牧民族？</a></li>
+</ul>
+<h4 id="欧洲史">欧洲史</h4>
+<ul>
+<li><a href="https://www.zhihu.com/question/27453531">欧洲中世纪史的脉络或结构图是怎么样的？</a></li>
+<li><a href="https://www.zhihu.com/question/34550296">如何清晰梳理古希腊、罗马史？</a></li>
+</ul>
+<hr>
+<h2 id="物化生">物化生</h2>
+<h3 id="生命科学的四大基础学科">生命科学的四大基础学科</h3>
+<h4 id="细胞生物学">细胞生物学</h4>
+<p>细胞生物学(cell biology)是在显微、亚显微和分子水平三个层次上，研究细胞的结构、功能和各种生命规律的一门科学。细胞生物学由 Cytology 发展而来，Cytology 是关于细胞结构与功能(特别是染色体)的研究。现代细胞生物学从显微水平、超微水平和分子水平等不同层次研究细胞的结构、功能及生命活动。在我国基础学科发展规划中，细胞生物学与分子生物学、神经生物学和生态学并列为生命科学的四大基础学科。</p>
+<p>生命科学的学习方法：一、认识细胞生物学课程的重要性，正如原子是物理性质的最小单位，分子是化学性质的最小单位，细胞是生命的基本单位。50 年代以来诺贝尔生理与医学奖大都授予了从事细胞生物学研究的科学家，可见细胞生物学的重要性。如果你将来打算从事生物学相关的工作，学好细胞生物学能加深你对生命的理解。二、明确细胞生物学的研究内容，即：结构、功能、生活史。生物的结构与功能是相适应的，每一种结构都有特定的功能，每一种功能的实现都需要特定的物质基础。如肌肉可以收缩、那么动力是谁提供的、能量从何而来的？三、从显微、超微和分子三个层次来认识细胞的结构与功能。一方面每一个层次的结构都有特定的功能，另一方面各层次之间是有机地联系在一起的。四、将所学过的知识关联起来，多问自己几个为什么。细胞生物学涉及分子生物学、生物化学、遗传学、生理学等几乎所有生物系学过的课程，将学过的知识与细胞生物学课程中讲到的内容关联起来，比较一下有什么不同，有什么相同，为什么？尽可能形成对细胞和生命的完整印象，不要只见树木不见森林。另一方面细胞生物学各章节之间的内容是相互关联的，如我们在学习线粒体与叶绿体的时候，要联想起细胞物质运输章节中学过的 DNP、FCCP 等质子载体对线粒体会有什么影响，学习微管结构时要问问为什么 β 微管蛋白是一种 G 蛋白，而 α 微管蛋白不是，学习细胞分裂时要想想细胞骨架在细胞分裂中起什么作用，诸如此类的例子很多。五、紧跟学科前沿，当前的热点主要有“信号转导”、“细胞周期调控”、“细胞凋亡”等。细胞生物学是当今发展最快的学科之一，知识的半衰期很短（可能不足 5 年），国内教科书由于编撰周期较长，一般滞后于学科实际水平 5-10 年左右，课本中的很多知识都已是陈旧知识。有很多办法可以使你紧跟学科前沿：一是选择国外的最新教材，中国图书进出口公司读者服务部那里可以买到很多价廉物美的正宗原版教材（一般 200-400 元，只相当于国外价格的 1/5）；二是经常读一些最新的期刊资料，如果条件所限查不到国外资料，可以到中国期刊网、万方数据等数据库中查一些综述文章，这些文章很多是国家自然科学基金支助的，如在中国期刊网的检索栏输入关键词“细胞凋亡”，二次检索输入关键词“进展”，你会发现一大堆这样的文章，都是汉字写的比读英文省事。六、学一点科技史，尤其是生物学史，看看科学家如何开展创造发明，学习他们惊人的毅力、锐敏的眼光和独特的思维。牛顿说过：“我之所以比别人看得更远，是因为站在巨人的肩膀上。”</p>
+<h4 id="遗传学">遗传学</h4>
+<p>遗传学研究生物起源、进化与发育的基因和基因组结构、功能与演变及其规律，经历了孟德尔经典遗传学、分子遗传学而进入了系统遗传学研究时期。</p>
+<h4 id="发育生物学">发育生物学</h4>
+<p>发育生物学（developmentalbiology）是生物科学重要的基础分支学科之一，研究内容是和许多其他学科内容相互渗透、错综联系，特别是和遗传学、细胞生物学、分子生物学的关系最为紧密。其应用现代科学技术和方法，从分子水平、亚显微水平和细胞水平来研究分析生物体从精子和卵的发生、受精、发育、生长直至衰老死亡的过程及其机理。</p>
+<h4 id="生物化学">生物化学</h4>
+<p>生物化学: 运用化学的理论和方法研究生命物质的边缘学科。其任务主要是了解生物的化学组成、结构及生命过程中各种化学变化。从早期对生物总体组成的研究，进展到对各种组织和细胞成分的精确分析。目前正在运用诸如光谱分析、同位素标记、X 射线衍射、电子显微镜以及其他物理学、化学技术，对重要的生物大分子（如蛋白质、核酸等）进行分析，以期说明这些生物大分子的多种多样的功能与它们特定的结构关系。</p>
+<hr>
+<h2 id="娱乐">娱乐</h2>
+<h3 id="游戏">游戏</h3>
+<h4 id="魔兽系列">魔兽系列</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200411143300.png" alt="" /></p>
+<hr>
+<h2 id="生活">生活</h2>
+<hr>
+<h2 id="今日总结">今日总结</h2>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2020-年-4-月-11-日星期六">2020 年 4 月 11 日（星期六）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#架构设计">架构设计</a>
+              <ul>
+                <li><a href="#ha-高可用">HA 高可用</a></li>
+                <li><a href="#lb-负载均衡">LB 负载均衡</a></li>
+              </ul>
+            </li>
+            <li><a href="#产品设计">产品设计</a>
+              <ul>
+                <li><a href="#poc-概念验证">POC 概念验证</a></li>
+                <li><a href="#mvp-最小化可行产品">MVP 最小化可行产品</a></li>
+              </ul>
+            </li>
+            <li><a href="#需求管理">需求管理</a>
+              <ul>
+                <li><a href="#kano-模型">KANO 模型</a></li>
+                <li><a href="#价值-vs-复杂度矩阵">价值 vs 复杂度矩阵</a></li>
+              </ul>
+            </li>
+            <li><a href="#分布式一致性">分布式一致性</a>
+              <ul>
+                <li><a href="#paxos">Paxos</a></li>
+                <li><a href="#paxos-1">Paxos</a></li>
+              </ul>
+            </li>
+            <li><a href="#shell">shell</a>
+              <ul>
+                <li><a href="#top">top</a></li>
+              </ul>
+            </li>
+            <li><a href="#kubernetes">Kubernetes</a></li>
+            <li><a href="#kafka">kafka</a>
+              <ul>
+                <li><a href="#序列化">序列化</a></li>
+              </ul>
+            </li>
+            <li><a href="#docker">Docker</a>
+              <ul>
+                <li><a href="#docker-for-mac">docker for mac</a></li>
+                <li><a href="#镜像加速">镜像加速</a></li>
+              </ul>
+            </li>
+            <li><a href="#tomcat">tomcat</a></li>
+          </ul>
+        </li>
+        <li><a href="#书影音">书影音</a>
+          <ul>
+            <li><a href="#读书">读书</a>
+              <ul>
+                <li><a href="#书评">书评</a></li>
+              </ul>
+            </li>
+            <li><a href="#电影">电影</a></li>
+            <li><a href="#音乐">音乐</a>
+              <ul>
+                <li><a href="#碧昂丝-beyonce">碧昂丝 Beyonce</a></li>
+                <li><a href="#feat">feat</a></li>
+                <li><a href="#katy-perry-水果姐">Katy Perry 水果姐</a>
+                  <ul>
+                    <li><a href="#凯蒂佩里为什么叫水果姐">凯蒂·佩里为什么叫“水果姐”</a></li>
+                  </ul>
+                </li>
+                <li><a href="#空降冠军">空降冠军</a></li>
+                <li><a href="#歌手绰号">歌手绰号</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#语言文化">语言文化</a>
+          <ul>
+            <li><a href="#最古老的姓氏">最古老的姓氏</a></li>
+            <li><a href="#僭-jiàn">僭 [jiàn]</a></li>
+            <li><a href="#诺贝尔文学奖httpswwwwikiwandcomzh-cne8abbee8b29de788bee69687e5adb8e78d8ee5be97e4b8bbe58897e8a1a8"><a href="https://www.wikiwand.com/zh-cn/%E8%AB%BE%E8%B2%9D%E7%88%BE%E6%96%87%E5%AD%B8%E7%8D%8E%E5%BE%97%E4%B8%BB%E5%88%97%E8%A1%A8">诺贝尔文学奖</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#数学">数学</a></li>
+        <li><a href="#政经法史地">政经法史地</a>
+          <ul>
+            <li><a href="#经济">经济</a>
+              <ul>
+                <li><a href="#中石油和中石化的区别">中石油和中石化的区别</a></li>
+                <li><a href="#基金定投">基金定投</a></li>
+                <li><a href="#等额配比基金">等额配比基金</a></li>
+                <li><a href="#企业融资httpwwwwikiwandcomzh-cne4bc81e4b89ae89e8de8b584和投资银行httpwwwwikiwandcomzh-cne68a95e8b584e993b6e8a18c"><a href="http://www.wikiwand.com/zh-cn/%E4%BC%81%E4%B8%9A%E8%9E%8D%E8%B5%84">企业融资</a>和<a href="http://www.wikiwand.com/zh-cn/%E6%8A%95%E8%B5%84%E9%93%B6%E8%A1%8C">投资银行</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#法律">法律</a>
+              <ul>
+                <li><a href="#美国宪法修正案">美国宪法修正案</a></li>
+              </ul>
+            </li>
+            <li><a href="#历史">历史</a>
+              <ul>
+                <li><a href="#朱元璋的祖辈">朱元璋的祖辈</a></li>
+                <li><a href="#中国历史">中国历史</a>
+                  <ul>
+                    <li><a href="#如何理清">如何理清</a></li>
+                  </ul>
+                </li>
+                <li><a href="#欧洲史">欧洲史</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#物化生">物化生</a>
+          <ul>
+            <li><a href="#生命科学的四大基础学科">生命科学的四大基础学科</a>
+              <ul>
+                <li><a href="#细胞生物学">细胞生物学</a></li>
+                <li><a href="#遗传学">遗传学</a></li>
+                <li><a href="#发育生物学">发育生物学</a></li>
+                <li><a href="#生物化学">生物化学</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#娱乐">娱乐</a>
+          <ul>
+            <li><a href="#游戏">游戏</a>
+              <ul>
+                <li><a href="#魔兽系列">魔兽系列</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#生活">生活</a></li>
+        <li><a href="#今日总结">今日总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+<a href="https://github.com/ikingye/note" 
+class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+  <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+</svg></a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

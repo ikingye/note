@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2020 年 4 月 10 日（星期五） 今日待办  Istio Handbook 编委会双周会 21:00-22:00   编程 mosquitto (mqtt) mosquitto_pub mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic mosquitto_pub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo; -m &lsquo;{&ldquo;applicationID&rdquo;:&ldquo;1&rdquo;,&ldquo;applicationName&rdquo;:&ldquo;0000000000000001&rdquo;,&ldquo;deviceName&rdquo;:&ldquo;d143-K5-out&rdquo;,&ldquo;devEUI&rdquo;:&ldquo;ffffff100000d143&rdquo;,&ldquo;txInfo&rdquo;:{&ldquo;frequency&rdquo;:481700000,&ldquo;dr&rdquo;:2},&ldquo;adr&rdquo;:false,&ldquo;fCnt&rdquo;:68570,&ldquo;fPort&rdquo;:44,&ldquo;data&rdquo;:&ldquo;BQEA&rdquo;}&rsquo;
+mosquitto_sub mosquitto_sub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo;"><meta property="og:title" content="2020-04-10" />
+<meta property="og:description" content="2020 年 4 月 10 日（星期五） 今日待办  Istio Handbook 编委会双周会 21:00-22:00   编程 mosquitto (mqtt) mosquitto_pub mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic mosquitto_pub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo; -m &lsquo;{&ldquo;applicationID&rdquo;:&ldquo;1&rdquo;,&ldquo;applicationName&rdquo;:&ldquo;0000000000000001&rdquo;,&ldquo;deviceName&rdquo;:&ldquo;d143-K5-out&rdquo;,&ldquo;devEUI&rdquo;:&ldquo;ffffff100000d143&rdquo;,&ldquo;txInfo&rdquo;:{&ldquo;frequency&rdquo;:481700000,&ldquo;dr&rdquo;:2},&ldquo;adr&rdquo;:false,&ldquo;fCnt&rdquo;:68570,&ldquo;fPort&rdquo;:44,&ldquo;data&rdquo;:&ldquo;BQEA&rdquo;}&rsquo;
+mosquitto_sub mosquitto_sub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/10/" />
+
+<title>2020-04-10 | 叶王笔记</title>
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/note/book.min.2b565af4d61986071164f1ead48c719f32bb138a148802dc3943b967fc4f20c6.css" integrity="sha256-K1Za9NYZhgcRZPHq1IxxnzK7E4oUiALcOUO5Z/xPIMY=">
+
+
+<script defer src="/note/en.search.min.faca0806c52845adaeca274e618cdf5bfc3f65563c1472ea1278edd03d3e7990.js" integrity="sha256-&#43;soIBsUoRa2uyidOYYzfW/w/ZVY8FHLqEnjt0D0&#43;eZA="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/note"><span>叶王笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me">博客</a></li>
+  <li><a href="https://github.com/ikingye">Github</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip">知乎</a></li>
+  <li><a href="https://weibo.com/kingyip15215">微博</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/natural/math/" class="collapsed ">数学</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/music/" class="collapsed ">音乐</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/movie/" class="collapsed ">电影</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/social/history/" class="collapsed ">历史</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/" class="collapsed ">第四部分 学习</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/book/" class="collapsed ">第五部分 读书</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/course/" class="collapsed ">第六部分 课程</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/" class="collapsed ">第七部分 生活</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>下厨房</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/parenting/" class="collapsed ">教育</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/travel/" class="collapsed ">旅行</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/" class="collapsed ">日记</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/04/" class="">4 月</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/16/" class="">2020-04-16</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/14/" class="">2020-04-14</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/11/" class="">2020-04-11</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/10/" class="active">2020-04-10</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/09/" class="">2020-04-09</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/domain/" class="collapsed ">领域</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2020-04-10</strong>
+
+  <label for="toc-control">
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2020-年-4-月-10-日星期五">2020 年 4 月 10 日（星期五）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#mosquitto-mqtt">mosquitto (mqtt)</a>
+              <ul>
+                <li><a href="#mosquitto_pub">mosquitto_pub</a></li>
+                <li><a href="#mosquitto_sub">mosquitto_sub</a></li>
+              </ul>
+            </li>
+            <li><a href="#github">Github</a>
+              <ul>
+                <li><a href="#github-star-历史">Github star 历史</a>
+                  <ul>
+                    <li><a href="#timqianstar-historyhttpsgithubcomtimqianstar-history"><a href="https://github.com/timqian/star-history">timqian/star-history</a></a></li>
+                    <li><a href="#vesoft-incgithub-statisticshttpsgithubcomvesoft-incgithub-statistics"><a href="https://github.com/vesoft-inc/github-statistics">vesoft-inc/github-statistics</a></a></li>
+                    <li><a href="#antonmedvsparkhttpsgithubcomantonmedvspark"><a href="https://github.com/antonmedv/spark">antonmedv/spark</a></a></li>
+                    <li><a href="#seladbstartrack-jshttpsgithubcomseladbstartrack-js"><a href="https://github.com/seladb/startrack-js">seladb/startrack-js</a></a></li>
+                    <li><a href="#elliotreborngithub-starshttpsgithubcomelliotreborngithub-stars"><a href="https://github.com/elliotreborn/github-stars">elliotreborn/github-stars</a></a></li>
+                  </ul>
+                </li>
+                <li><a href="#github-pr-统计">Github PR 统计</a></li>
+                <li><a href="#开源相关工作岗位">开源相关工作岗位</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#今日总结">今日总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="2020-年-4-月-10-日星期五">2020 年 4 月 10 日（星期五）</h1>
+<h2 id="今日待办">今日待办</h2>
+<ul>
+<li><input disabled="" type="checkbox"><a href="https://github.com/servicemesher/istio-handbook">Istio Handbook</a> 编委会双周会 21:00-22:00</li>
+</ul>
+<hr>
+<h2 id="编程">编程</h2>
+<h3 id="mosquitto-mqtt">mosquitto (mqtt)</h3>
+<h4 id="mosquitto_pub">mosquitto_pub</h4>
+<pre><code>mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic
+</code></pre><p>mosquitto_pub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo; -m &lsquo;{&ldquo;applicationID&rdquo;:&ldquo;1&rdquo;,&ldquo;applicationName&rdquo;:&ldquo;0000000000000001&rdquo;,&ldquo;deviceName&rdquo;:&ldquo;d143-K5-out&rdquo;,&ldquo;devEUI&rdquo;:&ldquo;ffffff100000d143&rdquo;,&ldquo;txInfo&rdquo;:{&ldquo;frequency&rdquo;:481700000,&ldquo;dr&rdquo;:2},&ldquo;adr&rdquo;:false,&ldquo;fCnt&rdquo;:68570,&ldquo;fPort&rdquo;:44,&ldquo;data&rdquo;:&ldquo;BQEA&rdquo;}&rsquo;</p>
+<h4 id="mosquitto_sub">mosquitto_sub</h4>
+<p>mosquitto_sub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo;</p>
+<hr>
+<h3 id="github">Github</h3>
+<h4 id="github-star-历史">Github star 历史</h4>
+<h5 id="timqianstar-historyhttpsgithubcomtimqianstar-history"><a href="https://github.com/timqian/star-history">timqian/star-history</a></h5>
+<p><img src="https://img.shields.io/github/stars/timqian/star-history.svg" alt="Github stars" /></p>
+<p><a href="https://star-history.t9t.io/">https://star-history.t9t.io/</a></p>
+<h5 id="vesoft-incgithub-statisticshttpsgithubcomvesoft-incgithub-statistics"><a href="https://github.com/vesoft-inc/github-statistics">vesoft-inc/github-statistics</a></h5>
+<p><img src="https://img.shields.io/github/stars/vesoft-inc/github-statistics.svg" alt="Github stars" /></p>
+<p>A react static app for displaying github repo statistiscs like Star History, Fork History and more.</p>
+<p><a href="https://vesoft-inc.github.io/github-statistics/">https://vesoft-inc.github.io/github-statistics/</a></p>
+<h5 id="antonmedvsparkhttpsgithubcomantonmedvspark"><a href="https://github.com/antonmedv/spark">antonmedv/spark</a></h5>
+<p><img src="https://img.shields.io/github/stars/antonmedv/spark.svg" alt="Github stars" /></p>
+<p><a href="https://stars.medv.io/servicemesher/istio-handbook"><img src="https://stars.medv.io/servicemesher/istio-handbook.svg" alt="GitHub Star Sparkline" /></a></p>
+<h5 id="seladbstartrack-jshttpsgithubcomseladbstartrack-js"><a href="https://github.com/seladb/startrack-js">seladb/startrack-js</a></h5>
+<p><img src="https://img.shields.io/github/stars/seladb/startrack-js.svg" alt="Github stars" /></p>
+<p>GitHub star history and stats - based on JavaScript only!</p>
+<p><a href="https://seladb.github.io/StarTrack-js/">https://seladb.github.io/StarTrack-js/</a></p>
+<h5 id="elliotreborngithub-starshttpsgithubcomelliotreborngithub-stars"><a href="https://github.com/elliotreborn/github-stars">elliotreborn/github-stars</a></h5>
+<p><img src="https://img.shields.io/github/stars/elliotreborn/github-stars.svg" alt="Github stars" /></p>
+<p>技术栈的 star 趋势数据</p>
+<hr>
+<h4 id="github-pr-统计">Github PR 统计</h4>
+<h4 id="开源相关工作岗位">开源相关工作岗位</h4>
+<p><a href="https://github.com/t9tio/open-source-jobs">t9tio/open-source-jobs</a></p>
+<p><img src="https://img.shields.io/github/stars/t9tio/open-source-jobs.svg" alt="Github stars" /></p>
+<p>A list of Open Source projects offering jobs. <a href="https://oo.t9t.io/organizations">https://oo.t9t.io/organizations</a></p>
+<hr>
+<h2 id="今日总结">今日总结</h2>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2020-年-4-月-10-日星期五">2020 年 4 月 10 日（星期五）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#mosquitto-mqtt">mosquitto (mqtt)</a>
+              <ul>
+                <li><a href="#mosquitto_pub">mosquitto_pub</a></li>
+                <li><a href="#mosquitto_sub">mosquitto_sub</a></li>
+              </ul>
+            </li>
+            <li><a href="#github">Github</a>
+              <ul>
+                <li><a href="#github-star-历史">Github star 历史</a>
+                  <ul>
+                    <li><a href="#timqianstar-historyhttpsgithubcomtimqianstar-history"><a href="https://github.com/timqian/star-history">timqian/star-history</a></a></li>
+                    <li><a href="#vesoft-incgithub-statisticshttpsgithubcomvesoft-incgithub-statistics"><a href="https://github.com/vesoft-inc/github-statistics">vesoft-inc/github-statistics</a></a></li>
+                    <li><a href="#antonmedvsparkhttpsgithubcomantonmedvspark"><a href="https://github.com/antonmedv/spark">antonmedv/spark</a></a></li>
+                    <li><a href="#seladbstartrack-jshttpsgithubcomseladbstartrack-js"><a href="https://github.com/seladb/startrack-js">seladb/startrack-js</a></a></li>
+                    <li><a href="#elliotreborngithub-starshttpsgithubcomelliotreborngithub-stars"><a href="https://github.com/elliotreborn/github-stars">elliotreborn/github-stars</a></a></li>
+                  </ul>
+                </li>
+                <li><a href="#github-pr-统计">Github PR 统计</a></li>
+                <li><a href="#开源相关工作岗位">开源相关工作岗位</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#今日总结">今日总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+<a href="https://github.com/ikingye/note" 
+class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+  <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+</svg></a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

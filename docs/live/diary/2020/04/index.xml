@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4 月 on 叶王笔记</title>
+    <link>https://ikingye.github.io/note/docs/live/diary/2020/04/</link>
+    <description>Recent content in 4 月 on 叶王笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://ikingye.github.io/note/docs/live/diary/2020/04/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2020-04-16</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/16/</guid>
+      <description>2020 年 4 月 16 日（星期四） 今日待办     编程 </description>
+    </item>
+    
+    <item>
+      <title>2020-04-15</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/15/</guid>
+      <description>2020 年 4 月 15 日（星期三） 今日待办     编程 Service Mesh 南北流量 vs 东西流量 南北流量（NORTH-SOUTH traffic）
+东西流量（EAST-WEST traffic）
+在云计算和 SDN 下，我们经常听到流量的东西南北向概念，简单来说从外部 Internet 等到数据中心内部的流量走向被称为南北流量，数据中心内部的 VM 之间的流量被称为东西流量。
+南北流量：client - server
+东西流量：server 之间
+智慧城市  平安城市是一个综合性的安防系统，包含子系统较多； 天网工程和雪亮工程偏向于视频监控系统。  三者都是分级建设，平安城市和天网工程主要利用政府资源，而雪亮工程鼓励警民结合、资源互补。
+按工程的建设规模排序，平安城市 ＞ 天网工程 ＞ 雪亮工程。
+平安城市 平安城市就是通过三防系统（技防系统、物防系统、人防系统）建设城市的平安和谐。它是一个特大型、综合性非常强的管理系统，不仅需要满足治安管理、城市管理、交通管理、应急指挥等需求，而且还要兼顾灾难事故预警、安全生产监控等方面对图像监控的需求，同时还要考虑各系统之间的联动。
+天网工程 天网工程是指为满足城市治安防控和城市管理需要，利用图像采集、传输、控制、显示等设备和控制软件组成，对固定区域进行实时监控和信息记录的视频监控系统。天网工程整体按照部级 - 省厅级 - 市县级平台架构部署实施，具有良好的拓展性与融合性。
+雪亮工程 雪亮工程是以县、乡、村三级综治中心为指挥平台、以综治信息化为支撑、以网格化管理为基础、以公共安全视频监控联网应用为重点的 “群众性治安防控工程”。它通过三级综治中心建设把治安防范措施延伸到群众身边，发动社会力量和广大群众共同监看视频监控，共同参与治安防范，从而真正实现治安防控 “全覆盖、无死角”。
+从平安城市到智慧城市 平安城市是现代城市信息化建设的第一步，随着物联网技术的发展，平安城市在未来会进一步在物联网的基础上向数字城市、智慧城市发展。
+在不久前召开的北京安防技术应用论坛上，就探讨了平安城市建设与物联网技术应用。平安城市将从传统安防到平安城市大安防体系、数字城市、智慧城市方向发展。展望未来，平安城市将与城市应急、水体与气体检测、垃圾处理等，数字城管、智能建筑、工业与自动化控制、城市一卡通等各个方面涵盖，届时，将全面服务居民的生活。
+平安城市与数字城市、智慧城市和感知中国随着技术不断发展，不断向前发展的城市管理模式，所涵盖技术各不相同，所使用目的也各不相同，但其重要部分视频监控技术都在发挥重要作用。
+从功能上区分，平安城市的主体就是利用现代信息通信技术，构建城市综合预警系统和应急指挥体系，达到指挥统一、反应及时、作战有效的目的。实现对城市的有效管理和打击违法犯罪，加强中国城市安全防范能力，加快城市安全系统建设，建设平安城市和谐社会。
+数字城市作为一个城市发展的战略目标，它主要是以计算机技术、多媒体技术和大规模存储技术为基础，利用信息技术手段把城市的过去、现状和未来的全部内容在网络上进行数字化虚拟实现。数字城市的建设涉及城市建设、规划、运行、管理、服务等各个方面，包括政府、交通、医疗、消防等等。
+智慧城市是未来城市发展演进的必然趋势，不管是绿色城市，环保城市等等，智慧城市的加强是顺应当前全球技术变革及新一轮产业发展的时代潮流。每一个城市都要充分发挥信息技术带给他的优势，来建设好这个城市。所以，信息资源应该成为建设社会的重要要素，信息世界与物理世界的融合已经成为城市的支撑。
+docker 上传到 私有仓库 docker build -t human-attribute:20200415_1585818439123 .</description>
+    </item>
+    
+    <item>
+      <title>2020-04-14</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/14/</guid>
+      <description>2020 年 4 月 14 日（星期二） 今日待办     编程 豆瓣 API 文档 zce/douban-api-docs  书影音 电影  语言文化 英文 basic vs basis basic: 以什么为基础，进行再加工创造
+basic: 基础内容
+Basis = foundation of something. The basis of multiplication is serial addition, for example.
+Basics = the core concepts. Multiplication tables are part of the basics because understanding them allows students to do higher order arithmetic much more efficiently.
+So no, they are really not interchangeable.</description>
+    </item>
+    
+    <item>
+      <title>2020-04-13</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/13/</guid>
+      <description>2020 年 4 月 13 日（星期一） 今日待办     编程 Git Git submodule merge vs squash vs rebase merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好 squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner rebase 可以尽可能保持 master 分支干净整洁，并且易于识别 author
+squash merge # 切换到目标分支 $ git checkout master # 以 squash 的形式 merge $ git merge --squash devel # it does not produce a commit right away: you need an additional commit $ git commit -m &amp;#34;squash branch&amp;#34;  你会发现，在 master 分支上居然有未提交的修改，然后你就需要在 master 上主动提交了修改， 注意，这里是你 commit 的，也就是改变了 commit 的 author。 git merge has a &amp;ndash;commit option, but it cannot be used with &amp;ndash;squash.</description>
+    </item>
+    
+    <item>
+      <title>2020-04-12</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/12/</guid>
+      <description>2020 年 4 月 12 日（星期日） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 GitHub 周报 probot/weekly-digest 配置
+# Configuration for weekly-digest - https://github.com/apps/weekly-digest publishDay: sun canPublishIssues: true canPublishPullRequests: true canPublishContributors: true canPublishStargazers: true canPublishCommits: true  生活  今日总结 </description>
+    </item>
+    
+    <item>
+      <title>2020-04-11</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/11/</guid>
+      <description>2020 年 4 月 11 日（星期六） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 架构设计 HA 高可用 High Availability
+LB 负载均衡 Load Balance
+产品设计 POC 概念验证 Proof Of Concept
+MVP 最小化可行产品 Minimum Viable Product
+需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Paxos https://raft.github.io
+由于 Paxos 难以理解，所以才有了 Raft
+Raft 以可理解性和易于实现为目标：
+ Leader 选举（Leader election） 日志同步（Log replication） 安全性（Safety） 日志压缩（Log compaction） 成员变更（Membership change）  shell top htop
+brew install htop</description>
+    </item>
+    
+    <item>
+      <title>2020-04-10</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/10/</guid>
+      <description>2020 年 4 月 10 日（星期五） 今日待办  Istio Handbook 编委会双周会 21:00-22:00   编程 mosquitto (mqtt) mosquitto_pub mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic mosquitto_pub -t &amp;lsquo;application/1/device/ffffff100000d143/rx&amp;rsquo; -m &amp;lsquo;{&amp;ldquo;applicationID&amp;rdquo;:&amp;ldquo;1&amp;rdquo;,&amp;ldquo;applicationName&amp;rdquo;:&amp;ldquo;0000000000000001&amp;rdquo;,&amp;ldquo;deviceName&amp;rdquo;:&amp;ldquo;d143-K5-out&amp;rdquo;,&amp;ldquo;devEUI&amp;rdquo;:&amp;ldquo;ffffff100000d143&amp;rdquo;,&amp;ldquo;txInfo&amp;rdquo;:{&amp;ldquo;frequency&amp;rdquo;:481700000,&amp;ldquo;dr&amp;rdquo;:2},&amp;ldquo;adr&amp;rdquo;:false,&amp;ldquo;fCnt&amp;rdquo;:68570,&amp;ldquo;fPort&amp;rdquo;:44,&amp;ldquo;data&amp;rdquo;:&amp;ldquo;BQEA&amp;rdquo;}&amp;rsquo;
+mosquitto_sub mosquitto_sub -t &amp;lsquo;application/1/device/ffffff100000d143/rx&amp;rsquo;</description>
+    </item>
+    
+    <item>
+      <title>2020-04-09</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/09/</guid>
+      <description>2020 年 4 月 9 日（星期四） 今日待办  编程  熟悉基本算法  排序算法（时间 / 空间复杂度） 大数据查找 / 排序   CORS     编程 基本算法 排序算法  插入排序类  直接插入排序 希尔排序 二分法插入排序   选择排序类  直接选择排序 堆排序   交换排序类  冒泡排序 快速排序   归并排序 基数排序  时间 / 空间复杂度 排序大的分类可分为内排序和外排序，不需要访问外存就能进行排序的叫做内排序。
+   排序方法 时间复杂度（平均） 时间复杂度（最坏) 时间复杂度（最好) 空间复杂度 稳定性 复杂性     希尔排序 O(nlog2n) O(n2) O(n) O(1) 不稳定 较复杂   堆排序 O(nlog2n) O(nlog2n) O(nlog2n) O(1) 不稳定 较复杂   快速排序 O(nlog2n) O(n2) O(nlog2n) O(nlog2n) 不稳定 较复杂   归并排序 O(nlog2n) O(nlog2n) O(nlog2n) O(n) 稳定 较复杂   直接插入排序 O(n2) O(n2) O(n) O(1) 稳定 简单   直接选择排序 O(n2) O(n2) O(n2) O(1) 不稳定 简单   冒泡排序 O(n2) O(n2) O(n) O(1) 稳定 简单   基数排序 O(d(n+r)) O(d(n+r)) O(d(n+r)) O(n+r) 稳定 较复杂    稳定排序与不稳定排序 稳定排序：假设在待排序的文件中，存在两个或两个以上的记录具有相同的关键字，在用某种排序法排序后，若这些相同关键字的元素的相对次序仍然不变，则这种排序方法是稳定的。</description>
+    </item>
+    
+    <item>
+      <title>2020-04-08</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/08/</guid>
+      <description>2020 年 4 月 8 日（星期三） 今日待办     编程 依赖注入 可以通过多种方式为实例提供必要的依赖关系：
+ 构造函数注入 属性注入 方法注入  构造函数注入 构造函数注入是许多依赖注入框架的首选方法，常受依赖注入框架的青睐。
+它清楚地告诉我们创建特定组件所需的所有依赖关系，并且这些依赖不是可选的，这些依赖关系在整个组件中应该都是必需的。
+public class DataProcessor { private final DbManager manager; private final Calculator calculator; public DataProcessor(DbManager manager, Calculator calculator) { this.manager = manager; this.calculator = calculator; } // ... }  优点：  不变性：依赖关系始终如初。   缺点  必须在初始化时提供所有依赖项。  有时，我们无法自己初始化一个组件，或者在某个时刻我们无法提供组件的所有依赖关系。或者我们需要使用另外一个构造函数。一旦设置了依赖项，我们就无法再改变它们了。      属性注入 属性注入更适合可选参数，例如监听或委托。又或是我们无法在初始化时提供依赖关系。
+其它编程语言，例如 Swift，大量使用了带属性的 委托模式。因此，使用属性注入将使其它语言的开发人员更熟悉我们的代码。</description>
+    </item>
+    
+    <item>
+      <title>2020-04-07</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/07/</guid>
+      <description>2020 年 4 月 7 日（星期二） 今日待办  201 PoSD 翻译  修改负责的 5 个 Principles 并提交到 icode 前 20 个 Principles 合并到 word，并提交给出版社进行初审     编程 编程哲学 中文房间 中文房间（英语：Chinese room），是由约翰・希尔勒提出的一个思想实验，借以反驳强人工智能的观点。根据强人工智能的观点，只要计算机拥有了适当的程序，理论上就可以说计算机拥有它的认知状态并且可以像人一样地进行理解活动。
+该实验出自约翰・罗杰斯・希尔勒的论文《心灵、大脑和程序》（ Minds, Brains, and Programs）中，发表于 1980 年的《 行为与脑科学（英语：Behavioral and Brain Sciences）》。
+中文房间思想实验是什么？它是否成功地否决了图灵测试的有效性？
+中文房间是否可以否定人类会思考？
+因果论与自由意志 k8s 相关 canonical/multipass  Multipass orchestrates virtual Ubuntu instances https://multipass.run
+# 创建一个 VM, 1GB 内存和 5GB 磁盘 multipass launch --name k3s --mem 1G --disk 5G # 为 VM 启动一个 shell multipass shell k3s # 在其上安装 k3s curl -sfL https://get.</description>
+    </item>
+    
+    <item>
+      <title>2020-04-06</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/06/</guid>
+      <description>2020 年 4 月 6 日（星期一） 备注：
+ 清明节放假  今日待办  201 PoSD 翻译  前 20 个 Principles 翻译审校（评论） 编委会讨论前 20 个 Principles 翻译修改版 修改负责的 5 个 Principles 并提交到 icode     今日总结 </description>
+    </item>
+    
+    <item>
+      <title>2020-04-03</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/03/</guid>
+      <description>2020 年 4 月 3 日（星期五） 今日待办     编程 Bookinfo Application 安装 istio istioctl manifest apply --set profile=demo kubectl label namespace default istio-injection=enabled 参考：https://istio.io/docs/setup/getting-started/
+运行 Bookinfo sample application alias k=&amp;#34;kubectl&amp;#34; k apply -f samples/bookinfo/platform/kube/bookinfo.yaml k get services 查看 Bookinfo 应用是否正常
+by checking for the page title in the response
+kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath=&amp;#39;{.items[0].metadata.name}&amp;#39;) -c ratings -- curl productpage:9080/productpage | grep -o &amp;#34;&amp;lt;title&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>2020-04-02</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/02/</guid>
+      <description>2020 年 4 月 2 日（星期四） 今日待办     编程 Istio 安装 minikube minikube start --image-mirror-country=&#39;cn&#39; --registry-mirror=https://registry.docker-cn.com
+安装 istio istioctl manifest apply --set profile=demo kubectl label namespace default istio-injection=enabled 参考：https://istio.io/docs/setup/getting-started/
+运行 Bookinfo sample application kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml kubectl get services 一切顺利，输出 service list。
+过了一会，报错，连不上 server
+The connection to the server 192.168.99.100:8443 was refused - did you specify the right host or port? minikube status minikube start --image-mirror-country=&amp;#39;cn&amp;#39; --registry-mirror=https://registry.</description>
+    </item>
+    
+  </channel>
+</rss>

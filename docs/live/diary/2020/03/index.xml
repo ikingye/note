@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3 月 on 叶王笔记</title>
+    <link>https://ikingye.github.io/note/docs/live/diary/2020/03/</link>
+    <description>Recent content in 3 月 on 叶王笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://ikingye.github.io/note/docs/live/diary/2020/03/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2020-03-31</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/03/31/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/03/31/</guid>
+      <description>2020 年 3 月 31 日（星期二） 今日待办  xxx   语言文化 滥觞 lànshāng 浮起酒杯。喻事情的开始
+夫江始出于岷山,其源可以滥觞。——《孔子家语·三恕》
+政经法史地 内卷化（网络）  靠极端剥削、压榨自己，从而在社会获得少量的竞争优势 明明可以有更加轻松，效果还更好的选择，却仍旧在旧有的选择中不断投入各类资源，以及由此产生的各种现象 不改变生产方式，不提高技术水平，而是靠极端剥削、压榨本国的劳动力在国际市场获得竞争优势  举一个很简单的例子：
+假定某省考生数量，录取名额不变，即录取率不变。
+现在有一所学校，甲校要求高中生每天学习 14 个小时，寒暑假和双休日补课。这一操作的效果是在短期内提高了甲校的录取率。
+这种录取率提升的甜头让乙、丙、丁校羡慕，于是均决定向甲校学习，推行甲校的教学管理模式。
+由于担心甲、乙、丙、丁校录取率的上升导致某省其余中学的录取率相对下降，于是该省其余学校也不得不采取跟进策略，学习和推广甲校的教学管理模式。
+最终，某省所有中学都开始强迫学生一天学习 14 个小时，取消寒暑假和双休日。
+于是，由于全省均采用甲校的模式，各个学校的考分尽管普遍上涨，在高考录取率不变的前提下，各个学校的录取率与推广甲学校模式之前相差无几（比如，原来一本线是 550 分，由于学生成绩普遍提高，一本线上调至 590 分，导致各个学校录取率与推广甲校之前无异）。
+在这一过程中，为提高分数，中学生不得不投入更多的学习时间和资源。由于该省高考录取分数线提高，单个学生的分数看似提高，但从录取结果看，这种投入没有意义。这就是所谓的分数增长，但学生考取好大学的几率没有实质增长，即 “没有发展的增长”—— 内卷化。
+内卷化（学术） 从词源来看，“内卷化” 一词的英文为 involution, 它源于拉丁语 involutum, 原意是 “转或卷起来”。
+从起源看，“内卷化”（involution）滥觞于顶顶大名的大哲学家康德，他初步区分了内卷化（involution）和 “演化”（evolution），随后学者 Alexander Goldenweiser 借用该概念描述 “一种内部不断精细化的文化现象”。
+真正把 “内卷化” 这一概念发扬光大的是人类学家 Clifford Geertz 和经济史学家黄宗智。
+1963 年，Clifford Geertz 出版了一部研究印度尼西亚的著作 ——《农业的内卷化 (agricultural involution)：印度尼西亚生态变迁的过程》。他在研究中发现，在殖民地时代和后殖民地时代的爪哇，农业生产长期以来原地不动，未曾发展，只是不断地重复简单再生产。
+针对这一现象，Clifford Geertz 借用了 “内卷化” 的概念，即 “一个既有的形态，由于内部细节过分的精细而使得形态本身获得了刚性”, 以刻画印度尼西亚爪哇地区 “由于农业无法向外延扩展，致使劳动力不断填充到有限的水稻生产” 的过程 。</description>
+    </item>
+    
+    <item>
+      <title>2020-03-08</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/03/08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/03/08/</guid>
+      <description>2020 年 3 月 8 日（星期日） 今日待办  陪闵子玩 Istio 1.5 发布了，学习一个   编程 算法教程 今天看到一个算法教程还不错，推荐一下，labuladong 的算法小抄。
+ Istio 1.5 Istio 1.5 于 2020-03-05 发布了。
+引入 Istiod 将控制平面整合为一个新的二进制文件 Istiod，简化了安装、运行和升级。所有 API 和运行时特性均与以前的组件一致。
+参考：官网 1.5 change note
+可扩展性的新模型 Istio 一直是最可扩展的服务网格，其 Mixer 插件允许自定义策略和遥测支持，而 Envoy 扩展则允许数据平面自定义。Istio 1.5 带来了了一个新模型，该模型使用 WebAssembly（Wasm）将 Istio 的可扩展性模型与 Envoy 的统一。Wasm 使开发人员能够安全地在 Envoy 代理中分发和执行代码，以便与遥测系统和策略系统集成，并控制路由，甚至转换消息正文。它将更加灵活和高效，从而无需单独运行 Mixer 组件（这也简化了部署）。
+更容易使用 现在，使用 istioctl 的 Istio 命令行安装已进入 beta 阶段。istioctl 也有十几项改进，包括分析新项目、更好的验证规则，以及更好的与 CI 系统集成的能力等。它已经成为了解 Istio 的系统运行状态并确保配置更改安全的必要工具。
+Istio 的安全性也得到了许多增强，更易于使用。Beta 版自动 mTLS 的启动，简化了 mTLS 的配置并使其自动化。</description>
+    </item>
+    
+  </channel>
+</rss>
