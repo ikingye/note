@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2020 年 4 月 24 日（星期五） 今日待办     编程 github comment Review Comments Commit Comments Issue Comments  OAM (Open Application Model) OAM 是阿里巴巴和微软共同开源的云原生应用规范模型
+2019 年 10 月宣布开源，同时开源了基于 OAM 的实现 Rudr。
+Rudr A Kubernetes implementation of the Open Application Model specification https://oam.dev
+OpenTelemetry Specifications for OpenTelemetry https://opentelemetry.io
+参考：
+ OAM（开放应用模型）—— 定义云原生应用标准的野望   Kubernetes CRI（Container Runtime Interface） 容器运行时接口，提供计算资源
+CNI（Container Network Interface） 容器网络接口，提供网络资源
+CSI（Container Storage Interface） 容器存储接口，提供存储资源
+ Dapr Dapr is a portable, serverless, event-driven runtime that makes it easy for developers to build resilient, stateless and stateful microservices that run on the cloud and edge and embraces the diversity of languages and developer frameworks."><meta property="og:title" content="2020-04-24" />
+<meta property="og:description" content="2020 年 4 月 24 日（星期五） 今日待办     编程 github comment Review Comments Commit Comments Issue Comments  OAM (Open Application Model) OAM 是阿里巴巴和微软共同开源的云原生应用规范模型
+2019 年 10 月宣布开源，同时开源了基于 OAM 的实现 Rudr。
+Rudr A Kubernetes implementation of the Open Application Model specification https://oam.dev
+OpenTelemetry Specifications for OpenTelemetry https://opentelemetry.io
+参考：
+ OAM（开放应用模型）—— 定义云原生应用标准的野望   Kubernetes CRI（Container Runtime Interface） 容器运行时接口，提供计算资源
+CNI（Container Network Interface） 容器网络接口，提供网络资源
+CSI（Container Storage Interface） 容器存储接口，提供存储资源
+ Dapr Dapr is a portable, serverless, event-driven runtime that makes it easy for developers to build resilient, stateless and stateful microservices that run on the cloud and edge and embraces the diversity of languages and developer frameworks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/24/" />
+
+<title>2020-04-24 | 叶王笔记</title>
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/note/book.min.2b565af4d61986071164f1ead48c719f32bb138a148802dc3943b967fc4f20c6.css" integrity="sha256-K1Za9NYZhgcRZPHq1IxxnzK7E4oUiALcOUO5Z/xPIMY=">
+
+
+<script defer src="/note/en.search.min.f463b779901e4324d825a99b2a40e3d0c55c793e7ca094d7eab49b9532fc18b0.js" integrity="sha256-9GO3eZAeQyTYJambKkDj0MVceT58oJTX6rSblTL8GLA="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/note"><span>叶王笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me">博客</a></li>
+  <li><a href="https://github.com/ikingye">Github</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip">知乎</a></li>
+  <li><a href="https://weibo.com/kingyip15215">微博</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/" class="">第四部分 学习</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/05/" class="">5 月</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/04/" class="">4 月</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/26/" class="">2020-04-26</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/25/" class="">2020-04-25</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/24/" class="active">2020-04-24</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/23/" class="">2020-04-23</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/22/" class="">2020-04-22</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/21/" class="">2020-04-21</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/20/" class="">2020-04-20</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/19/" class="">2020-04-19</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/17/" class="">2020-04-17</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/14/" class="">2020-04-14</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/11/" class="">2020-04-11</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/10/" class="">2020-04-10</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/09/" class="">2020-04-09</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2020-04-24</strong>
+
+  <label for="toc-control">
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2020-年-4-月-24-日星期五">2020 年 4 月 24 日（星期五）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#github">github</a>
+              <ul>
+                <li><a href="#comment">comment</a>
+                  <ul>
+                    <li><a href="#review-commentshttpsdevelopergithubcomv3pullscomments"><a href="https://developer.github.com/v3/pulls/comments/">Review Comments</a></a></li>
+                    <li><a href="#commit-commentshttpsdevelopergithubcomv3reposcomments"><a href="https://developer.github.com/v3/repos/comments">Commit Comments</a></a></li>
+                    <li><a href="#issue-commentshttpsdevelopergithubcomv3issuescomments"><a href="https://developer.github.com/v3/issues/comments">Issue Comments</a></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#oam-open-application-model">OAM (Open Application Model)</a>
+              <ul>
+                <li><a href="#rudrhttpsgithubcomoam-devrudr"><a href="https://github.com/oam-dev/rudr">Rudr</a></a></li>
+                <li><a href="#opentelemetryhttpsgithubcomopen-telemetryopentelemetry-specification"><a href="https://github.com/open-telemetry/opentelemetry-specification">OpenTelemetry</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#cricontainer-runtime-interface">CRI（Container Runtime Interface）</a></li>
+                <li><a href="#cnicontainer-network-interface">CNI（Container Network Interface）</a></li>
+                <li><a href="#csicontainer-storage-interface">CSI（Container Storage Interface）</a></li>
+              </ul>
+            </li>
+            <li><a href="#daprhttpsgithubcomdaprdapr"><a href="https://github.com/dapr/dapr">Dapr</a></a>
+              <ul>
+                <li><a href="#dapr-vs-istio">Dapr vs Istio</a></li>
+                <li><a href="#smi-service-mesh-interface">SMI (Service Mesh Interface)</a></li>
+              </ul>
+            </li>
+            <li><a href="#actor-模型httpsgithubcomtopicsactor-model"><a href="https://github.com/topics/actor-model">Actor 模型</a></a>
+              <ul>
+                <li><a href="#virtual-actors">Virtual Actors</a></li>
+                <li><a href="#akkaakkahttpsgithubcomakkaakka"><a href="https://github.com/akka/akka">akka/akka</a></a></li>
+                <li><a href="#asynkronitprotoactor-gohttpsgithubcomasynkronitprotoactor-go"><a href="https://github.com/AsynkronIT/protoactor-go">AsynkronIT/protoactor-go</a></a></li>
+                <li><a href="#dotnetorleanshttpsgithubcomdotnetorleans"><a href="https://github.com/dotnet/orleans">dotnet/orleans</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#baetyl">Baetyl</a></li>
+            <li><a href="#算法">算法</a>
+              <ul>
+                <li><a href="#kmphttpswwwwikiwandcomenknuthe28093morrise28093pratt_algorithm"><a href="https://www.wikiwand.com/en/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">KMP</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#会议">会议</a></li>
+          </ul>
+        </li>
+        <li><a href="#经济">经济</a>
+          <ul>
+            <li><a href="#roi">ROI</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="2020-年-4-月-24-日星期五">2020 年 4 月 24 日（星期五）</h1>
+<h2 id="今日待办">今日待办</h2>
+<ul>
+<li><input disabled="" type="checkbox"></li>
+</ul>
+<hr>
+<h2 id="编程">编程</h2>
+<h3 id="github">github</h3>
+<h4 id="comment">comment</h4>
+<h5 id="review-commentshttpsdevelopergithubcomv3pullscomments"><a href="https://developer.github.com/v3/pulls/comments/">Review Comments</a></h5>
+<h5 id="commit-commentshttpsdevelopergithubcomv3reposcomments"><a href="https://developer.github.com/v3/repos/comments">Commit Comments</a></h5>
+<h5 id="issue-commentshttpsdevelopergithubcomv3issuescomments"><a href="https://developer.github.com/v3/issues/comments">Issue Comments</a></h5>
+<hr>
+<h3 id="oam-open-application-model">OAM (Open Application Model)</h3>
+<p>OAM 是阿里巴巴和微软共同开源的云原生应用规范模型</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200424143527.png" alt="" /></p>
+<p>2019 年 10 月宣布开源，同时开源了基于 OAM 的实现 <code>Rudr</code>。</p>
+<h4 id="rudrhttpsgithubcomoam-devrudr"><a href="https://github.com/oam-dev/rudr">Rudr</a></h4>
+<p><img src="https://img.shields.io/github/stars/oam-dev/rudr.svg" alt="" /></p>
+<p>A Kubernetes implementation of the Open Application Model specification <a href="https://oam.dev">https://oam.dev</a></p>
+<h4 id="opentelemetryhttpsgithubcomopen-telemetryopentelemetry-specification"><a href="https://github.com/open-telemetry/opentelemetry-specification">OpenTelemetry</a></h4>
+<p><img src="https://img.shields.io/github/stars/open-telemetry/opentelemetry-specification.svg" alt="" /></p>
+<p>Specifications for OpenTelemetry <a href="https://opentelemetry.io">https://opentelemetry.io</a></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/134608559">OAM（开放应用模型）—— 定义云原生应用标准的野望</a></li>
+</ul>
+<hr>
+<h3 id="kubernetes">Kubernetes</h3>
+<h4 id="cricontainer-runtime-interface">CRI（Container Runtime Interface）</h4>
+<p>容器运行时接口，提供计算资源</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200424143706.png" alt="" /></p>
+<h4 id="cnicontainer-network-interface">CNI（Container Network Interface）</h4>
+<p>容器网络接口，提供网络资源</p>
+<h4 id="csicontainer-storage-interface">CSI（Container Storage Interface）</h4>
+<p>容器存储接口，提供存储资源</p>
+<hr>
+<h3 id="daprhttpsgithubcomdaprdapr"><a href="https://github.com/dapr/dapr">Dapr</a></h3>
+<p><img src="https://img.shields.io/github/stars/dapr/dapr.svg" alt="" /></p>
+<p>Dapr is a portable, serverless, event-driven runtime that makes it easy for developers to build resilient, stateless and stateful microservices that run on the cloud and edge and embraces the diversity of languages and developer frameworks.</p>
+<h4 id="dapr-vs-istio">Dapr vs Istio</h4>
+<ul>
+<li>Dapr is a distributed application runtime.</li>
+<li>Unlike a service mesh which is focused on networking concerns, Dapr is focused on providing building blocks that make it easier for developers to build microservices.</li>
+<li>Dapr is developer-centric versus service meshes being infrastructure-centric.</li>
+<li>Istio is not a programming model and does not focus on application level features such as state management, pub-sub, bindings etc. That is where Dapr comes in.</li>
+</ul>
+<h4 id="smi-service-mesh-interface">SMI (Service Mesh Interface)</h4>
+<p>SMI is an abstraction layer that provides a common API surface across different service mesh technology.</p>
+<p>Dapr can leverage any service mesh technology including SMI.</p>
+<p>参考：
+<a href="https://github.com/dapr/dapr/wiki/FAQ#whats-the-difference-between-dapr-and-istio">What’s the difference between Dapr and Istio?</a></p>
+<hr>
+<h3 id="actor-模型httpsgithubcomtopicsactor-model"><a href="https://github.com/topics/actor-model">Actor 模型</a></h3>
+<h4 id="virtual-actors">Virtual Actors</h4>
+<p>当你在上层编程的时候，你可以永远假设和你通讯的 Actor 是活着的，这对于大大简化应用层的逻辑，不言而喻。</p>
+<h4 id="akkaakkahttpsgithubcomakkaakka"><a href="https://github.com/akka/akka">akka/akka</a></h4>
+<p><img src="https://img.shields.io/github/stars/akka/akka.svg" alt="" /></p>
+<p>Build highly concurrent, distributed, and resilient message-driven applications on the JVM <a href="https://akka.io">https://akka.io</a></p>
+<h4 id="asynkronitprotoactor-gohttpsgithubcomasynkronitprotoactor-go"><a href="https://github.com/AsynkronIT/protoactor-go">AsynkronIT/protoactor-go</a></h4>
+<p><img src="https://img.shields.io/github/stars/AsynkronIT/protoactor-go.svg" alt="" /></p>
+<p>Proto Actor - Ultra fast distributed actors for Go, C# and Java/Kotlin <a href="http://proto.actor">http://proto.actor</a></p>
+<h4 id="dotnetorleanshttpsgithubcomdotnetorleans"><a href="https://github.com/dotnet/orleans">dotnet/orleans</a></h4>
+<p><img src="https://img.shields.io/github/stars/dotnet/orleans.svg" alt="" /></p>
+<p>Orleans is a cross-platform framework for building distributed applications with .NET</p>
+<p><a href="http://dotnet.github.io/orleans">http://dotnet.github.io/orleans</a></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/31472959">如何评价微软的 orleans 框架？</a></li>
+<li><a href="https://doc.yonyoucloud.com/doc/akka-doc-cn/2.3.6/scala/book/chapter2/03_what_is_an_actor.html">什么是 Actor?</a></li>
+<li><a href="https://www.zhihu.com/question/37792465">为什么我觉得 Actor 很难用？</a></li>
+</ul>
+<hr>
+<h3 id="baetyl">Baetyl</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200424143915.png" alt="" /></p>
+<hr>
+<h3 id="算法">算法</h3>
+<h4 id="kmphttpswwwwikiwandcomenknuthe28093morrise28093pratt_algorithm"><a href="https://www.wikiwand.com/en/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">KMP</a></h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/21923021">如何更好地理解和掌握 KMP 算法？</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/83334559">KMP 算法详解</a></li>
+<li><a href="https://www.inf.hs-flensburg.de/lang/algorithmen/pattern/kmpen.htm">Knuth-Morris-Pratt algorithm</a>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/112861530">KMP：花 48 小时看懂了 KMP，想让你在 48 分钟内看懂</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="会议">会议</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200424104429.png" alt="" /></p>
+<hr>
+<h2 id="经济">经济</h2>
+<h3 id="roi">ROI</h3>
+<p>abbr. 投资回收率（return on investment）；利润率（Rate of Interest）</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2020-年-4-月-24-日星期五">2020 年 4 月 24 日（星期五）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#github">github</a>
+              <ul>
+                <li><a href="#comment">comment</a>
+                  <ul>
+                    <li><a href="#review-commentshttpsdevelopergithubcomv3pullscomments"><a href="https://developer.github.com/v3/pulls/comments/">Review Comments</a></a></li>
+                    <li><a href="#commit-commentshttpsdevelopergithubcomv3reposcomments"><a href="https://developer.github.com/v3/repos/comments">Commit Comments</a></a></li>
+                    <li><a href="#issue-commentshttpsdevelopergithubcomv3issuescomments"><a href="https://developer.github.com/v3/issues/comments">Issue Comments</a></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#oam-open-application-model">OAM (Open Application Model)</a>
+              <ul>
+                <li><a href="#rudrhttpsgithubcomoam-devrudr"><a href="https://github.com/oam-dev/rudr">Rudr</a></a></li>
+                <li><a href="#opentelemetryhttpsgithubcomopen-telemetryopentelemetry-specification"><a href="https://github.com/open-telemetry/opentelemetry-specification">OpenTelemetry</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#cricontainer-runtime-interface">CRI（Container Runtime Interface）</a></li>
+                <li><a href="#cnicontainer-network-interface">CNI（Container Network Interface）</a></li>
+                <li><a href="#csicontainer-storage-interface">CSI（Container Storage Interface）</a></li>
+              </ul>
+            </li>
+            <li><a href="#daprhttpsgithubcomdaprdapr"><a href="https://github.com/dapr/dapr">Dapr</a></a>
+              <ul>
+                <li><a href="#dapr-vs-istio">Dapr vs Istio</a></li>
+                <li><a href="#smi-service-mesh-interface">SMI (Service Mesh Interface)</a></li>
+              </ul>
+            </li>
+            <li><a href="#actor-模型httpsgithubcomtopicsactor-model"><a href="https://github.com/topics/actor-model">Actor 模型</a></a>
+              <ul>
+                <li><a href="#virtual-actors">Virtual Actors</a></li>
+                <li><a href="#akkaakkahttpsgithubcomakkaakka"><a href="https://github.com/akka/akka">akka/akka</a></a></li>
+                <li><a href="#asynkronitprotoactor-gohttpsgithubcomasynkronitprotoactor-go"><a href="https://github.com/AsynkronIT/protoactor-go">AsynkronIT/protoactor-go</a></a></li>
+                <li><a href="#dotnetorleanshttpsgithubcomdotnetorleans"><a href="https://github.com/dotnet/orleans">dotnet/orleans</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#baetyl">Baetyl</a></li>
+            <li><a href="#算法">算法</a>
+              <ul>
+                <li><a href="#kmphttpswwwwikiwandcomenknuthe28093morrise28093pratt_algorithm"><a href="https://www.wikiwand.com/en/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">KMP</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#会议">会议</a></li>
+          </ul>
+        </li>
+        <li><a href="#经济">经济</a>
+          <ul>
+            <li><a href="#roi">ROI</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+<a href="https://github.com/ikingye/note"
+class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+  <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+</svg></a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

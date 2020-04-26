@@ -114,6 +114,47 @@
     </item>
     
     <item>
+      <title>2020-04-26</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/26/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/26/</guid>
+      <description>2020 年 4 月 26 日（星期日） 备注：
+ 法定上班。  今日待办     编程 duedge 基础架构
+http Host header 函数式编程 MostlyAdequate/mostly-adequate-guide Mostly adequate guide to FP (in javascript)
+中文版 llh911001/mostly-adequate-guide-chinese 点击阅读
+JavaScript 如何衡量一个人的 JavaScript 水平？</description>
+    </item>
+    
+    <item>
+      <title>2020-04-25</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/25/</guid>
+      <description>2020 年 4 月 25 日（星期六） 今日待办     编程 git submodule git submodule add -b 参考：
+ How can I specify a branch/tag when adding a Git submodule?  submodule 修改 url  edit the .gitmodules file to update the URL git submodule sync  参考： How to change the remote repository for a git submodule?
+delete submodule  Delete the relevant section from the .gitmodules file. Stage the .</description>
+    </item>
+    
+    <item>
+      <title>2020-04-24</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/24/</guid>
+      <description>2020 年 4 月 24 日（星期五） 今日待办     编程 github comment Review Comments Commit Comments Issue Comments  OAM (Open Application Model) OAM 是阿里巴巴和微软共同开源的云原生应用规范模型
+2019 年 10 月宣布开源，同时开源了基于 OAM 的实现 Rudr。
+Rudr A Kubernetes implementation of the Open Application Model specification https://oam.dev
+OpenTelemetry Specifications for OpenTelemetry https://opentelemetry.io
+参考：
+ OAM（开放应用模型）—— 定义云原生应用标准的野望   Kubernetes CRI（Container Runtime Interface） 容器运行时接口，提供计算资源
+CNI（Container Network Interface） 容器网络接口，提供网络资源
+CSI（Container Storage Interface） 容器存储接口，提供存储资源
+ Dapr Dapr is a portable, serverless, event-driven runtime that makes it easy for developers to build resilient, stateless and stateful microservices that run on the cloud and edge and embraces the diversity of languages and developer frameworks.</description>
+    </item>
+    
+    <item>
       <title>2020-04-23</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/23/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -269,6 +310,15 @@ squash merge # 切换到目标分支 $ git checkout master # 以 squash 的形�
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/12/</guid>
       <description>2020 年 4 月 12 日（星期日） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 GitHub 周报 probot/weekly-digest 配置
 # Configuration for weekly-digest - https://github.com/apps/weekly-digest publishDay: sun canPublishIssues: true canPublishPullRequests: true canPublishContributors: true canPublishStargazers: true canPublishCommits: true  生活  今日总结 </description>
+    </item>
+    
+    <item>
+      <title>教程</title>
+      <link>https://ikingye.github.io/note/docs/humanities/language/english/tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/humanities/language/english/tutorial/</guid>
+      <description>英语教程 听写 CoachShane - 每日英语听写 Daily English Dictation 1-400  表达 CoachShane - Daily Easy English Expression 1-899 </description>
     </item>
     
     <item>
