@@ -8,15 +8,21 @@
  法定上班。  今日待办     编程 duedge 基础架构
 http Host header 函数式编程 MostlyAdequate/mostly-adequate-guide Mostly adequate guide to FP (in javascript)
 中文版 llh911001/mostly-adequate-guide-chinese 点击阅读
-JavaScript 如何衡量一个人的 JavaScript 水平？"><meta property="og:title" content="2020-04-26" />
+JavaScript 如何衡量一个人的 JavaScript 水平？
+ python 猴子补丁 属性在运行时的动态替换，叫做猴子补丁（Monkey Patch）。
+monkey patch 即运行时动态改变方法、类的方法。 不管是定义在类外的普通方法、类里面的方法、甚至是模块这些都可以进行 “动态替换的操作”
+class A: def func(self): print(&#34;Hi&#34;) def monkey(self): print(&#34;Hi, monkey&#34;) a = A() A.func=A.monkey #在运行的时候，才改变了func a.func() def outer_monkey(a): # a 这个参数是没有用到的，因为func有一个参数，如果这个函数没有参数的话不能这样直接赋值 print(&#34;Hi,outer monkey&#34;) a = A() A."><meta property="og:title" content="2020-04-26" />
 <meta property="og:description" content="2020 年 4 月 26 日（星期日） 备注：
  法定上班。  今日待办     编程 duedge 基础架构
 http Host header 函数式编程 MostlyAdequate/mostly-adequate-guide Mostly adequate guide to FP (in javascript)
 中文版 llh911001/mostly-adequate-guide-chinese 点击阅读
-JavaScript 如何衡量一个人的 JavaScript 水平？" />
+JavaScript 如何衡量一个人的 JavaScript 水平？
+ python 猴子补丁 属性在运行时的动态替换，叫做猴子补丁（Monkey Patch）。
+monkey patch 即运行时动态改变方法、类的方法。 不管是定义在类外的普通方法、类里面的方法、甚至是模块这些都可以进行 “动态替换的操作”
+class A: def func(self): print(&#34;Hi&#34;) def monkey(self): print(&#34;Hi, monkey&#34;) a = A() A.func=A.monkey #在运行的时候，才改变了func a.func() def outer_monkey(a): # a 这个参数是没有用到的，因为func有一个参数，如果这个函数没有参数的话不能这样直接赋值 print(&#34;Hi,outer monkey&#34;) a = A() A." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/26/" />
-
+<meta property="article:modified_time" content="2020-04-26T22:52:54+08:00" />
 <title>2020-04-26 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -24,7 +30,7 @@ JavaScript 如何衡量一个人的 JavaScript 水平？" />
 <link rel="stylesheet" href="/note/book.min.2b565af4d61986071164f1ead48c719f32bb138a148802dc3943b967fc4f20c6.css" integrity="sha256-K1Za9NYZhgcRZPHq1IxxnzK7E4oUiALcOUO5Z/xPIMY=">
 
 
-<script defer src="/note/en.search.min.f463b779901e4324d825a99b2a40e3d0c55c793e7ca094d7eab49b9532fc18b0.js" integrity="sha256-9GO3eZAeQyTYJambKkDj0MVceT58oJTX6rSblTL8GLA="></script>
+<script defer src="/note/en.search.min.006f599d1d09c260585d2af7603e50fc730a1b7cc23696159d0967c833b5d974.js" integrity="sha256-AG9ZnR0JwmBYXSr3YD5Q/HMKG3zCNpYVnQlnyDO12XQ="></script>
 
 <!--
 Made with Book Theme
@@ -957,6 +963,21 @@ https://github.com/alex-shpak/hugo-book
               </ul>
             </li>
             <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#python">python</a>
+              <ul>
+                <li><a href="#猴子补丁">猴子补丁</a>
+                  <ul>
+                    <li><a href="#为什么叫猴子补丁">为什么叫猴子补丁</a></li>
+                    <li><a href="#ujson">ujson</a></li>
+                  </ul>
+                </li>
+                <li><a href="#协程">协程</a>
+                  <ul>
+                    <li><a href="#geventhttpsgithubcomgeventgevent-httpsimgshieldsiogithubstarsgeventgeventsvg"><a href="https://github.com/gevent/gevent">gevent</a> <img src="https://img.shields.io/github/stars/gevent/gevent.svg" alt=""></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -997,6 +1018,72 @@ https://github.com/alex-shpak/hugo-book
 <p><a href="https://llh911001.gitbook.io/mostly-adequate-guide-chinese/">点击阅读</a></p>
 <h3 id="javascript">JavaScript</h3>
 <p><a href="https://www.zhihu.com/question/22855484">如何衡量一个人的 JavaScript 水平？</a></p>
+<hr>
+<h3 id="python">python</h3>
+<h4 id="猴子补丁">猴子补丁</h4>
+<p>属性在运行时的动态替换，叫做猴子补丁（Monkey Patch）。</p>
+<p>monkey patch 即运行时动态改变方法、类的方法。
+不管是定义在类外的普通方法、类里面的方法、甚至是模块这些都可以进行 “动态替换的操作”</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(self):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">monkey</span>(self):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Hi, monkey&#34;</span>)
+a <span style="color:#f92672">=</span> A()
+A<span style="color:#f92672">.</span>func<span style="color:#f92672">=</span>A<span style="color:#f92672">.</span>monkey   <span style="color:#75715e">#在运行的时候，才改变了func</span>
+a<span style="color:#f92672">.</span>func()
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">outer_monkey</span>(a):  <span style="color:#75715e"># a 这个参数是没有用到的，因为func有一个参数，如果这个函数没有参数的话不能这样直接赋值</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Hi,outer monkey&#34;</span>)
+
+a <span style="color:#f92672">=</span> A()
+A<span style="color:#f92672">.</span>func<span style="color:#f92672">=</span>outer_monkey
+a<span style="color:#f92672">.</span>func()
+</code></pre></div><h5 id="为什么叫猴子补丁">为什么叫猴子补丁</h5>
+<p>属性的运行时替换和猴子也没什么关系，关于猴子补丁的由来网上查到两种说法：</p>
+<ol>
+<li>
+<p>这个词原来为 Guerrilla Patch，杂牌军、游击队，说明这部分不是原装的，在英文里 guerilla 发音和 gorllia (猩猩) 相似，再后来就写了 monkey (猴子)。</p>
+</li>
+<li>
+<p>还有一种解释是说由于这种方式将原来的代码弄乱了 (messing with it)，在英文里叫 monkeying about (顽皮的)，所以叫做 Monkey Patch。</p>
+</li>
+</ol>
+<p>猴子补丁的叫法有些莫名其妙，只要和 “模块运行时替换的功能” 对应就行了。</p>
+<h5 id="ujson">ujson</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> ujson
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">monkey_patch_json</span>():
+    json<span style="color:#f92672">.</span>__name__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ujson&#39;</span>
+    json<span style="color:#f92672">.</span>dumps <span style="color:#f92672">=</span> ujson<span style="color:#f92672">.</span>dumps
+    json<span style="color:#f92672">.</span>loads <span style="color:#f92672">=</span> ujson<span style="color:#f92672">.</span>loads
+
+monkey_patch_json()
+</code></pre></div><h4 id="协程">协程</h4>
+<h5 id="geventhttpsgithubcomgeventgevent-httpsimgshieldsiogithubstarsgeventgeventsvg"><a href="https://github.com/gevent/gevent">gevent</a> <img src="https://img.shields.io/github/stars/gevent/gevent.svg" alt="" /></h5>
+<p>Python 通过 yield 提供了对协程的基本支持，但是不完全。而第三方的 gevent 为 Python 提供了比较完善的协程支持。</p>
+<p>gevent 是第三方库，通过 greenlet 实现协程，其基本思想是：</p>
+<p>当一个 greenlet 遇到 IO 操作时，比如访问网络，就自动切换到其他的 greenlet，等到 IO 操作完成，再在适当的时候切换回来继续执行。由于 IO 操作非常耗时，经常使程序处于等待状态，有了 gevent 为我们自动切换协程，就保证总有 greenlet 在运行，而不是等待 IO。</p>
+<p>由于切换是在 IO 操作时自动完成，所以 gevent 需要修改 Python 自带的一些标准库，这一过程在启动时通过 <code>monkey patch</code> 完成：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> gevent <span style="color:#f92672">import</span> monkey; monkey<span style="color:#f92672">.</span>patch_socket()
+<span style="color:#f92672">import</span> gevent
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(n):
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
+        <span style="color:#66d9ef">print</span> gevent<span style="color:#f92672">.</span>getcurrent(), i
+
+g1 <span style="color:#f92672">=</span> gevent<span style="color:#f92672">.</span>spawn(f, <span style="color:#ae81ff">5</span>)
+g2 <span style="color:#f92672">=</span> gevent<span style="color:#f92672">.</span>spawn(f, <span style="color:#ae81ff">5</span>)
+g3 <span style="color:#f92672">=</span> gevent<span style="color:#f92672">.</span>spawn(f, <span style="color:#ae81ff">5</span>)
+g1<span style="color:#f92672">.</span>join()
+g2<span style="color:#f92672">.</span>join()
+g3<span style="color:#f92672">.</span>join()
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/f1c1eb495f47">Python 猴子补丁</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1441252">python 面试题精讲 ——monkey patch（猴子补丁）</a></li>
+</ul>
 </article>
  
       
@@ -1006,6 +1093,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/0d4924a750c69ee924c3166b5301ca69f2971130" title='Last modified by yewang | 2020-04-26' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-04-26</span>
+    </a>
+  </div>
 
 
 
@@ -1059,6 +1154,21 @@ https://github.com/alex-shpak/hugo-book
               </ul>
             </li>
             <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#python">python</a>
+              <ul>
+                <li><a href="#猴子补丁">猴子补丁</a>
+                  <ul>
+                    <li><a href="#为什么叫猴子补丁">为什么叫猴子补丁</a></li>
+                    <li><a href="#ujson">ujson</a></li>
+                  </ul>
+                </li>
+                <li><a href="#协程">协程</a>
+                  <ul>
+                    <li><a href="#geventhttpsgithubcomgeventgevent-httpsimgshieldsiogithubstarsgeventgeventsvg"><a href="https://github.com/gevent/gevent">gevent</a> <img src="https://img.shields.io/github/stars/gevent/gevent.svg" alt=""></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>

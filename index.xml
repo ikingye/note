@@ -123,7 +123,10 @@
  法定上班。  今日待办     编程 duedge 基础架构
 http Host header 函数式编程 MostlyAdequate/mostly-adequate-guide Mostly adequate guide to FP (in javascript)
 中文版 llh911001/mostly-adequate-guide-chinese 点击阅读
-JavaScript 如何衡量一个人的 JavaScript 水平？</description>
+JavaScript 如何衡量一个人的 JavaScript 水平？
+ python 猴子补丁 属性在运行时的动态替换，叫做猴子补丁（Monkey Patch）。
+monkey patch 即运行时动态改变方法、类的方法。 不管是定义在类外的普通方法、类里面的方法、甚至是模块这些都可以进行 “动态替换的操作”
+class A: def func(self): print(&amp;#34;Hi&amp;#34;) def monkey(self): print(&amp;#34;Hi, monkey&amp;#34;) a = A() A.func=A.monkey #在运行的时候，才改变了func a.func() def outer_monkey(a): # a 这个参数是没有用到的，因为func有一个参数，如果这个函数没有参数的话不能这样直接赋值 print(&amp;#34;Hi,outer monkey&amp;#34;) a = A() A.</description>
     </item>
     
     <item>
