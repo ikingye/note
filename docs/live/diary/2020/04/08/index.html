@@ -24,7 +24,7 @@ public class DataProcessor { private final DbManager manager; private final Calc
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.320dde090648341edaa22b048dea1735f97b9cbd2bd416653f79a3c11416699d.js" integrity="sha256-Mg3eCQZINB7aoisEjeoXNfl7nL0r1BZlP3mjwRQWaZ0="></script>
+<script defer src="/note/en.search.min.5c57be0705de0fa87a0dc069395f986477bc654574b5af3b4aeca346a320e8ad.js" integrity="sha256-XFe&#43;BwXeD6h6DcBpOV&#43;YZHe8ZUV0ta87SuyjRqMg6K0="></script>
 
 <!--
 Made with Book Theme
@@ -1203,9 +1203,9 @@ A/B 测试关注的是不同版本的服务的实际效果，譬如说转化率�
 <h5 id="连接关闭的过程">连接关闭的过程</h5>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200409000158.png" alt="" /></p>
 <ul>
-<li>主动关闭连接的一方，调用 close ()；协议层发送 FIN 包</li>
+<li>主动关闭连接的一方，调用 <code>close()</code>；协议层发送 FIN 包</li>
 <li>被动关闭的一方收到 FIN 包后，协议层回复 ACK；然后被动关闭的一方，进入 <code>CLOSE_WAIT</code> 状态；主动关闭的一方等待对方关闭，则进入 <code>FIN_WAIT_2</code> 状态</li>
-<li>被动关闭的一方在完成所有数据发送后，调用 close () 操作，协议层发送 FIN 包给主动关闭的一方，等待对方的 ACK，被动关闭的一方进入 <code>LAST_ACK</code> 状态</li>
+<li>被动关闭的一方在完成所有数据发送后，调用 <code>close()</code> 操作，协议层发送 FIN 包给主动关闭的一方，等待对方的 ACK，被动关闭的一方进入 <code>LAST_ACK</code> 状态</li>
 <li>主动关闭的一方收到 FIN 包，协议层回复 ACK，主动关闭连接的一方进入 <code>TIME_WAIT</code> 状态；而被动关闭的一方，进入 <code>CLOSED</code> 状态</li>
 <li>等待 2MSL 时间，主动关闭的一方，结束 TIME_WAIT，进入 <code>CLOSED</code> 状态</li>
 </ul>

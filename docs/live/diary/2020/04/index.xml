@@ -15,14 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/28/</guid>
-      <description>2020 年 4 月 28 日（星期二） 今日待办     编程 设计长 URL 转短 URL 的服务  算法 乘积最大的数组平分方式 一个长度为 N 的数组（N 一定为偶数个），将其平均分成两部分，找出能够使这两部分的和的乘积最大的数组平分方式
-VSCode Clang-format VSCode 使用 Clang-format 时报错: write EPIPE
-解决方法： 填写 Clang-format 运行位置的绝对路径
-&amp;#34;clang-format.executable&amp;#34;: &amp;#34;/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin&amp;#34;, 生成配置文件：
-/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin -style=llvm -dump-config &amp;gt; .vscode/.clang-format cpptools-srv 内存占用大 限制内存大小
-&amp;#34;C_Cpp.intelliSenseCacheSize&amp;#34;: 100, 参考：
- Linux 下 vscode 编写 cpp 占用内存过高问题   升级 gcc 安装开发必备环境：
-yum groupinstall &amp;#34;Development Tools&amp;#34; yum install glibc-static libstdc++-static 短 URL 系统是怎么设计的？ 关键字：短地址，长地址</description>
+      <description>2020 年 4 月 28 日（星期二） 今日待办     编程 架构师要求  具备丰富的架构设计经验，能够准确、全面的理解业务，并根据业务发展设计合理的架构方案； 具备海量数据和大规模分布式系统的设计和开发经验； 具备质量管理和质量分析能力，熟悉相关方法论和管理工具； 良好的产品意识，能够做到技术和产品相结合，从设计到实现始终对齐业内一流产品水准； 具备良好的沟通能力、组织能力及团队协作精神； 负责过多条业务线或整个产品线的业务架构工作，组织过中等以上规模项目者优先； 对多种数据库中间件、消息中间件及其他大规模分布式系统的基础架构组件有深入理解者优先； 熟悉公有云，私有云，虚拟化，容器化部署者优先。  算法 二叉树转化成双向链表 两个有序链表合并 二叉树的层次遍历 如何判断一棵二叉树是否为另一棵二叉树的子树  操作系统 什么是死锁？如何预防死锁 Redis 数据结构 持久化 TCP / IP 滑动窗口 Socket 网络编程 HTTP Post vs Get epoll epoll vs select 边缘触发，水平触发 Linux 查看进程的内存分布  算法 树的最长路径 #coding=utf-8 class TreeNode(): def __init__(self, val): self.val = val self.left = None self.right = None def longest(root): if root is None: return 0 return max(length(root), length(root.</description>
     </item>
     
     <item>
