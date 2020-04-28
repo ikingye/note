@@ -5,17 +5,21 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="2020 年 4 月 28 日（星期二） 今日待办     编程 设计长 URL 转短 URL 的服务  算法 乘积最大的数组平分方式 一个长度为 N 的数组（N 一定为偶数个），将其平均分成两部分，找出能够使这两部分的和的乘积最大的数组平分方式
- 自媒体 微信公众号 Logo 2017 年之前，其 Logo 名称中均将「微信」与「公众平台」用圆点或竖杠符号进行区分。
-从 2018 年之后从文字中删除该符号后，图标开始使用一灰一绿的微信气泡图标
-微信公众平台 8 年来 Logo 方面的变化：
-参考：
- 微信公众平台更名「公众号」并更新 LOGO  我的微信首款码 6.66 元"><meta property="og:title" content="2020-04-28" />
+VSCode Clang-format VSCode 使用 Clang-format 时报错: write EPIPE
+解决方法： 填写 Clang-format 运行位置的绝对路径
+&#34;clang-format.executable&#34;: &#34;/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin&#34;, 生成配置文件：
+/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin -style=llvm -dump-config &gt; .vscode/.clang-format cpptools-srv 内存占用大 限制内存大小
+&#34;C_Cpp.intelliSenseCacheSize&#34;: 100, 参考：
+ Linux 下 vscode 编写 cpp 占用内存过高问题   升级 gcc 安装开发必备环境：
+yum groupinstall &#34;Development Tools&#34; yum install glibc-static libstdc&#43;&#43;-static 短 URL 系统是怎么设计的？ 关键字：短地址，长地址"><meta property="og:title" content="2020-04-28" />
 <meta property="og:description" content="2020 年 4 月 28 日（星期二） 今日待办     编程 设计长 URL 转短 URL 的服务  算法 乘积最大的数组平分方式 一个长度为 N 的数组（N 一定为偶数个），将其平均分成两部分，找出能够使这两部分的和的乘积最大的数组平分方式
- 自媒体 微信公众号 Logo 2017 年之前，其 Logo 名称中均将「微信」与「公众平台」用圆点或竖杠符号进行区分。
-从 2018 年之后从文字中删除该符号后，图标开始使用一灰一绿的微信气泡图标
-微信公众平台 8 年来 Logo 方面的变化：
-参考：
- 微信公众平台更名「公众号」并更新 LOGO  我的微信首款码 6.66 元" />
+VSCode Clang-format VSCode 使用 Clang-format 时报错: write EPIPE
+解决方法： 填写 Clang-format 运行位置的绝对路径
+&#34;clang-format.executable&#34;: &#34;/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin&#34;, 生成配置文件：
+/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin -style=llvm -dump-config &gt; .vscode/.clang-format cpptools-srv 内存占用大 限制内存大小
+&#34;C_Cpp.intelliSenseCacheSize&#34;: 100, 参考：
+ Linux 下 vscode 编写 cpp 占用内存过高问题   升级 gcc 安装开发必备环境：
+yum groupinstall &#34;Development Tools&#34; yum install glibc-static libstdc&#43;&#43;-static 短 URL 系统是怎么设计的？ 关键字：短地址，长地址" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/28/" />
 <meta property="article:modified_time" content="2020-04-28T14:51:31+08:00" />
@@ -26,7 +30,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.3352dbe7dd0778e56b81e84e35dbf1f493e33a241b707d9fa486606a7d8deabb.js" integrity="sha256-M1Lb590HeOVrgehONdvx9JPjOiQbcH2fpIZgan2N6rs="></script>
+<script defer src="/note/en.search.min.320dde090648341edaa22b048dea1735f97b9cbd2bd416653f79a3c11416699d.js" integrity="sha256-Mg3eCQZINB7aoisEjeoXNfl7nL0r1BZlP3mjwRQWaZ0="></script>
 
 <!--
 Made with Book Theme
@@ -975,10 +979,25 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#乘积最大的数组平分方式">乘积最大的数组平分方式</a></li>
               </ul>
             </li>
+            <li><a href="#vscode">VSCode</a>
+              <ul>
+                <li><a href="#clang-format">Clang-format</a></li>
+                <li><a href="#cpptools-srvhttpsgithubcommicrosoftvscode-cpptools-内存占用大"><a href="https://github.com/microsoft/vscode-cpptools">cpptools-srv</a> 内存占用大</a></li>
+              </ul>
+            </li>
+            <li><a href="#升级-gcc">升级 gcc</a></li>
+            <li><a href="#短-url-系统是怎么设计的">短 URL 系统是怎么设计的？</a>
+              <ul>
+                <li><a href="#错误做法">错误做法</a></li>
+                <li><a href="#正确做法">正确做法</a></li>
+                <li><a href="#如何实现同一个长地址多次转换出来还是同一个短地址">如何实现同一个长地址多次转换，出来还是同一个短地址</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#自媒体">自媒体</a>
           <ul>
+            <li><a href="#5g-mec-logo">5G-MEC Logo</a></li>
             <li><a href="#微信公众号">微信公众号</a>
               <ul>
                 <li><a href="#logo">Logo</a></li>
@@ -1012,8 +1031,65 @@ https://github.com/alex-shpak/hugo-book
 <h3 id="算法">算法</h3>
 <h4 id="乘积最大的数组平分方式">乘积最大的数组平分方式</h4>
 <p>一个长度为 N 的数组（N 一定为偶数个），将其平均分成两部分，找出能够使这两部分的和的乘积最大的数组平分方式</p>
+<h3 id="vscode">VSCode</h3>
+<h4 id="clang-format">Clang-format</h4>
+<p><code>VSCode</code> 使用 <code>Clang-format</code> 时报错:
+<code>write EPIPE</code></p>
+<p>解决方法：
+填写 <code>Clang-format</code> 运行位置的绝对路径</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">&#34;clang-format.executable&#34;</span>: <span style="color:#e6db74">&#34;/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin&#34;</span>,
+</code></pre></div><p>生成配置文件：</p>
+<pre><code>/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin -style=llvm -dump-config &gt; .vscode/.clang-format
+</code></pre><h4 id="cpptools-srvhttpsgithubcommicrosoftvscode-cpptools-内存占用大"><a href="https://github.com/microsoft/vscode-cpptools">cpptools-srv</a> 内存占用大</h4>
+<p>限制内存大小</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">&#34;C_Cpp.intelliSenseCacheSize&#34;</span>: 100,
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/siyan4352/article/details/89785498">Linux 下 vscode 编写 cpp 占用内存过高问题</a></li>
+</ul>
+<hr>
+<h3 id="升级-gcc">升级 gcc</h3>
+<p>安装开发必备环境：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+yum install glibc-static libstdc++-static
+</code></pre></div><h3 id="短-url-系统是怎么设计的">短 URL 系统是怎么设计的？</h3>
+<p>关键字：短地址，长地址</p>
+<h4 id="错误做法">错误做法</h4>
+<p>即使我们定义短地址是 100 位。
+那么它的变化是 62 的 100 次方。
+62 = 10 数字 + 26 大写字母 + 26 小写字母。
+无论这个数多么大，他也不可能大过世界上可能存在的长地址。
+所以实现一一对应，本身就是不可能的。</p>
+<h4 id="正确做法">正确做法</h4>
+<p>通过发号策略，给每一个过来的长地址，发一个号即可，小型系统直接用 mysql 的自增索引就搞定了。
+如果是大型应用，可以考虑各种分布式 key-value 系统做发号器。
+不停的自增就行了。
+第一个使用这个服务的人得到的短地址是 <a href="http://xx.xx/0">http://xx.xx/0</a>
+第二个是 <a href="http://xx.xx/1">http://xx.xx/1</a>
+第 11 个是 <a href="http://xx.xx/a">http://xx.xx/a</a>
+依次往后，
+相当于实现了一个 62 进制的自增字段。</p>
+<h4 id="如何实现同一个长地址多次转换出来还是同一个短地址">如何实现同一个长地址多次转换，出来还是同一个短地址</h4>
+<p>最简单的是建立一个长对短的 hashtable，这样相当于用空间来换空间，同时换取一个设计上的优雅（真正的一对一）。</p>
+<p>实际情况是有很多性价比高的打折方案可以用。</p>
+<p>用 key-value 存储，保存 “最近” 生成的长对短的一个对应关系。注意是 “最近”，也就是说，我并不保存全量的长对短的关系，而只保存最近的。比如采用一小时过期的机制来实现 LRU 淘汰。</p>
+<p>这样的话，长转短的流程变成这样：</p>
+<ul>
+<li>在这个 “最近” 表中查看一下，看长地址有没有对应的短地址
+<ul>
+<li>有就直接返回，并且将这个 key-value 对的过期时间再延长成一小时</li>
+<li>如果没有，就通过发号器生成一个短地址，并且将这个 “最近” 表中，过期时间为 1 小时</li>
+</ul>
+</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/29270034">短 URL 系统是怎么设计的？</a></li>
+</ul>
 <hr>
 <h2 id="自媒体">自媒体</h2>
+<h3 id="5g-mec-logo">5G-MEC Logo</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428153839.png" alt="" /></p>
 <h3 id="微信公众号">微信公众号</h3>
 <h4 id="logo">Logo</h4>
 <p>2017 年之前，其 Logo 名称中均将「微信」与「公众平台」用圆点或竖杠符号进行区分。</p>
@@ -1087,10 +1163,25 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#乘积最大的数组平分方式">乘积最大的数组平分方式</a></li>
               </ul>
             </li>
+            <li><a href="#vscode">VSCode</a>
+              <ul>
+                <li><a href="#clang-format">Clang-format</a></li>
+                <li><a href="#cpptools-srvhttpsgithubcommicrosoftvscode-cpptools-内存占用大"><a href="https://github.com/microsoft/vscode-cpptools">cpptools-srv</a> 内存占用大</a></li>
+              </ul>
+            </li>
+            <li><a href="#升级-gcc">升级 gcc</a></li>
+            <li><a href="#短-url-系统是怎么设计的">短 URL 系统是怎么设计的？</a>
+              <ul>
+                <li><a href="#错误做法">错误做法</a></li>
+                <li><a href="#正确做法">正确做法</a></li>
+                <li><a href="#如何实现同一个长地址多次转换出来还是同一个短地址">如何实现同一个长地址多次转换，出来还是同一个短地址</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#自媒体">自媒体</a>
           <ul>
+            <li><a href="#5g-mec-logo">5G-MEC Logo</a></li>
             <li><a href="#微信公众号">微信公众号</a>
               <ul>
                 <li><a href="#logo">Logo</a></li>

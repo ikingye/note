@@ -16,11 +16,13 @@
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/28/</guid>
       <description>2020 年 4 月 28 日（星期二） 今日待办     编程 设计长 URL 转短 URL 的服务  算法 乘积最大的数组平分方式 一个长度为 N 的数组（N 一定为偶数个），将其平均分成两部分，找出能够使这两部分的和的乘积最大的数组平分方式
- 自媒体 微信公众号 Logo 2017 年之前，其 Logo 名称中均将「微信」与「公众平台」用圆点或竖杠符号进行区分。
-从 2018 年之后从文字中删除该符号后，图标开始使用一灰一绿的微信气泡图标
-微信公众平台 8 年来 Logo 方面的变化：
-参考：
- 微信公众平台更名「公众号」并更新 LOGO  我的微信首款码 6.66 元</description>
+VSCode Clang-format VSCode 使用 Clang-format 时报错: write EPIPE
+解决方法： 填写 Clang-format 运行位置的绝对路径
+&amp;#34;clang-format.executable&amp;#34;: &amp;#34;/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin&amp;#34;, 生成配置文件：
+/Users/yewang/.vscode/extensions/ms-vscode.cpptools-0.27.0/LLVM/bin/clang-format.darwin -style=llvm -dump-config &amp;gt; .vscode/.clang-format cpptools-srv 内存占用大 限制内存大小
+&amp;#34;C_Cpp.intelliSenseCacheSize&amp;#34;: 100, 参考：
+ Linux 下 vscode 编写 cpp 占用内存过高问题   升级 gcc 安装开发必备环境：
+yum groupinstall &amp;#34;Development Tools&amp;#34; yum install glibc-static libstdc++-static 短 URL 系统是怎么设计的？ 关键字：短地址，长地址</description>
     </item>
     
     <item>
