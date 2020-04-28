@@ -9,14 +9,14 @@ weekly-digest https://github.com/probot/weekly-digest
 repo-report octokit github rest api 库
 参考文档  octokit docs github api docs  github api 限制 老是出现错误
 connect ECONNREFUSED 13.250.168.23:443
- javascript // print object str = JSON.stringify(obj) console.log(`obj ============== : ${str}`) 根据给的周几的字符串（前缀就行），获取第几天
+ javascript print object // print object str = JSON.stringify(obj); console.log(`obj ============== : ${str}`); 星期几配置判断 根据给的周几的字符串（前缀就行），获取第几天
 function getNumDayFromLongDay(day) { if (typeof day === &#34;number&#34; &amp;&amp; day &gt;= 0 &amp;&amp; day &lt; 7) { return day; } else { const longDay = [ &#34;sunday&#34;, &#34;monday&#34;, &#34;tuesday&#34;, &#34;wednesday&#34;, &#34;thursday&#34;, &#34;friday&#34;, &#34;saturday&#34;, ]; for (let i = 0; i &lt; 7; i&#43;&#43;) { if (longDay[i]."><meta property="og:title" content="2020-04-19" />
 <meta property="og:description" content="2020 年 4 月 19 日（星期日） 今日待办     编程 github 周报 开发 probot https://github.com/probot/probot
 weekly-digest https://github.com/probot/weekly-digest
 repo-report octokit github rest api 库
 参考文档  octokit docs github api docs  github api 限制 老是出现错误
 connect ECONNREFUSED 13.250.168.23:443
- javascript // print object str = JSON.stringify(obj) console.log(`obj ============== : ${str}`) 根据给的周几的字符串（前缀就行），获取第几天
+ javascript print object // print object str = JSON.stringify(obj); console.log(`obj ============== : ${str}`); 星期几配置判断 根据给的周几的字符串（前缀就行），获取第几天
 function getNumDayFromLongDay(day) { if (typeof day === &#34;number&#34; &amp;&amp; day &gt;= 0 &amp;&amp; day &lt; 7) { return day; } else { const longDay = [ &#34;sunday&#34;, &#34;monday&#34;, &#34;tuesday&#34;, &#34;wednesday&#34;, &#34;thursday&#34;, &#34;friday&#34;, &#34;saturday&#34;, ]; for (let i = 0; i &lt; 7; i&#43;&#43;) { if (longDay[i]." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/19/" />
@@ -28,7 +28,7 @@ function getNumDayFromLongDay(day) { if (typeof day === &#34;number&#34; &amp;&a
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.4868ecd709463a846da8946b5b14924c324aea3061b03531596cb7a7e4e3a7a5.js" integrity="sha256-SGjs1wlGOoRtqJRrWxSSTDJK6jBhsDUxWWy3p&#43;Tjp6U="></script>
+<script defer src="/note/en.search.min.705e04c3f1b635e2375477c79e67d6e3633a01c7f47d6a4f3e6fe53271dfbfc6.js" integrity="sha256-cF4Ew/G2NeI3VHfHnmfW42M6Acf0fWpPPm/lMnHfv8Y="></script>
 
 <!--
 Made with Book Theme
@@ -984,7 +984,12 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#github-api-限制">github api 限制</a></li>
               </ul>
             </li>
-            <li><a href="#javascript">javascript</a></li>
+            <li><a href="#javascript">javascript</a>
+              <ul>
+                <li><a href="#print-object">print object</a></li>
+                <li><a href="#星期几配置判断">星期几配置判断</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -1025,10 +1030,12 @@ https://github.com/alex-shpak/hugo-book
 <p><code>connect ECONNREFUSED 13.250.168.23:443</code></p>
 <hr>
 <h3 id="javascript">javascript</h3>
+<h4 id="print-object">print object</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// print object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">obj</span>)
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`obj ============== : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">str</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-</code></pre></div><p>根据给的周几的字符串（前缀就行），获取第几天</p>
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">obj</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`obj ============== : </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">str</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</code></pre></div><h4 id="星期几配置判断">星期几配置判断</h4>
+<p>根据给的周几的字符串（前缀就行），获取第几天</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getNumDayFromLongDay</span>(<span style="color:#a6e22e">day</span>) {
   <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">7</span>) {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">day</span>;
@@ -1117,7 +1124,12 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#github-api-限制">github api 限制</a></li>
               </ul>
             </li>
-            <li><a href="#javascript">javascript</a></li>
+            <li><a href="#javascript">javascript</a>
+              <ul>
+                <li><a href="#print-object">print object</a></li>
+                <li><a href="#星期几配置判断">星期几配置判断</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>

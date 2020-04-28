@@ -15,7 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/28/</guid>
-      <description>2020 年 4 月 28 日（星期二） 今日待办     编程 自媒体 微信公众号 Logo 2017 年之前，其 Logo 名称中均将「微信」与「公众平台」用圆点或竖杠符号进行区分。
+      <description>2020 年 4 月 28 日（星期二） 今日待办     编程 设计长 URL 转短 URL 的服务  算法 乘积最大的数组平分方式 一个长度为 N 的数组（N 一定为偶数个），将其平均分成两部分，找出能够使这两部分的和的乘积最大的数组平分方式
+ 自媒体 微信公众号 Logo 2017 年之前，其 Logo 名称中均将「微信」与「公众平台」用圆点或竖杠符号进行区分。
 从 2018 年之后从文字中删除该符号后，图标开始使用一灰一绿的微信气泡图标
 微信公众平台 8 年来 Logo 方面的变化：
 参考：
@@ -29,7 +30,7 @@
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/27/</guid>
       <description>2020 年 4 月 27 日（星期一） 今日待办     编程 GB28181 开源实现 标准  GB28181/GB28181.Solution   服务端  ossrs/srs  xiongziliang/ZLMediaKit  livegbs/GB28181-Server   客户端  pjsip/pjproject  ghettovoice/gosip  StefanKopieczek/gossip  kirm/sip.js    SIP 协议 Antisip
- VSCode  kasecato/vscode-intellij-idea-keybindings   运维 disconf Distributed Configuration Management Platform (分布式配置管理平台) http://disconf.readthedocs.io/
+ VSCode  kasecato/vscode-intellij-idea-keybindings   运维 disconf  Distributed Configuration Management Platform (分布式配置管理平台) http://disconf.readthedocs.io/
 consul + consul-template gcc vs g++  后缀为 .c 的  gcc 把它当做 C 程序 g++ 当做是 C++ 程序     编译可以用 gcc/g++，而链接可以用 g++ 或者 gcc -lstdc++  编译阶段，g++ 会调用 gcc，对于 c++ 代码，两者是等价的 gcc 命令不能自动和 C++ 程序使用的库联接，所以通常用 g++ 来完成链接 可以选择手动链接，gcc -lstdc++    乐观锁 vs 悲观锁 乐观锁（读多写少） 总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据， 可以使用版本号机制和 CAS 算法实现。</description>
     </item>
     
@@ -41,7 +42,7 @@ consul + consul-template gcc vs g++  后缀为 .c 的  gcc 把它当做 C 程序
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/26/</guid>
       <description>2020 年 4 月 26 日（星期日） 备注：
  法定上班。  今日待办     编程 duedge 基础架构
-http Host header 函数式编程 MostlyAdequate/mostly-adequate-guide Mostly adequate guide to FP (in javascript)
+http Host header 函数式编程 MostlyAdequate/mostly-adequate-guide  Mostly adequate guide to FP (in javascript)
 中文版 llh911001/mostly-adequate-guide-chinese 点击阅读
 JavaScript 如何衡量一个人的 JavaScript 水平？
  python 猴子补丁 属性在运行时的动态替换，叫做猴子补丁（Monkey Patch）。
@@ -68,13 +69,12 @@ delete submodule  Delete the relevant section from the .gitmodules file. Stage t
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/24/</guid>
       <description>2020 年 4 月 24 日（星期五） 今日待办     编程 github comment Review Comments Commit Comments Issue Comments  OAM (Open Application Model) OAM 是阿里巴巴和微软共同开源的云原生应用规范模型
 2019 年 10 月宣布开源，同时开源了基于 OAM 的实现 Rudr。
-Rudr A Kubernetes implementation of the Open Application Model specification https://oam.dev
-OpenTelemetry Specifications for OpenTelemetry https://opentelemetry.io
+Rudr  A Kubernetes implementation of the Open Application Model specification https://oam.dev
+OpenTelemetry  Specifications for OpenTelemetry https://opentelemetry.io
 参考：
  OAM（开放应用模型）—— 定义云原生应用标准的野望   Kubernetes CRI（Container Runtime Interface） 容器运行时接口，提供计算资源
 CNI（Container Network Interface） 容器网络接口，提供网络资源
-CSI（Container Storage Interface） 容器存储接口，提供存储资源
- Dapr Dapr is a portable, serverless, event-driven runtime that makes it easy for developers to build resilient, stateless and stateful microservices that run on the cloud and edge and embraces the diversity of languages and developer frameworks.</description>
+CSI（Container Storage Interface） 容器存储接口，提供存储资源</description>
     </item>
     
     <item>
@@ -140,7 +140,7 @@ weekly-digest https://github.com/probot/weekly-digest
 repo-report octokit github rest api 库
 参考文档  octokit docs github api docs  github api 限制 老是出现错误
 connect ECONNREFUSED 13.250.168.23:443
- javascript // print object str = JSON.stringify(obj) console.log(`obj ============== : ${str}`) 根据给的周几的字符串（前缀就行），获取第几天
+ javascript print object // print object str = JSON.stringify(obj); console.log(`obj ============== : ${str}`); 星期几配置判断 根据给的周几的字符串（前缀就行），获取第几天
 function getNumDayFromLongDay(day) { if (typeof day === &amp;#34;number&amp;#34; &amp;amp;&amp;amp; day &amp;gt;= 0 &amp;amp;&amp;amp; day &amp;lt; 7) { return day; } else { const longDay = [ &amp;#34;sunday&amp;#34;, &amp;#34;monday&amp;#34;, &amp;#34;tuesday&amp;#34;, &amp;#34;wednesday&amp;#34;, &amp;#34;thursday&amp;#34;, &amp;#34;friday&amp;#34;, &amp;#34;saturday&amp;#34;, ]; for (let i = 0; i &amp;lt; 7; i++) { if (longDay[i].</description>
     </item>
     
@@ -199,7 +199,7 @@ docker 上传到 私有仓库 docker build -t human-attribute:20200415_158581843
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/14/</guid>
-      <description>2020 年 4 月 14 日（星期二） 今日待办     编程 豆瓣 API 文档 zce/douban-api-docs  书影音 电影  语言文化 英文 basic vs basis basic: 以什么为基础，进行再加工创造
+      <description>2020 年 4 月 14 日（星期二） 今日待办     编程 豆瓣 API 文档 zce/douban-api-docs  英文 basic vs basis basic: 以什么为基础，进行再加工创造
 basic: 基础内容
 Basis = foundation of something. The basis of multiplication is serial addition, for example.
 Basics = the core concepts. Multiplication tables are part of the basics because understanding them allows students to do higher order arithmetic much more efficiently.
@@ -222,8 +222,8 @@ squash merge # 切换到目标分支 $ git checkout master # 以 squash 的形�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/12/</guid>
-      <description>2020 年 4 月 12 日（星期日） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 GitHub 周报 probot/weekly-digest 配置
-# Configuration for weekly-digest - https://github.com/apps/weekly-digest publishDay: sun canPublishIssues: true canPublishPullRequests: true canPublishContributors: true canPublishStargazers: true canPublishCommits: true  生活  今日总结 </description>
+      <description>2020 年 4 月 12 日（星期日） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 GitHub 周报 probot/weekly-digest  配置
+# Configuration for weekly-digest - https://github.com/apps/weekly-digest publishDay: sun canPublishIssues: true canPublishPullRequests: true canPublishContributors: true canPublishStargazers: true canPublishCommits: true </description>
     </item>
     
     <item>
@@ -286,7 +286,7 @@ public class DataProcessor { private final DbManager manager; private final Calc
 该实验出自约翰・罗杰斯・希尔勒的论文《心灵、大脑和程序》（ Minds, Brains, and Programs）中，发表于 1980 年的《 行为与脑科学（英语：Behavioral and Brain Sciences）》。
 中文房间思想实验是什么？它是否成功地否决了图灵测试的有效性？
 中文房间是否可以否定人类会思考？
-因果论与自由意志 k8s 相关 canonical/multipass  Multipass orchestrates virtual Ubuntu instances https://multipass.run
+因果论与自由意志 k8s canonical/multipass  Multipass orchestrates virtual Ubuntu instances https://multipass.run
 # 创建一个 VM, 1GB 内存和 5GB 磁盘 multipass launch --name k3s --mem 1G --disk 5G # 为 VM 启动一个 shell multipass shell k3s # 在其上安装 k3s curl -sfL https://get.</description>
     </item>
     
@@ -297,7 +297,7 @@ public class DataProcessor { private final DbManager manager; private final Calc
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/06/</guid>
       <description>2020 年 4 月 6 日（星期一） 备注：
- 清明节放假  今日待办  201 PoSD 翻译  前 20 个 Principles 翻译审校（评论） 编委会讨论前 20 个 Principles 翻译修改版 修改负责的 5 个 Principles 并提交到 icode     今日总结 </description>
+ 清明节放假  今日待办  201 PoSD 翻译  前 20 个 Principles 翻译审校（评论） 编委会讨论前 20 个 Principles 翻译修改版 修改负责的 5 个 Principles 并提交到 icode    </description>
     </item>
     
     <item>
