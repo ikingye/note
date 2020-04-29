@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2020 年 4 月 29 日（星期三） 今日待办     编程 docker 权限 docker run # 无法使用 gdb 调试 --cap-add SYS_PTRACE # 无法使用 date -s 修改时间 --cap-add=SYS_TIME # –privileged 等效于–cap-add=ALL 参考：
+ 使用 docker run &ndash;cap-add 参数解决权限问题（无法使用 gdb 调试、无法 date -s 修改时间)  insecure-registry # vi /etc/docker/daemon.json { &#34;insecure-registries&#34; : [ &#34;hostname.cloudapp.net:5000&#34; ] } # 参考：https://stackoverflow.com/questions/42211380/add-insecure-registry-to-docker # 重启 docker systemctl restart docker  算法 二叉树转化成双向链表 两个有序链表合并 二叉树的层次遍历 如何判断一棵二叉树是否为另一棵二叉树的子树  操作系统 什么是死锁？如何预防死锁  Redis 数据结构 持久化  TCP / IP 滑动窗口 Socket 网络编程  HTTP Post vs Get  epoll epoll vs select 边缘触发，水平触发 Linux 查看进程的内存分布  面试 字节头条面试要求  算法、数据结构和系统设计 提前温习软件工程的核心概念，  例如：如何从一个需求落实到一个系统设计，如何衡量两个不同设计的好坏，如何在各种限制下（人员、时间、资源等）选择其中更合适的设计，以及提升该设计的可拓展性等。​   在白板上练习算法题目，写出清晰、简洁、bug free 的代码，，并衡量时间和空间复杂度以及可能存在的副作用。​ 尝试用不同的方法，思路或数据结构去解决同一个问题，并且衡量不同解法之间的优劣。​ 练习  《Cracking the Coding Interview》​ https://leetcode."><meta property="og:title" content="2020-04-29" />
+<meta property="og:description" content="2020 年 4 月 29 日（星期三） 今日待办     编程 docker 权限 docker run # 无法使用 gdb 调试 --cap-add SYS_PTRACE # 无法使用 date -s 修改时间 --cap-add=SYS_TIME # –privileged 等效于–cap-add=ALL 参考：
+ 使用 docker run &ndash;cap-add 参数解决权限问题（无法使用 gdb 调试、无法 date -s 修改时间)  insecure-registry # vi /etc/docker/daemon.json { &#34;insecure-registries&#34; : [ &#34;hostname.cloudapp.net:5000&#34; ] } # 参考：https://stackoverflow.com/questions/42211380/add-insecure-registry-to-docker # 重启 docker systemctl restart docker  算法 二叉树转化成双向链表 两个有序链表合并 二叉树的层次遍历 如何判断一棵二叉树是否为另一棵二叉树的子树  操作系统 什么是死锁？如何预防死锁  Redis 数据结构 持久化  TCP / IP 滑动窗口 Socket 网络编程  HTTP Post vs Get  epoll epoll vs select 边缘触发，水平触发 Linux 查看进程的内存分布  面试 字节头条面试要求  算法、数据结构和系统设计 提前温习软件工程的核心概念，  例如：如何从一个需求落实到一个系统设计，如何衡量两个不同设计的好坏，如何在各种限制下（人员、时间、资源等）选择其中更合适的设计，以及提升该设计的可拓展性等。​   在白板上练习算法题目，写出清晰、简洁、bug free 的代码，，并衡量时间和空间复杂度以及可能存在的副作用。​ 尝试用不同的方法，思路或数据结构去解决同一个问题，并且衡量不同解法之间的优劣。​ 练习  《Cracking the Coding Interview》​ https://leetcode." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/29/" />
+
+<title>2020-04-29 | 叶王笔记</title>
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
+
+
+<script defer src="/note/en.search.min.3cbcfef14ac14f9cad8504e3ad25ea52323965cb05dabec830bb96fda8f49cf5.js" integrity="sha256-PLz&#43;8UrBT5ythQTjrSXqUjI5ZcsF2r7IMLuW/aj0nPU="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/note"><span>叶王笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">
+    Github  <img src="https://img.shields.io/github/followers/ikingye.svg?label=%E5%85%B3%E6%B3%A8">
+  </a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">
+    微博  <img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_16x16.png">
+  </a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/" class="">第四部分 学习</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/05/" class="">5 月</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/04/" class="">4 月</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/29/" class="active">2020-04-29</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/28/" class="">2020-04-28</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/27/" class="">2020-04-27</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/26/" class="">2020-04-26</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/25/" class="">2020-04-25</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/24/" class="">2020-04-24</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/23/" class="">2020-04-23</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/22/" class="">2020-04-22</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/21/" class="">2020-04-21</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/20/" class="">2020-04-20</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/19/" class="">2020-04-19</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/17/" class="">2020-04-17</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/14/" class="">2020-04-14</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/11/" class="">2020-04-11</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/10/" class="">2020-04-10</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/09/" class="">2020-04-09</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">加我微信</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png" target="_blank" rel="noopener noreferrer">请我喝饮料</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">关注微信公众号</a></li>
+</ul>
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2020-04-29</strong>
+
+  <label for="toc-control">
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2020-年-4-月-29-日星期三">2020 年 4 月 29 日（星期三）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#docker">docker</a>
+              <ul>
+                <li><a href="#权限">权限</a></li>
+                <li><a href="#insecure-registry">insecure-registry</a></li>
+              </ul>
+            </li>
+            <li><a href="#算法">算法</a>
+              <ul>
+                <li><a href="#二叉树转化成双向链表">二叉树转化成双向链表</a></li>
+                <li><a href="#两个有序链表合并">两个有序链表合并</a></li>
+                <li><a href="#二叉树的层次遍历">二叉树的层次遍历</a></li>
+                <li><a href="#如何判断一棵二叉树是否为另一棵二叉树的子树">如何判断一棵二叉树是否为另一棵二叉树的子树</a></li>
+              </ul>
+            </li>
+            <li><a href="#操作系统">操作系统</a>
+              <ul>
+                <li><a href="#什么是死锁如何预防死锁">什么是死锁？如何预防死锁</a></li>
+              </ul>
+            </li>
+            <li><a href="#redis">Redis</a>
+              <ul>
+                <li><a href="#数据结构">数据结构</a></li>
+                <li><a href="#持久化">持久化</a></li>
+              </ul>
+            </li>
+            <li><a href="#tcp--ip">TCP / IP</a>
+              <ul>
+                <li><a href="#滑动窗口">滑动窗口</a></li>
+                <li><a href="#socket-网络编程">Socket 网络编程</a></li>
+              </ul>
+            </li>
+            <li><a href="#http">HTTP</a>
+              <ul>
+                <li><a href="#post-vs-get">Post vs Get</a></li>
+              </ul>
+            </li>
+            <li><a href="#epoll">epoll</a>
+              <ul>
+                <li><a href="#epoll-vs-select">epoll vs select</a></li>
+                <li><a href="#边缘触发水平触发">边缘触发，水平触发</a></li>
+              </ul>
+            </li>
+            <li><a href="#linux">Linux</a>
+              <ul>
+                <li><a href="#查看进程的内存分布">查看进程的内存分布</a></li>
+              </ul>
+            </li>
+            <li><a href="#面试">面试</a>
+              <ul>
+                <li><a href="#字节头条面试要求">字节头条面试要求</a></li>
+                <li><a href="#后台开发要求">后台开发要求</a></li>
+                <li><a href="#架构师要求">架构师要求</a></li>
+              </ul>
+            </li>
+            <li><a href="#gpu">GPU</a></li>
+          </ul>
+        </li>
+        <li><a href="#产品">产品</a>
+          <ul>
+            <li><a href="#logo-vs-icon">logo vs icon</a>
+              <ul>
+                <li><a href="#logo">logo</a></li>
+                <li><a href="#icon">icon</a></li>
+              </ul>
+            </li>
+            <li><a href="#素材">素材</a></li>
+          </ul>
+        </li>
+        <li><a href="#学习">学习</a>
+          <ul>
+            <li><a href="#课程搜httpswwwkcsoucom"><a href="https://www.kcsou.com/">课程搜</a></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="2020-年-4-月-29-日星期三">2020 年 4 月 29 日（星期三）</h1>
+<h2 id="今日待办">今日待办</h2>
+<ul>
+<li><input disabled="" type="checkbox"></li>
+</ul>
+<hr>
+<h2 id="编程">编程</h2>
+<h3 id="docker">docker</h3>
+<h4 id="权限">权限</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run
+
+<span style="color:#75715e"># 无法使用 gdb 调试</span>
+--cap-add SYS_PTRACE
+
+<span style="color:#75715e"># 无法使用 date -s 修改时间</span>
+--cap-add<span style="color:#f92672">=</span>SYS_TIME
+
+<span style="color:#75715e"># –privileged 等效于–cap-add=ALL</span>
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/liuqiuyuewo/article/details/80998850">使用 docker run &ndash;cap-add 参数解决权限问题（无法使用 gdb 调试、无法 date -s 修改时间)</a></li>
+</ul>
+<h4 id="insecure-registry">insecure-registry</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># vi /etc/docker/daemon.json</span>
+
+<span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;insecure-registries&#34;</span> : <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;hostname.cloudapp.net:5000&#34;</span> <span style="color:#f92672">]</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># 参考：https://stackoverflow.com/questions/42211380/add-insecure-registry-to-docker</span>
+
+<span style="color:#75715e"># 重启 docker</span>
+systemctl restart  docker
+</code></pre></div><hr>
+<h3 id="算法">算法</h3>
+<h4 id="二叉树转化成双向链表">二叉树转化成双向链表</h4>
+<h4 id="两个有序链表合并">两个有序链表合并</h4>
+<h4 id="二叉树的层次遍历">二叉树的层次遍历</h4>
+<h4 id="如何判断一棵二叉树是否为另一棵二叉树的子树">如何判断一棵二叉树是否为另一棵二叉树的子树</h4>
+<hr>
+<h3 id="操作系统">操作系统</h3>
+<h4 id="什么是死锁如何预防死锁">什么是死锁？如何预防死锁</h4>
+<hr>
+<h3 id="redis">Redis</h3>
+<h4 id="数据结构">数据结构</h4>
+<h4 id="持久化">持久化</h4>
+<hr>
+<h3 id="tcp--ip">TCP / IP</h3>
+<h4 id="滑动窗口">滑动窗口</h4>
+<h4 id="socket-网络编程">Socket 网络编程</h4>
+<hr>
+<h3 id="http">HTTP</h3>
+<h4 id="post-vs-get">Post vs Get</h4>
+<hr>
+<h3 id="epoll">epoll</h3>
+<h4 id="epoll-vs-select">epoll vs select</h4>
+<h4 id="边缘触发水平触发">边缘触发，水平触发</h4>
+<h3 id="linux">Linux</h3>
+<h4 id="查看进程的内存分布">查看进程的内存分布</h4>
+<hr>
+<h3 id="面试">面试</h3>
+<h4 id="字节头条面试要求">字节头条面试要求</h4>
+<ul>
+<li>算法、数据结构和系统设计</li>
+<li>提前温习软件工程的核心概念，
+<ul>
+<li>例如：如何从一个需求落实到一个<strong>系统设计</strong>，如何衡量两个不同设计的好坏，如何在各种限制下（人员、时间、资源等）选择其中更合适的设计，以及提升该设计的<strong>可拓展性</strong>等。​</li>
+</ul>
+</li>
+<li>在白板上练习算法题目，写出清晰、简洁、bug free 的代码，，并衡量时间和空间复杂度以及可能存在的副作用。​</li>
+<li>尝试用不同的方法，思路或数据结构去解决同一个问题，并且衡量不同解法之间的优劣。​</li>
+<li>练习
+<ul>
+<li>《Cracking the Coding Interview》​</li>
+<li><a href="https://leetcode.com/">https://leetcode.com/</a>​</li>
+<li><a href="http://highscalability.com/">http://highscalability.com/</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="后台开发要求">后台开发要求</h4>
+<ul>
+<li>高并发、高可用、高安全、可伸缩的后台系统</li>
+<li>软件知识结构全面，基础扎实，较好的数据结构运用能力、较强的算法设计和逻辑思维能力；</li>
+<li>熟悉 linux 操作系统，了解 Shell，熟练使用 linux 系统下的 C++、Java、nodejs 或 Go 优先；</li>
+<li>熟悉 MYSQL 或其他大型数据库，能够快速根据需求完成高性能数据库设计，有网络系统的开发经验；</li>
+<li>有海量数据处理相关开发经验者优先，如 Hadoop、Spark 等；</li>
+<li>掌握 WEB 后端开发技术：协议、架构、存储、缓存、安全等；</li>
+</ul>
+<h4 id="架构师要求">架构师要求</h4>
+<ul>
+<li>具备丰富的架构设计经验，能够准确、全面的理解业务，并根据业务发展设计合理的架构方案；</li>
+<li>具备海量数据和大规模分布式系统的设计和开发经验；</li>
+<li>具备质量管理和质量分析能力，熟悉相关方法论和管理工具；</li>
+<li>良好的产品意识，能够做到技术和产品相结合，从设计到实现始终对齐业内一流产品水准；</li>
+<li>具备良好的沟通能力、组织能力及团队协作精神；</li>
+<li>负责过多条业务线或整个产品线的业务架构工作，组织过中等以上规模项目者优先；</li>
+<li>对多种数据库中间件、消息中间件及其他大规模分布式系统的基础架构组件有深入理解者优先；</li>
+<li>熟悉公有云，私有云，虚拟化，容器化部署者优先。</li>
+</ul>
+<hr>
+<h3 id="gpu">GPU</h3>
+<p><code>nvidia-smi</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">+-----------------------------------------------------------------------------+
+| NVIDIA-SMI 418.116.00   Driver Version: 418.116.00   CUDA Version: 10.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|<span style="color:#f92672">===============================</span>+<span style="color:#f92672">======================</span>+<span style="color:#f92672">======================</span>|
+|   <span style="color:#ae81ff">0</span>  Tesla P4            On   | 00000000:3B:00.0 Off |                    <span style="color:#ae81ff">0</span> |
+| N/A   28C    P8     6W /  75W |      0MiB /  7611MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   <span style="color:#ae81ff">1</span>  Tesla P4            On   | 00000000:86:00.0 Off |                    <span style="color:#ae81ff">0</span> |
+| N/A   37C    P0    23W /  75W |   2598MiB /  7611MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   <span style="color:#ae81ff">2</span>  Tesla P4            On   | 00000000:AF:00.0 Off |                    <span style="color:#ae81ff">0</span> |
+| N/A   37C    P0    23W /  75W |    619MiB /  7611MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   <span style="color:#ae81ff">3</span>  Tesla P4            On   | 00000000:D8:00.0 Off |                    <span style="color:#ae81ff">0</span> |
+| N/A   30C    P8     6W /  75W |      0MiB /  7611MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|<span style="color:#f92672">=============================================================================</span>|
+|    <span style="color:#ae81ff">1</span>      <span style="color:#ae81ff">2693</span>      C   bin/car                                     1943MiB |
+|    <span style="color:#ae81ff">1</span>      <span style="color:#ae81ff">2783</span>      C   bin/car                                      645MiB |
+|    <span style="color:#ae81ff">2</span>      <span style="color:#ae81ff">3971</span>      C   bin/car                                      609MiB |
++-----------------------------------------------------------------------------+
+</code></pre></div><hr>
+<h2 id="产品">产品</h2>
+<h3 id="logo-vs-icon">logo vs icon</h3>
+<h4 id="logo">logo</h4>
+<p>A logo is a graphical element like an ideogram and/or a carefully arranged typeface that together forms a trademark or a brand.</p>
+<p>A logo can be just an emblem, just a wordmark, or it can encompass both – often the formula for a strong visual brand identity is
+<code>emblem + wordmark = logo</code>.</p>
+<h4 id="icon">icon</h4>
+<p>An icon (no no, not the religious kind) is a visual representation of a concept or action.
+We use icons to bridge the understanding of abstract analogies and practical use.</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://rockpapersimple.com/logo-vs-icon-understanding-the-difference/">ICON vs LOGO : understanding the difference</a></li>
+<li><a href="https://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9A%E6%A0%87%E8%AF%86%E4%B8%8B%E8%BD%BD">微博标识下载</a></li>
+</ul>
+<hr>
+<h3 id="素材">素材</h3>
+<p><a href="https://www.iconfont.cn/">Iconfont - 阿里巴巴矢量图标库</a></p>
+<p>阿里巴巴图标素材库，数量大，种类全，可自由变换颜色，可选择 PNG，SVG 以及 AI 3 种格式。</p>
+<hr>
+<h2 id="学习">学习</h2>
+<h3 id="课程搜httpswwwkcsoucom"><a href="https://www.kcsou.com/">课程搜</a></h3>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2020-年-4-月-29-日星期三">2020 年 4 月 29 日（星期三）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#docker">docker</a>
+              <ul>
+                <li><a href="#权限">权限</a></li>
+                <li><a href="#insecure-registry">insecure-registry</a></li>
+              </ul>
+            </li>
+            <li><a href="#算法">算法</a>
+              <ul>
+                <li><a href="#二叉树转化成双向链表">二叉树转化成双向链表</a></li>
+                <li><a href="#两个有序链表合并">两个有序链表合并</a></li>
+                <li><a href="#二叉树的层次遍历">二叉树的层次遍历</a></li>
+                <li><a href="#如何判断一棵二叉树是否为另一棵二叉树的子树">如何判断一棵二叉树是否为另一棵二叉树的子树</a></li>
+              </ul>
+            </li>
+            <li><a href="#操作系统">操作系统</a>
+              <ul>
+                <li><a href="#什么是死锁如何预防死锁">什么是死锁？如何预防死锁</a></li>
+              </ul>
+            </li>
+            <li><a href="#redis">Redis</a>
+              <ul>
+                <li><a href="#数据结构">数据结构</a></li>
+                <li><a href="#持久化">持久化</a></li>
+              </ul>
+            </li>
+            <li><a href="#tcp--ip">TCP / IP</a>
+              <ul>
+                <li><a href="#滑动窗口">滑动窗口</a></li>
+                <li><a href="#socket-网络编程">Socket 网络编程</a></li>
+              </ul>
+            </li>
+            <li><a href="#http">HTTP</a>
+              <ul>
+                <li><a href="#post-vs-get">Post vs Get</a></li>
+              </ul>
+            </li>
+            <li><a href="#epoll">epoll</a>
+              <ul>
+                <li><a href="#epoll-vs-select">epoll vs select</a></li>
+                <li><a href="#边缘触发水平触发">边缘触发，水平触发</a></li>
+              </ul>
+            </li>
+            <li><a href="#linux">Linux</a>
+              <ul>
+                <li><a href="#查看进程的内存分布">查看进程的内存分布</a></li>
+              </ul>
+            </li>
+            <li><a href="#面试">面试</a>
+              <ul>
+                <li><a href="#字节头条面试要求">字节头条面试要求</a></li>
+                <li><a href="#后台开发要求">后台开发要求</a></li>
+                <li><a href="#架构师要求">架构师要求</a></li>
+              </ul>
+            </li>
+            <li><a href="#gpu">GPU</a></li>
+          </ul>
+        </li>
+        <li><a href="#产品">产品</a>
+          <ul>
+            <li><a href="#logo-vs-icon">logo vs icon</a>
+              <ul>
+                <li><a href="#logo">logo</a></li>
+                <li><a href="#icon">icon</a></li>
+              </ul>
+            </li>
+            <li><a href="#素材">素材</a></li>
+          </ul>
+        </li>
+        <li><a href="#学习">学习</a>
+          <ul>
+            <li><a href="#课程搜httpswwwkcsoucom"><a href="https://www.kcsou.com/">课程搜</a></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+<a href="https://github.com/ikingye/note"
+class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+  <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+</svg></a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
