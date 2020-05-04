@@ -4,14 +4,16 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 4 月 12 日（星期日） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 GitHub 周报 probot/weekly-digest  配置
-# Configuration for weekly-digest - https://github.com/apps/weekly-digest publishDay: sun canPublishIssues: true canPublishPullRequests: true canPublishContributors: true canPublishStargazers: true canPublishCommits: true "><meta property="og:title" content="2020-04-12" />
-<meta property="og:description" content="2020 年 4 月 12 日（星期日） 今日待办  Istio Handbook 周报  周一发布到钉钉群     编程 GitHub 周报 probot/weekly-digest  配置
-# Configuration for weekly-digest - https://github.com/apps/weekly-digest publishDay: sun canPublishIssues: true canPublishPullRequests: true canPublishContributors: true canPublishStargazers: true canPublishCommits: true " />
+<meta name="description" content="2020 年 4 月 30 日（星期四） 今日待办     编程 网络 增加组播路由 使用 route 命令添加
+使用 route 命令添加的路由，机器重启或者网卡重启后路由就失效了，方法：
+# 添加到主机的路由 route add –host 192.168.168.110 dev eth0 route add –host 192.168.168.119 gw 192.168.168.1 # 添加到网络的路由 route add –net IP netmask MASK eth0 route add –net IP netmask MASK gw IP route add –net IP/24 eth1 # 添加默认网关 route add default gw IP # 删除路由 route del –host 192.168.168.110 dev eth0  OCR 光学字符识别（Optical Character Recognition, OCR）"><meta property="og:title" content="2020-04-30" />
+<meta property="og:description" content="2020 年 4 月 30 日（星期四） 今日待办     编程 网络 增加组播路由 使用 route 命令添加
+使用 route 命令添加的路由，机器重启或者网卡重启后路由就失效了，方法：
+# 添加到主机的路由 route add –host 192.168.168.110 dev eth0 route add –host 192.168.168.119 gw 192.168.168.1 # 添加到网络的路由 route add –net IP netmask MASK eth0 route add –net IP netmask MASK gw IP route add –net IP/24 eth1 # 添加默认网关 route add default gw IP # 删除路由 route del –host 192.168.168.110 dev eth0  OCR 光学字符识别（Optical Character Recognition, OCR）" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/12/" />
-<meta property="article:modified_time" content="2020-04-28T14:51:31+08:00" />
-<title>2020-04-12 | 叶王笔记</title>
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/30/" />
+
+<title>2020-04-30 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
 
@@ -551,7 +553,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/note/docs/live/diary/2020/04/30/" class="">2020-04-30</a>
+  <a href="/note/docs/live/diary/2020/04/30/" class="active">2020-04-30</a>
   
 
 </li>
@@ -711,7 +713,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/note/docs/live/diary/2020/04/12/" class="active">2020-04-12</a>
+  <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
   
 
 </li>
@@ -976,7 +978,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>2020-04-12</strong>
+  <strong>2020-04-30</strong>
 
   <label for="toc-control">
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -990,13 +992,63 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-4-月-12-日星期日">2020 年 4 月 12 日（星期日）</a>
+    <li><a href="#2020-年-4-月-30-日星期四">2020 年 4 月 30 日（星期四）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
         <li><a href="#编程">编程</a>
           <ul>
-            <li><a href="#github-周报">GitHub 周报</a></li>
-            <li><a href="#probotweekly-digesthttpsgithubcomprobotweekly-digest-github-starshttpsimgshieldsiogithubstarsprobotweekly-digestsvg"><a href="https://github.com/probot/weekly-digest">probot/weekly-digest</a> <img src="https://img.shields.io/github/stars/probot/weekly-digest.svg" alt="Github stars"></a></li>
+            <li><a href="#网络">网络</a>
+              <ul>
+                <li><a href="#增加组播路由">增加组播路由</a></li>
+              </ul>
+            </li>
+            <li><a href="#ocr">OCR</a></li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#pod-驱逐机制">Pod 驱逐机制</a></li>
+              </ul>
+            </li>
+            <li><a href="#算法">算法</a>
+              <ul>
+                <li><a href="#二叉树转化成双向链表">二叉树转化成双向链表</a></li>
+                <li><a href="#两个有序链表合并">两个有序链表合并</a></li>
+                <li><a href="#二叉树的层次遍历">二叉树的层次遍历</a></li>
+                <li><a href="#如何判断一棵二叉树是否为另一棵二叉树的子树">如何判断一棵二叉树是否为另一棵二叉树的子树</a></li>
+              </ul>
+            </li>
+            <li><a href="#操作系统">操作系统</a>
+              <ul>
+                <li><a href="#什么是死锁如何预防死锁">什么是死锁？如何预防死锁</a></li>
+              </ul>
+            </li>
+            <li><a href="#redis">Redis</a>
+              <ul>
+                <li><a href="#数据结构">数据结构</a></li>
+                <li><a href="#持久化">持久化</a></li>
+              </ul>
+            </li>
+            <li><a href="#tcp--ip">TCP / IP</a>
+              <ul>
+                <li><a href="#滑动窗口">滑动窗口</a></li>
+                <li><a href="#socket-网络编程">Socket 网络编程</a></li>
+              </ul>
+            </li>
+            <li><a href="#http">HTTP</a>
+              <ul>
+                <li><a href="#post-vs-get">Post vs Get</a></li>
+              </ul>
+            </li>
+            <li><a href="#epoll">epoll</a>
+              <ul>
+                <li><a href="#epoll-vs-select">epoll vs select</a></li>
+                <li><a href="#边缘触发水平触发">边缘触发，水平触发</a></li>
+              </ul>
+            </li>
+            <li><a href="#linux">Linux</a>
+              <ul>
+                <li><a href="#查看进程的内存分布">查看进程的内存分布</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -1012,28 +1064,68 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="2020-年-4-月-12-日星期日">2020 年 4 月 12 日（星期日）</h1>
+  <article class="markdown"><h1 id="2020-年-4-月-30-日星期四">2020 年 4 月 30 日（星期四）</h1>
 <h2 id="今日待办">今日待办</h2>
 <ul>
-<li><input disabled="" type="checkbox"><a href="https://github.com/servicemesher/istio-handbook">Istio Handbook</a> 周报
-<ul>
-<li>周一发布到钉钉群</li>
-</ul>
-</li>
+<li><input disabled="" type="checkbox"></li>
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
-<h3 id="github-周报">GitHub 周报</h3>
-<h3 id="probotweekly-digesthttpsgithubcomprobotweekly-digest-github-starshttpsimgshieldsiogithubstarsprobotweekly-digestsvg"><a href="https://github.com/probot/weekly-digest">probot/weekly-digest</a> <img src="https://img.shields.io/github/stars/probot/weekly-digest.svg" alt="Github stars" /></h3>
-<p>配置</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Configuration for weekly-digest - https://github.com/apps/weekly-digest</span>
-publishDay: sun
-canPublishIssues: true
-canPublishPullRequests: true
-canPublishContributors: true
-canPublishStargazers: true
-canPublishCommits: true
-</code></pre></div></article>
+<h3 id="网络">网络</h3>
+<h4 id="增加组播路由">增加组播路由</h4>
+<p>使用 route 命令添加</p>
+<p>使用 route 命令添加的路由，机器重启或者网卡重启后路由就失效了，方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 添加到主机的路由</span>
+route add –host 192.168.168.110 dev eth0
+route add –host 192.168.168.119 gw 192.168.168.1
+<span style="color:#75715e"># 添加到网络的路由</span>
+route add –net IP netmask MASK eth0
+route add –net IP netmask MASK gw IP
+route add –net IP/24 eth1
+<span style="color:#75715e"># 添加默认网关</span>
+route add default gw IP
+<span style="color:#75715e"># 删除路由</span>
+route del –host 192.168.168.110 dev eth0
+</code></pre></div><hr>
+<h3 id="ocr">OCR</h3>
+<p>光学字符识别（Optical Character Recognition, OCR）</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/20191727">OCR 文字识别用的是什么算法？</a></li>
+</ul>
+<hr>
+<h3 id="kubernetes">Kubernetes</h3>
+<h4 id="pod-驱逐机制">Pod 驱逐机制</h4>
+<p>在 kubernetes 里，pod 的驱逐机制分为 <strong>kubelet 驱逐</strong>（被动驱逐）和<strong>主动驱逐</strong>两种。</p>
+<p>在 node 节点的资源紧缺的条件下，kubelet 为了保证 node 节点的稳定性，回触发主动驱逐 pod 的机制</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200430163500.png" alt="" /></p>
+<hr>
+<h3 id="算法">算法</h3>
+<h4 id="二叉树转化成双向链表">二叉树转化成双向链表</h4>
+<h4 id="两个有序链表合并">两个有序链表合并</h4>
+<h4 id="二叉树的层次遍历">二叉树的层次遍历</h4>
+<h4 id="如何判断一棵二叉树是否为另一棵二叉树的子树">如何判断一棵二叉树是否为另一棵二叉树的子树</h4>
+<hr>
+<h3 id="操作系统">操作系统</h3>
+<h4 id="什么是死锁如何预防死锁">什么是死锁？如何预防死锁</h4>
+<hr>
+<h3 id="redis">Redis</h3>
+<h4 id="数据结构">数据结构</h4>
+<h4 id="持久化">持久化</h4>
+<hr>
+<h3 id="tcp--ip">TCP / IP</h3>
+<h4 id="滑动窗口">滑动窗口</h4>
+<h4 id="socket-网络编程">Socket 网络编程</h4>
+<hr>
+<h3 id="http">HTTP</h3>
+<h4 id="post-vs-get">Post vs Get</h4>
+<hr>
+<h3 id="epoll">epoll</h3>
+<h4 id="epoll-vs-select">epoll vs select</h4>
+<h4 id="边缘触发水平触发">边缘触发，水平触发</h4>
+<h3 id="linux">Linux</h3>
+<h4 id="查看进程的内存分布">查看进程的内存分布</h4>
+</article>
  
       
 
@@ -1042,14 +1134,6 @@ canPublishCommits: true
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/3acfa2fefb3cb6b741ea8ba7e94780f7af27a397" title='Last modified by yewang | 2020-04-28' target="_blank" rel="noopener">
-      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-04-28</span>
-    </a>
-  </div>
 
 
 
@@ -1082,13 +1166,63 @@ canPublishCommits: true
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-4-月-12-日星期日">2020 年 4 月 12 日（星期日）</a>
+    <li><a href="#2020-年-4-月-30-日星期四">2020 年 4 月 30 日（星期四）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
         <li><a href="#编程">编程</a>
           <ul>
-            <li><a href="#github-周报">GitHub 周报</a></li>
-            <li><a href="#probotweekly-digesthttpsgithubcomprobotweekly-digest-github-starshttpsimgshieldsiogithubstarsprobotweekly-digestsvg"><a href="https://github.com/probot/weekly-digest">probot/weekly-digest</a> <img src="https://img.shields.io/github/stars/probot/weekly-digest.svg" alt="Github stars"></a></li>
+            <li><a href="#网络">网络</a>
+              <ul>
+                <li><a href="#增加组播路由">增加组播路由</a></li>
+              </ul>
+            </li>
+            <li><a href="#ocr">OCR</a></li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#pod-驱逐机制">Pod 驱逐机制</a></li>
+              </ul>
+            </li>
+            <li><a href="#算法">算法</a>
+              <ul>
+                <li><a href="#二叉树转化成双向链表">二叉树转化成双向链表</a></li>
+                <li><a href="#两个有序链表合并">两个有序链表合并</a></li>
+                <li><a href="#二叉树的层次遍历">二叉树的层次遍历</a></li>
+                <li><a href="#如何判断一棵二叉树是否为另一棵二叉树的子树">如何判断一棵二叉树是否为另一棵二叉树的子树</a></li>
+              </ul>
+            </li>
+            <li><a href="#操作系统">操作系统</a>
+              <ul>
+                <li><a href="#什么是死锁如何预防死锁">什么是死锁？如何预防死锁</a></li>
+              </ul>
+            </li>
+            <li><a href="#redis">Redis</a>
+              <ul>
+                <li><a href="#数据结构">数据结构</a></li>
+                <li><a href="#持久化">持久化</a></li>
+              </ul>
+            </li>
+            <li><a href="#tcp--ip">TCP / IP</a>
+              <ul>
+                <li><a href="#滑动窗口">滑动窗口</a></li>
+                <li><a href="#socket-网络编程">Socket 网络编程</a></li>
+              </ul>
+            </li>
+            <li><a href="#http">HTTP</a>
+              <ul>
+                <li><a href="#post-vs-get">Post vs Get</a></li>
+              </ul>
+            </li>
+            <li><a href="#epoll">epoll</a>
+              <ul>
+                <li><a href="#epoll-vs-select">epoll vs select</a></li>
+                <li><a href="#边缘触发水平触发">边缘触发，水平触发</a></li>
+              </ul>
+            </li>
+            <li><a href="#linux">Linux</a>
+              <ul>
+                <li><a href="#查看进程的内存分布">查看进程的内存分布</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>

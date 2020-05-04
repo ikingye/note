@@ -10,13 +10,24 @@
     
     
     <item>
+      <title>2020-04-30</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/04/30/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/30/</guid>
+      <description>2020 年 4 月 30 日（星期四） 今日待办     编程 网络 增加组播路由 使用 route 命令添加
+使用 route 命令添加的路由，机器重启或者网卡重启后路由就失效了，方法：
+# 添加到主机的路由 route add –host 192.168.168.110 dev eth0 route add –host 192.168.168.119 gw 192.168.168.1 # 添加到网络的路由 route add –net IP netmask MASK eth0 route add –net IP netmask MASK gw IP route add –net IP/24 eth1 # 添加默认网关 route add default gw IP # 删除路由 route del –host 192.168.168.110 dev eth0  OCR 光学字符识别（Optical Character Recognition, OCR）</description>
+    </item>
+    
+    <item>
       <title>2020-04-29</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/29/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/29/</guid>
       <description>2020 年 4 月 29 日（星期三） 今日待办     编程 docker 权限 docker run # 无法使用 gdb 调试 --cap-add SYS_PTRACE # 无法使用 date -s 修改时间 --cap-add=SYS_TIME # –privileged 等效于–cap-add=ALL 参考：
- 使用 docker run &amp;ndash;cap-add 参数解决权限问题（无法使用 gdb 调试、无法 date -s 修改时间)  insecure-registry # vi /etc/docker/daemon.json { &amp;#34;insecure-registries&amp;#34; : [ &amp;#34;hostname.cloudapp.net:5000&amp;#34; ] } # 参考：https://stackoverflow.com/questions/42211380/add-insecure-registry-to-docker # 重启 docker systemctl restart docker  算法 二叉树转化成双向链表 两个有序链表合并 二叉树的层次遍历 如何判断一棵二叉树是否为另一棵二叉树的子树  操作系统 什么是死锁？如何预防死锁  Redis 数据结构 持久化  TCP / IP 滑动窗口 Socket 网络编程  HTTP Post vs Get  epoll epoll vs select 边缘触发，水平触发 Linux 查看进程的内存分布  面试 字节头条面试要求  算法、数据结构和系统设计 提前温习软件工程的核心概念，  例如：如何从一个需求落实到一个系统设计，如何衡量两个不同设计的好坏，如何在各种限制下（人员、时间、资源等）选择其中更合适的设计，以及提升该设计的可拓展性等。​   在白板上练习算法题目，写出清晰、简洁、bug free 的代码，，并衡量时间和空间复杂度以及可能存在的副作用。​ 尝试用不同的方法，思路或数据结构去解决同一个问题，并且衡量不同解法之间的优劣。​ 练习  《Cracking the Coding Interview》​ https://leetcode.</description>
+ 使用 docker run &amp;ndash;cap-add 参数解决权限问题（无法使用 gdb 调试、无法 date -s 修改时间)  insecure-registry # vi /etc/docker/daemon.json { &amp;#34;insecure-registries&amp;#34; : [ &amp;#34;hostname.cloudapp.net:5000&amp;#34; ] } # 参考：https://stackoverflow.com/questions/42211380/add-insecure-registry-to-docker # 重启 docker systemctl restart docker  面试 字节头条面试要求  算法、数据结构和系统设计 提前温习软件工程的核心概念，  例如：如何从一个需求落实到一个系统设计，如何衡量两个不同设计的好坏，如何在各种限制下（人员、时间、资源等）选择其中更合适的设计，以及提升该设计的可拓展性等。​   在白板上练习算法题目，写出清晰、简洁、bug free 的代码，，并衡量时间和空间复杂度以及可能存在的副作用。​ 尝试用不同的方法，思路或数据结构去解决同一个问题，并且衡量不同解法之间的优劣。​ 练习  《Cracking the Coding Interview》​ https://leetcode.</description>
     </item>
     
     <item>
