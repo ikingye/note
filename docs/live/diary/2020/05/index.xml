@@ -10,6 +10,25 @@
     
     
     <item>
+      <title>2020-05-06</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/05/06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/05/06/</guid>
+      <description>2020 年 5 月 6 日（星期三） 备注： 五一假后第一天
+今日待办     编程 算法复杂度 圈复杂度 圈复杂度（Cyclomatic complexity，简写 CC）也称为条件复杂度，是一种代码复杂度的衡量标准。由托马斯・J・麦凯布（Thomas J. McCabe, Sr.）于 1976 年提出，用来表示程序的复杂度，其符号为 VG 或是 M。它可以用来衡量一个模块判定结构的复杂程度，数量上表现为独立现行路径条数，也可理解为覆盖所有的可能情况最少使用的测试用例数。圈复杂度大说明程序代码的判断逻辑复杂，可能质量低且难于测试和 维护。程序的可能错误和高的圈复杂度有着很大关系。
+圈复杂度的计算方法很简单，计算公式为：
+V(G) = E - N + 2
+其中，e 表示控制流图中边的数量，n 表示控制流图中节点的数量。
+几个节点通过边连接。
+其实，圈复杂度的计算还有更直观的方法，因为圈复杂度所反映的是 “判定条件” 的数量，所以圈复杂度实际上就是等于判定节点的数量再加上 1，也即控制流图的区域数，对应的计算公式为：
+V (G) = P + 1
+其中 P 为判定节点数，判定节点举例：
+if 语句 while 语句 for 语句 case 语句 catch 语句 and 和 or 布尔操作 ?: 三元运算符
+参考：</description>
+    </item>
+    
+    <item>
       <title>2020-05-04</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/05/04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
