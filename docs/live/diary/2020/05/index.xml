@@ -10,6 +10,21 @@
     
     
     <item>
+      <title>2020-05-12</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/05/12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/05/12/</guid>
+      <description>2020 年 5 月 12 日（星期二） 今日待办     编程 Redis redis-cli -h host -p port -a password 设置密码 打开文件 /etc/redis.conf， 找到其中的 # requirepass foobared，去掉前面的 #， 并把 foobared 改成你的密码。
+ps: 如果 redis 没有启用密码，我使用 redis-cli -a xxx 可以访问吗？ 答案是：可以
+为什么 Redis 默认端口是 6379 6379 在是手机按键上 MERZ 对应的号码，而 MERZ 取自意大利歌女 Alessia Merz 的名字。 MERZ 长期以来被 antirez 及其朋友当作愚蠢的代名词。
+参考：http://oldblog.antirez.com/post/redis-as-LRU-cache.html
+5G 开源 5G 核心网 free5gc/free5gc  https://www.free5gc.org/
+Docker docker logs --follow
+copy vs add add 是 copy 的超集</description>
+    </item>
+    
+    <item>
       <title>2020-05-11</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/05/11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
