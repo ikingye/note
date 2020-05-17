@@ -371,6 +371,19 @@ copy vs add add 是 copy 的超集</description>
     </item>
     
     <item>
+      <title>2020-05-14</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/05/14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/05/14/</guid>
+      <description>2020 年 5 月 14 日（星期四） 今日待办     编程 Go Go Module goproxy 阿里云 Go Module 代理仓库服务
+  使用 go1.11 以上版本并开启 go module 机制
+  导出 GOPROXY 环境变量
+  export GOPROXY=https://mirrors.aliyun.com/goproxy/ go-yaml/yaml  YAML support for the Go language.
+package main import ( &amp;#34;io/ioutil&amp;#34; &amp;#34;gopkg.in/yaml.v2&amp;#34; &amp;#34;fmt&amp;#34; ) func main() { var c conf conf:=c.getConf() fmt.Println(conf.Host) } //profile variables type conf struct { Host string `yaml:&amp;#34;host&amp;#34;` User string `yaml:&amp;#34;user&amp;#34;` Pwd string `yaml:&amp;#34;pwd&amp;#34;` Dbname string `yaml:&amp;#34;dbname&amp;#34;` } func (c *conf) getConf() *conf { yamlFile, err := ioutil.</description>
+    </item>
+    
+    <item>
       <title>教程</title>
       <link>https://ikingye.github.io/note/docs/humanities/language/english/tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
