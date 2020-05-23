@@ -10,6 +10,19 @@
     
     
     <item>
+      <title>2020-05-23</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/05/23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/05/23/</guid>
+      <description>2020 年 5 月 23 日（星期六） 今日待办     编程 英语 i.e. vs e.g. I.e. and e.g. are both Latin abbreviations.
+E.g. stands for exempli gratia and means &amp;ldquo;for example.&amp;rdquo;
+I.e. is the abbreviation for id est and means &amp;ldquo;in other words.&amp;rdquo;
+参考：https://www.grammarly.com/blog/know-your-latin-i-e-vs-e-g
+ VPS 文件下载服务器 Nginx server { listen 80; server_name vultr.kingye.me; set $php_upstream &amp;#39;unix:/run/php/php7.2-fpm.sock&amp;#39;; root /root/download; index index.php; location / { #try_files $uri $uri/ /index.php?$args;  add_header Content-disposition &amp;#34;attachment; filename=$1&amp;#34;; } location ~ \.</description>
+    </item>
+    
+    <item>
       <title>2020-05-20</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/05/20/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
