@@ -182,6 +182,19 @@ delete submodule  Delete the relevant section from the .gitmodules file. Stage t
     </item>
     
     <item>
+      <title>2020-05-25</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/05/25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/05/25/</guid>
+      <description>2020 年 5 月 25 日（星期一） 今日待办     编程 I/O 多路复用 vs 基于事件驱动 高并发是指不活跃的长连接，并不是并发请求
+典型的后端服务，在逻辑上可以划分为两层，
+ 跟业务无关的通信层，负责 socket 连接的创建和管理，负责 bind/listen/accept/send/recv&amp;hellip; 通信层上面是业务逻辑层，负责被动响应请求，或主动推送业务消息  通信层特点：
+ 都是 IO 行为，几乎不大消耗 CPU 连接数很多，可能同时有 10K 甚至 100K 个 TCP 连接 通信协议就那么几种，decode/encode 简单 外部网络是慢速 IO，收发一点数据可能要 1 秒甚至更久  业务逻辑层特点：
+ 少量 CPU 消耗，大部分时间在等待数据库或者其它网络服务返回 业务逻辑五花八门，逻辑中往往需要调用别的网络服务，如 db 并发请求数，往往小于连接数，10K 个连接，可能每秒只有 100 个请求 单个业务请求通常很快，毫秒级别，几十毫秒算慢的了  如果完全采用传统的多线程模型，1 个 tcp 连接对应 1 个线程，10K 个连接需要 10K 个线程，典型的内存消耗是 10G。但是业务逻辑层并发请求往往要小 1 到 2 个数量级，每个请求往往只需要 100ms 以内，所以业务逻辑层需要的线程数，比通信层小 2-3 个数量级，不需要 10K 个线程，只要 100 个甚至 10 个就够了。</description>
+    </item>
+    
+    <item>
       <title>2020-04-24</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/24/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -212,11 +225,7 @@ CSI（Container Storage Interface） 容器存储接口，提供存储资源</de
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/05/23/</guid>
-      <description>2020 年 5 月 23 日（星期六） 今日待办     编程 英语 i.e. vs e.g. I.e. and e.g. are both Latin abbreviations.
-E.g. stands for exempli gratia and means &amp;ldquo;for example.&amp;rdquo;
-I.e. is the abbreviation for id est and means &amp;ldquo;in other words.&amp;rdquo;
-参考：https://www.grammarly.com/blog/know-your-latin-i-e-vs-e-g
- VPS 文件下载服务器 Nginx server { listen 80; server_name vultr.kingye.me; set $php_upstream &amp;#39;unix:/run/php/php7.2-fpm.sock&amp;#39;; root /root/download; index index.php; location / { #try_files $uri $uri/ /index.php?$args;  add_header Content-disposition &amp;#34;attachment; filename=$1&amp;#34;; } location ~ \.</description>
+      <description>2020 年 5 月 23 日（星期六） 今日待办     编程 VPS 文件下载服务器 Nginx server { listen 80; server_name vultr.kingye.me; set $php_upstream &amp;#39;unix:/run/php/php7.2-fpm.sock&amp;#39;; root /root/download; index index.php; location / { #try_files $uri $uri/ /index.php?$args;  add_header Content-disposition &amp;#34;attachment; filename=$1&amp;#34;; } location ~ \.php$ { fastcgi_pass $php_upstream; fastcgi_index index.php; include fastcgi.conf; } location ~ /\.(ht|svn|git) { deny all; } }  tampermonkey（chrome 插件） AC-baidu: 重定向优化百度搜狗谷歌搜索去广告_favicon双列 Endless_Google 豆瓣和 IMDb 互相显示评分 Mouseover Popup Image Viewer Search By Image 网页限制解除 (改) 一键 VIP 视频解析 Feedly filtering and sorting 视频网页全屏 迅雷、快车、QQ 旋风等专有链解密 新浪微博根据关键词、作者、话题、来源等过滤微博 百度网盘直接下载助手  英语 i.</description>
     </item>
     
     <item>
@@ -427,6 +436,15 @@ copy vs add add 是 copy 的超集</description>
       
       <guid>https://ikingye.github.io/note/docs/humanities/language/english/tutorial/</guid>
       <description>英语教程 听写 CoachShane - 每日英语听写 Daily English Dictation 1-400  表达 CoachShane - Daily Easy English Expression 1-899 </description>
+    </item>
+    
+    <item>
+      <title>谥号</title>
+      <link>https://ikingye.github.io/note/docs/social/history/posthumous-name/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/social/history/posthumous-name/</guid>
+      <description>谥号 </description>
     </item>
     
     <item>
