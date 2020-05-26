@@ -252,7 +252,7 @@ squash merge # 切换到目标分支 $ git checkout master # 以 squash 的形�
 LB 负载均衡 Load Balance
 产品设计 POC 概念验证 Proof Of Concept
 MVP 最小化可行产品 Minimum Viable Product
-需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Paxos https://raft.github.io
+需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Raft https://raft.github.io
 由于 Paxos 难以理解，所以才有了 Raft
 Raft 以可理解性和易于实现为目标：
  Leader 选举（Leader election） 日志同步（Log replication） 安全性（Safety） 日志压缩（Log compaction） 成员变更（Membership change）  shell top htop

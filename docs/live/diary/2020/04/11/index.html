@@ -8,7 +8,7 @@
 LB 负载均衡 Load Balance
 产品设计 POC 概念验证 Proof Of Concept
 MVP 最小化可行产品 Minimum Viable Product
-需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Paxos https://raft.github.io
+需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Raft https://raft.github.io
 由于 Paxos 难以理解，所以才有了 Raft
 Raft 以可理解性和易于实现为目标：
  Leader 选举（Leader election） 日志同步（Log replication） 安全性（Safety） 日志压缩（Log compaction） 成员变更（Membership change）  shell top htop
@@ -17,7 +17,7 @@ brew install htop"><meta property="og:title" content="2020-04-11" />
 LB 负载均衡 Load Balance
 产品设计 POC 概念验证 Proof Of Concept
 MVP 最小化可行产品 Minimum Viable Product
-需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Paxos https://raft.github.io
+需求管理 KANO 模型 价值 vs 复杂度矩阵 分布式一致性 Paxos Raft https://raft.github.io
 由于 Paxos 难以理解，所以才有了 Raft
 Raft 以可理解性和易于实现为目标：
  Leader 选举（Leader election） 日志同步（Log replication） 安全性（Safety） 日志压缩（Log compaction） 成员变更（Membership change）  shell top htop
@@ -32,7 +32,7 @@ brew install htop" />
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.0bb93c83ac04a8a34e889a020f2ddd4b0d6ab1d5f2da7d9a3ba80104ea31d96d.js" integrity="sha256-C7k8g6wEqKNOiJoCDy3dSw1qsdXy2n2aO6gBBOox2W0="></script>
+<script defer src="/note/en.search.min.e94b6e597212b14ccb01b1b13fa104296e46ed19d162f59d4de54f2bbb6091a2.js" integrity="sha256-6UtuWXISsUzLAbGxP6EEKW5G7RnRYvWdTeVPK7tgkaI="></script>
 
 <!--
 Made with Book Theme
@@ -1140,7 +1140,7 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#分布式一致性">分布式一致性</a>
               <ul>
                 <li><a href="#paxos">Paxos</a></li>
-                <li><a href="#paxos-1">Paxos</a></li>
+                <li><a href="#raft">Raft</a></li>
               </ul>
             </li>
             <li><a href="#shell">shell</a>
@@ -1269,7 +1269,7 @@ https://github.com/alex-shpak/hugo-book
 <h4 id="价值-vs-复杂度矩阵">价值 vs 复杂度矩阵</h4>
 <h3 id="分布式一致性">分布式一致性</h3>
 <h4 id="paxos">Paxos</h4>
-<h4 id="paxos-1">Paxos</h4>
+<h4 id="raft">Raft</h4>
 <p><a href="https://raft.github.io">https://raft.github.io</a></p>
 <p>由于 Paxos 难以理解，所以才有了 Raft</p>
 <p>Raft 以可理解性和易于实现为目标：</p>
@@ -1530,7 +1530,7 @@ In Tomcat, a web.xml setting within your web app will override the default, if p
             <li><a href="#分布式一致性">分布式一致性</a>
               <ul>
                 <li><a href="#paxos">Paxos</a></li>
-                <li><a href="#paxos-1">Paxos</a></li>
+                <li><a href="#raft">Raft</a></li>
               </ul>
             </li>
             <li><a href="#shell">shell</a>
