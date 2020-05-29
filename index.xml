@@ -144,6 +144,20 @@
     </item>
     
     <item>
+      <title>2020-05-28</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/05/28/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/05/28/</guid>
+      <description>2020 年 5 月 28 日（星期四） 今日待办     编程 Hadoop HDFS Hadoop Distributed File System，是 Hadoop 的分布式文件系统
+每台机器上运行一个 DataNode 进程，负责管理一部分数据。
+有一台机器上运行了 NameNode 进程，负责管理整个 HDFS 集群的这么一个进程，里面存储了 HDFS 集群的所有元数据
+每次内存里改完了，写一条 edits log，元数据修改的操作日志到磁盘文件里，不修改磁盘文件内容，就是顺序追加
+每次 NameNode 重启的时候，把 edits log 里的操作日志读到内存里，就可以恢复元数据
+YARN MapReduce  Spring Cloud  Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里 Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台 Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求 Hystrix：发起请求是通过 Hystrix 的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题 Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务  Eureka Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。</description>
+    </item>
+    
+    <item>
       <title>2020-04-27</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/27/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

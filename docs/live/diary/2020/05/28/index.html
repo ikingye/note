@@ -4,20 +4,22 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 4 月 14 日（星期二） 今日待办     编程 豆瓣 API 文档 zce/douban-api-docs  英文 basic vs basis basic: 以什么为基础，进行再加工创造
-basic: 基础内容
-Basis = foundation of something. The basis of multiplication is serial addition, for example.
-Basics = the core concepts. Multiplication tables are part of the basics because understanding them allows students to do higher order arithmetic much more efficiently.
-So no, they are really not interchangeable."><meta property="og:title" content="2020-04-14" />
-<meta property="og:description" content="2020 年 4 月 14 日（星期二） 今日待办     编程 豆瓣 API 文档 zce/douban-api-docs  英文 basic vs basis basic: 以什么为基础，进行再加工创造
-basic: 基础内容
-Basis = foundation of something. The basis of multiplication is serial addition, for example.
-Basics = the core concepts. Multiplication tables are part of the basics because understanding them allows students to do higher order arithmetic much more efficiently.
-So no, they are really not interchangeable." />
+<meta name="description" content="2020 年 5 月 28 日（星期四） 今日待办     编程 Hadoop HDFS Hadoop Distributed File System，是 Hadoop 的分布式文件系统
+每台机器上运行一个 DataNode 进程，负责管理一部分数据。
+有一台机器上运行了 NameNode 进程，负责管理整个 HDFS 集群的这么一个进程，里面存储了 HDFS 集群的所有元数据
+每次内存里改完了，写一条 edits log，元数据修改的操作日志到磁盘文件里，不修改磁盘文件内容，就是顺序追加
+每次 NameNode 重启的时候，把 edits log 里的操作日志读到内存里，就可以恢复元数据
+YARN MapReduce  Spring Cloud  Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里 Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台 Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求 Hystrix：发起请求是通过 Hystrix 的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题 Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务  Eureka Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。"><meta property="og:title" content="2020-05-28" />
+<meta property="og:description" content="2020 年 5 月 28 日（星期四） 今日待办     编程 Hadoop HDFS Hadoop Distributed File System，是 Hadoop 的分布式文件系统
+每台机器上运行一个 DataNode 进程，负责管理一部分数据。
+有一台机器上运行了 NameNode 进程，负责管理整个 HDFS 集群的这么一个进程，里面存储了 HDFS 集群的所有元数据
+每次内存里改完了，写一条 edits log，元数据修改的操作日志到磁盘文件里，不修改磁盘文件内容，就是顺序追加
+每次 NameNode 重启的时候，把 edits log 里的操作日志读到内存里，就可以恢复元数据
+YARN MapReduce  Spring Cloud  Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里 Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台 Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求 Hystrix：发起请求是通过 Hystrix 的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题 Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务  Eureka Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/14/" />
-<meta property="article:modified_time" content="2020-04-28T14:51:31+08:00" />
-<title>2020-04-14 | 叶王笔记</title>
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/05/28/" />
+
+<title>2020-05-28 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
 
@@ -518,7 +520,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/note/docs/live/diary/2020/05/28/" class="">2020-05-28</a>
+  <a href="/note/docs/live/diary/2020/05/28/" class="active">2020-05-28</a>
   
 
 </li>
@@ -669,262 +671,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-  
-  <ul>
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/30/" class="">2020-04-30</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/29/" class="">2020-04-29</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/28/" class="">2020-04-28</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/27/" class="">2020-04-27</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/26/" class="">2020-04-26</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/25/" class="">2020-04-25</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/24/" class="">2020-04-24</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/23/" class="">2020-04-23</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/22/" class="">2020-04-22</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/21/" class="">2020-04-21</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/20/" class="">2020-04-20</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/19/" class="">2020-04-19</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/17/" class="">2020-04-17</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/14/" class="active">2020-04-14</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/11/" class="">2020-04-11</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/10/" class="">2020-04-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/09/" class="">2020-04-09</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
 
 
 
@@ -1102,7 +848,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>2020-04-14</strong>
+  <strong>2020-05-28</strong>
 
   <label for="toc-control">
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -1116,17 +862,33 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-4-月-14-日星期二">2020 年 4 月 14 日（星期二）</a>
+    <li><a href="#2020-年-5-月-28-日星期四">2020 年 5 月 28 日（星期四）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
         <li><a href="#编程">编程</a>
           <ul>
-            <li><a href="#豆瓣-api-文档httpsdouban-api-docszceme"><a href="https://douban-api-docs.zce.me">豆瓣 API 文档</a></a></li>
+            <li><a href="#hadoop">Hadoop</a>
+              <ul>
+                <li><a href="#hdfs">HDFS</a></li>
+                <li><a href="#yarn">YARN</a></li>
+                <li><a href="#mapreduce">MapReduce</a></li>
+              </ul>
+            </li>
+            <li><a href="#spring-cloud">Spring Cloud</a>
+              <ul>
+                <li><a href="#eureka">Eureka</a></li>
+                <li><a href="#feign">Feign</a></li>
+                <li><a href="#ribbon">Ribbon</a></li>
+                <li><a href="#hystrix">Hystrix</a></li>
+                <li><a href="#zuul">Zuul</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#英文">英文</a>
+        <li><a href="#运营商">运营商</a>
           <ul>
-            <li><a href="#basic-vs-basis">basic vs basis</a></li>
+            <li><a href="#dpi-系统">DPI 系统</a></li>
+            <li><a href="#网管系统">网管系统</a></li>
           </ul>
         </li>
       </ul>
@@ -1142,27 +904,80 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="2020-年-4-月-14-日星期二">2020 年 4 月 14 日（星期二）</h1>
+  <article class="markdown"><h1 id="2020-年-5-月-28-日星期四">2020 年 5 月 28 日（星期四）</h1>
 <h2 id="今日待办">今日待办</h2>
 <ul>
 <li><input disabled="" type="checkbox"></li>
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
-<h3 id="豆瓣-api-文档httpsdouban-api-docszceme"><a href="https://douban-api-docs.zce.me">豆瓣 API 文档</a></h3>
-<p><a href="https://github.com/zce/douban-api-docs">zce/douban-api-docs</a> <img src="https://img.shields.io/github/stars/zce/douban-api-docs.svg" alt="Github stars" /></p>
+<h3 id="hadoop">Hadoop</h3>
+<h4 id="hdfs">HDFS</h4>
+<p>Hadoop Distributed File System，是 Hadoop 的分布式文件系统</p>
+<p>每台机器上运行一个 <code>DataNode</code> 进程，负责管理一部分数据。</p>
+<p>有一台机器上运行了 <code>NameNode</code> 进程，负责管理整个 HDFS 集群的这么一个进程，里面存储了 HDFS 集群的所有元数据</p>
+<p>每次内存里改完了，写一条 edits log，元数据修改的操作日志到磁盘文件里，不修改磁盘文件内容，就是顺序追加</p>
+<p>每次 NameNode 重启的时候，把 edits log 里的操作日志读到内存里，就可以恢复元数据</p>
+<h4 id="yarn">YARN</h4>
+<h4 id="mapreduce">MapReduce</h4>
 <hr>
-<h2 id="英文">英文</h2>
-<h3 id="basic-vs-basis">basic vs basis</h3>
-<p>basic: 以什么为基础，进行再加工创造</p>
-<p>basic: 基础内容</p>
-<p>Basis = foundation of something. The basis of multiplication is serial addition, for example.</p>
-<p>Basics = the core concepts. Multiplication tables are part of the basics because understanding them allows students to do higher order arithmetic much more efficiently.</p>
-<p>So no, they are really not interchangeable. You might use a paragraph from a book as the basis for your thesis because your thesis builds upon that paragraph. Whereas you might say, &ldquo;The English alphabet and punctuation are the basics you should learn in your first language lesson.&rdquo;</p>
-<p>参考：</p>
+<h3 id="spring-cloud">Spring Cloud</h3>
 <ul>
-<li><a href="https://hinative.com/en-US/questions/604594">What is the difference between basicand basis?</a></li>
+<li>Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里</li>
+<li>Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台</li>
+<li>Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求</li>
+<li>Hystrix：发起请求是通过 Hystrix 的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题</li>
+<li>Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务</li>
 </ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200528201147.png" alt="" /></p>
+<h4 id="eureka">Eureka</h4>
+<p>Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。</p>
+<ul>
+<li>Eureka Client：负责将这个服务的信息注册到 Eureka Server 中</li>
+<li>Eureka Server：注册中心，里面有一个注册表，保存了各个服务所在的机器和端口号</li>
+</ul>
+<h4 id="feign">Feign</h4>
+<p>Feign 的一个关键机制就是使用了动态代理。</p>
+<h4 id="ribbon">Ribbon</h4>
+<p>负载均衡</p>
+<p>Ribbon 的负载均衡默认使用的最经典的 <code>Round Robin</code> 轮询算法</p>
+<h4 id="hystrix">Hystrix</h4>
+<p>Hystrix 是隔离、熔断以及降级的一个框架。</p>
+<p>Hystrix 会搞很多个小小的线程池，
+比如订单服务请求库存服务是一个线程池，请求仓储服务是一个线程池，请求积分服务是一个线程池。
+每个线程池里的线程就仅仅用于请求那个服务。</p>
+<p>解决<strong>服务雪崩</strong>：</p>
+<ul>
+<li>
+<p>熔断</p>
+<p>比如在 5 分钟内请求积分服务直接就返回了，不要去走网络请求卡住几秒钟。
+这个过程，就是所谓的熔断！</p>
+</li>
+<li>
+<p>降级</p>
+<p>每次调用积分服务，你就在数据库里记录一条消息，说给某某用户增加了多少积分，因为积分服务挂了，导致没增加成功！这样等积分服务恢复了，你可以根据这些记录手工加一下积分。
+这个过程，就是所谓的降级。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200528200848.png" alt="" /></p>
+<h4 id="zuul">Zuul</h4>
+<p>微服务网关</p>
+<p>可以做统一的降级、限流、认证授权、安全等等</p>
+<hr>
+<h2 id="运营商">运营商</h2>
+<h3 id="dpi-系统">DPI 系统</h3>
+<p>DPI，
+Deep Packet Inspection，
+是指深度报文解析技术</p>
+<p>DPI 系统通常是指运营商的网络通道中的互联网流量监控、分析管理的系统，由硬件和软件组成。</p>
+<p>DPI 系统主要承担了将二进制的网络传输数据解析成一条条可视的报文，再对海量的报文进行一层层的特征分析，最终利用软件的形态可视化的呈现给运营商网络管理和运营服务单位，来帮助运营商进行更精细化的网络流量管理及其他相关业务的管理。</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/30792627">运营商的 DPI 系统是什么东西？</a></li>
+</ul>
+<h3 id="网管系统">网管系统</h3>
+<p>国内三大运营商的专业网管系统建设已经普遍比较成熟，都建设了话务网管、数据网管、传输网管、信令监测、自动拨测、动环监控、电子运维和网管系统监控平台。</p>
+<p>在专业网管系统基础上，中国移动提出了 OneOSS 网管规划。我们需要加强跟踪研究下一代网管技术。</p>
+<p>下一代网管系统规划有综合网络应用平台、运营流程管理平台、业务开通平台、网络监控平台、质量保障平台和网管系统监控平台，需研究规划落地措施及有关实现技术</p>
 </article>
  
       
@@ -1172,14 +987,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/3acfa2fefb3cb6b741ea8ba7e94780f7af27a397" title='Last modified by yewang | 2020-04-28' target="_blank" rel="noopener">
-      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-04-28</span>
-    </a>
-  </div>
 
 
 
@@ -1212,17 +1019,33 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-4-月-14-日星期二">2020 年 4 月 14 日（星期二）</a>
+    <li><a href="#2020-年-5-月-28-日星期四">2020 年 5 月 28 日（星期四）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
         <li><a href="#编程">编程</a>
           <ul>
-            <li><a href="#豆瓣-api-文档httpsdouban-api-docszceme"><a href="https://douban-api-docs.zce.me">豆瓣 API 文档</a></a></li>
+            <li><a href="#hadoop">Hadoop</a>
+              <ul>
+                <li><a href="#hdfs">HDFS</a></li>
+                <li><a href="#yarn">YARN</a></li>
+                <li><a href="#mapreduce">MapReduce</a></li>
+              </ul>
+            </li>
+            <li><a href="#spring-cloud">Spring Cloud</a>
+              <ul>
+                <li><a href="#eureka">Eureka</a></li>
+                <li><a href="#feign">Feign</a></li>
+                <li><a href="#ribbon">Ribbon</a></li>
+                <li><a href="#hystrix">Hystrix</a></li>
+                <li><a href="#zuul">Zuul</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#英文">英文</a>
+        <li><a href="#运营商">运营商</a>
           <ul>
-            <li><a href="#basic-vs-basis">basic vs basis</a></li>
+            <li><a href="#dpi-系统">DPI 系统</a></li>
+            <li><a href="#网管系统">网管系统</a></li>
           </ul>
         </li>
       </ul>
