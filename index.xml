@@ -67,7 +67,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/05/30/</guid>
-      <description>2020 年 5 月 30 日（星期六） 今日待办     编程 </description>
+      <description>2020 年 5 月 30 日（星期六） 今日待办     编程 华为 5G 边缘计算 CSP Edge 现在使用 Kubernetes，原来是 CSP Edge
+communicationsservice provider (CSP)
+ 5G 时代的运营商 5G MEC 将云计算和 5G 核心网带到网络边缘，带来了新的流量模型和部署模型。 如果运营商还继续采用 4G 移动承载网的设计思路，在 5G 时代，运营商网络将面临边缘计算的困局。
+MEC 使运营商能在网络边缘分流业务， 通过端到端整体方案为客户提供更低时延、更高带宽、更低成本的业务体验， 快速响应用户请求并提升服务质量。</description>
     </item>
     
     <item>
