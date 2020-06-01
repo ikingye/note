@@ -15,7 +15,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/01/</guid>
-      <description>2020 年 6 月 1 日（星期一） 今日待办     编程 </description>
+      <description>2020 年 6 月 1 日（星期一） 今日待办     编程 BaaS Blockchain as a Service
+区块链即服务
+BAAS 是对区块链底层协议的封装后，让开发者能够快速的建立属于自己的区块链。 BAAS 平台通常提供高度定制化的底层区块链系统，隐私保护算法，每个平台都有其各自的特性。 BAAS 平台一般只提供联盟链和私有链的快速搭建，与公链协议不同，往往缺少内生额激励机制。 BAAS 主要是简化了部署的环节。
+BAAS 服务最早由 IBM、微软在 2015 年推出，之后谷歌也在 2016 年开始跟进。 BAAS 即从他们的云服务中开辟出以一个算力，来运行区块链节点， 并通过提供开发者环境和开发工具，帮助开发者更容易地开发区块链应用。</description>
     </item>
     
   </channel>
