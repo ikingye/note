@@ -726,6 +726,18 @@ The connection to the server 192.168.99.100:8443 was refused - did you specify t
     </item>
     
     <item>
+      <title>2020-06-02</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/02/</guid>
+      <description>2020 年 6 月 2 日（星期二） 今日待办     编程 shell keyword vs reserved word vs builtin reserved word 保留字
+Keyword, reserved word, and builtin are all the &amp;ldquo;first word&amp;rdquo; of a Simple command. Could be placed in two groups: Keyword and Builtin. The two are mutually exclusive.
+A word (token) can be either a Keyword or a builtin, but not both.
+为什么 time 是 keyword，而不是 builtin To allow the existence of a command as the second word.</description>
+    </item>
+    
+    <item>
       <title>EMBA</title>
       <link>https://ikingye.github.io/note/docs/study/degree/masters-degree/mba/emba/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -741,10 +753,9 @@ MBA 分类 </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/01/</guid>
-      <description>2020 年 6 月 1 日（星期一） 今日待办     编程 jhipster BaaS Blockchain as a Service
-区块链即服务
-BAAS 是对区块链底层协议的封装后，让开发者能够快速的建立属于自己的区块链。 BAAS 平台通常提供高度定制化的底层区块链系统，隐私保护算法，每个平台都有其各自的特性。 BAAS 平台一般只提供联盟链和私有链的快速搭建，与公链协议不同，往往缺少内生额激励机制。 BAAS 主要是简化了部署的环节。
-BAAS 服务最早由 IBM、微软在 2015 年推出，之后谷歌也在 2016 年开始跟进。 BAAS 即从他们的云服务中开辟出以一个算力，来运行区块链节点， 并通过提供开发者环境和开发工具，帮助开发者更容易地开发区块链应用。</description>
+      <description>2020 年 6 月 1 日（星期一） 今日待办     编程 Jeecg-Boot zhangdaiscott/jeecg-boot 前后端分离架构：SpringBoot 2.x，Ant Design&amp;amp;Vue，Mybatis-plus，Shiro，JWT
+jhipster jhipster/generator-jhipster JHipster is a development platform to quickly generate, develop, &amp;amp; deploy modern web applications &amp;amp; microservice architectures. https://www.jhipster.tech
+SELinux The SELinux stands for Security-Enhanced Linux where it is a linux kernel security module. It is enabled by default on most of the linux distribution that we use for servers like centOS. It provides enhanced security measurements.</description>
     </item>
     
     <item>
