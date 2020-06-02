@@ -14,7 +14,7 @@ A word (token) can be either a Keyword or a builtin, but not both.
 为什么 time 是 keyword，而不是 builtin To allow the existence of a command as the second word." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/02/" />
-
+<meta property="article:modified_time" content="2020-06-02T11:35:37+08:00" />
 <title>2020-06-02 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -22,7 +22,7 @@ A word (token) can be either a Keyword or a builtin, but not both.
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.eb09b5ae5c309855715f1f911693c37b8f0ea6a97adb5a451781efd5fc881e60.js" integrity="sha256-6wm1rlwwmFVxXx&#43;RFpPDe48Opql621pFF4Hv1fyIHmA="></script>
+<script defer src="/note/en.search.min.35b42c8e929f4ed6c5387445ad14b7e5d6c042c4802f9e1d443d5cc0c79e48da.js" integrity="sha256-NbQsjpKfTtbFOHRFrRS35dbAQsSAL54dRD1cwMeeSNo="></script>
 
 <!--
 Made with Book Theme
@@ -816,6 +816,11 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#c-类">C 类</a></li>
               </ul>
             </li>
+            <li><a href="#github">github</a>
+              <ul>
+                <li><a href="#add-file-to-remote-without-cloning">add file to remote without cloning</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -919,9 +924,9 @@ export MYSQL_PS1<span style="color:#f92672">=</span><span style="color:#e6db74">
 <p>~/.IntelliJIdeaXX/system that stores IntelliJ IDEA data caches.</p>
 </div><input type="radio" class="hidden" name="tabs-uniqueid" id="tabs-uniqueid-2"  />
   <label for="tabs-uniqueid-2">Windows</label>
-  <div class="book-tabs-content markdown-inner"><p><code>&lt;User home&gt;</code>.IntelliJIdeaXX\config that contains user-specific settings.</p>
-<p><code>&lt;User home&gt;</code>.IntelliJIdeaXX\system that stores IntelliJ IDEA data caches.</p>
-<p><code>&lt;User home&gt;</code> in WindowsXP is C:\Documents and Settings&lt;User name&gt;; in Windows Vista it is C:\Users&lt;User name&gt;\</p>
+  <div class="book-tabs-content markdown-inner"><p><code>&lt;User home&gt;</code>/.IntelliJIdeaXX\config that contains user-specific settings.</p>
+<p><code>&lt;User home&gt;</code>/.IntelliJIdeaXX\system that stores IntelliJ IDEA data caches.</p>
+<p><code>&lt;User home&gt;</code>/ in WindowsXP is C:\Documents and Settings&lt;User name&gt;; in Windows Vista it is C:\Users&lt;User name&gt;\</p>
 </div></div>
 
 <p>参考：</p>
@@ -943,6 +948,14 @@ $ rm -rf ~/Library/Logs/Idea*
 <h4 id="c-类">C 类</h4>
 <p>192.168.0.0/16</p>
 <p>192.168.0.0 - 192.168.255.255</p>
+<hr>
+<h3 id="github">github</h3>
+<h4 id="add-file-to-remote-without-cloning">add file to remote without cloning</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">PUT /repos/:owner/:repo/contents/:path
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/19619450/how-do-i-add-file-to-remote-git-repo-github-without-cloning-the-whole-repo-fir">How do I add file to remote Git repo (Github) without cloning the whole repo first</a></li>
+</ul>
 </article>
  
       
@@ -952,6 +965,14 @@ $ rm -rf ~/Library/Logs/Idea*
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/844d1b68100024f0375d9aecc026fdb6a5960270" title='Last modified by yewang | 2020-06-02' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-02</span>
+    </a>
+  </div>
 
 
 
@@ -1027,6 +1048,11 @@ $ rm -rf ~/Library/Logs/Idea*
                 <li><a href="#a-类">A 类</a></li>
                 <li><a href="#b-类">B 类</a></li>
                 <li><a href="#c-类">C 类</a></li>
+              </ul>
+            </li>
+            <li><a href="#github">github</a>
+              <ul>
+                <li><a href="#add-file-to-remote-without-cloning">add file to remote without cloning</a></li>
               </ul>
             </li>
           </ul>
