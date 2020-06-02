@@ -14,7 +14,7 @@ A word (token) can be either a Keyword or a builtin, but not both.
 为什么 time 是 keyword，而不是 builtin To allow the existence of a command as the second word." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/02/" />
-<meta property="article:modified_time" content="2020-06-02T11:35:37+08:00" />
+<meta property="article:modified_time" content="2020-06-02T15:00:08+08:00" />
 <title>2020-06-02 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -22,7 +22,7 @@ A word (token) can be either a Keyword or a builtin, but not both.
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.35b42c8e929f4ed6c5387445ad14b7e5d6c042c4802f9e1d443d5cc0c79e48da.js" integrity="sha256-NbQsjpKfTtbFOHRFrRS35dbAQsSAL54dRD1cwMeeSNo="></script>
+<script defer src="/note/en.search.min.050dc3e34ebd9cf62fa0c4cea80e170662cb4fd69b4cb8df30f6b70b258fa1a9.js" integrity="sha256-BQ3D4069nPYvoMTOqA4XBmLLT9abTLjfMPa3CyWPoak="></script>
 
 <!--
 Made with Book Theme
@@ -516,6 +516,16 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
+  <a href="/note/docs/live/diary/2020/06/03/" class="">2020-06-03</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
   <a href="/note/docs/live/diary/2020/06/02/" class="active">2020-06-02</a>
   
 
@@ -805,6 +815,7 @@ https://github.com/alex-shpak/hugo-book
             </li>
             <li><a href="#jetbrains">Jetbrains</a>
               <ul>
+                <li><a href="#同步配置">同步配置</a></li>
                 <li><a href="#intellij-idea-配置文件存放的位置">IntelliJ IDEA 配置文件存放的位置</a></li>
                 <li><a href="#macos-删除-idea-配置文件">MacOS 删除 idea 配置文件</a></li>
               </ul>
@@ -821,6 +832,23 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#add-file-to-remote-without-cloning">add file to remote without cloning</a></li>
               </ul>
             </li>
+            <li><a href="#keyboard-maestro">Keyboard Maestro</a></li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#volumes">Volumes</a>
+                  <ul>
+                    <li><a href="#subpath">subPath</a>
+                      <ul>
+                        <li><a href="#同一个-volume-多次挂载">同一个 volume 多次挂载</a></li>
+                        <li><a href="#插入而非覆盖"><code>插入</code>而非<code>覆盖</code></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#fatedierfrphttpsgithubcomfatedierfrp-github-starshttpsimgshieldsiogithubstarsfatedierfrpsvg"><a href="https://github.com/fatedier/frp">fatedier/frp</a> <img src="https://img.shields.io/github/stars/fatedier/frp.svg" alt="Github stars"></a></li>
+            <li><a href="#lazy-luosmargatehttpsgithubcomlazy-luosmargate-github-starshttpsimgshieldsiogithubstarslazy-luosmargatesvg"><a href="https://github.com/lazy-luo/smarGate">lazy-luo/smarGate</a> <img src="https://img.shields.io/github/stars/lazy-luo/smarGate.svg" alt="Github stars"></a></li>
           </ul>
         </li>
       </ul>
@@ -907,6 +935,11 @@ export MYSQL_PS1<span style="color:#f92672">=</span><span style="color:#e6db74">
 <li><a href="https://www.iteye.com/blog/renial-773675">修改 MySQL 客户端的提示符</a></li>
 </ul>
 <h3 id="jetbrains">Jetbrains</h3>
+<h4 id="同步配置">同步配置</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html">官网 Share IDE settings</a></li>
+</ul>
 <h4 id="intellij-idea-配置文件存放的位置">IntelliJ IDEA 配置文件存放的位置</h4>
 
 
@@ -940,13 +973,13 @@ $ rm -rf ~/Library/Logs/Idea*
 </code></pre></div><hr>
 <h3 id="局域网-ip">局域网 IP</h3>
 <h4 id="a-类">A 类</h4>
-<p>10.0.0.0/8</p>
+<p><code>10.0.0.0/8</code></p>
 <p>10.0.0.0 - 10.255.255.255</p>
 <h4 id="b-类">B 类</h4>
-<p>172.16.0.0/12</p>
+<p><code>172.16.0.0/12</code></p>
 <p>172.16.0.0 - 172.31.255.255</p>
 <h4 id="c-类">C 类</h4>
-<p>192.168.0.0/16</p>
+<p><code>192.168.0.0/16</code></p>
 <p>192.168.0.0 - 192.168.255.255</p>
 <hr>
 <h3 id="github">github</h3>
@@ -955,6 +988,117 @@ $ rm -rf ~/Library/Logs/Idea*
 </code></pre></div><p>参考：</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/19619450/how-do-i-add-file-to-remote-git-repo-github-without-cloning-the-whole-repo-fir">How do I add file to remote Git repo (Github) without cloning the whole repo first</a></li>
+</ul>
+<hr>
+<h3 id="keyboard-maestro">Keyboard Maestro</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200602162045.png" alt="" /></p>
+<hr>
+<h3 id="kubernetes">Kubernetes</h3>
+<h4 id="volumes">Volumes</h4>
+<h5 id="subpath">subPath</h5>
+<h6 id="同一个-volume-多次挂载">同一个 volume 多次挂载</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: v1
+<span style="color:#66d9ef">kind</span>: Pod
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: my-lamp-site
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">containers</span>:
+    - <span style="color:#66d9ef">name</span>: mysql
+      <span style="color:#66d9ef">image</span>: mysql
+      <span style="color:#66d9ef">env</span>:
+        - <span style="color:#66d9ef">name</span>: MYSQL_ROOT_PASSWORD
+          <span style="color:#66d9ef">value</span>: <span style="color:#e6db74">&#34;rootpasswd&#34;</span>
+      <span style="color:#66d9ef">volumeMounts</span>:
+        - <span style="color:#66d9ef">mountPath</span>: /var/lib/mysql
+          <span style="color:#66d9ef">name</span>: site-data
+          <span style="color:#66d9ef">subPath</span>: mysql
+    - <span style="color:#66d9ef">name</span>: php
+      <span style="color:#66d9ef">image</span>: php:<span style="color:#ae81ff">7.0</span>-apache
+      <span style="color:#66d9ef">volumeMounts</span>:
+        - <span style="color:#66d9ef">mountPath</span>: /var/www/html
+          <span style="color:#66d9ef">name</span>: site-data
+          <span style="color:#66d9ef">subPath</span>: html
+  <span style="color:#66d9ef">volumes</span>:
+    - <span style="color:#66d9ef">name</span>: site-data
+      <span style="color:#66d9ef">persistentVolumeClaim</span>:
+        <span style="color:#66d9ef">claimName</span>: my-lamp-site-data
+</code></pre></div><h6 id="插入而非覆盖"><code>插入</code>而非<code>覆盖</code></h6>
+<p>The volumeMounts.subPath property can be used to specify a sub-path inside the referenced volume instead of its root.</p>
+<p>指定 subPath 后就是插入，而不是覆盖</p>
+<p>举个例子：</p>
+<p>如果没有指定 subPath，挂载后，/usr/ 下面的文件都会被覆盖</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200602172239.png" alt="" /></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: v1
+<span style="color:#66d9ef">kind</span>: ConfigMap
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: busybox-cm
+  <span style="color:#66d9ef">labels</span>:
+    <span style="color:#66d9ef">addonmanager.kubernetes.io/mode</span>: EnsureExists
+<span style="color:#66d9ef">data</span>:
+  <span style="color:#66d9ef">Corefile</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">    .:53 {</span>
+        errors
+        log stdout
+        health
+        kubernetes cluster.local <span style="color:#ae81ff">172.21.0.0</span>/<span style="color:#ae81ff">16</span>
+        prometheus
+        proxy . /etc/resolv.conf
+        cache <span style="color:#ae81ff">30</span>
+    }
+---
+<span style="color:#66d9ef">apiVersion</span>: v1
+<span style="color:#66d9ef">kind</span>: ReplicationController
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: busybox-cm
+  <span style="color:#66d9ef">labels</span>:
+    <span style="color:#66d9ef">app</span>: busybox-cm
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">replicas</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#66d9ef">selector</span>:
+    <span style="color:#66d9ef">app</span>: busybox-cm
+  <span style="color:#66d9ef">template</span>:
+    <span style="color:#66d9ef">metadata</span>:
+      <span style="color:#66d9ef">name</span>: busybox-cm
+      <span style="color:#66d9ef">labels</span>:
+        <span style="color:#66d9ef">app</span>: busybox-cm
+    <span style="color:#66d9ef">spec</span>:
+      <span style="color:#66d9ef">containers</span>:
+        - <span style="color:#66d9ef">image</span>: busybox
+          <span style="color:#66d9ef">command</span>:
+            - sleep
+            - <span style="color:#e6db74">&#34;3600&#34;</span>
+          <span style="color:#66d9ef">imagePullPolicy</span>: IfNotPresent
+          <span style="color:#66d9ef">name</span>: busybox
+          <span style="color:#66d9ef">volumeMounts</span>:
+            - <span style="color:#66d9ef">name</span>: config-volume
+              <span style="color:#66d9ef">mountPath</span>: /usr/Corefile
+              <span style="color:#75715e"># 如果没有指定 subPath，挂载后，/usr/ 下面的文件都会被覆盖</span>
+              <span style="color:#66d9ef">subPath</span>: Corefile
+      <span style="color:#66d9ef">restartPolicy</span>: Always
+      <span style="color:#66d9ef">volumes</span>:
+        - <span style="color:#66d9ef">name</span>: config-volume
+          <span style="color:#66d9ef">configMap</span>:
+            <span style="color:#66d9ef">name</span>: busybox-cm
+            <span style="color:#66d9ef">items</span>:
+              - <span style="color:#66d9ef">key</span>: Corefile
+                <span style="color:#66d9ef">path</span>: Corefile
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">Kubernetes 官网 Volumes</a></li>
+<li><a href="https://www.cnblogs.com/iiiiher/p/8352579.html">subPath 解决 cm 覆盖目录问题</a></li>
+</ul>
+<hr>
+<h3 id="fatedierfrphttpsgithubcomfatedierfrp-github-starshttpsimgshieldsiogithubstarsfatedierfrpsvg"><a href="https://github.com/fatedier/frp">fatedier/frp</a> <img src="https://img.shields.io/github/stars/fatedier/frp.svg" alt="Github stars" /></h3>
+<p>Fast Reverse Proxy</p>
+<p>frp 反向代理 内网穿透</p>
+<h3 id="lazy-luosmargatehttpsgithubcomlazy-luosmargate-github-starshttpsimgshieldsiogithubstarslazy-luosmargatesvg"><a href="https://github.com/lazy-luo/smarGate">lazy-luo/smarGate</a> <img src="https://img.shields.io/github/stars/lazy-luo/smarGate.svg" alt="Github stars" /></h3>
+<p>内网穿透，c++ 实现，无需公网 IP，小巧，易用，快速，安全，最好的多链路聚合（p2p+proxy）模式，不做之一&hellip; 这才是你真正想要的内网穿透工具！</p>
+<p>官方命名为 “移动网关”，通过手机客户端将位于内网的服务端网络进行按需暴露，核心引擎采用 c++ 实现。</p>
+<p>用过花生壳、<code>frp</code>、<code>nps</code>、<code>zerotier</code> 等穿透工具，都需要映射到外网。
+身边同事有过深刻的教训，使用 <code>frp</code> 暴漏 <code>rdp</code> 服务，最终身中勒索病毒。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/141399129">用过的最好的 P2P 穿透工具（非 frp/nps 之流）</a></li>
 </ul>
 </article>
  
@@ -968,7 +1112,7 @@ $ rm -rf ~/Library/Logs/Idea*
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/844d1b68100024f0375d9aecc026fdb6a5960270" title='Last modified by yewang | 2020-06-02' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/6df2e4d8135b8e5c4689403d99b8c56c3f8cc2ec" title='Last modified by yewang | 2020-06-02' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-06-02</span>
     </a>
@@ -1039,6 +1183,7 @@ $ rm -rf ~/Library/Logs/Idea*
             </li>
             <li><a href="#jetbrains">Jetbrains</a>
               <ul>
+                <li><a href="#同步配置">同步配置</a></li>
                 <li><a href="#intellij-idea-配置文件存放的位置">IntelliJ IDEA 配置文件存放的位置</a></li>
                 <li><a href="#macos-删除-idea-配置文件">MacOS 删除 idea 配置文件</a></li>
               </ul>
@@ -1055,6 +1200,23 @@ $ rm -rf ~/Library/Logs/Idea*
                 <li><a href="#add-file-to-remote-without-cloning">add file to remote without cloning</a></li>
               </ul>
             </li>
+            <li><a href="#keyboard-maestro">Keyboard Maestro</a></li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#volumes">Volumes</a>
+                  <ul>
+                    <li><a href="#subpath">subPath</a>
+                      <ul>
+                        <li><a href="#同一个-volume-多次挂载">同一个 volume 多次挂载</a></li>
+                        <li><a href="#插入而非覆盖"><code>插入</code>而非<code>覆盖</code></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#fatedierfrphttpsgithubcomfatedierfrp-github-starshttpsimgshieldsiogithubstarsfatedierfrpsvg"><a href="https://github.com/fatedier/frp">fatedier/frp</a> <img src="https://img.shields.io/github/stars/fatedier/frp.svg" alt="Github stars"></a></li>
+            <li><a href="#lazy-luosmargatehttpsgithubcomlazy-luosmargate-github-starshttpsimgshieldsiogithubstarslazy-luosmargatesvg"><a href="https://github.com/lazy-luo/smarGate">lazy-luo/smarGate</a> <img src="https://img.shields.io/github/stars/lazy-luo/smarGate.svg" alt="Github stars"></a></li>
           </ul>
         </li>
       </ul>
