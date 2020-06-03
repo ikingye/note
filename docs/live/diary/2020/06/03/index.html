@@ -4,11 +4,29 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 6 月 3 日（星期三） 今日待办     编程 "><meta property="og:title" content="2020-06-03" />
-<meta property="og:description" content="2020 年 6 月 3 日（星期三） 今日待办     编程 " />
+<meta name="description" content="2020 年 6 月 3 日（星期三） 今日待办     编程 kernel-devel 如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
+比如 nvidia 和 ati 的官方显卡驱动，alsa-driver 声卡驱动，他们都需要编译一个放在内核里面运行的模块，编译这个模块就需要内核的 header 文件才能顺利编译。
+当然，kernel-devel 不光是 C Header 文件，它还有内核的配置文件，以及其他的开发用的资料
+kernel devel vs kernel source kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
+如果仅仅是用于你自己编写的模块开发的话，因为只需引用相应的内核头文件，所以只有 devel 包即可， 如果你要修改现有的内核源代码并重新编译，那必须是 kernel-souce。
+kernel-devel 是用做内核一般开发的，比如编写内核模块，原则上，可以不需要内核的原代码。 kernel 则是专指内核本身的开发，因此需要内核的原代码。
+ lspci 显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。
+PCI Peripheral Component Interconnect 外设部件互连标准
+个人电脑中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽
+ centos 安装 Kubernetes 环境 安装 GPU 驱动 检测是否检测到 GPU 设备 $ lspci | grep -i nvidia 3b:00."><meta property="og:title" content="2020-06-03" />
+<meta property="og:description" content="2020 年 6 月 3 日（星期三） 今日待办     编程 kernel-devel 如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
+比如 nvidia 和 ati 的官方显卡驱动，alsa-driver 声卡驱动，他们都需要编译一个放在内核里面运行的模块，编译这个模块就需要内核的 header 文件才能顺利编译。
+当然，kernel-devel 不光是 C Header 文件，它还有内核的配置文件，以及其他的开发用的资料
+kernel devel vs kernel source kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
+如果仅仅是用于你自己编写的模块开发的话，因为只需引用相应的内核头文件，所以只有 devel 包即可， 如果你要修改现有的内核源代码并重新编译，那必须是 kernel-souce。
+kernel-devel 是用做内核一般开发的，比如编写内核模块，原则上，可以不需要内核的原代码。 kernel 则是专指内核本身的开发，因此需要内核的原代码。
+ lspci 显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。
+PCI Peripheral Component Interconnect 外设部件互连标准
+个人电脑中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽
+ centos 安装 Kubernetes 环境 安装 GPU 驱动 检测是否检测到 GPU 设备 $ lspci | grep -i nvidia 3b:00." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/03/" />
-
+<meta property="article:modified_time" content="2020-06-03T00:55:48+08:00" />
 <title>2020-06-03 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -16,7 +34,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.050dc3e34ebd9cf62fa0c4cea80e170662cb4fd69b4cb8df30f6b70b258fa1a9.js" integrity="sha256-BQ3D4069nPYvoMTOqA4XBmLLT9abTLjfMPa3CyWPoak="></script>
+<script defer src="/note/en.search.min.e87c402de5791483c019e3aba596f684713a01131339bf3a69ec24d3a4d3350e.js" integrity="sha256-6HxALeV5FIPAGeOrpZb2hHE6ARMTOb86aewk06TTNQ4="></script>
 
 <!--
 Made with Book Theme
@@ -778,7 +796,47 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#2020-年-6-月-3-日星期三">2020 年 6 月 3 日（星期三）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#kernel-devel">kernel-devel</a>
+              <ul>
+                <li><a href="#kernel-devel-vs-kernel-source"><code>kernel devel</code> vs <code>kernel source</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#lspci">lspci</a>
+              <ul>
+                <li><a href="#pci">PCI</a></li>
+              </ul>
+            </li>
+            <li><a href="#centos-安装-kubernetes-环境">centos 安装 Kubernetes 环境</a>
+              <ul>
+                <li><a href="#安装-gpu-驱动">安装 GPU 驱动</a>
+                  <ul>
+                    <li><a href="#检测是否检测到-gpu-设备">检测是否检测到 GPU 设备</a></li>
+                    <li><a href="#安装-gcc">安装 gcc</a></li>
+                    <li><a href="#安装-gpu-驱动-1">安装 GPU 驱动</a></li>
+                  </ul>
+                </li>
+                <li><a href="#yum-安装-docker-ce">yum 安装 docker-ce</a></li>
+                <li><a href="#nvidia-docker">nvidia-docker</a>
+                  <ul>
+                    <li><a href="#yum-安装-nvidia-docker2">yum 安装 nvidia-docker2</a></li>
+                  </ul>
+                </li>
+                <li><a href="#安装-k8s-环境">安装 k8s 环境</a>
+                  <ul>
+                    <li><a href="#ipvs-安装">ipvs 安装</a></li>
+                    <li><a href="#kubeadm-安装-k8s-集群">kubeadm 安装 k8s 集群</a></li>
+                    <li><a href="#更换-calico-网络">更换 calico 网络</a></li>
+                    <li><a href="#kube-proxy-开启-ipvs">kube-proxy 开启 ipvs</a></li>
+                    <li><a href="#coredns-部署">Coredns 部署</a></li>
+                  </ul>
+                </li>
+                <li><a href="#安装-nvidia-device-plugin">安装 nvidia-device-plugin</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -795,11 +853,351 @@ https://github.com/alex-shpak/hugo-book
   <article class="markdown"><h1 id="2020-年-6-月-3-日星期三">2020 年 6 月 3 日（星期三）</h1>
 <h2 id="今日待办">今日待办</h2>
 <ul>
-<li><input disabled="" type="checkbox"></li>
+<li><input disabled="" type="checkbox"> </li>
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
-</article>
+<h3 id="kernel-devel">kernel-devel</h3>
+<p>如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。</p>
+<p>比如 nvidia 和 ati 的官方显卡驱动，alsa-driver 声卡驱动，他们都需要编译一个放在内核里面运行的模块，编译这个模块就需要内核的 header 文件才能顺利编译。</p>
+<p>当然，kernel-devel 不光是 C Header 文件，它还有内核的配置文件，以及其他的开发用的资料</p>
+<h4 id="kernel-devel-vs-kernel-source"><code>kernel devel</code> vs <code>kernel source</code></h4>
+<p>kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile，
+而 kernel-souce 包含所有内核源代码。</p>
+<p>如果仅仅是用于你自己编写的模块开发的话，因为只需引用相应的内核头文件，所以只有 devel 包即可，
+如果你要修改现有的内核源代码并重新编译，那必须是 kernel-souce。</p>
+<p>kernel-devel 是用做内核一般开发的，比如编写内核模块，原则上，可以不需要内核的原代码。
+kernel 则是专指内核本身的开发，因此需要内核的原代码。</p>
+<hr>
+<h3 id="lspci">lspci</h3>
+<p>显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。</p>
+<h4 id="pci">PCI</h4>
+<p>Peripheral Component Interconnect
+外设部件互连标准</p>
+<p>个人电脑中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽</p>
+<hr>
+<h3 id="centos-安装-kubernetes-环境">centos 安装 Kubernetes 环境</h3>
+<h4 id="安装-gpu-驱动">安装 GPU 驱动</h4>
+<h5 id="检测是否检测到-gpu-设备">检测是否检测到 GPU 设备</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ lspci | grep -i nvidia
+
+3b:00.0 3D controller: NVIDIA Corporation GP104GL <span style="color:#f92672">[</span>Tesla P4<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>rev a1<span style="color:#f92672">)</span>
+86:00.0 3D controller: NVIDIA Corporation GP104GL <span style="color:#f92672">[</span>Tesla P4<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>rev a1<span style="color:#f92672">)</span>
+af:00.0 3D controller: NVIDIA Corporation GP104GL <span style="color:#f92672">[</span>Tesla P4<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>rev a1<span style="color:#f92672">)</span>
+d8:00.0 3D controller: NVIDIA Corporation GP104GL <span style="color:#f92672">[</span>Tesla P4<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>rev a1<span style="color:#f92672">)</span>
+</code></pre></div><h5 id="安装-gcc">安装 gcc</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install gcc
+</code></pre></div><p>安装与当前 kernel 对应的 kernel-devel，yum 不能安装的用 rpm 安装</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install kernel-devel-<span style="color:#66d9ef">$(</span>uname -r<span style="color:#66d9ef">)</span>
+</code></pre></div><p>若无法通过 yum 来安装 kernel-devel，可下载对应的 kernel-devel 文件安装</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#查看对应内核版本</span>
+uname -r
+wget --user<span style="color:#f92672">=</span>guest01 --password<span style="color:#f92672">=</span>baidu@123  ftp://cp01-cos-dev01.cp01.baidu.com:/kernel-4.14.0_1-0-0-16/kernel-devel-4.14.0_1-0-0-16.tgz
+tar -zxvf kernel-devel-4.14.0_1-0-0-16.tgz
+cd kernel-devel-4.14.0_1-0-0-16
+./auto_changekernel.sh
+<span style="color:#75715e">#检查/usr/src/kernel目录下是否能看到kernel</span>
+ls /usr/src/kernels
+</code></pre></div><h5 id="安装-gpu-驱动-1">安装 GPU 驱动</h5>
+<p>首先在 <a href="https://www.nvidia.com/Download/index.aspx?lang=cn">Nvidia 官网</a>下载驱动</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200603150115.png" alt="" /></p>
+<p>运行下载好的驱动文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./NVIDIA-Linux-x86_64-418.116.00.run --kernel-source-path<span style="color:#f92672">=</span>/usr/src/kernels/4.14.0_1-0-0-16
+</code></pre></div><p><code>--kernel-source-path</code> 内核文件路径</p>
+<p>验证</p>
+<p>nvidia-smi</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200603150206.png" alt="" /></p>
+<hr>
+<h4 id="yum-安装-docker-ce">yum 安装 docker-ce</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装依赖包</span>
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+<span style="color:#75715e"># 添加 docker yum 源</span>
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+<span style="color:#75715e"># 如果网络速度太慢，可更换其他 docker-ce 源</span>
+<span style="color:#75715e"># yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span>
+
+<span style="color:#75715e"># 安装指定版本</span>
+<span style="color:#75715e"># docker-ce 的最新版本为 19.03，同时也集成了 GPU 能力，但不确定是否兼容 nvidia-docker，所以目前 docker-ce 还是使用 18.09 版本。</span>
+<span style="color:#75715e">#查看docker-ce版本</span>
+yum list docker-ce --showduplicates
+yum install docker-ce-18.09.6
+<span style="color:#75715e">#启动docker</span>
+systemctl start docker
+</code></pre></div><h4 id="nvidia-docker">nvidia-docker</h4>
+<p><a href="https://github.com/NVIDIA/nvidia-docker">NVIDIA/nvidia-docker</a> <img src="https://img.shields.io/github/stars/NVIDIA/nvidia-docker.svg" alt="Github stars" /></p>
+<p>因为 GPU 属于特定的厂商产品，需要特定的 driver，
+Docker 本身并不支持 GPU。
+以前如果要在 Docker 中使用 GPU，就需要在 container 中安装主机上使用 GPU 的 driver，
+然后把主机上的 GPU 设备（例如：/dev/nvidia0）映射到 container 中。
+所以这样的 Docker image 并不具备可移植性。</p>
+<p>Nvidia-docker 项目就是为了解决这个问题，
+它让 Docker image 不需要知道底层 GPU 的相关信息，而是通过启动 container 时 mount 设备和驱动文件来实现的。</p>
+<h5 id="yum-安装-nvidia-docker2">yum 安装 nvidia-docker2</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 配置yum源</span>
+distribution<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>. /etc/os-release;echo $ID$VERSION_ID<span style="color:#66d9ef">)</span>
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | sudo tee /etc/yum.repos.d/nvidia-docker.repo
+<span style="color:#75715e"># 安装nvidia-docker2</span>
+yum install -y nvidia-docker2
+<span style="color:#75715e"># 修改docker配置，添加nvidia runtime</span>
+cat /etc/docker/daemon.json
+<span style="color:#f92672">{</span>
+   <span style="color:#e6db74">&#34;default-runtime&#34;</span>: <span style="color:#e6db74">&#34;nvidia&#34;</span>,
+    <span style="color:#e6db74">&#34;runtimes&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;nvidia&#34;</span>: <span style="color:#f92672">{</span>
+            <span style="color:#e6db74">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/usr/bin/nvidia-container-runtime&#34;</span>,
+            <span style="color:#e6db74">&#34;runtimeArgs&#34;</span>: <span style="color:#f92672">[]</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+<span style="color:#75715e">#重启docker</span>
+systemctl restart docker
+<span style="color:#75715e">#ps aux | grep dockerd | grep -v grep | awk &#39;{ print $2; }&#39;|xargs -L 1 sudo kill -HUP</span>
+</code></pre></div><h4 id="安装-k8s-环境">安装 k8s 环境</h4>
+<h5 id="ipvs-安装">ipvs 安装</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">modprobe -- ip_vs
+modprobe -- ip_vs_rr
+modprobe -- ip_vs_wrr
+modprobe -- ip_vs_sh
+modprobe -- nf_conntrack_ipv4
+yum install ipvsadm -y
+</code></pre></div><h5 id="kubeadm-安装-k8s-集群">kubeadm 安装 k8s 集群</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># apiserver-advertise-address指定master的interface，pod-network-cidr指定Pod网络的范围, service-cidr指定svc的范围</span>
+kubeadm init --service-cidr 10.240.0.0/16 --apiserver-advertise-address 172.27.9.131 --pod-network-cidr<span style="color:#f92672">=</span>10.244.0.0/16
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://blog.51cto.com/3241766/2405624">centos7 使用 kubeadm 部署 k8s 集群（单点 master，flannel 网络）</a> （测试可用）</li>
+<li><a href="https://blog.csdn.net/qq_34857250/article/details/82562572">centos7 使用 kubeadm 部署多 master 高可用集群（flannel 网络）</a></li>
+</ul>
+<h5 id="更换-calico-网络">更换 calico 网络</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget -c https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
+<span style="color:#75715e"># 修改calico.yaml中的CALICO_IPV4POOL_CIDR与kubeadm init指定的--pod-network-cidr保持一致（https://zhuanlan.zhihu.com/p/81120952）</span>
+kubectl apply -f calico.yaml
+
+iptables -P FORWARD ACCEPT
+</code></pre></div><p>若机器存在多网卡出口，在 calico.yaml 中增加如下配置选择出主机网卡</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200603145011.png" alt="" /></p>
+<blockquote class="book-hint warning">
+  验证所有跨主机 pod 通讯没问题再继续。
+</blockquote>
+
+<h5 id="kube-proxy-开启-ipvs">kube-proxy 开启 ipvs</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get configmap kube-proxy -n kube-system -o yaml &gt; kube-proxy-configmap.yaml
+sed -i <span style="color:#e6db74">&#39;s/mode: &#34;&#34;/mode: &#34;ipvs&#34;/&#39;</span> kube-proxy-configmap.yaml
+kubectl apply -f kube-proxy-configmap.yaml
+rm -f kube-proxy-configmap.yaml
+kubectl get pod -n kube-system | grep kube-proxy | awk <span style="color:#e6db74">&#39;{system(&#34;kubectl delete pod &#34;$1&#34; -n kube-system&#34;)}&#39;</span>
+</code></pre></div><h5 id="coredns-部署">Coredns 部署</h5>
+<p>clusterIP 需要在 service-cidr 内</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: v1
+<span style="color:#66d9ef">kind</span>: ServiceAccount
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: coredns
+  <span style="color:#66d9ef">namespace</span>: kube-system
+---
+<span style="color:#66d9ef">apiVersion</span>: rbac.authorization.k8s.io/v1beta1
+<span style="color:#66d9ef">kind</span>: ClusterRole
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">labels</span>:
+    <span style="color:#66d9ef">kubernetes.io/bootstrapping</span>: rbac-defaults
+  <span style="color:#66d9ef">name</span>: system:coredns
+<span style="color:#66d9ef">rules</span>:
+  - <span style="color:#66d9ef">apiGroups</span>:
+      - <span style="color:#e6db74">&#34;&#34;</span>
+    <span style="color:#66d9ef">resources</span>:
+      - endpoints
+      - services
+      - pods
+      - namespaces
+    <span style="color:#66d9ef">verbs</span>:
+      - list
+      - watch
+---
+<span style="color:#66d9ef">apiVersion</span>: rbac.authorization.k8s.io/v1beta1
+<span style="color:#66d9ef">kind</span>: ClusterRoleBinding
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">annotations</span>:
+    <span style="color:#66d9ef">rbac.authorization.kubernetes.io/autoupdate</span>: <span style="color:#e6db74">&#34;true&#34;</span>
+  <span style="color:#66d9ef">labels</span>:
+    <span style="color:#66d9ef">kubernetes.io/bootstrapping</span>: rbac-defaults
+  <span style="color:#66d9ef">name</span>: system:coredns
+<span style="color:#66d9ef">roleRef</span>:
+  <span style="color:#66d9ef">apiGroup</span>: rbac.authorization.k8s.io
+  <span style="color:#66d9ef">kind</span>: ClusterRole
+  <span style="color:#66d9ef">name</span>: system:coredns
+<span style="color:#66d9ef">subjects</span>:
+  - <span style="color:#66d9ef">kind</span>: ServiceAccount
+    <span style="color:#66d9ef">name</span>: coredns
+    <span style="color:#66d9ef">namespace</span>: kube-system
+---
+<span style="color:#66d9ef">apiVersion</span>: v1
+<span style="color:#66d9ef">kind</span>: ConfigMap
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: coredns
+  <span style="color:#66d9ef">namespace</span>: kube-system
+<span style="color:#66d9ef">data</span>:
+  <span style="color:#66d9ef">Corefile</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">    .:53 {</span>
+        errors
+        health
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+          pods insecure
+          upstream
+          fallthrough in-addr.arpa ip6.arpa
+        }
+        prometheus :<span style="color:#ae81ff">9153</span>
+        forward . /etc/resolv.conf
+        cache <span style="color:#ae81ff">30</span>
+        loop
+        reload
+        loadbalance
+    }
+---
+<span style="color:#66d9ef">apiVersion</span>: extensions/v1beta1
+<span style="color:#66d9ef">kind</span>: Deployment
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: coredns
+  <span style="color:#66d9ef">namespace</span>: kube-system
+  <span style="color:#66d9ef">labels</span>:
+    <span style="color:#66d9ef">k8s-app</span>: kube-dns
+    <span style="color:#66d9ef">kubernetes.io/name</span>: <span style="color:#e6db74">&#34;CoreDNS&#34;</span>
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">replicas</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#66d9ef">strategy</span>:
+    <span style="color:#66d9ef">type</span>: RollingUpdate
+    <span style="color:#66d9ef">rollingUpdate</span>:
+      <span style="color:#66d9ef">maxUnavailable</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#66d9ef">selector</span>:
+    <span style="color:#66d9ef">matchLabels</span>:
+      <span style="color:#66d9ef">k8s-app</span>: kube-dns
+  <span style="color:#66d9ef">template</span>:
+    <span style="color:#66d9ef">metadata</span>:
+      <span style="color:#66d9ef">labels</span>:
+        <span style="color:#66d9ef">k8s-app</span>: kube-dns
+    <span style="color:#66d9ef">spec</span>:
+      <span style="color:#66d9ef">serviceAccountName</span>: coredns
+      <span style="color:#66d9ef">tolerations</span>:
+        - <span style="color:#66d9ef">key</span>: node-role.kubernetes.io/master
+          <span style="color:#66d9ef">effect</span>: NoSchedule
+        - <span style="color:#66d9ef">key</span>: <span style="color:#e6db74">&#34;CriticalAddonsOnly&#34;</span>
+          <span style="color:#66d9ef">operator</span>: <span style="color:#e6db74">&#34;Exists&#34;</span>
+      <span style="color:#66d9ef">containers</span>:
+        - <span style="color:#66d9ef">name</span>: coredns
+          <span style="color:#66d9ef">image</span>: coredns/coredns:<span style="color:#ae81ff">1.6.3</span>
+          <span style="color:#66d9ef">imagePullPolicy</span>: IfNotPresent
+          <span style="color:#66d9ef">resources</span>:
+            <span style="color:#66d9ef">limits</span>:
+              <span style="color:#66d9ef">memory</span>: 170Mi
+            <span style="color:#66d9ef">requests</span>:
+              <span style="color:#66d9ef">cpu</span>: 100m
+              <span style="color:#66d9ef">memory</span>: 70Mi
+          <span style="color:#66d9ef">args</span>: [<span style="color:#e6db74">&#34;-conf&#34;</span>, <span style="color:#e6db74">&#34;/etc/coredns/Corefile&#34;</span>]
+          <span style="color:#66d9ef">volumeMounts</span>:
+            - <span style="color:#66d9ef">name</span>: config-volume
+              <span style="color:#66d9ef">mountPath</span>: /etc/coredns
+              <span style="color:#66d9ef">readOnly</span>: <span style="color:#66d9ef">true</span>
+          <span style="color:#66d9ef">ports</span>:
+            - <span style="color:#66d9ef">containerPort</span>: <span style="color:#ae81ff">53</span>
+              <span style="color:#66d9ef">name</span>: dns
+              <span style="color:#66d9ef">protocol</span>: UDP
+            - <span style="color:#66d9ef">containerPort</span>: <span style="color:#ae81ff">53</span>
+              <span style="color:#66d9ef">name</span>: dns-tcp
+              <span style="color:#66d9ef">protocol</span>: TCP
+            - <span style="color:#66d9ef">containerPort</span>: <span style="color:#ae81ff">9153</span>
+              <span style="color:#66d9ef">name</span>: metrics
+              <span style="color:#66d9ef">protocol</span>: TCP
+          <span style="color:#66d9ef">securityContext</span>:
+            <span style="color:#66d9ef">allowPrivilegeEscalation</span>: <span style="color:#66d9ef">false</span>
+            <span style="color:#66d9ef">capabilities</span>:
+              <span style="color:#66d9ef">add</span>:
+                - NET_BIND_SERVICE
+              <span style="color:#66d9ef">drop</span>:
+                - all
+            <span style="color:#66d9ef">readOnlyRootFilesystem</span>: <span style="color:#66d9ef">true</span>
+          <span style="color:#66d9ef">livenessProbe</span>:
+            <span style="color:#66d9ef">httpGet</span>:
+              <span style="color:#66d9ef">path</span>: /health
+              <span style="color:#66d9ef">port</span>: <span style="color:#ae81ff">8080</span>
+              <span style="color:#66d9ef">scheme</span>: HTTP
+            <span style="color:#66d9ef">initialDelaySeconds</span>: <span style="color:#ae81ff">60</span>
+            <span style="color:#66d9ef">timeoutSeconds</span>: <span style="color:#ae81ff">5</span>
+            <span style="color:#66d9ef">successThreshold</span>: <span style="color:#ae81ff">1</span>
+            <span style="color:#66d9ef">failureThreshold</span>: <span style="color:#ae81ff">5</span>
+      <span style="color:#66d9ef">dnsPolicy</span>: Default
+      <span style="color:#66d9ef">volumes</span>:
+        - <span style="color:#66d9ef">name</span>: config-volume
+          <span style="color:#66d9ef">configMap</span>:
+            <span style="color:#66d9ef">name</span>: coredns
+            <span style="color:#66d9ef">items</span>:
+              - <span style="color:#66d9ef">key</span>: Corefile
+                <span style="color:#66d9ef">path</span>: Corefile
+---
+<span style="color:#66d9ef">apiVersion</span>: v1
+<span style="color:#66d9ef">kind</span>: Service
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: kube-dns
+  <span style="color:#66d9ef">namespace</span>: kube-system
+  <span style="color:#66d9ef">annotations</span>:
+    <span style="color:#66d9ef">prometheus.io/port</span>: <span style="color:#e6db74">&#34;9153&#34;</span>
+    <span style="color:#66d9ef">prometheus.io/scrape</span>: <span style="color:#e6db74">&#34;true&#34;</span>
+  <span style="color:#66d9ef">labels</span>:
+    <span style="color:#66d9ef">k8s-app</span>: kube-dns
+    <span style="color:#66d9ef">kubernetes.io/cluster-service</span>: <span style="color:#e6db74">&#34;true&#34;</span>
+    <span style="color:#66d9ef">kubernetes.io/name</span>: <span style="color:#e6db74">&#34;CoreDNS&#34;</span>
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">selector</span>:
+    <span style="color:#66d9ef">k8s-app</span>: kube-dns
+  <span style="color:#66d9ef">clusterIP</span>: <span style="color:#ae81ff">10.240.0.2</span>
+  <span style="color:#66d9ef">ports</span>:
+    - <span style="color:#66d9ef">name</span>: dns
+      <span style="color:#66d9ef">port</span>: <span style="color:#ae81ff">53</span>
+      <span style="color:#66d9ef">protocol</span>: UDP
+    - <span style="color:#66d9ef">name</span>: dns-tcp
+      <span style="color:#66d9ef">port</span>: <span style="color:#ae81ff">53</span>
+      <span style="color:#66d9ef">protocol</span>: TCP
+</code></pre></div><h4 id="安装-nvidia-device-plugin">安装 nvidia-device-plugin</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: extensions/v1beta1
+<span style="color:#66d9ef">kind</span>: DaemonSet
+
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: nvidia-device-plugin-daemonset
+  <span style="color:#66d9ef">namespace</span>: kube-system
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">updateStrategy</span>:
+    <span style="color:#66d9ef">type</span>: RollingUpdate
+  <span style="color:#66d9ef">template</span>:
+    <span style="color:#66d9ef">metadata</span>:
+      <span style="color:#75715e"># Mark this pod as a critical add-on; when enabled, the critical add-on scheduler</span>
+      <span style="color:#75715e"># reserves resources for critical add-on pods so that they can be rescheduled after</span>
+      <span style="color:#75715e"># a failure.  This annotation works in tandem with the toleration below.</span>
+      <span style="color:#66d9ef">annotations</span>:
+        <span style="color:#66d9ef">scheduler.alpha.kubernetes.io/critical-pod</span>: <span style="color:#e6db74">&#34;&#34;</span>
+      <span style="color:#66d9ef">labels</span>:
+        <span style="color:#66d9ef">name</span>: nvidia-device-plugin-ds
+    <span style="color:#66d9ef">spec</span>:
+      <span style="color:#66d9ef">tolerations</span>:
+        <span style="color:#75715e"># Allow this pod to be rescheduled while the node is in &#34;critical add-ons only&#34; mode.</span>
+        <span style="color:#75715e"># This, along with the annotation above marks this pod as a critical add-on.</span>
+        - <span style="color:#66d9ef">key</span>: CriticalAddonsOnly
+          <span style="color:#66d9ef">operator</span>: Exists
+        - <span style="color:#66d9ef">key</span>: nvidia.com/gpu
+          <span style="color:#66d9ef">operator</span>: Exists
+          <span style="color:#66d9ef">effect</span>: NoSchedule
+      <span style="color:#66d9ef">containers</span>:
+        - <span style="color:#66d9ef">image</span>: nvidia/k8s-device-plugin:<span style="color:#ae81ff">1.11</span>
+          <span style="color:#66d9ef">name</span>: nvidia-device-plugin-ctr
+          <span style="color:#66d9ef">securityContext</span>:
+            <span style="color:#66d9ef">allowPrivilegeEscalation</span>: <span style="color:#66d9ef">false</span>
+            <span style="color:#66d9ef">capabilities</span>:
+              <span style="color:#66d9ef">drop</span>: [<span style="color:#e6db74">&#34;ALL&#34;</span>]
+          <span style="color:#66d9ef">volumeMounts</span>:
+            - <span style="color:#66d9ef">name</span>: device-plugin
+              <span style="color:#66d9ef">mountPath</span>: /var/lib/kubelet/device-plugins
+      <span style="color:#66d9ef">volumes</span>:
+        - <span style="color:#66d9ef">name</span>: device-plugin
+          <span style="color:#66d9ef">hostPath</span>:
+            <span style="color:#66d9ef">path</span>: /var/lib/kubelet/device-plugins
+</code></pre></div></article>
  
       
 
@@ -808,6 +1206,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/505dc4fa012e51cbf4baa2940336010ad9585d4f" title='Last modified by yewang | 2020-06-03' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-03</span>
+    </a>
+  </div>
 
 
 
@@ -843,7 +1249,47 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#2020-年-6-月-3-日星期三">2020 年 6 月 3 日（星期三）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#kernel-devel">kernel-devel</a>
+              <ul>
+                <li><a href="#kernel-devel-vs-kernel-source"><code>kernel devel</code> vs <code>kernel source</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#lspci">lspci</a>
+              <ul>
+                <li><a href="#pci">PCI</a></li>
+              </ul>
+            </li>
+            <li><a href="#centos-安装-kubernetes-环境">centos 安装 Kubernetes 环境</a>
+              <ul>
+                <li><a href="#安装-gpu-驱动">安装 GPU 驱动</a>
+                  <ul>
+                    <li><a href="#检测是否检测到-gpu-设备">检测是否检测到 GPU 设备</a></li>
+                    <li><a href="#安装-gcc">安装 gcc</a></li>
+                    <li><a href="#安装-gpu-驱动-1">安装 GPU 驱动</a></li>
+                  </ul>
+                </li>
+                <li><a href="#yum-安装-docker-ce">yum 安装 docker-ce</a></li>
+                <li><a href="#nvidia-docker">nvidia-docker</a>
+                  <ul>
+                    <li><a href="#yum-安装-nvidia-docker2">yum 安装 nvidia-docker2</a></li>
+                  </ul>
+                </li>
+                <li><a href="#安装-k8s-环境">安装 k8s 环境</a>
+                  <ul>
+                    <li><a href="#ipvs-安装">ipvs 安装</a></li>
+                    <li><a href="#kubeadm-安装-k8s-集群">kubeadm 安装 k8s 集群</a></li>
+                    <li><a href="#更换-calico-网络">更换 calico 网络</a></li>
+                    <li><a href="#kube-proxy-开启-ipvs">kube-proxy 开启 ipvs</a></li>
+                    <li><a href="#coredns-部署">Coredns 部署</a></li>
+                  </ul>
+                </li>
+                <li><a href="#安装-nvidia-device-plugin">安装 nvidia-device-plugin</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

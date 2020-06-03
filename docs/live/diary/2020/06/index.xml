@@ -15,7 +15,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/03/</guid>
-      <description>2020 年 6 月 3 日（星期三） 今日待办     编程 </description>
+      <description>2020 年 6 月 3 日（星期三） 今日待办     编程 kernel-devel 如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
+比如 nvidia 和 ati 的官方显卡驱动，alsa-driver 声卡驱动，他们都需要编译一个放在内核里面运行的模块，编译这个模块就需要内核的 header 文件才能顺利编译。
+当然，kernel-devel 不光是 C Header 文件，它还有内核的配置文件，以及其他的开发用的资料
+kernel devel vs kernel source kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
+如果仅仅是用于你自己编写的模块开发的话，因为只需引用相应的内核头文件，所以只有 devel 包即可， 如果你要修改现有的内核源代码并重新编译，那必须是 kernel-souce。
+kernel-devel 是用做内核一般开发的，比如编写内核模块，原则上，可以不需要内核的原代码。 kernel 则是专指内核本身的开发，因此需要内核的原代码。
+ lspci 显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。
+PCI Peripheral Component Interconnect 外设部件互连标准
+个人电脑中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽
+ centos 安装 Kubernetes 环境 安装 GPU 驱动 检测是否检测到 GPU 设备 $ lspci | grep -i nvidia 3b:00.</description>
     </item>
     
     <item>
