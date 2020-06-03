@@ -444,7 +444,7 @@ package main import ( &amp;#34;io/ioutil&amp;#34; &amp;#34;gopkg.in/yaml.v2&amp;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/13/</guid>
-      <description>2020 年 4 月 13 日（星期一） 今日待办     编程 Git Git submodule merge vs squash vs rebase merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好 squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner rebase 可以尽可能保持 master 分支干净整洁，并且易于识别 author
+      <description>2020 年 4 月 13 日（星期一） 今日待办     编程 Git merge vs squash vs rebase merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好 squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner rebase 可以尽可能保持 master 分支干净整洁，并且易于识别 author
 squash merge # 切换到目标分支 $ git checkout master # 以 squash 的形式 merge $ git merge --squash devel # it does not produce a commit right away: you need an additional commit $ git commit -m &amp;#34;squash branch&amp;#34;  你会发现，在 master 分支上居然有未提交的修改，然后你就需要在 master 上主动提交了修改， 注意，这里是你 commit 的，也就是改变了 commit 的 author。 git merge has a &amp;ndash;commit option, but it cannot be used with &amp;ndash;squash.</description>
     </item>
     

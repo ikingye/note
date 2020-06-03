@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 4 月 13 日（星期一） 今日待办     编程 Git Git submodule merge vs squash vs rebase merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好 squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner rebase 可以尽可能保持 master 分支干净整洁，并且易于识别 author
+<meta name="description" content="2020 年 4 月 13 日（星期一） 今日待办     编程 Git merge vs squash vs rebase merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好 squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner rebase 可以尽可能保持 master 分支干净整洁，并且易于识别 author
 squash merge # 切换到目标分支 $ git checkout master # 以 squash 的形式 merge $ git merge --squash devel # it does not produce a commit right away: you need an additional commit $ git commit -m &#34;squash branch&#34;  你会发现，在 master 分支上居然有未提交的修改，然后你就需要在 master 上主动提交了修改， 注意，这里是你 commit 的，也就是改变了 commit 的 author。 git merge has a &ndash;commit option, but it cannot be used with &ndash;squash."><meta property="og:title" content="2020-04-13" />
-<meta property="og:description" content="2020 年 4 月 13 日（星期一） 今日待办     编程 Git Git submodule merge vs squash vs rebase merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好 squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner rebase 可以尽可能保持 master 分支干净整洁，并且易于识别 author
+<meta property="og:description" content="2020 年 4 月 13 日（星期一） 今日待办     编程 Git merge vs squash vs rebase merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好 squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner rebase 可以尽可能保持 master 分支干净整洁，并且易于识别 author
 squash merge # 切换到目标分支 $ git checkout master # 以 squash 的形式 merge $ git merge --squash devel # it does not produce a commit right away: you need an additional commit $ git commit -m &#34;squash branch&#34;  你会发现，在 master 分支上居然有未提交的修改，然后你就需要在 master 上主动提交了修改， 注意，这里是你 commit 的，也就是改变了 commit 的 author。 git merge has a &ndash;commit option, but it cannot be used with &ndash;squash." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/13/" />
@@ -18,7 +18,7 @@ squash merge # 切换到目标分支 $ git checkout master # 以 squash 的形�
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.e87c402de5791483c019e3aba596f684713a01131339bf3a69ec24d3a4d3350e.js" integrity="sha256-6HxALeV5FIPAGeOrpZb2hHE6ARMTOb86aewk06TTNQ4="></script>
+<script defer src="/note/en.search.min.8a80dae21d30cbe7404adaafad3c4785f5ea8459d781dba48cae6752a206cdb3.js" integrity="sha256-ioDa4h0wy&#43;dAStqvrTxHhfXqhFnXgdukjK5nUqIGzbM="></script>
 
 <!--
 Made with Book Theme
@@ -1040,7 +1040,6 @@ https://github.com/alex-shpak/hugo-book
           <ul>
             <li><a href="#git">Git</a>
               <ul>
-                <li><a href="#git-submodule">Git submodule</a></li>
                 <li><a href="#merge-vs-squash-vs-rebase">merge vs squash vs rebase</a>
                   <ul>
                     <li><a href="#squash-merge">squash merge</a></li>
@@ -1082,7 +1081,6 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <h2 id="编程">编程</h2>
 <h3 id="git">Git</h3>
-<h4 id="git-submodule">Git submodule</h4>
 <h4 id="merge-vs-squash-vs-rebase">merge vs squash vs rebase</h4>
 <p>merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好
 squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner
@@ -1227,7 +1225,6 @@ $ git merge
           <ul>
             <li><a href="#git">Git</a>
               <ul>
-                <li><a href="#git-submodule">Git submodule</a></li>
                 <li><a href="#merge-vs-squash-vs-rebase">merge vs squash vs rebase</a>
                   <ul>
                     <li><a href="#squash-merge">squash merge</a></li>
