@@ -10,6 +10,20 @@
     
     
     <item>
+      <title>2020-06-04</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/04/</guid>
+      <description>2020 年 6 月 4 日（星期四） 今日待办     编程 判断是物理机还是虚拟机 $ systemd-detect-virt On KVM for example it returns:
+kvm and on a non-virtualized host:
+none 其他方法 dmesg | grep -i virtual 基于 hardware，则说明是物理机
+结果返回包含 virtual，则是虚拟机
+$ dmesg |grep -i virtual [0.000000] Booting paravirtualized kernel on Xen HVM [1.034572] systemd[1]: Detected virtualization xen. [1.065757] systemd[1]: Starting Setup Virtual Console... [1.287144] xen_netfront: Initialising Xen virtual ethernet driver 参考：
+ Easy way to determine virtualization technology  网络 TCP 和 UDP 的端口号可以是同一个吗 可以。</description>
+    </item>
+    
+    <item>
       <title>2020-06-03</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/06/03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
