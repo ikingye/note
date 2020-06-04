@@ -18,7 +18,7 @@ $ dmesg |grep -i virtual [0.000000] Booting paravirtualized kernel on Xen HVM [1
  Easy way to determine virtualization technology  网络 TCP 和 UDP 的端口号可以是同一个吗 可以。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/04/" />
-
+<meta property="article:modified_time" content="2020-06-04T17:53:46+08:00" />
 <title>2020-06-04 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -26,7 +26,7 @@ $ dmesg |grep -i virtual [0.000000] Booting paravirtualized kernel on Xen HVM [1
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.2024b29a8b946e5b72fbc78e50d8c34fa42b6668ab5d1d4f08866964c2baeeeb.js" integrity="sha256-ICSymouUblty&#43;8eOUNjDT6QrZmirXR1PCIZpZMK67us="></script>
+<script defer src="/note/en.search.min.3abe6ea049a7712314060533d5237f04c570744c29cf15421166a34755e0917c.js" integrity="sha256-Or5uoEmncSMUBgUz1SN/BMVwdEwpzxVCEWajR1XgkXw="></script>
 
 <!--
 Made with Book Theme
@@ -819,6 +819,11 @@ https://github.com/alex-shpak/hugo-book
             </li>
             <li><a href="#ipc-vs-nvr">IPC vs NVR</a></li>
             <li><a href="#subsurface">Subsurface</a></li>
+            <li><a href="#linux-信号">Linux 信号</a>
+              <ul>
+                <li><a href="#普通用户使用的信号">普通用户使用的信号</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -950,6 +955,54 @@ https://github.com/alex-shpak/hugo-book
 <a href="https://github.com/torvalds/linux">torvalds/linux</a> <img src="https://img.shields.io/github/stars/torvalds/linux.svg" alt="Github stars" />，</p>
 <p>另一个是
 <a href="https://github.com/subsurface/subsurface">subsurface/subsurface</a> <img src="https://img.shields.io/github/stars/subsurface/subsurface.svg" alt="Github stars" /></p>
+<hr>
+<h3 id="linux-信号">Linux 信号</h3>
+<p>信号是进程间通信的底层形式。</p>
+<p>Linux 有标准信号 32 个，从 32-63 的信号是<strong>实时</strong>信号。</p>
+<p>发送信号的原因：</p>
+<ul>
+<li>硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）</li>
+<li>软件异常：如进程终止时，内核会给父进程发送 SIGCHLE（信号值 17），窗口大小调整，应用程序会收到 SIGWINCH（信号值 28）</li>
+</ul>
+<h4 id="普通用户使用的信号">普通用户使用的信号</h4>
+<ul>
+<li><code>SIGHUP</code> 1
+<ul>
+<li>a program loses its controlling terminal</li>
+</ul>
+</li>
+<li><code>SIGINT</code> 2
+<ul>
+<li>the user at the controlling terminal presses the interrupt character, which by default is <code>^C</code> (Control-C).</li>
+</ul>
+</li>
+<li><code>SIGQUIT</code> 3
+<ul>
+<li>the user at the controlling terminal presses the quit character, which by default is <code>^\</code> (Control-Backslash)</li>
+</ul>
+</li>
+<li><code>SIGILL</code> 4
+<ul>
+<li>执行了非法指令</li>
+</ul>
+</li>
+<li><code>SIGKILL</code> 9
+<ul>
+<li><strong>不可以</strong>被阻塞、处理和忽略</li>
+</ul>
+</li>
+<li><code>SIGTERM</code> 15
+<ul>
+<li>kill 默认不带参数，发送的信号就是 SIGTERM</li>
+<li>可以被阻塞、处理和忽略</li>
+</ul>
+</li>
+<li><code>SIGTOP</code> 20
+<ul>
+<li>停止（挂起）进程 CRTL+D</li>
+</ul>
+</li>
+</ul>
 </article>
  
       
@@ -959,6 +1012,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/1712b31498fd2fb85ea79f3051f5697d07b7a055" title='Last modified by yewang | 2020-06-04' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-04</span>
+    </a>
+  </div>
 
 
 
@@ -1015,6 +1076,11 @@ https://github.com/alex-shpak/hugo-book
             </li>
             <li><a href="#ipc-vs-nvr">IPC vs NVR</a></li>
             <li><a href="#subsurface">Subsurface</a></li>
+            <li><a href="#linux-信号">Linux 信号</a>
+              <ul>
+                <li><a href="#普通用户使用的信号">普通用户使用的信号</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
