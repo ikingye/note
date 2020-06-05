@@ -10,6 +10,17 @@
     
     
     <item>
+      <title>2020-06-05</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/05/</guid>
+      <description>2020 年 6 月 5 日（星期五） 今日待办     编程 Beyond Compare MacOS 破解 移除失效的认证
+rm -rf ~/Library/Application\ Support/Beyond\ Compare/ moranzcw/Computer-Networking-A-Top-Down-Approach-NOTES  《计算机网络－自顶向下方法 (原书第 6 版)》编程作业，Wireshark 实验文档的翻译和解答。
+Packet Sender dannagle/PacketSender TCP, UDP, SSL 发包工具 https://packetsender.com/</description>
+    </item>
+    
+    <item>
       <title>2020-06-04</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/06/04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
