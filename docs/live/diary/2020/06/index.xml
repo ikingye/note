@@ -10,12 +10,16 @@
     
     
     <item>
-      <title>2020-06-07</title>
-      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/07/</link>
+      <title>2020-06-08</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/07/</guid>
-      <description>2020 年 6 月 7 日（星期日） 今日待办     编程 </description>
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/08/</guid>
+      <description>2020 年 6 月 8 日（星期一） 今日待办     编程 git git clone --depth 1 什么时候用？
+git clone --depth 1 之后，想拉取所有
+git pull --unshallow 参考：
+ Pull updates with git after cloned with &amp;ndash;depth 1   流媒体 视频编码 AVC (H.264) H.264，又称为 MPEG-4 第 10 部分，高级视频编码（英语： MPEG-4 Part 10, Advanced Video Coding ，缩写为 MPEG-4 AVC）是一种面向块，基于运动补偿的视频编码标准（英语：Video_coding_format） 。
+HEVC (H.265) 高效率视频编码（ High Efficiency Video Coding，简称 HEVC），又称为 H.265 和 MPEG-H 第 2 部分，是一种视频压缩标准，被视为是 ITU-T H.</description>
     </item>
     
     <item>
