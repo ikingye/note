@@ -45,7 +45,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/04/27/</guid>
-      <description>2020 年 4 月 27 日（星期一） 今日待办     编程 GB28181 开源实现 标准  GB28181/GB28181.Solution   服务端  ossrs/srs  xiongziliang/ZLMediaKit  livegbs/GB28181-Server   客户端  pjsip/pjproject  ghettovoice/gosip  StefanKopieczek/gossip  kirm/sip.js    SIP 协议 Antisip
+      <description>2020 年 4 月 27 日（星期一） 今日待办     编程 GB28181 SIP 协议 Antisip
  VSCode  kasecato/vscode-intellij-idea-keybindings   运维 disconf  Distributed Configuration Management Platform (分布式配置管理平台) http://disconf.readthedocs.io/
 consul + consul-template gcc vs g++  后缀为 .c 的  gcc 把它当做 C 程序 g++ 当做是 C++ 程序     编译可以用 gcc/g++，而链接可以用 g++ 或者 gcc -lstdc++  编译阶段，g++ 会调用 gcc，对于 c++ 代码，两者是等价的 gcc 命令不能自动和 C++ 程序使用的库联接，所以通常用 g++ 来完成链接 可以选择手动链接，gcc -lstdc++    乐观锁 vs 悲观锁 乐观锁（读多写少） 总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据， 可以使用版本号机制和 CAS 算法实现。</description>
     </item>

@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 4 月 27 日（星期一） 今日待办     编程 GB28181 开源实现 标准  GB28181/GB28181.Solution   服务端  ossrs/srs  xiongziliang/ZLMediaKit  livegbs/GB28181-Server   客户端  pjsip/pjproject  ghettovoice/gosip  StefanKopieczek/gossip  kirm/sip.js    SIP 协议 Antisip
+<meta name="description" content="2020 年 4 月 27 日（星期一） 今日待办     编程 GB28181 SIP 协议 Antisip
  VSCode  kasecato/vscode-intellij-idea-keybindings   运维 disconf  Distributed Configuration Management Platform (分布式配置管理平台) http://disconf.readthedocs.io/
 consul &#43; consul-template gcc vs g&#43;&#43;  后缀为 .c 的  gcc 把它当做 C 程序 g&#43;&#43; 当做是 C&#43;&#43; 程序     编译可以用 gcc/g&#43;&#43;，而链接可以用 g&#43;&#43; 或者 gcc -lstdc&#43;&#43;  编译阶段，g&#43;&#43; 会调用 gcc，对于 c&#43;&#43; 代码，两者是等价的 gcc 命令不能自动和 C&#43;&#43; 程序使用的库联接，所以通常用 g&#43;&#43; 来完成链接 可以选择手动链接，gcc -lstdc&#43;&#43;    乐观锁 vs 悲观锁 乐观锁（读多写少） 总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据， 可以使用版本号机制和 CAS 算法实现。"><meta property="og:title" content="2020-04-27" />
-<meta property="og:description" content="2020 年 4 月 27 日（星期一） 今日待办     编程 GB28181 开源实现 标准  GB28181/GB28181.Solution   服务端  ossrs/srs  xiongziliang/ZLMediaKit  livegbs/GB28181-Server   客户端  pjsip/pjproject  ghettovoice/gosip  StefanKopieczek/gossip  kirm/sip.js    SIP 协议 Antisip
+<meta property="og:description" content="2020 年 4 月 27 日（星期一） 今日待办     编程 GB28181 SIP 协议 Antisip
  VSCode  kasecato/vscode-intellij-idea-keybindings   运维 disconf  Distributed Configuration Management Platform (分布式配置管理平台) http://disconf.readthedocs.io/
 consul &#43; consul-template gcc vs g&#43;&#43;  后缀为 .c 的  gcc 把它当做 C 程序 g&#43;&#43; 当做是 C&#43;&#43; 程序     编译可以用 gcc/g&#43;&#43;，而链接可以用 g&#43;&#43; 或者 gcc -lstdc&#43;&#43;  编译阶段，g&#43;&#43; 会调用 gcc，对于 c&#43;&#43; 代码，两者是等价的 gcc 命令不能自动和 C&#43;&#43; 程序使用的库联接，所以通常用 g&#43;&#43; 来完成链接 可以选择手动链接，gcc -lstdc&#43;&#43;    乐观锁 vs 悲观锁 乐观锁（读多写少） 总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据， 可以使用版本号机制和 CAS 算法实现。" />
 <meta property="og:type" content="article" />
@@ -20,7 +20,7 @@ consul &#43; consul-template gcc vs g&#43;&#43;  后缀为 .c 的  gcc 把它当
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.e7845bb679da75811016ebea5e2a8f3e6afebc98591f746f763ea4a0ee6149d2.js" integrity="sha256-54RbtnnadYEQFuvqXiqPPmr&#43;vJhZH3Rvdj6koO5hSdI="></script>
+<script defer src="/note/en.search.min.7e12fc68e36453bf1be44b61c1dfb3acd566ed663c8e6e6a8936811b582f76db.js" integrity="sha256-fhL8aONkU78b5Ethwd&#43;zrNVm7WY8jm5qiTaBG1gvdts="></script>
 
 <!--
 Made with Book Theme
@@ -1082,13 +1082,6 @@ https://github.com/alex-shpak/hugo-book
           <ul>
             <li><a href="#gb28181">GB28181</a>
               <ul>
-                <li><a href="#开源实现">开源实现</a>
-                  <ul>
-                    <li><a href="#标准">标准</a></li>
-                    <li><a href="#服务端">服务端</a></li>
-                    <li><a href="#客户端">客户端</a></li>
-                  </ul>
-                </li>
                 <li><a href="#sip-协议">SIP 协议</a></li>
               </ul>
             </li>
@@ -1176,25 +1169,6 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <h2 id="编程">编程</h2>
 <h3 id="gb28181">GB28181</h3>
-<h4 id="开源实现">开源实现</h4>
-<h5 id="标准">标准</h5>
-<ul>
-<li><a href="https://github.com/GB28181/GB28181.Solution">GB28181/GB28181.Solution</a> <img src="https://img.shields.io/github/stars/GB28181/GB28181.Solution.svg" alt="Github stars" /></li>
-</ul>
-<h5 id="服务端">服务端</h5>
-<ul>
-<li><a href="https://github.com/ossrs/srs">ossrs/srs</a> <img src="https://img.shields.io/github/stars/ossrs/srs.svg" alt="Github stars" /></li>
-<li><a href="https://github.com/xiongziliang/ZLMediaKit">xiongziliang/ZLMediaKit</a> <img src="https://img.shields.io/github/stars/xiongziliang/ZLMediaKit.svg" alt="Github stars" /></li>
-<li><a href="https://github.com/livegbs/GB28181-Server">livegbs/GB28181-Server</a> <img src="https://img.shields.io/github/stars/livegbs/GB28181-Server.svg" alt="Github stars" /></li>
-</ul>
-<h5 id="客户端">客户端</h5>
-<ul>
-<li><a href="https://github.com/pjsip/pjproject">pjsip/pjproject</a> <img src="https://img.shields.io/github/stars/pjsip/pjproject.svg" alt="Github stars" /></li>
-<li><a href="https://github.com/ghettovoice/gosip">ghettovoice/gosip</a> <img src="https://img.shields.io/github/stars/ghettovoice/gosip.svg" alt="Github stars" /></li>
-<li><a href="https://github.com/StefanKopieczek/gossip">StefanKopieczek/gossip</a> <img src="https://img.shields.io/github/stars/StefanKopieczek/gossip.svg" alt="Github stars" /></li>
-<li><a href="https://github.com/kirm/sip.js">kirm/sip.js</a> <img src="https://img.shields.io/github/stars/kirm/sip.js.svg" alt="Github stars" /></li>
-</ul>
-<hr>
 <h4 id="sip-协议">SIP 协议</h4>
 <p><a href="https://www.antisip.com/">Antisip</a></p>
 <hr>
@@ -1467,13 +1441,6 @@ USE mydb
           <ul>
             <li><a href="#gb28181">GB28181</a>
               <ul>
-                <li><a href="#开源实现">开源实现</a>
-                  <ul>
-                    <li><a href="#标准">标准</a></li>
-                    <li><a href="#服务端">服务端</a></li>
-                    <li><a href="#客户端">客户端</a></li>
-                  </ul>
-                </li>
                 <li><a href="#sip-协议">SIP 协议</a></li>
               </ul>
             </li>
