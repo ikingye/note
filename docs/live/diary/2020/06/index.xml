@@ -23,7 +23,7 @@ RTSP/RTP/RTCP 封装：
  H.264 H.265 VP9  音频：
  aac g711.a  RTSP
  基于 TCP 基于文本的双向实时传输协议，类似 HTTP 每个会话都含有状态，保持长连接，请求信令按顺序（HTTP 无状态）  RTP/RTCP
- 基于 UDP   RTMP  Adobe 的私有协议，性能相对 HTTP 比较低下。 数据和信令在一条通道。 长连接   HLS  基于 HTTP，性能不错 延时常常大于 10 秒，无法做直播互动  </description>
+ 基于 UDP   RTMP  Adobe 的私有协议，性能相对 HTTP 比较低下。 数据和信令在一条通道。 长连接   HLS  基于 HTTP，性能不错 延时常常大于 10 秒，无法做直播互动   export PATH 使用 ~ 不生效 # 不生效 # export PATH=&amp;#34;$PATH:~/code/study/cc/istio/istio-1.</description>
     </item>
     
     <item>

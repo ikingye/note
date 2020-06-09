@@ -12,7 +12,7 @@ RTSP/RTP/RTCP 封装：
  H.264 H.265 VP9  音频：
  aac g711.a  RTSP
  基于 TCP 基于文本的双向实时传输协议，类似 HTTP 每个会话都含有状态，保持长连接，请求信令按顺序（HTTP 无状态）  RTP/RTCP
- 基于 UDP   RTMP  Adobe 的私有协议，性能相对 HTTP 比较低下。 数据和信令在一条通道。 长连接   HLS  基于 HTTP，性能不错 延时常常大于 10 秒，无法做直播互动  "><meta property="og:title" content="2020-06-09" />
+ 基于 UDP   RTMP  Adobe 的私有协议，性能相对 HTTP 比较低下。 数据和信令在一条通道。 长连接   HLS  基于 HTTP，性能不错 延时常常大于 10 秒，无法做直播互动   export PATH 使用 ~ 不生效 # 不生效 # export PATH=&#34;$PATH:~/code/study/cc/istio/istio-1."><meta property="og:title" content="2020-06-09" />
 <meta property="og:description" content="2020 年 6 月 9 日（星期二） 今日待办     编程 流媒体传输协议 流媒体协议的作用：流同步，播放控制，质量控制，多端跨平台播放等 直播三要素：低延时，高可用，质量反馈和检测
 常见流媒体协议类型
 常见流媒体协议适用场景
@@ -21,10 +21,10 @@ RTSP/RTP/RTCP 封装：
  H.264 H.265 VP9  音频：
  aac g711.a  RTSP
  基于 TCP 基于文本的双向实时传输协议，类似 HTTP 每个会话都含有状态，保持长连接，请求信令按顺序（HTTP 无状态）  RTP/RTCP
- 基于 UDP   RTMP  Adobe 的私有协议，性能相对 HTTP 比较低下。 数据和信令在一条通道。 长连接   HLS  基于 HTTP，性能不错 延时常常大于 10 秒，无法做直播互动  " />
+ 基于 UDP   RTMP  Adobe 的私有协议，性能相对 HTTP 比较低下。 数据和信令在一条通道。 长连接   HLS  基于 HTTP，性能不错 延时常常大于 10 秒，无法做直播互动   export PATH 使用 ~ 不生效 # 不生效 # export PATH=&#34;$PATH:~/code/study/cc/istio/istio-1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/09/" />
-
+<meta property="article:modified_time" content="2020-06-09T15:06:22+08:00" />
 <title>2020-06-09 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -32,7 +32,7 @@ RTSP/RTP/RTCP 封装：
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.572cc0277ee0eee6b4c3127f0d46b077addb6b000a7dedfb2c8da3a6dd0c8235.js" integrity="sha256-VyzAJ37g7ua0wxJ/DUawd63bawAKfe37LI2jpt0MgjU="></script>
+<script defer src="/note/en.search.min.e7845bb679da75811016ebea5e2a8f3e6afebc98591f746f763ea4a0ee6149d2.js" integrity="sha256-54RbtnnadYEQFuvqXiqPPmr&#43;vJhZH3Rvdj6koO5hSdI="></script>
 
 <!--
 Made with Book Theme
@@ -843,6 +843,7 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#hls">HLS</a></li>
               </ul>
             </li>
+            <li><a href="#export-path-使用--不生效">export PATH 使用 <code>~</code> 不生效</a></li>
           </ul>
         </li>
       </ul>
@@ -915,7 +916,14 @@ https://github.com/alex-shpak/hugo-book
 <li>延时常常大于 10 秒，无法做直播互动</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200609145951.png" alt="" /></p>
-</article>
+<hr>
+<h3 id="export-path-使用--不生效">export PATH 使用 <code>~</code> 不生效</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 不生效</span>
+<span style="color:#75715e"># export PATH=&#34;$PATH:~/code/study/cc/istio/istio-1.6.1/bin&#34;</span>
+
+<span style="color:#75715e"># 必须使用完整路径</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PATH<span style="color:#e6db74">:/Users/yewang/code/study/cc/istio/istio-1.6.1/bin&#34;</span>
+</code></pre></div></article>
  
       
 
@@ -924,6 +932,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/7859b4200ee9ebe152b4fdc451891f18eab1e7b4" title='Last modified by yewang | 2020-06-09' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-09</span>
+    </a>
+  </div>
 
 
 
@@ -968,6 +984,7 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#hls">HLS</a></li>
               </ul>
             </li>
+            <li><a href="#export-path-使用--不生效">export PATH 使用 <code>~</code> 不生效</a></li>
           </ul>
         </li>
       </ul>
