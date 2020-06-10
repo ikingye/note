@@ -10,7 +10,7 @@
 // 普通递归 function recsum(x) { if (x === 1) { return x; } else { return x &#43; recsum(x - 1); } } // 尾递归 function tailrecsum(x, running_total = 0) { if (x === 0) { return running_total; } else { return tailrecsum(x - 1, running_total &#43; x); } } 怎么写尾递归 形式上只要最后一个 return 语句是单纯函数就可以。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/10/" />
-<meta property="article:modified_time" content="2020-06-10T15:15:26+08:00" />
+<meta property="article:modified_time" content="2020-06-10T21:05:25+08:00" />
 <title>2020-06-10 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.2b7276467abc6ec4f4c9ac69dbfe6c928472c0da9a6b59cb419ae2d267e604d4.js" integrity="sha256-K3J2Rnq8bsT0yaxp2/5skoRywNqaa1nLQZri0mfmBNQ="></script>
+<script defer src="/note/en.search.min.06305cfd3b4cce9addfcebd748ecaab50cf853b6d733306910ebbf510f6507fa.js" integrity="sha256-BjBc/TtMzprd/OvXSOyqtQz4U7bXMzBpEOu/UQ9lB/o="></script>
 
 <!--
 Made with Book Theme
@@ -878,6 +878,7 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#rtp-payload">RTP Payload</a></li>
               </ul>
             </li>
+            <li><a href="#srs-simple-rtmp-server">SRS (<code>Simple RTMP Server</code>)</a></li>
           </ul>
         </li>
       </ul>
@@ -1109,6 +1110,12 @@ open -n /Applications/Wireshark.app
 <li><a href="https://blog.yasking.org/a/hikvision-rtp-ps-stream-parser.html">海康摄像头 PS 流格式解析（RTP/PS/H264）</a></li>
 <li><a href="https://blog.yasking.org/a/hikvision-nvr-playback-with-gb28181.html">基于 GB28181 从海康 NVR 获取目录 / 点播 / 回播信令备忘</a></li>
 </ul>
+<hr>
+<h3 id="srs-simple-rtmp-server">SRS (<code>Simple RTMP Server</code>)</h3>
+<p>SRS（Simple RTMP Server）分发 RTMP 是核心功能，srs 的主要定位就是分发 RTMP 低延时流媒体，同时支持分发 HLS 流。</p>
+<p>RTMP 和 HLS 的优势参考：<a href="https://github.com/ossrs/srs/wiki/v1_CN_DeliveryHLS">HLS</a></p>
+<p>RTMP 和 HLS 的比较参考：<a href="https://github.com/ossrs/srs/wiki/v1_CN_RTMP.PK.HTTP">RTMP PK HLS</a></p>
+<p>部署 RTMP 的实例参考：<a href="https://github.com/ossrs/srs/wiki/v1_CN_SampleRTMP">Usage: RTMP</a></p>
 </article>
  
       
@@ -1121,7 +1128,7 @@ open -n /Applications/Wireshark.app
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/316d1933bd8c71d2dec02baeae66633f691dfe91" title='Last modified by yewang | 2020-06-10' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/19306cee9f20e237110d48ffd029e620053cf2db" title='Last modified by yewang | 2020-06-10' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-06-10</span>
     </a>
@@ -1209,6 +1216,7 @@ open -n /Applications/Wireshark.app
                 <li><a href="#rtp-payload">RTP Payload</a></li>
               </ul>
             </li>
+            <li><a href="#srs-simple-rtmp-server">SRS (<code>Simple RTMP Server</code>)</a></li>
           </ul>
         </li>
       </ul>
