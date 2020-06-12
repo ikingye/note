@@ -536,7 +536,10 @@ A library is a set of modules which makes sense to be together and that can be u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/12/</guid>
-      <description>2020 年 6 月 12 日（星期五） 今日待办     编程 </description>
+      <description>2020 年 6 月 12 日（星期五） 今日待办     编程 Go tab vs 空格  Indentation
+We use tabs for indentation and gofmt emits them by default. Use spaces only if you must.
+ 参考：
+ Effective Go  </description>
     </item>
     
     <item>
