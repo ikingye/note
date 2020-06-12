@@ -31,7 +31,8 @@ A library is a set of modules which makes sense to be together and that can be u
       <description>2020 年 6 月 12 日（星期五） 今日待办     编程 Go tab vs 空格  Indentation
 We use tabs for indentation and gofmt emits them by default. Use spaces only if you must.
  参考：
- Effective Go  </description>
+ Effective Go   Kubernetes 查一段时间的日志 --since-time 查一段时间的日志
+k logs pedestrian-count-wrapper-5b7cb44c79-k4z6n --since-time=2020-06-12T14:00:00+08:00 &amp;gt; pedestrian-count.log 查看多个 pod 日志 传统来说，Kubernetes 环境下的日志都是靠 FluentD + ElasticSearch + Kibana 的组合实现的， 这一组合的功能和强大，所以成为一个事实标准来使用， 但是在一些比较简陋的测试集群中，或者不具备浏览器条件的自动化 / 控制台环境下， 归并多个 Pod 的日志进行集中的查看和处理还是很有用的。</description>
     </item>
     
     <item>

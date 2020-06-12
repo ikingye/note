@@ -28,7 +28,7 @@ TLS 握手流程 TLS 是一个信道建立和信道的表达方式，向下依�
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.8ebb4d676c9b841d151e2f60dab967623964276ff1216095e04fedb3e8418f98.js" integrity="sha256-jrtNZ2ybhB0VHi9g2rlnYjlkJ2/xIWCV4E/ts&#43;hBj5g="></script>
+<script defer src="/note/en.search.min.1020970deec60befd48ddd4651fb4f0a2da8716ddc1d01ec84449adb42d4393b.js" integrity="sha256-ECCXDe7GC&#43;/Ujd1GUftPCi2ocW3cHQHshESa20LUOTs="></script>
 
 <!--
 Made with Book Theme
@@ -1108,7 +1108,8 @@ $ brew switch openssl 1.0.2s
 <h3 id="ffmpeg">ffmpeg</h3>
 <p>linux 安装 ffmpeg</p>
 <p><a href="https://www.tecmint.com/install-ffmpeg-in-linux/">https://www.tecmint.com/install-ffmpeg-in-linux/</a></p>
-<h4 id="ffplay">ffplay</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ffmpeg -re -i car-brand.MOV -rtsp_transport tcp -vcodec h264 -f rtsp rtsp://localhost/test
+</code></pre></div><h4 id="ffplay">ffplay</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 添加到 ~/.zshrc</span>
 <span style="color:#66d9ef">function</span> rtsp<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 	ffplay -analyzeduration <span style="color:#ae81ff">1000000</span> -fflags nobuffer -probesize <span style="color:#ae81ff">32</span> -sync ext $@
