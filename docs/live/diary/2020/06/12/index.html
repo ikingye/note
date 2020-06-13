@@ -16,7 +16,7 @@ We use tabs for indentation and gofmt emits them by default. Use spaces only if 
 k logs pedestrian-count-wrapper-5b7cb44c79-k4z6n --since-time=2020-06-12T14:00:00&#43;08:00 &gt; pedestrian-count.log 查看多个 pod 日志 传统来说，Kubernetes 环境下的日志都是靠 FluentD &#43; ElasticSearch &#43; Kibana 的组合实现的， 这一组合的功能和强大，所以成为一个事实标准来使用， 但是在一些比较简陋的测试集群中，或者不具备浏览器条件的自动化 / 控制台环境下， 归并多个 Pod 的日志进行集中的查看和处理还是很有用的。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/12/" />
-<meta property="article:modified_time" content="2020-06-12T14:29:31+08:00" />
+<meta property="article:modified_time" content="2020-06-12T17:11:08+08:00" />
 <title>2020-06-12 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -24,7 +24,7 @@ k logs pedestrian-count-wrapper-5b7cb44c79-k4z6n --since-time=2020-06-12T14:00:0
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.1020970deec60befd48ddd4651fb4f0a2da8716ddc1d01ec84449adb42d4393b.js" integrity="sha256-ECCXDe7GC&#43;/Ujd1GUftPCi2ocW3cHQHshESa20LUOTs="></script>
+<script defer src="/note/en.search.min.1d9295768e1d4e94c9e6635b10aa46c798b6357880d0fb3f00db98c74195f2a1.js" integrity="sha256-HZKVdo4dTpTJ5mNbEKpGx5i2NXiA0Ps/ANuYx0GV8qE="></script>
 
 <!--
 Made with Book Theme
@@ -894,6 +894,19 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#url-中的双斜杠-">URL 中的双斜杠 <code>//</code></a></li>
               </ul>
             </li>
+            <li><a href="#127001-vs-localhost"><code>127.0.0.1</code> vs <code>localhost</code></a>
+              <ul>
+                <li><a href="#localhost-是域名">localhost 是域名</a></li>
+                <li><a href="#127001-是-ip-地址">127.0.0.1 是 IP 地址</a>
+                  <ul>
+                    <li><a href="#回环地址-loop-back-address">回环地址 <code>Loop back address</code></a></li>
+                  </ul>
+                </li>
+                <li><a href="#0000"><code>0.0.0.0</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#查看-mac-主机名">查看 Mac 主机名</a></li>
+            <li><a href="#回环网卡">回环网卡</a></li>
           </ul>
         </li>
       </ul>
@@ -974,6 +987,52 @@ https://github.com/alex-shpak/hugo-book
 <span style="color:#75715e"># 两个 //</span>
 https://github.com/alex-shpak/hugo-book//issues
 </code></pre></div><p>几乎没区别，大部分 Web 框架都可以正常处理</p>
+<hr>
+<h3 id="127001-vs-localhost"><code>127.0.0.1</code> vs <code>localhost</code></h3>
+<h4 id="localhost-是域名">localhost 是域名</h4>
+<p>一般指向指向 127.0.0.1 （通过 <code>hosts</code> 文件配置）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">127.0.0.1	localhost
+255.255.255.255	broadcasthost
+<span style="color:#75715e"># ipv6 格式</span>
+::1             localhost
+
+127.0.0.1   localhost.localdomain localhost4 localhost4.localdomain4
+</code></pre></div><h4 id="127001-是-ip-地址">127.0.0.1 是 IP 地址</h4>
+<p>一般会通过 <code>ping 127.0.0.1</code> 来测试某台机器上的<strong>网络设备</strong>是否正常工作。</p>
+<h5 id="回环地址-loop-back-address">回环地址 <code>Loop back address</code></h5>
+<p>凡是以 <code>127 开头的 IP 地址</code>，都是回环地址（Loop back address），
+其所在的<strong>回环接口</strong>一般被理解为<strong>虚拟网卡</strong>，并不是真正的路由器接口。</p>
+<p>我们在主机上发送给 <code>127 开头的 IP 地址</code>的数据包会被发送的主机自己接收，根本传不出去，外部设备也无法通过回环地址访问到本机。</p>
+<blockquote>
+<p>正常的数据包会从 IP 层进入链路层，然后发送到网络上；而给回环地址发送数据包，数据包会直接被发送主机的 IP 层获取，后面就没有链路层他们啥事了。</p>
+</blockquote>
+<ul>
+<li><code>localhost</code> 不经过<strong>网卡</strong>传输，不受网络防火墙和网卡相关的的限制</li>
+<li><code>127.0.0.1</code> 是通过网卡传输，依赖网卡，并受到网络防火墙和网卡相关的限制。</li>
+</ul>
+<ul>
+<li><code>localhost</code> 不会解析成 ip，也不会占用网卡、网络资源。</li>
+</ul>
+<h4 id="0000"><code>0.0.0.0</code></h4>
+<p><code>0.0.0.0</code> 是不能被 ping 通的。</p>
+<p>在服务器中，<code>0.0.0.0</code> 并不是一个真实的的 IP 地址，它表示本机中<code>所有的 IPV4 地址</code>。</p>
+<p>监听 <code>0.0.0.0</code> 的端口，就是监听本机中所有 IP 的端口。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/46534132">访问 localhost 和 127.0.0.1 是否完全一样？</a></li>
+<li><a href="https://stackoverflow.com/questions/7382602/what-is-the-difference-between-127-0-0-1-and-localhost">What is the difference between 127.0.0.1 and localhost</a></li>
+</ul>
+<hr>
+<h3 id="查看-mac-主机名">查看 Mac 主机名</h3>
+<p>zsh 执行：</p>
+<pre><code>export PROMPT='%{$fg[magenta]%}%(?..%?%1v)%n@%{$fg[green]%}%M:%{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+</code></pre><p>就可以看的 <code>user@hostname</code></p>
+<hr>
+<h3 id="回环网卡">回环网卡</h3>
+<p>回环网卡（Loopback adaptor），是一种特殊的网络接口，不与任何实际设备连接，而是完全由软件实现。
+与回环地址（<code>127.0.0.0/8</code> 或 <code>::1/128</code>）不同，回环网卡对系统 “显示” 为一块硬件。
+任何发送到该网卡上的数据都将立刻被同一网卡接收到。
+例子有 Linux 下的 <code>lo</code> 接口和 Windows 下的 <code>Microsoft Loopback Interface</code> 网卡。</p>
 </article>
  
       
@@ -986,7 +1045,7 @@ https://github.com/alex-shpak/hugo-book//issues
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/f4f06fd709943d779f43551abbfbc3f1eff0a430" title='Last modified by yewang | 2020-06-12' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/6a043121ef248a5064ab59a7342c9baf35a61d26" title='Last modified by yewang | 2020-06-12' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-06-12</span>
     </a>
@@ -1064,6 +1123,19 @@ https://github.com/alex-shpak/hugo-book//issues
                 <li><a href="#url-中的双斜杠-">URL 中的双斜杠 <code>//</code></a></li>
               </ul>
             </li>
+            <li><a href="#127001-vs-localhost"><code>127.0.0.1</code> vs <code>localhost</code></a>
+              <ul>
+                <li><a href="#localhost-是域名">localhost 是域名</a></li>
+                <li><a href="#127001-是-ip-地址">127.0.0.1 是 IP 地址</a>
+                  <ul>
+                    <li><a href="#回环地址-loop-back-address">回环地址 <code>Loop back address</code></a></li>
+                  </ul>
+                </li>
+                <li><a href="#0000"><code>0.0.0.0</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#查看-mac-主机名">查看 Mac 主机名</a></li>
+            <li><a href="#回环网卡">回环网卡</a></li>
           </ul>
         </li>
       </ul>
