@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 6 月 14 日（星期日） 今日待办     编程 "><meta property="og:title" content="2020-06-14" />
-<meta property="og:description" content="2020 年 6 月 14 日（星期日） 今日待办     编程 " />
+<meta name="description" content="2020 年 6 月 14 日（星期日） 今日待办     编程 Istio 向 pod 中注入 Istio sidecar  使用 istioctl 手动注入 启用 pod 所属命名空间的 Istio sidecar 注入器自动注入   Kubernetes kubectl get 结果排序 --sort-by= ##### pod # name kubectl --sort-by=.metadata.name get pod # status kubectl --sort-by=.status.phase get pod # restarts kubectl --sort-by=.status.containerStatuses[0].restartCount get pod # age kubectl --sort-by=.status.startTime get pod # ip kubectl --sort-by=.status.podIP get pod # node kubectl --sort-by=."><meta property="og:title" content="2020-06-14" />
+<meta property="og:description" content="2020 年 6 月 14 日（星期日） 今日待办     编程 Istio 向 pod 中注入 Istio sidecar  使用 istioctl 手动注入 启用 pod 所属命名空间的 Istio sidecar 注入器自动注入   Kubernetes kubectl get 结果排序 --sort-by= ##### pod # name kubectl --sort-by=.metadata.name get pod # status kubectl --sort-by=.status.phase get pod # restarts kubectl --sort-by=.status.containerStatuses[0].restartCount get pod # age kubectl --sort-by=.status.startTime get pod # ip kubectl --sort-by=.status.podIP get pod # node kubectl --sort-by=." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/14/" />
-
+<meta property="article:modified_time" content="2020-06-14T17:15:06+08:00" />
 <title>2020-06-14 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.8085b45a392c5ffce3282a3915acc9ce17ed299e2f00c2039a01e6f73b7873a7.js" integrity="sha256-gIW0WjksX/zjKCo5FazJzhftKZ4vAMIDmgHm9zt4c6c="></script>
+<script defer src="/note/en.search.min.e671d96964220fc6e1490d7ac4e0edca7326444028df9fa009930da577b00533.js" integrity="sha256-5nHZaWQiD8bhSQ16xODtynMmREAo35&#43;gCZMNpXewBTM="></script>
 
 <!--
 Made with Book Theme
@@ -868,7 +868,24 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#2020-年-6-月-14-日星期日">2020 年 6 月 14 日（星期日）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#istio">Istio</a>
+              <ul>
+                <li><a href="#向-pod-中注入-istio-sidecar">向 pod 中注入 Istio sidecar</a></li>
+              </ul>
+            </li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#kubectl-get-结果排序">kubectl get 结果排序</a>
+                  <ul>
+                    <li><a href="#aathithkubesorthttpsgithubcomaathithkubesort-github-starshttpsimgshieldsiogithubstarsaathithkubesortsvg"><a href="https://github.com/AATHITH/kubesort">AATHITH/kubesort</a> <img src="https://img.shields.io/github/stars/AATHITH/kubesort.svg" alt="Github stars"></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -889,6 +906,58 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
+<h3 id="istio">Istio</h3>
+<h4 id="向-pod-中注入-istio-sidecar">向 pod 中注入 Istio sidecar</h4>
+<ol>
+<li>使用 istioctl 手动注入</li>
+<li>启用 pod 所属命名空间的 Istio sidecar 注入器自动注入</li>
+</ol>
+<hr>
+<h3 id="kubernetes">Kubernetes</h3>
+<h4 id="kubectl-get-结果排序">kubectl get 结果排序</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">--sort-by<span style="color:#f92672">=</span>
+
+<span style="color:#75715e">##### pod</span>
+<span style="color:#75715e"># name</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.metadata.name get pod
+<span style="color:#75715e"># status</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.status.phase get pod
+<span style="color:#75715e"># restarts</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.status.containerStatuses<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>.restartCount get pod
+<span style="color:#75715e"># age</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.status.startTime get pod
+<span style="color:#75715e"># ip</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.status.podIP get pod
+<span style="color:#75715e"># node</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.spec.nodeName get pod
+
+<span style="color:#75715e">##### deployment</span>
+<span style="color:#75715e"># name</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.metadata.name get deployment
+<span style="color:#75715e"># age</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.metadata.creationTimestamp get deployment
+<span style="color:#75715e"># uptodate</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.status.updatedReplicas get deployment
+<span style="color:#75715e"># available</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.metadata.availableReplicas get deployment
+<span style="color:#75715e"># containers</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.spec.template.spec.containers<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span>.name get deployment
+<span style="color:#75715e"># images</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.spec.template.spec.containers<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span>.image get deployment
+
+<span style="color:#75715e">##### service</span>
+<span style="color:#75715e"># name</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.metadata.name get service
+<span style="color:#75715e"># age</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.metadata.creationTimestamp get service
+<span style="color:#75715e"># type</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.spec.type get service
+<span style="color:#75715e"># clusterip</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.spec.clusterIP get service
+<span style="color:#75715e"># port</span>
+kubectl --sort-by<span style="color:#f92672">=</span>.spec.ports<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span>.port get service
+</code></pre></div><h5 id="aathithkubesorthttpsgithubcomaathithkubesort-github-starshttpsimgshieldsiogithubstarsaathithkubesortsvg"><a href="https://github.com/AATHITH/kubesort">AATHITH/kubesort</a> <img src="https://img.shields.io/github/stars/AATHITH/kubesort.svg" alt="Github stars" /></h5>
+<p>This a Bash Script that will help you forget the kubectl&rsquo;s default, difficult to remember, sorting feature by making it simpler.</p>
 </article>
  
       
@@ -898,6 +967,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/f6326c7d275d7d3c82cfde1990487bca3a6332a3" title='Last modified by yewang | 2020-06-14' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-14</span>
+    </a>
+  </div>
 
 
 
@@ -933,7 +1010,24 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#2020-年-6-月-14-日星期日">2020 年 6 月 14 日（星期日）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#istio">Istio</a>
+              <ul>
+                <li><a href="#向-pod-中注入-istio-sidecar">向 pod 中注入 Istio sidecar</a></li>
+              </ul>
+            </li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#kubectl-get-结果排序">kubectl get 结果排序</a>
+                  <ul>
+                    <li><a href="#aathithkubesorthttpsgithubcomaathithkubesort-github-starshttpsimgshieldsiogithubstarsaathithkubesortsvg"><a href="https://github.com/AATHITH/kubesort">AATHITH/kubesort</a> <img src="https://img.shields.io/github/stars/AATHITH/kubesort.svg" alt="Github stars"></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
