@@ -630,15 +630,13 @@ https://mazhuang.org/wiki/chinese-copywriting-guidelines/
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/09/</guid>
-      <description>2020 年 6 月 9 日（星期二） 今日待办     编程 流媒体传输协议 流媒体协议的作用：流同步，播放控制，质量控制，多端跨平台播放等 直播三要素：低延时，高可用，质量反馈和检测
-常见流媒体协议类型
-常见流媒体协议适用场景
-RTSP/RTP/RTCP 封装：
- ps ts  视频：
- H.264 H.265 VP9  音频：
- aac g711.a  RTSP
- 基于 TCP 基于文本的双向实时传输协议，类似 HTTP 每个会话都含有状态，保持长连接，请求信令按顺序（HTTP 无状态）  RTP/RTCP
- 基于 UDP   RTMP  Adobe 的私有协议，性能相对 HTTP 比较低下。 数据和信令在一条通道。 长连接   HLS  基于 HTTP，性能不错 延时常常大于 10 秒，无法做直播互动   export PATH 使用 ~ 不生效 # 不生效 # export PATH=&amp;#34;$PATH:~/code/study/cc/istio/istio-1.</description>
+      <description>2020 年 6 月 9 日（星期二） 今日待办     编程 export PATH 使用 ~ 不生效 # 不生效 # export PATH=&amp;#34;$PATH:~/code/study/cc/istio/istio-1.6.1/bin&amp;#34; # 必须使用完整路径 export PATH=&amp;#34;$PATH:/Users/yewang/code/study/cc/istio/istio-1.6.1/bin&amp;#34;  IoT LPWA Low power wide area, 低功耗广域技术，使用较低功耗实现远距离的无线信号传输。 相较于熟悉的低功耗蓝牙（BLE）、Zigbee 和 Wifi 等技术，LPWA 的传输距离更远，一般在公里级， 其链接预算（link budget）可达 160dBm，而 BLE 和 Zigbee 等一般在 100dBm 以下。
+和传统的蜂窝网络技术（2G、3G）相比，LPWA 的功耗更低，电池供电的设备使用寿命可达数年。
+基于这两个显著特点，LPWA 可以真正使能物物互联，助力和引领物联网（IoT）革命。
+LoRa、SigFox、NB-IOT 这些都属于 LPWA
+LPWAN LPWAN – Low power wide area network，低功耗广域网络，即使用 LPWA 技术搭建的无线连接网络。
+LPWAN 的网络连接形式可以多种多样，
+典型 LPWA 网络连接</description>
     </item>
     
     <item>
@@ -687,8 +685,8 @@ public class DataProcessor { private final DbManager manager; private final Calc
       <description>2020 年 6 月 8 日（星期一） 今日待办     编程 git git clone --depth 1 什么时候用？
 git clone --depth 1 之后，想拉取所有
 git pull --unshallow 参考：
- Pull updates with git after cloned with &amp;ndash;depth 1   流媒体 视频编码 AVC (H.264) H.264，又称为 MPEG-4 第 10 部分，高级视频编码（英语： MPEG-4 Part 10, Advanced Video Coding ，缩写为 MPEG-4 AVC）是一种面向块，基于运动补偿的视频编码标准（英语：Video_coding_format） 。
-HEVC (H.265) 高效率视频编码（ High Efficiency Video Coding，简称 HEVC），又称为 H.265 和 MPEG-H 第 2 部分，是一种视频压缩标准，被视为是 ITU-T H.</description>
+ Pull updates with git after cloned with &amp;ndash;depth 1   CPU amd64 386 arm64 arm_v7 arm_v6 arm_v5 mips64le mips64 mipsle mips  操作系统内核 linux freebsd darwin windows ios android npc_sdk npc_syno  linux top 排序
+MacOS  cpu 排序： 先输入 o，然后输入 cpu 内存排序： 先输入 o，然后输入 rsize  Linux  P：按照 cpu 使用率排序 M：按照内存使用率排序 l：切换显示平均负载和启动时间信息 m：切换显示内存信息 t：切换显示进程和 cpu 状态信息 c：切换显示命令名称和完成命令行信息    git github gitlab gitcafe GitCafe 已被 http://Coding.</description>
     </item>
     
     <item>

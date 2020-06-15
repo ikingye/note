@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.1a9624b488a6e7944bb1bf7a065de38fbbaa2423bfe6175b2e2b0109a270a88b.js" integrity="sha256-GpYktIim55RLsb96Bl3jj7uqJCO/5hdbLisBCaJwqIs="></script>
+<script defer src="/note/en.search.min.2aad4061b1af88d0954e92149f5a80001c629fac13e81c257e32ef1ae1cfbf2a.js" integrity="sha256-Kq1AYbGviNCVTpIUn1qAABxin6wT6BwlfjLvGuHPvyo="></script>
 
 <!--
 Made with Book Theme
@@ -917,17 +917,6 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#宏块片">宏块、片</a></li>
               </ul>
             </li>
-            <li><a href="#rtppsh264"><code>RTP</code>/<code>PS</code>/<code>H.264</code></a>
-              <ul>
-                <li><a href="#ps-包">PS 包</a></li>
-                <li><a href="#rtp-包">RTP 包</a>
-                  <ul>
-                    <li><a href="#rtp-头部">RTP 头部</a></li>
-                  </ul>
-                </li>
-                <li><a href="#rtp-payload">RTP Payload</a></li>
-              </ul>
-            </li>
             <li><a href="#srs-simple-rtmp-server">SRS (<code>Simple RTMP Server</code>)</a></li>
           </ul>
         </li>
@@ -1089,78 +1078,6 @@ open -n /Applications/Wireshark.app
 </ul>
 <p><strong>宏块</strong>组成<strong>片</strong>，<strong>片</strong>组成<strong>图像</strong></p>
 <hr>
-<h3 id="rtppsh264"><code>RTP</code>/<code>PS</code>/<code>H.264</code></h3>
-<p>基于 RTP 的 <code>PS 封装</code>
-首先按照 ISO/IEC 13818-1:2000 将视音频封装成 <strong>PS 包</strong>，
-再将 PS 包以负载的方式封装成 <strong>RTP 包</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610204652.png" alt="" /></p>
-<h4 id="ps-包">PS 包</h4>
-<p>进行 PS 封装时，将每个<strong>视频帧</strong>封装为一个<strong>PS 包</strong>，
-且每个<strong>关键帧</strong>的 PS 包中包含系统头（<code>System Header</code>）和 PSM（<code>Program Stream Map</code>）。</p>
-<p>系统头和 PSM 放置于 <code>PS 包头</code>之后，第一个 <code>PES 包</code>之前。</p>
-<h4 id="rtp-包">RTP 包</h4>
-<p><strong>首条</strong>数据结构：<code>RTP Header</code> + <code>PS Header</code> + <strong><code>PS System Header</code> + <code>PSM</code></strong> + <code>PESV</code>（<code>Header + Payload</code>）</p>
-<p><strong>非首条</strong>数据结构：<code>RTP Header</code> + <code>PS Header</code> + <code>PESV</code>（<code>Header + Payload</code>）</p>
-<ul>
-<li><code>PESV</code>: 视频</li>
-<li><code>PESA</code>: 音频</li>
-</ul>
-<p>知道了 <code>PS 包</code>的结构，就可以用处理程序解析数据，
-从而把原始流 <code>ES</code>（H264）从 <code>PES</code> 包中解析出来</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610200556.png" alt="" /></p>
-<h5 id="rtp-头部">RTP 头部</h5>
-<blockquote>
-<p>去掉 12 字节的 RTP 头部，保存下来的就是 H264 PS 流， VLC 可播放</p>
-</blockquote>
-<p>第 1 字节</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610205708.png" alt="" /></p>
-<p>第 2 字节</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610205804.png" alt="" /></p>
-<p>第 3-4 字节</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610205831.png" alt="" /></p>
-<p>第 5-8 字节</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610205902.png" alt="" /></p>
-<p>第 9-12 字节</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610205927.png" alt="" /></p>
-<h4 id="rtp-payload">RTP Payload</h4>
-<ul>
-<li>RTP Payload 中承载的即为 <code>PS 数据</code></li>
-<li>起始的 <code>00 00 01 ba</code> 代表 <code>PS 包</code>的开始</li>
-<li>接下来跳过 9 个字节，暂时不关心它的内容</li>
-<li>看第 10 个字节 <code>fe</code>，对应着二进制数据的 <code>1111 1110</code>
-<ul>
-<li>它的后三位为 110 为十进制的 6，即接下来的六个字节是扩展内容</li>
-</ul>
-</li>
-<li>跳过 6 个字节后，遇到了 <code>00 00 01 bb</code>，这时来到了 <code>PS System Header</code> 部分
-<ul>
-<li>PS 数据格式的标准文档可以参考这个 PDF：<a href="https://ecee.colorado.edu/~ecen5653/ecen5653/papers/iso13818-1.pdf">iso13818-1:2000.pdf</a></li>
-</ul>
-</li>
-<li>紧邻的 <code>00 12</code> 两个字节表示 System Header 的长度，换算为十进制，即为 18 个字节</li>
-<li>在 header_length 后共有 6 个字节的数据</li>
-<li>之后就是 stream_id 字段（<strong>码流种类</strong>）
-<ul>
-<li>system_id 值为 <code>e0</code></li>
-<li>0xE0: 视频流</li>
-<li>0xC0: 音频流</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610201025.png" alt="" /></p>
-<hr>
-<ul>
-<li><code>payload type</code>: <code>PS</code> (96)</li>
-<li><code>SSRC</code>: <code>Synchronization source</code></li>
-<li><code>CSRC</code>: <code>Contributing source</code></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200610202502.png" alt="" /></p>
-<p>参考：</p>
-<ul>
-<li><a href="https://blog.yasking.org/a/hikvision-rtp-ps-stream-parser.html">海康摄像头 PS 流格式解析（RTP/PS/H264）</a></li>
-<li><a href="https://blog.yasking.org/a/hikvision-nvr-playback-with-gb28181.html">基于 GB28181 从海康 NVR 获取目录 / 点播 / 回播信令备忘</a></li>
-</ul>
-<hr>
 <h3 id="srs-simple-rtmp-server">SRS (<code>Simple RTMP Server</code>)</h3>
 <p>SRS（Simple RTMP Server）分发 RTMP 是核心功能，srs 的主要定位就是分发 RTMP 低延时流媒体，同时支持分发 HLS 流。</p>
 <p>RTMP 和 HLS 的优势参考：<a href="https://github.com/ossrs/srs/wiki/v1_CN_DeliveryHLS">HLS</a></p>
@@ -1253,17 +1170,6 @@ open -n /Applications/Wireshark.app
                 <li><a href="#码流">码流</a></li>
                 <li><a href="#场帧图像">场、帧、图像</a></li>
                 <li><a href="#宏块片">宏块、片</a></li>
-              </ul>
-            </li>
-            <li><a href="#rtppsh264"><code>RTP</code>/<code>PS</code>/<code>H.264</code></a>
-              <ul>
-                <li><a href="#ps-包">PS 包</a></li>
-                <li><a href="#rtp-包">RTP 包</a>
-                  <ul>
-                    <li><a href="#rtp-头部">RTP 头部</a></li>
-                  </ul>
-                </li>
-                <li><a href="#rtp-payload">RTP Payload</a></li>
               </ul>
             </li>
             <li><a href="#srs-simple-rtmp-server">SRS (<code>Simple RTMP Server</code>)</a></li>
