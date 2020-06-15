@@ -413,6 +413,15 @@ docker 上传到 私有仓库 docker build -t human-attribute:20200415_158581843
     </item>
     
     <item>
+      <title>2020-06-15</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/15/</guid>
+      <description>2020 年 6 月 15 日（星期一） 今日待办     编程 </description>
+    </item>
+    
+    <item>
       <title>2020-04-14</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/14/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -444,7 +453,10 @@ package main import ( &amp;#34;io/ioutil&amp;#34; &amp;#34;gopkg.in/yaml.v2&amp;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/14/</guid>
-      <description>2020 年 6 月 14 日（星期日） 今日待办     编程 Istio 向 pod 中注入 Istio sidecar  使用 istioctl 手动注入 启用 pod 所属命名空间的 Istio sidecar 注入器自动注入   Kubernetes kubectl get 结果排序 --sort-by= ##### pod # name kubectl --sort-by=.metadata.name get pod # status kubectl --sort-by=.status.phase get pod # restarts kubectl --sort-by=.status.containerStatuses[0].restartCount get pod # age kubectl --sort-by=.status.startTime get pod # ip kubectl --sort-by=.status.podIP get pod # node kubectl --sort-by=.</description>
+      <description>2020 年 6 月 14 日（星期日） 今日待办     编程 Istio 向 pod 中注入 Istio sidecar istioctl 手动注入 使用 istioctl 手动注入
+Istio sidecar 注入器自动注入 启用 pod 所属命名空间的 Istio sidecar 注入器自动注入
+区别于手动注入，自动注入发生在 pod 层面。 你将看不到 deployment 本身有任何更改。 取而代之，需要检查单独的 pod（使用 kubectl describe）来查询被注入的代理。
+ Kubernetes kubectl get 结果排序 --sort-by= ##### pod # name kubectl --sort-by=.metadata.name get pod # status kubectl --sort-by=.status.phase get pod # restarts kubectl --sort-by=.status.containerStatuses[0].restartCount get pod # age kubectl --sort-by=.</description>
     </item>
     
     <item>
