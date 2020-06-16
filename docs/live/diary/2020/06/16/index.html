@@ -14,7 +14,7 @@
  常见直播协议  RTMP: 底层基于 TCP，在浏览器端依赖 Flash。 HTTP-FLV: 基于 HTTP 流式 IO 传输 FLV，依赖浏览器支持播放 FLV。 WebSocket-FLV: 基于 WebSocket 传输 FLV，依赖浏览器支持播放 FLV。 WebSocket 建立在 HTTP 之上，建立 WebSocket 连接前还要先建立 HTTP 连接。 HLS: Http Live Streaming，苹果提出基于 HTTP 的流媒体传输协议。HTML5 可以直接打开播放。 RTP: 基于 UDP，延迟 1 秒，浏览器不支持。  HTML5 FLV Player" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/16/" />
-
+<meta property="article:modified_time" content="2020-06-16T17:35:39+08:00" />
 <title>2020-06-16 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.5b4eef52102a496d4aed90303a2666b09f6634ae6bcca8730e93ceda575c8dde.js" integrity="sha256-W07vUhAqSW1K7ZAwOiZmsJ9mNK5rzKhzDpPO2ldcjd4="></script>
+<script defer src="/note/en.search.min.e7d2907a32622b7edc78b382616796c40256a20eb42b2f283e88405f7baea94a.js" integrity="sha256-59KQejJiK37ceLOCYWeWxAJWog60Ky8oPohAX3uuqUo="></script>
 
 <!--
 Made with Book Theme
@@ -940,6 +940,7 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#bilibiliijkplayerhttpsgithubcombilibiliijkplayer-github-starshttpsimgshieldsiogithubstarsbilibiliijkplayersvg"><a href="https://github.com/bilibili/ijkplayer">bilibili/ijkplayer</a> <img src="https://img.shields.io/github/stars/bilibili/ijkplayer.svg" alt="Github stars"></a></li>
               </ul>
             </li>
+            <li><a href="#l1-cache">L1 Cache</a></li>
           </ul>
         </li>
       </ul>
@@ -1068,6 +1069,18 @@ https://github.com/alex-shpak/hugo-book
 <h4 id="bilibiliflvjshttpsgithubcombilibiliflvjs-github-starshttpsimgshieldsiogithubstarsbilibiliflvjssvg"><a href="https://github.com/Bilibili/flv.js">Bilibili/flv.js</a> <img src="https://img.shields.io/github/stars/Bilibili/flv.js.svg" alt="Github stars" /></h4>
 <h4 id="bilibiliijkplayerhttpsgithubcombilibiliijkplayer-github-starshttpsimgshieldsiogithubstarsbilibiliijkplayersvg"><a href="https://github.com/bilibili/ijkplayer">bilibili/ijkplayer</a> <img src="https://img.shields.io/github/stars/bilibili/ijkplayer.svg" alt="Github stars" /></h4>
 <p>Android/iOS video player based on FFmpeg n3.4, with MediaCodec, VideoToolbox support.</p>
+<hr>
+<h3 id="l1-cache">L1 Cache</h3>
+<p>Cache（L1 Cache、L2 Cache、L3 Cache）本质上是 CPU 内部高速、昂贵、小尺寸的寄存器与外部低速、偏移、大尺寸的 SDRAM 之间的妥协的产物。</p>
+<p>L1 Cache 会被划分成指令 Cache 和数据 Cache，分别用于存储指令和数据，而 L2 Cache、L3 Cahce 等则是指令和数据混合存储。</p>
+<p>目前的 CPU 架构基本上都是改进的<strong>哈佛架构</strong>。
+也就是说，指令和数据存储在不同的 Cache 中，使得 CPU 内核在执行时可以同时取指令和访问数据，提高效率；
+同时，由于指令通常情况下不会动态修改，而数据则需要频繁的修改，因此可以进一步优化指令 Cache 的设计，提高执行效率。
+只有在 CPU 无法从 L1 Cache 找到需要的指令或数据时（术语叫做 “未命中” 或者 &ldquo;Miss&rdquo;）或者需要对修改过的数据进行同步时，才会进一步访问 L2 Cache、L3 Cahce、SDRAM 等。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/65202627">数据 cache 和指令 cache 的区别？</a></li>
+</ul>
 </article>
  
       
@@ -1077,6 +1090,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/49220288e40b8d8dded9a02c217275c758fe7c2d" title='Last modified by yewang | 2020-06-16' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-16</span>
+    </a>
+  </div>
 
 
 
@@ -1158,6 +1179,7 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#bilibiliijkplayerhttpsgithubcombilibiliijkplayer-github-starshttpsimgshieldsiogithubstarsbilibiliijkplayersvg"><a href="https://github.com/bilibili/ijkplayer">bilibili/ijkplayer</a> <img src="https://img.shields.io/github/stars/bilibili/ijkplayer.svg" alt="Github stars"></a></li>
               </ul>
             </li>
+            <li><a href="#l1-cache">L1 Cache</a></li>
           </ul>
         </li>
       </ul>
