@@ -388,6 +388,18 @@ AIOT 智联网 (AIOT，是 AI + IOT 物联网的结合) 2018 年开始崛起，�
     </item>
     
     <item>
+      <title>2020-06-16</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/16/</guid>
+      <description>2020 年 6 月 16 日（星期二） 今日待办     编程 IOT 物管理 物影子 物影子反映物理世界中的一个物（设备），是物在云端的映射。 运行时，物将监控值上报给物影子，物影子会用一个 json 文档存储设备的最后一次上报的状态，可以直接通过 MQTT 或 HTTP 访问。 同时，物影子也提供反控功能。
+物模型 物模型由一个或多个属性构成，可以用他来表示一类（或同一型号的一批）设备。 基于物模型可以创建物影子。
+物模型可以选择开启 ota 服务，这样使用这个物模型创建的物影子就可以使用 ota 服务，并通过这个物模型做统一的管理。
+ 常见直播协议  RTMP: 底层基于 TCP，在浏览器端依赖 Flash。 HTTP-FLV: 基于 HTTP 流式 IO 传输 FLV，依赖浏览器支持播放 FLV。 WebSocket-FLV: 基于 WebSocket 传输 FLV，依赖浏览器支持播放 FLV。 WebSocket 建立在 HTTP 之上，建立 WebSocket 连接前还要先建立 HTTP 连接。 HLS: Http Live Streaming，苹果提出基于 HTTP 的流媒体传输协议。HTML5 可以直接打开播放。 RTP: 基于 UDP，延迟 1 秒，浏览器不支持。  HTML5 FLV Player</description>
+    </item>
+    
+    <item>
       <title>2020-04-15</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/15/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
