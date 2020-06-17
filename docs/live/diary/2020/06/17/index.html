@@ -4,20 +4,30 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 5 月 7 日（星期四） 今日待办     编程 brookhong/Surfingkeys  Surfingkeys 和现有的一些插件一样，让你尽可能的通过键盘来使用 Chrome/Firefox 浏览器，比如跳转网页，上下左右滚屏。但不只是给 vim 用户使用，Surfingkeys 的基本特性是让你自己写一段 Javascript 脚本，然后通过 mapkey 映射到某些按键。之后当你按了那几个键以后，对应的 Javascript 脚本就会被执行。
-快捷键  ?: 显示帮助   t: 搜索收藏夹和访问历史  参考：
- Surfingkeys &ndash; 用 javascript 和键盘扩展你的 chrome  SaltStack Saltstack 是基于 python 开发的一套 C/S 自动化运维工具。
-漏洞风险 参考：
- SaltStack 远程命令执行漏洞风险通告（CVE-2020-11651/CVE-2020-11652）   公司 今日头条  EE 效率工程部：做飞书，包括存储/文档 Data 广告数据部：包括数据分析，AI-Lab，广告系统，接入分发，内容平台 IES 抖音多媒体部：抖音引擎，服务端中台，faceu 产品研发部：小说，小游戏，今日头条主端 app，新业务孵化以及基础架构  大的分类就这四个部门，还有 EA 企业信息化，风控跟安全一级部门等等"><meta property="og:title" content="2020-05-07" />
-<meta property="og:description" content="2020 年 5 月 7 日（星期四） 今日待办     编程 brookhong/Surfingkeys  Surfingkeys 和现有的一些插件一样，让你尽可能的通过键盘来使用 Chrome/Firefox 浏览器，比如跳转网页，上下左右滚屏。但不只是给 vim 用户使用，Surfingkeys 的基本特性是让你自己写一段 Javascript 脚本，然后通过 mapkey 映射到某些按键。之后当你按了那几个键以后，对应的 Javascript 脚本就会被执行。
-快捷键  ?: 显示帮助   t: 搜索收藏夹和访问历史  参考：
- Surfingkeys &ndash; 用 javascript 和键盘扩展你的 chrome  SaltStack Saltstack 是基于 python 开发的一套 C/S 自动化运维工具。
-漏洞风险 参考：
- SaltStack 远程命令执行漏洞风险通告（CVE-2020-11651/CVE-2020-11652）   公司 今日头条  EE 效率工程部：做飞书，包括存储/文档 Data 广告数据部：包括数据分析，AI-Lab，广告系统，接入分发，内容平台 IES 抖音多媒体部：抖音引擎，服务端中台，faceu 产品研发部：小说，小游戏，今日头条主端 app，新业务孵化以及基础架构  大的分类就这四个部门，还有 EA 企业信息化，风控跟安全一级部门等等" />
+<meta name="description" content="2020 年 6 月 17 日（星期三） 今日待办     编程 最大传输单元 Maximum Transmission Unit，MTU
+用来通知对方所能接受数据服务单元的最大尺寸，说明发送方能够接受的有效载荷大小。
+是包或帧的最大长度，一般以字节记。如果 MTU 过大，在碰到路由器时会被拒绝转发，因为它不能处理过大的包。如果太小，因为协议一定要在包 (或帧) 上加上包头，那实际传送的数据量就会过小，这样也划不来。大部分操作系统会提供给用户一个默认值，该值一般对用户是比较合适的。
+  以太网 MTU 是 1500 字节
+  802.3 MTU 是 1492 字节。
+  UDP MTU 是 1400
+  最大分节大小 maximum segment size，MSS
+为 TCP 数据包每次传输的最大数据分段大小，一般由发送端向对端 TCP 通知对端在每个分节中能发送的最大 TCP 数据。
+MSS 值为 MTU 值减去 IPv4 Header（20 Byte）和 TCP header（20 Byte）。
+IP 分片 (fragmentation) ts 包 ts 包的大小是 188， 最大传输单元是 1500，所以最多可以传输 188 * 7 个字节，加上 12 字节 rtp 头，所以每次发送 1328 字节数据。"><meta property="og:title" content="2020-06-17" />
+<meta property="og:description" content="2020 年 6 月 17 日（星期三） 今日待办     编程 最大传输单元 Maximum Transmission Unit，MTU
+用来通知对方所能接受数据服务单元的最大尺寸，说明发送方能够接受的有效载荷大小。
+是包或帧的最大长度，一般以字节记。如果 MTU 过大，在碰到路由器时会被拒绝转发，因为它不能处理过大的包。如果太小，因为协议一定要在包 (或帧) 上加上包头，那实际传送的数据量就会过小，这样也划不来。大部分操作系统会提供给用户一个默认值，该值一般对用户是比较合适的。
+  以太网 MTU 是 1500 字节
+  802.3 MTU 是 1492 字节。
+  UDP MTU 是 1400
+  最大分节大小 maximum segment size，MSS
+为 TCP 数据包每次传输的最大数据分段大小，一般由发送端向对端 TCP 通知对端在每个分节中能发送的最大 TCP 数据。
+MSS 值为 MTU 值减去 IPv4 Header（20 Byte）和 TCP header（20 Byte）。
+IP 分片 (fragmentation) ts 包 ts 包的大小是 188， 最大传输单元是 1500，所以最多可以传输 188 * 7 个字节，加上 12 字节 rtp 头，所以每次发送 1328 字节数据。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/05/07/" />
-<meta property="article:modified_time" content="2020-05-11T21:55:05+08:00" />
-<title>2020-05-07 | 叶王笔记</title>
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/17/" />
+
+<title>2020-06-17 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
 
@@ -518,7 +528,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/note/docs/live/diary/2020/06/17/" class="">2020-06-17</a>
+  <a href="/note/docs/live/diary/2020/06/17/" class="active">2020-06-17</a>
   
 
 </li>
@@ -689,172 +699,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-  
-  <ul>
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/31/" class="">2020-05-31</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/30/" class="">2020-05-30</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/29/" class="">2020-05-29</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/28/" class="">2020-05-28</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/25/" class="">2020-05-25</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/23/" class="">2020-05-23</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/20/" class="">2020-05-20</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/19/" class="">2020-05-19</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/14/" class="">2020-05-14</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/12/" class="">2020-05-12</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/11/" class="">2020-05-11</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/09/" class="">2020-05-09</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/08/" class="">2020-05-08</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/07/" class="active">2020-05-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/06/" class="">2020-05-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/04/" class="">2020-05-04</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
 
 
 
@@ -1055,7 +899,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>2020-05-07</strong>
+  <strong>2020-06-17</strong>
 
   <label for="toc-control">
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -1069,26 +913,30 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-5-月-7-日星期四">2020 年 5 月 7 日（星期四）</a>
+    <li><a href="#2020-年-6-月-17-日星期三">2020 年 6 月 17 日（星期三）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
         <li><a href="#编程">编程</a>
           <ul>
-            <li><a href="#brookhongsurfingkeyshttpsgithubcombrookhongsurfingkeys-github-starshttpsimgshieldsiogithubstarsbrookhongsurfingkeyssvg"><a href="https://github.com/brookhong/Surfingkeys">brookhong/Surfingkeys</a> <img src="https://img.shields.io/github/stars/brookhong/Surfingkeys.svg" alt="Github stars"></a>
+            <li><a href="#最大传输单元">最大传输单元</a>
               <ul>
-                <li><a href="#快捷键">快捷键</a></li>
+                <li><a href="#最大分节大小">最大分节大小</a></li>
+                <li><a href="#ip-分片-fragmentation">IP 分片 (<code>fragmentation</code>)</a></li>
+                <li><a href="#ts-包">ts 包</a></li>
               </ul>
             </li>
-            <li><a href="#saltstack">SaltStack</a>
-              <ul>
-                <li><a href="#漏洞风险">漏洞风险</a></li>
-              </ul>
-            </li>
+            <li><a href="#go-优雅重启">Go 优雅重启</a></li>
+            <li><a href="#rtp">RTP</a></li>
           </ul>
         </li>
-        <li><a href="#公司">公司</a>
+      </ul>
+    </li>
+    <li><a href="#rtsp-需要-server-tcplocalhost2352-接收">rtsp 需要 server (tcp://localhost:2352) 接收</a></li>
+    <li><a href="#rtp-不需要">rtp 不需要</a>
+      <ul>
+        <li>
           <ul>
-            <li><a href="#今日头条">今日头条</a></li>
+            <li><a href="#解析-ps-流">解析 ps 流</a></li>
           </ul>
         </li>
       </ul>
@@ -1104,44 +952,74 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="2020-年-5-月-7-日星期四">2020 年 5 月 7 日（星期四）</h1>
+  <article class="markdown"><h1 id="2020-年-6-月-17-日星期三">2020 年 6 月 17 日（星期三）</h1>
 <h2 id="今日待办">今日待办</h2>
 <ul>
 <li><input disabled="" type="checkbox"> </li>
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
-<h3 id="brookhongsurfingkeyshttpsgithubcombrookhongsurfingkeys-github-starshttpsimgshieldsiogithubstarsbrookhongsurfingkeyssvg"><a href="https://github.com/brookhong/Surfingkeys">brookhong/Surfingkeys</a> <img src="https://img.shields.io/github/stars/brookhong/Surfingkeys.svg" alt="Github stars" /></h3>
-<p>Surfingkeys 和现有的一些插件一样，让你尽可能的通过键盘来使用 Chrome/Firefox 浏览器，比如跳转网页，上下左右滚屏。但不只是给 vim 用户使用，Surfingkeys 的基本特性是让你自己写一段 Javascript 脚本，然后通过 mapkey 映射到某些按键。之后当你按了那几个键以后，对应的 Javascript 脚本就会被执行。</p>
-<h4 id="快捷键">快捷键</h4>
+<h3 id="最大传输单元">最大传输单元</h3>
+<p><code>Maximum Transmission Unit</code>，<code>MTU</code></p>
+<p>用来通知对方所能接受数据服务单元的最大尺寸，说明发送方能够接受的有效载荷大小。</p>
+<p>是包或帧的最大长度，一般以字节记。如果 MTU 过大，在碰到路由器时会被拒绝转发，因为它不能处理过大的包。如果太小，因为协议一定要在包 (或帧) 上加上包头，那实际传送的数据量就会过小，这样也划不来。大部分操作系统会提供给用户一个默认值，该值一般对用户是比较合适的。</p>
 <ul>
-<li><code>?</code>: 显示帮助</li>
+<li>
+<p><code>以太网</code> MTU 是 <strong>1500 字节</strong></p>
+</li>
+<li>
+<p><code>802.3</code> MTU 是 <strong>1492 字节</strong>。</p>
+</li>
+<li>
+<p>UDP MTU 是 1400</p>
+</li>
 </ul>
+<h4 id="最大分节大小">最大分节大小</h4>
+<p><code>maximum segment size</code>，<code>MSS</code></p>
+<p>为 TCP 数据包每次传输的最大数据分段大小，一般由发送端向对端 TCP 通知对端在每个分节中能发送的最大 TCP 数据。</p>
+<p>MSS 值为 MTU 值减去 IPv4 Header（20 Byte）和 TCP header（20 Byte）。</p>
+<h4 id="ip-分片-fragmentation">IP 分片 (<code>fragmentation</code>)</h4>
+<h4 id="ts-包">ts 包</h4>
+<p>ts 包的大小是 188，
+最大传输单元是 1500，所以最多可以传输 <code>188 * 7</code> 个字节，加上 12 字节 rtp 头，所以每次发送 1328 字节数据。</p>
+<hr>
+<h3 id="go-优雅重启">Go 优雅重启</h3>
 <ul>
-<li><code>t</code>: 搜索收藏夹和访问历史</li>
+<li>重启：<code>kill -HUP pid</code> 或 <code>kill -HUP pid</code></li>
+<li>退出：<code>kill -QUIT pid</code></li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200507175006.png" alt="" /></p>
 <p>参考：</p>
 <ul>
-<li><a href="https://github.com//blob/master/README_CN.md">Surfingkeys &ndash; 用 javascript 和键盘扩展你的 chrome</a></li>
-</ul>
-<h3 id="saltstack">SaltStack</h3>
-<p>Saltstack 是基于 python 开发的一套 C/S 自动化运维工具。</p>
-<h4 id="漏洞风险">漏洞风险</h4>
-<p>参考：</p>
-<ul>
-<li><a href="https://cloud.tencent.com/announce/detail/1074">SaltStack 远程命令执行漏洞风险通告（CVE-2020-11651/CVE-2020-11652）</a></li>
+<li><a href="https://segmentfault.com/a/1190000015232528">gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）</a></li>
+<li><a href="https://github.com/fevin/gracehttp">fevin/gracehttp</a> <img src="https://img.shields.io/github/stars/fevin/gracehttp.svg" alt="Github stars" /></li>
 </ul>
 <hr>
-<h2 id="公司">公司</h2>
-<h3 id="今日头条">今日头条</h3>
+<h3 id="rtp">RTP</h3>
+<p>RTP 是位于传输层的协议，其可以基于 UDP、TCP 等协议传输，通常使用较多的是 UDP，主要为了降低延时等。</p>
+<p>RTP 支持的负载格式一般是分开的，也就是说音频和视频是通过独立的 RTP 协议传输的。
+RTP 支持 H264、HEVC、AAC 等常见音视频的格式（更详细的 RTP 支持格式可参考 <a href="https://en.wikipedia.org/wiki/RTP_audio_video_profile">RTP profile</a>），其广泛应用于视频会议及 IP 电话中。</p>
+<h1 id="rtsp-需要-server-tcplocalhost2352-接收">rtsp 需要 server (tcp://localhost:2352) 接收</h1>
+<p>ffmpeg -re -stream_loop -1 -i carbrand.MOV -c copy -an -f rtsp rtsp://localhost:2352/mystream</p>
+<h1 id="rtp-不需要">rtp 不需要</h1>
+<p>ffmpeg -re -stream_loop -1 -i carbrand.MOV -c copy -an -f rtp rtp://localhost:2355/mystream</p>
+<hr>
+<h3 id="解析-ps-流">解析 ps 流</h3>
+<p>坑一：解析完以后播放有花屏问题</p>
 <ul>
-<li>EE 效率工程部：做飞书，包括存储/文档</li>
-<li>Data 广告数据部：包括数据分析，AI-Lab，广告系统，接入分发，内容平台</li>
-<li>IES 抖音多媒体部：抖音引擎，服务端中台，faceu</li>
-<li>产品研发部：小说，小游戏，今日头条主端 app，新业务孵化以及基础架构</li>
+<li>原因：pes 有丢包现象，如果通过 wireshark 能够抓到包，但程序没有读取，很有可能是程序里没有设置缓存</li>
 </ul>
-<p>大的分类就这四个部门，还有 EA 企业信息化，风控跟安全一级部门等等</p>
+<p>坑二：解析完以后开始播放有一层白雾，人走过就能清晰</p>
+<ul>
+<li>原因：pes 包没有完全解析，很多 rtp 中会含有两个 pes 包，此时要根据 pes 包的长度进行控制</li>
+</ul>
+<p>坑三：一开始播放正常，过一会儿就开始断断续续【我这边是由于 sip 服务器每隔一段时间会注册一次导致的混流现象】</p>
+<ul>
+<li>原因：很有可能是多个 rtp 会话向一个端口发送信息，此时可以在程序中将 rtp 包的编号输出到文件，然后在文件中查看编号的连续性，再通过 wireshark 进行抓包分析，查看包的连续性。</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/caixing_java/article/details/79154819">解析海康摄像机推送的 PS 流（节目流）</a></li>
+</ul>
 </article>
  
       
@@ -1151,14 +1029,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/98f3d7d017f5d01fdf03c2bfa94dfbac95aef4ff" title='Last modified by yewang | 2020-05-11' target="_blank" rel="noopener">
-      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-05-11</span>
-    </a>
-  </div>
 
 
 
@@ -1191,26 +1061,30 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-5-月-7-日星期四">2020 年 5 月 7 日（星期四）</a>
+    <li><a href="#2020-年-6-月-17-日星期三">2020 年 6 月 17 日（星期三）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
         <li><a href="#编程">编程</a>
           <ul>
-            <li><a href="#brookhongsurfingkeyshttpsgithubcombrookhongsurfingkeys-github-starshttpsimgshieldsiogithubstarsbrookhongsurfingkeyssvg"><a href="https://github.com/brookhong/Surfingkeys">brookhong/Surfingkeys</a> <img src="https://img.shields.io/github/stars/brookhong/Surfingkeys.svg" alt="Github stars"></a>
+            <li><a href="#最大传输单元">最大传输单元</a>
               <ul>
-                <li><a href="#快捷键">快捷键</a></li>
+                <li><a href="#最大分节大小">最大分节大小</a></li>
+                <li><a href="#ip-分片-fragmentation">IP 分片 (<code>fragmentation</code>)</a></li>
+                <li><a href="#ts-包">ts 包</a></li>
               </ul>
             </li>
-            <li><a href="#saltstack">SaltStack</a>
-              <ul>
-                <li><a href="#漏洞风险">漏洞风险</a></li>
-              </ul>
-            </li>
+            <li><a href="#go-优雅重启">Go 优雅重启</a></li>
+            <li><a href="#rtp">RTP</a></li>
           </ul>
         </li>
-        <li><a href="#公司">公司</a>
+      </ul>
+    </li>
+    <li><a href="#rtsp-需要-server-tcplocalhost2352-接收">rtsp 需要 server (tcp://localhost:2352) 接收</a></li>
+    <li><a href="#rtp-不需要">rtp 不需要</a>
+      <ul>
+        <li>
           <ul>
-            <li><a href="#今日头条">今日头条</a></li>
+            <li><a href="#解析-ps-流">解析 ps 流</a></li>
           </ul>
         </li>
       </ul>
