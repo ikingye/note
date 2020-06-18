@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 6 月 本月计划  百度月读帮  《人人都是产品经理 2.0》 2020.5.1 - 6.14 《卓有成效的管理者》 2020.6.15 - 7.26 《201 principles of software development》 2020.7.27 - 9.6    "><meta property="og:title" content="6 月" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/" />
-
-<title>6 月 | 叶王笔记</title>
+<meta name="description" content="2020 年 6 月 18 日（星期四） 今日待办     编程 ZLMediaKit 开发 安装依赖库 MacOS cd ZLMediaKit mkdir build cd build # 查看 openssl 的路径 cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.1/1.1.1g/ make -j4 Debian Debian 系 (包括 ubuntu）
+# 除了openssl,其他其实都可以不安装 sudo apt-get install libssl-dev sudo apt-get install libsdl-dev sudo apt-get install libavcodec-dev sudo apt-get install libavutil-dev sudo apt-get install ffmpeg Windows  构建和编译 MacOS cd ZLMediaKit mkdir build cd build cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1."><meta property="og:title" content="2020-06-18" />
+<meta property="og:description" content="2020 年 6 月 18 日（星期四） 今日待办     编程 ZLMediaKit 开发 安装依赖库 MacOS cd ZLMediaKit mkdir build cd build # 查看 openssl 的路径 cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.1/1.1.1g/ make -j4 Debian Debian 系 (包括 ubuntu）
+# 除了openssl,其他其实都可以不安装 sudo apt-get install libssl-dev sudo apt-get install libsdl-dev sudo apt-get install libavcodec-dev sudo apt-get install libavutil-dev sudo apt-get install ffmpeg Windows  构建和编译 MacOS cd ZLMediaKit mkdir build cd build cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/18/" />
+<meta property="article:modified_time" content="2020-06-18T10:48:06+08:00" />
+<title>2020-06-18 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
 
@@ -18,7 +20,6 @@
 
 <script defer src="/note/en.search.min.4bdf2d3cb610ab457891837cde35559881452043fbc1eef0eaf9695df63e1f12.js" integrity="sha256-S98tPLYQq0V4kYN83jVVmIFFIEP7we7w6vlpXfY&#43;HxI="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/note/docs/live/diary/2020/06/index.xml" title="叶王笔记" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -495,7 +496,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/note/docs/live/diary/2020/06/" class="active">6 月</a>
+  <a href="/note/docs/live/diary/2020/06/" class="">6 月</a>
   
 
 
@@ -511,7 +512,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/note/docs/live/diary/2020/06/18/" class="">2020-06-18</a>
+  <a href="/note/docs/live/diary/2020/06/18/" class="active">2020-06-18</a>
   
 
 </li>
@@ -892,7 +893,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>6 月</strong>
+  <strong>2020-06-18</strong>
 
   <label for="toc-control">
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -906,9 +907,29 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月">2020 年 6 月</a>
+    <li><a href="#2020-年-6-月-18-日星期四">2020 年 6 月 18 日（星期四）</a>
       <ul>
-        <li><a href="#本月计划">本月计划</a></li>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#zlmediakit-开发">ZLMediaKit 开发</a>
+              <ul>
+                <li><a href="#安装依赖库">安装依赖库</a></li>
+                <li><a href="#构建和编译">构建和编译</a></li>
+              </ul>
+            </li>
+            <li><a href="#ffmpeg">FFmpeg</a>
+              <ul>
+                <li><a href="#拉流-vs-推流">拉流 vs 推流</a></li>
+              </ul>
+            </li>
+            <li><a href="#rtp---rtsprtmp">RTP -&gt; RTSP/RTMP</a>
+              <ul>
+                <li><a href="#nalu-nal-units-组成"><code>NALU</code> (<code>NAL Units</code>) 组成</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -922,17 +943,93 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="2020-年-6-月">2020 年 6 月</h1>
-<h2 id="本月计划">本月计划</h2>
+  <article class="markdown"><h1 id="2020-年-6-月-18-日星期四">2020 年 6 月 18 日（星期四）</h1>
+<h2 id="今日待办">今日待办</h2>
 <ul>
-<li><input disabled="" type="checkbox"> 百度月读帮
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<hr>
+<h2 id="编程">编程</h2>
+<h3 id="zlmediakit-开发">ZLMediaKit 开发</h3>
+<h4 id="安装依赖库">安装依赖库</h4>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="hidden" name="tabs-dependency" id="tabs-dependency-0" checked="checked" />
+  <label for="tabs-dependency-0">MacOS</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ZLMediaKit
+mkdir build
+cd build
+<span style="color:#75715e"># 查看 openssl 的路径</span>
+cmake .. -DOPENSSL_ROOT_DIR<span style="color:#f92672">=</span>/usr/local/Cellar/openssl@1.1/1.1.1g/
+make -j4
+</code></pre></div></div><input type="radio" class="hidden" name="tabs-dependency" id="tabs-dependency-1"  />
+  <label for="tabs-dependency-1">Debian</label>
+  <div class="book-tabs-content markdown-inner"><p>Debian 系 (包括 ubuntu）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 除了openssl,其他其实都可以不安装</span>
+sudo apt-get install libssl-dev
+sudo apt-get install libsdl-dev
+sudo apt-get install libavcodec-dev
+sudo apt-get install libavutil-dev
+sudo apt-get install ffmpeg
+</code></pre></div></div><input type="radio" class="hidden" name="tabs-dependency" id="tabs-dependency-2"  />
+  <label for="tabs-dependency-2">Windows</label>
+  <div class="book-tabs-content markdown-inner"></div></div>
+
+<h4 id="构建和编译">构建和编译</h4>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="hidden" name="tabs-build" id="tabs-build-0" checked="checked" />
+  <label for="tabs-build-0">MacOS</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ZLMediaKit
+mkdir build
+cd build
+cmake .. -DOPENSSL_ROOT_DIR<span style="color:#f92672">=</span>/usr/local/Cellar/openssl@1.1/1.1.1g/
+make -j4
+</code></pre></div></div><input type="radio" class="hidden" name="tabs-build" id="tabs-build-1"  />
+  <label for="tabs-build-1">Linux</label>
+  <div class="book-tabs-content markdown-inner"></div><input type="radio" class="hidden" name="tabs-build" id="tabs-build-2"  />
+  <label for="tabs-build-2">Windows</label>
+  <div class="book-tabs-content markdown-inner"></div></div>
+
+<h3 id="ffmpeg">FFmpeg</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 推流操作</span>
+ffmpeg -f x11grab -i :0.0+0,0 -s 640x480 -r <span style="color:#ae81ff">10</span> -vcodec libx264 -preset ultrafast -acodec libmp3lame -ar <span style="color:#ae81ff">44100</span> -ac <span style="color:#ae81ff">1</span> -f flv rtmp://***
+
+<span style="color:#75715e"># 拉流播放</span>
+ffplay rtmp://***
+</code></pre></div><h4 id="拉流-vs-推流">拉流 vs 推流</h4>
 <ul>
-<li><input disabled="" type="checkbox"> 《人人都是产品经理 2.0》 2020.5.1 - 6.14</li>
-<li><input disabled="" type="checkbox"> 《卓有成效的管理者》 2020.6.15 - 7.26</li>
-<li><input disabled="" type="checkbox"> 《201 principles of software development》 2020.7.27 - 9.6</li>
+<li>推流：客户端（发起） -&gt; 服务器</li>
+<li>拉流：服务器 -&gt; 客户端（发起）</li>
 </ul>
-</li>
+<hr>
+<h3 id="rtp---rtsprtmp">RTP -&gt; RTSP/RTMP</h3>
+<blockquote>
+<p>需要遇到 <code>sps</code> <code>pps</code> <code>idr</code> 才能生成</p>
+</blockquote>
+<h4 id="nalu-nal-units-组成"><code>NALU</code> (<code>NAL Units</code>) 组成</h4>
+<ul>
+<li><code>NALU</code> 头（<code>00 00 00 01</code> 或者 <code>00 00 01</code>）</li>
+<li>sps (序列参数集)</li>
+<li>pps (图像参数集合)</li>
+<li>slice</li>
+<li>sei</li>
+<li>IDR 帧</li>
+<li>I 帧（在图像运动变化较少时，I 帧后面是 7 个 P 帧，如果图像运动变化大时，一个序列就短了，I 帧后面可能是 3 个或者 4 个 P 帧）</li>
+<li>P 帧</li>
+<li>B 帧等数据。</li>
 </ul>
+<p>一个完整的 <code>NALU</code> 单元结构图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200615144617.png" alt="" /></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://juejin.im/post/5a8fe66b6fb9a0633e51eadc">H.264 码流结构 (H.264 Data Structure)</a></li>
+</ul>
+<hr>
 </article>
  
       
@@ -945,9 +1042,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/6d28bd73d2042174c0a4ac68bff5bc06bd043535" title='Last modified by yewang | 2020-05-31' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/5a5030df673655edb1a7c475c1b47501bc01a5b4" title='Last modified by yewang | 2020-06-18' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-05-31</span>
+      <span>2020-06-18</span>
     </a>
   </div>
 
@@ -982,9 +1079,29 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月">2020 年 6 月</a>
+    <li><a href="#2020-年-6-月-18-日星期四">2020 年 6 月 18 日（星期四）</a>
       <ul>
-        <li><a href="#本月计划">本月计划</a></li>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#zlmediakit-开发">ZLMediaKit 开发</a>
+              <ul>
+                <li><a href="#安装依赖库">安装依赖库</a></li>
+                <li><a href="#构建和编译">构建和编译</a></li>
+              </ul>
+            </li>
+            <li><a href="#ffmpeg">FFmpeg</a>
+              <ul>
+                <li><a href="#拉流-vs-推流">拉流 vs 推流</a></li>
+              </ul>
+            </li>
+            <li><a href="#rtp---rtsprtmp">RTP -&gt; RTSP/RTMP</a>
+              <ul>
+                <li><a href="#nalu-nal-units-组成"><code>NALU</code> (<code>NAL Units</code>) 组成</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

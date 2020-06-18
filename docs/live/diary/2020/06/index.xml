@@ -10,6 +10,16 @@
     
     
     <item>
+      <title>2020-06-18</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/18/</guid>
+      <description>2020 年 6 月 18 日（星期四） 今日待办     编程 ZLMediaKit 开发 安装依赖库 MacOS cd ZLMediaKit mkdir build cd build # 查看 openssl 的路径 cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.1/1.1.1g/ make -j4 Debian Debian 系 (包括 ubuntu）
+# 除了openssl,其他其实都可以不安装 sudo apt-get install libssl-dev sudo apt-get install libsdl-dev sudo apt-get install libavcodec-dev sudo apt-get install libavutil-dev sudo apt-get install ffmpeg Windows  构建和编译 MacOS cd ZLMediaKit mkdir build cd build cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.</description>
+    </item>
+    
+    <item>
       <title>2020-06-17</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/06/17/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
