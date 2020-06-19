@@ -371,7 +371,8 @@ TLS 握手流程 TLS 是一个信道建立和信道的表达方式，向下依�
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/19/</guid>
       <description>2020 年 6 月 19 日（星期五） 今日待办     编程 Go 类型转化
 num := dat[&amp;#34;num&amp;#34;].(float64) 类型推断
-newA, ok := a.(string) func checkType(i interface{}) { // 这里是通过 i.(type) 来判断是什么类型  // 下面的 case 分支匹配到了，则执行相关的分支  switch v := i.(type) { case int: fmt.Printf(&amp;#34;%v is an int&amp;#34;, v) case string: fmt.Printf(&amp;#34;%v is string&amp;#34;, v) case bool: fmt.Printf(&amp;#34;%v is bool&amp;#34;, v) } } </description>
+newA, ok := a.(string) func checkType(i interface{}) { // 这里是通过 i.(type) 来判断是什么类型  // 下面的 case 分支匹配到了，则执行相关的分支  switch v := i.(type) { case int: fmt.Printf(&amp;#34;%v is an int&amp;#34;, v) case string: fmt.Printf(&amp;#34;%v is string&amp;#34;, v) case bool: fmt.Printf(&amp;#34;%v is bool&amp;#34;, v) } }  产品文档 需求分析文档 前期分析阶段中，需求方主要是与产品经理进行沟通，产出文档有三种：
+BRD 文档（Business Requirement Document） 商业需求文档，基于商业目标或价值所描述的产品需求内容文档（报告）。</description>
     </item>
     
     <item>
