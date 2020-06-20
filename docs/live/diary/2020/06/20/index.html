@@ -4,16 +4,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 6 月 13 日（星期六） 今日待办     编程 求最大公约数  暴力枚举法：时间复杂度是 O (min (a, b))) 辗转相除法：时间复杂度不太好计算，可以近似为 O (log (max (a, b)))，但是取模运算性能较差。 更相减损术：避免了取模运算，但是算法性能不稳定，最坏时间复杂度为 O (max (a, b))) 更相减损术与移位结合：不但避免了取模运算，而且算法性能稳定，时间复杂度为 O (log (max (a, b)))  辗转相除法 辗转相除法， 又名欧几里得算法（Euclidean algorithm）， 目的是求出两个正整数的最大公约数。 它是已知最古老的算法， 其可追溯至公元前 300 年前。
-这条算法基于一个定理： 两个正整数 a 和 b（a&gt;b），它们的最大公约数等于 a 除以 b 的余数 c 和 b 之间的最大公约数。
-比如 10 和 25，25 除以 10 商 2 余 5, 那么 10 和 25 的最大公约数，等同于 10 和 5 的最大公约数。"><meta property="og:title" content="2020-06-13" />
-<meta property="og:description" content="2020 年 6 月 13 日（星期六） 今日待办     编程 求最大公约数  暴力枚举法：时间复杂度是 O (min (a, b))) 辗转相除法：时间复杂度不太好计算，可以近似为 O (log (max (a, b)))，但是取模运算性能较差。 更相减损术：避免了取模运算，但是算法性能不稳定，最坏时间复杂度为 O (max (a, b))) 更相减损术与移位结合：不但避免了取模运算，而且算法性能稳定，时间复杂度为 O (log (max (a, b)))  辗转相除法 辗转相除法， 又名欧几里得算法（Euclidean algorithm）， 目的是求出两个正整数的最大公约数。 它是已知最古老的算法， 其可追溯至公元前 300 年前。
-这条算法基于一个定理： 两个正整数 a 和 b（a&gt;b），它们的最大公约数等于 a 除以 b 的余数 c 和 b 之间的最大公约数。
-比如 10 和 25，25 除以 10 商 2 余 5, 那么 10 和 25 的最大公约数，等同于 10 和 5 的最大公约数。" />
+<meta name="description" content="2020 年 6 月 20 日（星期六） 今日待办     编程 "><meta property="og:title" content="2020-06-20" />
+<meta property="og:description" content="2020 年 6 月 20 日（星期六） 今日待办     编程 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/13/" />
-<meta property="article:modified_time" content="2020-06-14T17:15:06+08:00" />
-<title>2020-06-13 | 叶王笔记</title>
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/20/" />
+
+<title>2020-06-20 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
 
@@ -514,7 +510,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/note/docs/live/diary/2020/06/20/" class="">2020-06-20</a>
+  <a href="/note/docs/live/diary/2020/06/20/" class="active">2020-06-20</a>
   
 
 </li>
@@ -584,7 +580,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/note/docs/live/diary/2020/06/13/" class="active">2020-06-13</a>
+  <a href="/note/docs/live/diary/2020/06/13/" class="">2020-06-13</a>
   
 
 </li>
@@ -915,7 +911,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>2020-06-13</strong>
+  <strong>2020-06-20</strong>
 
   <label for="toc-control">
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -929,24 +925,10 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月-13-日星期六">2020 年 6 月 13 日（星期六）</a>
+    <li><a href="#2020-年-6-月-20-日星期六">2020 年 6 月 20 日（星期六）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
-          <ul>
-            <li><a href="#求最大公约数">求最大公约数</a>
-              <ul>
-                <li><a href="#辗转相除法">辗转相除法</a>
-                  <ul>
-                    <li><a href="#大整数取模">大整数取模</a></li>
-                  </ul>
-                </li>
-                <li><a href="#更相减损术">更相减损术</a></li>
-              </ul>
-            </li>
-            <li><a href="#求最小公倍数">求最小公倍数</a></li>
-          </ul>
-        </li>
+        <li><a href="#编程">编程</a></li>
       </ul>
     </li>
   </ul>
@@ -960,50 +942,14 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="2020-年-6-月-13-日星期六">2020 年 6 月 13 日（星期六）</h1>
+  <article class="markdown"><h1 id="2020-年-6-月-20-日星期六">2020 年 6 月 20 日（星期六）</h1>
 <h2 id="今日待办">今日待办</h2>
 <ul>
 <li><input disabled="" type="checkbox"> </li>
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
-<h3 id="求最大公约数">求最大公约数</h3>
-<ol>
-<li>暴力枚举法：时间复杂度是 O (min (a, b)))</li>
-<li>辗转相除法：时间复杂度不太好计算，可以近似为 O (log (max (a, b)))，但是<strong>取模运算性能较差</strong>。</li>
-<li>更相减损术：避免了取模运算，但是算法性能不稳定，最坏时间复杂度为 O (max (a, b)))</li>
-<li>更相减损术与移位结合：不但避免了取模运算，而且算法性能稳定，时间复杂度为 O (log (max (a, b)))</li>
-</ol>
-<h4 id="辗转相除法">辗转相除法</h4>
-<p>辗转相除法， 又名欧几里得算法（<code>Euclidean algorithm</code>），
-目的是求出两个正整数的<strong>最大公约数</strong>。
-它是已知最古老的算法， 其可追溯至公元前 300 年前。</p>
-<p>这条算法基于一个定理：
-两个正整数 a 和 b（a&gt;b），它们的最大公约数等于 a 除以 b 的余数 c 和 b 之间的最大公约数。</p>
-<p>比如 10 和 25，25 除以 10 商 2 余 5, 那么 10 和 25 的最大公约数，等同于 10 和 5 的最大公约数。</p>
-<h5 id="大整数取模">大整数取模</h5>
-<p>存在性能问题</p>
-<h4 id="更相减损术">更相减损术</h4>
-<p>出自于中国古代的《九章算术》，也是一种求最大公约数的算法。</p>
-<p>他的原理更加简单：
-两个正整数 a 和 b（a&gt;b），它们的最大公约数等于 a-b 的差值 c 和较小数 b 的最大公约数。</p>
-<p>比如 10 和 25，25 减去 10 的差是 15, 那么 10 和 25 的最大公约数，等同于 10 和 15 的最大公约数。</p>
-<h3 id="求最小公倍数">求最小公倍数</h3>
-<p><strong>两数乘积除以最大公约数</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">using</span> LL <span style="color:#f92672">=</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span>;
-LL <span style="color:#a6e22e">MCM</span>(LL a, LL b){
-
-    LL Multi <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> b;
-
-    <span style="color:#66d9ef">while</span> (b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-        LL tmp <span style="color:#f92672">=</span> a <span style="color:#f92672">%</span> b;
-        a <span style="color:#f92672">=</span> b;
-        b <span style="color:#f92672">=</span> tmp;
-    }
-
-    <span style="color:#66d9ef">return</span> Multi <span style="color:#f92672">/</span> a;
-}
-</code></pre></div></article>
+</article>
  
       
 
@@ -1012,14 +958,6 @@ LL <span style="color:#a6e22e">MCM</span>(LL a, LL b){
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/f6326c7d275d7d3c82cfde1990487bca3a6332a3" title='Last modified by yewang | 2020-06-14' target="_blank" rel="noopener">
-      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-06-14</span>
-    </a>
-  </div>
 
 
 
@@ -1052,24 +990,10 @@ LL <span style="color:#a6e22e">MCM</span>(LL a, LL b){
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月-13-日星期六">2020 年 6 月 13 日（星期六）</a>
+    <li><a href="#2020-年-6-月-20-日星期六">2020 年 6 月 20 日（星期六）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
-          <ul>
-            <li><a href="#求最大公约数">求最大公约数</a>
-              <ul>
-                <li><a href="#辗转相除法">辗转相除法</a>
-                  <ul>
-                    <li><a href="#大整数取模">大整数取模</a></li>
-                  </ul>
-                </li>
-                <li><a href="#更相减损术">更相减损术</a></li>
-              </ul>
-            </li>
-            <li><a href="#求最小公倍数">求最小公倍数</a></li>
-          </ul>
-        </li>
+        <li><a href="#编程">编程</a></li>
       </ul>
     </li>
   </ul>
