@@ -282,25 +282,6 @@ CSI（Container Storage Interface） 容器存储接口，提供存储资源</de
     </item>
     
     <item>
-      <title>保险</title>
-      <link>https://ikingye.github.io/note/docs/social/economic/insurance/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/note/docs/social/economic/insurance/</guid>
-      <description>保险 普通家庭面对的主要风险  购买哪些保险 对于咱们平常人，只需要配置 1+4+X 即可。
- 1 指的是社保 4 指的是四大人身险，包括重疾险、医疗险、意外险、定期寿险 X 指的是一些比较合适的财产险，比如车险、家财险等。  至于保险公司的年金险、教育金、养老金种种，我虽然不能一棍子打死说不买，
-但是，很局限&amp;hellip;&amp;hellip;
-购买建议 务必配上社保，
-重疾险优先做高保额到 50 万，
-医疗险着重看续保条件
-意外险选一年期的
-寿险选定期的，
-家财险要看地区。
-慎买年金险，不买返还型。
-产品选择    保险类型 优先级 保险产品 费用 所属公司 备注     社保 ★★★★★ - - - 五险一金   重疾险 ★★★★       百万医疗险 ★★★★       一年期意外险 ★★★★       定期寿险 ★★★★       车险 ★★★★       家财险 ★★★★                 保险分类 重疾险 所谓重疾险，保的是重大疾病，</description>
-    </item>
-    
-    <item>
       <title>教程</title>
       <link>https://ikingye.github.io/note/docs/study/domain/operate/tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -597,6 +578,25 @@ We use tabs for indentation and gofmt emits them by default. Use spaces only if 
  参考：
  Effective Go   Kubernetes 查一段时间的日志 --since-time 查一段时间的日志
 k logs pedestrian-count-wrapper-5b7cb44c79-k4z6n --since-time=2020-06-12T14:00:00+08:00 &amp;gt; pedestrian-count.log 查看多个 pod 日志 传统来说，Kubernetes 环境下的日志都是靠 FluentD + ElasticSearch + Kibana 的组合实现的， 这一组合的功能和强大，所以成为一个事实标准来使用， 但是在一些比较简陋的测试集群中，或者不具备浏览器条件的自动化 / 控制台环境下， 归并多个 Pod 的日志进行集中的查看和处理还是很有用的。</description>
+    </item>
+    
+    <item>
+      <title>产品</title>
+      <link>https://ikingye.github.io/note/docs/social/economic/insurance/product/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/social/economic/insurance/product/</guid>
+      <description>产品 购买哪些保险 对于咱们平常人，只需要配置 1+4+X 即可。
+ 1 指的是社保 4 指的是四大人身险，包括重疾险、医疗险、意外险、定期寿险 X 指的是一些比较合适的财产险，比如车险、家财险等。  至于保险公司的年金险、教育金、养老金种种，我虽然不能一棍子打死说不买，
+但是，很局限&amp;hellip;&amp;hellip;
+购买建议 务必配上社保，
+重疾险优先做高保额到 50 万，
+医疗险着重看续保条件
+意外险选一年期的
+寿险选定期的，
+家财险要看地区。
+慎买年金险，不买返还型。
+产品选择    保险类型 优先级 保险产品 费用 所属公司 备注     社保 ★★★★★ - - - 五险一金   重疾险 ★★★★       百万医疗险 ★★★★       一年期意外险 ★★★★       定期寿险 ★★★★       车险 ★★★★       家财险 ★★★★                重疾险  参考  全面测评 135 款重疾险，选出九月的性价比之王 全面测评 65 款少儿重疾险，选出九月的性价比之王 全面测评 113 款百万医疗险，选出九月的性价比之王  </description>
     </item>
     
     <item>
@@ -968,6 +968,15 @@ MBA 分类 </description>
     </item>
     
     <item>
+      <title>购买</title>
+      <link>https://ikingye.github.io/note/docs/social/economic/insurance/buy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/social/economic/insurance/buy/</guid>
+      <description>购买 从哪里购买 </description>
+    </item>
+    
+    <item>
       <title>2020-06-01</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/06/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -976,6 +985,15 @@ MBA 分类 </description>
       <description>2020 年 6 月 1 日（星期一） 今日待办     编程 Jeecg-Boot zhangdaiscott/jeecg-boot 前后端分离架构：SpringBoot 2.x，Ant Design&amp;amp;Vue，Mybatis-plus，Shiro，JWT
 jhipster jhipster/generator-jhipster JHipster is a development platform to quickly generate, develop, &amp;amp; deploy modern web applications &amp;amp; microservice architectures. https://www.jhipster.tech
 SELinux The SELinux stands for Security-Enhanced Linux where it is a linux kernel security module. It is enabled by default on most of the linux distribution that we use for servers like centOS. It provides enhanced security measurements.</description>
+    </item>
+    
+    <item>
+      <title>理赔</title>
+      <link>https://ikingye.github.io/note/docs/social/economic/insurance/claims/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/social/economic/insurance/claims/</guid>
+      <description>理赔 </description>
     </item>
     
     <item>
