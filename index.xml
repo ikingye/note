@@ -282,6 +282,25 @@ CSI（Container Storage Interface） 容器存储接口，提供存储资源</de
     </item>
     
     <item>
+      <title>保险</title>
+      <link>https://ikingye.github.io/note/docs/social/economic/insurance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/social/economic/insurance/</guid>
+      <description>保险 普通家庭面对的主要风险  购买哪些保险 对于咱们平常人，只需要配置 1+4+X 即可。
+ 1 指的是社保 4 指的是四大人身险，包括重疾险、医疗险、意外险、定期寿险 X 指的是一些比较合适的财产险，比如车险、家财险等。  至于保险公司的年金险、教育金、养老金种种，我虽然不能一棍子打死说不买，
+但是，很局限&amp;hellip;&amp;hellip;
+购买建议 务必配上社保，
+重疾险优先做高保额到 50 万，
+医疗险着重看续保条件
+意外险选一年期的
+寿险选定期的，
+家财险要看地区。
+慎买年金险，不买返还型。
+产品选择    保险类型 优先级 保险产品 费用 所属公司 备注     社保 ★★★★★ - - - 五险一金   重疾险 ★★★★       百万医疗险 ★★★★       一年期意外险 ★★★★       定期寿险 ★★★★       车险 ★★★★       家财险 ★★★★                 保险分类 重疾险 所谓重疾险，保的是重大疾病，</description>
+    </item>
+    
+    <item>
       <title>教程</title>
       <link>https://ikingye.github.io/note/docs/study/domain/operate/tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -339,7 +358,7 @@ Cloud Native 既包含
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/20/</guid>
-      <description>2020 年 6 月 20 日（星期六） 今日待办     编程 </description>
+      <description>2020 年 6 月 20 日（星期六） 今日待办     编程 Ubuntu 版本    Version Code name Release date General support until Security support (ESM) until     14.04 LTS Trusty Tahr 2014-04-17 2019-04 2022-04   16.04 LTS Xenial Xerus 2016-04-21 2021-04 2024-04   18.04 LTS Bionic Beaver 2018-04-26 2023-04 2028-04   19.10 Eoan Ermine 2019-10-17 2020-07 n/a   20.04 LTS Focal Fossa 2020-04-23 2025-04 2030-04   20.</description>
     </item>
     
     <item>
@@ -761,8 +780,8 @@ MacOS  cpu 排序： 先输入 o，然后输入 cpu 内存排序： 先输入 o�
 该实验出自约翰・罗杰斯・希尔勒的论文《心灵、大脑和程序》（ Minds, Brains, and Programs）中，发表于 1980 年的《 行为与脑科学（英语：Behavioral and Brain Sciences）》。
 中文房间思想实验是什么？它是否成功地否决了图灵测试的有效性？
 中文房间是否可以否定人类会思考？
-因果论与自由意志 k8s canonical/multipass  Multipass orchestrates virtual Ubuntu instances https://multipass.run
-# 创建一个 VM, 1GB 内存和 5GB 磁盘 multipass launch --name k3s --mem 1G --disk 5G # 为 VM 启动一个 shell multipass shell k3s # 在其上安装 k3s curl -sfL https://get.</description>
+因果论与自由意志 k8s rancher/fleet  Rancher 开源 Fleet：业界首个海量 K8S 集群管理项目
+2019 年，Rancher 推出了一系列轻量级 Kubernetes 开源项目，包括轻量级的 Kubernetes 发行版 K3s 、基于 Kubernetes 的应用程序部署引擎 Rio 、业界首个 Kubernetes 操作系统 K3OS 。</description>
     </item>
     
     <item>

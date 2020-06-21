@@ -302,8 +302,8 @@ public class DataProcessor { private final DbManager manager; private final Calc
 该实验出自约翰・罗杰斯・希尔勒的论文《心灵、大脑和程序》（ Minds, Brains, and Programs）中，发表于 1980 年的《 行为与脑科学（英语：Behavioral and Brain Sciences）》。
 中文房间思想实验是什么？它是否成功地否决了图灵测试的有效性？
 中文房间是否可以否定人类会思考？
-因果论与自由意志 k8s canonical/multipass  Multipass orchestrates virtual Ubuntu instances https://multipass.run
-# 创建一个 VM, 1GB 内存和 5GB 磁盘 multipass launch --name k3s --mem 1G --disk 5G # 为 VM 启动一个 shell multipass shell k3s # 在其上安装 k3s curl -sfL https://get.</description>
+因果论与自由意志 k8s rancher/fleet  Rancher 开源 Fleet：业界首个海量 K8S 集群管理项目
+2019 年，Rancher 推出了一系列轻量级 Kubernetes 开源项目，包括轻量级的 Kubernetes 发行版 K3s 、基于 Kubernetes 的应用程序部署引擎 Rio 、业界首个 Kubernetes 操作系统 K3OS 。</description>
     </item>
     
     <item>
