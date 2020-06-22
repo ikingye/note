@@ -287,7 +287,7 @@ CSI（Container Storage Interface） 容器存储接口，提供存储资源</de
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/22/</guid>
-      <description>2020 年 6 月 22 日（星期一） 今日待办     编程 医院排名 中国医院排行榜 （复旦版）医院排名 </description>
+      <description>2020 年 6 月 22 日（星期一） 今日待办     编程 MB 与 Mb  网络通信领域：  一般是 bps  b 是 bit   因为在传输过程中传输的是具体的 0 和 1 不宜换算成字节。通常数据传输率是不用字节来表示的。 k=10 的 3 次方, M=10 的 6 次方 在通信网络中是非常不建议用字节来表示速率的 运营商所谓的 4M 宽带，指的就是数据率为 4Mb/s  非要换算成字节表示应该是 500kB/s（请注意这里一定是小写的 k）     计算机领域：  一般是 B  B 是 Byte   K=2 的 10 次方, M=2 的 20 次方     K 单独出现时，代表 1000 或 1024 K 与 Ki 一起出现时，K 代表 1000，Ki 代表 1024 K 与 k 一起出现时，K 代表 1024，k 代表 1000  参考：</description>
     </item>
     
     <item>

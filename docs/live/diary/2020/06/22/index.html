@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 6 月 22 日（星期一） 今日待办     编程 医院排名 中国医院排行榜 （复旦版）医院排名 "><meta property="og:title" content="2020-06-22" />
-<meta property="og:description" content="2020 年 6 月 22 日（星期一） 今日待办     编程 医院排名 中国医院排行榜 （复旦版）医院排名 " />
+<meta name="description" content="2020 年 6 月 22 日（星期一） 今日待办     编程 MB 与 Mb  网络通信领域：  一般是 bps  b 是 bit   因为在传输过程中传输的是具体的 0 和 1 不宜换算成字节。通常数据传输率是不用字节来表示的。 k=10 的 3 次方, M=10 的 6 次方 在通信网络中是非常不建议用字节来表示速率的 运营商所谓的 4M 宽带，指的就是数据率为 4Mb/s  非要换算成字节表示应该是 500kB/s（请注意这里一定是小写的 k）     计算机领域：  一般是 B  B 是 Byte   K=2 的 10 次方, M=2 的 20 次方     K 单独出现时，代表 1000 或 1024 K 与 Ki 一起出现时，K 代表 1000，Ki 代表 1024 K 与 k 一起出现时，K 代表 1024，k 代表 1000  参考："><meta property="og:title" content="2020-06-22" />
+<meta property="og:description" content="2020 年 6 月 22 日（星期一） 今日待办     编程 MB 与 Mb  网络通信领域：  一般是 bps  b 是 bit   因为在传输过程中传输的是具体的 0 和 1 不宜换算成字节。通常数据传输率是不用字节来表示的。 k=10 的 3 次方, M=10 的 6 次方 在通信网络中是非常不建议用字节来表示速率的 运营商所谓的 4M 宽带，指的就是数据率为 4Mb/s  非要换算成字节表示应该是 500kB/s（请注意这里一定是小写的 k）     计算机领域：  一般是 B  B 是 Byte   K=2 的 10 次方, M=2 的 20 次方     K 单独出现时，代表 1000 或 1024 K 与 Ki 一起出现时，K 代表 1000，Ki 代表 1024 K 与 k 一起出现时，K 代表 1024，k 代表 1000  参考：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/22/" />
-
+<meta property="article:modified_time" content="2020-06-22T16:02:37+08:00" />
 <title>2020-06-22 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.ee5839c8634479f517a8379dc860cf4fd53018c833468cf6996e3c845b5caf97.js" integrity="sha256-7lg5yGNEefUXqDedyGDPT9UwGMgzRoz2mW48hFtcr5c="></script>
+<script defer src="/note/en.search.min.9c3a170266e036503d3b82ecfae068f821fab870cc92e3e47090dc6ae4260fc3.js" integrity="sha256-nDoXAmbgNlA9O4Ls&#43;uBo&#43;CH6uHDMkuPkcJDcauQmD8M="></script>
 
 <!--
 Made with Book Theme
@@ -961,7 +961,14 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#2020-年-6-月-22-日星期一">2020 年 6 月 22 日（星期一）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#mb-与-mb">MB 与 Mb</a></li>
+            <li><a href="#手机与基站通信">手机与基站通信</a></li>
+            <li><a href="#cpu-密集型-vs-io-密集型"><code>CPU 密集型</code> vs <code>IO 密集型</code></a></li>
+            <li><a href="#惊群">惊群</a></li>
+          </ul>
+        </li>
         <li><a href="#医院排名">医院排名</a>
           <ul>
             <li><a href="#中国医院排行榜httprankcn-healthcarecom"><a href="http://rank.cn-healthcare.com/">中国医院排行榜</a></a></li>
@@ -988,6 +995,58 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
+<h3 id="mb-与-mb">MB 与 Mb</h3>
+<ul>
+<li>网络通信领域：
+<ul>
+<li>一般是 bps
+<ul>
+<li>b 是 bit</li>
+</ul>
+</li>
+<li>因为在传输过程中传输的是具体的 0 和 1 不宜换算成字节。通常数据传输率是不用字节来表示的。</li>
+<li>k=<code>10 的 3 次方</code>, M=<code>10 的 6 次方</code></li>
+<li>在通信网络中是非常不建议用字节来表示速率的</li>
+<li>运营商所谓的 4M 宽带，指的就是数据率为 4Mb/s
+<ul>
+<li>非要换算成字节表示应该是 500kB/s（请注意这里一定是小写的 k）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>计算机领域：
+<ul>
+<li>一般是 B
+<ul>
+<li>B 是 Byte</li>
+</ul>
+</li>
+<li>K=<code>2 的 10 次方</code>, M=<code>2 的 20 次方</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>K 单独出现时，代表 1000 或 1024</li>
+<li>K 与 Ki 一起出现时，K 代表 1000，Ki 代表 1024</li>
+<li>K 与 k 一起出现时，K 代表 1024，k 代表 1000</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/22648360">关于网络带宽中 MB 与 Mb 中大小写的 B 有严格的定义吗？</a></li>
+<li><a href="https://www.zhihu.com/question/24601215">KB / KiB，MB / MiB，GB / GiB，… 的区别是什么？</a></li>
+<li><a href="https://www.ithome.com/0/437/491.htm">一文看懂 Mbps、Mb/s、MB/s 有什么区别</a></li>
+</ul>
+<hr>
+<h3 id="手机与基站通信">手机与基站通信</h3>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.ithome.com/0/436/143.htm">4G 手机跟基站是怎么 “交流” 的</a></li>
+</ul>
+<hr>
+<h3 id="cpu-密集型-vs-io-密集型"><code>CPU 密集型</code> vs <code>IO 密集型</code></h3>
+<hr>
+<h3 id="惊群">惊群</h3>
+<hr>
 <h2 id="医院排名">医院排名</h2>
 <h3 id="中国医院排行榜httprankcn-healthcarecom"><a href="http://rank.cn-healthcare.com/">中国医院排行榜</a></h3>
 <h3 id="复旦版医院排名httpwwwfudanmedcominstitutenews222aspx"><a href="http://www.fudanmed.com/institute/news222.aspx">（复旦版）医院排名</a></h3>
@@ -1000,6 +1059,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/8627bfef9d0e09567e48b295e3b34f023c8b45e8" title='Last modified by yewang | 2020-06-22' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-22</span>
+    </a>
+  </div>
 
 
 
@@ -1035,7 +1102,14 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#2020-年-6-月-22-日星期一">2020 年 6 月 22 日（星期一）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#mb-与-mb">MB 与 Mb</a></li>
+            <li><a href="#手机与基站通信">手机与基站通信</a></li>
+            <li><a href="#cpu-密集型-vs-io-密集型"><code>CPU 密集型</code> vs <code>IO 密集型</code></a></li>
+            <li><a href="#惊群">惊群</a></li>
+          </ul>
+        </li>
         <li><a href="#医院排名">医院排名</a>
           <ul>
             <li><a href="#中国医院排行榜httprankcn-healthcarecom"><a href="http://rank.cn-healthcare.com/">中国医院排行榜</a></a></li>
