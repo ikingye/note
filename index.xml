@@ -255,6 +255,17 @@ CSI（Container Storage Interface） 容器存储接口，提供存储资源</de
     </item>
     
     <item>
+      <title>2020-06-24</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/06/24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/24/</guid>
+      <description>2020 年 6 月 24 日（星期三） 今日待办     编程 Ctrl + C vs Ctrl + D Ctrl + C tells the terminal to send a SIGINT to the current foreground process, which by default translates into terminating the application. Ctrl + D tells the terminal that it should register a EOF on standard input, which bash interprets as a desire to exit.
+参考：
+ What&amp;rsquo;s the difference between ^C and ^D for UNIX/Mac OS X terminal?</description>
+    </item>
+    
+    <item>
       <title>2020-04-23</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/23/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

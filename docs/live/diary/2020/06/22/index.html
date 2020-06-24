@@ -8,7 +8,7 @@
 <meta property="og:description" content="2020 年 6 月 22 日（星期一） 今日待办     编程 MB 与 Mb  网络通信领域：  一般是 bps  b 是 bit   因为在传输过程中传输的是具体的 0 和 1 不宜换算成字节。通常数据传输率是不用字节来表示的。 k=10 的 3 次方, M=10 的 6 次方 在通信网络中是非常不建议用字节来表示速率的 运营商所谓的 4M 宽带，指的就是数据率为 4Mb/s  非要换算成字节表示应该是 500kB/s（请注意这里一定是小写的 k）     计算机领域：  一般是 B  B 是 Byte   K=2 的 10 次方, M=2 的 20 次方     K 单独出现时，代表 1000 或 1024 K 与 Ki 一起出现时，K 代表 1000，Ki 代表 1024 K 与 k 一起出现时，K 代表 1024，k 代表 1000  参考：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/22/" />
-<meta property="article:modified_time" content="2020-06-23T10:34:51+08:00" />
+<meta property="article:modified_time" content="2020-06-24T11:34:20+08:00" />
 <title>2020-06-22 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.d4c7c43778c07b8506aca6a4256d554e3f53fd55c62be044b91ec8917a05e3f0.js" integrity="sha256-1MfEN3jAe4UGrKakJW1VTj9T/VXGK&#43;BEuR7IkXoF4/A="></script>
+<script defer src="/note/en.search.min.71eb1b253bf0bdb2ddd215ff31e5584a1e847f9125c61a542919ca3d2c59f8b5.js" integrity="sha256-cesbJTvwvbLd0hX/MeVYSh6Ef5ElxhpUKRnKPSxZ&#43;LU="></script>
 
 <!--
 Made with Book Theme
@@ -533,6 +533,16 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
+  <a href="/note/docs/live/diary/2020/06/24/" class="">2020-06-24</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
   <a href="/note/docs/live/diary/2020/06/23/" class="">2020-06-23</a>
   
 
@@ -993,7 +1003,11 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#http-20-相比-http-11-有哪些改进">http 2.0 相比 http 1.1 有哪些改进</a></li>
             <li><a href="#列举常用的数据结构各自的特点和使用场景">列举常用的数据结构、各自的特点和使用场景</a></li>
             <li><a href="#如何防范-sql-注入">如何防范 SQL 注入</a></li>
-            <li><a href="#如何分析-core-文件">如何分析 core 文件</a></li>
+            <li><a href="#如何分析-core-文件">如何分析 core 文件</a>
+              <ul>
+                <li><a href="#find-core-文件">find core 文件</a></li>
+              </ul>
+            </li>
             <li><a href="#如何发现在同一个家庭网络下的网络设备">如何发现在同一个家庭网络下的网络设备</a></li>
           </ul>
         </li>
@@ -1001,6 +1015,7 @@ https://github.com/alex-shpak/hugo-book
           <ul>
             <li><a href="#中国医院排行榜httprankcn-healthcarecom"><a href="http://rank.cn-healthcare.com/">中国医院排行榜</a></a></li>
             <li><a href="#复旦版医院排名httpwwwfudanmedcominstitutenews222aspx"><a href="http://www.fudanmed.com/institute/news222.aspx">（复旦版）医院排名</a></a></li>
+            <li><a href="#macos-netstat">MacOS netstat</a></li>
           </ul>
         </li>
       </ul>
@@ -1119,12 +1134,24 @@ https://github.com/alex-shpak/hugo-book
 <h3 id="列举常用的数据结构各自的特点和使用场景">列举常用的数据结构、各自的特点和使用场景</h3>
 <h3 id="如何防范-sql-注入">如何防范 SQL 注入</h3>
 <h3 id="如何分析-core-文件">如何分析 core 文件</h3>
+<p><code>core dump</code> 又叫核心转储，当程序运行过程中发生异常，程序异常退出时，由操作系统把程序当前的内存状况存储在一个 core 文件中，叫 <code>core dump</code>.
+(linux 中如果内存越界会收到 <code>SIGSEGV</code> (<code>11</code>) 信号，然后就会 <code>core dump</code>)</p>
+<h4 id="find-core-文件">find core 文件</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo find / -regex <span style="color:#e6db74">&#34;.*/core\.[0-9]*&#34;</span>
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/bodhitree/p/5850212.html">linux core dump 文件 gdb 分析</a></li>
+</ul>
 <h3 id="如何发现在同一个家庭网络下的网络设备">如何发现在同一个家庭网络下的网络设备</h3>
 <hr>
 <h2 id="医院排名">医院排名</h2>
 <h3 id="中国医院排行榜httprankcn-healthcarecom"><a href="http://rank.cn-healthcare.com/">中国医院排行榜</a></h3>
 <h3 id="复旦版医院排名httpwwwfudanmedcominstitutenews222aspx"><a href="http://www.fudanmed.com/institute/news222.aspx">（复旦版）医院排名</a></h3>
-</article>
+<hr>
+<h3 id="macos-netstat">MacOS netstat</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># UDP 端口占用</span>
+netstat -tulnvp udp | head -n2 <span style="color:#f92672">&amp;&amp;</span> netstat -tulnvp udp | grep <span style="color:#ae81ff">5064</span>
+</code></pre></div></article>
  
       
 
@@ -1136,9 +1163,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/35b0b9ad3565c6b8cfe6f564037137dc7f9a450b" title='Last modified by yewang | 2020-06-23' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/9a10d3dfa555939968e108488834628cc39d3e57" title='Last modified by yewang | 2020-06-24' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-06-23</span>
+      <span>2020-06-24</span>
     </a>
   </div>
 
@@ -1198,7 +1225,11 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#http-20-相比-http-11-有哪些改进">http 2.0 相比 http 1.1 有哪些改进</a></li>
             <li><a href="#列举常用的数据结构各自的特点和使用场景">列举常用的数据结构、各自的特点和使用场景</a></li>
             <li><a href="#如何防范-sql-注入">如何防范 SQL 注入</a></li>
-            <li><a href="#如何分析-core-文件">如何分析 core 文件</a></li>
+            <li><a href="#如何分析-core-文件">如何分析 core 文件</a>
+              <ul>
+                <li><a href="#find-core-文件">find core 文件</a></li>
+              </ul>
+            </li>
             <li><a href="#如何发现在同一个家庭网络下的网络设备">如何发现在同一个家庭网络下的网络设备</a></li>
           </ul>
         </li>
@@ -1206,6 +1237,7 @@ https://github.com/alex-shpak/hugo-book
           <ul>
             <li><a href="#中国医院排行榜httprankcn-healthcarecom"><a href="http://rank.cn-healthcare.com/">中国医院排行榜</a></a></li>
             <li><a href="#复旦版医院排名httpwwwfudanmedcominstitutenews222aspx"><a href="http://www.fudanmed.com/institute/news222.aspx">（复旦版）医院排名</a></a></li>
+            <li><a href="#macos-netstat">MacOS netstat</a></li>
           </ul>
         </li>
       </ul>
