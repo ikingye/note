@@ -278,7 +278,9 @@ CSI（Container Storage Interface） 容器存储接口，提供存储资源</de
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/23/</guid>
-      <description>2020 年 6 月 23 日（星期二） 今日待办     编程 </description>
+      <description>2020 年 6 月 23 日（星期二） 今日待办     编程 Spring spring 事务 REQUIRED REQUIRES_NEW 区别  hyperkit moby/hyperkit HyperKit 是一种轻量级虚拟化方法，基于 MacOSX10.10 之后引入的 Hypervisor 框架。HyperKit 应用可以利用硬件虚拟化运行 VMs，但是并不需要特殊权限或者复杂管理工具栈。
+HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例如：VPNKit 和 DataKit）合作使得运行更加有效。由于 HyperKit 架构与库之上，因此将其和 unikernel 库连接起来就显得很直接。例如，我们可以通过使用 MirageOS QCow 库（用 OCaml 编写），加入持久化块设备支持。
+ k3s 安装 istio # 如果 curl 下载失败，可以直接访问 https://get.k3s.io，然后把 install 文本复制到本地文件（比如 install-k3s.sh） # 然后执行 INSTALL_K3S_EXEC=&amp;#34;--no-deploy traefik&amp;#34; K3S_KUBECONFIG_MODE=&amp;#34;644&amp;#34; sh install-k3s.sh curl -sfL https://get.k3s.io |INSTALL_K3S_EXEC=&amp;#34;--no-deploy traefik&amp;#34; K3S_KUBECONFIG_MODE=&amp;#34;644&amp;#34; sh - 参考：</description>
     </item>
     
     <item>
