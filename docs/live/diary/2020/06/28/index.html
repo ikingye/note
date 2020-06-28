@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="存储 "><meta property="og:title" content="存储" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ikingye.github.io/note/docs/study/docs/storage/" />
+<meta name="description" content="2020 年 6 月 28 日（星期日） 今日待办     编程 Redis redis.conf 配置
+ daemonize  daemonize:yes: redis 采用的是单进程多线程的模式。当 redis.conf 中选项 daemonize 设置成 yes 时，代表开启守护进程模式。在该模式下，redis 会在后台运行，并将进程 pid 号写入至 redis.conf 选项 pidfile 设置的文件中，此时 redis 将一直运行，除非手动 kill 该进程。 daemonize:no: 当 daemonize 选项设置成 no 时，当前界面将进入 redis 的命令行界面，exit 强制退出或者关闭连接工具 (putty,xshell 等) 都会导致 redis 进程退出。    supervisor 管理 redis 参考：
+ supervisor 管理 redis   Celery 现在都是基于 redis 的消息队列 ＋ 多 consumer ＋ supervisor 监控的方式 这样的好处是去除掉 python GIL 的限制，直接上多 process 不过只适合任务比较单一的情况"><meta property="og:title" content="2020-06-28" />
+<meta property="og:description" content="2020 年 6 月 28 日（星期日） 今日待办     编程 Redis redis.conf 配置
+ daemonize  daemonize:yes: redis 采用的是单进程多线程的模式。当 redis.conf 中选项 daemonize 设置成 yes 时，代表开启守护进程模式。在该模式下，redis 会在后台运行，并将进程 pid 号写入至 redis.conf 选项 pidfile 设置的文件中，此时 redis 将一直运行，除非手动 kill 该进程。 daemonize:no: 当 daemonize 选项设置成 no 时，当前界面将进入 redis 的命令行界面，exit 强制退出或者关闭连接工具 (putty,xshell 等) 都会导致 redis 进程退出。    supervisor 管理 redis 参考：
+ supervisor 管理 redis   Celery 现在都是基于 redis 的消息队列 ＋ 多 consumer ＋ supervisor 监控的方式 这样的好处是去除掉 python GIL 的限制，直接上多 process 不过只适合任务比较单一的情况" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/28/" />
 
-<title>存储 | 叶王笔记</title>
+<title>2020-06-28 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
 
@@ -18,7 +22,6 @@
 
 <script defer src="/note/en.search.min.c48aebdd967bc592805384b0e7bb8ac6f138fd47773f7ec52a2c3c80498db75d.js" integrity="sha256-xIrr3ZZ7xZKAU4Sw57uKxvE4/Ud3P37FKiw8gEmNt10="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/note/docs/study/docs/storage/index.xml" title="叶王笔记" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -414,479 +417,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/note/" class="">笔记</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/note/codelabs/" class="collapsed ">Codelabs</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/note/hugo/" class="collapsed ">Hugo</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/note/onenote/" class="collapsed ">OneNote</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/note/gitbook/" class="collapsed ">Gitbook</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/office/" class="">办公</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/office/excel/" class="collapsed ">Excel</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/office/ppt/" class="collapsed ">PPT</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/office/word/" class="collapsed ">Word</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/draw/" class="">作图</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/draw/draw.io/" class="collapsed ">Draw.io</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/draw/latex/" class="collapsed ">LaTeX</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/draw/mermaid/" class="collapsed ">Mermaid</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/draw/processon/" class="collapsed ">ProcessOn</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/draw/visio/" class="collapsed ">Visio</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/type/" class="collapsed ">文档类型</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/storage/" class="collapsed active">存储</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/storage/imagehost/" class="">图床</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/tool/" class="collapsed ">工具</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
 
 
   </li>
@@ -961,6 +491,359 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/06/" class="">6 月</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/28/" class="active">2020-06-28</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/24/" class="">2020-06-24</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/23/" class="">2020-06-23</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/22/" class="">2020-06-22</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/20/" class="">2020-06-20</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/19/" class="">2020-06-19</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/18/" class="">2020-06-18</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/17/" class="">2020-06-17</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/16/" class="">2020-06-16</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/15/" class="">2020-06-15</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/14/" class="">2020-06-14</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/13/" class="">2020-06-13</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/12/" class="">2020-06-12</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/11/" class="">2020-06-11</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/10/" class="">2020-06-10</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/09/" class="">2020-06-09</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/08/" class="">2020-06-08</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/05/" class="">2020-06-05</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/04/" class="">2020-06-04</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/03/" class="">2020-06-03</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/02/" class="">2020-06-02</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/note/docs/live/diary/2020/06/01/" class="">2020-06-01</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
 
 
 
@@ -1095,7 +978,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>存储</strong>
+  <strong>2020-06-28</strong>
 
   <label for="toc-control">
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -1109,7 +992,24 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#存储">存储</a></li>
+    <li><a href="#2020-年-6-月-28-日星期日">2020 年 6 月 28 日（星期日）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#redis">Redis</a>
+              <ul>
+                <li><a href="#supervisor-管理-redis">supervisor 管理 redis</a></li>
+              </ul>
+            </li>
+            <li><a href="#celery">Celery</a></li>
+            <li><a href="#rtc-视频互动">RTC 视频互动</a></li>
+            <li><a href="#qos-设计">QOS 设计</a></li>
+            <li><a href="#ssrc">SSRC</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1121,7 +1021,48 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="存储">存储</h1>
+  <article class="markdown"><h1 id="2020-年-6-月-28-日星期日">2020 年 6 月 28 日（星期日）</h1>
+<h2 id="今日待办">今日待办</h2>
+<ul>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<hr>
+<h2 id="编程">编程</h2>
+<h3 id="redis">Redis</h3>
+<p><code>redis.conf</code> 配置</p>
+<ul>
+<li>daemonize
+<ul>
+<li><code>daemonize:yes</code>: redis 采用的是单进程多线程的模式。当 redis.conf 中选项 daemonize 设置成 yes 时，代表开启守护进程模式。在该模式下，redis 会在后台运行，并将进程 pid 号写入至 redis.conf 选项 pidfile 设置的文件中，此时 redis 将一直运行，除非手动 kill 该进程。</li>
+<li><code>daemonize:no</code>: 当 daemonize 选项设置成 no 时，当前界面将进入 redis 的命令行界面，exit 强制退出或者关闭连接工具 (putty,xshell 等) 都会导致 redis 进程退出。</li>
+</ul>
+</li>
+</ul>
+<h4 id="supervisor-管理-redis">supervisor 管理 redis</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/70a8663b97b0">supervisor 管理 redis</a></li>
+</ul>
+<hr>
+<h3 id="celery">Celery</h3>
+<p>现在都是基于 redis 的消息队列 ＋ 多 consumer ＋ supervisor 监控的方式
+这样的好处是去除掉 python GIL 的限制，直接上多 process
+不过只适合任务比较单一的情况</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/50947467/answer/123755527">celery 有哪些比较好的替代品？</a></li>
+</ul>
+<hr>
+<h3 id="rtc-视频互动">RTC 视频互动</h3>
+<p><code>Real-Time Communication</code></p>
+<hr>
+<h3 id="qos-设计">QOS 设计</h3>
+<p>在公网情况下尽量不要用 udp，因为现在开源的成熟的可靠 udp 方案 比较少，而且都不是特别成熟和完善。</p>
+<p>如果是 RTC (视频互动) 这种超低延时场景，或者追求压榨弱网情况下网络性能，那么可以考虑使用可靠 udp 方案 (rudp)，否则没必要。</p>
+<p>RTSP 和 GB28181 中，如果使用 udp 传输 rtp，那么很大几率会存在丢包花屏，应该这些协议都没有 QOS 相关设计。</p>
+<hr>
+<h3 id="ssrc">SSRC</h3>
+<p>GB28181 RTP 转 RTSP，如何绑定 RTSP 与 IPC 设备的关系？</p>
 </article>
  
       
@@ -1131,14 +1072,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/4bf4ead094747eeff0c3a3938a6fb8c7bf121d8f" title='Last modified by yewang | 2020-04-16' target="_blank" rel="noopener">
-      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-04-16</span>
-    </a>
-  </div>
 
 
 
@@ -1171,7 +1104,24 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#存储">存储</a></li>
+    <li><a href="#2020-年-6-月-28-日星期日">2020 年 6 月 28 日（星期日）</a>
+      <ul>
+        <li><a href="#今日待办">今日待办</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#redis">Redis</a>
+              <ul>
+                <li><a href="#supervisor-管理-redis">supervisor 管理 redis</a></li>
+              </ul>
+            </li>
+            <li><a href="#celery">Celery</a></li>
+            <li><a href="#rtc-视频互动">RTC 视频互动</a></li>
+            <li><a href="#qos-设计">QOS 设计</a></li>
+            <li><a href="#ssrc">SSRC</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
