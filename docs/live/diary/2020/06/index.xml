@@ -15,7 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/29/</guid>
-      <description>2020 年 6 月 29 日（星期一） 今日待办     编程 Kubernetes Pod 重启原因  算法 数组中，所有的数都是 2 个，只有一个数是 1 个 按位异或，结果为这个数
+      <description>2020 年 6 月 29 日（星期一） 今日待办     编程 Kubernetes Pod 重启原因 标签 vs 注解 annotations
+ 算法 数组中，所有的数都是 2 个，只有一个数是 1 个 按位异或，结果为这个数
  相同的两个数按位异或，等于 0 0 与任何一个数按位异或，等于这个数  数组中，所有的数都是偶数个，只有一个数是奇数个（2n + 1） 按位异或，结果为这个数
 数组中，所有的数都是偶数个，只有两个数是奇数个 （2n +2） 按位异或，看结果的二进制表示，得知奇数个的两个数，不同的位是哪些 （结果的二进制表示值为 1 的位，就是不同的）， 按结果任意一个不同的位进行分组，就可以分成两组，然后分别再异或，就得到结果
 if num &amp;amp; (1 &amp;lt;&amp;lt; n): print(&amp;#34;num 的第 n 位是 1&amp;#34;) else: print(&amp;#34;num 的第 n 位是 0&amp;#34;) 3n +1, 3n +2, an +b TODO
