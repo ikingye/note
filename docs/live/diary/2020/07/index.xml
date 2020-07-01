@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/02/</guid>
-      <description>2020 年 7 月 2 日（星期四） 今日待办     编程 </description>
+      <description>2020 年 7 月 2 日（星期四） 今日待办     编程 软件设计原则  Don’t Repeat Yourself (DRY) Keep It Simple, Stupid (KISS) Program to an interface, not an implementation Command-Query Separation (CQS) – 命令 - 查询分离原则 You Ain’t Gonna Need It (YAGNI) Law of Demeter – 迪米特法则 面向对象的 S.O.L.I.D 原则 Common Closure Principle（CCP）– 共同封闭原则 Common Reuse Principle (CRP) – 共同重用原则 Hollywood Principle – 好莱坞原则 High Cohesion &amp;amp; Low/Loose coupling &amp;amp; – 高内聚， 低耦合 Convention over Configuration（CoC）– 惯例优于配置原则 Separation of Concerns (SoC) – 关注点分离 Design by Contract (DbC) – 契约式设计  参考：</description>
     </item>
     
     <item>
