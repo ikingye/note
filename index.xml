@@ -1051,7 +1051,7 @@ SELinux The SELinux stands for Security-Enhanced Linux where it is a linux kerne
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/01/</guid>
       <description>2020 年 7 月 1 日（星期三） 今日待办     编程 SIP BYE vs CANCEL For short, BYE is used when the callee already pick up the phone and talk for a while, otherwise, CANCEL takes place.
 参考：
- Introduction to SIP BYE, CANCEL and hop-by-hop messages [video]understanding difference between sip bye &amp;amp; cancel request  </description>
+ Introduction to SIP BYE, CANCEL and hop-by-hop messages [video]understanding difference between sip bye &amp;amp; cancel request   作用域  局部变量  在 C 语言中局部变量，只有执行了才会分配存储空间，只要离开作用域就会自动释放，C 语言的局部变量存储在栈区 Go 语言局部变量的生命周期和 C 语言一样   全局变量  在 C 语言中全局变量，只要程序一启动就会分配存储空间，只有程序关闭才会释放存储空间，C 语言的全局变量存储在静态区 (数据区) Go 语言全局变量的生命周期和 C 语言一样    </description>
     </item>
     
     <item>
