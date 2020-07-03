@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.bd389b817b8ef756a08cdf42c8d65cf43c4edfbf2f1fc6b9ef0448a51d42136e.js" integrity="sha256-vTibgXuO91agjN9CyNZc9DxO378vH8a57wRIpR1CE24="></script>
+<script defer src="/note/en.search.min.73056cd0ac9ef0ae90ab42354545b77c2b536b02f66c43775f7743d7b9be5cf4.js" integrity="sha256-cwVs0Kye8K6Qq0I1RUW3fCtTawL2bEN3X3dD17m&#43;XPQ="></script>
 
 <!--
 Made with Book Theme
@@ -827,6 +827,18 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#编程">编程</a>
           <ul>
             <li><a href="#软件设计原则">软件设计原则</a></li>
+            <li><a href="#k3s">k3s</a>
+              <ul>
+                <li><a href="#rancherk3shttpsgithubcomrancherk3s-github-starshttpsimgshieldsiogithubstarsrancherk3ssvg"><a href="https://github.com/rancher/k3s">rancher/k3s</a> <img src="https://img.shields.io/github/stars/rancher/k3s.svg" alt="Github stars"></a></li>
+                <li><a href="#rancherk3dhttpsgithubcomrancherk3d-github-starshttpsimgshieldsiogithubstarsrancherk3dsvg"><a href="https://github.com/rancher/k3d">rancher/k3d</a> <img src="https://img.shields.io/github/stars/rancher/k3d.svg" alt="Github stars"></a></li>
+                <li><a href="#sunny0826kubecmhttpsgithubcomsunny0826kubecm-github-starshttpsimgshieldsiogithubstarssunny0826kubecmsvg"><a href="https://github.com/sunny0826/kubecm">sunny0826/kubecm</a> <img src="https://img.shields.io/github/stars/sunny0826/kubecm.svg" alt="Github stars"></a></li>
+              </ul>
+            </li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#deployment-not-ready">Deployment not ready</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -870,6 +882,44 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://coolshell.cn/articles/4535.html">一些软件设计的原则</a></li>
 </ul>
+<hr>
+<h3 id="k3s">k3s</h3>
+<p>k3d + k3s = k8s</p>
+<h4 id="rancherk3shttpsgithubcomrancherk3s-github-starshttpsimgshieldsiogithubstarsrancherk3ssvg"><a href="https://github.com/rancher/k3s">rancher/k3s</a> <img src="https://img.shields.io/github/stars/rancher/k3s.svg" alt="Github stars" /></h4>
+<h4 id="rancherk3dhttpsgithubcomrancherk3d-github-starshttpsimgshieldsiogithubstarsrancherk3dsvg"><a href="https://github.com/rancher/k3d">rancher/k3d</a> <img src="https://img.shields.io/github/stars/rancher/k3d.svg" alt="Github stars" /></h4>
+<p>k3d 则是 k3s 社区创建的一个小工具，可以在一个 docker 进程中运行整个 k3s 集群，
+相比直接使用 k3s 运行在本地，更好管理和部署。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装</span>
+brew install k3d
+
+k3d create --server-arg --no-deploy --server-arg traefik -n k3s1
+
+export KUBECONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>k3d get-kubeconfig --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k3s1&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+kubectl cluster-info
+</code></pre></div><h4 id="sunny0826kubecmhttpsgithubcomsunny0826kubecm-github-starshttpsimgshieldsiogithubstarssunny0826kubecmsvg"><a href="https://github.com/sunny0826/kubecm">sunny0826/kubecm</a> <img src="https://img.shields.io/github/stars/sunny0826/kubecm.svg" alt="Github stars" /></h4>
+<p>kubecm 帮助你管理杂乱无章的 kubeconfig</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://medium.com/@yannalbou/k3d-k3s-k8s-perfect-match-for-dev-and-testing-896c8953acc0">k3d + k3s = k8s perfect match for dev and testing</a></li>
+<li><a href="https://developer.aliyun.com/article/745070">k3d+k3s+kubecm 本地快速搭建与管理集群</a></li>
+</ul>
+<hr>
+<h3 id="kubernetes">Kubernetes</h3>
+<h4 id="deployment-not-ready">Deployment not ready</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+</code></pre></div><p>deployment 创建了，not ready。
+pod 没有 创建。</p>
+<p>问题：
+应该是 kubeconfig 没有配置</p>
+<p>解决方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 配置 KUBECONFIG</span>
+export KUBECONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>k3d get-kubeconfig --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k3s1&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># 删除重新创建</span>
+kubectl delete -f samples/bookinfo/platform/kube/bookinfo.yaml
+kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200702224342.png" alt="" /></p>
 </article>
  
       
@@ -925,6 +975,18 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#编程">编程</a>
           <ul>
             <li><a href="#软件设计原则">软件设计原则</a></li>
+            <li><a href="#k3s">k3s</a>
+              <ul>
+                <li><a href="#rancherk3shttpsgithubcomrancherk3s-github-starshttpsimgshieldsiogithubstarsrancherk3ssvg"><a href="https://github.com/rancher/k3s">rancher/k3s</a> <img src="https://img.shields.io/github/stars/rancher/k3s.svg" alt="Github stars"></a></li>
+                <li><a href="#rancherk3dhttpsgithubcomrancherk3d-github-starshttpsimgshieldsiogithubstarsrancherk3dsvg"><a href="https://github.com/rancher/k3d">rancher/k3d</a> <img src="https://img.shields.io/github/stars/rancher/k3d.svg" alt="Github stars"></a></li>
+                <li><a href="#sunny0826kubecmhttpsgithubcomsunny0826kubecm-github-starshttpsimgshieldsiogithubstarssunny0826kubecmsvg"><a href="https://github.com/sunny0826/kubecm">sunny0826/kubecm</a> <img src="https://img.shields.io/github/stars/sunny0826/kubecm.svg" alt="Github stars"></a></li>
+              </ul>
+            </li>
+            <li><a href="#kubernetes">Kubernetes</a>
+              <ul>
+                <li><a href="#deployment-not-ready">Deployment not ready</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
