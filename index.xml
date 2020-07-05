@@ -899,7 +899,9 @@ Packet Sender dannagle/PacketSender TCP, UDP, SSL 发包工具 https://packetsen
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/05/</guid>
-      <description>2020 年 7 月 5 日（星期日） 今日待办     编程 Markdown 参考：
+      <description>2020 年 7 月 5 日（星期日） 今日待办     编程 Markdown 在表格单元格里换行 &amp;lt;br&amp;gt;
+图片在右侧 &amp;lt;img align=&amp;#34;right&amp;#34; src=&amp;#34;https://demo.png&amp;#34;/&amp;gt; 行首空格 需要借助 HTML 转义字符在行首添加空格来实现，
+ &amp;amp;ensp; 代表半角空格， &amp;amp;emsp; 代表全角空格。  参考：
  关于 Markdown 的一些奇技淫巧  </description>
     </item>
     
