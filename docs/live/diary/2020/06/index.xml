@@ -211,13 +211,13 @@ A library is a set of modules which makes sense to be together and that can be u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/09/</guid>
-      <description>2020 年 6 月 9 日（星期二） 今日待办     编程 export PATH 使用 ~ 不生效 # 不生效 # export PATH=&amp;#34;$PATH:~/code/study/cc/istio/istio-1.6.1/bin&amp;#34; # 必须使用完整路径 export PATH=&amp;#34;$PATH:/Users/yewang/code/study/cc/istio/istio-1.6.1/bin&amp;#34;  IoT LPWA Low power wide area, 低功耗广域技术，使用较低功耗实现远距离的无线信号传输。 相较于熟悉的低功耗蓝牙（BLE）、Zigbee 和 Wifi 等技术，LPWA 的传输距离更远，一般在公里级， 其链接预算（link budget）可达 160dBm，而 BLE 和 Zigbee 等一般在 100dBm 以下。
+      <description>2020 年 6 月 9 日（星期二） 今日待办     编程 export PATH 使用 ~ 不生效 # 不生效 # export PATH=&amp;#34;$PATH:~/code/study/cc/istio/istio-1.6.1/bin&amp;#34; # 必须使用完整路径 export PATH=&amp;#34;$PATH:/Users/yewang/code/study/cc/istio/istio-1.6.1/bin&amp;#34;  IoT LPWA Low-Power Wide-Area, 低功耗广域技术，使用较低功耗实现远距离的无线信号传输。 相较于熟悉的低功耗蓝牙（BLE）、Zigbee 和 Wifi 等技术，LPWA 的传输距离更远，一般在公里级， 其链接预算（link budget）可达 160dBm，而 BLE 和 Zigbee 等一般在 100dBm 以下。
 和传统的蜂窝网络技术（2G、3G）相比，LPWA 的功耗更低，电池供电的设备使用寿命可达数年。
 基于这两个显著特点，LPWA 可以真正使能物物互联，助力和引领物联网（IoT）革命。
 LoRa、SigFox、NB-IOT 这些都属于 LPWA
-LPWAN LPWAN – Low power wide area network，低功耗广域网络，即使用 LPWA 技术搭建的无线连接网络。
-LPWAN 的网络连接形式可以多种多样，
-典型 LPWA 网络连接</description>
+参考：
+ 什么是 LPWA？  LPWAN LPWAN – Low power wide area network，低功耗广域网络，即使用 LPWA 技术搭建的无线连接网络。
+LPWAN 的网络连接形式可以多种多样，</description>
     </item>
     
     <item>

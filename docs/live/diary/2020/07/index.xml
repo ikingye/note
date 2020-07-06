@@ -18,7 +18,7 @@
       <description>2020 年 7 月 6 日（星期一） 今日待办     编程 ELF 文件格式 Executable and Linkable Format，可执行连接格式， 是 UNIX 系统实验室（USL）作为应用程序二进制接口（Application Binary Interface，ABI）而开发和发布的。 扩展名为 elf。
 主要有三种主要类型:
  适于连接的可重定位文件 (relocatable file)，可与其它目标文件一起创建可执行文件和共享目标文件。 适于执行的可执行文件 (executable file)，用于提供程序的进程映像，加载的内存执行。 共享目标文件 (shared object file)，连接器可将它与其它可重定位文件和共享目标文件连接成其它的目标文件，动态连接器又可将它与可执行文件和其它共享目标文件结合起来创建一个进程映像。  为了方便和高效，ELF 文件内容有两个平行的视角：
- 程序连接角度 程序运行角度  </description>
+ 程序连接角度 程序运行角度  Go go test GOTEST := $(GO) test GOPKGS := $$($(GO) list ./...| grep -vE &amp;#34;vendor&amp;#34;) test-case: $(GOTEST) -v -cover $(GOPKGS) </description>
     </item>
     
     <item>
