@@ -4,8 +4,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 7 月 6 日（星期一） 今日待办     编程 "><meta property="og:title" content="2020-07-06" />
-<meta property="og:description" content="2020 年 7 月 6 日（星期一） 今日待办     编程 " />
+<meta name="description" content="2020 年 7 月 6 日（星期一） 今日待办     编程 ELF 文件格式 Executable and Linkable Format，可执行连接格式， 是 UNIX 系统实验室（USL）作为应用程序二进制接口（Application Binary Interface，ABI）而开发和发布的。 扩展名为 elf。
+主要有三种主要类型:
+ 适于连接的可重定位文件 (relocatable file)，可与其它目标文件一起创建可执行文件和共享目标文件。 适于执行的可执行文件 (executable file)，用于提供程序的进程映像，加载的内存执行。 共享目标文件 (shared object file)，连接器可将它与其它可重定位文件和共享目标文件连接成其它的目标文件，动态连接器又可将它与可执行文件和其它共享目标文件结合起来创建一个进程映像。  为了方便和高效，ELF 文件内容有两个平行的视角：
+ 程序连接角度 程序运行角度  "><meta property="og:title" content="2020-07-06" />
+<meta property="og:description" content="2020 年 7 月 6 日（星期一） 今日待办     编程 ELF 文件格式 Executable and Linkable Format，可执行连接格式， 是 UNIX 系统实验室（USL）作为应用程序二进制接口（Application Binary Interface，ABI）而开发和发布的。 扩展名为 elf。
+主要有三种主要类型:
+ 适于连接的可重定位文件 (relocatable file)，可与其它目标文件一起创建可执行文件和共享目标文件。 适于执行的可执行文件 (executable file)，用于提供程序的进程映像，加载的内存执行。 共享目标文件 (shared object file)，连接器可将它与其它可重定位文件和共享目标文件连接成其它的目标文件，动态连接器又可将它与可执行文件和其它共享目标文件结合起来创建一个进程映像。  为了方便和高效，ELF 文件内容有两个平行的视角：
+ 程序连接角度 程序运行角度  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/06/" />
 <meta property="article:modified_time" content="2020-07-06T12:46:14+08:00" />
@@ -16,7 +22,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.2d4196a8b5c48643c59a86e4167c6c2473a8e9bd9e4b47cb74b7e51202215c65.js" integrity="sha256-LUGWqLXEhkPFmobkFnxsJHOo6b2eS0fLdLflEgIhXGU="></script>
+<script defer src="/note/en.search.min.b29238b3bd7d9ef5d1a49d858afedc28e554b26532efeb05f330d6d53f74bc2c.js" integrity="sha256-spI4s719nvXRpJ2Fiv7cKOVUsmUy7&#43;sF8zDW1T90vCw="></script>
 
 <!--
 Made with Book Theme
@@ -844,7 +850,11 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#2020-年-7-月-6-日星期一">2020 年 7 月 6 日（星期一）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#elf-文件格式">ELF 文件格式</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -865,6 +875,22 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
+<h3 id="elf-文件格式">ELF 文件格式</h3>
+<p><code>Executable and Linkable Format</code>，可执行连接格式，
+是 UNIX 系统实验室（USL）作为应用程序二进制接口（<code>Application Binary Interface</code>，<code>ABI</code>）而开发和发布的。
+扩展名为 <code>elf</code>。</p>
+<p>主要有三种主要类型:</p>
+<ul>
+<li>适于连接的可重定位文件 (relocatable file)，可与其它目标文件一起创建可执行文件和共享目标文件。</li>
+<li>适于执行的可执行文件 (executable file)，用于提供程序的进程映像，加载的内存执行。</li>
+<li>共享目标文件 (shared object file)，连接器可将它与其它可重定位文件和共享目标文件连接成其它的目标文件，动态连接器又可将它与可执行文件和其它共享目标文件结合起来创建一个进程映像。</li>
+</ul>
+<p>为了方便和高效，ELF 文件内容有两个平行的视角：</p>
+<ul>
+<li>程序连接角度</li>
+<li>程序运行角度</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200706160818.png" alt="" /></p>
 </article>
  
       
@@ -917,7 +943,11 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#2020-年-7-月-6-日星期一">2020 年 7 月 6 日（星期一）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a></li>
+        <li><a href="#编程">编程</a>
+          <ul>
+            <li><a href="#elf-文件格式">ELF 文件格式</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
