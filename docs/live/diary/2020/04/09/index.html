@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.d75d3664bd815c52939f20808a3dac3968c7224618ff7a6a9f274678771dddaf.js" integrity="sha256-1102ZL2BXFKTnyCAij2sOWjHIkYY/3pqnydGeHcd3a8="></script>
+<script defer src="/note/en.search.min.6c39d5a83e919d7e8c18e47940162d0b78da7644c652e7ac11158815d7c05ceb.js" integrity="sha256-bDnVqD6RnX6MGOR5QBYtC3jadkTGUuesERWIFdfAXOs="></script>
 
 <!--
 Made with Book Theme
@@ -1426,12 +1426,6 @@ https://github.com/alex-shpak/hugo-book
 <h4 id="content-type">Content-Type</h4>
 <p>用于定义用户的浏览器或相关设备如何显示将要加载的数据，或者如何处理将要加载的数据</p>
 <ul>
-<li><code>application/x-www-form-urlencoded</code>
-<ul>
-<li>浏览器的原生 form 表单</li>
-<li>提交的数据按照 key1=val1&amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码</li>
-</ul>
-</li>
 <li><code>multipart/form-data</code>
 <ul>
 <li>常见的 POST 数据提交的方式</li>
@@ -1446,6 +1440,22 @@ https://github.com/alex-shpak/hugo-book
 <li><code>application/json</code>
 <ul>
 <li>消息主体是序列化后的 JSON 字符串</li>
+</ul>
+</li>
+<li><code>application/x-www-form-urlencoded</code>
+<ul>
+<li>浏览器的原生 form 表单</li>
+<li>提交的数据按照 key1=val1&amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码</li>
+</ul>
+</li>
+<li><code>application/xml</code>
+<ul>
+<li>xml 格式数据</li>
+</ul>
+</li>
+<li><code>application/form-data</code>
+<ul>
+<li>主要是用来上传文件</li>
 </ul>
 </li>
 <li><code>text/xml</code>
