@@ -859,7 +859,7 @@ MacOS  cpu 排序： 先输入 o，然后输入 cpu 内存排序： 先输入 o�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/07/</guid>
-      <description>2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C++  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve     </description>
+      <description>2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C++  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve      Web 框架  PHP  laravel/laravel    Scala  playframework/playframework      Go interface 转 string // Strval 获取变量的字符串值 // 浮点型 3.</description>
     </item>
     
     <item>

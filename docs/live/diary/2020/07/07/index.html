@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C&#43;&#43;  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve     "><meta property="og:title" content="2020-07-07" />
-<meta property="og:description" content="2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C&#43;&#43;  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve     " />
+<meta name="description" content="2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C&#43;&#43;  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve      Web 框架  PHP  laravel/laravel    Scala  playframework/playframework      Go interface 转 string // Strval 获取变量的字符串值 // 浮点型 3."><meta property="og:title" content="2020-07-07" />
+<meta property="og:description" content="2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C&#43;&#43;  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve      Web 框架  PHP  laravel/laravel    Scala  playframework/playframework      Go interface 转 string // Strval 获取变量的字符串值 // 浮点型 3." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/07/" />
-
+<meta property="article:modified_time" content="2020-07-07T16:33:23+08:00" />
 <title>2020-07-07 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.3aa2ffa56c2aa602f3898f47fc2d5dc53a3f1bb26b41be4d8630a18502af19ce.js" integrity="sha256-OqL/pWwqpgLziY9H/C1dxTo/G7JrQb5NhjChhQKvGc4="></script>
+<script defer src="/note/en.search.min.c1ecfe6835e39f2fd96dd20c74565bbc3458d9fd04165ce027ec37c9267e68ff.js" integrity="sha256-wez&#43;aDXjny/ZbdIMdFZbvDRY2f0EFlzgJ&#43;w3ySZ&#43;aP8="></script>
 
 <!--
 Made with Book Theme
@@ -858,6 +858,24 @@ https://github.com/alex-shpak/hugo-book
           <ul>
             <li><a href="#log">Log</a></li>
             <li><a href="#debug">Debug</a></li>
+            <li><a href="#web-框架">Web 框架</a></li>
+            <li><a href="#go">Go</a>
+              <ul>
+                <li><a href="#interface-转-string">interface 转 string</a></li>
+              </ul>
+            </li>
+            <li><a href="#依赖注入">依赖注入</a>
+              <ul>
+                <li><a href="#java">Java</a></li>
+                <li><a href="#php">PHP</a></li>
+                <li><a href="#go-1">Go</a></li>
+              </ul>
+            </li>
+            <li><a href="#java-1">Java</a>
+              <ul>
+                <li><a href="#hashmap-和-hashtable-有什么不同">HashMap 和 HashTable 有什么不同？</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -923,6 +941,96 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
+<hr>
+<h3 id="web-框架">Web 框架</h3>
+<ul>
+<li>PHP
+<ul>
+<li><a href="https://github.com/laravel/laravel">laravel/laravel</a> <img src="https://img.shields.io/github/stars/laravel/laravel.svg" alt="Github stars" /></li>
+</ul>
+</li>
+<li>Scala
+<ul>
+<li><a href="https://github.com/playframework/playframework">playframework/playframework</a> <img src="https://img.shields.io/github/stars/playframework/playframework.svg" alt="Github stars" /></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="go">Go</h3>
+<h4 id="interface-转-string">interface 转 string</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Strval 获取变量的字符串值
+</span><span style="color:#75715e">// 浮点型 3.0将会转换成字符串3, &#34;3&#34;
+</span><span style="color:#75715e">// 非数值或字符类型的变量将会被转换成JSON格式字符串
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Strval</span>(<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#66d9ef">string</span> {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">key</span>
+	}
+
+	<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">type</span>) {
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">float64</span>:
+		<span style="color:#a6e22e">ft</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">float64</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatFloat</span>(<span style="color:#a6e22e">ft</span>, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">64</span>)
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">float32</span>:
+		<span style="color:#a6e22e">ft</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">float32</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatFloat</span>(float64(<span style="color:#a6e22e">ft</span>), <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">64</span>)
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">int</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">int</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">it</span>)
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">uint</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">uint</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(int(<span style="color:#a6e22e">it</span>))
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">int8</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">int8</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(int(<span style="color:#a6e22e">it</span>))
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">uint8</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">uint8</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(int(<span style="color:#a6e22e">it</span>))
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">int16</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">int16</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(int(<span style="color:#a6e22e">it</span>))
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">uint16</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">uint16</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(int(<span style="color:#a6e22e">it</span>))
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">int32</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">int32</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(int(<span style="color:#a6e22e">it</span>))
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">uint32</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">uint32</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(int(<span style="color:#a6e22e">it</span>))
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">int64</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">int64</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatInt</span>(<span style="color:#a6e22e">it</span>, <span style="color:#ae81ff">10</span>)
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">uint64</span>:
+		<span style="color:#a6e22e">it</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">uint64</span>)
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatUint</span>(<span style="color:#a6e22e">it</span>, <span style="color:#ae81ff">10</span>)
+	<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">string</span>:
+		<span style="color:#a6e22e">key</span> = <span style="color:#a6e22e">value</span>.(<span style="color:#66d9ef">string</span>)
+	<span style="color:#66d9ef">case</span> []<span style="color:#66d9ef">byte</span>:
+		<span style="color:#a6e22e">key</span> = string(<span style="color:#a6e22e">value</span>.([]<span style="color:#66d9ef">byte</span>))
+	<span style="color:#66d9ef">default</span>:
+		<span style="color:#a6e22e">newValue</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">value</span>)
+		<span style="color:#a6e22e">key</span> = string(<span style="color:#a6e22e">newValue</span>)
+	}
+
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">key</span>
+}
+</code></pre></div><hr>
+<h3 id="依赖注入">依赖注入</h3>
+<h4 id="java">Java</h4>
+<h4 id="php">PHP</h4>
+<h4 id="go-1">Go</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/265433666">为什么有很多人说 Go 语言不需要依赖注入？</a></li>
+</ul>
+<hr>
+<h3 id="java-1">Java</h3>
+<h4 id="hashmap-和-hashtable-有什么不同">HashMap 和 HashTable 有什么不同？</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/40471/differences-between-hashmap-and-hashtable">Differences between HashMap and Hashtable?</a></li>
+</ul>
 </article>
  
       
@@ -932,6 +1040,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/92010894c889ccb4a167e22a17607d719ddeabc6" title='Last modified by yewang | 2020-07-07' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-07</span>
+    </a>
+  </div>
 
 
 
@@ -971,6 +1087,24 @@ https://github.com/alex-shpak/hugo-book
           <ul>
             <li><a href="#log">Log</a></li>
             <li><a href="#debug">Debug</a></li>
+            <li><a href="#web-框架">Web 框架</a></li>
+            <li><a href="#go">Go</a>
+              <ul>
+                <li><a href="#interface-转-string">interface 转 string</a></li>
+              </ul>
+            </li>
+            <li><a href="#依赖注入">依赖注入</a>
+              <ul>
+                <li><a href="#java">Java</a></li>
+                <li><a href="#php">PHP</a></li>
+                <li><a href="#go-1">Go</a></li>
+              </ul>
+            </li>
+            <li><a href="#java-1">Java</a>
+              <ul>
+                <li><a href="#hashmap-和-hashtable-有什么不同">HashMap 和 HashTable 有什么不同？</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
