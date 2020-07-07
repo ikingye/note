@@ -854,6 +854,15 @@ MacOS  cpu 排序： 先输入 o，然后输入 cpu 内存排序： 先输入 o�
     </item>
     
     <item>
+      <title>2020-07-07</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/07/</guid>
+      <description>2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C++  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve     </description>
+    </item>
+    
+    <item>
       <title>2020-04-06</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -891,7 +900,7 @@ if 语句 while 语句 for 语句 case 语句 catch 语句 and 和 or 布尔操�
       <description>2020 年 7 月 6 日（星期一） 今日待办     编程 ELF 文件格式 Executable and Linkable Format，可执行连接格式， 是 UNIX 系统实验室（USL）作为应用程序二进制接口（Application Binary Interface，ABI）而开发和发布的。 扩展名为 elf。
 主要有三种主要类型:
  适于连接的可重定位文件 (relocatable file)，可与其它目标文件一起创建可执行文件和共享目标文件。 适于执行的可执行文件 (executable file)，用于提供程序的进程映像，加载的内存执行。 共享目标文件 (shared object file)，连接器可将它与其它可重定位文件和共享目标文件连接成其它的目标文件，动态连接器又可将它与可执行文件和其它共享目标文件结合起来创建一个进程映像。  为了方便和高效，ELF 文件内容有两个平行的视角：
- 程序连接角度 程序运行角度  Go go test GOTEST := $(GO) test GOPKGS := $$($(GO) list ./...| grep -vE &amp;#34;vendor&amp;#34;) test-case: $(GOTEST) -v -cover $(GOPKGS) </description>
+ 程序连接角度 程序运行角度   Go go test GOTEST := $(GO) test GOPKGS := $$($(GO) list ./...| grep -vE &amp;#34;vendor&amp;#34;) test-case: $(GOTEST) -v -cover $(GOPKGS)  Hasura actions hasura/graphql-engine  Blazing fast, instant realtime GraphQL APIs on Postgres with fine grained access control, also trigger webhooks on database events.</description>
     </item>
     
     <item>
