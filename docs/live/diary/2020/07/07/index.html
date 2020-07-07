@@ -8,7 +8,7 @@
 <meta property="og:description" content="2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C&#43;&#43;  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve      Web 框架  PHP  laravel/laravel    Scala  playframework/playframework      Go interface 转 string // Strval 获取变量的字符串值 // 浮点型 3." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/07/" />
-<meta property="article:modified_time" content="2020-07-07T23:51:41+08:00" />
+<meta property="article:modified_time" content="2020-07-08T00:45:11+08:00" />
 <title>2020-07-07 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.eced5dd36614055be5ec64601f9d2613698cbd475376abce6e2fc21c4dbb51d4.js" integrity="sha256-7O1d02YUBVvl7GRgH50mE2mMvUdTdqvObi/CHE27UdQ="></script>
+<script defer src="/note/en.search.min.3a598dfd061886b189b43daca4e102d91de2b92cbe018a4f5aea3452aee2f7f0.js" integrity="sha256-OlmN/QYYhrGJtD2spOEC2R3iuSy&#43;AYpPWuo0Uq7i9/A="></script>
 
 <!--
 Made with Book Theme
@@ -885,6 +885,7 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#hash">Hash</a>
                   <ul>
                     <li><a href="#hash-表的时间复杂度为什么是-o1">Hash 表的时间复杂度为什么是 O(1)</a></li>
+                    <li><a href="#hashmap">HashMap</a></li>
                   </ul>
                 </li>
               </ul>
@@ -1132,6 +1133,19 @@ https://github.com/alex-shpak/hugo-book
 <h4 id="hash">Hash</h4>
 <h5 id="hash-表的时间复杂度为什么是-o1">Hash 表的时间复杂度为什么是 O(1)</h5>
 <p>Hash 表的物理存储其实是一个数组</p>
+<p>分四步：</p>
+<ol>
+<li>判断 key，根据 key 算出索引。</li>
+<li>根据索引获得索引位置所对应的键值对链表。</li>
+<li>遍历键值对链表，根据 key 找到对应的 Entry 键值对。</li>
+<li>拿到 value。</li>
+</ol>
+<p>以上四步要保证 HashMap 的时间复杂度 <code>O(1)</code>，需要保证每一步都是 <code>O(1)</code>，
+现在看起来就第三步对链表的循环的时间复杂度影响最大，
+链表查找的时间复杂度为 <code>O(n)</code>，与链表长度有关。
+我们要保证那个链表长度为 1，才可以说时间复杂度能满足 <code>O(1)</code>。
+只有那个 <strong>hash 算法</strong>尽量减少冲突，才能使链表长度尽可能短，理想状态为 1。</p>
+<h5 id="hashmap">HashMap</h5>
 <p>在 jdk1.7 中，<code>HashMap</code> 的实现原理是<strong>哈希表 + 链表</strong>的方式实现。
 在 jdk1.8 当中。链表数量达到 8, 就会转化为<strong>红黑树</strong>。</p>
 <hr>
@@ -1159,9 +1173,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/27bc264c3b12fb58e1c66bbafab89c03961dcaf6" title='Last modified by yewang | 2020-07-07' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/bbcbd11de5c9af4959c3fd5d6c6a904ed409a156" title='Last modified by yewang | 2020-07-08' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-07-07</span>
+      <span>2020-07-08</span>
     </a>
   </div>
 
@@ -1230,6 +1244,7 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#hash">Hash</a>
                   <ul>
                     <li><a href="#hash-表的时间复杂度为什么是-o1">Hash 表的时间复杂度为什么是 O(1)</a></li>
+                    <li><a href="#hashmap">HashMap</a></li>
                   </ul>
                 </li>
               </ul>
