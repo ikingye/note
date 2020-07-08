@@ -20,7 +20,7 @@ ICT 信息通信技术 (Information and Communication Technology，简称 ICT)�
  Podman 是该工具套件的核心，用来替换 Docker 中了大多数子命令（RUN，PUSH，PULL 等）。  Podman 无需守护进程，使用用户命名空间来模拟容器中的 root，无需连接到具有 root 权限的套接字保证容器的体系安全。   Buildah 是套件中的 Build 工具，用来构建 OCI 镜像。 Skopeo 是套件中镜像管理工具，允许我们通过推，拉和复制镜像来处理 Docker 和 OC 镜像。   Istio 安装" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/08/" />
-
+<meta property="article:modified_time" content="2020-07-08T16:39:16+08:00" />
 <title>2020-07-08 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -28,7 +28,7 @@ ICT 信息通信技术 (Information and Communication Technology，简称 ICT)�
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.53a1c5874320adf8efb756a227db0f313019c9258c4bdc634e75aa1821d787bf.js" integrity="sha256-U6HFh0Mgrfjvt1aiJ9sPMTAZySWMS9xjTnWqGCHXh78="></script>
+<script defer src="/note/en.search.min.5513908cfe34ffec8fc11ac0243b0f4d69b4c2a57dbe4ed0494bffe6afb4d41d.js" integrity="sha256-VROQjP40/&#43;yPwRrAJDsPTWm0wqV9vk7QSUv/5q&#43;01B0="></script>
 
 <!--
 Made with Book Theme
@@ -887,6 +887,12 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#podman">Podman</a></li>
             <li><a href="#istio">Istio</a></li>
             <li><a href="#linux">Linux</a></li>
+            <li><a href="#数据类型">数据类型</a></li>
+            <li><a href="#go">Go</a>
+              <ul>
+                <li><a href="#格式化">格式化</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -942,7 +948,23 @@ istioctl profile list
 <h3 id="linux">Linux</h3>
 <pre><code># chmod 递归设置目录 755 和文件 644 权限
 alias chmodcommon=&quot;find . -type f -exec chmod 644 {} \; &amp;&amp; find . -type d -exec chmod 755 {} \; &quot;
-</code></pre></article>
+</code></pre><hr>
+<h3 id="数据类型">数据类型</h3>
+<p>取值范围</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">int8</span> <span style="color:#75715e">//等于 byte,
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int16</span> <span style="color:#75715e">//等于 short, 占2个字节. -32768 32767
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 10 位
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int32</span> <span style="color:#75715e">//等于 int, 占4个字节. -2147483648 2147483647
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int64</span>  <span style="color:#75715e">//等于 long, 占8个字节. -9223372036854775808 9223372036854775807
+</span></code></pre></div><hr>
+<h3 id="go">Go</h3>
+<h4 id="格式化">格式化</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 前面补 0
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%08X&#34;</span>, <span style="color:#ae81ff">100000000</span>)
+</code></pre></div></article>
  
       
 
@@ -951,6 +973,14 @@ alias chmodcommon=&quot;find . -type f -exec chmod 644 {} \; &amp;&amp; find . -
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/9289eb4eaaddc40fb89eb344fecb681f3aa8e386" title='Last modified by yewang | 2020-07-08' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-08</span>
+    </a>
+  </div>
 
 
 
@@ -997,6 +1027,12 @@ alias chmodcommon=&quot;find . -type f -exec chmod 644 {} \; &amp;&amp; find . -
             <li><a href="#podman">Podman</a></li>
             <li><a href="#istio">Istio</a></li>
             <li><a href="#linux">Linux</a></li>
+            <li><a href="#数据类型">数据类型</a></li>
+            <li><a href="#go">Go</a>
+              <ul>
+                <li><a href="#格式化">格式化</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
