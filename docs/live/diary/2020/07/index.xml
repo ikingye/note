@@ -10,6 +10,21 @@
     
     
     <item>
+      <title>2020-07-08</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/08/</guid>
+      <description>2020 年 7 月 8 日（星期三） 今日待办     编程 HPKP 协议 HTTP Public Key Pinning
+HTTP 公钥固定
+是 HTTPS 网站防止攻击者利用 数字证书认证机构（CA）错误签发的证书进行中间人攻击的一种安全机制，用于预防 CA 遭受入侵或其他会造成 CA 签发未授权证书的情况。采用公钥固定时，网站会提供已授权公钥的哈希列表，指示客户端在后续通讯中只接受列表上的公钥。
+ OICT OT + IT + ICT + IoT + OTT
+ICT 信息通信技术 (Information and Communication Technology，简称 ICT)， 是 IT 和 CT 两个领域越来越紧密结合的产物。
+ Podman 基于 CRI 等标准（Docker 新架构也符合 CRI 标准）的新一代容器工具 Podman、Skopero 和 Buiddah 套件
+ Podman 是该工具套件的核心，用来替换 Docker 中了大多数子命令（RUN，PUSH，PULL 等）。  Podman 无需守护进程，使用用户命名空间来模拟容器中的 root，无需连接到具有 root 权限的套接字保证容器的体系安全。   Buildah 是套件中的 Build 工具，用来构建 OCI 镜像。 Skopeo 是套件中镜像管理工具，允许我们通过推，拉和复制镜像来处理 Docker 和 OC 镜像。   Istio 安装</description>
+    </item>
+    
+    <item>
       <title>2020-07-07</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/07/07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
