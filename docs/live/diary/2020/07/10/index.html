@@ -8,12 +8,14 @@
  实时流延迟较小  缺点
  UDP 协议上的 RTSP/RTP 需要打开许多 UDP 端口（每一路流媒体都需要 2 个 UDP 端口，一个用于接收数据，一个用于接收控制信息）； 当因特网上的路由器没有打开这些端口的时候，上述第一点将会存在问题； 中间网络路由器很容易就过滤或者忽略掉 UDP 数据包； UDP 是不可靠传输协议，媒体包在因特网上传输时会面临着丢包。  RTSP over TCP 优点
  RTSP/RTP 的控制命令和数据都通过一个端口，即 RTSP 的端口（默认为 554），进行交互。 TCP 包更容易穿透中间网络路由器。  缺点
- 由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。 TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。  "><meta property="og:title" content="2020-07-10" />
+ 由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。 TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。  ffplay 指定使用 TCP 播放
+ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A 默认使用 UDP 播放，Docker 需要暴露所有 UDP 端口给 UDP 用"><meta property="og:title" content="2020-07-10" />
 <meta property="og:description" content="2020 年 7 月 10 日（星期五） 今日待办     编程 RTSP RTSP over UDP 优点
  实时流延迟较小  缺点
  UDP 协议上的 RTSP/RTP 需要打开许多 UDP 端口（每一路流媒体都需要 2 个 UDP 端口，一个用于接收数据，一个用于接收控制信息）； 当因特网上的路由器没有打开这些端口的时候，上述第一点将会存在问题； 中间网络路由器很容易就过滤或者忽略掉 UDP 数据包； UDP 是不可靠传输协议，媒体包在因特网上传输时会面临着丢包。  RTSP over TCP 优点
  RTSP/RTP 的控制命令和数据都通过一个端口，即 RTSP 的端口（默认为 554），进行交互。 TCP 包更容易穿透中间网络路由器。  缺点
- 由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。 TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。  " />
+ 由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。 TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。  ffplay 指定使用 TCP 播放
+ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A 默认使用 UDP 播放，Docker 需要暴露所有 UDP 端口给 UDP 用" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/10/" />
 <meta property="article:modified_time" content="2020-07-10T11:24:03+08:00" />
@@ -24,7 +26,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.566557fee4e81db34b387bf8f6b2fa5cc8ec2108edc87c334f9a8199d6d97ec3.js" integrity="sha256-VmVX/uToHbNLOHv49rL6XMjsIQjtyHwzT5qBmdbZfsM="></script>
+<script defer src="/note/en.search.min.f2cf8cd7a97de1d2380ab5a08a048b4aacb08c57c5b231d1e8c009391b70f216.js" integrity="sha256-8s&#43;M16l94dI4CrWgigSLSqywjFfFsjHR6MAJORtw8hY="></script>
 
 <!--
 Made with Book Theme
@@ -897,7 +899,11 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#rtsp">RTSP</a>
               <ul>
                 <li><a href="#rtsp-over-udp">RTSP over UDP</a></li>
-                <li><a href="#rtsp-over-tcp">RTSP over TCP</a></li>
+                <li><a href="#rtsp-over-tcp">RTSP over TCP</a>
+                  <ul>
+                    <li><a href="#ffplay">ffplay</a></li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ul>
@@ -946,6 +952,10 @@ https://github.com/alex-shpak/hugo-book
 <li>由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。</li>
 <li>TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。</li>
 </ul>
+<h5 id="ffplay">ffplay</h5>
+<p>指定使用 TCP 播放</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A
+</code></pre></div><p>默认使用 UDP 播放，Docker 需要暴露所有 UDP 端口给 UDP 用</p>
 </article>
  
       
@@ -1003,7 +1013,11 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#rtsp">RTSP</a>
               <ul>
                 <li><a href="#rtsp-over-udp">RTSP over UDP</a></li>
-                <li><a href="#rtsp-over-tcp">RTSP over TCP</a></li>
+                <li><a href="#rtsp-over-tcp">RTSP over TCP</a>
+                  <ul>
+                    <li><a href="#ffplay">ffplay</a></li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ul>
