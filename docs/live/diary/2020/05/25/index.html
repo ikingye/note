@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir=>
 
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 5 月 25 日（星期一） 今日待办     编程 I/O 多路复用 vs 基于事件驱动 高并发是指不活跃的长连接，并不是并发请求
+<meta name="description" content="2020 年 5 月 25 日（星期一） #  今日待办 #      编程 #  I/O 多路复用 vs 基于事件驱动 #  高并发是指不活跃的长连接，并不是并发请求
 典型的后端服务，在逻辑上可以划分为两层，
  跟业务无关的通信层，负责 socket 连接的创建和管理，负责 bind/listen/accept/send/recv&hellip; 通信层上面是业务逻辑层，负责被动响应请求，或主动推送业务消息  通信层特点：
  都是 IO 行为，几乎不大消耗 CPU 连接数很多，可能同时有 10K 甚至 100K 个 TCP 连接 通信协议就那么几种，decode/encode 简单 外部网络是慢速 IO，收发一点数据可能要 1 秒甚至更久  业务逻辑层特点：
- 少量 CPU 消耗，大部分时间在等待数据库或者其它网络服务返回 业务逻辑五花八门，逻辑中往往需要调用别的网络服务，如 db 并发请求数，往往小于连接数，10K 个连接，可能每秒只有 100 个请求 单个业务请求通常很快，毫秒级别，几十毫秒算慢的了  如果完全采用传统的多线程模型，1 个 tcp 连接对应 1 个线程，10K 个连接需要 10K 个线程，典型的内存消耗是 10G。但是业务逻辑层并发请求往往要小 1 到 2 个数量级，每个请求往往只需要 100ms 以内，所以业务逻辑层需要的线程数，比通信层小 2-3 个数量级，不需要 10K 个线程，只要 100 个甚至 10 个就够了。"><meta property="og:title" content="2020-05-25" />
-<meta property="og:description" content="2020 年 5 月 25 日（星期一） 今日待办     编程 I/O 多路复用 vs 基于事件驱动 高并发是指不活跃的长连接，并不是并发请求
+ 少量 CPU 消耗，大部分时间在等待数据库或者其它网络服务返回 业务逻辑五花八门，逻辑中往往需要调用别的网络服务，如 db 并发请求数，往往小于连接数，10K 个连接，可能每秒只有 100 个请求 单个业务请求通常很快，毫秒级别，几十毫秒算慢的了  如果完全采用传统的多线程模型，1 个 tcp 连接对应 1 个线程，10K 个连接需要 10K 个线程，典型的内存消耗是 10G。但是业务逻辑层并发请求往往要小 1 到 2 个数量级，每个请求往往只需要 100ms 以内，所以业务逻辑层需要的线程数，比通信层小 2-3 个数量级，不需要 10K 个线程，只要 100 个甚至 10 个就够了。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-05-25" />
+<meta property="og:description" content="2020 年 5 月 25 日（星期一） #  今日待办 #      编程 #  I/O 多路复用 vs 基于事件驱动 #  高并发是指不活跃的长连接，并不是并发请求
 典型的后端服务，在逻辑上可以划分为两层，
  跟业务无关的通信层，负责 socket 连接的创建和管理，负责 bind/listen/accept/send/recv&hellip; 通信层上面是业务逻辑层，负责被动响应请求，或主动推送业务消息  通信层特点：
  都是 IO 行为，几乎不大消耗 CPU 连接数很多，可能同时有 10K 甚至 100K 个 TCP 连接 通信协议就那么几种，decode/encode 简单 外部网络是慢速 IO，收发一点数据可能要 1 秒甚至更久  业务逻辑层特点：
@@ -18,14 +19,10 @@
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/05/25/" />
 <meta property="article:modified_time" content="2020-05-26T00:37:16+08:00" />
 <title>2020-05-25 | 叶王笔记</title>
+<link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-
-
-<link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
-
-
-<script defer src="/note/en.search.min.5e0ec0384340f41f7fdcfadcc3a8d75487fed55d71ec167885abbd92f8bd4dfa.js" integrity="sha256-Xg7AOENA9B9/3Prcw6jXVIf&#43;1V1x7BZ4hau9kvi9Tfo="></script>
-
+<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -34,8 +31,9 @@ https://github.com/alex-shpak/hugo-book
   
 </head>
 
-<body>
-  <input type="checkbox" class="hidden" id="menu-control" />
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
       
@@ -48,7 +46,7 @@ https://github.com/alex-shpak/hugo-book
 
 <div class="book-search">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner spinner hidden"></div>
+  <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
 
@@ -75,932 +73,746 @@ https://github.com/alex-shpak/hugo-book
 
   
 
-  
-  
-
-
-
-
-
- 
-  
-    
-
-
 
 
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
   
-  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
-
-
-    
-
-
-
-
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/" class="">第四部分 学习</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/" class="">第五部分 生活</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+    <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
   
-
-</li>
-      
-    
-      
-        <li>
-
   
-  <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
+          
+  
+    <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+          
+  
+  
+  
 
   
-  <a href="/note/docs/live/diary/2020/05/31/" class="">2020-05-31</a>
-  
 
-</li>
+        </li>
       
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/05/30/" class="">2020-05-30</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/29/" class="">2020-05-29</a>
+    <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/28/" class="">2020-05-28</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/25/" class="active">2020-05-25</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/23/" class="">2020-05-23</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/20/" class="">2020-05-20</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/19/" class="">2020-05-19</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/14/" class="">2020-05-14</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/12/" class="">2020-05-12</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/11/" class="">2020-05-11</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/09/" class="">2020-05-09</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/08/" class="">2020-05-08</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/07/" class="">2020-05-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/06/" class="">2020-05-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/04/" class="">2020-05-04</a>
-  
-
-</li>
+        </li>
       
     
   </ul>
   
 
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+    <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
   
 
+          
+  
+  
+  
 
+  
+  <ul>
     
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
+  
 
+          
+  
+  
+  
 
+  
 
-
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+    <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
+          
+  
+  
   
 
-
-
-  </li>
-
-
-      
-    
-  </ul>
   
 
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+    <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
+          
   
-  <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
 
+          
+  
+  
+  
 
-  </li>
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
 
+          
+  
+  
+  
 
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/" class="">第四部分 学习</a>
+  
 
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
+
+          
+  
+  
+  
 
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/31/" class="">2020-05-31</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/30/" class="">2020-05-30</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/29/" class="">2020-05-29</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/28/" class="">2020-05-28</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/25/" class="active">2020-05-25</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/23/" class="">2020-05-23</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/20/" class="">2020-05-20</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/19/" class="">2020-05-19</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/14/" class="">2020-05-14</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/12/" class="">2020-05-12</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/11/" class="">2020-05-11</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/09/" class="">2020-05-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/08/" class="">2020-05-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/07/" class="">2020-05-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/06/" class="">2020-05-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/04/" class="">2020-05-04</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
 
 
 
@@ -1044,15 +856,16 @@ https://github.com/alex-shpak/hugo-book
   <strong>2020-05-25</strong>
 
   <label for="toc-control">
+    
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
   </label>
 </div>
 
 
   
-    <input type="checkbox" class="hidden" id="toc-control" />
-    <aside class="hidden clearfix">
-      
+  <aside class="hidden clearfix">
+    
   <nav id="TableOfContents">
   <ul>
     <li><a href="#2020-年-5-月-25-日星期一">2020 年 5 月 25 日（星期一）</a>
@@ -1077,21 +890,33 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-    </aside>
+  </aside>
   
  
       </header>
 
       
       
-  <article class="markdown"><h1 id="2020-年-5-月-25-日星期一">2020 年 5 月 25 日（星期一）</h1>
-<h2 id="今日待办">今日待办</h2>
+  <article class="markdown"><h1 id="2020-年-5-月-25-日星期一">
+  2020 年 5 月 25 日（星期一）
+  <a class="anchor" href="#2020-%e5%b9%b4-5-%e6%9c%88-25-%e6%97%a5%e6%98%9f%e6%9c%9f%e4%b8%80">#</a>
+</h1>
+<h2 id="今日待办">
+  今日待办
+  <a class="anchor" href="#%e4%bb%8a%e6%97%a5%e5%be%85%e5%8a%9e">#</a>
+</h2>
 <ul>
 <li><input disabled="" type="checkbox"> </li>
 </ul>
 <hr>
-<h2 id="编程">编程</h2>
-<h3 id="io-多路复用-vs-基于事件驱动">I/O 多路复用 vs 基于事件驱动</h3>
+<h2 id="编程">
+  编程
+  <a class="anchor" href="#%e7%bc%96%e7%a8%8b">#</a>
+</h2>
+<h3 id="io-多路复用-vs-基于事件驱动">
+  I/O 多路复用 vs 基于事件驱动
+  <a class="anchor" href="#io-%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8-vs-%e5%9f%ba%e4%ba%8e%e4%ba%8b%e4%bb%b6%e9%a9%b1%e5%8a%a8">#</a>
+</h3>
 <p>高并发是指<strong>不活跃的长连接</strong>，并不是并发请求</p>
 <p>典型的后端服务，在逻辑上可以划分为两层，</p>
 <ul>
@@ -1139,7 +964,10 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://www.zhihu.com/question/64727674">为什么基于事件驱动的服务器能实现高并发？</a></li>
 </ul>
-<h3 id="服务端经典的-c10k-问题">服务端经典的 C10k 问题</h3>
+<h3 id="服务端经典的-c10k-问题">
+  服务端经典的 C10k 问题
+  <a class="anchor" href="#%e6%9c%8d%e5%8a%a1%e7%ab%af%e7%bb%8f%e5%85%b8%e7%9a%84-c10k-%e9%97%ae%e9%a2%98">#</a>
+</h3>
 <p>实现 C1000k 的常规做法是调整内核参数，提高文件数，降低每个连接的内存消耗</p>
 <p>参考：</p>
 <ul>
@@ -1159,7 +987,10 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://zhuanlan.zhihu.com/p/47877674">在 Linux 上，编写一个每秒接收 100 万个 UDP 包的程序有多困难？</a></li>
 <li><a href="https://www.zhihu.com/question/41740986">C100K-C1000K 这样的高并发是如何做出来的？基准测试是什么？</a></li>
 </ul>
-<h3 id="一个-tcp-连接要占用多少系统资源">一个 TCP 连接要占用多少系统资源</h3>
+<h3 id="一个-tcp-连接要占用多少系统资源">
+  一个 TCP 连接要占用多少系统资源
+  <a class="anchor" href="#%e4%b8%80%e4%b8%aa-tcp-%e8%bf%9e%e6%8e%a5%e8%a6%81%e5%8d%a0%e7%94%a8%e5%a4%9a%e5%b0%91%e7%b3%bb%e7%bb%9f%e8%b5%84%e6%ba%90">#</a>
+</h3>
 <p>在现在的 Linux 操作系统上，如果用 socket ()/connect () 或 accept () 来创建 TCP 连接，那么每个连接至少要占用一个文件描述符 (file descriptor)。</p>
 <p>为什么说 “至少”？
 因为文件描述符可以复制，比如 dup ()；
@@ -1169,10 +1000,19 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://blog.csdn.net/solstice/article/details/6579232">关于 TCP 并发连接的几个思考题与试验</a></li>
 </ul>
-<h3 id="服务发现">服务发现</h3>
-<h4 id="netflixeurekahttpsgithubcomnetflixeureka-github-starshttpsimgshieldsiogithubstarsnetflixeurekasvg"><a href="https://github.com/Netflix/eureka">Netflix/eureka</a> <img src="https://img.shields.io/github/stars/Netflix/eureka.svg" alt="Github stars" /></h4>
+<h3 id="服务发现">
+  服务发现
+  <a class="anchor" href="#%e6%9c%8d%e5%8a%a1%e5%8f%91%e7%8e%b0">#</a>
+</h3>
+<a href="https://github.com/Netflix/eureka">Netflix/eureka</a> <h4 id="netflixeurekahttpsgithubcomnetflixeureka-github-starshttpsimgshieldsiogithubstarsnetflixeurekasvg">
+  <img src="https://img.shields.io/github/stars/Netflix/eureka.svg" alt="Github stars" />
+  <a class="anchor" href="#netflixeurekahttpsgithubcomnetflixeureka-github-starshttpsimgshieldsiogithubstarsnetflixeurekasvg">#</a>
+</h4>
 <p>AWS Service registry for resilient mid-tier load balancing and failover.</p>
-<h4 id="alibabanacoshttpsgithubcomalibabanacos-github-starshttpsimgshieldsiogithubstarsalibabanacossvg"><a href="https://github.com/alibaba/nacos">alibaba/nacos</a> <img src="https://img.shields.io/github/stars/alibaba/nacos.svg" alt="Github stars" /></h4>
+<a href="https://github.com/alibaba/nacos">alibaba/nacos</a> <h4 id="alibabanacoshttpsgithubcomalibabanacos-github-starshttpsimgshieldsiogithubstarsalibabanacossvg">
+  <img src="https://img.shields.io/github/stars/alibaba/nacos.svg" alt="Github stars" />
+  <a class="anchor" href="#alibabanacoshttpsgithubcomalibabanacos-github-starshttpsimgshieldsiogithubstarsalibabanacossvg">#</a>
+</h4>
 <p>an easy-to-use dynamic service discovery, configuration and service management platform for building cloud native applications.
 <a href="https://nacos.io">https://nacos.io</a></p>
 </article>
@@ -1181,13 +1021,11 @@ https://github.com/alex-shpak/hugo-book
 
       <footer class="book-footer">
         
-  <div class="flex justify-between">
+  <div class="flex flex-wrap justify-between">
 
 
 
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/c92335a1c59c53a9fbd3a909f1a7e9b6059b9231" title='Last modified by yewang | 2020-05-26' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/c92335a1c59c53a9fbd3a909f1a7e9b6059b9231" title='Last modified by yewang | 2020-05-26' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-05-26</span>
     </a>

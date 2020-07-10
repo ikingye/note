@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir=>
 
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 5 月 28 日（星期四） 今日待办     编程 Hadoop HDFS Hadoop Distributed File System，是 Hadoop 的分布式文件系统
+<meta name="description" content="2020 年 5 月 28 日（星期四） #  今日待办 #      编程 #  Hadoop #  HDFS #  Hadoop Distributed File System，是 Hadoop 的分布式文件系统
 每台机器上运行一个 DataNode 进程，负责管理一部分数据。
 有一台机器上运行了 NameNode 进程，负责管理整个 HDFS 集群的这么一个进程，里面存储了 HDFS 集群的所有元数据
 每次内存里改完了，写一条 edits log，元数据修改的操作日志到磁盘文件里，不修改磁盘文件内容，就是顺序追加
 每次 NameNode 重启的时候，把 edits log 里的操作日志读到内存里，就可以恢复元数据
-YARN MapReduce  Spring Cloud  Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里 Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台 Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求 Hystrix：发起请求是通过 Hystrix 的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题 Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务  Eureka Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。"><meta property="og:title" content="2020-05-28" />
-<meta property="og:description" content="2020 年 5 月 28 日（星期四） 今日待办     编程 Hadoop HDFS Hadoop Distributed File System，是 Hadoop 的分布式文件系统
+YARN #  MapReduce #   Spring Cloud #   Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里 Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台 Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求 Hystrix：发起请求是通过 Hystrix 的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题 Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务  Eureka #  Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-05-28" />
+<meta property="og:description" content="2020 年 5 月 28 日（星期四） #  今日待办 #      编程 #  Hadoop #  HDFS #  Hadoop Distributed File System，是 Hadoop 的分布式文件系统
 每台机器上运行一个 DataNode 进程，负责管理一部分数据。
 有一台机器上运行了 NameNode 进程，负责管理整个 HDFS 集群的这么一个进程，里面存储了 HDFS 集群的所有元数据
 每次内存里改完了，写一条 edits log，元数据修改的操作日志到磁盘文件里，不修改磁盘文件内容，就是顺序追加
 每次 NameNode 重启的时候，把 edits log 里的操作日志读到内存里，就可以恢复元数据
-YARN MapReduce  Spring Cloud  Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里 Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台 Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求 Hystrix：发起请求是通过 Hystrix 的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题 Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务  Eureka Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。" />
+YARN #  MapReduce #   Spring Cloud #   Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里 Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台 Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求 Hystrix：发起请求是通过 Hystrix 的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题 Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务  Eureka #  Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/05/28/" />
 <meta property="article:modified_time" content="2020-05-29T15:17:07+08:00" />
 <title>2020-05-28 | 叶王笔记</title>
+<link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-
-
-<link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
-
-
-<script defer src="/note/en.search.min.5e0ec0384340f41f7fdcfadcc3a8d75487fed55d71ec167885abbd92f8bd4dfa.js" integrity="sha256-Xg7AOENA9B9/3Prcw6jXVIf&#43;1V1x7BZ4hau9kvi9Tfo="></script>
-
+<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -36,8 +33,9 @@ https://github.com/alex-shpak/hugo-book
   
 </head>
 
-<body>
-  <input type="checkbox" class="hidden" id="menu-control" />
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
       
@@ -50,7 +48,7 @@ https://github.com/alex-shpak/hugo-book
 
 <div class="book-search">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner spinner hidden"></div>
+  <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
 
@@ -77,932 +75,746 @@ https://github.com/alex-shpak/hugo-book
 
   
 
-  
-  
-
-
-
-
-
- 
-  
-    
-
-
 
 
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
   
-  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
-
-
-    
-
-
-
-
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/" class="">第四部分 学习</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/" class="">第五部分 生活</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+    <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
   
-
-</li>
-      
-    
-      
-        <li>
-
   
-  <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
+          
+  
+    <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+          
+  
+  
+  
 
   
-  <a href="/note/docs/live/diary/2020/05/31/" class="">2020-05-31</a>
-  
 
-</li>
+        </li>
       
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/05/30/" class="">2020-05-30</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/29/" class="">2020-05-29</a>
+    <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/28/" class="active">2020-05-28</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/25/" class="">2020-05-25</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/23/" class="">2020-05-23</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/20/" class="">2020-05-20</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/19/" class="">2020-05-19</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/14/" class="">2020-05-14</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/12/" class="">2020-05-12</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/11/" class="">2020-05-11</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/09/" class="">2020-05-09</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/08/" class="">2020-05-08</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/07/" class="">2020-05-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/06/" class="">2020-05-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/04/" class="">2020-05-04</a>
-  
-
-</li>
+        </li>
       
     
   </ul>
   
 
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+    <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
   
 
+          
+  
+  
+  
 
+  
+  <ul>
     
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
+  
 
+          
+  
+  
+  
 
+  
 
-
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+    <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
+          
+  
+  
   
 
-
-
-  </li>
-
-
-      
-    
-  </ul>
   
 
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+    <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
+          
   
-  <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
 
+          
+  
+  
+  
 
-  </li>
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
 
+          
+  
+  
+  
 
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/" class="">第四部分 学习</a>
+  
 
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
+
+          
+  
+  
+  
 
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/31/" class="">2020-05-31</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/30/" class="">2020-05-30</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/29/" class="">2020-05-29</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/28/" class="active">2020-05-28</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/25/" class="">2020-05-25</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/23/" class="">2020-05-23</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/20/" class="">2020-05-20</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/19/" class="">2020-05-19</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/14/" class="">2020-05-14</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/12/" class="">2020-05-12</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/11/" class="">2020-05-11</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/09/" class="">2020-05-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/08/" class="">2020-05-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/07/" class="">2020-05-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/06/" class="">2020-05-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/04/" class="">2020-05-04</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
 
 
 
@@ -1046,15 +858,16 @@ https://github.com/alex-shpak/hugo-book
   <strong>2020-05-28</strong>
 
   <label for="toc-control">
+    
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
   </label>
 </div>
 
 
   
-    <input type="checkbox" class="hidden" id="toc-control" />
-    <aside class="hidden clearfix">
-      
+  <aside class="hidden clearfix">
+    
   <nav id="TableOfContents">
   <ul>
     <li><a href="#2020-年-5-月-28-日星期四">2020 年 5 月 28 日（星期四）</a>
@@ -1092,31 +905,55 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-    </aside>
+  </aside>
   
  
       </header>
 
       
       
-  <article class="markdown"><h1 id="2020-年-5-月-28-日星期四">2020 年 5 月 28 日（星期四）</h1>
-<h2 id="今日待办">今日待办</h2>
+  <article class="markdown"><h1 id="2020-年-5-月-28-日星期四">
+  2020 年 5 月 28 日（星期四）
+  <a class="anchor" href="#2020-%e5%b9%b4-5-%e6%9c%88-28-%e6%97%a5%e6%98%9f%e6%9c%9f%e5%9b%9b">#</a>
+</h1>
+<h2 id="今日待办">
+  今日待办
+  <a class="anchor" href="#%e4%bb%8a%e6%97%a5%e5%be%85%e5%8a%9e">#</a>
+</h2>
 <ul>
 <li><input disabled="" type="checkbox"> </li>
 </ul>
 <hr>
-<h2 id="编程">编程</h2>
-<h3 id="hadoop">Hadoop</h3>
-<h4 id="hdfs">HDFS</h4>
+<h2 id="编程">
+  编程
+  <a class="anchor" href="#%e7%bc%96%e7%a8%8b">#</a>
+</h2>
+<h3 id="hadoop">
+  Hadoop
+  <a class="anchor" href="#hadoop">#</a>
+</h3>
+<h4 id="hdfs">
+  HDFS
+  <a class="anchor" href="#hdfs">#</a>
+</h4>
 <p>Hadoop Distributed File System，是 Hadoop 的分布式文件系统</p>
 <p>每台机器上运行一个 <code>DataNode</code> 进程，负责管理一部分数据。</p>
 <p>有一台机器上运行了 <code>NameNode</code> 进程，负责管理整个 HDFS 集群的这么一个进程，里面存储了 HDFS 集群的所有元数据</p>
 <p>每次内存里改完了，写一条 edits log，元数据修改的操作日志到磁盘文件里，不修改磁盘文件内容，就是顺序追加</p>
 <p>每次 NameNode 重启的时候，把 edits log 里的操作日志读到内存里，就可以恢复元数据</p>
-<h4 id="yarn">YARN</h4>
-<h4 id="mapreduce">MapReduce</h4>
+<h4 id="yarn">
+  YARN
+  <a class="anchor" href="#yarn">#</a>
+</h4>
+<h4 id="mapreduce">
+  MapReduce
+  <a class="anchor" href="#mapreduce">#</a>
+</h4>
 <hr>
-<h3 id="spring-cloud">Spring Cloud</h3>
+<h3 id="spring-cloud">
+  Spring Cloud
+  <a class="anchor" href="#spring-cloud">#</a>
+</h3>
 <ul>
 <li>Eureka：各个服务启动时，Eureka Client 都会将服务注册到 Eureka Server，并且 Eureka Client 还可以反过来从 Eureka Server 拉取注册表，从而知道其他服务在哪里</li>
 <li>Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从一个服务的多台机器中选择一台</li>
@@ -1125,18 +962,30 @@ https://github.com/alex-shpak/hugo-book
 <li>Zuul：如果前端、移动端要调用后端系统，统一从 Zuul 网关进入，由 Zuul 网关转发请求给对应的服务</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200528201147.png" alt="" /></p>
-<h4 id="eureka">Eureka</h4>
+<h4 id="eureka">
+  Eureka
+  <a class="anchor" href="#eureka">#</a>
+</h4>
 <p>Eureka 是微服务架构中的注册中心，专门负责服务的注册与发现。</p>
 <ul>
 <li>Eureka Client：负责将这个服务的信息注册到 Eureka Server 中</li>
 <li>Eureka Server：注册中心，里面有一个注册表，保存了各个服务所在的机器和端口号</li>
 </ul>
-<h4 id="feign">Feign</h4>
+<h4 id="feign">
+  Feign
+  <a class="anchor" href="#feign">#</a>
+</h4>
 <p>Feign 的一个关键机制就是使用了动态代理。</p>
-<h4 id="ribbon">Ribbon</h4>
+<h4 id="ribbon">
+  Ribbon
+  <a class="anchor" href="#ribbon">#</a>
+</h4>
 <p>负载均衡</p>
 <p>Ribbon 的负载均衡默认使用的最经典的 <code>Round Robin</code> 轮询算法</p>
-<h4 id="hystrix">Hystrix</h4>
+<h4 id="hystrix">
+  Hystrix
+  <a class="anchor" href="#hystrix">#</a>
+</h4>
 <p>Hystrix 是隔离、熔断以及降级的一个框架。</p>
 <p>Hystrix 会搞很多个小小的线程池，
 比如订单服务请求库存服务是一个线程池，请求仓储服务是一个线程池，请求积分服务是一个线程池。
@@ -1155,12 +1004,21 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200528200848.png" alt="" /></p>
-<h4 id="zuul">Zuul</h4>
+<h4 id="zuul">
+  Zuul
+  <a class="anchor" href="#zuul">#</a>
+</h4>
 <p>微服务网关</p>
 <p>可以做统一的降级、限流、认证授权、安全等等</p>
 <hr>
-<h2 id="运营商">运营商</h2>
-<h3 id="dpi-系统">DPI 系统</h3>
+<h2 id="运营商">
+  运营商
+  <a class="anchor" href="#%e8%bf%90%e8%90%a5%e5%95%86">#</a>
+</h2>
+<h3 id="dpi-系统">
+  DPI 系统
+  <a class="anchor" href="#dpi-%e7%b3%bb%e7%bb%9f">#</a>
+</h3>
 <p>DPI，
 Deep Packet Inspection，
 是指深度报文解析技术</p>
@@ -1169,7 +1027,10 @@ Deep Packet Inspection，
 <ul>
 <li><a href="https://www.zhihu.com/question/30792627">运营商的 DPI 系统是什么东西？</a></li>
 </ul>
-<h3 id="网管系统">网管系统</h3>
+<h3 id="网管系统">
+  网管系统
+  <a class="anchor" href="#%e7%bd%91%e7%ae%a1%e7%b3%bb%e7%bb%9f">#</a>
+</h3>
 <p>国内三大运营商的专业网管系统建设已经普遍比较成熟，都建设了话务网管、数据网管、传输网管、信令监测、自动拨测、动环监控、电子运维和网管系统监控平台。</p>
 <p>在专业网管系统基础上，中国移动提出了 OneOSS 网管规划。我们需要加强跟踪研究下一代网管技术。</p>
 <p>下一代网管系统规划有综合网络应用平台、运营流程管理平台、业务开通平台、网络监控平台、质量保障平台和网管系统监控平台，需研究规划落地措施及有关实现技术</p>
@@ -1179,13 +1040,11 @@ Deep Packet Inspection，
 
       <footer class="book-footer">
         
-  <div class="flex justify-between">
+  <div class="flex flex-wrap justify-between">
 
 
 
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/6c009b07f7a85e9812828e5abb0bed54cd453393" title='Last modified by yewang | 2020-05-29' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/6c009b07f7a85e9812828e5abb0bed54cd453393" title='Last modified by yewang | 2020-05-29' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-05-29</span>
     </a>

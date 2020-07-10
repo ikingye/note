@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/30/</guid>
-      <description>2020 年 6 月 30 日（星期二） 今日待办     编程 Go GMP 调度器 </description>
+      <description>2020 年 6 月 30 日（星期二） #  今日待办 #      编程 #  Go #  GMP 调度器 #  </description>
     </item>
     
     <item>
@@ -24,12 +24,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/29/</guid>
-      <description>2020 年 6 月 29 日（星期一） 今日待办     编程 Kubernetes Pod 重启原因 标签 vs 注解 annotations
- 算法 数组中，所有的数都是 2 个，只有一个数是 1 个 按位异或，结果为这个数
- 相同的两个数按位异或，等于 0 0 与任何一个数按位异或，等于这个数  数组中，所有的数都是偶数个，只有一个数是奇数个（2n + 1） 按位异或，结果为这个数
-数组中，所有的数都是偶数个，只有两个数是奇数个 （2n +2） 按位异或，看结果的二进制表示，得知奇数个的两个数，不同的位是哪些 （结果的二进制表示值为 1 的位，就是不同的）， 按结果任意一个不同的位进行分组，就可以分成两组，然后分别再异或，就得到结果
-if num &amp;amp; (1 &amp;lt;&amp;lt; n): print(&amp;#34;num 的第 n 位是 1&amp;#34;) else: print(&amp;#34;num 的第 n 位是 0&amp;#34;) 3n +1, 3n +2, an +b TODO
- 位运算 C 语言 C 语言中</description>
+      <description>2020 年 6 月 29 日（星期一） #  今日待办 #      编程 #  Kubernetes #  Pod 重启原因 #  标签 vs 注解 #  annotations
+ 算法 #  数组中，所有的数都是 2 个，只有一个数是 1 个 #  按位异或，结果为这个数
+ 相同的两个数按位异或，等于 0 0 与任何一个数按位异或，等于这个数  数组中，所有的数都是偶数个，只有一个数是奇数个（2n + 1） #  按位异或，结果为这个数
+数组中，所有的数都是偶数个，只有两个数是奇数个 （2n +2） #  按位异或，看结果的二进制表示，得知奇数个的两个数，不同的位是哪些 （结果的二进制表示值为 1 的位，就是不同的）， 按结果任意一个不同的位进行分组，就可以分成两组，然后分别再异或，就得到结果
+if num &amp;amp; (1 &amp;lt;&amp;lt; n): print(&amp;#34;num 的第 n 位是 1&amp;#34;) else: print(&amp;#34;num 的第 n 位是 0&amp;#34;) 3n +1, 3n +2, an +b #  TODO</description>
     </item>
     
     <item>
@@ -38,10 +37,9 @@ if num &amp;amp; (1 &amp;lt;&amp;lt; n): print(&amp;#34;num 的第 n 位是 1&am
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/28/</guid>
-      <description>2020 年 6 月 28 日（星期日） 备注：上班（端午调休）
-今日待办     编程 Redis redis.conf 配置
- daemonize  daemonize:yes: redis 采用的是单进程多线程的模式。当 redis.conf 中选项 daemonize 设置成 yes 时，代表开启守护进程模式。在该模式下，redis 会在后台运行，并将进程 pid 号写入至 redis.conf 选项 pidfile 设置的文件中，此时 redis 将一直运行，除非手动 kill 该进程。 daemonize:no: 当 daemonize 选项设置成 no 时，当前界面将进入 redis 的命令行界面，exit 强制退出或者关闭连接工具 (putty,xshell 等) 都会导致 redis 进程退出。    supervisor 管理 redis 参考：
- supervisor 管理 redis   Celery 现在都是基于 redis 的消息队列 ＋ 多 consumer ＋ supervisor 监控的方式 这样的好处是去除掉 python GIL 的限制，直接上多 process 不过只适合任务比较单一的情况</description>
+      <description>2020 年 6 月 28 日（星期日） #  备注：上班（端午调休）
+今日待办 #      编程 #  Redis #  redis.conf 配置
+ daemonize  daemonize:yes: redis 采用的是单进程多线程的模式。当 redis.conf 中选项 daemonize 设置成 yes 时，代表开启守护进程模式。在该模式下，redis 会在后台运行，并将进程 pid 号写入至 redis.conf 选项 pidfile 设置的文件中，此时 redis 将一直运行，除非手动 kill 该进程。 daemonize:no: 当 daemonize 选项设置成 no 时，当前界面将进入 redis 的命令行界面，exit 强制退出或者关闭连接工具 (putty,xshell 等) 都会导致 redis 进程退出。    supervisor 管理 redis #  参考：</description>
     </item>
     
     <item>
@@ -50,9 +48,7 @@ if num &amp;amp; (1 &amp;lt;&amp;lt; n): print(&amp;#34;num 的第 n 位是 1&am
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/24/</guid>
-      <description>2020 年 6 月 24 日（星期三） 今日待办     编程 Ctrl + C vs Ctrl + D Ctrl + C tells the terminal to send a SIGINT to the current foreground process, which by default translates into terminating the application. Ctrl + D tells the terminal that it should register a EOF on standard input, which bash interprets as a desire to exit.
-参考：
- What&amp;rsquo;s the difference between ^C and ^D for UNIX/Mac OS X terminal?</description>
+      <description>2020 年 6 月 24 日（星期三） #  今日待办 #      编程 #  Ctrl + C vs Ctrl + D #  Ctrl + C tells the terminal to send a SIGINT to the current foreground process, which by default translates into terminating the application. Ctrl + D tells the terminal that it should register a EOF on standard input, which bash interprets as a desire to exit.</description>
     </item>
     
     <item>
@@ -61,9 +57,9 @@ if num &amp;amp; (1 &amp;lt;&amp;lt; n): print(&amp;#34;num 的第 n 位是 1&am
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/23/</guid>
-      <description>2020 年 6 月 23 日（星期二） 今日待办     编程 Spring spring 事务 REQUIRED REQUIRES_NEW 区别  hyperkit moby/hyperkit HyperKit 是一种轻量级虚拟化方法，基于 MacOSX10.10 之后引入的 Hypervisor 框架。HyperKit 应用可以利用硬件虚拟化运行 VMs，但是并不需要特殊权限或者复杂管理工具栈。
+      <description>2020 年 6 月 23 日（星期二） #  今日待办 #      编程 #  Spring #  spring 事务 REQUIRED REQUIRES_NEW 区别 #   hyperkit #  moby/hyperkit HyperKit 是一种轻量级虚拟化方法，基于 MacOSX10.10 之后引入的 Hypervisor 框架。HyperKit 应用可以利用硬件虚拟化运行 VMs，但是并不需要特殊权限或者复杂管理工具栈。
 HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例如：VPNKit 和 DataKit）合作使得运行更加有效。由于 HyperKit 架构与库之上，因此将其和 unikernel 库连接起来就显得很直接。例如，我们可以通过使用 MirageOS QCow 库（用 OCaml 编写），加入持久化块设备支持。
- k3s 安装 istio # 如果 curl 下载失败，可以直接访问 https://get.k3s.io，然后把 install 文本复制到本地文件（比如 install-k3s.sh） # 然后执行 INSTALL_K3S_EXEC=&amp;#34;--no-deploy traefik&amp;#34; K3S_KUBECONFIG_MODE=&amp;#34;644&amp;#34; sh install-k3s.sh curl -sfL https://get.k3s.io |INSTALL_K3S_EXEC=&amp;#34;--no-deploy traefik&amp;#34; K3S_KUBECONFIG_MODE=&amp;#34;644&amp;#34; sh - 参考：</description>
+ k3s 安装 istio #  # 如果 curl 下载失败，可以直接访问 https://get.k3s.io，然后把 install 文本复制到本地文件（比如 install-k3s.</description>
     </item>
     
     <item>
@@ -72,7 +68,7 @@ HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/22/</guid>
-      <description>2020 年 6 月 22 日（星期一） 今日待办     编程 MB 与 Mb  网络通信领域：  一般是 bps  b 是 bit   因为在传输过程中传输的是具体的 0 和 1 不宜换算成字节。通常数据传输率是不用字节来表示的。 k=10 的 3 次方, M=10 的 6 次方 在通信网络中是非常不建议用字节来表示速率的 运营商所谓的 4M 宽带，指的就是数据率为 4Mb/s  非要换算成字节表示应该是 500kB/s（请注意这里一定是小写的 k）     计算机领域：  一般是 B  B 是 Byte   K=2 的 10 次方, M=2 的 20 次方     K 单独出现时，代表 1000 或 1024 K 与 Ki 一起出现时，K 代表 1000，Ki 代表 1024 K 与 k 一起出现时，K 代表 1024，k 代表 1000  参考：</description>
+      <description>2020 年 6 月 22 日（星期一） #  今日待办 #      编程 #  MB 与 Mb #   网络通信领域：  一般是 bps  b 是 bit   因为在传输过程中传输的是具体的 0 和 1 不宜换算成字节。通常数据传输率是不用字节来表示的。 k=10 的 3 次方, M=10 的 6 次方 在通信网络中是非常不建议用字节来表示速率的 运营商所谓的 4M 宽带，指的就是数据率为 4Mb/s  非要换算成字节表示应该是 500kB/s（请注意这里一定是小写的 k）     计算机领域：  一般是 B  B 是 Byte   K=2 的 10 次方, M=2 的 20 次方     K 单独出现时，代表 1000 或 1024 K 与 Ki 一起出现时，K 代表 1000，Ki 代表 1024 K 与 k 一起出现时，K 代表 1024，k 代表 1000  参考：</description>
     </item>
     
     <item>
@@ -81,7 +77,7 @@ HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/20/</guid>
-      <description>2020 年 6 月 20 日（星期六） 今日待办     编程 Ubuntu 版本    Version Code name Release date General support until Security support (ESM) until     14.04 LTS Trusty Tahr 2014-04-17 2019-04 2022-04   16.04 LTS Xenial Xerus 2016-04-21 2021-04 2024-04   18.04 LTS Bionic Beaver 2018-04-26 2023-04 2028-04   19.10 Eoan Ermine 2019-10-17 2020-07 n/a   20.04 LTS Focal Fossa 2020-04-23 2025-04 2030-04   20.</description>
+      <description>2020 年 6 月 20 日（星期六） #  今日待办 #      编程 #  Ubuntu 版本 #     Version Code name Release date General support until Security support (ESM) until     14.04 LTS Trusty Tahr 2014-04-17 2019-04 2022-04   16.04 LTS Xenial Xerus 2016-04-21 2021-04 2024-04   18.04 LTS Bionic Beaver 2018-04-26 2023-04 2028-04   19.10 Eoan Ermine 2019-10-17 2020-07 n/a   20.</description>
     </item>
     
     <item>
@@ -90,10 +86,9 @@ HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/19/</guid>
-      <description>2020 年 6 月 19 日（星期五） 今日待办     编程 Go 类型转化
+      <description>2020 年 6 月 19 日（星期五） #  今日待办 #      编程 #  Go #  类型转化
 num := dat[&amp;#34;num&amp;#34;].(float64) 类型推断
-newA, ok := a.(string) func checkType(i interface{}) { // 这里是通过 i.(type) 来判断是什么类型  // 下面的 case 分支匹配到了，则执行相关的分支  switch v := i.(type) { case int: fmt.Printf(&amp;#34;%v is an int&amp;#34;, v) case string: fmt.Printf(&amp;#34;%v is string&amp;#34;, v) case bool: fmt.Printf(&amp;#34;%v is bool&amp;#34;, v) } }  产品文档 需求分析文档 前期分析阶段中，需求方主要是与产品经理进行沟通，产出文档有三种：
-BRD 文档（Business Requirement Document） 商业需求文档，基于商业目标或价值所描述的产品需求内容文档（报告）。</description>
+newA, ok := a.(string) func checkType(i interface{}) { // 这里是通过 i.(type) 来判断是什么类型  // 下面的 case 分支匹配到了，则执行相关的分支  switch v := i.(type) { case int: fmt.Printf(&amp;#34;%v is an int&amp;#34;, v) case string: fmt.Printf(&amp;#34;%v is string&amp;#34;, v) case bool: fmt.Printf(&amp;#34;%v is bool&amp;#34;, v) } }  产品文档 #  需求分析文档 #  前期分析阶段中，需求方主要是与产品经理进行沟通，产出文档有三种：</description>
     </item>
     
     <item>
@@ -102,8 +97,8 @@ BRD 文档（Business Requirement Document） 商业需求文档，基于商业�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/18/</guid>
-      <description>2020 年 6 月 18 日（星期四） 今日待办     编程 ZLMediaKit 开发 安装依赖库 MacOS cd ZLMediaKit mkdir build cd build # 查看 openssl 的路径 cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.1/1.1.1g/ make -j4 Debian Debian 系 (包括 ubuntu）
-# 除了openssl,其他其实都可以不安装 sudo apt-get install libssl-dev sudo apt-get install libsdl-dev sudo apt-get install libavcodec-dev sudo apt-get install libavutil-dev sudo apt-get install ffmpeg Windows  构建和编译 MacOS cd ZLMediaKit mkdir build cd build cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.</description>
+      <description>2020 年 6 月 18 日（星期四） #  今日待办 #      编程 #  ZLMediaKit 开发 #  安装依赖库 #  MacOS cd ZLMediaKit mkdir build cd build # 查看 openssl 的路径 cmake .. -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.1/1.1.1g/ make -j4 Debian Debian 系 (包括 ubuntu）
+# 除了openssl,其他其实都可以不安装 sudo apt-get install libssl-dev sudo apt-get install libsdl-dev sudo apt-get install libavcodec-dev sudo apt-get install libavutil-dev sudo apt-get install ffmpeg Windows  构建和编译 #  MacOS cd ZLMediaKit mkdir build cd build cmake .</description>
     </item>
     
     <item>
@@ -112,16 +107,15 @@ BRD 文档（Business Requirement Document） 商业需求文档，基于商业�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/17/</guid>
-      <description>2020 年 6 月 17 日（星期三） 今日待办     编程 最大传输单元 Maximum Transmission Unit，MTU
+      <description>2020 年 6 月 17 日（星期三） #  今日待办 #      编程 #  最大传输单元 #  Maximum Transmission Unit，MTU
 用来通知对方所能接受数据服务单元的最大尺寸，说明发送方能够接受的有效载荷大小。
 是包或帧的最大长度，一般以字节记。如果 MTU 过大，在碰到路由器时会被拒绝转发，因为它不能处理过大的包。如果太小，因为协议一定要在包 (或帧) 上加上包头，那实际传送的数据量就会过小，这样也划不来。大部分操作系统会提供给用户一个默认值，该值一般对用户是比较合适的。
   以太网 MTU 是 1500 字节
   802.3 MTU 是 1492 字节。
   UDP MTU 是 1400
-  最大分节大小 maximum segment size，MSS
+  最大分节大小 #  maximum segment size，MSS
 为 TCP 数据包每次传输的最大数据分段大小，一般由发送端向对端 TCP 通知对端在每个分节中能发送的最大 TCP 数据。
-MSS 值为 MTU 值减去 IPv4 Header（20 Byte）和 TCP header（20 Byte）。
-IP 分片 (fragmentation) ts 包 ts 包的大小是 188， 最大传输单元是 1500，所以最多可以传输 188 * 7 个字节，加上 12 字节 rtp 头，所以每次发送 1328 字节数据。</description>
+MSS 值为 MTU 值减去 IPv4 Header（20 Byte）和 TCP header（20 Byte）。</description>
     </item>
     
     <item>
@@ -130,10 +124,10 @@ IP 分片 (fragmentation) ts 包 ts 包的大小是 188， 最大传输单元是
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/16/</guid>
-      <description>2020 年 6 月 16 日（星期二） 今日待办     编程 IOT 物管理 物影子 物影子反映物理世界中的一个物（设备），是物在云端的映射。 运行时，物将监控值上报给物影子，物影子会用一个 json 文档存储设备的最后一次上报的状态，可以直接通过 MQTT 或 HTTP 访问。 同时，物影子也提供反控功能。
-物模型 物模型由一个或多个属性构成，可以用他来表示一类（或同一型号的一批）设备。 基于物模型可以创建物影子。
+      <description>2020 年 6 月 16 日（星期二） #  今日待办 #      编程 #  IOT #  物管理 #  物影子 #  物影子反映物理世界中的一个物（设备），是物在云端的映射。 运行时，物将监控值上报给物影子，物影子会用一个 json 文档存储设备的最后一次上报的状态，可以直接通过 MQTT 或 HTTP 访问。 同时，物影子也提供反控功能。
+物模型 #  物模型由一个或多个属性构成，可以用他来表示一类（或同一型号的一批）设备。 基于物模型可以创建物影子。
 物模型可以选择开启 ota 服务，这样使用这个物模型创建的物影子就可以使用 ota 服务，并通过这个物模型做统一的管理。
- 常见直播协议  RTMP: 底层基于 TCP，在浏览器端依赖 Flash。 HTTP-FLV: 基于 HTTP 流式 IO 传输 FLV，依赖浏览器支持播放 FLV。 WebSocket-FLV: 基于 WebSocket 传输 FLV，依赖浏览器支持播放 FLV。 WebSocket 建立在 HTTP 之上，建立 WebSocket 连接前还要先建立 HTTP 连接。 HLS: Http Live Streaming，苹果提出基于 HTTP 的流媒体传输协议。HTML5 可以直接打开播放。 RTP: 基于 UDP，延迟 1 秒，浏览器不支持。  HTML5 FLV Player</description>
+ 常见直播协议 #   RTMP: 底层基于 TCP，在浏览器端依赖 Flash。 HTTP-FLV: 基于 HTTP 流式 IO 传输 FLV，依赖浏览器支持播放 FLV。 WebSocket-FLV: 基于 WebSocket 传输 FLV，依赖浏览器支持播放 FLV。 WebSocket 建立在 HTTP 之上，建立 WebSocket 连接前还要先建立 HTTP 连接。 HLS: Http Live Streaming，苹果提出基于 HTTP 的流媒体传输协议。HTML5 可以直接打开播放。 RTP: 基于 UDP，延迟 1 秒，浏览器不支持。  HTML5 FLV Player</description>
     </item>
     
     <item>
@@ -142,8 +136,8 @@ IP 分片 (fragmentation) ts 包 ts 包的大小是 188， 最大传输单元是
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/15/</guid>
-      <description>2020 年 6 月 15 日（星期一） 今日待办     编程 URL vs URI vs URN  URI 在于 I (Identifier) 是统一资源标示符，可以唯一标识一个资源 URL 在于 Locater，一般来说（URL）统一资源定位符，可以提供找到该资源的路径 URL 是 URI 的特例  apache/zookeeper  Mirror of Apache Hadoop ZooKeeper
-samuel/go-zookeeper  </description>
+      <description>2020 年 6 月 15 日（星期一） #  今日待办 #      编程 #  URL vs URI vs URN #   URI 在于 I (Identifier) 是统一资源标示符，可以唯一标识一个资源 URL 在于 Locater，一般来说（URL）统一资源定位符，可以提供找到该资源的路径 URL 是 URI 的特例  apache/zookeeper #  Mirror of Apache Hadoop ZooKeeper
+samuel/go-zookeeper #  </description>
     </item>
     
     <item>
@@ -152,10 +146,10 @@ samuel/go-zookeeper  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/14/</guid>
-      <description>2020 年 6 月 14 日（星期日） 今日待办     编程 Istio 向 pod 中注入 Istio sidecar istioctl 手动注入 使用 istioctl 手动注入
-Istio sidecar 注入器自动注入 启用 pod 所属命名空间的 Istio sidecar 注入器自动注入
+      <description>2020 年 6 月 14 日（星期日） #  今日待办 #      编程 #  Istio #  向 pod 中注入 Istio sidecar #  istioctl 手动注入 #  使用 istioctl 手动注入
+Istio sidecar 注入器自动注入 #  启用 pod 所属命名空间的 Istio sidecar 注入器自动注入
 区别于手动注入，自动注入发生在 pod 层面。 你将看不到 deployment 本身有任何更改。 取而代之，需要检查单独的 pod（使用 kubectl describe）来查询被注入的代理。
- Kubernetes kubectl get 结果排序 --sort-by= ##### pod # name kubectl --sort-by=.metadata.name get pod # status kubectl --sort-by=.status.phase get pod # restarts kubectl --sort-by=.status.containerStatuses[0].restartCount get pod # age kubectl --sort-by=.</description>
+ Kubernetes #  kubectl get 结果排序 #  --sort-by= ##### pod # name kubectl --sort-by=.</description>
     </item>
     
     <item>
@@ -164,7 +158,7 @@ Istio sidecar 注入器自动注入 启用 pod 所属命名空间的 Istio sidec
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/13/</guid>
-      <description>2020 年 6 月 13 日（星期六） 今日待办     编程 求最大公约数  暴力枚举法：时间复杂度是 O (min (a, b))) 辗转相除法：时间复杂度不太好计算，可以近似为 O (log (max (a, b)))，但是取模运算性能较差。 更相减损术：避免了取模运算，但是算法性能不稳定，最坏时间复杂度为 O (max (a, b))) 更相减损术与移位结合：不但避免了取模运算，而且算法性能稳定，时间复杂度为 O (log (max (a, b)))  辗转相除法 辗转相除法， 又名欧几里得算法（Euclidean algorithm）， 目的是求出两个正整数的最大公约数。 它是已知最古老的算法， 其可追溯至公元前 300 年前。
+      <description>2020 年 6 月 13 日（星期六） #  今日待办 #      编程 #  求最大公约数 #   暴力枚举法：时间复杂度是 O (min (a, b))) 辗转相除法：时间复杂度不太好计算，可以近似为 O (log (max (a, b)))，但是取模运算性能较差。 更相减损术：避免了取模运算，但是算法性能不稳定，最坏时间复杂度为 O (max (a, b))) 更相减损术与移位结合：不但避免了取模运算，而且算法性能稳定，时间复杂度为 O (log (max (a, b)))  辗转相除法 #  辗转相除法， 又名欧几里得算法（Euclidean algorithm）， 目的是求出两个正整数的最大公约数。 它是已知最古老的算法， 其可追溯至公元前 300 年前。
 这条算法基于一个定理： 两个正整数 a 和 b（a&amp;gt;b），它们的最大公约数等于 a 除以 b 的余数 c 和 b 之间的最大公约数。
 比如 10 和 25，25 除以 10 商 2 余 5, 那么 10 和 25 的最大公约数，等同于 10 和 5 的最大公约数。</description>
     </item>
@@ -175,11 +169,11 @@ Istio sidecar 注入器自动注入 启用 pod 所属命名空间的 Istio sidec
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/12/</guid>
-      <description>2020 年 6 月 12 日（星期五） 今日待办     编程 Go tab vs 空格  Indentation
+      <description>2020 年 6 月 12 日（星期五） #  今日待办 #      编程 #  Go #  tab vs 空格 #   Indentation
 We use tabs for indentation and gofmt emits them by default. Use spaces only if you must.
  参考：
- Effective Go   Kubernetes 查一段时间的日志 --since-time 查一段时间的日志
-k logs pedestrian-count-wrapper-5b7cb44c79-k4z6n --since-time=2020-06-12T14:00:00+08:00 &amp;gt; pedestrian-count.log 查看多个 pod 日志 传统来说，Kubernetes 环境下的日志都是靠 FluentD + ElasticSearch + Kibana 的组合实现的， 这一组合的功能和强大，所以成为一个事实标准来使用， 但是在一些比较简陋的测试集群中，或者不具备浏览器条件的自动化 / 控制台环境下， 归并多个 Pod 的日志进行集中的查看和处理还是很有用的。</description>
+ Effective Go   Kubernetes #  查一段时间的日志 #  --since-time 查一段时间的日志
+k logs pedestrian-count-wrapper-5b7cb44c79-k4z6n --since-time=2020-06-12T14:00:00+08:00 &amp;gt; pedestrian-count.log 查看多个 pod 日志 #  传统来说，Kubernetes 环境下的日志都是靠 FluentD + ElasticSearch + Kibana 的组合实现的， 这一组合的功能和强大，所以成为一个事实标准来使用， 但是在一些比较简陋的测试集群中，或者不具备浏览器条件的自动化 / 控制台环境下， 归并多个 Pod 的日志进行集中的查看和处理还是很有用的。</description>
     </item>
     
     <item>
@@ -188,11 +182,10 @@ k logs pedestrian-count-wrapper-5b7cb44c79-k4z6n --since-time=2020-06-12T14:00:0
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/11/</guid>
-      <description>2020 年 6 月 11 日（星期四） 今日待办     编程 VLC VLC media player (previously the VideoLAN Client and commonly known as simply VLC)
+      <description>2020 年 6 月 11 日（星期四） #  今日待办 #      编程 #  VLC #  VLC media player (previously the VideoLAN Client and commonly known as simply VLC)
 LAN: Local Area Network
- library vs package 常见的 C/C# 等语言中的 library，一般指的就是：
- 静态的库文件：xxx.a 动态的库文件：xxx.dll  Python  module 就是 Python 文件 package 是一堆（相关的）module 组合而成的  Haskell A module is a set of functions, types, classes, &amp;hellip; put together in a common namespace.
-A library is a set of modules which makes sense to be together and that can be used in a program or another library.</description>
+ library vs package #  常见的 C/C# 等语言中的 library，一般指的就是：
+ 静态的库文件：xxx.a 动态的库文件：xxx.dll  Python #   module 就是 Python 文件 package 是一堆（相关的）module 组合而成的  Haskell #  A module is a set of functions, types, classes, &amp;hellip; put together in a common namespace.</description>
     </item>
     
     <item>
@@ -201,8 +194,8 @@ A library is a set of modules which makes sense to be together and that can be u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/10/</guid>
-      <description>2020 年 6 月 10 日（星期三） 今日待办     编程 尾递归 Consider a simple function that adds the first N natural numbers. (e.g. sum(5) = 1 + 2 + 3 + 4 + 5 = 15).
-// 普通递归 function recsum(x) { if (x === 1) { return x; } else { return x + recsum(x - 1); } } // 尾递归 function tailrecsum(x, running_total = 0) { if (x === 0) { return running_total; } else { return tailrecsum(x - 1, running_total + x); } } 怎么写尾递归 形式上只要最后一个 return 语句是单纯函数就可以。</description>
+      <description>2020 年 6 月 10 日（星期三） #  今日待办 #      编程 #  尾递归 #  Consider a simple function that adds the first N natural numbers. (e.g. sum(5) = 1 + 2 + 3 + 4 + 5 = 15).
+// 普通递归 function recsum(x) { if (x === 1) { return x; } else { return x + recsum(x - 1); } } // 尾递归 function tailrecsum(x, running_total = 0) { if (x === 0) { return running_total; } else { return tailrecsum(x - 1, running_total + x); } } 怎么写尾递归 #  形式上只要最后一个 return 语句是单纯函数就可以。</description>
     </item>
     
     <item>
@@ -211,13 +204,12 @@ A library is a set of modules which makes sense to be together and that can be u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/09/</guid>
-      <description>2020 年 6 月 9 日（星期二） 今日待办     编程 export PATH 使用 ~ 不生效 # 不生效 # export PATH=&amp;#34;$PATH:~/code/study/cc/istio/istio-1.6.1/bin&amp;#34; # 必须使用完整路径 export PATH=&amp;#34;$PATH:/Users/yewang/code/study/cc/istio/istio-1.6.1/bin&amp;#34;  IoT LPWA Low-Power Wide-Area, 低功耗广域技术，使用较低功耗实现远距离的无线信号传输。 相较于熟悉的低功耗蓝牙（BLE）、Zigbee 和 Wifi 等技术，LPWA 的传输距离更远，一般在公里级， 其链接预算（link budget）可达 160dBm，而 BLE 和 Zigbee 等一般在 100dBm 以下。
+      <description>2020 年 6 月 9 日（星期二） #  今日待办 #      编程 #  export PATH 使用 ~ 不生效 #  # 不生效 # export PATH=&amp;#34;$PATH:~/code/study/cc/istio/istio-1.6.1/bin&amp;#34; # 必须使用完整路径 export PATH=&amp;#34;$PATH:/Users/yewang/code/study/cc/istio/istio-1.6.1/bin&amp;#34;  IoT #  LPWA #  Low-Power Wide-Area, 低功耗广域技术，使用较低功耗实现远距离的无线信号传输。 相较于熟悉的低功耗蓝牙（BLE）、Zigbee 和 Wifi 等技术，LPWA 的传输距离更远，一般在公里级， 其链接预算（link budget）可达 160dBm，而 BLE 和 Zigbee 等一般在 100dBm 以下。
 和传统的蜂窝网络技术（2G、3G）相比，LPWA 的功耗更低，电池供电的设备使用寿命可达数年。
 基于这两个显著特点，LPWA 可以真正使能物物互联，助力和引领物联网（IoT）革命。
 LoRa、SigFox、NB-IOT 这些都属于 LPWA
 参考：
- 什么是 LPWA？  LPWAN LPWAN – Low power wide area network，低功耗广域网络，即使用 LPWA 技术搭建的无线连接网络。
-LPWAN 的网络连接形式可以多种多样，</description>
+ 什么是 LPWA？  LPWAN #  LPWAN – Low power wide area network，低功耗广域网络，即使用 LPWA 技术搭建的无线连接网络。</description>
     </item>
     
     <item>
@@ -226,11 +218,10 @@ LPWAN 的网络连接形式可以多种多样，</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/08/</guid>
-      <description>2020 年 6 月 8 日（星期一） 今日待办     编程 git git clone --depth 1 什么时候用？
+      <description>2020 年 6 月 8 日（星期一） #  今日待办 #      编程 #  git #  git clone --depth 1 #  什么时候用？
 git clone --depth 1 之后，想拉取所有
 git pull --unshallow 参考：
- Pull updates with git after cloned with &amp;ndash;depth 1   CPU amd64 386 arm64 arm_v7 arm_v6 arm_v5 mips64le mips64 mipsle mips  操作系统内核 linux freebsd darwin windows ios android npc_sdk npc_syno  linux top 排序
-MacOS  cpu 排序： 先输入 o，然后输入 cpu 内存排序： 先输入 o，然后输入 rsize  Linux  P：按照 cpu 使用率排序 M：按照内存使用率排序 l：切换显示平均负载和启动时间信息 m：切换显示内存信息 t：切换显示进程和 cpu 状态信息 c：切换显示命令名称和完成命令行信息    git github gitlab gitcafe GitCafe 已被 http://Coding.</description>
+ Pull updates with git after cloned with &amp;ndash;depth 1   CPU #  amd64 #  386 #  arm64 #  arm_v7 #  arm_v6 #  arm_v5 #  mips64le #  mips64 #  mipsle #  mips #   操作系统内核 #  linux #  freebsd #  darwin #  windows #  ios #  android #  npc_sdk #  npc_syno #   linux #  top #  排序</description>
     </item>
     
     <item>
@@ -239,9 +230,9 @@ MacOS  cpu 排序： 先输入 o，然后输入 cpu 内存排序： 先输入 o�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/05/</guid>
-      <description>2020 年 6 月 5 日（星期五） 今日待办     编程 Beyond Compare MacOS 破解 移除失效的认证
-rm -rf ~/Library/Application\ Support/Beyond\ Compare/ moranzcw/Computer-Networking-A-Top-Down-Approach-NOTES  《计算机网络－自顶向下方法 (原书第 6 版)》编程作业，Wireshark 实验文档的翻译和解答。
-Packet Sender dannagle/PacketSender TCP, UDP, SSL 发包工具 https://packetsender.com/</description>
+      <description>2020 年 6 月 5 日（星期五） #  今日待办 #      编程 #  Beyond Compare MacOS 破解 #  移除失效的认证
+rm -rf ~/Library/Application\ Support/Beyond\ Compare/ moranzcw/Computer-Networking-A-Top-Down-Approach-NOTES #  《计算机网络－自顶向下方法 (原书第 6 版)》编程作业，Wireshark 实验文档的翻译和解答。
+Packet Sender #  dannagle/PacketSender TCP, UDP, SSL 发包工具 https://packetsender.com/</description>
     </item>
     
     <item>
@@ -250,12 +241,11 @@ Packet Sender dannagle/PacketSender TCP, UDP, SSL 发包工具 https://packetsen
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/04/</guid>
-      <description>2020 年 6 月 4 日（星期四） 今日待办     编程 判断是物理机还是虚拟机 $ systemd-detect-virt On KVM for example it returns:
+      <description>2020 年 6 月 4 日（星期四） #  今日待办 #      编程 #  判断是物理机还是虚拟机 #  $ systemd-detect-virt On KVM for example it returns:
 kvm and on a non-virtualized host:
-none 其他方法 dmesg | grep -i virtual 基于 hardware，则说明是物理机
+none 其他方法 #  dmesg | grep -i virtual 基于 hardware，则说明是物理机
 结果返回包含 virtual，则是虚拟机
-$ dmesg |grep -i virtual [0.000000] Booting paravirtualized kernel on Xen HVM [1.034572] systemd[1]: Detected virtualization xen. [1.065757] systemd[1]: Starting Setup Virtual Console... [1.287144] xen_netfront: Initialising Xen virtual ethernet driver 参考：
- Easy way to determine virtualization technology  网络 TCP 和 UDP 的端口号可以是同一个吗 可以。</description>
+$ dmesg |grep -i virtual [0.000000] Booting paravirtualized kernel on Xen HVM [1.034572] systemd[1]: Detected virtualization xen. [1.065757] systemd[1]: Starting Setup Virtual Console.</description>
     </item>
     
     <item>
@@ -264,16 +254,13 @@ $ dmesg |grep -i virtual [0.000000] Booting paravirtualized kernel on Xen HVM [1
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/03/</guid>
-      <description>2020 年 6 月 3 日（星期三） 今日待办     编程 kernel-devel 如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
+      <description>2020 年 6 月 3 日（星期三） #  今日待办 #      编程 #  kernel-devel #  如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
 比如 nvidia 和 ati 的官方显卡驱动，alsa-driver 声卡驱动，他们都需要编译一个放在内核里面运行的模块，编译这个模块就需要内核的 header 文件才能顺利编译。
 当然，kernel-devel 不光是 C Header 文件，它还有内核的配置文件，以及其他的开发用的资料
-kernel devel vs kernel source kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
+kernel devel vs kernel source #  kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
 如果仅仅是用于你自己编写的模块开发的话，因为只需引用相应的内核头文件，所以只有 devel 包即可， 如果你要修改现有的内核源代码并重新编译，那必须是 kernel-souce。
 kernel-devel 是用做内核一般开发的，比如编写内核模块，原则上，可以不需要内核的原代码。 kernel 则是专指内核本身的开发，因此需要内核的原代码。
- lspci 显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。
-PCI Peripheral Component Interconnect 外设部件互连标准
-个人电脑中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽
- centos 安装 Kubernetes 环境 安装 GPU 驱动 检测是否检测到 GPU 设备 $ lspci | grep -i nvidia 3b:00.</description>
+ lspci #  显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。</description>
     </item>
     
     <item>
@@ -282,10 +269,9 @@ PCI Peripheral Component Interconnect 外设部件互连标准
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/02/</guid>
-      <description>2020 年 6 月 2 日（星期二） 今日待办     编程 shell keyword vs reserved word vs builtin reserved word 保留字
+      <description>2020 年 6 月 2 日（星期二） #  今日待办 #      编程 #  shell #  keyword vs reserved word vs builtin #  reserved word 保留字
 Keyword, reserved word, and builtin are all the &amp;ldquo;first word&amp;rdquo; of a Simple command. Could be placed in two groups: Keyword and Builtin. The two are mutually exclusive.
-A word (token) can be either a Keyword or a builtin, but not both.
-为什么 time 是 keyword，而不是 builtin To allow the existence of a command as the second word.</description>
+A word (token) can be either a Keyword or a builtin, but not both.</description>
     </item>
     
     <item>
@@ -294,9 +280,9 @@ A word (token) can be either a Keyword or a builtin, but not both.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/06/01/</guid>
-      <description>2020 年 6 月 1 日（星期一） 今日待办     编程 Jeecg-Boot zhangdaiscott/jeecg-boot 前后端分离架构：SpringBoot 2.x，Ant Design&amp;amp;Vue，Mybatis-plus，Shiro，JWT
-jhipster jhipster/generator-jhipster JHipster is a development platform to quickly generate, develop, &amp;amp; deploy modern web applications &amp;amp; microservice architectures. https://www.jhipster.tech
-SELinux The SELinux stands for Security-Enhanced Linux where it is a linux kernel security module. It is enabled by default on most of the linux distribution that we use for servers like centOS. It provides enhanced security measurements.</description>
+      <description>2020 年 6 月 1 日（星期一） #  今日待办 #      编程 #  Jeecg-Boot #  zhangdaiscott/jeecg-boot 前后端分离架构：SpringBoot 2.x，Ant Design&amp;amp;Vue，Mybatis-plus，Shiro，JWT
+jhipster #  jhipster/generator-jhipster JHipster is a development platform to quickly generate, develop, &amp;amp; deploy modern web applications &amp;amp; microservice architectures. https://www.jhipster.tech
+SELinux #  The SELinux stands for Security-Enhanced Linux where it is a linux kernel security module. It is enabled by default on most of the linux distribution that we use for servers like centOS.</description>
     </item>
     
   </channel>

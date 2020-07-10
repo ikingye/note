@@ -1,41 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir=>
 
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 6 月 3 日（星期三） 今日待办     编程 kernel-devel 如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
+<meta name="description" content="2020 年 6 月 3 日（星期三） #  今日待办 #      编程 #  kernel-devel #  如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
 比如 nvidia 和 ati 的官方显卡驱动，alsa-driver 声卡驱动，他们都需要编译一个放在内核里面运行的模块，编译这个模块就需要内核的 header 文件才能顺利编译。
 当然，kernel-devel 不光是 C Header 文件，它还有内核的配置文件，以及其他的开发用的资料
-kernel devel vs kernel source kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
+kernel devel vs kernel source #  kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
 如果仅仅是用于你自己编写的模块开发的话，因为只需引用相应的内核头文件，所以只有 devel 包即可， 如果你要修改现有的内核源代码并重新编译，那必须是 kernel-souce。
 kernel-devel 是用做内核一般开发的，比如编写内核模块，原则上，可以不需要内核的原代码。 kernel 则是专指内核本身的开发，因此需要内核的原代码。
- lspci 显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。
-PCI Peripheral Component Interconnect 外设部件互连标准
-个人电脑中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽
- centos 安装 Kubernetes 环境 安装 GPU 驱动 检测是否检测到 GPU 设备 $ lspci | grep -i nvidia 3b:00."><meta property="og:title" content="2020-06-03" />
-<meta property="og:description" content="2020 年 6 月 3 日（星期三） 今日待办     编程 kernel-devel 如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
+ lspci #  显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-06-03" />
+<meta property="og:description" content="2020 年 6 月 3 日（星期三） #  今日待办 #      编程 #  kernel-devel #  如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。
 比如 nvidia 和 ati 的官方显卡驱动，alsa-driver 声卡驱动，他们都需要编译一个放在内核里面运行的模块，编译这个模块就需要内核的 header 文件才能顺利编译。
 当然，kernel-devel 不光是 C Header 文件，它还有内核的配置文件，以及其他的开发用的资料
-kernel devel vs kernel source kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
+kernel devel vs kernel source #  kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile， 而 kernel-souce 包含所有内核源代码。
 如果仅仅是用于你自己编写的模块开发的话，因为只需引用相应的内核头文件，所以只有 devel 包即可， 如果你要修改现有的内核源代码并重新编译，那必须是 kernel-souce。
 kernel-devel 是用做内核一般开发的，比如编写内核模块，原则上，可以不需要内核的原代码。 kernel 则是专指内核本身的开发，因此需要内核的原代码。
- lspci 显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。
-PCI Peripheral Component Interconnect 外设部件互连标准
-个人电脑中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽
- centos 安装 Kubernetes 环境 安装 GPU 驱动 检测是否检测到 GPU 设备 $ lspci | grep -i nvidia 3b:00." />
+ lspci #  显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/03/" />
 <meta property="article:modified_time" content="2020-06-03T15:18:02+08:00" />
 <title>2020-06-03 | 叶王笔记</title>
+<link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-
-
-<link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
-
-
-<script defer src="/note/en.search.min.5e0ec0384340f41f7fdcfadcc3a8d75487fed55d71ec167885abbd92f8bd4dfa.js" integrity="sha256-Xg7AOENA9B9/3Prcw6jXVIf&#43;1V1x7BZ4hau9kvi9Tfo="></script>
-
+<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -44,8 +35,9 @@ https://github.com/alex-shpak/hugo-book
   
 </head>
 
-<body>
-  <input type="checkbox" class="hidden" id="menu-control" />
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
       
@@ -58,7 +50,7 @@ https://github.com/alex-shpak/hugo-book
 
 <div class="book-search">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner spinner hidden"></div>
+  <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
 
@@ -85,1012 +77,826 @@ https://github.com/alex-shpak/hugo-book
 
   
 
-  
-  
-
-
-
-
-
- 
-  
-    
-
-
 
 
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
   
-  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
-
-
-    
-
-
-
-
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/" class="">第四部分 学习</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/" class="">第五部分 生活</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+    <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
   
-
-</li>
-      
-    
-      
-        <li>
-
   
-  <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
+          
+  
+    <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+          
+  
+  
+  
 
   
-  <a href="/note/docs/live/diary/2020/06/30/" class="">2020-06-30</a>
-  
 
-</li>
+        </li>
       
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/06/29/" class="">2020-06-29</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/28/" class="">2020-06-28</a>
+    <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/24/" class="">2020-06-24</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/23/" class="">2020-06-23</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/22/" class="">2020-06-22</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/20/" class="">2020-06-20</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/19/" class="">2020-06-19</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/18/" class="">2020-06-18</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/17/" class="">2020-06-17</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/16/" class="">2020-06-16</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/15/" class="">2020-06-15</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/14/" class="">2020-06-14</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/13/" class="">2020-06-13</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/12/" class="">2020-06-12</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/11/" class="">2020-06-11</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/10/" class="">2020-06-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/09/" class="">2020-06-09</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/08/" class="">2020-06-08</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/05/" class="">2020-06-05</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/04/" class="">2020-06-04</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/03/" class="active">2020-06-03</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/02/" class="">2020-06-02</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/06/01/" class="">2020-06-01</a>
-  
-
-</li>
+        </li>
       
     
   </ul>
   
 
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+    <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
   
 
+          
+  
+  
+  
 
+  
+  <ul>
     
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
+  
 
+          
+  
+  
+  
 
+  
 
-
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+    <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
   
 
+          
+  
+  
+  
 
-    
+  
 
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+    <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
   
 
+          
+  
+  
+  
 
-    
+  
 
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
 
+          
+  
+  
+  
 
-  </li>
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
 
+          
+  
+  
+  
 
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
       
     
   </ul>
   
 
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+    <a href="/note/docs/study/" class="">第四部分 学习</a>
   
 
+          
+  
+  
+  
 
+  
+  <ul>
     
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
 
+          
+  
+  
+  
 
+  
 
-
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+    <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
   
 
+          
+  
+  
+  
 
-    
+  
 
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+    <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
   
 
+          
+  
+  
+  
 
+  
+
+        </li>
+      
     
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
 
+          
+  
+  
+  
 
+  
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
 
+          
+  
+  
+  
 
+  
 
-  </li>
-
-
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
 
+          
+  
+  
+  
 
-  </li>
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
 
+          
+  
+  
+  
 
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
+  
+
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
+  
 
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/30/" class="">2020-06-30</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/29/" class="">2020-06-29</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/28/" class="">2020-06-28</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/24/" class="">2020-06-24</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/23/" class="">2020-06-23</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/22/" class="">2020-06-22</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/20/" class="">2020-06-20</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/19/" class="">2020-06-19</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/18/" class="">2020-06-18</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/17/" class="">2020-06-17</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/16/" class="">2020-06-16</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/15/" class="">2020-06-15</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/14/" class="">2020-06-14</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/13/" class="">2020-06-13</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/12/" class="">2020-06-12</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/11/" class="">2020-06-11</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/10/" class="">2020-06-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/09/" class="">2020-06-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/08/" class="">2020-06-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/05/" class="">2020-06-05</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/04/" class="">2020-06-04</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/03/" class="active">2020-06-03</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/02/" class="">2020-06-02</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/01/" class="">2020-06-01</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+  
+
+          
+  
+  
+  
 
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
 
 
 
@@ -1134,15 +940,16 @@ https://github.com/alex-shpak/hugo-book
   <strong>2020-06-03</strong>
 
   <label for="toc-control">
+    
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
   </label>
 </div>
 
 
   
-    <input type="checkbox" class="hidden" id="toc-control" />
-    <aside class="hidden clearfix">
-      
+  <aside class="hidden clearfix">
+    
   <nav id="TableOfContents">
   <ul>
     <li><a href="#2020-年-6-月-3-日星期三">2020 年 6 月 3 日（星期三）</a>
@@ -1195,25 +1002,40 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-    </aside>
+  </aside>
   
  
       </header>
 
       
       
-  <article class="markdown"><h1 id="2020-年-6-月-3-日星期三">2020 年 6 月 3 日（星期三）</h1>
-<h2 id="今日待办">今日待办</h2>
+  <article class="markdown"><h1 id="2020-年-6-月-3-日星期三">
+  2020 年 6 月 3 日（星期三）
+  <a class="anchor" href="#2020-%e5%b9%b4-6-%e6%9c%88-3-%e6%97%a5%e6%98%9f%e6%9c%9f%e4%b8%89">#</a>
+</h1>
+<h2 id="今日待办">
+  今日待办
+  <a class="anchor" href="#%e4%bb%8a%e6%97%a5%e5%be%85%e5%8a%9e">#</a>
+</h2>
 <ul>
 <li><input disabled="" type="checkbox"> </li>
 </ul>
 <hr>
-<h2 id="编程">编程</h2>
-<h3 id="kernel-devel">kernel-devel</h3>
+<h2 id="编程">
+  编程
+  <a class="anchor" href="#%e7%bc%96%e7%a8%8b">#</a>
+</h2>
+<h3 id="kernel-devel">
+  kernel-devel
+  <a class="anchor" href="#kernel-devel">#</a>
+</h3>
 <p>如果某个程序需要内核提供的一些功能，它就需要内核的 C header 来编译程序，这个时候 linux-devel 里面的东西就用上了。</p>
 <p>比如 nvidia 和 ati 的官方显卡驱动，alsa-driver 声卡驱动，他们都需要编译一个放在内核里面运行的模块，编译这个模块就需要内核的 header 文件才能顺利编译。</p>
 <p>当然，kernel-devel 不光是 C Header 文件，它还有内核的配置文件，以及其他的开发用的资料</p>
-<h4 id="kernel-devel-vs-kernel-source"><code>kernel devel</code> vs <code>kernel source</code></h4>
+<h4 id="kernel-devel-vs-kernel-source">
+  <code>kernel devel</code> vs <code>kernel source</code>
+  <a class="anchor" href="#kernel-devel-vs-kernel-source">#</a>
+</h4>
 <p>kernel-devel 包只包含用于内核开发环境所需的内核头文件以及 Makefile，
 而 kernel-souce 包含所有内核源代码。</p>
 <p>如果仅仅是用于你自己编写的模块开发的话，因为只需引用相应的内核头文件，所以只有 devel 包即可，
@@ -1221,23 +1043,41 @@ https://github.com/alex-shpak/hugo-book
 <p>kernel-devel 是用做内核一般开发的，比如编写内核模块，原则上，可以不需要内核的原代码。
 kernel 则是专指内核本身的开发，因此需要内核的原代码。</p>
 <hr>
-<h3 id="lspci">lspci</h3>
+<h3 id="lspci">
+  lspci
+  <a class="anchor" href="#lspci">#</a>
+</h3>
 <p>显示当前主机的所有 PCI 总线信息，以及所有已连接的 PCI 设备信息。</p>
-<h4 id="pci">PCI</h4>
+<h4 id="pci">
+  PCI
+  <a class="anchor" href="#pci">#</a>
+</h4>
 <p>Peripheral Component Interconnect
 外设部件互连标准</p>
 <p>个人电脑中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽</p>
 <hr>
-<h3 id="centos-安装-kubernetes-环境">centos 安装 Kubernetes 环境</h3>
-<h4 id="安装-gpu-驱动">安装 GPU 驱动</h4>
-<h5 id="检测是否检测到-gpu-设备">检测是否检测到 GPU 设备</h5>
+<h3 id="centos-安装-kubernetes-环境">
+  centos 安装 Kubernetes 环境
+  <a class="anchor" href="#centos-%e5%ae%89%e8%a3%85-kubernetes-%e7%8e%af%e5%a2%83">#</a>
+</h3>
+<h4 id="安装-gpu-驱动">
+  安装 GPU 驱动
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-gpu-%e9%a9%b1%e5%8a%a8">#</a>
+</h4>
+<h5 id="检测是否检测到-gpu-设备">
+  检测是否检测到 GPU 设备
+  <a class="anchor" href="#%e6%a3%80%e6%b5%8b%e6%98%af%e5%90%a6%e6%a3%80%e6%b5%8b%e5%88%b0-gpu-%e8%ae%be%e5%a4%87">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ lspci | grep -i nvidia
 
 3b:00.0 3D controller: NVIDIA Corporation GP104GL <span style="color:#f92672">[</span>Tesla P4<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>rev a1<span style="color:#f92672">)</span>
 86:00.0 3D controller: NVIDIA Corporation GP104GL <span style="color:#f92672">[</span>Tesla P4<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>rev a1<span style="color:#f92672">)</span>
 af:00.0 3D controller: NVIDIA Corporation GP104GL <span style="color:#f92672">[</span>Tesla P4<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>rev a1<span style="color:#f92672">)</span>
 d8:00.0 3D controller: NVIDIA Corporation GP104GL <span style="color:#f92672">[</span>Tesla P4<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>rev a1<span style="color:#f92672">)</span>
-</code></pre></div><h5 id="安装-gcc">安装 gcc</h5>
+</code></pre></div><h5 id="安装-gcc">
+  安装 gcc
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-gcc">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install gcc
 </code></pre></div><p>安装与当前 kernel 对应的 kernel-devel，yum 不能安装的用 rpm 安装</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install kernel-devel-<span style="color:#66d9ef">$(</span>uname -r<span style="color:#66d9ef">)</span>
@@ -1250,7 +1090,10 @@ cd kernel-devel-4.14.0_1-0-0-16
 ./auto_changekernel.sh
 <span style="color:#75715e">#检查/usr/src/kernel目录下是否能看到kernel</span>
 ls /usr/src/kernels
-</code></pre></div><h5 id="安装-gpu-驱动-1">安装 GPU 驱动</h5>
+</code></pre></div><h5 id="安装-gpu-驱动-1">
+  安装 GPU 驱动
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-gpu-%e9%a9%b1%e5%8a%a8-1">#</a>
+</h5>
 <p>首先在 <a href="https://www.nvidia.com/Download/index.aspx?lang=cn">Nvidia 官网</a>下载驱动</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200603150115.png" alt="" /></p>
 <p>运行下载好的驱动文件</p>
@@ -1260,7 +1103,10 @@ ls /usr/src/kernels
 <p>nvidia-smi</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200603150206.png" alt="" /></p>
 <hr>
-<h4 id="yum-安装-docker-ce">yum 安装 docker-ce</h4>
+<h4 id="yum-安装-docker-ce">
+  yum 安装 docker-ce
+  <a class="anchor" href="#yum-%e5%ae%89%e8%a3%85-docker-ce">#</a>
+</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装依赖包</span>
 yum install -y yum-utils device-mapper-persistent-data lvm2
 
@@ -1276,7 +1122,10 @@ yum list docker-ce --showduplicates
 yum install docker-ce-18.09.6
 <span style="color:#75715e">#启动docker</span>
 systemctl start docker
-</code></pre></div><h4 id="nvidia-docker">nvidia-docker</h4>
+</code></pre></div><h4 id="nvidia-docker">
+  nvidia-docker
+  <a class="anchor" href="#nvidia-docker">#</a>
+</h4>
 <p><a href="https://github.com/NVIDIA/nvidia-docker">NVIDIA/nvidia-docker</a> <img src="https://img.shields.io/github/stars/NVIDIA/nvidia-docker.svg" alt="Github stars" /></p>
 <p>因为 GPU 属于特定的厂商产品，需要特定的 driver，
 Docker 本身并不支持 GPU。
@@ -1285,7 +1134,10 @@ Docker 本身并不支持 GPU。
 所以这样的 Docker image 并不具备可移植性。</p>
 <p>Nvidia-docker 项目就是为了解决这个问题，
 它让 Docker image 不需要知道底层 GPU 的相关信息，而是通过启动 container 时 mount 设备和驱动文件来实现的。</p>
-<h5 id="yum-安装-nvidia-docker2">yum 安装 nvidia-docker2</h5>
+<h5 id="yum-安装-nvidia-docker2">
+  yum 安装 nvidia-docker2
+  <a class="anchor" href="#yum-%e5%ae%89%e8%a3%85-nvidia-docker2">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 配置yum源</span>
 distribution<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>. /etc/os-release;echo $ID$VERSION_ID<span style="color:#66d9ef">)</span>
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | sudo tee /etc/yum.repos.d/nvidia-docker.repo
@@ -1305,15 +1157,24 @@ cat /etc/docker/daemon.json
 <span style="color:#75715e">#重启docker</span>
 systemctl restart docker
 <span style="color:#75715e">#ps aux | grep dockerd | grep -v grep | awk &#39;{ print $2; }&#39;|xargs -L 1 sudo kill -HUP</span>
-</code></pre></div><h4 id="安装-k8s-环境">安装 k8s 环境</h4>
-<h5 id="ipvs-安装">ipvs 安装</h5>
+</code></pre></div><h4 id="安装-k8s-环境">
+  安装 k8s 环境
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-k8s-%e7%8e%af%e5%a2%83">#</a>
+</h4>
+<h5 id="ipvs-安装">
+  ipvs 安装
+  <a class="anchor" href="#ipvs-%e5%ae%89%e8%a3%85">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">modprobe -- ip_vs
 modprobe -- ip_vs_rr
 modprobe -- ip_vs_wrr
 modprobe -- ip_vs_sh
 modprobe -- nf_conntrack_ipv4
 yum install ipvsadm -y
-</code></pre></div><h5 id="kubeadm-安装-k8s-集群">kubeadm 安装 k8s 集群</h5>
+</code></pre></div><h5 id="kubeadm-安装-k8s-集群">
+  kubeadm 安装 k8s 集群
+  <a class="anchor" href="#kubeadm-%e5%ae%89%e8%a3%85-k8s-%e9%9b%86%e7%be%a4">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># apiserver-advertise-address指定master的interface，pod-network-cidr指定Pod网络的范围, service-cidr指定svc的范围</span>
 kubeadm init --service-cidr 10.240.0.0/16 --apiserver-advertise-address 172.27.9.131 --pod-network-cidr<span style="color:#f92672">=</span>10.244.0.0/16
 </code></pre></div><p>参考：</p>
@@ -1321,7 +1182,10 @@ kubeadm init --service-cidr 10.240.0.0/16 --apiserver-advertise-address 172.27.9
 <li><a href="https://blog.51cto.com/3241766/2405624">centos7 使用 kubeadm 部署 k8s 集群（单点 master，flannel 网络）</a> （测试可用）</li>
 <li><a href="https://blog.csdn.net/qq_34857250/article/details/82562572">centos7 使用 kubeadm 部署多 master 高可用集群（flannel 网络）</a></li>
 </ul>
-<h5 id="更换-calico-网络">更换 calico 网络</h5>
+<h5 id="更换-calico-网络">
+  更换 calico 网络
+  <a class="anchor" href="#%e6%9b%b4%e6%8d%a2-calico-%e7%bd%91%e7%bb%9c">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget -c https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
 <span style="color:#75715e"># 修改calico.yaml中的CALICO_IPV4POOL_CIDR与kubeadm init指定的--pod-network-cidr保持一致（https://zhuanlan.zhihu.com/p/81120952）</span>
 kubectl apply -f calico.yaml
@@ -1333,13 +1197,19 @@ iptables -P FORWARD ACCEPT
   验证所有跨主机 pod 通讯没问题再继续。
 </blockquote>
 
-<h5 id="kube-proxy-开启-ipvs">kube-proxy 开启 ipvs</h5>
+<h5 id="kube-proxy-开启-ipvs">
+  kube-proxy 开启 ipvs
+  <a class="anchor" href="#kube-proxy-%e5%bc%80%e5%90%af-ipvs">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get configmap kube-proxy -n kube-system -o yaml &gt; kube-proxy-configmap.yaml
 sed -i <span style="color:#e6db74">&#39;s/mode: &#34;&#34;/mode: &#34;ipvs&#34;/&#39;</span> kube-proxy-configmap.yaml
 kubectl apply -f kube-proxy-configmap.yaml
 rm -f kube-proxy-configmap.yaml
 kubectl get pod -n kube-system | grep kube-proxy | awk <span style="color:#e6db74">&#39;{system(&#34;kubectl delete pod &#34;$1&#34; -n kube-system&#34;)}&#39;</span>
-</code></pre></div><h5 id="coredns-部署">Coredns 部署</h5>
+</code></pre></div><h5 id="coredns-部署">
+  Coredns 部署
+  <a class="anchor" href="#coredns-%e9%83%a8%e7%bd%b2">#</a>
+</h5>
 <p>clusterIP 需要在 service-cidr 内</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: v1
 <span style="color:#66d9ef">kind</span>: ServiceAccount
@@ -1507,7 +1377,10 @@ kubectl get pod -n kube-system | grep kube-proxy | awk <span style="color:#e6db7
     - <span style="color:#66d9ef">name</span>: dns-tcp
       <span style="color:#66d9ef">port</span>: <span style="color:#ae81ff">53</span>
       <span style="color:#66d9ef">protocol</span>: TCP
-</code></pre></div><h4 id="安装-nvidia-device-plugin">安装 nvidia-device-plugin</h4>
+</code></pre></div><h4 id="安装-nvidia-device-plugin">
+  安装 nvidia-device-plugin
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-nvidia-device-plugin">#</a>
+</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: extensions/v1beta1
 <span style="color:#66d9ef">kind</span>: DaemonSet
 
@@ -1555,13 +1428,11 @@ kubectl get pod -n kube-system | grep kube-proxy | awk <span style="color:#e6db7
 
       <footer class="book-footer">
         
-  <div class="flex justify-between">
+  <div class="flex flex-wrap justify-between">
 
 
 
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/5effaa84a55c29e47526fbf212557ac82b02719d" title='Last modified by yewang | 2020-06-03' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/5effaa84a55c29e47526fbf212557ac82b02719d" title='Last modified by yewang | 2020-06-03' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-06-03</span>
     </a>

@@ -15,12 +15,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/10/</guid>
-      <description>2020 年 7 月 10 日（星期五） 今日待办     编程 RTSP RTSP over UDP 优点
+      <description>2020 年 7 月 10 日（星期五） #  今日待办 #      编程 #  RTSP #  RTSP over UDP #  优点
  实时流延迟较小  缺点
- UDP 协议上的 RTSP/RTP 需要打开许多 UDP 端口（每一路流媒体都需要 2 个 UDP 端口，一个用于接收数据，一个用于接收控制信息）； 当因特网上的路由器没有打开这些端口的时候，上述第一点将会存在问题； 中间网络路由器很容易就过滤或者忽略掉 UDP 数据包； UDP 是不可靠传输协议，媒体包在因特网上传输时会面临着丢包。  RTSP over TCP 优点
+ UDP 协议上的 RTSP/RTP 需要打开许多 UDP 端口（每一路流媒体都需要 2 个 UDP 端口，一个用于接收数据，一个用于接收控制信息）； 当因特网上的路由器没有打开这些端口的时候，上述第一点将会存在问题； 中间网络路由器很容易就过滤或者忽略掉 UDP 数据包； UDP 是不可靠传输协议，媒体包在因特网上传输时会面临着丢包。  RTSP over TCP #  优点
  RTSP/RTP 的控制命令和数据都通过一个端口，即 RTSP 的端口（默认为 554），进行交互。 TCP 包更容易穿透中间网络路由器。  缺点
- 由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。 TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。  ffplay 指定使用 TCP 播放
-ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A 默认使用 UDP 播放，Docker 需要暴露所有 UDP 端口给 UDP 用</description>
+ 由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。 TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。  ffplay #  指定使用 TCP 播放</description>
     </item>
     
     <item>
@@ -29,10 +28,10 @@ ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A 默认使用 UD
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/09/</guid>
-      <description>2020 年 7 月 9 日（星期四） 今日待办     编程 socketio/socket.io  Realtime application framework (Node.JS server)
- 知乎批量取消关注 取消关注问题 点击关注的问题列表 https://www.zhihu.com/question/following
-// https://www.zhihu.com/question/following function unfollow_question_all() { var remaining = $(&amp;#34;.zg-unfollow&amp;#34;).length if (remaining &amp;gt; 0) { $(&amp;#34;.zg-unfollow&amp;#34;).first().trigger(&amp;#34;click&amp;#34;) setTimeout(unfollow_question_all, 1000) window.scrollTo(0, document.body.scrollHeight) } } unfollow_question_all() 取消关注用户 点击关注的用户列表，点击到最后一页 https://www.zhihu.com/people/your-name/following?page=last
-// 保存 $，否则下一轮提示 $ is not defined var j = $ function unfollow_people(follower_less_than) { j(&amp;#34;#Profile-following &amp;gt; :nth-child(2)&amp;#34;).childNodes.forEach(function (node) { // 获取关注者  var item = node.</description>
+      <description>2020 年 7 月 9 日（星期四） #  今日待办 #      编程 #  socketio/socket.io #  Realtime application framework (Node.JS server)
+ 知乎批量取消关注 #  取消关注问题 #  点击关注的问题列表 https://www.zhihu.com/question/following
+// https://www.zhihu.com/question/following function unfollow_question_all() { var remaining = $(&amp;#34;.zg-unfollow&amp;#34;).length if (remaining &amp;gt; 0) { $(&amp;#34;.zg-unfollow&amp;#34;).first().trigger(&amp;#34;click&amp;#34;) setTimeout(unfollow_question_all, 1000) window.scrollTo(0, document.body.scrollHeight) } } unfollow_question_all() 取消关注用户 #  点击关注的用户列表，点击到最后一页 https://www.zhihu.com/people/your-name/following?page=last
+// 保存 $，否则下一轮提示 $ is not defined var j = $ function unfollow_people(follower_less_than) { j(&amp;#34;#Profile-following &amp;gt; :nth-child(2)&amp;#34;).</description>
     </item>
     
     <item>
@@ -41,13 +40,12 @@ ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A 默认使用 UD
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/08/</guid>
-      <description>2020 年 7 月 8 日（星期三） 今日待办     编程 HPKP 协议 HTTP Public Key Pinning
+      <description>2020 年 7 月 8 日（星期三） #  今日待办 #      编程 #  HPKP 协议 #  HTTP Public Key Pinning
 HTTP 公钥固定
 是 HTTPS 网站防止攻击者利用 数字证书认证机构（CA）错误签发的证书进行中间人攻击的一种安全机制，用于预防 CA 遭受入侵或其他会造成 CA 签发未授权证书的情况。采用公钥固定时，网站会提供已授权公钥的哈希列表，指示客户端在后续通讯中只接受列表上的公钥。
- OICT OT + IT + ICT + IoT + OTT
-ICT 信息通信技术 (Information and Communication Technology，简称 ICT)， 是 IT 和 CT 两个领域越来越紧密结合的产物。
- Podman 基于 CRI 等标准（Docker 新架构也符合 CRI 标准）的新一代容器工具 Podman、Skopero 和 Buiddah 套件
- Podman 是该工具套件的核心，用来替换 Docker 中了大多数子命令（RUN，PUSH，PULL 等）。  Podman 无需守护进程，使用用户命名空间来模拟容器中的 root，无需连接到具有 root 权限的套接字保证容器的体系安全。   Buildah 是套件中的 Build 工具，用来构建 OCI 镜像。 Skopeo 是套件中镜像管理工具，允许我们通过推，拉和复制镜像来处理 Docker 和 OC 镜像。   Istio 安装</description>
+ OICT #  OT + IT + ICT + IoT + OTT
+ICT #  信息通信技术 (Information and Communication Technology，简称 ICT)， 是 IT 和 CT 两个领域越来越紧密结合的产物。
+ Podman #  基于 CRI 等标准（Docker 新架构也符合 CRI 标准）的新一代容器工具 Podman、Skopero 和 Buiddah 套件</description>
     </item>
     
     <item>
@@ -56,7 +54,7 @@ ICT 信息通信技术 (Information and Communication Technology，简称 ICT)�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/07/</guid>
-      <description>2020 年 7 月 7 日（星期二） 今日待办     编程 Log  Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C++  gabime/spdlog    Kubernetes  fluent/fluentd      Debug  Go  pprof go-delve/delve      Web 框架  PHP  laravel/laravel    Scala  playframework/playframework      Go interface 转 string // Strval 获取变量的字符串值 // 浮点型 3.</description>
+      <description>2020 年 7 月 7 日（星期二） #  今日待办 #      编程 #  Log #   Go  sirupsen/logrus  uber-go/zap    Python  cool-RR/PySnooper    PHP  itsgoingd/clockwork  Clockwork - php dev tools in your browser - server-side component     C++  gabime/spdlog    Kubernetes  fluent/fluentd      Debug #   Go  pprof go-delve/delve      Web 框架 #   PHP  laravel/laravel    Scala  playframework/playframework      Go #  interface 转 string #  // Strval 获取变量的字符串值 // 浮点型 3.</description>
     </item>
     
     <item>
@@ -65,10 +63,10 @@ ICT 信息通信技术 (Information and Communication Technology，简称 ICT)�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/06/</guid>
-      <description>2020 年 7 月 6 日（星期一） 今日待办     编程 ELF 文件格式 Executable and Linkable Format，可执行连接格式， 是 UNIX 系统实验室（USL）作为应用程序二进制接口（Application Binary Interface，ABI）而开发和发布的。 扩展名为 elf。
+      <description>2020 年 7 月 6 日（星期一） #  今日待办 #      编程 #  ELF 文件格式 #  Executable and Linkable Format，可执行连接格式， 是 UNIX 系统实验室（USL）作为应用程序二进制接口（Application Binary Interface，ABI）而开发和发布的。 扩展名为 elf。
 主要有三种主要类型:
  适于连接的可重定位文件 (relocatable file)，可与其它目标文件一起创建可执行文件和共享目标文件。 适于执行的可执行文件 (executable file)，用于提供程序的进程映像，加载的内存执行。 共享目标文件 (shared object file)，连接器可将它与其它可重定位文件和共享目标文件连接成其它的目标文件，动态连接器又可将它与可执行文件和其它共享目标文件结合起来创建一个进程映像。  为了方便和高效，ELF 文件内容有两个平行的视角：
- 程序连接角度 程序运行角度   Go go test GOTEST := $(GO) test GOPKGS := $$($(GO) list ./...| grep -vE &amp;#34;vendor&amp;#34;) test-case: $(GOTEST) -v -cover $(GOPKGS)  Hasura actions hasura/graphql-engine  Blazing fast, instant realtime GraphQL APIs on Postgres with fine grained access control, also trigger webhooks on database events.</description>
+ 程序连接角度 程序运行角度   Go #  go test #  GOTEST := $(GO) test GOPKGS := $$($(GO) list ./...| grep -vE &amp;#34;vendor&amp;#34;) test-case: $(GOTEST) -v -cover $(GOPKGS)  Hasura actions #  hasura/graphql-engine #  Blazing fast, instant realtime GraphQL APIs on Postgres with fine grained access control, also trigger webhooks on database events.</description>
     </item>
     
     <item>
@@ -77,8 +75,8 @@ ICT 信息通信技术 (Information and Communication Technology，简称 ICT)�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/05/</guid>
-      <description>2020 年 7 月 5 日（星期日） 今日待办     编程 Markdown 在表格单元格里换行 &amp;lt;br&amp;gt;
-图片在右侧 &amp;lt;img align=&amp;#34;right&amp;#34; src=&amp;#34;https://demo.png&amp;#34;/&amp;gt; 行首空格 需要借助 HTML 转义字符在行首添加空格来实现，
+      <description>2020 年 7 月 5 日（星期日） #  今日待办 #      编程 #  Markdown #  在表格单元格里换行 #  &amp;lt;br&amp;gt;
+图片在右侧 #  &amp;lt;img align=&amp;#34;right&amp;#34; src=&amp;#34;https://demo.png&amp;#34;/&amp;gt; 行首空格 #  需要借助 HTML 转义字符在行首添加空格来实现，
  &amp;amp;ensp; 代表半角空格， &amp;amp;emsp; 代表全角空格。  参考：
  关于 Markdown 的一些奇技淫巧  </description>
     </item>
@@ -89,7 +87,7 @@ ICT 信息通信技术 (Information and Communication Technology，简称 ICT)�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/02/</guid>
-      <description>2020 年 7 月 2 日（星期四） 今日待办     编程 软件设计原则  Don’t Repeat Yourself (DRY) Keep It Simple, Stupid (KISS) Program to an interface, not an implementation Command-Query Separation (CQS) – 命令 - 查询分离原则 You Ain’t Gonna Need It (YAGNI) Law of Demeter – 迪米特法则 面向对象的 S.O.L.I.D 原则 Common Closure Principle（CCP）– 共同封闭原则 Common Reuse Principle (CRP) – 共同重用原则 Hollywood Principle – 好莱坞原则 High Cohesion &amp;amp; Low/Loose coupling &amp;amp; – 高内聚， 低耦合 Convention over Configuration（CoC）– 惯例优于配置原则 Separation of Concerns (SoC) – 关注点分离 Design by Contract (DbC) – 契约式设计  参考：</description>
+      <description>2020 年 7 月 2 日（星期四） #  今日待办 #      编程 #  软件设计原则 #   Don’t Repeat Yourself (DRY) Keep It Simple, Stupid (KISS) Program to an interface, not an implementation Command-Query Separation (CQS) – 命令 - 查询分离原则 You Ain’t Gonna Need It (YAGNI) Law of Demeter – 迪米特法则 面向对象的 S.O.L.I.D 原则 Common Closure Principle（CCP）– 共同封闭原则 Common Reuse Principle (CRP) – 共同重用原则 Hollywood Principle – 好莱坞原则 High Cohesion &amp;amp; Low/Loose coupling &amp;amp; – 高内聚， 低耦合 Convention over Configuration（CoC）– 惯例优于配置原则 Separation of Concerns (SoC) – 关注点分离 Design by Contract (DbC) – 契约式设计  参考：</description>
     </item>
     
     <item>
@@ -98,9 +96,9 @@ ICT 信息通信技术 (Information and Communication Technology，简称 ICT)�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/01/</guid>
-      <description>2020 年 7 月 1 日（星期三） 今日待办     编程 SIP BYE vs CANCEL For short, BYE is used when the callee already pick up the phone and talk for a while, otherwise, CANCEL takes place.
+      <description>2020 年 7 月 1 日（星期三） #  今日待办 #      编程 #  SIP #  BYE vs CANCEL #  For short, BYE is used when the callee already pick up the phone and talk for a while, otherwise, CANCEL takes place.
 参考：
- Introduction to SIP BYE, CANCEL and hop-by-hop messages [video]understanding difference between sip bye &amp;amp; cancel request   作用域  局部变量  在 C 语言中局部变量，只有执行了才会分配存储空间，只要离开作用域就会自动释放，C 语言的局部变量存储在栈区 Go 语言局部变量的生命周期和 C 语言一样   全局变量  在 C 语言中全局变量，只要程序一启动就会分配存储空间，只有程序关闭才会释放存储空间，C 语言的全局变量存储在静态区 (数据区) Go 语言全局变量的生命周期和 C 语言一样     如何学习 Web 安全  一切的安全问题都体现在 “输入输出” 上，一切的安全问题都存在于 “数据流” 的整个过程中。</description>
+ Introduction to SIP BYE, CANCEL and hop-by-hop messages [video]understanding difference between sip bye &amp;amp; cancel request   作用域 #   局部变量  在 C 语言中局部变量，只有执行了才会分配存储空间，只要离开作用域就会自动释放，C 语言的局部变量存储在栈区 Go 语言局部变量的生命周期和 C 语言一样   全局变量  在 C 语言中全局变量，只要程序一启动就会分配存储空间，只有程序关闭才会释放存储空间，C 语言的全局变量存储在静态区 (数据区) Go 语言全局变量的生命周期和 C 语言一样     如何学习 Web 安全 #   一切的安全问题都体现在 “输入输出” 上，一切的安全问题都存在于 “数据流” 的整个过程中。</description>
     </item>
     
   </channel>

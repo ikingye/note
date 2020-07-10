@@ -1,25 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir=>
 
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 4 月 10 日（星期五） 今日待办  Istio Handbook 编委会双周会 21:00-22:00   编程 mosquitto (mqtt) mosquitto_pub mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic mosquitto_pub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo; -m &lsquo;{&ldquo;applicationID&rdquo;:&ldquo;1&rdquo;,&ldquo;applicationName&rdquo;:&ldquo;0000000000000001&rdquo;,&ldquo;deviceName&rdquo;:&ldquo;d143-K5-out&rdquo;,&ldquo;devEUI&rdquo;:&ldquo;ffffff100000d143&rdquo;,&ldquo;txInfo&rdquo;:{&ldquo;frequency&rdquo;:481700000,&ldquo;dr&rdquo;:2},&ldquo;adr&rdquo;:false,&ldquo;fCnt&rdquo;:68570,&ldquo;fPort&rdquo;:44,&ldquo;data&rdquo;:&ldquo;BQEA&rdquo;}&rsquo;
-mosquitto_sub mosquitto_sub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo;"><meta property="og:title" content="2020-04-10" />
-<meta property="og:description" content="2020 年 4 月 10 日（星期五） 今日待办  Istio Handbook 编委会双周会 21:00-22:00   编程 mosquitto (mqtt) mosquitto_pub mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic mosquitto_pub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo; -m &lsquo;{&ldquo;applicationID&rdquo;:&ldquo;1&rdquo;,&ldquo;applicationName&rdquo;:&ldquo;0000000000000001&rdquo;,&ldquo;deviceName&rdquo;:&ldquo;d143-K5-out&rdquo;,&ldquo;devEUI&rdquo;:&ldquo;ffffff100000d143&rdquo;,&ldquo;txInfo&rdquo;:{&ldquo;frequency&rdquo;:481700000,&ldquo;dr&rdquo;:2},&ldquo;adr&rdquo;:false,&ldquo;fCnt&rdquo;:68570,&ldquo;fPort&rdquo;:44,&ldquo;data&rdquo;:&ldquo;BQEA&rdquo;}&rsquo;
-mosquitto_sub mosquitto_sub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo;" />
+<meta name="description" content="2020 年 4 月 10 日（星期五） #  今日待办 #   Istio Handbook 编委会双周会 21:00-22:00   编程 #  mosquitto (mqtt) #  mosquitto_pub #  mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic mosquitto_pub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo; -m &lsquo;{&ldquo;applicationID&rdquo;:&ldquo;1&rdquo;,&ldquo;applicationName&rdquo;:&ldquo;0000000000000001&rdquo;,&ldquo;deviceName&rdquo;:&ldquo;d143-K5-out&rdquo;,&ldquo;devEUI&rdquo;:&ldquo;ffffff100000d143&rdquo;,&ldquo;txInfo&rdquo;:{&ldquo;frequency&rdquo;:481700000,&ldquo;dr&rdquo;:2},&ldquo;adr&rdquo;:false,&ldquo;fCnt&rdquo;:68570,&ldquo;fPort&rdquo;:44,&ldquo;data&rdquo;:&ldquo;BQEA&rdquo;}&rsquo;">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-04-10" />
+<meta property="og:description" content="2020 年 4 月 10 日（星期五） #  今日待办 #   Istio Handbook 编委会双周会 21:00-22:00   编程 #  mosquitto (mqtt) #  mosquitto_pub #  mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic mosquitto_pub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo; -m &lsquo;{&ldquo;applicationID&rdquo;:&ldquo;1&rdquo;,&ldquo;applicationName&rdquo;:&ldquo;0000000000000001&rdquo;,&ldquo;deviceName&rdquo;:&ldquo;d143-K5-out&rdquo;,&ldquo;devEUI&rdquo;:&ldquo;ffffff100000d143&rdquo;,&ldquo;txInfo&rdquo;:{&ldquo;frequency&rdquo;:481700000,&ldquo;dr&rdquo;:2},&ldquo;adr&rdquo;:false,&ldquo;fCnt&rdquo;:68570,&ldquo;fPort&rdquo;:44,&ldquo;data&rdquo;:&ldquo;BQEA&rdquo;}&rsquo;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/10/" />
 <meta property="article:modified_time" content="2020-04-28T14:51:31+08:00" />
 <title>2020-04-10 | 叶王笔记</title>
+<link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-
-
-<link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
-
-
-<script defer src="/note/en.search.min.5e0ec0384340f41f7fdcfadcc3a8d75487fed55d71ec167885abbd92f8bd4dfa.js" integrity="sha256-Xg7AOENA9B9/3Prcw6jXVIf&#43;1V1x7BZ4hau9kvi9Tfo="></script>
-
+<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -28,8 +23,9 @@ https://github.com/alex-shpak/hugo-book
   
 </head>
 
-<body>
-  <input type="checkbox" class="hidden" id="menu-control" />
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
       
@@ -42,7 +38,7 @@ https://github.com/alex-shpak/hugo-book
 
 <div class="book-search">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner spinner hidden"></div>
+  <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
 
@@ -69,1022 +65,836 @@ https://github.com/alex-shpak/hugo-book
 
   
 
-  
-  
-
-
-
-
-
- 
-  
-    
-
-
 
 
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
   
-  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
-
-
-    
-
-
-
-
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/" class="">第四部分 学习</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/" class="">第五部分 生活</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+    <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
   
-
-</li>
-      
-    
-      
-        <li>
-
   
-  <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
+          
+  
+    <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+          
+  
+  
+  
 
   
-  <a href="/note/docs/live/diary/2020/04/30/" class="">2020-04-30</a>
-  
 
-</li>
+        </li>
       
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/04/29/" class="">2020-04-29</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/28/" class="">2020-04-28</a>
+    <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/27/" class="">2020-04-27</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/26/" class="">2020-04-26</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/25/" class="">2020-04-25</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/24/" class="">2020-04-24</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/23/" class="">2020-04-23</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/22/" class="">2020-04-22</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/21/" class="">2020-04-21</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/20/" class="">2020-04-20</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/19/" class="">2020-04-19</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/17/" class="">2020-04-17</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/14/" class="">2020-04-14</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/11/" class="">2020-04-11</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/10/" class="active">2020-04-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/09/" class="">2020-04-09</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
-  
-
-</li>
+        </li>
       
     
   </ul>
   
 
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+    <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
   
 
+          
+  
+  
+  
 
+  
+  <ul>
     
-
-
-
-
-
-
-  </li>
-
-
       
-    
-  </ul>
+        <li>
+          
+  
+    <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
   
 
-
-
-  </li>
-
-
-      
-    
-  </ul>
+          
+  
+  
   
 
+  
 
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+    <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
   
 
+          
+  
+  
+  
 
-    
+  
 
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+    <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
+          
   
-  <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
   
 
+  
 
-    
-
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
 
+          
+  
+  
+  
 
-  </li>
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
 
+          
+  
+  
+  
 
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/" class="">第四部分 学习</a>
+  
 
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
+
+          
+  
+  
+  
 
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/30/" class="">2020-04-30</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/29/" class="">2020-04-29</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/28/" class="">2020-04-28</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/27/" class="">2020-04-27</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/26/" class="">2020-04-26</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/25/" class="">2020-04-25</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/24/" class="">2020-04-24</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/23/" class="">2020-04-23</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/22/" class="">2020-04-22</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/21/" class="">2020-04-21</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/20/" class="">2020-04-20</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/19/" class="">2020-04-19</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/17/" class="">2020-04-17</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/14/" class="">2020-04-14</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/11/" class="">2020-04-11</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/10/" class="active">2020-04-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/09/" class="">2020-04-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
 
 
 
@@ -1128,15 +938,16 @@ https://github.com/alex-shpak/hugo-book
   <strong>2020-04-10</strong>
 
   <label for="toc-control">
+    
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
   </label>
 </div>
 
 
   
-    <input type="checkbox" class="hidden" id="toc-control" />
-    <aside class="hidden clearfix">
-      
+  <aside class="hidden clearfix">
+    
   <nav id="TableOfContents">
   <ul>
     <li><a href="#2020-年-4-月-10-日星期五">2020 年 4 月 10 日（星期五）</a>
@@ -1173,44 +984,89 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-    </aside>
+  </aside>
   
  
       </header>
 
       
       
-  <article class="markdown"><h1 id="2020-年-4-月-10-日星期五">2020 年 4 月 10 日（星期五）</h1>
-<h2 id="今日待办">今日待办</h2>
+  <article class="markdown"><h1 id="2020-年-4-月-10-日星期五">
+  2020 年 4 月 10 日（星期五）
+  <a class="anchor" href="#2020-%e5%b9%b4-4-%e6%9c%88-10-%e6%97%a5%e6%98%9f%e6%9c%9f%e4%ba%94">#</a>
+</h1>
+<h2 id="今日待办">
+  今日待办
+  <a class="anchor" href="#%e4%bb%8a%e6%97%a5%e5%be%85%e5%8a%9e">#</a>
+</h2>
 <ul>
 <li><input disabled="" type="checkbox"> <a href="https://github.com/servicemesher/istio-handbook">Istio Handbook</a> 编委会双周会 21:00-22:00</li>
 </ul>
 <hr>
-<h2 id="编程">编程</h2>
-<h3 id="mosquitto-mqtt">mosquitto (mqtt)</h3>
-<h4 id="mosquitto_pub">mosquitto_pub</h4>
+<h2 id="编程">
+  编程
+  <a class="anchor" href="#%e7%bc%96%e7%a8%8b">#</a>
+</h2>
+<h3 id="mosquitto-mqtt">
+  mosquitto (mqtt)
+  <a class="anchor" href="#mosquitto-mqtt">#</a>
+</h3>
+<h4 id="mosquitto_pub">
+  mosquitto_pub
+  <a class="anchor" href="#mosquitto_pub">#</a>
+</h4>
 <pre><code>mosquitto_pub [-d] [-h hostname] [-i client_id] [-I client id prefix] [-p port number] [-q message QoS] [--quiet] [-r] { -f file | -l | -m message | -n | -s} [-u username [-P password] ] [ --will-topic topic [--will-payload payload] [--will-qos qos] [--will-retain] ] -t message-topic
 </code></pre><p>mosquitto_pub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo; -m &lsquo;{&ldquo;applicationID&rdquo;:&ldquo;1&rdquo;,&ldquo;applicationName&rdquo;:&ldquo;0000000000000001&rdquo;,&ldquo;deviceName&rdquo;:&ldquo;d143-K5-out&rdquo;,&ldquo;devEUI&rdquo;:&ldquo;ffffff100000d143&rdquo;,&ldquo;txInfo&rdquo;:{&ldquo;frequency&rdquo;:481700000,&ldquo;dr&rdquo;:2},&ldquo;adr&rdquo;:false,&ldquo;fCnt&rdquo;:68570,&ldquo;fPort&rdquo;:44,&ldquo;data&rdquo;:&ldquo;BQEA&rdquo;}&rsquo;</p>
-<h4 id="mosquitto_sub">mosquitto_sub</h4>
+<h4 id="mosquitto_sub">
+  mosquitto_sub
+  <a class="anchor" href="#mosquitto_sub">#</a>
+</h4>
 <p>mosquitto_sub -t &lsquo;application/1/device/ffffff100000d143/rx&rsquo;</p>
 <hr>
-<h3 id="github">Github</h3>
-<h4 id="github-star-历史">Github star 历史</h4>
-<h5 id="timqianstar-historyhttpsgithubcomtimqianstar-history-github-starshttpsimgshieldsiogithubstarstimqianstar-historysvg"><a href="https://github.com/timqian/star-history">timqian/star-history</a> <img src="https://img.shields.io/github/stars/timqian/star-history.svg" alt="Github stars" /></h5>
+<h3 id="github">
+  Github
+  <a class="anchor" href="#github">#</a>
+</h3>
+<h4 id="github-star-历史">
+  Github star 历史
+  <a class="anchor" href="#github-star-%e5%8e%86%e5%8f%b2">#</a>
+</h4>
+<a href="https://github.com/timqian/star-history">timqian/star-history</a> <h5 id="timqianstar-historyhttpsgithubcomtimqianstar-history-github-starshttpsimgshieldsiogithubstarstimqianstar-historysvg">
+  <img src="https://img.shields.io/github/stars/timqian/star-history.svg" alt="Github stars" />
+  <a class="anchor" href="#timqianstar-historyhttpsgithubcomtimqianstar-history-github-starshttpsimgshieldsiogithubstarstimqianstar-historysvg">#</a>
+</h5>
 <p><a href="https://star-history.t9t.io/">https://star-history.t9t.io/</a></p>
-<h5 id="vesoft-incgithub-statisticshttpsgithubcomvesoft-incgithub-statistics-github-starshttpsimgshieldsiogithubstarsvesoft-incgithub-statisticssvg"><a href="https://github.com/vesoft-inc/github-statistics">vesoft-inc/github-statistics</a> <img src="https://img.shields.io/github/stars/vesoft-inc/github-statistics.svg" alt="Github stars" /></h5>
+<a href="https://github.com/vesoft-inc/github-statistics">vesoft-inc/github-statistics</a> <h5 id="vesoft-incgithub-statisticshttpsgithubcomvesoft-incgithub-statistics-github-starshttpsimgshieldsiogithubstarsvesoft-incgithub-statisticssvg">
+  <img src="https://img.shields.io/github/stars/vesoft-inc/github-statistics.svg" alt="Github stars" />
+  <a class="anchor" href="#vesoft-incgithub-statisticshttpsgithubcomvesoft-incgithub-statistics-github-starshttpsimgshieldsiogithubstarsvesoft-incgithub-statisticssvg">#</a>
+</h5>
 <p>A react static app for displaying github repo statistiscs like Star History, Fork History and more.</p>
 <p><a href="https://vesoft-inc.github.io/github-statistics/">https://vesoft-inc.github.io/github-statistics/</a></p>
-<h5 id="antonmedvsparkhttpsgithubcomantonmedvspark-github-starshttpsimgshieldsiogithubstarsantonmedvsparksvg"><a href="https://github.com/antonmedv/spark">antonmedv/spark</a> <img src="https://img.shields.io/github/stars/antonmedv/spark.svg" alt="Github stars" /></h5>
+<a href="https://github.com/antonmedv/spark">antonmedv/spark</a> <h5 id="antonmedvsparkhttpsgithubcomantonmedvspark-github-starshttpsimgshieldsiogithubstarsantonmedvsparksvg">
+  <img src="https://img.shields.io/github/stars/antonmedv/spark.svg" alt="Github stars" />
+  <a class="anchor" href="#antonmedvsparkhttpsgithubcomantonmedvspark-github-starshttpsimgshieldsiogithubstarsantonmedvsparksvg">#</a>
+</h5>
 <p><a href="https://stars.medv.io/servicemesher/istio-handbook"><img src="https://stars.medv.io/servicemesher/istio-handbook.svg" alt="GitHub Star Sparkline" /></a></p>
-<h5 id="seladbstartrack-jshttpsgithubcomseladbstartrack-js-github-starshttpsimgshieldsiogithubstarsseladbstartrack-jssvg"><a href="https://github.com/seladb/startrack-js">seladb/startrack-js</a> <img src="https://img.shields.io/github/stars/seladb/startrack-js.svg" alt="Github stars" /></h5>
+<a href="https://github.com/seladb/startrack-js">seladb/startrack-js</a> <h5 id="seladbstartrack-jshttpsgithubcomseladbstartrack-js-github-starshttpsimgshieldsiogithubstarsseladbstartrack-jssvg">
+  <img src="https://img.shields.io/github/stars/seladb/startrack-js.svg" alt="Github stars" />
+  <a class="anchor" href="#seladbstartrack-jshttpsgithubcomseladbstartrack-js-github-starshttpsimgshieldsiogithubstarsseladbstartrack-jssvg">#</a>
+</h5>
 <p>GitHub star history and stats - based on JavaScript only!</p>
 <p><a href="https://seladb.github.io/StarTrack-js/">https://seladb.github.io/StarTrack-js/</a></p>
-<h5 id="elliotreborngithub-starshttpsgithubcomelliotreborngithub-stars-github-starshttpsimgshieldsiogithubstarselliotreborngithub-starssvg"><a href="https://github.com/elliotreborn/github-stars">elliotreborn/github-stars</a> <img src="https://img.shields.io/github/stars/elliotreborn/github-stars.svg" alt="Github stars" /></h5>
+<a href="https://github.com/elliotreborn/github-stars">elliotreborn/github-stars</a> <h5 id="elliotreborngithub-starshttpsgithubcomelliotreborngithub-stars-github-starshttpsimgshieldsiogithubstarselliotreborngithub-starssvg">
+  <img src="https://img.shields.io/github/stars/elliotreborn/github-stars.svg" alt="Github stars" />
+  <a class="anchor" href="#elliotreborngithub-starshttpsgithubcomelliotreborngithub-stars-github-starshttpsimgshieldsiogithubstarselliotreborngithub-starssvg">#</a>
+</h5>
 <p>技术栈的 star 趋势数据</p>
 <hr>
-<h4 id="github-pr-统计">Github PR 统计</h4>
-<h4 id="开源相关工作岗位">开源相关工作岗位</h4>
+<h4 id="github-pr-统计">
+  Github PR 统计
+  <a class="anchor" href="#github-pr-%e7%bb%9f%e8%ae%a1">#</a>
+</h4>
+<h4 id="开源相关工作岗位">
+  开源相关工作岗位
+  <a class="anchor" href="#%e5%bc%80%e6%ba%90%e7%9b%b8%e5%85%b3%e5%b7%a5%e4%bd%9c%e5%b2%97%e4%bd%8d">#</a>
+</h4>
 <p><a href="https://github.com/t9tio/open-source-jobs">t9tio/open-source-jobs</a> <img src="https://img.shields.io/github/stars/t9tio/open-source-jobs.svg" alt="Github stars" /></p>
 <p>A list of Open Source projects offering jobs. <a href="https://oo.t9t.io/organizations">https://oo.t9t.io/organizations</a></p>
 </article>
@@ -1219,13 +1075,11 @@ https://github.com/alex-shpak/hugo-book
 
       <footer class="book-footer">
         
-  <div class="flex justify-between">
+  <div class="flex flex-wrap justify-between">
 
 
 
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/3acfa2fefb3cb6b741ea8ba7e94780f7af27a397" title='Last modified by yewang | 2020-04-28' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/3acfa2fefb3cb6b741ea8ba7e94780f7af27a397" title='Last modified by yewang | 2020-04-28' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-04-28</span>
     </a>

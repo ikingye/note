@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir=>
 
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 4 月 9 日（星期四） 今日待办  编程  熟悉基本算法  排序算法（时间 / 空间复杂度） 大数据查找 / 排序   CORS     编程 基本算法 排序算法  插入排序类  直接插入排序 希尔排序 二分法插入排序   选择排序类  直接选择排序 堆排序   交换排序类  冒泡排序 快速排序   归并排序 基数排序  时间 / 空间复杂度 排序大的分类可分为内排序和外排序，不需要访问外存就能进行排序的叫做内排序。
-   排序方法 时间复杂度（平均） 时间复杂度（最坏) 时间复杂度（最好) 空间复杂度 稳定性 复杂性     希尔排序 O(nlog2n) O(n2) O(n) O(1) 不稳定 较复杂   堆排序 O(nlog2n) O(nlog2n) O(nlog2n) O(1) 不稳定 较复杂   快速排序 O(nlog2n) O(n2) O(nlog2n) O(nlog2n) 不稳定 较复杂   归并排序 O(nlog2n) O(nlog2n) O(nlog2n) O(n) 稳定 较复杂   直接插入排序 O(n2) O(n2) O(n) O(1) 稳定 简单   直接选择排序 O(n2) O(n2) O(n2) O(1) 不稳定 简单   冒泡排序 O(n2) O(n2) O(n) O(1) 稳定 简单   基数排序 O(d(n&#43;r)) O(d(n&#43;r)) O(d(n&#43;r)) O(n&#43;r) 稳定 较复杂    稳定排序与不稳定排序 稳定排序：假设在待排序的文件中，存在两个或两个以上的记录具有相同的关键字，在用某种排序法排序后，若这些相同关键字的元素的相对次序仍然不变，则这种排序方法是稳定的。"><meta property="og:title" content="2020-04-09" />
-<meta property="og:description" content="2020 年 4 月 9 日（星期四） 今日待办  编程  熟悉基本算法  排序算法（时间 / 空间复杂度） 大数据查找 / 排序   CORS     编程 基本算法 排序算法  插入排序类  直接插入排序 希尔排序 二分法插入排序   选择排序类  直接选择排序 堆排序   交换排序类  冒泡排序 快速排序   归并排序 基数排序  时间 / 空间复杂度 排序大的分类可分为内排序和外排序，不需要访问外存就能进行排序的叫做内排序。
-   排序方法 时间复杂度（平均） 时间复杂度（最坏) 时间复杂度（最好) 空间复杂度 稳定性 复杂性     希尔排序 O(nlog2n) O(n2) O(n) O(1) 不稳定 较复杂   堆排序 O(nlog2n) O(nlog2n) O(nlog2n) O(1) 不稳定 较复杂   快速排序 O(nlog2n) O(n2) O(nlog2n) O(nlog2n) 不稳定 较复杂   归并排序 O(nlog2n) O(nlog2n) O(nlog2n) O(n) 稳定 较复杂   直接插入排序 O(n2) O(n2) O(n) O(1) 稳定 简单   直接选择排序 O(n2) O(n2) O(n2) O(1) 不稳定 简单   冒泡排序 O(n2) O(n2) O(n) O(1) 稳定 简单   基数排序 O(d(n&#43;r)) O(d(n&#43;r)) O(d(n&#43;r)) O(n&#43;r) 稳定 较复杂    稳定排序与不稳定排序 稳定排序：假设在待排序的文件中，存在两个或两个以上的记录具有相同的关键字，在用某种排序法排序后，若这些相同关键字的元素的相对次序仍然不变，则这种排序方法是稳定的。" />
+<meta name="description" content="2020 年 4 月 9 日（星期四） #  今日待办 #   编程  熟悉基本算法  排序算法（时间 / 空间复杂度） 大数据查找 / 排序   CORS     编程 #  基本算法 #  排序算法 #   插入排序类  直接插入排序 希尔排序 二分法插入排序   选择排序类  直接选择排序 堆排序   交换排序类  冒泡排序 快速排序   归并排序 基数排序  时间 / 空间复杂度 #  排序大的分类可分为内排序和外排序，不需要访问外存就能进行排序的叫做内排序。
+   排序方法 时间复杂度（平均） 时间复杂度（最坏) 时间复杂度（最好) 空间复杂度 稳定性 复杂性     希尔排序 O(nlog2n) O(n2) O(n) O(1) 不稳定 较复杂   堆排序 O(nlog2n) O(nlog2n) O(nlog2n) O(1) 不稳定 较复杂   快速排序 O(nlog2n) O(n2) O(nlog2n) O(nlog2n) 不稳定 较复杂   归并排序 O(nlog2n) O(nlog2n) O(nlog2n) O(n) 稳定 较复杂   直接插入排序 O(n2) O(n2) O(n) O(1) 稳定 简单   直接选择排序 O(n2) O(n2) O(n2) O(1) 不稳定 简单   冒泡排序 O(n2) O(n2) O(n) O(1) 稳定 简单   基数排序 O(d(n&#43;r)) O(d(n&#43;r)) O(d(n&#43;r)) O(n&#43;r) 稳定 较复杂    稳定排序与不稳定排序 #  稳定排序：假设在待排序的文件中，存在两个或两个以上的记录具有相同的关键字，在用某种排序法排序后，若这些相同关键字的元素的相对次序仍然不变，则这种排序方法是稳定的。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-04-09" />
+<meta property="og:description" content="2020 年 4 月 9 日（星期四） #  今日待办 #   编程  熟悉基本算法  排序算法（时间 / 空间复杂度） 大数据查找 / 排序   CORS     编程 #  基本算法 #  排序算法 #   插入排序类  直接插入排序 希尔排序 二分法插入排序   选择排序类  直接选择排序 堆排序   交换排序类  冒泡排序 快速排序   归并排序 基数排序  时间 / 空间复杂度 #  排序大的分类可分为内排序和外排序，不需要访问外存就能进行排序的叫做内排序。
+   排序方法 时间复杂度（平均） 时间复杂度（最坏) 时间复杂度（最好) 空间复杂度 稳定性 复杂性     希尔排序 O(nlog2n) O(n2) O(n) O(1) 不稳定 较复杂   堆排序 O(nlog2n) O(nlog2n) O(nlog2n) O(1) 不稳定 较复杂   快速排序 O(nlog2n) O(n2) O(nlog2n) O(nlog2n) 不稳定 较复杂   归并排序 O(nlog2n) O(nlog2n) O(nlog2n) O(n) 稳定 较复杂   直接插入排序 O(n2) O(n2) O(n) O(1) 稳定 简单   直接选择排序 O(n2) O(n2) O(n2) O(1) 不稳定 简单   冒泡排序 O(n2) O(n2) O(n) O(1) 稳定 简单   基数排序 O(d(n&#43;r)) O(d(n&#43;r)) O(d(n&#43;r)) O(n&#43;r) 稳定 较复杂    稳定排序与不稳定排序 #  稳定排序：假设在待排序的文件中，存在两个或两个以上的记录具有相同的关键字，在用某种排序法排序后，若这些相同关键字的元素的相对次序仍然不变，则这种排序方法是稳定的。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/04/09/" />
 <meta property="article:modified_time" content="2020-07-06T17:42:39+08:00" />
 <title>2020-04-09 | 叶王笔记</title>
+<link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-
-
-<link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
-
-
-<script defer src="/note/en.search.min.5e0ec0384340f41f7fdcfadcc3a8d75487fed55d71ec167885abbd92f8bd4dfa.js" integrity="sha256-Xg7AOENA9B9/3Prcw6jXVIf&#43;1V1x7BZ4hau9kvi9Tfo="></script>
-
+<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -28,8 +25,9 @@ https://github.com/alex-shpak/hugo-book
   
 </head>
 
-<body>
-  <input type="checkbox" class="hidden" id="menu-control" />
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
     <aside class="book-menu">
       
@@ -42,7 +40,7 @@ https://github.com/alex-shpak/hugo-book
 
 <div class="book-search">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner spinner hidden"></div>
+  <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
 
@@ -69,1022 +67,836 @@ https://github.com/alex-shpak/hugo-book
 
   
 
-  
-  
-
-
-
-
-
- 
-  
-    
-
-
 
 
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
   
-  <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
-
-
-    
-
-
-
-
   
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/" class="">第三部分 社会科学</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/" class="">第四部分 学习</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/" class="">第五部分 生活</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+    <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
   
-
-</li>
-      
-    
-      
-        <li>
-
   
-  <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
-  
-
-
-    
-
-
-
 
   
   <ul>
     
       
         <li>
+          
+  
+    <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+          
+  
+  
+  
 
   
-  <a href="/note/docs/live/diary/2020/04/30/" class="">2020-04-30</a>
-  
 
-</li>
+        </li>
       
     
       
         <li>
-
+          
   
-  <a href="/note/docs/live/diary/2020/04/29/" class="">2020-04-29</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/28/" class="">2020-04-28</a>
+    <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
   
 
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/27/" class="">2020-04-27</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/26/" class="">2020-04-26</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/25/" class="">2020-04-25</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/24/" class="">2020-04-24</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/23/" class="">2020-04-23</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/22/" class="">2020-04-22</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/21/" class="">2020-04-21</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/20/" class="">2020-04-20</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/19/" class="">2020-04-19</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/17/" class="">2020-04-17</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/14/" class="">2020-04-14</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/11/" class="">2020-04-11</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/10/" class="">2020-04-10</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/09/" class="active">2020-04-09</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
-  
-
-</li>
+        </li>
       
     
   </ul>
   
 
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+    <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
   
 
+          
+  
+  
+  
 
+  
+  <ul>
     
-
-
-
-
-
-
-  </li>
-
-
       
-    
-  </ul>
+        <li>
+          
+  
+    <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
   
 
-
-
-  </li>
-
-
-      
-    
-  </ul>
+          
+  
+  
   
 
+  
 
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+    <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
   
 
+          
+  
+  
+  
 
-    
+  
 
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
       
-        
-
-  <li>
-    
-
+        <li>
+          
   
-  <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+    <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
   
 
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
+          
   
-  <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
   
 
+  
 
-    
-
-
-
-
-
-
-  </li>
-
-
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
 
+          
+  
+  
+  
 
-  </li>
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
 
+          
+  
+  
+  
 
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
       
     
   </ul>
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/" class="">第四部分 学习</a>
+  
 
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
+
+          
+  
+  
+  
 
   
 
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/30/" class="">2020-04-30</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/29/" class="">2020-04-29</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/28/" class="">2020-04-28</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/27/" class="">2020-04-27</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/26/" class="">2020-04-26</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/25/" class="">2020-04-25</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/24/" class="">2020-04-24</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/23/" class="">2020-04-23</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/22/" class="">2020-04-22</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/21/" class="">2020-04-21</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/20/" class="">2020-04-20</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/19/" class="">2020-04-19</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/17/" class="">2020-04-17</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/15/" class="">2020-04-15</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/14/" class="">2020-04-14</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/13/" class="">2020-04-13</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/12/" class="">2020-04-12</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/11/" class="">2020-04-11</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/10/" class="">2020-04-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/09/" class="active">2020-04-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/08/" class="">2020-04-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/07/" class="">2020-04-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/06/" class="">2020-04-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/03/" class="">2020-04-03</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/02/" class="">2020-04-02</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
 
 
 
@@ -1128,15 +940,16 @@ https://github.com/alex-shpak/hugo-book
   <strong>2020-04-09</strong>
 
   <label for="toc-control">
+    
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
   </label>
 </div>
 
 
   
-    <input type="checkbox" class="hidden" id="toc-control" />
-    <aside class="hidden clearfix">
-      
+  <aside class="hidden clearfix">
+    
   <nav id="TableOfContents">
   <ul>
     <li><a href="#2020-年-4-月-9-日星期四">2020 年 4 月 9 日（星期四）</a>
@@ -1221,15 +1034,21 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
-    </aside>
+  </aside>
   
  
       </header>
 
       
       
-  <article class="markdown"><h1 id="2020-年-4-月-9-日星期四">2020 年 4 月 9 日（星期四）</h1>
-<h2 id="今日待办">今日待办</h2>
+  <article class="markdown"><h1 id="2020-年-4-月-9-日星期四">
+  2020 年 4 月 9 日（星期四）
+  <a class="anchor" href="#2020-%e5%b9%b4-4-%e6%9c%88-9-%e6%97%a5%e6%98%9f%e6%9c%9f%e5%9b%9b">#</a>
+</h1>
+<h2 id="今日待办">
+  今日待办
+  <a class="anchor" href="#%e4%bb%8a%e6%97%a5%e5%be%85%e5%8a%9e">#</a>
+</h2>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 编程
 <ul>
@@ -1244,9 +1063,18 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <hr>
-<h2 id="编程">编程</h2>
-<h3 id="基本算法">基本算法</h3>
-<h4 id="排序算法">排序算法</h4>
+<h2 id="编程">
+  编程
+  <a class="anchor" href="#%e7%bc%96%e7%a8%8b">#</a>
+</h2>
+<h3 id="基本算法">
+  基本算法
+  <a class="anchor" href="#%e5%9f%ba%e6%9c%ac%e7%ae%97%e6%b3%95">#</a>
+</h3>
+<h4 id="排序算法">
+  排序算法
+  <a class="anchor" href="#%e6%8e%92%e5%ba%8f%e7%ae%97%e6%b3%95">#</a>
+</h4>
 <ul>
 <li>插入排序类
 <ul>
@@ -1270,7 +1098,10 @@ https://github.com/alex-shpak/hugo-book
 <li>归并排序</li>
 <li>基数排序</li>
 </ul>
-<h5 id="时间--空间复杂度">时间 / 空间复杂度</h5>
+<h5 id="时间--空间复杂度">
+  时间 / 空间复杂度
+  <a class="anchor" href="#%e6%97%b6%e9%97%b4--%e7%a9%ba%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6">#</a>
+</h5>
 <p>排序大的分类可分为内排序和外排序，不需要访问外存就能进行排序的叫做内排序。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200409004943.png" alt="" /></p>
 <table>
@@ -1360,7 +1191,10 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 </tbody>
 </table>
-<h5 id="稳定排序与不稳定排序">稳定排序与不稳定排序</h5>
+<h5 id="稳定排序与不稳定排序">
+  稳定排序与不稳定排序
+  <a class="anchor" href="#%e7%a8%b3%e5%ae%9a%e6%8e%92%e5%ba%8f%e4%b8%8e%e4%b8%8d%e7%a8%b3%e5%ae%9a%e6%8e%92%e5%ba%8f">#</a>
+</h5>
 <p>稳定排序：假设在待排序的文件中，存在两个或两个以上的记录具有相同的关键字，在用某种排序法排序后，若这些相同关键字的元素的相对次序仍然不变，则这种排序方法是稳定的。</p>
 <p>若 a[i] = a[j], a[i] 在 a[j] 之前，经过排序后 a[i] 依然在 a[j] 之前。</p>
 <ul>
@@ -1387,13 +1221,28 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://www.jianshu.com/p/0e06f7175b51">常见排序算法以及对应的时间复杂度和空间复杂度</a></li>
 </ul>
-<h5 id="快速排序">快速排序</h5>
+<h5 id="快速排序">
+  快速排序
+  <a class="anchor" href="#%e5%bf%ab%e9%80%9f%e6%8e%92%e5%ba%8f">#</a>
+</h5>
 <hr>
-<h4 id="字符串倒转">字符串倒转</h4>
-<h4 id="大数据查找--排序">大数据查找 / 排序</h4>
-<h5 id="多大的内存能够表示-10-亿的数">多大的内存能够表示 10 亿的数</h5>
+<h4 id="字符串倒转">
+  字符串倒转
+  <a class="anchor" href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%80%92%e8%bd%ac">#</a>
+</h4>
+<h4 id="大数据查找--排序">
+  大数据查找 / 排序
+  <a class="anchor" href="#%e5%a4%a7%e6%95%b0%e6%8d%ae%e6%9f%a5%e6%89%be--%e6%8e%92%e5%ba%8f">#</a>
+</h4>
+<h5 id="多大的内存能够表示-10-亿的数">
+  多大的内存能够表示 10 亿的数
+  <a class="anchor" href="#%e5%a4%9a%e5%a4%a7%e7%9a%84%e5%86%85%e5%ad%98%e8%83%bd%e5%a4%9f%e8%a1%a8%e7%a4%ba-10-%e4%ba%bf%e7%9a%84%e6%95%b0">#</a>
+</h5>
 <p>一个 int 型占 4 字节，10 亿就是 40 亿字节，也就是 4GB</p>
-<h5 id="位图法bitmap">位图法（Bitmap）</h5>
+<h5 id="位图法bitmap">
+  位图法（Bitmap）
+  <a class="anchor" href="#%e4%bd%8d%e5%9b%be%e6%b3%95bitmap">#</a>
+</h5>
 <p>位图法：用一个 bit 位来标识一个 int 整数。</p>
 <p>一般来说 Bit-Map 可作为数据的查找、去重、排序等操作。</p>
 <ul>
@@ -1410,12 +1259,24 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h5 id="分治法">分治法</h5>
+<h5 id="分治法">
+  分治法
+  <a class="anchor" href="#%e5%88%86%e6%b2%bb%e6%b3%95">#</a>
+</h5>
 <p>分治法：分批处理这 10 亿的数。</p>
-<h6 id="哈希分桶hash-buckets">哈希分桶（Hash Buckets）</h6>
+<h6 id="哈希分桶hash-buckets">
+  哈希分桶（Hash Buckets）
+  <a class="anchor" href="#%e5%93%88%e5%b8%8c%e5%88%86%e6%a1%b6hash-buckets">#</a>
+</h6>
 <p>哈希分桶的思想是先遍历一遍，按照 hash 分 N 桶（比如 1000 桶），映射到不同的文件中。这样平均每个文件就 10MB，然后分别处理这 1000 个文件，找出没有重复的即可。一个相同的数字，绝对不会夸文件，有 hash 做保证。</p>
-<h6 id="归并排序">归并排序</h6>
-<h5 id="找出-1-亿个整数中最大的-1000-个">找出 1 亿个整数中最大的 1000 个</h5>
+<h6 id="归并排序">
+  归并排序
+  <a class="anchor" href="#%e5%bd%92%e5%b9%b6%e6%8e%92%e5%ba%8f">#</a>
+</h6>
+<h5 id="找出-1-亿个整数中最大的-1000-个">
+  找出 1 亿个整数中最大的 1000 个
+  <a class="anchor" href="#%e6%89%be%e5%87%ba-1-%e4%ba%bf%e4%b8%aa%e6%95%b4%e6%95%b0%e4%b8%ad%e6%9c%80%e5%a4%a7%e7%9a%84-1000-%e4%b8%aa">#</a>
+</h5>
 <p>有 1 亿个整数，找出最大的 1000 个，要求时间越短越好，空间占用越少越好</p>
 <p>思路：</p>
 <ol>
@@ -1426,9 +1287,15 @@ https://github.com/alex-shpak/hugo-book
 <li>按中序遍历输出该最小堆中的数据，也就是按从小到大输出最大的 1000 个数据。
 该算法的时间复杂度为 O (N)，空间复杂度为 1000，其实是常数。</li>
 </ol>
-<h6 id="最小堆">最小堆</h6>
+<h6 id="最小堆">
+  最小堆
+  <a class="anchor" href="#%e6%9c%80%e5%b0%8f%e5%a0%86">#</a>
+</h6>
 <hr>
-<h5 id="1tb-的数据排序">1TB 的数据排序</h5>
+<h5 id="1tb-的数据排序">
+  1TB 的数据排序
+  <a class="anchor" href="#1tb-%e7%9a%84%e6%95%b0%e6%8d%ae%e6%8e%92%e5%ba%8f">#</a>
+</h5>
 <p>如果有 1TB 的数据需要排序，但只有 32GB 的内存如何排序处理？</p>
 <ol>
 <li>把磁盘上的 1TB 数据分割为 40 块（chunks），每份 25GB。（注意，要留一些系统空间！）</li>
@@ -1438,7 +1305,10 @@ https://github.com/alex-shpak/hugo-book
 <li>从 40 个块中分别读取 25G/40=0.625G 入内存（40 input buffers）。</li>
 <li>执行 40 路合并，并将合并结果临时存储于 2GB 基于内存的输出缓冲区中。当缓冲区写满 2GB 时，写入硬盘上最终文件，并清空输出缓冲区；当 40 个输入缓冲区中任何一个处理完毕时，写入该缓冲区所对应的块中的下一个 0.625GB，直到全部处理完成。</li>
 </ol>
-<h6 id="外排序">外排序</h6>
+<h6 id="外排序">
+  外排序
+  <a class="anchor" href="#%e5%a4%96%e6%8e%92%e5%ba%8f">#</a>
+</h6>
 <p>传统的排序算法一般指内排序算法，针对的是数据可以一次全部载入内存中的情况。但是面对海量数据，即数据不可能一次全部载入内存，需要用到外排序的方法。</p>
 <p>外排序采用分块的方法（分而治之），首先将数据分块，对块内数据按选择一种高效的内排序策略进行排序。然后采用归并排序的思想对于所有的块进行排序，得到所有数据的一个有序序列。</p>
 <hr>
@@ -1449,21 +1319,57 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://www.iteye.com/blog/yacare-1969931">利用位映射原理对大数据排重</a></li>
 </ul>
 <hr>
-<h3 id="php">PHP</h3>
-<h4 id="php-是单进程单线程的">PHP 是单进程单线程的</h4>
+<h3 id="php">
+  PHP
+  <a class="anchor" href="#php">#</a>
+</h3>
+<h4 id="php-是单进程单线程的">
+  PHP 是单进程单线程的
+  <a class="anchor" href="#php-%e6%98%af%e5%8d%95%e8%bf%9b%e7%a8%8b%e5%8d%95%e7%ba%bf%e7%a8%8b%e7%9a%84">#</a>
+</h4>
 <hr>
-<h3 id="mysql">Mysql</h3>
-<h4 id="长连接-与-短连接">长连接 与 短连接</h4>
-<h4 id="too-many-connections">too many connections</h4>
+<h3 id="mysql">
+  Mysql
+  <a class="anchor" href="#mysql">#</a>
+</h3>
+<h4 id="长连接-与-短连接">
+  长连接 与 短连接
+  <a class="anchor" href="#%e9%95%bf%e8%bf%9e%e6%8e%a5-%e4%b8%8e-%e7%9f%ad%e8%bf%9e%e6%8e%a5">#</a>
+</h4>
+<h4 id="too-many-connections">
+  too many connections
+  <a class="anchor" href="#too-many-connections">#</a>
+</h4>
 <hr>
-<h3 id="高并发">高并发</h3>
-<h3 id="分布式系统">分布式系统</h3>
-<h3 id="伸缩性">伸缩性</h3>
-<h3 id="扩展性">扩展性</h3>
-<h3 id="火焰图">火焰图</h3>
+<h3 id="高并发">
+  高并发
+  <a class="anchor" href="#%e9%ab%98%e5%b9%b6%e5%8f%91">#</a>
+</h3>
+<h3 id="分布式系统">
+  分布式系统
+  <a class="anchor" href="#%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f">#</a>
+</h3>
+<h3 id="伸缩性">
+  伸缩性
+  <a class="anchor" href="#%e4%bc%b8%e7%bc%a9%e6%80%a7">#</a>
+</h3>
+<h3 id="扩展性">
+  扩展性
+  <a class="anchor" href="#%e6%89%a9%e5%b1%95%e6%80%a7">#</a>
+</h3>
+<h3 id="火焰图">
+  火焰图
+  <a class="anchor" href="#%e7%81%ab%e7%84%b0%e5%9b%be">#</a>
+</h3>
 <hr>
-<h3 id="web">Web</h3>
-<h4 id="content-type">Content-Type</h4>
+<h3 id="web">
+  Web
+  <a class="anchor" href="#web">#</a>
+</h3>
+<h4 id="content-type">
+  Content-Type
+  <a class="anchor" href="#content-type">#</a>
+</h4>
 <p>用于定义用户的浏览器或相关设备如何显示将要加载的数据，或者如何处理将要加载的数据</p>
 <ul>
 <li><code>multipart/form-data</code>
@@ -1510,9 +1416,15 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h4 id="mime">MIME</h4>
+<h4 id="mime">
+  MIME
+  <a class="anchor" href="#mime">#</a>
+</h4>
 <p>MIME 类型就是设定某种扩展名的文件用一种应用程序来打开的方式类型，当该扩展名文件被访问的时候，浏览器会自动使用指定应用程序来打开。多用于指定一些客户端自定义的文件名，以及一些媒体文件打开方式。</p>
-<h4 id="cors">CORS</h4>
+<h4 id="cors">
+  CORS
+  <a class="anchor" href="#cors">#</a>
+</h4>
 <ul>
 <li>CORS 是一个 W3C 标准，全称是 &ldquo;跨域资源共享&rdquo;（Cross-origin resource sharing）。
 <ul>
@@ -1528,7 +1440,10 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h5 id="简单请求与非简单请求">简单请求与非简单请求</h5>
+<h5 id="简单请求与非简单请求">
+  简单请求与非简单请求
+  <a class="anchor" href="#%e7%ae%80%e5%8d%95%e8%af%b7%e6%b1%82%e4%b8%8e%e9%9d%9e%e7%ae%80%e5%8d%95%e8%af%b7%e6%b1%82">#</a>
+</h5>
 <p>简单请求（simple request）
 非简单请求（not-so-simple request）</p>
 <p>只要同时满足以下两大条件，就属于<strong>简单请求</strong>。</p>
@@ -1544,7 +1459,10 @@ Content-Language
 Last-Event-ID
 Content-Type：只限于三个值 application/x-www-form-urlencoded、multipart/form-data、text/plain
 </code></pre></div><p>凡是不同时满足上面两个条件，就属于<strong>非简单请求</strong>。</p>
-<h6 id="简单请求">简单请求</h6>
+<h6 id="简单请求">
+  简单请求
+  <a class="anchor" href="#%e7%ae%80%e5%8d%95%e8%af%b7%e6%b1%82">#</a>
+</h6>
 <ul>
 <li>
 <p>对于简单请求，浏览器直接发出 CORS 请求。具体来说，就是在头信息之中，增加一个 <strong>Origin</strong> 字段。</p>
@@ -1586,7 +1504,10 @@ xhr.withCredentials <span style="color:#f92672">=</span> true;
 </ul>
 </li>
 </ul>
-<h6 id="非简单请求">非简单请求</h6>
+<h6 id="非简单请求">
+  非简单请求
+  <a class="anchor" href="#%e9%9d%9e%e7%ae%80%e5%8d%95%e8%af%b7%e6%b1%82">#</a>
+</h6>
 <ul>
 <li>
 <p>非简单请求是那种对服务器有特殊要求的请求，</p>
@@ -1630,7 +1551,10 @@ xhr.withCredentials <span style="color:#f92672">=</span> true;
 </ul>
 </li>
 </ul>
-<h5 id="jsonp">JSONP</h5>
+<h5 id="jsonp">
+  JSONP
+  <a class="anchor" href="#jsonp">#</a>
+</h5>
 <p>CORS 与 JSONP 的使用目的相同，但是比 JSONP 更强大。</p>
 <p>JSONP 只支持 GET 请求，CORS 支持所有类型的 HTTP 请求。JSONP 的优势在于支持老式浏览器，以及可以向不支持 CORS 的网站请求数据。</p>
 <p>参考：</p>
@@ -1638,12 +1562,18 @@ xhr.withCredentials <span style="color:#f92672">=</span> true;
 <li><a href="https://www.ruanyifeng.com/blog/2016/04/cors.html">跨域资源共享 CORS 详解</a></li>
 </ul>
 <hr>
-<h3 id="github-徽章httpsshieldsio"><a href="https://shields.io/">Github 徽章</a></h3>
+<h3 id="github-徽章httpsshieldsio">
+  <a href="https://shields.io/">Github 徽章</a>
+  <a class="anchor" href="#github-%e5%be%bd%e7%ab%a0httpsshieldsio">#</a>
+</h3>
 <p>比如 <a href="https://github.com/ikingye/ote-stack">https://github.com/ikingye/ote-stack</a></p>
 <p><a href="https://shields.io/category/version">版本</a>：
 <img src="https://img.shields.io/github/go-mod/go-version/ikingye/ote-stack" alt="Go version" /></p>
 <hr>
-<h3 id="panjf2000gnethttpsgithubcompanjf2000gnet-github-starshttpsimgshieldsiogithubstarspanjf2000gnetsvg-go-versionhttpsimgshieldsiogithubgo-modgo-versionpanjf2000gnet"><a href="https://github.com/panjf2000/gnet">panjf2000/gnet</a> <img src="https://img.shields.io/github/stars/panjf2000/gnet.svg" alt="Github stars" /> <img src="https://img.shields.io/github/go-mod/go-version/panjf2000/gnet" alt="Go version" /></h3>
+<a href="https://github.com/panjf2000/gnet">panjf2000/gnet</a> <img src="https://img.shields.io/github/stars/panjf2000/gnet.svg" alt="Github stars" /> <h3 id="panjf2000gnethttpsgithubcompanjf2000gnet-github-starshttpsimgshieldsiogithubstarspanjf2000gnetsvg-go-versionhttpsimgshieldsiogithubgo-modgo-versionpanjf2000gnet">
+  <img src="https://img.shields.io/github/go-mod/go-version/panjf2000/gnet" alt="Go version" />
+  <a class="anchor" href="#panjf2000gnethttpsgithubcompanjf2000gnet-github-starshttpsimgshieldsiogithubstarspanjf2000gnetsvg-go-versionhttpsimgshieldsiogithubgo-modgo-versionpanjf2000gnet">#</a>
+</h3>
 <p>gnet 是一个基于事件驱动的高性能和轻量级网络框架。它直接使用 epoll 和 kqueue 系统调用而非标准 Go 网络包：net 来构建网络应用，它的工作原理类似两个开源的网络库：<a href="https://github.com/netty/netty">netty/netty</a> <img src="https://img.shields.io/github/stars/netty/netty.svg" alt="Github stars" /> 和 <a href="https://github.com/libuv/libuv">libuv/libuv</a> <img src="https://img.shields.io/github/stars/libuv/libuv.svg" alt="Github stars" />。</p>
 <p>gnet 设计开发的初衷不是为了取代 Go 的标准网络库：net，而是为了创造出一个类似于 <a href="https://github.com/antirez/redis">antirez/redis</a> <img src="https://img.shields.io/github/stars/antirez/redis.svg" alt="Github stars" />、<a href="https://github.com/haproxy/haproxy">haproxy/haproxy</a> <img src="https://img.shields.io/github/stars/haproxy/haproxy.svg" alt="Github stars" /> 能高效处理网络包的 Go 语言网络服务器框架。</p>
 <p>gnet 的卖点在于它是一个高性能、轻量级、非阻塞的纯 Go 实现的传输层（TCP/UDP/Unix Domain Socket）网络框架，开发者可以使用 gnet 来实现自己的应用层网络协议 (HTTP、RPC、Redis、WebSocket 等等)，从而构建出自己的应用层网络应用：比如在 gnet 上实现 HTTP 协议就可以创建出一个 HTTP 服务器 或者 Web 开发框架，实现 Redis 协议就可以创建出自己的 Redis 服务器等等。</p>
@@ -1658,13 +1588,11 @@ xhr.withCredentials <span style="color:#f92672">=</span> true;
 
       <footer class="book-footer">
         
-  <div class="flex justify-between">
+  <div class="flex flex-wrap justify-between">
 
 
 
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/0a1753dd374ed1e0f81fdd37de757bc3ebd61062" title='Last modified by yewang | 2020-07-06' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/0a1753dd374ed1e0f81fdd37de757bc3ebd61062" title='Last modified by yewang | 2020-07-06' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-06</span>
     </a>
