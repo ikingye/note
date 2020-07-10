@@ -18,7 +18,7 @@ ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A 默认使用 UD
 ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A 默认使用 UDP 播放，Docker 需要暴露所有 UDP 端口给 UDP 用" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/10/" />
-<meta property="article:modified_time" content="2020-07-10T11:24:03+08:00" />
+<meta property="article:modified_time" content="2020-07-10T15:11:26+08:00" />
 <title>2020-07-10 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -26,7 +26,7 @@ ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A 默认使用 UD
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.f2cf8cd7a97de1d2380ab5a08a048b4aacb08c57c5b231d1e8c009391b70f216.js" integrity="sha256-8s&#43;M16l94dI4CrWgigSLSqywjFfFsjHR6MAJORtw8hY="></script>
+<script defer src="/note/en.search.min.5e0ec0384340f41f7fdcfadcc3a8d75487fed55d71ec167885abbd92f8bd4dfa.js" integrity="sha256-Xg7AOENA9B9/3Prcw6jXVIf&#43;1V1x7BZ4hau9kvi9Tfo="></script>
 
 <!--
 Made with Book Theme
@@ -906,6 +906,7 @@ https://github.com/alex-shpak/hugo-book
                 </li>
               </ul>
             </li>
+            <li><a href="#docker">Docker</a></li>
           </ul>
         </li>
       </ul>
@@ -956,7 +957,12 @@ https://github.com/alex-shpak/hugo-book
 <p>指定使用 TCP 播放</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ffplay -rtsp_transport tcp rtsp://10.130.26.51:8354/rtp/05F5E10A
 </code></pre></div><p>默认使用 UDP 播放，Docker 需要暴露所有 UDP 端口给 UDP 用</p>
-</article>
+<hr>
+<h3 id="docker">Docker</h3>
+<p>使用 host 网络</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># --network=host</span>
+docker run --network host
+</code></pre></div></article>
  
       
 
@@ -968,7 +974,7 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/c68f1d113344cb64c5555614c081dfdfb3db0c07" title='Last modified by yewang | 2020-07-10' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/baf4bc0fd3597cd9657b69d3c473b7d34823104b" title='Last modified by yewang | 2020-07-10' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-10</span>
     </a>
@@ -1020,6 +1026,7 @@ https://github.com/alex-shpak/hugo-book
                 </li>
               </ul>
             </li>
+            <li><a href="#docker">Docker</a></li>
           </ul>
         </li>
       </ul>
