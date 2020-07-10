@@ -4,12 +4,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 5 月 31 日（星期日） 今日待办     编程 Service Mesh Comparison "><meta property="og:title" content="2020-05-31" />
-<meta property="og:description" content="2020 年 5 月 31 日（星期日） 今日待办     编程 Service Mesh Comparison " />
+<meta name="description" content="2020 年 7 月 10 日（星期五） 今日待办     编程 RTSP RTSP over UDP 优点
+ 实时流延迟较小  缺点
+ UDP 协议上的 RTSP/RTP 需要打开许多 UDP 端口（每一路流媒体都需要 2 个 UDP 端口，一个用于接收数据，一个用于接收控制信息）； 当因特网上的路由器没有打开这些端口的时候，上述第一点将会存在问题； 中间网络路由器很容易就过滤或者忽略掉 UDP 数据包； UDP 是不可靠传输协议，媒体包在因特网上传输时会面临着丢包。  RTSP over TCP 优点
+ RTSP/RTP 的控制命令和数据都通过一个端口，即 RTSP 的端口（默认为 554），进行交互。 TCP 包更容易穿透中间网络路由器。  缺点
+ 由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。 TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。  "><meta property="og:title" content="2020-07-10" />
+<meta property="og:description" content="2020 年 7 月 10 日（星期五） 今日待办     编程 RTSP RTSP over UDP 优点
+ 实时流延迟较小  缺点
+ UDP 协议上的 RTSP/RTP 需要打开许多 UDP 端口（每一路流媒体都需要 2 个 UDP 端口，一个用于接收数据，一个用于接收控制信息）； 当因特网上的路由器没有打开这些端口的时候，上述第一点将会存在问题； 中间网络路由器很容易就过滤或者忽略掉 UDP 数据包； UDP 是不可靠传输协议，媒体包在因特网上传输时会面临着丢包。  RTSP over TCP 优点
+ RTSP/RTP 的控制命令和数据都通过一个端口，即 RTSP 的端口（默认为 554），进行交互。 TCP 包更容易穿透中间网络路由器。  缺点
+ 由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。 TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/05/31/" />
-<meta property="article:modified_time" content="2020-05-31T22:31:51+08:00" />
-<title>2020-05-31 | 叶王笔记</title>
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/10/" />
+
+<title>2020-07-10 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
 
@@ -543,7 +551,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
+  <a href="/note/docs/live/diary/2020/07/10/" class="active">2020-07-10</a>
   
 
 </li>
@@ -667,172 +675,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-  
-  <ul>
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/31/" class="active">2020-05-31</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/30/" class="">2020-05-30</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/29/" class="">2020-05-29</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/28/" class="">2020-05-28</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/25/" class="">2020-05-25</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/23/" class="">2020-05-23</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/20/" class="">2020-05-20</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/19/" class="">2020-05-19</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/14/" class="">2020-05-14</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/12/" class="">2020-05-12</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/11/" class="">2020-05-11</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/09/" class="">2020-05-09</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/08/" class="">2020-05-08</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/07/" class="">2020-05-07</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/06/" class="">2020-05-06</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/note/docs/live/diary/2020/05/04/" class="">2020-05-04</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
 
 
 
@@ -1033,7 +875,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>2020-05-31</strong>
+  <strong>2020-07-10</strong>
 
   <label for="toc-control">
     <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -1047,12 +889,17 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-5-月-31-日星期日">2020 年 5 月 31 日（星期日）</a>
+    <li><a href="#2020-年-7-月-10-日星期五">2020 年 7 月 10 日（星期五）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
         <li><a href="#编程">编程</a>
           <ul>
-            <li><a href="#service-mesh-comparisonhttpsservicemeshes"><a href="https://servicemesh.es/">Service Mesh Comparison</a></a></li>
+            <li><a href="#rtsp">RTSP</a>
+              <ul>
+                <li><a href="#rtsp-over-udp">RTSP over UDP</a></li>
+                <li><a href="#rtsp-over-tcp">RTSP over TCP</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -1068,15 +915,37 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="2020-年-5-月-31-日星期日">2020 年 5 月 31 日（星期日）</h1>
+  <article class="markdown"><h1 id="2020-年-7-月-10-日星期五">2020 年 7 月 10 日（星期五）</h1>
 <h2 id="今日待办">今日待办</h2>
 <ul>
 <li><input disabled="" type="checkbox"> </li>
 </ul>
 <hr>
 <h2 id="编程">编程</h2>
-<h3 id="service-mesh-comparisonhttpsservicemeshes"><a href="https://servicemesh.es/">Service Mesh Comparison</a></h3>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200531222658.png" alt="" /></p>
+<h3 id="rtsp">RTSP</h3>
+<h4 id="rtsp-over-udp">RTSP over UDP</h4>
+<p>优点</p>
+<ul>
+<li>实时流延迟较小</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>UDP 协议上的 RTSP/RTP 需要打开许多 UDP 端口（每一路流媒体都需要 2 个 UDP 端口，一个用于接收数据，一个用于接收控制信息）；</li>
+<li>当因特网上的路由器没有打开这些端口的时候，上述第一点将会存在问题；</li>
+<li>中间网络路由器很容易就过滤或者忽略掉 UDP 数据包；</li>
+<li>UDP 是不可靠传输协议，媒体包在因特网上传输时会面临着丢包。</li>
+</ul>
+<h4 id="rtsp-over-tcp">RTSP over TCP</h4>
+<p>优点</p>
+<ul>
+<li>RTSP/RTP 的控制命令和数据都通过一个端口，即 RTSP 的端口（默认为 554），进行交互。</li>
+<li>TCP 包更容易穿透中间网络路由器。</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>由于二元交织，会使得 RTP 包封包和解包的过程变得更加复杂。</li>
+<li>TCP 是可靠的传输协议，但正是因为如此，会导致在实时流媒体中的延时。</li>
+</ul>
 </article>
  
       
@@ -1086,14 +955,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/note/commit/6d28bd73d2042174c0a4ac68bff5bc06bd043535" title='Last modified by yewang | 2020-05-31' target="_blank" rel="noopener">
-      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-05-31</span>
-    </a>
-  </div>
 
 
 
@@ -1126,12 +987,17 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-5-月-31-日星期日">2020 年 5 月 31 日（星期日）</a>
+    <li><a href="#2020-年-7-月-10-日星期五">2020 年 7 月 10 日（星期五）</a>
       <ul>
         <li><a href="#今日待办">今日待办</a></li>
         <li><a href="#编程">编程</a>
           <ul>
-            <li><a href="#service-mesh-comparisonhttpsservicemeshes"><a href="https://servicemesh.es/">Service Mesh Comparison</a></a></li>
+            <li><a href="#rtsp">RTSP</a>
+              <ul>
+                <li><a href="#rtsp-over-udp">RTSP over UDP</a></li>
+                <li><a href="#rtsp-over-tcp">RTSP over TCP</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>

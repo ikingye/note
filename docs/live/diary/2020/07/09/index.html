@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="2020 年 7 月 9 日（星期四） 今日待办     编程 socketio/socket.io  Realtime application framework (Node.JS server)
  知乎批量取消关注 取消关注问题 点击关注的问题列表 https://www.zhihu.com/question/following
-// https://www.zhihu.com/question/following function unfollow_question_all() { var remaining = $(&#34;.zg-unfollow&#34;).length; if (remaining &gt; 0) { $(&#34;.zg-unfollow&#34;).first().trigger(&#34;click&#34;); setTimeout(unfollow_question_all, 1000); window.scrollTo(0, document.body.scrollHeight); } } unfollow_question_all(); 取消关注用户 点击关注的用户列表，点击到最后一页 https://www.zhihu.com/people/your-name/following?page=last
-// 保存 $，否则下一轮提示 $ is not defined var j = $; function unfollow_people(follower_less_than) { j(&#34;#Profile-following &gt; :nth-child(2)&#34;).childNodes.forEach(function (node) { // 获取关注者  var item = node."><meta property="og:title" content="2020-07-09" />
+// https://www.zhihu.com/question/following function unfollow_question_all() { var remaining = $(&#34;.zg-unfollow&#34;).length if (remaining &gt; 0) { $(&#34;.zg-unfollow&#34;).first().trigger(&#34;click&#34;) setTimeout(unfollow_question_all, 1000) window.scrollTo(0, document.body.scrollHeight) } } unfollow_question_all() 取消关注用户 点击关注的用户列表，点击到最后一页 https://www.zhihu.com/people/your-name/following?page=last
+// 保存 $，否则下一轮提示 $ is not defined var j = $ function unfollow_people(follower_less_than) { j(&#34;#Profile-following &gt; :nth-child(2)&#34;).childNodes.forEach(function (node) { // 获取关注者  var item = node."><meta property="og:title" content="2020-07-09" />
 <meta property="og:description" content="2020 年 7 月 9 日（星期四） 今日待办     编程 socketio/socket.io  Realtime application framework (Node.JS server)
  知乎批量取消关注 取消关注问题 点击关注的问题列表 https://www.zhihu.com/question/following
-// https://www.zhihu.com/question/following function unfollow_question_all() { var remaining = $(&#34;.zg-unfollow&#34;).length; if (remaining &gt; 0) { $(&#34;.zg-unfollow&#34;).first().trigger(&#34;click&#34;); setTimeout(unfollow_question_all, 1000); window.scrollTo(0, document.body.scrollHeight); } } unfollow_question_all(); 取消关注用户 点击关注的用户列表，点击到最后一页 https://www.zhihu.com/people/your-name/following?page=last
-// 保存 $，否则下一轮提示 $ is not defined var j = $; function unfollow_people(follower_less_than) { j(&#34;#Profile-following &gt; :nth-child(2)&#34;).childNodes.forEach(function (node) { // 获取关注者  var item = node." />
+// https://www.zhihu.com/question/following function unfollow_question_all() { var remaining = $(&#34;.zg-unfollow&#34;).length if (remaining &gt; 0) { $(&#34;.zg-unfollow&#34;).first().trigger(&#34;click&#34;) setTimeout(unfollow_question_all, 1000) window.scrollTo(0, document.body.scrollHeight) } } unfollow_question_all() 取消关注用户 点击关注的用户列表，点击到最后一页 https://www.zhihu.com/people/your-name/following?page=last
+// 保存 $，否则下一轮提示 $ is not defined var j = $ function unfollow_people(follower_less_than) { j(&#34;#Profile-following &gt; :nth-child(2)&#34;).childNodes.forEach(function (node) { // 获取关注者  var item = node." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/09/" />
-
+<meta property="article:modified_time" content="2020-07-09T17:11:42+08:00" />
 <title>2020-07-09 | 叶王笔记</title>
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 
@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="/note/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/note/en.search.min.63db3220c4aa73cf27142c8b9597c8444f5bd83175025e8dd0887930f2b74766.js" integrity="sha256-Y9syIMSqc88nFCyLlZfIRE9b2DF1Al6N0Ih5MPK3R2Y="></script>
+<script defer src="/note/en.search.min.566557fee4e81db34b387bf8f6b2fa5cc8ec2108edc87c334f9a8199d6d97ec3.js" integrity="sha256-VmVX/uToHbNLOHv49rL6XMjsIQjtyHwzT5qBmdbZfsM="></script>
 
 <!--
 Made with Book Theme
@@ -549,6 +549,16 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
+  <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
   <a href="/note/docs/live/diary/2020/07/09/" class="active">2020-07-09</a>
   
 
@@ -920,51 +930,51 @@ https://github.com/alex-shpak/hugo-book
 <a href="https://www.zhihu.com/question/following">https://www.zhihu.com/question/following</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// https://www.zhihu.com/question/following
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">unfollow_question_all</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">remaining</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.zg-unfollow&#34;</span>).<span style="color:#a6e22e">length</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">remaining</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.zg-unfollow&#34;</span>).<span style="color:#a6e22e">length</span>
   <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remaining</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.zg-unfollow&#34;</span>).<span style="color:#a6e22e">first</span>().<span style="color:#a6e22e">trigger</span>(<span style="color:#e6db74">&#34;click&#34;</span>);
-    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">unfollow_question_all</span>, <span style="color:#ae81ff">1000</span>);
-    window.<span style="color:#a6e22e">scrollTo</span>(<span style="color:#ae81ff">0</span>, document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>);
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.zg-unfollow&#34;</span>).<span style="color:#a6e22e">first</span>().<span style="color:#a6e22e">trigger</span>(<span style="color:#e6db74">&#34;click&#34;</span>)
+    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">unfollow_question_all</span>, <span style="color:#ae81ff">1000</span>)
+    window.<span style="color:#a6e22e">scrollTo</span>(<span style="color:#ae81ff">0</span>, document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>)
   }
 }
-<span style="color:#a6e22e">unfollow_question_all</span>();
+<span style="color:#a6e22e">unfollow_question_all</span>()
 </code></pre></div><h4 id="取消关注用户">取消关注用户</h4>
 <p>点击关注的用户列表，点击到最后一页
 <a href="https://www.zhihu.com/people/your-name/following?page=last">https://www.zhihu.com/people/your-name/following?page=last</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 保存 $，否则下一轮提示 $ is not defined
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">unfollow_people</span>(<span style="color:#a6e22e">follower_less_than</span>) {
   <span style="color:#a6e22e">j</span>(<span style="color:#e6db74">&#34;#Profile-following &gt; :nth-child(2)&#34;</span>).<span style="color:#a6e22e">childNodes</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">node</span>) {
     <span style="color:#75715e">// 获取关注者
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#34;ContentItem-statusItem&#34;</span>);
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#34;ContentItem-statusItem&#34;</span>)
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">item</span>[<span style="color:#ae81ff">2</span>]) {
       <span style="color:#75715e">// 有文章
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>[<span style="color:#ae81ff">2</span>];
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>[<span style="color:#ae81ff">2</span>]
     } <span style="color:#66d9ef">else</span> {
       <span style="color:#75715e">// 无文章
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>[<span style="color:#ae81ff">1</span>];
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>[<span style="color:#ae81ff">1</span>]
     }
     <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">item</span>) {
-      <span style="color:#66d9ef">return</span>;
+      <span style="color:#66d9ef">return</span>
     }
     <span style="color:#75715e">// 提取关注者数量
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">follower_count</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">textContent</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34; &#34;</span>)[<span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#34;,&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">follower_count</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">textContent</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34; &#34;</span>)[<span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#34;,&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
     <span style="color:#75715e">// 关注者少于 xx
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">follower_count</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">follower_less_than</span>) {
       <span style="color:#75715e">// 点击 取消关注
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;button&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">click</span>();
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;button&#34;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">click</span>()
     }
-  });
+  })
   <span style="color:#75715e">// 2s 执行一次
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
-    <span style="color:#a6e22e">unfollow_people</span>(<span style="color:#a6e22e">follower_less_than</span>);
-  }, <span style="color:#ae81ff">2000</span>);
+    <span style="color:#a6e22e">unfollow_people</span>(<span style="color:#a6e22e">follower_less_than</span>)
+  }, <span style="color:#ae81ff">2000</span>)
   <span style="color:#75715e">// 点击上一页
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">j</span>(<span style="color:#e6db74">&#34;.Pagination :nth-child(1)&#34;</span>).<span style="color:#a6e22e">click</span>();
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">j</span>(<span style="color:#e6db74">&#34;.Pagination :nth-child(1)&#34;</span>).<span style="color:#a6e22e">click</span>()
 }
 
 <span style="color:#75715e">// 取消关注 关注者少于 1000 的用户
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">unfollow_people</span>(<span style="color:#ae81ff">1000</span>);
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">unfollow_people</span>(<span style="color:#ae81ff">1000</span>)
 </code></pre></div></article>
  
       
@@ -974,6 +984,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/note/commit/779788be5a1b1a635e8756f7bee0f985bd972f39" title='Last modified by yewang | 2020-07-09' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-09</span>
+    </a>
+  </div>
 
 
 
