@@ -29,7 +29,7 @@ MSS 值为 MTU 值减去 IPv4 Header（20 Byte）和 TCP header（20 Byte）。"
 <title>2020-06-17 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
 <script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
@@ -956,36 +956,32 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月-17-日星期三">2020 年 6 月 17 日（星期三）</a>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
+        <li><a href="#最大传输单元">最大传输单元</a>
           <ul>
-            <li><a href="#最大传输单元">最大传输单元</a>
-              <ul>
-                <li><a href="#最大分节大小">最大分节大小</a></li>
-                <li><a href="#ip-分片-fragmentation">IP 分片 (<code>fragmentation</code>)</a></li>
-                <li><a href="#ts-包">ts 包</a></li>
-              </ul>
-            </li>
-            <li><a href="#go-优雅重启">Go 优雅重启</a></li>
-            <li><a href="#rtp">RTP</a>
-              <ul>
-                <li><a href="#rtp-不需要-server-接收">rtp 不需要 server 接收</a></li>
-              </ul>
-            </li>
-            <li><a href="#解析-ps-流">解析 ps 流</a></li>
-            <li><a href="#硬解码--软解码">硬解码 / 软解码</a></li>
-            <li><a href="#硬解码">硬解码</a></li>
-            <li><a href="#软解码">软解码</a></li>
-            <li><a href="#手机-gpu">手机 GPU</a>
-              <ul>
-                <li><a href="#soc--单片系统httpswwwwikiwandcomzh-cne58d95e78987e7b3bbe7bb9f"><a href="https://www.wikiwand.com/zh-cn/%E5%8D%95%E7%89%87%E7%B3%BB%E7%BB%9F">SoC / 单片系统</a></a></li>
-              </ul>
-            </li>
-            <li><a href="#obsprojectobs-studiohttpsgithubcomobsprojectobs-studio-github-starshttpsimgshieldsiogithubstarsobsprojectobs-studiosvg"><a href="https://github.com/obsproject/obs-studio">obsproject/obs-studio</a> <img src="https://img.shields.io/github/stars/obsproject/obs-studio.svg" alt="Github stars"></a></li>
+            <li><a href="#最大分节大小">最大分节大小</a></li>
+            <li><a href="#ip-分片-fragmentation">IP 分片 (<code>fragmentation</code>)</a></li>
+            <li><a href="#ts-包">ts 包</a></li>
           </ul>
         </li>
+        <li><a href="#go-优雅重启">Go 优雅重启</a></li>
+        <li><a href="#rtp">RTP</a>
+          <ul>
+            <li><a href="#rtp-不需要-server-接收">rtp 不需要 server 接收</a></li>
+          </ul>
+        </li>
+        <li><a href="#解析-ps-流">解析 ps 流</a></li>
+        <li><a href="#硬解码--软解码">硬解码 / 软解码</a></li>
+        <li><a href="#硬解码">硬解码</a></li>
+        <li><a href="#软解码">软解码</a></li>
+        <li><a href="#手机-gpu">手机 GPU</a>
+          <ul>
+            <li><a href="#soc--单片系统httpswwwwikiwandcomzh-cne58d95e78987e7b3bbe7bb9f"><a href="https://www.wikiwand.com/zh-cn/%E5%8D%95%E7%89%87%E7%B3%BB%E7%BB%9F">SoC / 单片系统</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#obsprojectobs-studiohttpsgithubcomobsprojectobs-studio-github-starshttpsimgshieldsiogithubstarsobsprojectobs-studiosvg"><a href="https://github.com/obsproject/obs-studio">obsproject/obs-studio</a> <img src="https://img.shields.io/github/stars/obsproject/obs-studio.svg" alt="Github stars"></a></li>
       </ul>
     </li>
   </ul>
@@ -1201,36 +1197,32 @@ ffmpeg -re -stream_loop -1 -i carbrand.MOV -c copy -an -f rtp rtp://localhost:23
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月-17-日星期三">2020 年 6 月 17 日（星期三）</a>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
+        <li><a href="#最大传输单元">最大传输单元</a>
           <ul>
-            <li><a href="#最大传输单元">最大传输单元</a>
-              <ul>
-                <li><a href="#最大分节大小">最大分节大小</a></li>
-                <li><a href="#ip-分片-fragmentation">IP 分片 (<code>fragmentation</code>)</a></li>
-                <li><a href="#ts-包">ts 包</a></li>
-              </ul>
-            </li>
-            <li><a href="#go-优雅重启">Go 优雅重启</a></li>
-            <li><a href="#rtp">RTP</a>
-              <ul>
-                <li><a href="#rtp-不需要-server-接收">rtp 不需要 server 接收</a></li>
-              </ul>
-            </li>
-            <li><a href="#解析-ps-流">解析 ps 流</a></li>
-            <li><a href="#硬解码--软解码">硬解码 / 软解码</a></li>
-            <li><a href="#硬解码">硬解码</a></li>
-            <li><a href="#软解码">软解码</a></li>
-            <li><a href="#手机-gpu">手机 GPU</a>
-              <ul>
-                <li><a href="#soc--单片系统httpswwwwikiwandcomzh-cne58d95e78987e7b3bbe7bb9f"><a href="https://www.wikiwand.com/zh-cn/%E5%8D%95%E7%89%87%E7%B3%BB%E7%BB%9F">SoC / 单片系统</a></a></li>
-              </ul>
-            </li>
-            <li><a href="#obsprojectobs-studiohttpsgithubcomobsprojectobs-studio-github-starshttpsimgshieldsiogithubstarsobsprojectobs-studiosvg"><a href="https://github.com/obsproject/obs-studio">obsproject/obs-studio</a> <img src="https://img.shields.io/github/stars/obsproject/obs-studio.svg" alt="Github stars"></a></li>
+            <li><a href="#最大分节大小">最大分节大小</a></li>
+            <li><a href="#ip-分片-fragmentation">IP 分片 (<code>fragmentation</code>)</a></li>
+            <li><a href="#ts-包">ts 包</a></li>
           </ul>
         </li>
+        <li><a href="#go-优雅重启">Go 优雅重启</a></li>
+        <li><a href="#rtp">RTP</a>
+          <ul>
+            <li><a href="#rtp-不需要-server-接收">rtp 不需要 server 接收</a></li>
+          </ul>
+        </li>
+        <li><a href="#解析-ps-流">解析 ps 流</a></li>
+        <li><a href="#硬解码--软解码">硬解码 / 软解码</a></li>
+        <li><a href="#硬解码">硬解码</a></li>
+        <li><a href="#软解码">软解码</a></li>
+        <li><a href="#手机-gpu">手机 GPU</a>
+          <ul>
+            <li><a href="#soc--单片系统httpswwwwikiwandcomzh-cne58d95e78987e7b3bbe7bb9f"><a href="https://www.wikiwand.com/zh-cn/%E5%8D%95%E7%89%87%E7%B3%BB%E7%BB%9F">SoC / 单片系统</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#obsprojectobs-studiohttpsgithubcomobsprojectobs-studio-github-starshttpsimgshieldsiogithubstarsobsprojectobs-studiosvg"><a href="https://github.com/obsproject/obs-studio">obsproject/obs-studio</a> <img src="https://img.shields.io/github/stars/obsproject/obs-studio.svg" alt="Github stars"></a></li>
       </ul>
     </li>
   </ul>

@@ -19,7 +19,7 @@ Istio sidecar 注入器自动注入 #  启用 pod 所属命名空间的 Istio si
 <title>2020-06-14 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
 <script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
@@ -946,38 +946,34 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月-14-日星期日">2020 年 6 月 14 日（星期日）</a>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
+        <li><a href="#istio">Istio</a>
           <ul>
-            <li><a href="#istio">Istio</a>
+            <li><a href="#向-pod-中注入-istio-sidecar">向 pod 中注入 Istio sidecar</a>
               <ul>
-                <li><a href="#向-pod-中注入-istio-sidecar">向 pod 中注入 Istio sidecar</a>
-                  <ul>
-                    <li><a href="#istioctl-手动注入">istioctl 手动注入</a></li>
-                    <li><a href="#istio-sidecar-注入器自动注入">Istio sidecar 注入器自动注入</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#kubernetes">Kubernetes</a>
-              <ul>
-                <li><a href="#kubectl-get-结果排序">kubectl get 结果排序</a>
-                  <ul>
-                    <li><a href="#aathithkubesorthttpsgithubcomaathithkubesort-github-starshttpsimgshieldsiogithubstarsaathithkubesortsvg"><a href="https://github.com/AATHITH/kubesort">AATHITH/kubesort</a> <img src="https://img.shields.io/github/stars/AATHITH/kubesort.svg" alt="Github stars"></a></li>
-                  </ul>
-                </li>
+                <li><a href="#istioctl-手动注入">istioctl 手动注入</a></li>
+                <li><a href="#istio-sidecar-注入器自动注入">Istio sidecar 注入器自动注入</a></li>
               </ul>
             </li>
           </ul>
         </li>
-        <li><a href="#历史">历史</a>
+        <li><a href="#kubernetes">Kubernetes</a>
           <ul>
-            <li><a href="#正一品">正一品</a></li>
-            <li><a href="#衍圣公">衍圣公</a></li>
+            <li><a href="#kubectl-get-结果排序">kubectl get 结果排序</a>
+              <ul>
+                <li><a href="#aathithkubesorthttpsgithubcomaathithkubesort-github-starshttpsimgshieldsiogithubstarsaathithkubesortsvg"><a href="https://github.com/AATHITH/kubesort">AATHITH/kubesort</a> <img src="https://img.shields.io/github/stars/AATHITH/kubesort.svg" alt="Github stars"></a></li>
+              </ul>
+            </li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#历史">历史</a>
+      <ul>
+        <li><a href="#正一品">正一品</a></li>
+        <li><a href="#衍圣公">衍圣公</a></li>
       </ul>
     </li>
   </ul>
@@ -1147,38 +1143,34 @@ kubectl --sort-by<span style="color:#f92672">=</span>.spec.ports<span style="col
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月-14-日星期日">2020 年 6 月 14 日（星期日）</a>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
+        <li><a href="#istio">Istio</a>
           <ul>
-            <li><a href="#istio">Istio</a>
+            <li><a href="#向-pod-中注入-istio-sidecar">向 pod 中注入 Istio sidecar</a>
               <ul>
-                <li><a href="#向-pod-中注入-istio-sidecar">向 pod 中注入 Istio sidecar</a>
-                  <ul>
-                    <li><a href="#istioctl-手动注入">istioctl 手动注入</a></li>
-                    <li><a href="#istio-sidecar-注入器自动注入">Istio sidecar 注入器自动注入</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#kubernetes">Kubernetes</a>
-              <ul>
-                <li><a href="#kubectl-get-结果排序">kubectl get 结果排序</a>
-                  <ul>
-                    <li><a href="#aathithkubesorthttpsgithubcomaathithkubesort-github-starshttpsimgshieldsiogithubstarsaathithkubesortsvg"><a href="https://github.com/AATHITH/kubesort">AATHITH/kubesort</a> <img src="https://img.shields.io/github/stars/AATHITH/kubesort.svg" alt="Github stars"></a></li>
-                  </ul>
-                </li>
+                <li><a href="#istioctl-手动注入">istioctl 手动注入</a></li>
+                <li><a href="#istio-sidecar-注入器自动注入">Istio sidecar 注入器自动注入</a></li>
               </ul>
             </li>
           </ul>
         </li>
-        <li><a href="#历史">历史</a>
+        <li><a href="#kubernetes">Kubernetes</a>
           <ul>
-            <li><a href="#正一品">正一品</a></li>
-            <li><a href="#衍圣公">衍圣公</a></li>
+            <li><a href="#kubectl-get-结果排序">kubectl get 结果排序</a>
+              <ul>
+                <li><a href="#aathithkubesorthttpsgithubcomaathithkubesort-github-starshttpsimgshieldsiogithubstarsaathithkubesortsvg"><a href="https://github.com/AATHITH/kubesort">AATHITH/kubesort</a> <img src="https://img.shields.io/github/stars/AATHITH/kubesort.svg" alt="Github stars"></a></li>
+              </ul>
+            </li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#历史">历史</a>
+      <ul>
+        <li><a href="#正一品">正一品</a></li>
+        <li><a href="#衍圣公">衍圣公</a></li>
       </ul>
     </li>
   </ul>

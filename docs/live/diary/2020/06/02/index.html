@@ -17,7 +17,7 @@ A word (token) can be either a Keyword or a builtin, but not both." />
 <title>2020-06-02 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
 <script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
@@ -944,76 +944,72 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月-2-日星期二">2020 年 6 月 2 日（星期二）</a>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
+        <li><a href="#shell">shell</a>
           <ul>
-            <li><a href="#shell">shell</a>
+            <li><a href="#keyword-vs-reserved-word-vs-builtin"><code>keyword</code> vs <code>reserved word</code> vs <code>builtin</code></a>
               <ul>
-                <li><a href="#keyword-vs-reserved-word-vs-builtin"><code>keyword</code> vs <code>reserved word</code> vs <code>builtin</code></a>
-                  <ul>
-                    <li><a href="#为什么-time-是-keyword而不是-builtin">为什么 <code>time</code> 是 <code>keyword</code>，而不是 <code>builtin</code></a></li>
-                  </ul>
-                </li>
-                <li><a href="#命令前加反斜杠-">命令前加反斜杠 <code>\</code></a></li>
-                <li><a href="#什么是-tty">什么是 tty</a></li>
-                <li><a href="#zsh-执行慢">zsh 执行慢</a>
-                  <ul>
-                    <li><a href="#调试-zsh">调试 zsh</a></li>
-                  </ul>
-                </li>
-                <li><a href="#ls">ls</a></li>
+                <li><a href="#为什么-time-是-keyword而不是-builtin">为什么 <code>time</code> 是 <code>keyword</code>，而不是 <code>builtin</code></a></li>
               </ul>
             </li>
-            <li><a href="#mysql">Mysql</a>
+            <li><a href="#命令前加反斜杠-">命令前加反斜杠 <code>\</code></a></li>
+            <li><a href="#什么是-tty">什么是 tty</a></li>
+            <li><a href="#zsh-执行慢">zsh 执行慢</a>
               <ul>
-                <li><a href="#修改-mysql-提示符">修改 Mysql 提示符</a>
-                  <ul>
-                    <li><a href="#当前链接有效">当前链接有效</a></li>
-                    <li><a href="#所有链接都有效">所有链接都有效</a></li>
-                  </ul>
-                </li>
+                <li><a href="#调试-zsh">调试 zsh</a></li>
               </ul>
             </li>
-            <li><a href="#jetbrains">Jetbrains</a>
-              <ul>
-                <li><a href="#同步配置">同步配置</a></li>
-                <li><a href="#intellij-idea-配置文件存放的位置">IntelliJ IDEA 配置文件存放的位置</a></li>
-                <li><a href="#macos-删除-idea-配置文件">MacOS 删除 idea 配置文件</a></li>
-              </ul>
-            </li>
-            <li><a href="#局域网-ip">局域网 IP</a>
-              <ul>
-                <li><a href="#a-类">A 类</a></li>
-                <li><a href="#b-类">B 类</a></li>
-                <li><a href="#c-类">C 类</a></li>
-              </ul>
-            </li>
-            <li><a href="#github">github</a>
-              <ul>
-                <li><a href="#add-file-to-remote-without-cloning">add file to remote without cloning</a></li>
-              </ul>
-            </li>
-            <li><a href="#keyboard-maestro">Keyboard Maestro</a></li>
-            <li><a href="#kubernetes">Kubernetes</a>
-              <ul>
-                <li><a href="#volumes">Volumes</a>
-                  <ul>
-                    <li><a href="#subpath">subPath</a>
-                      <ul>
-                        <li><a href="#同一个-volume-多次挂载">同一个 volume 多次挂载</a></li>
-                        <li><a href="#插入而非覆盖"><code>插入</code>而非<code>覆盖</code></a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#fatedierfrphttpsgithubcomfatedierfrp-github-starshttpsimgshieldsiogithubstarsfatedierfrpsvg"><a href="https://github.com/fatedier/frp">fatedier/frp</a> <img src="https://img.shields.io/github/stars/fatedier/frp.svg" alt="Github stars"></a></li>
-            <li><a href="#lazy-luosmargatehttpsgithubcomlazy-luosmargate-github-starshttpsimgshieldsiogithubstarslazy-luosmargatesvg"><a href="https://github.com/lazy-luo/smarGate">lazy-luo/smarGate</a> <img src="https://img.shields.io/github/stars/lazy-luo/smarGate.svg" alt="Github stars"></a></li>
+            <li><a href="#ls">ls</a></li>
           </ul>
         </li>
+        <li><a href="#mysql">Mysql</a>
+          <ul>
+            <li><a href="#修改-mysql-提示符">修改 Mysql 提示符</a>
+              <ul>
+                <li><a href="#当前链接有效">当前链接有效</a></li>
+                <li><a href="#所有链接都有效">所有链接都有效</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#jetbrains">Jetbrains</a>
+          <ul>
+            <li><a href="#同步配置">同步配置</a></li>
+            <li><a href="#intellij-idea-配置文件存放的位置">IntelliJ IDEA 配置文件存放的位置</a></li>
+            <li><a href="#macos-删除-idea-配置文件">MacOS 删除 idea 配置文件</a></li>
+          </ul>
+        </li>
+        <li><a href="#局域网-ip">局域网 IP</a>
+          <ul>
+            <li><a href="#a-类">A 类</a></li>
+            <li><a href="#b-类">B 类</a></li>
+            <li><a href="#c-类">C 类</a></li>
+          </ul>
+        </li>
+        <li><a href="#github">github</a>
+          <ul>
+            <li><a href="#add-file-to-remote-without-cloning">add file to remote without cloning</a></li>
+          </ul>
+        </li>
+        <li><a href="#keyboard-maestro">Keyboard Maestro</a></li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#volumes">Volumes</a>
+              <ul>
+                <li><a href="#subpath">subPath</a>
+                  <ul>
+                    <li><a href="#同一个-volume-多次挂载">同一个 volume 多次挂载</a></li>
+                    <li><a href="#插入而非覆盖"><code>插入</code>而非<code>覆盖</code></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#fatedierfrphttpsgithubcomfatedierfrp-github-starshttpsimgshieldsiogithubstarsfatedierfrpsvg"><a href="https://github.com/fatedier/frp">fatedier/frp</a> <img src="https://img.shields.io/github/stars/fatedier/frp.svg" alt="Github stars"></a></li>
+        <li><a href="#lazy-luosmargatehttpsgithubcomlazy-luosmargate-github-starshttpsimgshieldsiogithubstarslazy-luosmargatesvg"><a href="https://github.com/lazy-luo/smarGate">lazy-luo/smarGate</a> <img src="https://img.shields.io/github/stars/lazy-luo/smarGate.svg" alt="Github stars"></a></li>
       </ul>
     </li>
   </ul>
@@ -1409,76 +1405,72 @@ $ rm -rf ~/Library/Logs/Idea*
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-6-月-2-日星期二">2020 年 6 月 2 日（星期二）</a>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
+        <li><a href="#shell">shell</a>
           <ul>
-            <li><a href="#shell">shell</a>
+            <li><a href="#keyword-vs-reserved-word-vs-builtin"><code>keyword</code> vs <code>reserved word</code> vs <code>builtin</code></a>
               <ul>
-                <li><a href="#keyword-vs-reserved-word-vs-builtin"><code>keyword</code> vs <code>reserved word</code> vs <code>builtin</code></a>
-                  <ul>
-                    <li><a href="#为什么-time-是-keyword而不是-builtin">为什么 <code>time</code> 是 <code>keyword</code>，而不是 <code>builtin</code></a></li>
-                  </ul>
-                </li>
-                <li><a href="#命令前加反斜杠-">命令前加反斜杠 <code>\</code></a></li>
-                <li><a href="#什么是-tty">什么是 tty</a></li>
-                <li><a href="#zsh-执行慢">zsh 执行慢</a>
-                  <ul>
-                    <li><a href="#调试-zsh">调试 zsh</a></li>
-                  </ul>
-                </li>
-                <li><a href="#ls">ls</a></li>
+                <li><a href="#为什么-time-是-keyword而不是-builtin">为什么 <code>time</code> 是 <code>keyword</code>，而不是 <code>builtin</code></a></li>
               </ul>
             </li>
-            <li><a href="#mysql">Mysql</a>
+            <li><a href="#命令前加反斜杠-">命令前加反斜杠 <code>\</code></a></li>
+            <li><a href="#什么是-tty">什么是 tty</a></li>
+            <li><a href="#zsh-执行慢">zsh 执行慢</a>
               <ul>
-                <li><a href="#修改-mysql-提示符">修改 Mysql 提示符</a>
-                  <ul>
-                    <li><a href="#当前链接有效">当前链接有效</a></li>
-                    <li><a href="#所有链接都有效">所有链接都有效</a></li>
-                  </ul>
-                </li>
+                <li><a href="#调试-zsh">调试 zsh</a></li>
               </ul>
             </li>
-            <li><a href="#jetbrains">Jetbrains</a>
-              <ul>
-                <li><a href="#同步配置">同步配置</a></li>
-                <li><a href="#intellij-idea-配置文件存放的位置">IntelliJ IDEA 配置文件存放的位置</a></li>
-                <li><a href="#macos-删除-idea-配置文件">MacOS 删除 idea 配置文件</a></li>
-              </ul>
-            </li>
-            <li><a href="#局域网-ip">局域网 IP</a>
-              <ul>
-                <li><a href="#a-类">A 类</a></li>
-                <li><a href="#b-类">B 类</a></li>
-                <li><a href="#c-类">C 类</a></li>
-              </ul>
-            </li>
-            <li><a href="#github">github</a>
-              <ul>
-                <li><a href="#add-file-to-remote-without-cloning">add file to remote without cloning</a></li>
-              </ul>
-            </li>
-            <li><a href="#keyboard-maestro">Keyboard Maestro</a></li>
-            <li><a href="#kubernetes">Kubernetes</a>
-              <ul>
-                <li><a href="#volumes">Volumes</a>
-                  <ul>
-                    <li><a href="#subpath">subPath</a>
-                      <ul>
-                        <li><a href="#同一个-volume-多次挂载">同一个 volume 多次挂载</a></li>
-                        <li><a href="#插入而非覆盖"><code>插入</code>而非<code>覆盖</code></a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#fatedierfrphttpsgithubcomfatedierfrp-github-starshttpsimgshieldsiogithubstarsfatedierfrpsvg"><a href="https://github.com/fatedier/frp">fatedier/frp</a> <img src="https://img.shields.io/github/stars/fatedier/frp.svg" alt="Github stars"></a></li>
-            <li><a href="#lazy-luosmargatehttpsgithubcomlazy-luosmargate-github-starshttpsimgshieldsiogithubstarslazy-luosmargatesvg"><a href="https://github.com/lazy-luo/smarGate">lazy-luo/smarGate</a> <img src="https://img.shields.io/github/stars/lazy-luo/smarGate.svg" alt="Github stars"></a></li>
+            <li><a href="#ls">ls</a></li>
           </ul>
         </li>
+        <li><a href="#mysql">Mysql</a>
+          <ul>
+            <li><a href="#修改-mysql-提示符">修改 Mysql 提示符</a>
+              <ul>
+                <li><a href="#当前链接有效">当前链接有效</a></li>
+                <li><a href="#所有链接都有效">所有链接都有效</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#jetbrains">Jetbrains</a>
+          <ul>
+            <li><a href="#同步配置">同步配置</a></li>
+            <li><a href="#intellij-idea-配置文件存放的位置">IntelliJ IDEA 配置文件存放的位置</a></li>
+            <li><a href="#macos-删除-idea-配置文件">MacOS 删除 idea 配置文件</a></li>
+          </ul>
+        </li>
+        <li><a href="#局域网-ip">局域网 IP</a>
+          <ul>
+            <li><a href="#a-类">A 类</a></li>
+            <li><a href="#b-类">B 类</a></li>
+            <li><a href="#c-类">C 类</a></li>
+          </ul>
+        </li>
+        <li><a href="#github">github</a>
+          <ul>
+            <li><a href="#add-file-to-remote-without-cloning">add file to remote without cloning</a></li>
+          </ul>
+        </li>
+        <li><a href="#keyboard-maestro">Keyboard Maestro</a></li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#volumes">Volumes</a>
+              <ul>
+                <li><a href="#subpath">subPath</a>
+                  <ul>
+                    <li><a href="#同一个-volume-多次挂载">同一个 volume 多次挂载</a></li>
+                    <li><a href="#插入而非覆盖"><code>插入</code>而非<code>覆盖</code></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#fatedierfrphttpsgithubcomfatedierfrp-github-starshttpsimgshieldsiogithubstarsfatedierfrpsvg"><a href="https://github.com/fatedier/frp">fatedier/frp</a> <img src="https://img.shields.io/github/stars/fatedier/frp.svg" alt="Github stars"></a></li>
+        <li><a href="#lazy-luosmargatehttpsgithubcomlazy-luosmargate-github-starshttpsimgshieldsiogithubstarslazy-luosmargatesvg"><a href="https://github.com/lazy-luo/smarGate">lazy-luo/smarGate</a> <img src="https://img.shields.io/github/stars/lazy-luo/smarGate.svg" alt="Github stars"></a></li>
       </ul>
     </li>
   </ul>

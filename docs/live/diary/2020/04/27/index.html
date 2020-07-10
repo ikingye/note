@@ -17,7 +17,7 @@ consul &#43; consul-template #  gcc vs g&#43;&#43; #   后缀为 .c 的  gcc 把
 <title>2020-04-27 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/note/book.min.4a4e61927b76fdd285206b6106743ba83d27011a9539605642604c2e99b4e2fb.css" integrity="sha256-Sk5hknt2/dKFIGthBnQ7qD0nARqVOWBWQmBMLpm04vs=">
+<link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
 <script defer src="/note/en.search.min.b007ca6b0ff56df29f9b515a59ffdfc4015bf0d93b6fdd691298b3835a112183.js" integrity="sha256-sAfKaw/1bfKfm1FaWf/fxAFb8Nk7b91pEpizg1oRIYM="></script>
 <!--
 Made with Book Theme
@@ -954,79 +954,75 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-4-月-27-日星期一">2020 年 4 月 27 日（星期一）</a>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
+        <li><a href="#gb28181">GB28181</a>
           <ul>
-            <li><a href="#gb28181">GB28181</a>
+            <li><a href="#sip-协议">SIP 协议</a></li>
+          </ul>
+        </li>
+        <li><a href="#vscode">VSCode</a></li>
+        <li><a href="#运维">运维</a>
+          <ul>
+            <li><a href="#disconfhttpsgithubcomknightliaodisconf-github-starshttpsimgshieldsiogithubstarsknightliaodisconfsvg"><a href="https://github.com/knightliao/disconf">disconf</a> <img src="https://img.shields.io/github/stars/knightliao/disconf.svg" alt="Github stars"></a></li>
+            <li><a href="#consul--consul-template">consul + consul-template</a></li>
+          </ul>
+        </li>
+        <li><a href="#gcc-vs-g">gcc vs g++</a></li>
+        <li><a href="#乐观锁-vs-悲观锁">乐观锁 vs 悲观锁</a>
+          <ul>
+            <li><a href="#乐观锁读多写少">乐观锁（读多写少）</a>
               <ul>
-                <li><a href="#sip-协议">SIP 协议</a></li>
-              </ul>
-            </li>
-            <li><a href="#vscode">VSCode</a></li>
-            <li><a href="#运维">运维</a>
-              <ul>
-                <li><a href="#disconfhttpsgithubcomknightliaodisconf-github-starshttpsimgshieldsiogithubstarsknightliaodisconfsvg"><a href="https://github.com/knightliao/disconf">disconf</a> <img src="https://img.shields.io/github/stars/knightliao/disconf.svg" alt="Github stars"></a></li>
-                <li><a href="#consul--consul-template">consul + consul-template</a></li>
-              </ul>
-            </li>
-            <li><a href="#gcc-vs-g">gcc vs g++</a></li>
-            <li><a href="#乐观锁-vs-悲观锁">乐观锁 vs 悲观锁</a>
-              <ul>
-                <li><a href="#乐观锁读多写少">乐观锁（读多写少）</a>
+                <li><a href="#cas-算法">CAS 算法</a></li>
+                <li><a href="#乐观锁的缺点">乐观锁的缺点</a>
                   <ul>
-                    <li><a href="#cas-算法">CAS 算法</a></li>
-                    <li><a href="#乐观锁的缺点">乐观锁的缺点</a>
-                      <ul>
-                        <li><a href="#aba-问题">ABA 问题</a></li>
-                        <li><a href="#循环时间长开销大">循环时间长开销大</a></li>
-                        <li><a href="#只能保证一个共享变量的原子操作">只能保证一个共享变量的原子操作</a></li>
-                      </ul>
-                    </li>
+                    <li><a href="#aba-问题">ABA 问题</a></li>
+                    <li><a href="#循环时间长开销大">循环时间长开销大</a></li>
+                    <li><a href="#只能保证一个共享变量的原子操作">只能保证一个共享变量的原子操作</a></li>
                   </ul>
                 </li>
-                <li><a href="#悲观锁写多读少">悲观锁（写多读少）</a></li>
               </ul>
             </li>
-            <li><a href="#java-主流锁">Java 主流锁</a></li>
-            <li><a href="#python-深拷贝-vs-浅拷贝">Python 深拷贝 vs 浅拷贝</a>
-              <ul>
-                <li><a href="#直接赋值">直接赋值</a></li>
-                <li><a href="#浅拷贝-copy">浅拷贝 (copy)</a></li>
-                <li><a href="#深拷贝-deepcopy">深拷贝 (deepcopy)</a></li>
-                <li><a href="#应用场景">应用场景</a></li>
-              </ul>
-            </li>
-            <li><a href="#python-垃圾回收机制">Python 垃圾回收机制</a>
-              <ul>
-                <li><a href="#引用计数">引用计数</a></li>
-                <li><a href="#标记---清除">标记 - 清除</a></li>
-                <li><a href="#分代回收">分代回收</a></li>
-              </ul>
-            </li>
-            <li><a href="#http-code">HTTP Code</a></li>
-            <li><a href="#文件上传">文件上传</a>
-              <ul>
-                <li><a href="#断点续传">断点续传</a></li>
-              </ul>
-            </li>
-            <li><a href="#可扩展性">可扩展性</a>
-              <ul>
-                <li><a href="#设计模式可增加可扩展性">设计模式可增加可扩展性</a></li>
-                <li><a href="#消息队列">消息队列</a></li>
-                <li><a href="#微服务">微服务</a></li>
-                <li><a href="#可扩展的数据结构">可扩展的数据结构</a></li>
-              </ul>
-            </li>
-            <li><a href="#influxdb">InfluxDB</a></li>
+            <li><a href="#悲观锁写多读少">悲观锁（写多读少）</a></li>
           </ul>
         </li>
-        <li><a href="#政治">政治</a>
+        <li><a href="#java-主流锁">Java 主流锁</a></li>
+        <li><a href="#python-深拷贝-vs-浅拷贝">Python 深拷贝 vs 浅拷贝</a>
           <ul>
-            <li><a href="#苏哈托">苏哈托</a></li>
+            <li><a href="#直接赋值">直接赋值</a></li>
+            <li><a href="#浅拷贝-copy">浅拷贝 (copy)</a></li>
+            <li><a href="#深拷贝-deepcopy">深拷贝 (deepcopy)</a></li>
+            <li><a href="#应用场景">应用场景</a></li>
           </ul>
         </li>
+        <li><a href="#python-垃圾回收机制">Python 垃圾回收机制</a>
+          <ul>
+            <li><a href="#引用计数">引用计数</a></li>
+            <li><a href="#标记---清除">标记 - 清除</a></li>
+            <li><a href="#分代回收">分代回收</a></li>
+          </ul>
+        </li>
+        <li><a href="#http-code">HTTP Code</a></li>
+        <li><a href="#文件上传">文件上传</a>
+          <ul>
+            <li><a href="#断点续传">断点续传</a></li>
+          </ul>
+        </li>
+        <li><a href="#可扩展性">可扩展性</a>
+          <ul>
+            <li><a href="#设计模式可增加可扩展性">设计模式可增加可扩展性</a></li>
+            <li><a href="#消息队列">消息队列</a></li>
+            <li><a href="#微服务">微服务</a></li>
+            <li><a href="#可扩展的数据结构">可扩展的数据结构</a></li>
+          </ul>
+        </li>
+        <li><a href="#influxdb">InfluxDB</a></li>
+      </ul>
+    </li>
+    <li><a href="#政治">政治</a>
+      <ul>
+        <li><a href="#苏哈托">苏哈托</a></li>
       </ul>
     </li>
   </ul>
@@ -1428,79 +1424,75 @@ USE mydb
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#2020-年-4-月-27-日星期一">2020 年 4 月 27 日（星期一）</a>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#今日待办">今日待办</a></li>
-        <li><a href="#编程">编程</a>
+        <li><a href="#gb28181">GB28181</a>
           <ul>
-            <li><a href="#gb28181">GB28181</a>
+            <li><a href="#sip-协议">SIP 协议</a></li>
+          </ul>
+        </li>
+        <li><a href="#vscode">VSCode</a></li>
+        <li><a href="#运维">运维</a>
+          <ul>
+            <li><a href="#disconfhttpsgithubcomknightliaodisconf-github-starshttpsimgshieldsiogithubstarsknightliaodisconfsvg"><a href="https://github.com/knightliao/disconf">disconf</a> <img src="https://img.shields.io/github/stars/knightliao/disconf.svg" alt="Github stars"></a></li>
+            <li><a href="#consul--consul-template">consul + consul-template</a></li>
+          </ul>
+        </li>
+        <li><a href="#gcc-vs-g">gcc vs g++</a></li>
+        <li><a href="#乐观锁-vs-悲观锁">乐观锁 vs 悲观锁</a>
+          <ul>
+            <li><a href="#乐观锁读多写少">乐观锁（读多写少）</a>
               <ul>
-                <li><a href="#sip-协议">SIP 协议</a></li>
-              </ul>
-            </li>
-            <li><a href="#vscode">VSCode</a></li>
-            <li><a href="#运维">运维</a>
-              <ul>
-                <li><a href="#disconfhttpsgithubcomknightliaodisconf-github-starshttpsimgshieldsiogithubstarsknightliaodisconfsvg"><a href="https://github.com/knightliao/disconf">disconf</a> <img src="https://img.shields.io/github/stars/knightliao/disconf.svg" alt="Github stars"></a></li>
-                <li><a href="#consul--consul-template">consul + consul-template</a></li>
-              </ul>
-            </li>
-            <li><a href="#gcc-vs-g">gcc vs g++</a></li>
-            <li><a href="#乐观锁-vs-悲观锁">乐观锁 vs 悲观锁</a>
-              <ul>
-                <li><a href="#乐观锁读多写少">乐观锁（读多写少）</a>
+                <li><a href="#cas-算法">CAS 算法</a></li>
+                <li><a href="#乐观锁的缺点">乐观锁的缺点</a>
                   <ul>
-                    <li><a href="#cas-算法">CAS 算法</a></li>
-                    <li><a href="#乐观锁的缺点">乐观锁的缺点</a>
-                      <ul>
-                        <li><a href="#aba-问题">ABA 问题</a></li>
-                        <li><a href="#循环时间长开销大">循环时间长开销大</a></li>
-                        <li><a href="#只能保证一个共享变量的原子操作">只能保证一个共享变量的原子操作</a></li>
-                      </ul>
-                    </li>
+                    <li><a href="#aba-问题">ABA 问题</a></li>
+                    <li><a href="#循环时间长开销大">循环时间长开销大</a></li>
+                    <li><a href="#只能保证一个共享变量的原子操作">只能保证一个共享变量的原子操作</a></li>
                   </ul>
                 </li>
-                <li><a href="#悲观锁写多读少">悲观锁（写多读少）</a></li>
               </ul>
             </li>
-            <li><a href="#java-主流锁">Java 主流锁</a></li>
-            <li><a href="#python-深拷贝-vs-浅拷贝">Python 深拷贝 vs 浅拷贝</a>
-              <ul>
-                <li><a href="#直接赋值">直接赋值</a></li>
-                <li><a href="#浅拷贝-copy">浅拷贝 (copy)</a></li>
-                <li><a href="#深拷贝-deepcopy">深拷贝 (deepcopy)</a></li>
-                <li><a href="#应用场景">应用场景</a></li>
-              </ul>
-            </li>
-            <li><a href="#python-垃圾回收机制">Python 垃圾回收机制</a>
-              <ul>
-                <li><a href="#引用计数">引用计数</a></li>
-                <li><a href="#标记---清除">标记 - 清除</a></li>
-                <li><a href="#分代回收">分代回收</a></li>
-              </ul>
-            </li>
-            <li><a href="#http-code">HTTP Code</a></li>
-            <li><a href="#文件上传">文件上传</a>
-              <ul>
-                <li><a href="#断点续传">断点续传</a></li>
-              </ul>
-            </li>
-            <li><a href="#可扩展性">可扩展性</a>
-              <ul>
-                <li><a href="#设计模式可增加可扩展性">设计模式可增加可扩展性</a></li>
-                <li><a href="#消息队列">消息队列</a></li>
-                <li><a href="#微服务">微服务</a></li>
-                <li><a href="#可扩展的数据结构">可扩展的数据结构</a></li>
-              </ul>
-            </li>
-            <li><a href="#influxdb">InfluxDB</a></li>
+            <li><a href="#悲观锁写多读少">悲观锁（写多读少）</a></li>
           </ul>
         </li>
-        <li><a href="#政治">政治</a>
+        <li><a href="#java-主流锁">Java 主流锁</a></li>
+        <li><a href="#python-深拷贝-vs-浅拷贝">Python 深拷贝 vs 浅拷贝</a>
           <ul>
-            <li><a href="#苏哈托">苏哈托</a></li>
+            <li><a href="#直接赋值">直接赋值</a></li>
+            <li><a href="#浅拷贝-copy">浅拷贝 (copy)</a></li>
+            <li><a href="#深拷贝-deepcopy">深拷贝 (deepcopy)</a></li>
+            <li><a href="#应用场景">应用场景</a></li>
           </ul>
         </li>
+        <li><a href="#python-垃圾回收机制">Python 垃圾回收机制</a>
+          <ul>
+            <li><a href="#引用计数">引用计数</a></li>
+            <li><a href="#标记---清除">标记 - 清除</a></li>
+            <li><a href="#分代回收">分代回收</a></li>
+          </ul>
+        </li>
+        <li><a href="#http-code">HTTP Code</a></li>
+        <li><a href="#文件上传">文件上传</a>
+          <ul>
+            <li><a href="#断点续传">断点续传</a></li>
+          </ul>
+        </li>
+        <li><a href="#可扩展性">可扩展性</a>
+          <ul>
+            <li><a href="#设计模式可增加可扩展性">设计模式可增加可扩展性</a></li>
+            <li><a href="#消息队列">消息队列</a></li>
+            <li><a href="#微服务">微服务</a></li>
+            <li><a href="#可扩展的数据结构">可扩展的数据结构</a></li>
+          </ul>
+        </li>
+        <li><a href="#influxdb">InfluxDB</a></li>
+      </ul>
+    </li>
+    <li><a href="#政治">政治</a>
+      <ul>
+        <li><a href="#苏哈托">苏哈托</a></li>
       </ul>
     </li>
   </ul>
