@@ -18,7 +18,7 @@ Vert.x 的底层 IO 基于 Netty4 实现，核心模块 Vertx Core，支持非�
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.a479e7e5449460ae03648aef71ff54dc6e99cba96e9e15e77b17b4dad3e961ea.js" integrity="sha256-pHnn5USUYK4DZIrvcf9U3G6Zy6lunhXnexe02tPpYeo="></script>
+<script defer src="/note/en.search.min.65ba93eb658e1dc3004f1476ec1d90a60ab32a1d37ae5c683d0686f595a22675.js" integrity="sha256-ZbqT62WOHcMATxR27B2QpgqzKh03rlxoPQaG9ZWiJnU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -765,6 +765,7 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#统一存储">统一存储</a></li>
           </ul>
         </li>
+        <li><a href="#恢复笔记本">恢复笔记本</a></li>
       </ul>
     </li>
     <li><a href="#运营">运营</a>
@@ -1008,6 +1009,15 @@ import golang.org/x/net/http2.</p>
 在 <code>SAN</code> 产品上部署一个 <code>NAS</code> 网关不是统一存储，
 同样，离开文件系统的 <code>SAN</code> 也不算，故障转移事件超过 30 秒也不能算是企业级的统一存储产品。</p>
 <hr>
+<h3 id="恢复笔记本">
+  恢复笔记本
+  <a class="anchor" href="#%e6%81%a2%e5%a4%8d%e7%ac%94%e8%ae%b0%e6%9c%ac">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone github:ikingye/study-php-source study-php
+cd study-php
+
+git submodule update --init --recursive
+</code></pre></div><hr>
 <h2 id="运营">
   运营
   <a class="anchor" href="#%e8%bf%90%e8%90%a5">#</a>
@@ -1108,6 +1118,7 @@ import golang.org/x/net/http2.</p>
             <li><a href="#统一存储">统一存储</a></li>
           </ul>
         </li>
+        <li><a href="#恢复笔记本">恢复笔记本</a></li>
       </ul>
     </li>
     <li><a href="#运营">运营</a>
