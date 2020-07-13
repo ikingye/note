@@ -13,12 +13,12 @@ Vert.x 项目起始于 2011 年，最开始的名字叫做 node.x，是一个仿
 Vert.x 的底层 IO 基于 Netty4 实现，核心模块 Vertx Core，支持非阻塞 文件 IO，TCP，UDP，DNS，HTTP，HTTPS，HTTP2 (包括 h2 和 h2c)。比较基础的模块 Vert.x-Web ，提供了包括 URL 路由，模板引擎在内的开发 web server 所需的 API，Vert.x Web Client，提供一个非阻塞 Http Client 实现。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/13/" />
-
+<meta property="article:modified_time" content="2020-07-13T14:34:13+08:00" />
 <title>2020-07-13 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.f3bc12db991a99d86583f0ab493304033cdf51e25fb363d794152372d1cf614b.js" integrity="sha256-87wS25kamdhlg/CrSTMEAzzfUeJfs2PXlBUjctHPYUs="></script>
+<script defer src="/note/en.search.min.0096ea0bfbeeecc67bfccfae7f333d8fa02beec9278322805c9b916fd7ae116c.js" integrity="sha256-AJbqC/vu7MZ7/M&#43;ufzM9j6Ar7skngyKAXJuRb9euEWw="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -734,6 +734,20 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#go-http2">Go HTTP2</a></li>
           </ul>
         </li>
+        <li><a href="#超融合">超融合</a></li>
+        <li><a href="#npu">NPU</a></li>
+        <li><a href="#pytorch">PyTorch</a></li>
+        <li><a href="#go">Go</a>
+          <ul>
+            <li><a href="#goplus">GoPlus</a></li>
+            <li><a href="#gonum">Gonum</a></li>
+            <li><a href="#pprof">pprof</a>
+              <ul>
+                <li><a href="#go-torch">go-torch</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#运营">运营</a>
@@ -803,6 +817,83 @@ import golang.org/x/net/http2.</p>
 <a href="https://github.com/golang/net/tree/master/http2">https://github.com/golang/net/tree/master/http2</a> (mirror)</li>
 </ul>
 <hr>
+<h3 id="超融合">
+  超融合
+  <a class="anchor" href="#%e8%b6%85%e8%9e%8d%e5%90%88">#</a>
+</h3>
+<p>超融合基础架构（<code>Hyper Converged Infrastructure</code>，或简称 “<code>HCI</code>”）是指
+在同一套单元设备中不仅仅具备计算、网络、存储和服务器虚拟化等资源和技术，而且还包括备份软件、快照技术、重复数据删除、在线数据压缩等元素，而多套单元设备可以通过网络聚合起来，实现模块化的无缝横向扩展（scale-out），形成统一的资源池。
+超融合（甚至超超融合）在本地很容易实现：
+将计算、网络和存储都集成在一个设备内，并且通过它由供应商预先配置好且差不多到手就可以使用。</p>
+<p><code>HCI</code> 是实现 “软件定义数据中心”（<code>SDDC</code>）的终极技术途径。
+<code>HCI</code> 类似 Google、Facebook 后台的大规模基础架构模式，可以为数据中心带来最优的效率、灵活性、规模、成本和数据保护。</p>
+<p>超融合是指计算、存储和网络的融合。
+计算一般是指虚拟化，
+存储一般是指分布式存储，
+网络一般是指 SDN。</p>
+<p>分布式存储不一定是分布式文件系统，也可能是<code>分布式块存储</code>。
+在超融合场景下，“用户看到的” 一般是指<code>分布式块存储</code> —— 即为每个计算单位（虚拟机）提供虚拟硬盘（块设备）的分布式存储。</p>
+<p>但如果深究<code>分布式块存储</code>的实现技术的时候，我们会发现一些<code>分布式块存储</code>是基于分布式文件系统实现的。大致的原理是：先用分布式文件系统将物理磁盘管理起来，形成一个池（十分类似于 Google GFS）；从这个池里面创建文件，例如 500GB 的文件；然后通过块设备网关，例如 iSCSI 网关，将这个 500GB 的文件变成 500GB 的虚拟硬盘（块设备），对外提供服务。可以说，很多的<code>分布式块存储</code>都是基于分布式文件存储实现的。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/57242139">超融合产品和以前的分布式文件系统有什么区别？</a></li>
+</ul>
+<hr>
+<h3 id="npu">
+  NPU
+  <a class="anchor" href="#npu">#</a>
+</h3>
+<p><code>Network Processing Unit</code></p>
+<p><code>Neural-network Processing Unit</code> 神经网络处理器</p>
+<p><code>AI accelerator</code> <a href="https://www.wikiwand.com/zh-cn/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8A%A0%E9%80%9F%E5%99%A8">人工智能加速器</a>
+是一类专用于人工智能（特别是人工神经网络、机器视觉、机器学习等）硬件加速的微处理器或计算系统。
+典型的应用包括 机器人学、物联网等数据密集型应用或传感器驱动的任务。</p>
+<hr>
+<h3 id="pytorch">
+  PyTorch
+  <a class="anchor" href="#pytorch">#</a>
+</h3>
+<p><a href="https://github.com/pytorch/pytorch">pytorch/pytorch</a> <img src="https://img.shields.io/github/stars/pytorch/pytorch.svg" alt="Github stars" /></p>
+<p>PyTorch is a Python package that provides two high-level features:</p>
+<ul>
+<li>Tensor computation (like NumPy) with strong GPU acceleration</li>
+<li>Deep neural networks built on a tape-based autograd system</li>
+</ul>
+<hr>
+<h3 id="go">
+  Go
+  <a class="anchor" href="#go">#</a>
+</h3>
+<h4 id="goplus">
+  GoPlus
+  <a class="anchor" href="#goplus">#</a>
+</h4>
+<p><a href="https://github.com/goplus/gop">goplus/gop</a> <img src="https://img.shields.io/github/stars/goplus/gop.svg" alt="Github stars" /></p>
+<p>The Go+ language for data science</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/336686357">为什么很少人用 golang 做大数据分析？</a></li>
+</ul>
+<hr>
+<h4 id="gonum">
+  Gonum
+  <a class="anchor" href="#gonum">#</a>
+</h4>
+<p><a href="https://github.com/gonum/gonum">gonum/gonum</a> <img src="https://img.shields.io/github/stars/gonum/gonum.svg" alt="Github stars" /></p>
+<p>Gonum is a set of numeric libraries for the Go programming language.</p>
+<hr>
+<h4 id="pprof">
+  pprof
+  <a class="anchor" href="#pprof">#</a>
+</h4>
+<h5 id="go-torch">
+  go-torch
+  <a class="anchor" href="#go-torch">#</a>
+</h5>
+<p><a href="https://github.com/uber-archive/go-torch">uber-archive/go-torch</a> <img src="https://img.shields.io/github/stars/uber-archive/go-torch.svg" alt="Github stars" /></p>
+<p>go-torch is deprecated, use pprof instead</p>
+<p>As of <code>Go 1.11</code>, flamegraph visualizations are available in go tool pprof directly!</p>
+<hr>
 <h2 id="运营">
   运营
   <a class="anchor" href="#%e8%bf%90%e8%90%a5">#</a>
@@ -821,6 +912,12 @@ import golang.org/x/net/http2.</p>
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/6fe738088e2a572da1eed12e97ffbf5bc0678449" title='Last modified by yewang | 2020-07-13' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-13</span>
+    </a>
+  </div>
 
 
 
@@ -864,6 +961,20 @@ import golang.org/x/net/http2.</p>
         <li><a href="#http2">HTTP2</a>
           <ul>
             <li><a href="#go-http2">Go HTTP2</a></li>
+          </ul>
+        </li>
+        <li><a href="#超融合">超融合</a></li>
+        <li><a href="#npu">NPU</a></li>
+        <li><a href="#pytorch">PyTorch</a></li>
+        <li><a href="#go">Go</a>
+          <ul>
+            <li><a href="#goplus">GoPlus</a></li>
+            <li><a href="#gonum">Gonum</a></li>
+            <li><a href="#pprof">pprof</a>
+              <ul>
+                <li><a href="#go-torch">go-torch</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
