@@ -10,6 +10,17 @@
     
     
     <item>
+      <title>2020-07-13</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/13/</guid>
+      <description>2020 年 7 月 13 日（星期一） #  今日待办 #      编程 #  Vert.x #  Eclipse Vert.x is a tool-kit for building reactive applications on the JVM.
+Vert.x 项目起始于 2011 年，最开始的名字叫做 node.x，是一个仿照 Node.js 以 Java 开发的，基于 EventLoop 的异步非阻塞编程框架。虽然从时间上来说也算有一定年头了，但是一直没有大火，从 3.x 开始才稍微流行了一点。
+Vert.x 的底层 IO 基于 Netty4 实现，核心模块 Vertx Core，支持非阻塞 文件 IO，TCP，UDP，DNS，HTTP，HTTPS，HTTP2 (包括 h2 和 h2c)。比较基础的模块 Vert.x-Web ，提供了包括 URL 路由，模板引擎在内的开发 web server 所需的 API，Vert.x Web Client，提供一个非阻塞 Http Client 实现。</description>
+    </item>
+    
+    <item>
       <title>2020-07-11</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/07/11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
