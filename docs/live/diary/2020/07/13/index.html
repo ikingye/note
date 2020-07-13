@@ -13,12 +13,12 @@ Vert.x 项目起始于 2011 年，最开始的名字叫做 node.x，是一个仿
 Vert.x 的底层 IO 基于 Netty4 实现，核心模块 Vertx Core，支持非阻塞 文件 IO，TCP，UDP，DNS，HTTP，HTTPS，HTTP2 (包括 h2 和 h2c)。比较基础的模块 Vert.x-Web ，提供了包括 URL 路由，模板引擎在内的开发 web server 所需的 API，Vert.x Web Client，提供一个非阻塞 Http Client 实现。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/13/" />
-<meta property="article:modified_time" content="2020-07-13T17:33:40+08:00" />
+<meta property="article:modified_time" content="2020-07-13T17:55:23+08:00" />
 <title>2020-07-13 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.c791f356cd115e63678a5553244a14622dcbb381e8e30a009e0043f7c07dacf6.js" integrity="sha256-x5HzVs0RXmNnilVTJEoUYi3Ls4Ho4woAngBD98B9rPY="></script>
+<script defer src="/note/en.search.min.a479e7e5449460ae03648aef71ff54dc6e99cba96e9e15e77b17b4dad3e961ea.js" integrity="sha256-pHnn5USUYK4DZIrvcf9U3G6Zy6lunhXnexe02tPpYeo="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -756,12 +756,12 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#私有云">私有云</a></li>
         <li><a href="#存储">存储</a>
           <ul>
+            <li><a href="#块存储-vs-文件存储-vs-对象存储">块存储 vs 文件存储 vs 对象存储</a></li>
             <li><a href="#分布式存储">分布式存储</a>
               <ul>
                 <li><a href="#ceph">Ceph</a></li>
               </ul>
             </li>
-            <li><a href="#块存储-vs-文件存储-vs-对象存储">块存储 vs 文件存储 vs 对象存储</a></li>
             <li><a href="#统一存储">统一存储</a></li>
           </ul>
         </li>
@@ -945,16 +945,6 @@ import golang.org/x/net/http2.</p>
   存储
   <a class="anchor" href="#%e5%ad%98%e5%82%a8">#</a>
 </h3>
-<h4 id="分布式存储">
-  分布式存储
-  <a class="anchor" href="#%e5%88%86%e5%b8%83%e5%bc%8f%e5%ad%98%e5%82%a8">#</a>
-</h4>
-<h5 id="ceph">
-  Ceph
-  <a class="anchor" href="#ceph">#</a>
-</h5>
-<p><a href="https://github.com/ceph/ceph">ceph/ceph</a> <img src="https://img.shields.io/github/stars/ceph/ceph.svg" alt="Github stars" /></p>
-<p>Ceph is a distributed object, block, and file storage platform</p>
 <h4 id="块存储-vs-文件存储-vs-对象存储">
   块存储 vs 文件存储 vs 对象存储
   <a class="anchor" href="#%e5%9d%97%e5%ad%98%e5%82%a8-vs-%e6%96%87%e4%bb%b6%e5%ad%98%e5%82%a8-vs-%e5%af%b9%e8%b1%a1%e5%ad%98%e5%82%a8">#</a>
@@ -966,10 +956,43 @@ import golang.org/x/net/http2.</p>
 </ul>
 <p>在网络存储中，服务器把本地的一个逻辑块设备通过某种协议模拟成一个块设备，远程的客户端使用相同的协议把这个逻辑块设备作为一个本地存储介质来使用，划分分区，格式化自己的文件系统等等。
 这就是块存储，比较常见的块存储协议是 <code>iSCSI</code>。</p>
+<p>这三种存储，分别对应了不同的<strong>访问协议</strong>，这也就决定了他们的本质差别。</p>
+<ul>
+<li>文件存储，主要操作对象是文件和文件夹。
+<ul>
+<li>以 NFS 为例，文件相关的接口包括：<code>LOOKUP/ACCESS/READ/WRITE/CREATE/REMOVE/RENAME</code> 等等，文件夹相关的接口包括：<code>MKDIR/RMDIR/READDIR</code> 等等。同时也会有 <code>FSSTAT/FSINFO</code> 等接口用于提供文件系统级别的信息。<code>POSIX</code>，<code>SAMBA</code> 等也是文件存储协议。</li>
+<li>协议更注重接口的灵活，以及访问权限控制。</li>
+</ul>
+</li>
+<li>块存储，主要操作对象是磁盘。
+<ul>
+<li>以 <code>SCSI</code> 为例，主要接口有 <code>Read/Write/Read Capacity/Inquiry</code> 等等。<code>FC</code>，<code>iSCSI</code>，也是块存储协议。</li>
+<li>和文件存储相比，没有文件和目录树的概念，一般协议也不会定义磁盘的创建和删除操作。</li>
+<li>协议更注重传输控制。</li>
+</ul>
+</li>
+<li>对象存储，主要操作对象是对象（Object）。
+<ul>
+<li>以 S3 为例，主要接口有 <code>PUT/GET/DELETE</code> 等。</li>
+<li>和文件和对象存储相比，没有随机读写的接口。和文件存储相比，没有目录树的概念。</li>
+<li>协议更注重简洁。</li>
+</ul>
+</li>
+</ul>
 <p>参考：</p>
 <ul>
 <li><a href="https://www.zhihu.com/question/21536660">块存储、文件存储、对象存储这三者的本质差别是什么？</a></li>
 </ul>
+<h4 id="分布式存储">
+  分布式存储
+  <a class="anchor" href="#%e5%88%86%e5%b8%83%e5%bc%8f%e5%ad%98%e5%82%a8">#</a>
+</h4>
+<h5 id="ceph">
+  Ceph
+  <a class="anchor" href="#ceph">#</a>
+</h5>
+<p><a href="https://github.com/ceph/ceph">ceph/ceph</a> <img src="https://img.shields.io/github/stars/ceph/ceph.svg" alt="Github stars" /></p>
+<p>Ceph is a distributed object, block, and file storage platform</p>
 <h4 id="统一存储">
   统一存储
   <a class="anchor" href="#%e7%bb%9f%e4%b8%80%e5%ad%98%e5%82%a8">#</a>
@@ -1004,7 +1027,7 @@ import golang.org/x/net/http2.</p>
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/971033869a8109fa439857c7c53cc5c8e1964d35" title='Last modified by yewang | 2020-07-13' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/8cca4ea2875f0d56670730947eb085a71d0fb048" title='Last modified by yewang | 2020-07-13' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-13</span>
     </a>
@@ -1076,12 +1099,12 @@ import golang.org/x/net/http2.</p>
         <li><a href="#私有云">私有云</a></li>
         <li><a href="#存储">存储</a>
           <ul>
+            <li><a href="#块存储-vs-文件存储-vs-对象存储">块存储 vs 文件存储 vs 对象存储</a></li>
             <li><a href="#分布式存储">分布式存储</a>
               <ul>
                 <li><a href="#ceph">Ceph</a></li>
               </ul>
             </li>
-            <li><a href="#块存储-vs-文件存储-vs-对象存储">块存储 vs 文件存储 vs 对象存储</a></li>
             <li><a href="#统一存储">统一存储</a></li>
           </ul>
         </li>
