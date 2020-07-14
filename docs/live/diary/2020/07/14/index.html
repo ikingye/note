@@ -9,12 +9,12 @@
 <meta property="og:description" content="2020 年 7 月 14 日（星期二） #  今日待办 #      编程 #  k3s #  $ k version Client Version: version.Info{Major:&#34;1&#34;, Minor:&#34;18&#34;, GitVersion:&#34;v1.18.2&#34;, GitCommit:&#34;52c56ce7a8272c798dbc29846288d7cd9fbae032&#34;, GitTreeState:&#34;clean&#34;, BuildDate:&#34;2020-04-16T23:34:25Z&#34;, GoVersion:&#34;go1.14.2&#34;, Compiler:&#34;gc&#34;, Platform:&#34;darwin/amd64&#34;} Server Version: version.Info{Major:&#34;1&#34;, Minor:&#34;18&#34;, GitVersion:&#34;v1.18.4&#43;k3s1&#34;, GitCommit:&#34;97b7a0e9df2883f08028fb7171c1e62fc1899a0c&#34;, GitTreeState:&#34;clean&#34;, BuildDate:&#34;2020-06-18T01:30:45Z&#34;, GoVersion:&#34;go1.13.11&#34;, Compiler:&#34;gc&#34;, Platform:&#34;linux/amd64&#34;} $ k get all -A NAMESPACE NAME READY STATUS RESTARTS AGE kube-system pod/metrics-server-7566d596c8-xg6ht 1/1 Running 0 4m43s kube-system pod/local-path-provisioner-6d59f47c7-cr5pg 1/1 Running 0 4m43s kube-system pod/coredns-8655855d6-t86q8 1/1 Running 0 4m43s NAMESPACE NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE default service/kubernetes ClusterIP 10." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/14/" />
-
+<meta property="article:modified_time" content="2020-07-14T11:13:09+08:00" />
 <title>2020-07-14 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.e827ffba60eac4e121cb9aebb8c206d662845b39be45df8e7ec32db51257e59e.js" integrity="sha256-6Cf/umDqxOEhy5rruMIG1mKEWzm&#43;Rd&#43;OfsMttRJX5Z4="></script>
+<script defer src="/note/en.search.min.1f3e4a57fd6d0155379e777a606681cecc2ec8a0bb2918742396d66db50a1c17.js" integrity="sha256-Hz5KV/1tAVU3nnd6YGaBzswuyKC7KRh0I5bWbbUKHBc="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -731,7 +731,25 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#编程">编程</a>
       <ul>
         <li><a href="#k3s">k3s</a></li>
-        <li><a href="#istio">istio</a></li>
+        <li><a href="#istio">istio</a>
+          <ul>
+            <li><a href="#安装-istio">安装 istio</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#-kubectl-label-namespace-default-istio-injectionenabled">$ kubectl label namespace default istio-injection=enabled</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#安装应用">安装应用</a></li>
+          </ul>
+        </li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#kind">kind</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -793,6 +811,10 @@ kube-system   replicaset.apps/coredns-8655855d6                  <span style="co
   istio
   <a class="anchor" href="#istio">#</a>
 </h3>
+<h4 id="安装-istio">
+  安装 istio
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-istio">#</a>
+</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ istioctl install --set profile<span style="color:#f92672">=</span>demo
 ✔ Istio core installed
 ✔ Istiod installed
@@ -800,7 +822,26 @@ kube-system   replicaset.apps/coredns-8655855d6                  <span style="co
 ✔ Ingress gateways installed
 ✔ Addons installed
 ✔ Installation complete
+</code></pre></div><h2 id="-kubectl-label-namespace-default-istio-injectionenabled">
+  $ kubectl label namespace default istio-injection=enabled
+  <a class="anchor" href="#-kubectl-label-namespace-default-istio-injectionenabled">#</a>
+</h2>
+<h4 id="安装应用">
+  安装应用
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85%e5%ba%94%e7%94%a8">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 </code></pre></div><hr>
+<h3 id="kubernetes">
+  Kubernetes
+  <a class="anchor" href="#kubernetes">#</a>
+</h3>
+<h4 id="kind">
+  kind
+  <a class="anchor" href="#kind">#</a>
+</h4>
+<p><a href="https://github.com/kubernetes-sigs/kind">kubernetes-sigs/kind</a> <img src="https://img.shields.io/github/stars/kubernetes-sigs/kind.svg" alt="Github stars" /></p>
+<p>Kubernetes IN Docker - local clusters for testing Kubernetes</p>
 </article>
  
       
@@ -810,6 +851,12 @@ kube-system   replicaset.apps/coredns-8655855d6                  <span style="co
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/dcb64da13d884dfda9f52fb49b038daea309ad0e" title='Last modified by yewang | 2020-07-14' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-14</span>
+    </a>
+  </div>
 
 
 
@@ -846,7 +893,25 @@ kube-system   replicaset.apps/coredns-8655855d6                  <span style="co
     <li><a href="#编程">编程</a>
       <ul>
         <li><a href="#k3s">k3s</a></li>
-        <li><a href="#istio">istio</a></li>
+        <li><a href="#istio">istio</a>
+          <ul>
+            <li><a href="#安装-istio">安装 istio</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#-kubectl-label-namespace-default-istio-injectionenabled">$ kubectl label namespace default istio-injection=enabled</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#安装应用">安装应用</a></li>
+          </ul>
+        </li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#kind">kind</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
