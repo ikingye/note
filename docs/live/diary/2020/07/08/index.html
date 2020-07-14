@@ -24,7 +24,7 @@ ICT #  信息通信技术 (Information and Communication Technology，简称 ICT
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.65ba93eb658e1dc3004f1476ec1d90a60ab32a1d37ae5c683d0686f595a22675.js" integrity="sha256-ZbqT62WOHcMATxR27B2QpgqzKh03rlxoPQaG9ZWiJnU="></script>
+<script defer src="/note/en.search.min.e827ffba60eac4e121cb9aebb8c206d662845b39be45df8e7ec32db51257e59e.js" integrity="sha256-6Cf/umDqxOEhy5rruMIG1mKEWzm&#43;Rd&#43;OfsMttRJX5Z4="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -431,6 +431,16 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
+    <a href="/note/docs/live/diary/2020/07/14/" class="">2020-07-14</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
     <a href="/note/docs/live/diary/2020/07/13/" class="">2020-07-13</a>
   
 
@@ -739,6 +749,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#podman">Podman</a></li>
         <li><a href="#istio">Istio</a></li>
         <li><a href="#linux">Linux</a></li>
+        <li><a href="#批量设置文件目录权限">批量设置文件/目录权限</a></li>
         <li><a href="#数据类型">数据类型</a></li>
         <li><a href="#go">Go</a>
           <ul>
@@ -823,8 +834,14 @@ istioctl profile list
   Linux
   <a class="anchor" href="#linux">#</a>
 </h3>
+<h3 id="批量设置文件目录权限">
+  批量设置文件/目录权限
+  <a class="anchor" href="#%e6%89%b9%e9%87%8f%e8%ae%be%e7%bd%ae%e6%96%87%e4%bb%b6%e7%9b%ae%e5%bd%95%e6%9d%83%e9%99%90">#</a>
+</h3>
 <pre><code># chmod 递归设置目录 755 和文件 644 权限
 alias chmodcommon=&quot;find . -type f -exec chmod 644 {} \; &amp;&amp; find . -type d -exec chmod 755 {} \; &quot;
+# 其实 find 也有正则匹配，但尝试了没有效果
+alias chmodshell=&quot;find . -type f | grep -e &quot;\.sh$&quot; | xargs chmod 744&quot;
 </code></pre><hr>
 <h3 id="数据类型">
   数据类型
@@ -909,6 +926,7 @@ alias chmodcommon=&quot;find . -type f -exec chmod 644 {} \; &amp;&amp; find . -
         <li><a href="#podman">Podman</a></li>
         <li><a href="#istio">Istio</a></li>
         <li><a href="#linux">Linux</a></li>
+        <li><a href="#批量设置文件目录权限">批量设置文件/目录权限</a></li>
         <li><a href="#数据类型">数据类型</a></li>
         <li><a href="#go">Go</a>
           <ul>

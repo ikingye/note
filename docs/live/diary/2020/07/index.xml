@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>2020-07-14</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/14/</guid>
+      <description>2020 年 7 月 14 日（星期二） #  今日待办 #      编程 #  k3s #  $ k version Client Version: version.Info{Major:&amp;#34;1&amp;#34;, Minor:&amp;#34;18&amp;#34;, GitVersion:&amp;#34;v1.18.2&amp;#34;, GitCommit:&amp;#34;52c56ce7a8272c798dbc29846288d7cd9fbae032&amp;#34;, GitTreeState:&amp;#34;clean&amp;#34;, BuildDate:&amp;#34;2020-04-16T23:34:25Z&amp;#34;, GoVersion:&amp;#34;go1.14.2&amp;#34;, Compiler:&amp;#34;gc&amp;#34;, Platform:&amp;#34;darwin/amd64&amp;#34;} Server Version: version.Info{Major:&amp;#34;1&amp;#34;, Minor:&amp;#34;18&amp;#34;, GitVersion:&amp;#34;v1.18.4+k3s1&amp;#34;, GitCommit:&amp;#34;97b7a0e9df2883f08028fb7171c1e62fc1899a0c&amp;#34;, GitTreeState:&amp;#34;clean&amp;#34;, BuildDate:&amp;#34;2020-06-18T01:30:45Z&amp;#34;, GoVersion:&amp;#34;go1.13.11&amp;#34;, Compiler:&amp;#34;gc&amp;#34;, Platform:&amp;#34;linux/amd64&amp;#34;} $ k get all -A NAMESPACE NAME READY STATUS RESTARTS AGE kube-system pod/metrics-server-7566d596c8-xg6ht 1/1 Running 0 4m43s kube-system pod/local-path-provisioner-6d59f47c7-cr5pg 1/1 Running 0 4m43s kube-system pod/coredns-8655855d6-t86q8 1/1 Running 0 4m43s NAMESPACE NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE default service/kubernetes ClusterIP 10.</description>
+    </item>
+    
+    <item>
       <title>2020-07-13</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/07/13/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
