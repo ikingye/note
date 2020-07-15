@@ -11,12 +11,12 @@
  multipart/form-data  常见的 POST 数据提交的方式 我们使用表单上传文件时，必须把 form 标签的 enctype 设置为 multipart/form-data   application/x-www-form-urlencoded  浏览器的原生 form 表单 提交的数据按照 key1=val1&amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码   application/json  消息主体是序列化后的 JSON 字符串   application/javascript application/xml  xml 格式数据   application/form-data  主要是用来上传文件   text/plain  将文件设置为纯文本的形式，浏览器在获取到这种文件时并不会对其进行处理   text/html  意思是将文件的 content-type 设置为 text/html 的形式 浏览器在获取到这种文件时会自动调用 html 的解析器对文件进行相应的处理   text/xml  使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范    无 #  POST /api/v1/account/ HTTP/1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/15/" />
-<meta property="article:modified_time" content="2020-07-15T15:36:00+08:00" />
+<meta property="article:modified_time" content="2020-07-15T15:44:40+08:00" />
 <title>2020-07-15 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.a58821ceb9d15aafa174aa3911e2b10db4e35be08db959b03ca5ed8f513eaba4.js" integrity="sha256-pYghzrnRWq&#43;hdKo5EeKxDbTjW&#43;CNuVmwPKXtj1E&#43;q6Q="></script>
+<script defer src="/note/en.search.min.1b5696d0610466cf3bfb4c69db62ddf4140ef5962f38965488046bdeafc621d3.js" integrity="sha256-G1aW0GEEZs87&#43;0xp22Ld9BQO9ZYvOJZUiARr3q/GIdM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -423,6 +423,16 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
+    <a href="/note/docs/live/diary/2020/07/16/" class="">2020-07-16</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
     <a href="/note/docs/live/diary/2020/07/15/" class="active">2020-07-15</a>
   
 
@@ -769,6 +779,7 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#xxencode-编码">XXencode 编码</a></li>
             <li><a href="#uuencode-编码">uuencode 编码</a></li>
             <li><a href="#html-实体编码">HTML 实体编码</a></li>
+            <li><a href="#unicode-编码">Unicode 编码</a></li>
           </ul>
         </li>
         <li><a href="#javascript-编码">JavaScript 编码</a>
@@ -790,6 +801,29 @@ https://github.com/alex-shpak/hugo-book
               <ul>
                 <li><a href="#urlencode">urlencode</a></li>
                 <li><a href="#rawurlencode">rawurlencode</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#进程线程模型">进程/线程模型</a>
+          <ul>
+            <li><a href="#单进程单线程">单进程单线程</a></li>
+            <li><a href="#单进程多线程">单进程多线程</a></li>
+            <li><a href="#多进程单线程">多进程单线程</a></li>
+            <li><a href="#多进程多线程">多进程多线程</a></li>
+          </ul>
+        </li>
+        <li><a href="#linux">Linux</a>
+          <ul>
+            <li><a href="#devsda"><code>/dev/sda</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#docker">docker</a>
+          <ul>
+            <li><a href="#启动失败">启动失败</a>
+              <ul>
+                <li><a href="#排查">排查</a></li>
+                <li><a href="#解决">解决</a></li>
               </ul>
             </li>
           </ul>
@@ -1085,6 +1119,15 @@ Content-Length: 15
 <ul>
 <li><a href="https://www.w3school.com.cn/tags/html_ref_entities.html">HTML ISO-8859-1 参考手册</a></li>
 </ul>
+<h4 id="unicode-编码">
+  Unicode 编码
+  <a class="anchor" href="#unicode-%e7%bc%96%e7%a0%81">#</a>
+</h4>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">字符编码笔记：ASCII，Unicode 和 UTF-8</a></li>
+<li><a href="https://wiki.x10sec.org/misc/encode/computer">CTF- 计算机编码</a></li>
+</ul>
 <hr>
 <h3 id="javascript-编码">
   JavaScript 编码
@@ -1244,6 +1287,107 @@ encodeURIComponent(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
 <ul>
 <li><a href="https://www.cnblogs.com/hongdada/p/10338015.html">Base64 空格，加号问题</a></li>
 </ul>
+<hr>
+<h3 id="进程线程模型">
+  进程/线程模型
+  <a class="anchor" href="#%e8%bf%9b%e7%a8%8b%e7%ba%bf%e7%a8%8b%e6%a8%a1%e5%9e%8b">#</a>
+</h3>
+<h4 id="单进程单线程">
+  单进程单线程
+  <a class="anchor" href="#%e5%8d%95%e8%bf%9b%e7%a8%8b%e5%8d%95%e7%ba%bf%e7%a8%8b">#</a>
+</h4>
+<h4 id="单进程多线程">
+  单进程多线程
+  <a class="anchor" href="#%e5%8d%95%e8%bf%9b%e7%a8%8b%e5%a4%9a%e7%ba%bf%e7%a8%8b">#</a>
+</h4>
+<h4 id="多进程单线程">
+  多进程单线程
+  <a class="anchor" href="#%e5%a4%9a%e8%bf%9b%e7%a8%8b%e5%8d%95%e7%ba%bf%e7%a8%8b">#</a>
+</h4>
+<ul>
+<li>Nginx</li>
+<li>PHP-FPM</li>
+</ul>
+<p>大多数的 Linux 程序都倾向于使用进程而不是线程，因为 Linux 下相对来说创建进程的开销比较小，而 Linux 的线程功能又不是很强大。</p>
+<ul>
+<li>Nginx 是非阻塞 IO &amp; IO 复用模型，通过操作系统提供的类似 epoll 的功能，可以在一个线程里处理多个客户端的请求。
+<ul>
+<li>Nginx 的进程就是线程，即每个进程里只有一个线程，但这一个线程可以服务多个客户端。</li>
+</ul>
+</li>
+<li>PHP-FPM 是阻塞的单线程模型，pm.max_children 指定的是最大的进程数量，pm.max_requests 指定的是每个进程处理多少个请求后重启 (因为 PHP 偶尔会有内存泄漏，所以需要重启)。
+<ul>
+<li>PHP-FPM 的每个进程也只有一个线程，但是一个进程同时只能服务一个客户端。</li>
+</ul>
+</li>
+</ul>
+<h4 id="多进程多线程">
+  多进程多线程
+  <a class="anchor" href="#%e5%a4%9a%e8%bf%9b%e7%a8%8b%e5%a4%9a%e7%ba%bf%e7%a8%8b">#</a>
+</h4>
+<hr>
+<h3 id="linux">
+  Linux
+  <a class="anchor" href="#linux">#</a>
+</h3>
+<h4 id="devsda">
+  <code>/dev/sda</code>
+  <a class="anchor" href="#devsda">#</a>
+</h4>
+<p><code>sd</code> originally identified a <a href="https://en.wikipedia.org/wiki/SCSI">SCSI</a> device</p>
+<ul>
+<li>第一个<strong>软驱</strong> <code>/dev/fd0</code>
+<ul>
+<li>第二个软驱 <code>/dev/fd1</code></li>
+</ul>
+</li>
+<li>第一块<strong>硬盘</strong> <code>/dev/sda</code>
+<ul>
+<li>sda1, sda2 是 sda 这块硬盘上的两个分区</li>
+<li>第二块硬盘 <code>/dev/sdb</code>, 以此类推</li>
+</ul>
+</li>
+<li>第一个 SCSI CD-ROM <code>/dev/scd0</code>, 可以用 /dev/sr0</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://superuser.com/questions/558156/what-does-dev-sda-in-linux-mean">What does /dev/sda in Linux mean?</a></li>
+</ul>
+<hr>
+<h3 id="docker">
+  docker
+  <a class="anchor" href="#docker">#</a>
+</h3>
+<h4 id="启动失败">
+  启动失败
+  <a class="anchor" href="#%e5%90%af%e5%8a%a8%e5%a4%b1%e8%b4%a5">#</a>
+</h4>
+<p>list bridge addresses failed: no available network</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ systemctl start docker
+
+Job <span style="color:#66d9ef">for</span> docker.service failed because the control process exited with error code. See <span style="color:#e6db74">&#34;systemctl status docker.service&#34;</span> and <span style="color:#e6db74">&#34;journalctl -xe&#34;</span> <span style="color:#66d9ef">for</span> details.
+
+$ dockerd
+
+INFO<span style="color:#f92672">[</span>2020-07-16T00:07:48.857858271+08:00<span style="color:#f92672">]</span> stopping event stream following graceful shutdown  error<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;nil&gt;&#34;</span> module<span style="color:#f92672">=</span>libcontainerd namespace<span style="color:#f92672">=</span>moby
+Error starting daemon: Error initializing network controller: list bridge addresses failed: no available network
+</code></pre></div><h5 id="排查">
+  排查
+  <a class="anchor" href="#%e6%8e%92%e6%9f%a5">#</a>
+</h5>
+<p><code>ip a</code></p>
+<p>发现没有 <code>docker0</code> 网桥</p>
+<h5 id="解决">
+  解决
+  <a class="anchor" href="#%e8%a7%a3%e5%86%b3">#</a>
+</h5>
+<p>手动添加一个</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ip link add name docker0 type bridge
+ip addr add dev docker0 172.17.0.1/16
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="http://blog.joylau.cn/2019/04/08/Docker-Start-Error/">Docker 启动报错： Error starting daemon</a></li>
+</ul>
 </article>
  
       
@@ -1254,7 +1398,7 @@ encodeURIComponent(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/e5f4a52e9fff7bb05d18d2c7a4e372fbb7ec0085" title='Last modified by yewang | 2020-07-15' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/db272f0367c1b234846405780c9614fc9352faf2" title='Last modified by yewang | 2020-07-15' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-15</span>
     </a>
@@ -1321,6 +1465,7 @@ encodeURIComponent(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
             <li><a href="#xxencode-编码">XXencode 编码</a></li>
             <li><a href="#uuencode-编码">uuencode 编码</a></li>
             <li><a href="#html-实体编码">HTML 实体编码</a></li>
+            <li><a href="#unicode-编码">Unicode 编码</a></li>
           </ul>
         </li>
         <li><a href="#javascript-编码">JavaScript 编码</a>
@@ -1342,6 +1487,29 @@ encodeURIComponent(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
               <ul>
                 <li><a href="#urlencode">urlencode</a></li>
                 <li><a href="#rawurlencode">rawurlencode</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#进程线程模型">进程/线程模型</a>
+          <ul>
+            <li><a href="#单进程单线程">单进程单线程</a></li>
+            <li><a href="#单进程多线程">单进程多线程</a></li>
+            <li><a href="#多进程单线程">多进程单线程</a></li>
+            <li><a href="#多进程多线程">多进程多线程</a></li>
+          </ul>
+        </li>
+        <li><a href="#linux">Linux</a>
+          <ul>
+            <li><a href="#devsda"><code>/dev/sda</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#docker">docker</a>
+          <ul>
+            <li><a href="#启动失败">启动失败</a>
+              <ul>
+                <li><a href="#排查">排查</a></li>
+                <li><a href="#解决">解决</a></li>
               </ul>
             </li>
           </ul>

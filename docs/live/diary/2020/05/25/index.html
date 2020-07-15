@@ -22,7 +22,7 @@
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.a58821ceb9d15aafa174aa3911e2b10db4e35be08db959b03ca5ed8f513eaba4.js" integrity="sha256-pYghzrnRWq&#43;hdKo5EeKxDbTjW&#43;CNuVmwPKXtj1E&#43;q6Q="></script>
+<script defer src="/note/en.search.min.1b5696d0610466cf3bfb4c69db62ddf4140ef5962f38965488046bdeafc621d3.js" integrity="sha256-G1aW0GEEZs87&#43;0xp22Ld9BQO9ZYvOJZUiARr3q/GIdM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -424,6 +424,16 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/16/" class="">2020-07-16</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -977,13 +987,13 @@ https://github.com/alex-shpak/hugo-book
 <p>如果完全采用传统的多线程模型，1 个 tcp 连接对应 1 个线程，10K 个连接需要 10K 个线程，典型的内存消耗是 10G。但是业务逻辑层并发请求往往要小 1 到 2 个数量级，每个请求往往只需要 100ms 以内，所以业务逻辑层需要的线程数，比通信层小 2-3 个数量级，不需要 10K 个线程，只要 100 个甚至 10 个就够了。</p>
 <p>这种 2-3 个数量级差距的不匹配，促使了第一代事件驱动的流行，常见的模型，纷纷把通信层剥离出来，用事件驱动的形式取代多线程，但是在业务逻辑层仍然采用多线程模型。几个著名的例子:</p>
 <ul>
-<li>nginx 负责通信层，PHP-FPM 负责业务逻辑层</li>
-<li>nginx 负责通信层，uwsgi 负责 Python 的业务逻辑层</li>
-<li>tomcat nio 负责通信层，业务逻辑层扔到线程池里处理</li>
+<li><code>Nginx</code> 负责通信层，<code>PHP-FPM</code> 负责业务逻辑层</li>
+<li><code>Nginx</code> 负责通信层，<code>uwsgi</code> 负责 Python 的业务逻辑层</li>
+<li><code>Tomcat NIO</code> 负责通信层，业务逻辑层扔到线程池里处理</li>
 </ul>
 <p>这些模型都很成功，用几百个甚至区区几十个线程 / 进程，满足了几万甚至几十万的并发连接。在整个 199X 年到 2010 年，这个模型都相当的适用，之后移动互联网兴起，随之也出现越来越多的网络 API 服务，我们的业务逻辑层，不但要跟内网的网络服务通信，还要跟外网的服务通信，在业务逻辑层也产生了大量的外网网络 IO，导致一个请求不能在 100ms 内完成，可能增加到了 500ms 甚至几秒钟，其中大部分时间是在等待网络，白白的占用了一个线程等 IO。</p>
 <p>如果业务逻辑层也要消耗很多时间等待网络 IO，那么它跟通信层的 2-3 个数量级的线程数量需求这个特性就被打破了，在极端的业务下，他们甚至重新回来 1:1 这个比例，举个例子，APP 的广告服务，一个请求里可能包含 3 个广告位，每个广告位从 20 家广告供应商那里获取广告，再选价格最高的返回给 APP 展示。这里每一个 http 请求，需要对外发起 60 个 http 请求，按照一个 100ms 算，需要耗时 6 秒，如果每秒有 1000 个广告请求，就需要 6000 个线程才能不积压至服务崩溃。</p>
-<p>所以第二代事件驱动模型应运而生，把业务逻辑也变成事件驱动，彻底消除浪费线程等待 IO 这个现象。事件驱动有两件常见的外衣，一件是异步回调，另一件是 coroutine，近几年有了很多应用：</p>
+<p>所以第二代<strong>事件驱动模型</strong>应运而生，把业务逻辑也变成事件驱动，彻底消除浪费线程等待 IO 这个现象。事件驱动有两件常见的外衣，一件是异步回调，另一件是 <code>coroutine</code>，近几年有了很多应用：</p>
 <ul>
 <li>Go 的 goroutine</li>
 <li>Python 3 的 coroutine</li>
@@ -992,7 +1002,6 @@ https://github.com/alex-shpak/hugo-book
 <li>swoole 1 的异步回调和 swoole 2 的 coroutine</li>
 <li>erlang/elixir 的 process 也算是 coroutine</li>
 <li>VertX 的异步回调</li>
-<li>&hellip;</li>
 </ul>
 <p>第二代普遍出现的比较晚，而且只有大厂有这个流量需要用到，所以远没有第一代那么普及，coroutine 和 csp 等概念都是几十年前提出的，流行和普及的晚，因此只能算是老年新生事物。</p>
 <p>一小搓培训出身的码农，因为基础差底子差，喜欢把这个当作黑科技来吹，所以才变得有些神秘兮兮了。其实它就是一层窗户纸，轻轻捅破，也就这样了，一点儿都不稀奇。</p>
