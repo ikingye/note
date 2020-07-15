@@ -11,12 +11,12 @@
  multipart/form-data  常见的 POST 数据提交的方式 我们使用表单上传文件时，必须把 form 标签的 enctype 设置为 multipart/form-data   application/x-www-form-urlencoded  浏览器的原生 form 表单 提交的数据按照 key1=val1&amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码   application/json  消息主体是序列化后的 JSON 字符串   application/javascript application/xml  xml 格式数据   application/form-data  主要是用来上传文件   text/plain  将文件设置为纯文本的形式，浏览器在获取到这种文件时并不会对其进行处理   text/html  意思是将文件的 content-type 设置为 text/html 的形式 浏览器在获取到这种文件时会自动调用 html 的解析器对文件进行相应的处理   text/xml  使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范    无 #  POST /api/v1/account/ HTTP/1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/15/" />
-
+<meta property="article:modified_time" content="2020-07-15T15:36:00+08:00" />
 <title>2020-07-15 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.bfb38c0666f0bffa4d070c7c6a2150fe83f2b0133f34cf149fbf092c78070db6.js" integrity="sha256-v7OMBmbwv/pNBwx8aiFQ/oPysBM/NM8Un78JLHgHDbY="></script>
+<script defer src="/note/en.search.min.a58821ceb9d15aafa174aa3911e2b10db4e35be08db959b03ca5ed8f513eaba4.js" integrity="sha256-pYghzrnRWq&#43;hdKo5EeKxDbTjW&#43;CNuVmwPKXtj1E&#43;q6Q="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -768,6 +768,7 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#quoted-printable-编码httpswwwwikiwandcomzh-cnquoted-printable"><a href="https://www.wikiwand.com/zh-cn/Quoted-printable">Quoted-Printable 编码</a></a></li>
             <li><a href="#xxencode-编码">XXencode 编码</a></li>
             <li><a href="#uuencode-编码">uuencode 编码</a></li>
+            <li><a href="#html-实体编码">HTML 实体编码</a></li>
           </ul>
         </li>
         <li><a href="#javascript-编码">JavaScript 编码</a>
@@ -775,21 +776,20 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#escape--unescape">escape() / unescape()</a></li>
             <li><a href="#encodeuri--decodeuri">encodeURI() / decodeURI()</a></li>
             <li><a href="#encodeuricomponent--decodeuricomponent">encodeURIComponent() / decodeURIComponent()</a></li>
-            <li><a href="#html-实体编码">HTML 实体编码</a></li>
-            <li><a href="#空格-vs-加号-">空格 vs 加号 <code>+</code></a>
+          </ul>
+        </li>
+        <li><a href="#空格-vs-加号-">空格 vs 加号 <code>+</code></a>
+          <ul>
+            <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#java">Java</a>
               <ul>
-                <li><a href="#javascript">JavaScript</a></li>
-                <li><a href="#java">Java</a>
-                  <ul>
-                    <li><a href="#urlencoderencode">URLEncoder.encode</a></li>
-                  </ul>
-                </li>
-                <li><a href="#php">PHP</a>
-                  <ul>
-                    <li><a href="#urlencode">urlencode</a></li>
-                    <li><a href="#rawurlencode">rawurlencode</a></li>
-                  </ul>
-                </li>
+                <li><a href="#urlencoderencode">URLEncoder.encode</a></li>
+              </ul>
+            </li>
+            <li><a href="#php">PHP</a>
+              <ul>
+                <li><a href="#urlencode">urlencode</a></li>
+                <li><a href="#rawurlencode">rawurlencode</a></li>
               </ul>
             </li>
           </ul>
@@ -1077,6 +1077,15 @@ Content-Length: 15
 <li><a href="https://blog.csdn.net/pdsu161530247/article/details/75667218">CTF 中 Crypty（密码类）入门必看</a></li>
 </ul>
 <hr>
+<h4 id="html-实体编码">
+  HTML 实体编码
+  <a class="anchor" href="#html-%e5%ae%9e%e4%bd%93%e7%bc%96%e7%a0%81">#</a>
+</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.w3school.com.cn/tags/html_ref_entities.html">HTML ISO-8859-1 参考手册</a></li>
+</ul>
+<hr>
 <h3 id="javascript-编码">
   JavaScript 编码
   <a class="anchor" href="#javascript-%e7%bc%96%e7%a0%81">#</a>
@@ -1152,20 +1161,49 @@ encodeURIComponent(<span style="color:#e6db74">&#34;http://www.example.org/a fil
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">mozilla: encodeURIComponent</a></li>
 <li><a href="https://stackoverflow.com/questions/75980/when-are-you-supposed-to-use-escape-instead-of-encodeuri-encodeuricomponent">When are you supposed to use escape instead of encodeURI / encodeURIComponent?</a></li>
 </ul>
-<h4 id="html-实体编码">
-  HTML 实体编码
-  <a class="anchor" href="#html-%e5%ae%9e%e4%bd%93%e7%bc%96%e7%a0%81">#</a>
-</h4>
-<h4 id="空格-vs-加号-">
+<hr>
+<h3 id="空格-vs-加号-">
   空格 vs 加号 <code>+</code>
   <a class="anchor" href="#%e7%a9%ba%e6%a0%bc-vs-%e5%8a%a0%e5%8f%b7-">#</a>
-</h4>
+</h3>
+<ul>
+<li><strong>空格</strong>编码位 <code>%20</code>
+<ul>
+<li>JavaScript
+<ul>
+<li>escape</li>
+<li>encodeURI</li>
+<li>encodeURIComponent</li>
+</ul>
+</li>
+<li>PHP
+<ul>
+<li>rawurlencode</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>空格</strong>编码为 <code>+</code>
+<ul>
+<li>Java
+<ul>
+<li>URLEncoder.encode</li>
+</ul>
+</li>
+<li>PHP
+<ul>
+<li>urlencode</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>W3C 标准规定，当 Content-Type 为 <code>application/x-www-form-urlencoded</code> 时，URL 中查询参数名和参数值中空格要用加号 + 替代，所以几乎所有使用该规范的浏览器在表单提交后，URL 查询参数中空格都会被编成加号 +。</p>
 <p>而在另一份规范 (RFC 2396，定义 URI) 里，URI 里的保留字符都需转义成 % HH 格式 (Section 3.4 Query Component)，因此空格会被编码成 %20，加号 + 本身也作为保留字而被编成 %2B，对于某些遵循 RFC 2396 标准的应用来说，它可能不接受查询字符串中出现加号 +，认为它是非法字符。所以一个安全的举措是 URL 中统一使用 %20 来编码空格字符。</p>
-<h5 id="javascript">
+<h4 id="javascript">
   JavaScript
   <a class="anchor" href="#javascript">#</a>
-</h5>
+</h4>
 <p><strong>空格</strong>编码位 <code>%20</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">escape</span>(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
 <span style="color:#75715e">// &#34;aa+aa%20aa&#34;
@@ -1175,38 +1213,37 @@ encodeURI(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
 </span><span style="color:#75715e"></span>
 encodeURIComponent(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
 <span style="color:#75715e">// &#34;aa%2Baa%20aa&#34;
-</span></code></pre></div><h5 id="java">
+</span></code></pre></div><h4 id="java">
   Java
   <a class="anchor" href="#java">#</a>
-</h5>
-<h6 id="urlencoderencode">
+</h4>
+<h5 id="urlencoderencode">
   URLEncoder.encode
   <a class="anchor" href="#urlencoderencode">#</a>
-</h6>
+</h5>
 <p><strong>空格</strong>编码为 <code>+</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>URLEncoder<span style="color:#f92672">.</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;aa+aa aa&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">));</span>
 <span style="color:#75715e">// aa%2Baa+aa
-</span></code></pre></div><h5 id="php">
+</span></code></pre></div><h4 id="php">
   PHP
   <a class="anchor" href="#php">#</a>
-</h5>
-<h6 id="urlencode">
+</h4>
+<h5 id="urlencode">
   urlencode
   <a class="anchor" href="#urlencode">#</a>
-</h6>
+</h5>
 <p><strong>空格</strong>编码为 <code>+</code></p>
 <p><code>urlencode</code> 的编码实现的是传统做法，和 POST 表单数据一样会把<strong>空格</strong>转义成“<code>+</code>”</p>
-<h6 id="rawurlencode">
+<h5 id="rawurlencode">
   rawurlencode
   <a class="anchor" href="#rawurlencode">#</a>
-</h6>
+</h5>
 <p><strong>空格</strong>编码位 <code>%20</code></p>
 <p><code>rawurlencode</code> 遵守是 94 年国际标准备忘录 <code>RFC 1738</code>，对<strong>空格</strong>的转义是“<code>%20</code>”</p>
 <p>参考：</p>
 <ul>
 <li><a href="https://www.cnblogs.com/hongdada/p/10338015.html">Base64 空格，加号问题</a></li>
 </ul>
-<hr>
 </article>
  
       
@@ -1216,6 +1253,12 @@ encodeURIComponent(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/e5f4a52e9fff7bb05d18d2c7a4e372fbb7ec0085" title='Last modified by yewang | 2020-07-15' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-15</span>
+    </a>
+  </div>
 
 
 
@@ -1277,6 +1320,7 @@ encodeURIComponent(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
             <li><a href="#quoted-printable-编码httpswwwwikiwandcomzh-cnquoted-printable"><a href="https://www.wikiwand.com/zh-cn/Quoted-printable">Quoted-Printable 编码</a></a></li>
             <li><a href="#xxencode-编码">XXencode 编码</a></li>
             <li><a href="#uuencode-编码">uuencode 编码</a></li>
+            <li><a href="#html-实体编码">HTML 实体编码</a></li>
           </ul>
         </li>
         <li><a href="#javascript-编码">JavaScript 编码</a>
@@ -1284,21 +1328,20 @@ encodeURIComponent(<span style="color:#e6db74">&#34;aa+aa aa&#34;</span>);
             <li><a href="#escape--unescape">escape() / unescape()</a></li>
             <li><a href="#encodeuri--decodeuri">encodeURI() / decodeURI()</a></li>
             <li><a href="#encodeuricomponent--decodeuricomponent">encodeURIComponent() / decodeURIComponent()</a></li>
-            <li><a href="#html-实体编码">HTML 实体编码</a></li>
-            <li><a href="#空格-vs-加号-">空格 vs 加号 <code>+</code></a>
+          </ul>
+        </li>
+        <li><a href="#空格-vs-加号-">空格 vs 加号 <code>+</code></a>
+          <ul>
+            <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#java">Java</a>
               <ul>
-                <li><a href="#javascript">JavaScript</a></li>
-                <li><a href="#java">Java</a>
-                  <ul>
-                    <li><a href="#urlencoderencode">URLEncoder.encode</a></li>
-                  </ul>
-                </li>
-                <li><a href="#php">PHP</a>
-                  <ul>
-                    <li><a href="#urlencode">urlencode</a></li>
-                    <li><a href="#rawurlencode">rawurlencode</a></li>
-                  </ul>
-                </li>
+                <li><a href="#urlencoderencode">URLEncoder.encode</a></li>
+              </ul>
+            </li>
+            <li><a href="#php">PHP</a>
+              <ul>
+                <li><a href="#urlencode">urlencode</a></li>
+                <li><a href="#rawurlencode">rawurlencode</a></li>
               </ul>
             </li>
           </ul>
