@@ -10,6 +10,16 @@
     
     
     <item>
+      <title>2020-07-15</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/15/</guid>
+      <description>2020 年 7 月 15 日（星期三） #  今日待办 #      编程 #  HTTP #  Content-Type #  用于定义用户的浏览器或相关设备如何显示将要加载的数据，或者如何处理将要加载的数据
+ multipart/form-data  常见的 POST 数据提交的方式 我们使用表单上传文件时，必须把 form 标签的 enctype 设置为 multipart/form-data   application/x-www-form-urlencoded  浏览器的原生 form 表单 提交的数据按照 key1=val1&amp;amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码   application/json  消息主体是序列化后的 JSON 字符串   application/javascript application/xml  xml 格式数据   application/form-data  主要是用来上传文件   text/plain  将文件设置为纯文本的形式，浏览器在获取到这种文件时并不会对其进行处理   text/html  意思是将文件的 content-type 设置为 text/html 的形式 浏览器在获取到这种文件时会自动调用 html 的解析器对文件进行相应的处理   text/xml  使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范    无 #  POST /api/v1/account/ HTTP/1.</description>
+    </item>
+    
+    <item>
       <title>2020-07-14</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/07/14/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

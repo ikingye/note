@@ -16,7 +16,7 @@
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.4381475c996bb242efbc6f2e688d455066645dd064821e9e37ca0d50cafbd9c1.js" integrity="sha256-Q4FHXJlrskLvvG8uaI1FUGZkXdBkgh6eN8oNUMr72cE="></script>
+<script defer src="/note/en.search.min.bfb38c0666f0bffa4d070c7c6a2150fe83f2b0133f34cf149fbf092c78070db6.js" integrity="sha256-v7OMBmbwv/pNBwx8aiFQ/oPysBM/NM8Un78JLHgHDbY="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -418,6 +418,16 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/15/" class="">2020-07-15</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -1038,7 +1048,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#火焰图">火焰图</a></li>
         <li><a href="#web">Web</a>
           <ul>
-            <li><a href="#content-type">Content-Type</a></li>
             <li><a href="#mime">MIME</a></li>
             <li><a href="#cors">CORS</a>
               <ul>
@@ -1393,56 +1402,6 @@ https://github.com/alex-shpak/hugo-book
   Web
   <a class="anchor" href="#web">#</a>
 </h3>
-<h4 id="content-type">
-  Content-Type
-  <a class="anchor" href="#content-type">#</a>
-</h4>
-<p>用于定义用户的浏览器或相关设备如何显示将要加载的数据，或者如何处理将要加载的数据</p>
-<ul>
-<li><code>multipart/form-data</code>
-<ul>
-<li>常见的 POST 数据提交的方式</li>
-<li>我们使用表单<strong>上传文件</strong>时，必须让 form 的 enctype 等于这个值。</li>
-</ul>
-</li>
-<li><code>text/plain</code>
-<ul>
-<li>将文件设置为纯文本的形式，浏览器在获取到这种文件时并不会对其进行处理。</li>
-</ul>
-</li>
-<li><code>application/json</code>
-<ul>
-<li>消息主体是序列化后的 JSON 字符串</li>
-</ul>
-</li>
-<li><code>application/x-www-form-urlencoded</code>
-<ul>
-<li>浏览器的原生 form 表单</li>
-<li>提交的数据按照 key1=val1&amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码</li>
-</ul>
-</li>
-<li><code>application/xml</code>
-<ul>
-<li>xml 格式数据</li>
-</ul>
-</li>
-<li><code>application/form-data</code>
-<ul>
-<li>主要是用来上传文件</li>
-</ul>
-</li>
-<li><code>text/xml</code>
-<ul>
-<li>使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范</li>
-</ul>
-</li>
-<li><code>text/html</code>
-<ul>
-<li>意思是将文件的 content-type 设置为 text/html 的形式，</li>
-<li>浏览器在获取到这种文件时会自动调用 html 的解析器对文件进行相应的处理。</li>
-</ul>
-</li>
-</ul>
 <h4 id="mime">
   MIME
   <a class="anchor" href="#mime">#</a>
@@ -1711,7 +1670,6 @@ xhr.withCredentials <span style="color:#f92672">=</span> true;
         <li><a href="#火焰图">火焰图</a></li>
         <li><a href="#web">Web</a>
           <ul>
-            <li><a href="#content-type">Content-Type</a></li>
             <li><a href="#mime">MIME</a></li>
             <li><a href="#cors">CORS</a>
               <ul>
