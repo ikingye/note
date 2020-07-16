@@ -494,7 +494,7 @@ MSS 值为 MTU 值减去 IPv4 Header（20 Byte）和 TCP header（20 Byte）。<
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/16/</guid>
-      <description>2020 年 7 月 16 日（星期四） #  今日待办 #      编程 #  Kubernetes #  ipvs #  IP Virtual Server</description>
+      <description>2020 年 7 月 16 日（星期四） #  今日待办 #      编程 #  Kubernetes #  安装 #  # 添加源 cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/yum.repos.d/kubernetes.repo [kubernetes] name=Kubernetes baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/ enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg EOF yum -y makecache # 查看版本 # yum list kubelet --showduplicates | sort -r # 安装 kubelet, kubeadm, kubectl yum install -y kubelet-1.18.3 kubeadm-1.18.3 kubectl-1.18.3 # 启动 kubelet 并设置开机启动 systemctl enable kubelet &amp;amp;&amp;amp; systemctl start kubelet # kubelet 命令补全 echo &amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34; &amp;gt;&amp;gt; ~/.</description>
     </item>
     
     <item>

@@ -17,12 +17,12 @@
  少量 CPU 消耗，大部分时间在等待数据库或者其它网络服务返回 业务逻辑五花八门，逻辑中往往需要调用别的网络服务，如 db 并发请求数，往往小于连接数，10K 个连接，可能每秒只有 100 个请求 单个业务请求通常很快，毫秒级别，几十毫秒算慢的了  如果完全采用传统的多线程模型，1 个 tcp 连接对应 1 个线程，10K 个连接需要 10K 个线程，典型的内存消耗是 10G。但是业务逻辑层并发请求往往要小 1 到 2 个数量级，每个请求往往只需要 100ms 以内，所以业务逻辑层需要的线程数，比通信层小 2-3 个数量级，不需要 10K 个线程，只要 100 个甚至 10 个就够了。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/05/25/" />
-<meta property="article:modified_time" content="2020-05-26T00:37:16+08:00" />
+<meta property="article:modified_time" content="2020-07-16T00:22:41+08:00" />
 <title>2020-05-25 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.1b5696d0610466cf3bfb4c69db62ddf4140ef5962f38965488046bdeafc621d3.js" integrity="sha256-G1aW0GEEZs87&#43;0xp22Ld9BQO9ZYvOJZUiARr3q/GIdM="></script>
+<script defer src="/note/en.search.min.8f04e95ab177bc417436251d3015899d36cad2b91eaeda917a3c599ca3a231c7.js" integrity="sha256-jwTpWrF3vEF0NiUdMBWJnTbK0rkertqRejxZnKOiMcc="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1071,9 +1071,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/c92335a1c59c53a9fbd3a909f1a7e9b6059b9231" title='Last modified by yewang | 2020-05-26' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/3d618a543ade92ffaac2f8f4f615ee9aead51766" title='Last modified by yewang | 2020-07-16' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-05-26</span>
+      <span>2020-07-16</span>
     </a>
   </div>
 
