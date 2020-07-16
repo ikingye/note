@@ -9,12 +9,12 @@
 <meta property="og:description" content="2020 年 7 月 16 日（星期四） #  今日待办 #      编程 #  Kubernetes #  安装 #  # 添加源 cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo [kubernetes] name=Kubernetes baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/ enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg EOF yum -y makecache # 查看版本 # yum list kubelet --showduplicates | sort -r # 安装 kubelet, kubeadm, kubectl yum install -y kubelet-1.18.3 kubeadm-1.18.3 kubectl-1.18.3 # 启动 kubelet 并设置开机启动 systemctl enable kubelet &amp;&amp; systemctl start kubelet # kubelet 命令补全 echo &#34;source &lt;(kubectl completion bash)&#34; &gt;&gt; ~/." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/16/" />
-<meta property="article:modified_time" content="2020-07-16T11:14:16+08:00" />
+<meta property="article:modified_time" content="2020-07-16T15:59:15+08:00" />
 <title>2020-07-16 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.fa5e389fb6f0697e42f5fe255cd05bce7a49ce06348c82a61ccaa433745844c6.js" integrity="sha256-&#43;l44n7bwaX5C9f4lXNBbznpJzgY0jIKmHMqkM3RYRMY="></script>
+<script defer src="/note/en.search.min.c70c4cd746f6900dee158af4b5c934f6c9f51eaeb9267a84101469a66242a811.js" integrity="sha256-xwxM10b2kA3uFYr0tck09sn1Hq65JnqEEBRppmJCqBE="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -756,6 +756,8 @@ https://github.com/alex-shpak/hugo-book
               <ul>
                 <li><a href="#下载镜像">下载镜像</a></li>
                 <li><a href="#kubeadmin-安装">kubeadmin 安装</a></li>
+                <li><a href="#安装-pod-网络">安装 pod 网络</a></li>
+                <li><a href="#运行-master-进行调度">运行 master 进行调度</a></li>
                 <li><a href="#加入节点">加入节点</a></li>
                 <li><a href="#路由表异常">路由表异常</a>
                   <ul>
@@ -770,19 +772,30 @@ https://github.com/alex-shpak/hugo-book
               </ul>
             </li>
             <li><a href="#ipvs">ipvs</a></li>
+            <li><a href="#pod">Pod</a>
+              <ul>
+                <li><a href="#imagepullbackoff">ImagePullBackOff</a></li>
+                <li><a href="#errimagepull">ErrImagePull</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#linux">Linux</a>
           <ul>
             <li><a href="#modprobe">modprobe</a></li>
+            <li><a href="#snapcraft">snapcraft</a>
+              <ul>
+                <li><a href="#centos-安装-snap">CentOS 安装 Snap</a></li>
+              </ul>
+            </li>
+            <li><a href="#服务器测试网速">服务器测试网速</a></li>
           </ul>
         </li>
-        <li><a href="#snapcraft">snapcraft</a>
+        <li><a href="#git">Git</a>
           <ul>
-            <li><a href="#centos-安装-snap">CentOS 安装 Snap</a></li>
+            <li><a href="#删除分支">删除分支</a></li>
           </ul>
         </li>
-        <li><a href="#服务器测试网速">服务器测试网速</a></li>
       </ul>
     </li>
   </ul>
@@ -936,6 +949,19 @@ Then you can join any number of worker nodes by running the following on each as
 
 kubeadm join 10.197.34.39:6443 --token wpeeoy.n2ijjrkm61s6p5nc <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --discovery-token-ca-cert-hash sha256:7d64f1cc0c91403b8718720da238168cfb4fd789d9835f4074399c4ae18f9535
+</code></pre></div><h5 id="安装-pod-网络">
+  安装 pod 网络
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-pod-%e7%bd%91%e7%bb%9c">#</a>
+</h5>
+<p>flannel</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+</code></pre></div><h5 id="运行-master-进行调度">
+  运行 master 进行调度
+  <a class="anchor" href="#%e8%bf%90%e8%a1%8c-master-%e8%bf%9b%e8%a1%8c%e8%b0%83%e5%ba%a6">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 删除 master 节点默认污点</span>
+kubectl describe node master|grep -i taints
+kubectl taint nodes master node-role.kubernetes.io/master-
 </code></pre></div><h5 id="加入节点">
   加入节点
   <a class="anchor" href="#%e5%8a%a0%e5%85%a5%e8%8a%82%e7%82%b9">#</a>
@@ -1036,6 +1062,19 @@ systemctl restart docker
 <li><a href="https://www.qikqiak.com/post/how-to-use-ipvs-in-kubernetes/">ipvs 基本介绍 - 如何在 kubernetes 中启用 ipvs</a></li>
 </ul>
 <hr>
+<h4 id="pod">
+  Pod
+  <a class="anchor" href="#pod">#</a>
+</h4>
+<h5 id="imagepullbackoff">
+  ImagePullBackOff
+  <a class="anchor" href="#imagepullbackoff">#</a>
+</h5>
+<h5 id="errimagepull">
+  ErrImagePull
+  <a class="anchor" href="#errimagepull">#</a>
+</h5>
+<hr>
 <h3 id="linux">
   Linux
   <a class="anchor" href="#linux">#</a>
@@ -1054,21 +1093,21 @@ modprobe -- nf_conntrack_ipv4
 
 yum install ipvsadm -y
 </code></pre></div><hr>
-<h3 id="snapcraft">
+<h4 id="snapcraft">
   snapcraft
   <a class="anchor" href="#snapcraft">#</a>
-</h3>
-<h4 id="centos-安装-snap">
+</h4>
+<h5 id="centos-安装-snap">
   CentOS 安装 Snap
   <a class="anchor" href="#centos-%e5%ae%89%e8%a3%85-snap">#</a>
-</h4>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install epel-release
 yum install snapd
 </code></pre></div><hr>
-<h3 id="服务器测试网速">
+<h4 id="服务器测试网速">
   服务器测试网速
   <a class="anchor" href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%b5%8b%e8%af%95%e7%bd%91%e9%80%9f">#</a>
-</h3>
+</h4>
 <p><a href="https://github.com/sivel/speedtest-cli">sivel/speedtest-cli</a> <img src="https://img.shields.io/github/stars/sivel/speedtest-cli.svg" alt="Github stars" /></p>
 <p>Command line interface for testing internet bandwidth using speedtest.net</p>
 <p>安装：</p>
@@ -1088,7 +1127,28 @@ Testing download speed..........................................................
 Download: 1063.20 Mbit/s
 Testing upload speed................................................................................................
 Upload: 149.86 Mbit/s
-</code></pre></div></article>
+</code></pre></div><hr>
+<h3 id="git">
+  Git
+  <a class="anchor" href="#git">#</a>
+</h3>
+<h4 id="删除分支">
+  删除分支
+  <a class="anchor" href="#%e5%88%a0%e9%99%a4%e5%88%86%e6%94%af">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 删除本地分支</span>
+<span style="color:#75715e"># --delete</span>
+git branch -d xxx
+<span style="color:#75715e"># --delete --force</span>
+git branch -D xxx
+
+<span style="color:#75715e"># 删除远程分支</span>
+git push -d origin xxx
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely">How do I delete a Git branch locally and remotely?</a></li>
+</ul>
+</article>
  
       
 
@@ -1098,7 +1158,7 @@ Upload: 149.86 Mbit/s
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/d82e296f71e22bb8e175ea80558f87f6b53e8dca" title='Last modified by yewang | 2020-07-16' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/b18c7e549104ba00dcdecf636361b257a2878963" title='Last modified by yewang | 2020-07-16' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-16</span>
     </a>
@@ -1144,6 +1204,8 @@ Upload: 149.86 Mbit/s
               <ul>
                 <li><a href="#下载镜像">下载镜像</a></li>
                 <li><a href="#kubeadmin-安装">kubeadmin 安装</a></li>
+                <li><a href="#安装-pod-网络">安装 pod 网络</a></li>
+                <li><a href="#运行-master-进行调度">运行 master 进行调度</a></li>
                 <li><a href="#加入节点">加入节点</a></li>
                 <li><a href="#路由表异常">路由表异常</a>
                   <ul>
@@ -1158,19 +1220,30 @@ Upload: 149.86 Mbit/s
               </ul>
             </li>
             <li><a href="#ipvs">ipvs</a></li>
+            <li><a href="#pod">Pod</a>
+              <ul>
+                <li><a href="#imagepullbackoff">ImagePullBackOff</a></li>
+                <li><a href="#errimagepull">ErrImagePull</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#linux">Linux</a>
           <ul>
             <li><a href="#modprobe">modprobe</a></li>
+            <li><a href="#snapcraft">snapcraft</a>
+              <ul>
+                <li><a href="#centos-安装-snap">CentOS 安装 Snap</a></li>
+              </ul>
+            </li>
+            <li><a href="#服务器测试网速">服务器测试网速</a></li>
           </ul>
         </li>
-        <li><a href="#snapcraft">snapcraft</a>
+        <li><a href="#git">Git</a>
           <ul>
-            <li><a href="#centos-安装-snap">CentOS 安装 Snap</a></li>
+            <li><a href="#删除分支">删除分支</a></li>
           </ul>
         </li>
-        <li><a href="#服务器测试网速">服务器测试网速</a></li>
       </ul>
     </li>
   </ul>
