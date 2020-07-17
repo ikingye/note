@@ -9,12 +9,12 @@
 <meta property="og:description" content="2020 年 7 月 16 日（星期四） #  今日待办 #      编程 #  Kubernetes #  安装 #  # 添加源 cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo [kubernetes] name=Kubernetes baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/ enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg EOF yum -y makecache # 查看版本 # yum list kubelet --showduplicates | sort -r # 安装 kubelet, kubeadm, kubectl yum install -y kubelet-1.18.3 kubeadm-1.18.3 kubectl-1.18.3 # 启动 kubelet 并设置开机启动 systemctl enable kubelet &amp;&amp; systemctl start kubelet # kubelet 命令补全 echo &#34;source &lt;(kubectl completion bash)&#34; &gt;&gt; ~/." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/16/" />
-<meta property="article:modified_time" content="2020-07-16T16:36:32+08:00" />
+<meta property="article:modified_time" content="2020-07-17T15:04:20+08:00" />
 <title>2020-07-16 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.03d515beffdd800ed80ee6f6e46e0ceb127f304da77ecdf269b604e7290d047f.js" integrity="sha256-A9UVvv/dgA7YDub25G4M6xJ/ME2nfs3yabYE5ykNBH8="></script>
+<script defer src="/note/en.search.min.c0ad46584f89073c893a042e6d467426de7386727a74bd7b6707c5b30478e07e.js" integrity="sha256-wK1GWE&#43;JBzyJOgQubUZ0Jt5zhnJ6dL17ZwfFswR44H4="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1192,9 +1192,9 @@ git push -d origin xxx
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/582e4e34f771d1915da231d9b7a93141832645c9" title='Last modified by yewang | 2020-07-16' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/279b2d72fe7f2f67cb7dbfc9efc1c329eee355c5" title='Last modified by yewang | 2020-07-17' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-07-16</span>
+      <span>2020-07-17</span>
     </a>
   </div>
 

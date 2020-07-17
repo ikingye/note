@@ -11,12 +11,12 @@
 # Policy enforcement must be enabled istioctl install --set profile=demo --set meshConfig.disablePolicyChecks=false --set values." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/17/" />
-
+<meta property="article:modified_time" content="2020-07-17T15:04:20+08:00" />
 <title>2020-07-17 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.03d515beffdd800ed80ee6f6e46e0ceb127f304da77ecdf269b604e7290d047f.js" integrity="sha256-A9UVvv/dgA7YDub25G4M6xJ/ME2nfs3yabYE5ykNBH8="></script>
+<script defer src="/note/en.search.min.c0ad46584f89073c893a042e6d467426de7386727a74bd7b6707c5b30478e07e.js" integrity="sha256-wK1GWE&#43;JBzyJOgQubUZ0Jt5zhnJ6dL17ZwfFswR44H4="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -771,7 +771,13 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#kiali">kiali</a></li>
               </ul>
             </li>
-            <li><a href="#istio-api-resources">Istio API Resources</a></li>
+            <li><a href="#istio-api-resources">Istio API Resources</a>
+              <ul>
+                <li><a href="#gateway">Gateway</a></li>
+                <li><a href="#virtualservice">VirtualService</a></li>
+                <li><a href="#destinationrule">DestinationRule</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#openshift">OpenShift</a>
@@ -934,6 +940,151 @@ csidrivers                                     storage.k8s.io                 fa
 csinodes                                       storage.k8s.io                 false        CSINode
 storageclasses                    sc           storage.k8s.io                 false        StorageClass
 volumeattachments                              storage.k8s.io                 false        VolumeAttachment
+</code></pre></div><h5 id="gateway">
+  Gateway
+  <a class="anchor" href="#gateway">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: v1
+<span style="color:#66d9ef">items</span>:
+  - <span style="color:#66d9ef">apiVersion</span>: networking.istio.io/v1beta1
+    <span style="color:#66d9ef">kind</span>: Gateway
+    <span style="color:#66d9ef">metadata</span>:
+      <span style="color:#66d9ef">annotations</span>:
+        <span style="color:#66d9ef">kubectl.kubernetes.io/last-applied-configuration</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">          {&#34;apiVersion&#34;:&#34;networking.istio.io/v1alpha3&#34;,&#34;kind&#34;:&#34;Gateway&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;name&#34;:&#34;bookinfo-gateway&#34;,&#34;namespace&#34;:&#34;default&#34;},&#34;spec&#34;:{&#34;selector&#34;:{&#34;istio&#34;:&#34;ingressgateway&#34;},&#34;servers&#34;:[{&#34;hosts&#34;:[&#34;*&#34;],&#34;port&#34;:{&#34;name&#34;:&#34;http&#34;,&#34;number&#34;:80,&#34;protocol&#34;:&#34;HTTP&#34;}}]}}</span>
+      <span style="color:#66d9ef">creationTimestamp</span>: <span style="color:#e6db74">&#34;2020-07-16T11:52:34Z&#34;</span>
+      <span style="color:#66d9ef">generation</span>: <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">managedFields</span>:
+        - <span style="color:#66d9ef">apiVersion</span>: networking.istio.io/v1alpha3
+          <span style="color:#66d9ef">fieldsType</span>: FieldsV1
+          <span style="color:#66d9ef">fieldsV1</span>:
+            <span style="color:#66d9ef">f:metadata</span>:
+              <span style="color:#66d9ef">f:annotations</span>:
+                <span style="color:#66d9ef">.</span>: {}
+                <span style="color:#66d9ef">f:kubectl.kubernetes.io/last-applied-configuration</span>: {}
+            <span style="color:#66d9ef">f:spec</span>:
+              <span style="color:#66d9ef">.</span>: {}
+              <span style="color:#66d9ef">f:selector</span>:
+                <span style="color:#66d9ef">.</span>: {}
+                <span style="color:#66d9ef">f:istio</span>: {}
+              <span style="color:#66d9ef">f:servers</span>: {}
+          <span style="color:#66d9ef">manager</span>: kubectl
+          <span style="color:#66d9ef">operation</span>: Update
+          <span style="color:#66d9ef">time</span>: <span style="color:#e6db74">&#34;2020-07-16T11:52:34Z&#34;</span>
+      <span style="color:#66d9ef">name</span>: bookinfo-gateway
+      <span style="color:#66d9ef">namespace</span>: default
+      <span style="color:#66d9ef">resourceVersion</span>: <span style="color:#e6db74">&#34;48172&#34;</span>
+      <span style="color:#66d9ef">selfLink</span>: /apis/networking.istio.io/v1beta1/namespaces/default/gateways/bookinfo-gateway
+      <span style="color:#66d9ef">uid</span>: c68d67b3-a460-40ff-9dcb-b6fd0e2d56f5
+    <span style="color:#66d9ef">spec</span>:
+      <span style="color:#66d9ef">selector</span>:
+        <span style="color:#66d9ef">istio</span>: ingressgateway
+      <span style="color:#66d9ef">servers</span>:
+        - <span style="color:#66d9ef">hosts</span>:
+            - <span style="color:#e6db74">&#34;*&#34;</span>
+          <span style="color:#66d9ef">port</span>:
+            <span style="color:#66d9ef">name</span>: http
+            <span style="color:#66d9ef">number</span>: <span style="color:#ae81ff">80</span>
+            <span style="color:#66d9ef">protocol</span>: HTTP
+<span style="color:#66d9ef">kind</span>: List
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">resourceVersion</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#66d9ef">selfLink</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</code></pre></div><h5 id="virtualservice">
+  VirtualService
+  <a class="anchor" href="#virtualservice">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: v1
+<span style="color:#66d9ef">items</span>:
+  - <span style="color:#66d9ef">apiVersion</span>: networking.istio.io/v1beta1
+    <span style="color:#66d9ef">kind</span>: VirtualService
+    <span style="color:#66d9ef">metadata</span>:
+      <span style="color:#66d9ef">annotations</span>:
+        <span style="color:#66d9ef">kubectl.kubernetes.io/last-applied-configuration</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">          {&#34;apiVersion&#34;:&#34;networking.istio.io/v1alpha3&#34;,&#34;kind&#34;:&#34;VirtualService&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;name&#34;:&#34;bookinfo&#34;,&#34;namespace&#34;:&#34;default&#34;},&#34;spec&#34;:{&#34;gateways&#34;:[&#34;bookinfo-gateway&#34;],&#34;hosts&#34;:[&#34;*&#34;],&#34;http&#34;:[{&#34;match&#34;:[{&#34;uri&#34;:{&#34;exact&#34;:&#34;/productpage&#34;}},{&#34;uri&#34;:{&#34;prefix&#34;:&#34;/static&#34;}},{&#34;uri&#34;:{&#34;exact&#34;:&#34;/login&#34;}},{&#34;uri&#34;:{&#34;exact&#34;:&#34;/logout&#34;}},{&#34;uri&#34;:{&#34;prefix&#34;:&#34;/api/v1/products&#34;}}],&#34;route&#34;:[{&#34;destination&#34;:{&#34;host&#34;:&#34;productpage&#34;,&#34;port&#34;:{&#34;number&#34;:9080}}}]}]}}</span>
+      <span style="color:#66d9ef">creationTimestamp</span>: <span style="color:#e6db74">&#34;2020-07-16T11:52:34Z&#34;</span>
+      <span style="color:#66d9ef">generation</span>: <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">managedFields</span>:
+        - <span style="color:#66d9ef">apiVersion</span>: networking.istio.io/v1alpha3
+          <span style="color:#66d9ef">fieldsType</span>: FieldsV1
+          <span style="color:#66d9ef">fieldsV1</span>:
+            <span style="color:#66d9ef">f:metadata</span>:
+              <span style="color:#66d9ef">f:annotations</span>:
+                <span style="color:#66d9ef">.</span>: {}
+                <span style="color:#66d9ef">f:kubectl.kubernetes.io/last-applied-configuration</span>: {}
+            <span style="color:#66d9ef">f:spec</span>:
+              <span style="color:#66d9ef">.</span>: {}
+              <span style="color:#66d9ef">f:gateways</span>: {}
+              <span style="color:#66d9ef">f:hosts</span>: {}
+              <span style="color:#66d9ef">f:http</span>: {}
+          <span style="color:#66d9ef">manager</span>: kubectl
+          <span style="color:#66d9ef">operation</span>: Update
+          <span style="color:#66d9ef">time</span>: <span style="color:#e6db74">&#34;2020-07-16T11:52:34Z&#34;</span>
+      <span style="color:#66d9ef">name</span>: bookinfo
+      <span style="color:#66d9ef">namespace</span>: default
+      <span style="color:#66d9ef">resourceVersion</span>: <span style="color:#e6db74">&#34;48173&#34;</span>
+      <span style="color:#66d9ef">selfLink</span>: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/bookinfo
+      <span style="color:#66d9ef">uid</span>: 58d24344-c170<span style="color:#ae81ff">-4814</span>-aed4-ab4a437c7074
+    <span style="color:#66d9ef">spec</span>:
+      <span style="color:#66d9ef">gateways</span>:
+        - bookinfo-gateway
+      <span style="color:#66d9ef">hosts</span>:
+        - <span style="color:#e6db74">&#34;*&#34;</span>
+      <span style="color:#66d9ef">http</span>:
+        - <span style="color:#66d9ef">match</span>:
+            - <span style="color:#66d9ef">uri</span>:
+                <span style="color:#66d9ef">exact</span>: /productpage
+            - <span style="color:#66d9ef">uri</span>:
+                <span style="color:#66d9ef">prefix</span>: /static
+            - <span style="color:#66d9ef">uri</span>:
+                <span style="color:#66d9ef">exact</span>: /login
+            - <span style="color:#66d9ef">uri</span>:
+                <span style="color:#66d9ef">exact</span>: /logout
+            - <span style="color:#66d9ef">uri</span>:
+                <span style="color:#66d9ef">prefix</span>: /api/v1/products
+          <span style="color:#66d9ef">route</span>:
+            - <span style="color:#66d9ef">destination</span>:
+                <span style="color:#66d9ef">host</span>: productpage
+                <span style="color:#66d9ef">port</span>:
+                  <span style="color:#66d9ef">number</span>: <span style="color:#ae81ff">9080</span>
+</code></pre></div><h5 id="destinationrule">
+  DestinationRule
+  <a class="anchor" href="#destinationrule">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#66d9ef">apiVersion</span>: networking.istio.io/v1beta1
+  <span style="color:#66d9ef">kind</span>: DestinationRule
+  <span style="color:#66d9ef">metadata</span>:
+    <span style="color:#66d9ef">annotations</span>:
+      <span style="color:#66d9ef">kubectl.kubernetes.io/last-applied-configuration</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">        {&#34;apiVersion&#34;:&#34;networking.istio.io/v1alpha3&#34;,&#34;kind&#34;:&#34;DestinationRule&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;name&#34;:&#34;productpage&#34;,&#34;namespace&#34;:&#34;default&#34;},&#34;spec&#34;:{&#34;host&#34;:&#34;productpage&#34;,&#34;subsets&#34;:[{&#34;labels&#34;:{&#34;version&#34;:&#34;v1&#34;},&#34;name&#34;:&#34;v1&#34;}]}}</span>
+    <span style="color:#66d9ef">creationTimestamp</span>: <span style="color:#e6db74">&#34;2020-07-17T06:56:38Z&#34;</span>
+    <span style="color:#66d9ef">generation</span>: <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">managedFields</span>:
+      - <span style="color:#66d9ef">apiVersion</span>: networking.istio.io/v1alpha3
+        <span style="color:#66d9ef">fieldsType</span>: FieldsV1
+        <span style="color:#66d9ef">fieldsV1</span>:
+          <span style="color:#66d9ef">f:metadata</span>:
+            <span style="color:#66d9ef">f:annotations</span>:
+              <span style="color:#66d9ef">.</span>: {}
+              <span style="color:#66d9ef">f:kubectl.kubernetes.io/last-applied-configuration</span>: {}
+          <span style="color:#66d9ef">f:spec</span>:
+            <span style="color:#66d9ef">.</span>: {}
+            <span style="color:#66d9ef">f:host</span>: {}
+            <span style="color:#66d9ef">f:subsets</span>: {}
+        <span style="color:#66d9ef">manager</span>: kubectl
+        <span style="color:#66d9ef">operation</span>: Update
+        <span style="color:#66d9ef">time</span>: <span style="color:#e6db74">&#34;2020-07-17T06:56:38Z&#34;</span>
+    <span style="color:#66d9ef">name</span>: productpage
+    <span style="color:#66d9ef">namespace</span>: default
+    <span style="color:#66d9ef">resourceVersion</span>: <span style="color:#e6db74">&#34;242215&#34;</span>
+    <span style="color:#66d9ef">selfLink</span>: /apis/networking.istio.io/v1beta1/namespaces/default/destinationrules/productpage
+    <span style="color:#66d9ef">uid</span>: 86e431d8<span style="color:#ae81ff">-1e98</span>-46d8-950e-3ae796496d67
+  <span style="color:#66d9ef">spec</span>:
+    <span style="color:#66d9ef">host</span>: productpage
+    <span style="color:#66d9ef">subsets</span>:
+      - <span style="color:#66d9ef">labels</span>:
+          <span style="color:#66d9ef">version</span>: v1
+        <span style="color:#66d9ef">name</span>: v1
 </code></pre></div><hr>
 <h3 id="openshift">
   OpenShift
@@ -961,6 +1112,12 @@ We recommend using <a href="https://maistra.io/docs/installation/">Maistra</a> w
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/279b2d72fe7f2f67cb7dbfc9efc1c329eee355c5" title='Last modified by yewang | 2020-07-17' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-17</span>
+    </a>
+  </div>
 
 
 
@@ -1005,7 +1162,13 @@ We recommend using <a href="https://maistra.io/docs/installation/">Maistra</a> w
                 <li><a href="#kiali">kiali</a></li>
               </ul>
             </li>
-            <li><a href="#istio-api-resources">Istio API Resources</a></li>
+            <li><a href="#istio-api-resources">Istio API Resources</a>
+              <ul>
+                <li><a href="#gateway">Gateway</a></li>
+                <li><a href="#virtualservice">VirtualService</a></li>
+                <li><a href="#destinationrule">DestinationRule</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#openshift">OpenShift</a>
