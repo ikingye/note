@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2020 年 7 月 17 日（星期五） #  今日待办 #      编程 #  Istio #  ingressGateway 代理 #  server { listen 8500; location / { proxy_pass http://localhost:31443; # nginx 反向代理默认走的 http 1.0 版本 # 但是 被反向代理的服务器是 1.1 版本的！ proxy_http_version 1.1; } error_log /var/log/nginx/istio-ingressgateway_error.log; access_log /var/log/nginx/istio-ingressgateway_access.log; } rate limit #  安装
+# Policy enforcement must be enabled istioctl install --set profile=demo --set meshConfig.disablePolicyChecks=false --set values.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-17" />
+<meta property="og:description" content="2020 年 7 月 17 日（星期五） #  今日待办 #      编程 #  Istio #  ingressGateway 代理 #  server { listen 8500; location / { proxy_pass http://localhost:31443; # nginx 反向代理默认走的 http 1.0 版本 # 但是 被反向代理的服务器是 1.1 版本的！ proxy_http_version 1.1; } error_log /var/log/nginx/istio-ingressgateway_error.log; access_log /var/log/nginx/istio-ingressgateway_access.log; } rate limit #  安装
+# Policy enforcement must be enabled istioctl install --set profile=demo --set meshConfig.disablePolicyChecks=false --set values." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/17/" />
+
+<title>2020-07-17 | 叶王笔记</title>
+<link rel="manifest" href="/note/manifest.json">
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
+<script defer src="/note/en.search.min.03d515beffdd800ed80ee6f6e46e0ceb127f304da77ecdf269b604e7290d047f.js" integrity="sha256-A9UVvv/dgA7YDub25G4M6xJ/ME2nfs3yabYE5ykNBH8="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/note"><span>叶王笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">
+    Github  <img src="https://img.shields.io/github/followers/ikingye.svg?label=%E5%85%B3%E6%B3%A8">
+  </a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">
+    微博  <img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_16x16.png">
+  </a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+  <li><a href="//shang.qq.com/wpa/qunwpa?idkey=04022778c1def4c4938c6d1e1880f6db3abf67bbfccc9ff74baa4fa9d73c377f&source_id=1_40001" target="_blank" rel="noopener noreferrer">Q 群</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/" class="">第四部分 学习</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/" class="">7 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/17/" class="active">2020-07-17</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/16/" class="">2020-07-16</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/15/" class="">2020-07-15</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/14/" class="">2020-07-14</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/13/" class="">2020-07-13</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/11/" class="">2020-07-11</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/10/" class="">2020-07-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/09/" class="">2020-07-09</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/08/" class="">2020-07-08</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/07/" class="">2020-07-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/06/" class="">2020-07-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/05/" class="">2020-07-05</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/02/" class="">2020-07-02</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/01/" class="">2020-07-01</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">加我微信</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png" target="_blank" rel="noopener noreferrer">请我喝饮料</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">关注微信公众号</a></li>
+</ul>
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2020-07-17</strong>
+
+  <label for="toc-control">
+    
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
+      <ul>
+        <li><a href="#istio">Istio</a>
+          <ul>
+            <li><a href="#ingressgateway-代理">ingressGateway 代理</a></li>
+            <li><a href="#rate-limit">rate limit</a></li>
+            <li><a href="#dashboad">Dashboad</a>
+              <ul>
+                <li><a href="#kiali">kiali</a></li>
+              </ul>
+            </li>
+            <li><a href="#istio-api-resources">Istio API Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="#openshift">OpenShift</a>
+          <ul>
+            <li><a href="#maistra">Maistra</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="2020-年-7-月-17-日星期五">
+  2020 年 7 月 17 日（星期五）
+  <a class="anchor" href="#2020-%e5%b9%b4-7-%e6%9c%88-17-%e6%97%a5%e6%98%9f%e6%9c%9f%e4%ba%94">#</a>
+</h1>
+<h2 id="今日待办">
+  今日待办
+  <a class="anchor" href="#%e4%bb%8a%e6%97%a5%e5%be%85%e5%8a%9e">#</a>
+</h2>
+<ul>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<hr>
+<h2 id="编程">
+  编程
+  <a class="anchor" href="#%e7%bc%96%e7%a8%8b">#</a>
+</h2>
+<h3 id="istio">
+  Istio
+  <a class="anchor" href="#istio">#</a>
+</h3>
+<h4 id="ingressgateway-代理">
+  ingressGateway 代理
+  <a class="anchor" href="#ingressgateway-%e4%bb%a3%e7%90%86">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">server <span style="color:#f92672">{</span>
+        listen 8500;
+
+        location / <span style="color:#f92672">{</span>
+                proxy_pass http://localhost:31443;
+                <span style="color:#75715e"># nginx 反向代理默认走的 http 1.0 版本</span>
+                <span style="color:#75715e"># 但是 被反向代理的服务器是 1.1 版本的！</span>
+                proxy_http_version 1.1;
+        <span style="color:#f92672">}</span>
+
+    error_log /var/log/nginx/istio-ingressgateway_error.log;
+    access_log /var/log/nginx/istio-ingressgateway_access.log;
+<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="rate-limit">
+  rate limit
+  <a class="anchor" href="#rate-limit">#</a>
+</h4>
+<p>安装</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Policy enforcement must be enabled</span>
+istioctl install --set profile<span style="color:#f92672">=</span>demo  --set meshConfig.disablePolicyChecks<span style="color:#f92672">=</span>false --set values.pilot.policy.enabled<span style="color:#f92672">=</span>true
+</code></pre></div><h4 id="dashboad">
+  Dashboad
+  <a class="anchor" href="#dashboad">#</a>
+</h4>
+<h5 id="kiali">
+  kiali
+  <a class="anchor" href="#kiali">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">istioctl dashboard kiali -p <span style="color:#ae81ff">8610</span>
+
+<span style="color:#75715e"># nginx proxy 8510 to 8610</span>
+http://yq01-sys-ote01.yq01.baidu.com:8510/
+</code></pre></div><hr>
+<h4 id="istio-api-resources">
+  Istio API Resources
+  <a class="anchor" href="#istio-api-resources">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">k api-resources
+NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND
+bindings                                                                      true         Binding
+componentstatuses                 cs                                          false        ComponentStatus
+configmaps                        cm                                          true         ConfigMap
+endpoints                         ep                                          true         Endpoints
+events                            ev                                          true         Event
+limitranges                       limits                                      true         LimitRange
+namespaces                        ns                                          false        Namespace
+nodes                             no                                          false        Node
+persistentvolumeclaims            pvc                                         true         PersistentVolumeClaim
+persistentvolumes                 pv                                          false        PersistentVolume
+pods                              po                                          true         Pod
+podtemplates                                                                  true         PodTemplate
+replicationcontrollers            rc                                          true         ReplicationController
+resourcequotas                    quota                                       true         ResourceQuota
+secrets                                                                       true         Secret
+serviceaccounts                   sa                                          true         ServiceAccount
+services                          svc                                         true         Service
+mutatingwebhookconfigurations                  admissionregistration.k8s.io   false        MutatingWebhookConfiguration
+validatingwebhookconfigurations                admissionregistration.k8s.io   false        ValidatingWebhookConfiguration
+customresourcedefinitions         crd,crds     apiextensions.k8s.io           false        CustomResourceDefinition
+apiservices                                    apiregistration.k8s.io         false        APIService
+controllerrevisions                            apps                           true         ControllerRevision
+daemonsets                        ds           apps                           true         DaemonSet
+deployments                       deploy       apps                           true         Deployment
+replicasets                       rs           apps                           true         ReplicaSet
+statefulsets                      sts          apps                           true         StatefulSet
+tokenreviews                                   authentication.k8s.io          false        TokenReview
+localsubjectaccessreviews                      authorization.k8s.io           true         LocalSubjectAccessReview
+selfsubjectaccessreviews                       authorization.k8s.io           false        SelfSubjectAccessReview
+selfsubjectrulesreviews                        authorization.k8s.io           false        SelfSubjectRulesReview
+subjectaccessreviews                           authorization.k8s.io           false        SubjectAccessReview
+horizontalpodautoscalers          hpa          autoscaling                    true         HorizontalPodAutoscaler
+cronjobs                          cj           batch                          true         CronJob
+jobs                                           batch                          true         Job
+certificatesigningrequests        csr          certificates.k8s.io            false        CertificateSigningRequest
+adapters                                       config.istio.io                true         adapter
+attributemanifests                             config.istio.io                true         attributemanifest
+handlers                                       config.istio.io                true         handler
+httpapispecbindings                            config.istio.io                true         HTTPAPISpecBinding
+httpapispecs                                   config.istio.io                true         HTTPAPISpec
+instances                                      config.istio.io                true         instance
+quotaspecbindings                              config.istio.io                true         QuotaSpecBinding
+quotaspecs                                     config.istio.io                true         QuotaSpec
+rules                                          config.istio.io                true         rule
+templates                                      config.istio.io                true         template
+leases                                         coordination.k8s.io            true         Lease
+endpointslices                                 discovery.k8s.io               true         EndpointSlice
+events                            ev           events.k8s.io                  true         Event
+ingresses                         ing          extensions                     true         Ingress
+istiooperators                    iop          install.istio.io               true         IstioOperator
+destinationrules                  dr           networking.istio.io            true         DestinationRule
+envoyfilters                                   networking.istio.io            true         EnvoyFilter
+gateways                          gw           networking.istio.io            true         Gateway
+serviceentries                    se           networking.istio.io            true         ServiceEntry
+sidecars                                       networking.istio.io            true         Sidecar
+virtualservices                   vs           networking.istio.io            true         VirtualService
+workloadentries                   we           networking.istio.io            true         WorkloadEntry
+ingressclasses                                 networking.k8s.io              false        IngressClass
+ingresses                         ing          networking.k8s.io              true         Ingress
+networkpolicies                   netpol       networking.k8s.io              true         NetworkPolicy
+runtimeclasses                                 node.k8s.io                    false        RuntimeClass
+poddisruptionbudgets              pdb          policy                         true         PodDisruptionBudget
+podsecuritypolicies               psp          policy                         false        PodSecurityPolicy
+clusterrolebindings                            rbac.authorization.k8s.io      false        ClusterRoleBinding
+clusterroles                                   rbac.authorization.k8s.io      false        ClusterRole
+rolebindings                                   rbac.authorization.k8s.io      true         RoleBinding
+roles                                          rbac.authorization.k8s.io      true         Role
+clusterrbacconfigs                             rbac.istio.io                  false        ClusterRbacConfig
+rbacconfigs                                    rbac.istio.io                  true         RbacConfig
+servicerolebindings                            rbac.istio.io                  true         ServiceRoleBinding
+serviceroles                                   rbac.istio.io                  true         ServiceRole
+priorityclasses                   pc           scheduling.k8s.io              false        PriorityClass
+authorizationpolicies                          security.istio.io              true         AuthorizationPolicy
+peerauthentications               pa           security.istio.io              true         PeerAuthentication
+requestauthentications            ra           security.istio.io              true         RequestAuthentication
+csidrivers                                     storage.k8s.io                 false        CSIDriver
+csinodes                                       storage.k8s.io                 false        CSINode
+storageclasses                    sc           storage.k8s.io                 false        StorageClass
+volumeattachments                              storage.k8s.io                 false        VolumeAttachment
+</code></pre></div><hr>
+<h3 id="openshift">
+  OpenShift
+  <a class="anchor" href="#openshift">#</a>
+</h3>
+<h4 id="maistra">
+  Maistra
+  <a class="anchor" href="#maistra">#</a>
+</h4>
+<p><a href="https://maistra.io/">Maistra</a> is an opinionated distribution of Istio designed to work with <code>Openshift</code>.
+It combines Kiali, Jaeger, and Prometheus into a platform managed according to the OperatorHub lifecycle.</p>
+<p>Before deploying and running Kiali, you must first install and deploy Istio.
+There are a few places that you can reference in order to learn how to do this.
+We recommend using <a href="https://maistra.io/docs/installation/">Maistra</a> which is a variant of Istio.</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://github.com/kiali/kiali#getting-started">kiali: getting-started</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
+      <ul>
+        <li><a href="#istio">Istio</a>
+          <ul>
+            <li><a href="#ingressgateway-代理">ingressGateway 代理</a></li>
+            <li><a href="#rate-limit">rate limit</a></li>
+            <li><a href="#dashboad">Dashboad</a>
+              <ul>
+                <li><a href="#kiali">kiali</a></li>
+              </ul>
+            </li>
+            <li><a href="#istio-api-resources">Istio API Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="#openshift">OpenShift</a>
+          <ul>
+            <li><a href="#maistra">Maistra</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+<a href="https://github.com/ikingye/note"
+class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+  <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+</svg></a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

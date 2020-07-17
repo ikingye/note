@@ -477,6 +477,16 @@ MSS 值为 MTU 值减去 IPv4 Header（20 Byte）和 TCP header（20 Byte）。<
     </item>
     
     <item>
+      <title>2020-07-17</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/17/</guid>
+      <description>2020 年 7 月 17 日（星期五） #  今日待办 #      编程 #  Istio #  ingressGateway 代理 #  server { listen 8500; location / { proxy_pass http://localhost:31443; # nginx 反向代理默认走的 http 1.0 版本 # 但是 被反向代理的服务器是 1.1 版本的！ proxy_http_version 1.1; } error_log /var/log/nginx/istio-ingressgateway_error.log; access_log /var/log/nginx/istio-ingressgateway_access.log; } rate limit #  安装
+# Policy enforcement must be enabled istioctl install --set profile=demo --set meshConfig.disablePolicyChecks=false --set values.</description>
+    </item>
+    
+    <item>
       <title>2020-06-16</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/06/16/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
