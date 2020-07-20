@@ -11,12 +11,12 @@
 # Policy enforcement must be enabled istioctl install --set profile=demo --set meshConfig.disablePolicyChecks=false --set values." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/17/" />
-<meta property="article:modified_time" content="2020-07-20T14:08:38+08:00" />
+<meta property="article:modified_time" content="2020-07-20T19:54:42+08:00" />
 <title>2020-07-17 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.116aa4ca77618248b5073cc6c25178db4ff0948466239f885cf6d59c9d26df69.js" integrity="sha256-EWqkyndhgki1BzzGwlF420/wlIRmI5&#43;IXPbVnJ0m32k="></script>
+<script defer src="/note/en.search.min.66d2e1dba7a935e4545eefba6f6d9d8f03fb8fecc40c76a3d0b90c84aaaa7577.js" integrity="sha256-ZtLh26epNeRUXu&#43;6b22djwP7j&#43;zEDHaj0LkMhKqqdXc="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -891,7 +891,6 @@ istioctl install --set profile<span style="color:#f92672">=</span>demo  --set me
         <span style="color:#66d9ef">percentage</span>:
           <span style="color:#66d9ef">value</span>: <span style="color:#ae81ff">100.0</span>
         <span style="color:#66d9ef">fixedDelay</span>: 7s
-            <span style="color:#66d9ef">fault</span>:
       <span style="color:#66d9ef">abort</span>:
         <span style="color:#66d9ef">percentage</span>:
           <span style="color:#66d9ef">value</span>: <span style="color:#ae81ff">100.0</span>
@@ -901,6 +900,9 @@ istioctl install --set profile<span style="color:#f92672">=</span>demo  --set me
         <span style="color:#66d9ef">host</span>: ratings
         <span style="color:#66d9ef">subset</span>: v1
       <span style="color:#66d9ef">timeout</span>: <span style="color:#ae81ff">0.</span>5s
+      <span style="color:#66d9ef">retries</span>:
+        <span style="color:#66d9ef">attempts</span>: <span style="color:#ae81ff">3</span>
+        <span style="color:#66d9ef">perTryTimeout</span>: 2s
 </code></pre></div><hr>
 <h4 id="dashboad">
   Dashboad
@@ -1357,7 +1359,7 @@ We recommend using <a href="https://maistra.io/docs/installation/">Maistra</a> w
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/cbd93fccbaf75debc743be4be348844194afd572" title='Last modified by yewang | 2020-07-20' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/1dcecc79ffafc9c8d7f167bb94085b415f3fe7dc" title='Last modified by yewang | 2020-07-20' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-20</span>
     </a>
