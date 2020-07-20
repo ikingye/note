@@ -6,19 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="2020 年 7 月 20 日（星期一） #  今日待办 #      编程 #  Go #  glibc #  Go 可直接编译成机器码，不依赖其他库，glibc 的版本有一定要求，部署就是扔一个文件上去就完成了。
 并发性能 #   避免使用管道 chan 传递主业务数据，避免将业务流程处理流程分割到对个 Go 程中执行，这样做减少 chan 传输耗时  参考：
- Golang 号称高并发，但高并发时性能不高  ">
+ Golang 号称高并发，但高并发时性能不高   Istio #  ingress gateway #  $ kubectl get svc istio-ingressgateway -n istio-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE istio-ingressgateway LoadBalancer 10.110.126.136 &lt;pending&gt; 15020:31287/TCP,80:30083/TCP,443:32328/TCP,31400:31271/TCP,15443:30247/TCP 3d16h EXTERNAL-IP 值为 &lt;none&gt; （或持续显示 &lt;pending&gt;），说明环境没有提供外部负载均衡，无法使用 ingress gateway。 在这种情况下，你可以使用服务的 node port 访问网关。">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-20" />
 <meta property="og:description" content="2020 年 7 月 20 日（星期一） #  今日待办 #      编程 #  Go #  glibc #  Go 可直接编译成机器码，不依赖其他库，glibc 的版本有一定要求，部署就是扔一个文件上去就完成了。
 并发性能 #   避免使用管道 chan 传递主业务数据，避免将业务流程处理流程分割到对个 Go 程中执行，这样做减少 chan 传输耗时  参考：
- Golang 号称高并发，但高并发时性能不高  " />
+ Golang 号称高并发，但高并发时性能不高   Istio #  ingress gateway #  $ kubectl get svc istio-ingressgateway -n istio-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE istio-ingressgateway LoadBalancer 10.110.126.136 &lt;pending&gt; 15020:31287/TCP,80:30083/TCP,443:32328/TCP,31400:31271/TCP,15443:30247/TCP 3d16h EXTERNAL-IP 值为 &lt;none&gt; （或持续显示 &lt;pending&gt;），说明环境没有提供外部负载均衡，无法使用 ingress gateway。 在这种情况下，你可以使用服务的 node port 访问网关。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/20/" />
-
+<meta property="article:modified_time" content="2020-07-20T14:08:38+08:00" />
 <title>2020-07-20 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.3d92ec2b6ddacc8cc22182b8c81383df9a5d9bbbf12c63e2aa7050216b670296.js" integrity="sha256-PZLsK23azIzCIYK4yBOD35pdm7vxLGPiqnBQIWtnApY="></script>
+<script defer src="/note/en.search.min.116aa4ca77618248b5073cc6c25178db4ff0948466239f885cf6d59c9d26df69.js" integrity="sha256-EWqkyndhgki1BzzGwlF420/wlIRmI5&#43;IXPbVnJ0m32k="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -780,6 +780,35 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#并发性能">并发性能</a></li>
           </ul>
         </li>
+        <li><a href="#istio">Istio</a>
+          <ul>
+            <li><a href="#ingress-gateway">ingress gateway</a></li>
+            <li><a href="#tcp-流量转移">TCP 流量转移</a></li>
+          </ul>
+        </li>
+        <li><a href="#http">HTTP</a>
+          <ul>
+            <li><a href="#超时">超时</a>
+              <ul>
+                <li><a href="#默认超时时间">默认超时时间</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#nodejs">Node.js</a>
+          <ul>
+            <li><a href="#axiosaxioshttpsgithubcomaxiosaxios-github-starshttpsimgshieldsiogithubstarsaxiosaxiossvg"><a href="https://github.com/axios/axios">axios/axios</a> <img src="https://img.shields.io/github/stars/axios/axios.svg" alt="Github stars"></a></li>
+            <li><a href="#sindresorhusgothttpsgithubcomsindresorhusgot-github-starshttpsimgshieldsiogithubstarssindresorhusgotsvg"><a href="https://github.com/sindresorhus/got">sindresorhus/got</a> <img src="https://img.shields.io/github/stars/sindresorhus/got.svg" alt="Github stars"></a></li>
+            <li><a href="#requestrequesthttpsgithubcomrequestrequest-github-starshttpsimgshieldsiogithubstarsrequestrequestsvg"><a href="https://github.com/request/request">request/request</a> <img src="https://img.shields.io/github/stars/request/request.svg" alt="Github stars"></a></li>
+          </ul>
+        </li>
+        <li><a href="#keepalive">Keepalive</a>
+          <ul>
+            <li><a href="#tcp-keepalive">TCP Keepalive</a></li>
+            <li><a href="#http-keepalive">HTTP Keepalive</a></li>
+            <li><a href="#区分两次-http-事务的方式">区分两次 http 事务的方式</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -829,6 +858,118 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/21514693">Golang 号称高并发，但高并发时性能不高</a></li>
 </ul>
+<hr>
+<h3 id="istio">
+  Istio
+  <a class="anchor" href="#istio">#</a>
+</h3>
+<h4 id="ingress-gateway">
+  ingress gateway
+  <a class="anchor" href="#ingress-gateway">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl get svc istio-ingressgateway -n istio-system
+NAME                   TYPE           CLUSTER-IP       EXTERNAL-IP   PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>                                                                      AGE
+istio-ingressgateway   LoadBalancer   10.110.126.136   &lt;pending&gt;     15020:31287/TCP,80:30083/TCP,443:32328/TCP,31400:31271/TCP,15443:30247/TCP   3d16h
+</code></pre></div><p>EXTERNAL-IP 值为 <code>&lt;none&gt;</code> （或持续显示 <code>&lt;pending&gt;</code>），说明环境没有提供外部负载均衡，<strong>无法使用 ingress gateway</strong>。
+在这种情况下，你可以使用服务的 <a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport">node port</a> 访问网关。</p>
+<h4 id="tcp-流量转移">
+  TCP 流量转移
+  <a class="anchor" href="#tcp-%e6%b5%81%e9%87%8f%e8%bd%ac%e7%a7%bb">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># EXTERNAL-IP 为 &lt;pending&gt;</span>
+export INGRESS_HOST<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get po -l istio<span style="color:#f92672">=</span>ingressgateway -n istio-system -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[0].status.hostIP}&#39;</span><span style="color:#66d9ef">)</span>
+export INGRESS_PORT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n istio-system get service istio-ingressgateway -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.spec.ports[?(@.name==&#34;tcp&#34;)].nodePort}&#39;</span><span style="color:#66d9ef">)</span>
+</code></pre></div><hr>
+<h3 id="http">
+  HTTP
+  <a class="anchor" href="#http">#</a>
+</h3>
+<h4 id="超时">
+  超时
+  <a class="anchor" href="#%e8%b6%85%e6%97%b6">#</a>
+</h4>
+<ul>
+<li>connect_timeout</li>
+<li>request_timeout</li>
+</ul>
+<h5 id="默认超时时间">
+  默认超时时间
+  <a class="anchor" href="#%e9%bb%98%e8%ae%a4%e8%b6%85%e6%97%b6%e6%97%b6%e9%97%b4">#</a>
+</h5>
+<p>比如 <a href="https://github.com/psf/requests">psf/requests</a> <img src="https://img.shields.io/github/stars/psf/requests.svg" alt="Github stars" />，
+<a href="https://github.com/psf/requests/blob/fd13816d015c4c90ee65297fa996caea6a094ed1/requests/adapters.py#L422">send</a>
+调用
+<a href="https://github.com/urllib3/urllib3">urllib3/urllib3</a> <img src="https://img.shields.io/github/stars/urllib3/urllib3.svg" alt="Github stars" />，
+urllib3 <a href="https://github.com/urllib3/urllib3/blob/95958b4712756bb531549a41010c9751f2233ba4/src/urllib3/util/timeout.py#L93">timeout</a>
+使用了 Python 实现的 <code>socket.py</code> 的
+<a href="https://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535"><code>_GLOBAL_DEFAULT_TIMEOUT</code></a></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/59871726/urllib3-global-default-timeout-value">urllib3 global default timeout value</a></li>
+</ul>
+<hr>
+<h3 id="nodejs">
+  Node.js
+  <a class="anchor" href="#nodejs">#</a>
+</h3>
+<a href="https://github.com/axios/axios">axios/axios</a> <h4 id="axiosaxioshttpsgithubcomaxiosaxios-github-starshttpsimgshieldsiogithubstarsaxiosaxiossvg">
+  <img src="https://img.shields.io/github/stars/axios/axios.svg" alt="Github stars" />
+  <a class="anchor" href="#axiosaxioshttpsgithubcomaxiosaxios-github-starshttpsimgshieldsiogithubstarsaxiosaxiossvg">#</a>
+</h4>
+<p>Promise based HTTP client for the browser and node.js</p>
+<a href="https://github.com/sindresorhus/got">sindresorhus/got</a> <h4 id="sindresorhusgothttpsgithubcomsindresorhusgot-github-starshttpsimgshieldsiogithubstarssindresorhusgotsvg">
+  <img src="https://img.shields.io/github/stars/sindresorhus/got.svg" alt="Github stars" />
+  <a class="anchor" href="#sindresorhusgothttpsgithubcomsindresorhusgot-github-starshttpsimgshieldsiogithubstarssindresorhusgotsvg">#</a>
+</h4>
+<p>Human-friendly and powerful HTTP request library for Node.js</p>
+<a href="https://github.com/request/request">request/request</a> <h4 id="requestrequesthttpsgithubcomrequestrequest-github-starshttpsimgshieldsiogithubstarsrequestrequestsvg">
+  <img src="https://img.shields.io/github/stars/request/request.svg" alt="Github stars" />
+  <a class="anchor" href="#requestrequesthttpsgithubcomrequestrequest-github-starshttpsimgshieldsiogithubstarsrequestrequestsvg">#</a>
+</h4>
+<p>废弃了</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://github.com/request/request/issues/3143">Alternative libraries to request</a></li>
+<li><a href="https://www.oschina.net/news/105771/node-request-npm-package-being-deprecated">Node 最古老的 npm 包 request 将被废弃</a></li>
+<li><a href="https://www.zhihu.com/question/375789190">如何看待 node request 废弃？</a></li>
+</ul>
+<hr>
+<h3 id="keepalive">
+  Keepalive
+  <a class="anchor" href="#keepalive">#</a>
+</h3>
+<h4 id="tcp-keepalive">
+  TCP Keepalive
+  <a class="anchor" href="#tcp-keepalive">#</a>
+</h4>
+<p>TCP 实现中包含一个 keepalive 定时器，当一条 TCP 没有数据流通时，服务端这边会向客户端这边发送一个不带数据的 ACK 请求，
+如果收到回复，则表明这条连接是活的。如果没有收到回复，服务器端这边会发送多次 ack，到一定次数之后还没有收到回复，就认定这条连接已经死掉了，直接关闭掉。</p>
+<p>Linux 的 TCP 默认是没有开启 keepalive 的，因为大量的 keepalive 会浪费服务器资源。</p>
+<p>keepalive 也可以在代码里建立 TCP 的时候开启</p>
+<h4 id="http-keepalive">
+  HTTP Keepalive
+  <a class="anchor" href="#http-keepalive">#</a>
+</h4>
+<p>所谓的 keep-alive，就是一条 tcp 连接，在处理完一次 http 事务之后，不关闭此 tcp 连接，用于下一次的 http 事务。</p>
+<p>http 的 keep-alive 其实是 HTTP 1.0 的产物，
+HTTP 1.1 之后，所有的 http 连接都默认是 keep-alive 的</p>
+<p>对于 HTTP 1.1，假如你希望这条 http 连接完成一次事务之后就关闭这条连接（实际就是关闭底层的 tcp 连接），
+那么可以在 http 请求的头部加入 <code>Connection: close</code>，
+而且可以在任何时候加入这个头部</p>
+<h4 id="区分两次-http-事务的方式">
+  区分两次 http 事务的方式
+  <a class="anchor" href="#%e5%8c%ba%e5%88%86%e4%b8%a4%e6%ac%a1-http-%e4%ba%8b%e5%8a%a1%e7%9a%84%e6%96%b9%e5%bc%8f">#</a>
+</h4>
+<p>http 在持久化连接上，区分两次 http 事务的方式有两种</p>
+<ul>
+<li>Content-Length</li>
+<li><a href="https://www.wikiwand.com/zh-cn/%E5%88%86%E5%9D%97%E4%BC%A0%E8%BE%93%E7%BC%96%E7%A0%81">Transfer-Encoding: chunked</a></li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/">TCP Keepalive HOWTO</a></li>
+</ul>
+<hr>
 </article>
  
       
@@ -838,6 +979,12 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/cbd93fccbaf75debc743be4be348844194afd572" title='Last modified by yewang | 2020-07-20' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-20</span>
+    </a>
+  </div>
 
 
 
@@ -877,6 +1024,35 @@ https://github.com/alex-shpak/hugo-book
           <ul>
             <li><a href="#glibc">glibc</a></li>
             <li><a href="#并发性能">并发性能</a></li>
+          </ul>
+        </li>
+        <li><a href="#istio">Istio</a>
+          <ul>
+            <li><a href="#ingress-gateway">ingress gateway</a></li>
+            <li><a href="#tcp-流量转移">TCP 流量转移</a></li>
+          </ul>
+        </li>
+        <li><a href="#http">HTTP</a>
+          <ul>
+            <li><a href="#超时">超时</a>
+              <ul>
+                <li><a href="#默认超时时间">默认超时时间</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#nodejs">Node.js</a>
+          <ul>
+            <li><a href="#axiosaxioshttpsgithubcomaxiosaxios-github-starshttpsimgshieldsiogithubstarsaxiosaxiossvg"><a href="https://github.com/axios/axios">axios/axios</a> <img src="https://img.shields.io/github/stars/axios/axios.svg" alt="Github stars"></a></li>
+            <li><a href="#sindresorhusgothttpsgithubcomsindresorhusgot-github-starshttpsimgshieldsiogithubstarssindresorhusgotsvg"><a href="https://github.com/sindresorhus/got">sindresorhus/got</a> <img src="https://img.shields.io/github/stars/sindresorhus/got.svg" alt="Github stars"></a></li>
+            <li><a href="#requestrequesthttpsgithubcomrequestrequest-github-starshttpsimgshieldsiogithubstarsrequestrequestsvg"><a href="https://github.com/request/request">request/request</a> <img src="https://img.shields.io/github/stars/request/request.svg" alt="Github stars"></a></li>
+          </ul>
+        </li>
+        <li><a href="#keepalive">Keepalive</a>
+          <ul>
+            <li><a href="#tcp-keepalive">TCP Keepalive</a></li>
+            <li><a href="#http-keepalive">HTTP Keepalive</a></li>
+            <li><a href="#区分两次-http-事务的方式">区分两次 http 事务的方式</a></li>
           </ul>
         </li>
       </ul>

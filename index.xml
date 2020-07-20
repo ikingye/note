@@ -400,7 +400,7 @@ Cloud Native 既包含
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/20/</guid>
       <description>2020 年 7 月 20 日（星期一） #  今日待办 #      编程 #  Go #  glibc #  Go 可直接编译成机器码，不依赖其他库，glibc 的版本有一定要求，部署就是扔一个文件上去就完成了。
 并发性能 #   避免使用管道 chan 传递主业务数据，避免将业务流程处理流程分割到对个 Go 程中执行，这样做减少 chan 传输耗时  参考：
- Golang 号称高并发，但高并发时性能不高  </description>
+ Golang 号称高并发，但高并发时性能不高   Istio #  ingress gateway #  $ kubectl get svc istio-ingressgateway -n istio-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE istio-ingressgateway LoadBalancer 10.110.126.136 &amp;lt;pending&amp;gt; 15020:31287/TCP,80:30083/TCP,443:32328/TCP,31400:31271/TCP,15443:30247/TCP 3d16h EXTERNAL-IP 值为 &amp;lt;none&amp;gt; （或持续显示 &amp;lt;pending&amp;gt;），说明环境没有提供外部负载均衡，无法使用 ingress gateway。 在这种情况下，你可以使用服务的 node port 访问网关。</description>
     </item>
     
     <item>
