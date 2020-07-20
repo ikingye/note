@@ -10,6 +10,17 @@
     
     
     <item>
+      <title>2020-07-20</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/20/</guid>
+      <description>2020 年 7 月 20 日（星期一） #  今日待办 #      编程 #  Go #  glibc #  Go 可直接编译成机器码，不依赖其他库，glibc 的版本有一定要求，部署就是扔一个文件上去就完成了。
+并发性能 #   避免使用管道 chan 传递主业务数据，避免将业务流程处理流程分割到对个 Go 程中执行，这样做减少 chan 传输耗时  参考：
+ Golang 号称高并发，但高并发时性能不高  </description>
+    </item>
+    
+    <item>
       <title>2020-07-17</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/07/17/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

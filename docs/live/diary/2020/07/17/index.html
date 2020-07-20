@@ -11,12 +11,12 @@
 # Policy enforcement must be enabled istioctl install --set profile=demo --set meshConfig.disablePolicyChecks=false --set values." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/17/" />
-<meta property="article:modified_time" content="2020-07-17T15:20:58+08:00" />
+<meta property="article:modified_time" content="2020-07-17T17:46:59+08:00" />
 <title>2020-07-17 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.0a10b9d0ef05a929cf034b07b1283135bf2a73abd27be0a41d5301f553e8fadf.js" integrity="sha256-ChC50O8FqSnPA0sHsSgxNb8qc6vSe&#43;CkHVMB9VPo&#43;t8="></script>
+<script defer src="/note/en.search.min.3d92ec2b6ddacc8cc22182b8c81383df9a5d9bbbf12c63e2aa7050216b670296.js" integrity="sha256-PZLsK23azIzCIYK4yBOD35pdm7vxLGPiqnBQIWtnApY="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -423,6 +423,16 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
+    <a href="/note/docs/live/diary/2020/07/20/" class="">2020-07-20</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
     <a href="/note/docs/live/diary/2020/07/17/" class="active">2020-07-17</a>
   
 
@@ -786,7 +796,27 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#maistra">Maistra</a></li>
           </ul>
         </li>
-        <li><a href="#nsq">NSQ</a></li>
+        <li><a href="#消息队列">消息队列</a>
+          <ul>
+            <li><a href="#redis-vs-kafka">Redis vs Kafka</a></li>
+            <li><a href="#rabbitmq-vs-kafka">RabbitMQ vs Kafka</a></li>
+            <li><a href="#kafka">Kafka</a>
+              <ul>
+                <li><a href="#写入数据">写入数据</a></li>
+                <li><a href="#读取数据">读取数据</a></li>
+              </ul>
+            </li>
+            <li><a href="#nsq">NSQ</a></li>
+            <li><a href="#nats">NATS</a>
+              <ul>
+                <li><a href="#nats-ionats-serverhttpsgithubcomnats-ionats-server-github-starshttpsimgshieldsiogithubstarsnats-ionats-serversvg"><a href="https://github.com/nats-io/nats-server">nats-io/nats-server</a> <img src="https://img.shields.io/github/stars/nats-io/nats-server.svg" alt="Github stars"></a></li>
+                <li><a href="#nats-ionatsgohttpsgithubcomnats-ionatsgo-github-starshttpsimgshieldsiogithubstarsnats-ionatsgosvg"><a href="https://github.com/nats-io/nats.go">nats-io/nats.go</a> <img src="https://img.shields.io/github/stars/nats-io/nats.go.svg" alt="Github stars"></a></li>
+                <li><a href="#nats-ionats-streaming-serverhttpsgithubcomnats-ionats-streaming-server-github-starshttpsimgshieldsiogithubstarsnats-ionats-streaming-serversvg"><a href="https://github.com/nats-io/nats-streaming-server">nats-io/nats-streaming-server</a> <img src="https://img.shields.io/github/stars/nats-io/nats-streaming-server.svg" alt="Github stars"></a></li>
+              </ul>
+            </li>
+            <li><a href="#pulsar">Pulsar</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1121,12 +1151,189 @@ We recommend using <a href="https://maistra.io/docs/installation/">Maistra</a> w
 <li><a href="https://github.com/kiali/kiali#getting-started">kiali: getting-started</a></li>
 </ul>
 <hr>
-<h3 id="nsq">
+<h3 id="消息队列">
+  消息队列
+  <a class="anchor" href="#%e6%b6%88%e6%81%af%e9%98%9f%e5%88%97">#</a>
+</h3>
+<ul>
+<li>Kafka (Scala)
+<ul>
+<li>基于 Pull 的模式来处理消息消费，追求高吞吐量</li>
+<li>日志采集功能</li>
+</ul>
+</li>
+<li>RocketMQ (Java)
+<ul>
+<li>金融互联网领域</li>
+<li>协议：自己定义的</li>
+</ul>
+</li>
+<li>RabbitMQ (Erlang)
+<ul>
+<li>功能比较完备，小公司优先选择</li>
+<li>协议：<code>AMQP</code>（二进制），<code>STOMP</code>（文本），<code>MQTT</code>（二进制），<code>HTTP</code>（里面包装其他协议）等</li>
+</ul>
+</li>
+<li>ActiveMQ (Java)
+<ul>
+<li>协议：OpenWire、STOMP、REST、XMPP、AMQP</li>
+</ul>
+</li>
+<li>ZeroMQ (C)
+<ul>
+<li>协议：TCP、UDP</li>
+<li>只是一个异步消息库</li>
+<li>需要对自己的业务代码进行改造，不利于服务解耦</li>
+</ul>
+</li>
+<li>NATS</li>
+<li>NSQ</li>
+<li>MQTT</li>
+<li>MSMQ</li>
+<li>Pulsar</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/161224418">面试官：RabbitMQ 和 Kafka 选哪个？</a></li>
+<li><a href="https://www.zhihu.com/question/275090117">Kafka、RabbitMQ、RocketMQ 之间的区别是什么？</a></li>
+<li><a href="https://www.zhihu.com/question/22480085">RabbitMQ, ZeroMQ, Kafka 是一个层级的东西吗， 相互之间有哪些优缺点？</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/60288391">消息队列 Kafka、RocketMQ、RabbitMQ 的优劣势比较</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/37993013">IM 系统的 MQ 消息中间件选型：Kafka 还是 RabbitMQ？</a></li>
+<li><a href="https://www.zhihu.com/question/43557507">Kafka，Mq，Redis 作为消息队列使用时的差异？</a></li>
+</ul>
+<h4 id="redis-vs-kafka">
+  Redis vs Kafka
+  <a class="anchor" href="#redis-vs-kafka">#</a>
+</h4>
+<ul>
+<li>实时 vs 可靠
+<ul>
+<li>redis 消息推送（基于分布式 pub/sub）多用于实时性较高的消息推送，并<strong>不保证可靠</strong>。</li>
+<li>其他的 mq 和 kafka 保证可靠但有一些延迟（非实时系统没有保证延迟）。</li>
+</ul>
+</li>
+<li>分组
+<ul>
+<li>redis 发布订阅除了表示不同的 topic 外，并不支持分组</li>
+<li>kafka 同一个组里只有一个订阅者会收到该消息，这样可以用作<strong>负载均衡</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="rabbitmq-vs-kafka">
+  RabbitMQ vs Kafka
+  <a class="anchor" href="#rabbitmq-vs-kafka">#</a>
+</h4>
+<p>优先选择 RabbitMQ 的条件：</p>
+<ul>
+<li>高级灵活的路由规则；</li>
+<li>消息时序控制（控制消息过期或者消息延迟）；</li>
+<li>高级的容错处理能力，在消费者更有可能处理消息不成功的情景中（瞬时或者持久）；</li>
+<li>更简单的消费者实现。</li>
+</ul>
+<p>优先选择 Kafka 的条件：</p>
+<ul>
+<li>严格的消息顺序；</li>
+<li>延长<strong>消息留存时间</strong>，包括过去消息重放的可能；</li>
+<li>传统解决方案无法满足的<strong>高伸缩</strong>能力。</li>
+<li>RabbitMQ 在有<strong>大量消息堆积</strong>的情况下性能会下降，Kafka 不会</li>
+</ul>
+<h4 id="kafka">
+  Kafka
+  <a class="anchor" href="#kafka">#</a>
+</h4>
+<p>Kafka 速度的秘诀在于，
+它把所有的消息都变成一个批量的文件，并且进行合理的批量压缩，减少网络 IO 损耗，
+通过 mmap 提高 I/O 速度，
+写入数据的时候由于单个 Partion 是末尾添加所以速度最优；
+读取数据的时候配合 sendfile 直接暴力输出。</p>
+<h5 id="写入数据">
+  写入数据
+  <a class="anchor" href="#%e5%86%99%e5%85%a5%e6%95%b0%e6%8d%ae">#</a>
+</h5>
+<ul>
+<li>顺序写入
+<ul>
+<li><strong>顺序写入磁盘顺序读写速度超过内存随机读写</strong></li>
+<li>顺序写入 JVM 的 GC 效率低，内存占用大，使用磁盘可以避免这一问题</li>
+<li>顺序写入系统冷启动后，磁盘缓存依然可用</li>
+<li>问题：没有办法删除数据
+<ul>
+<li>所以 Kafka 会把所有的数据都保留下来，每个消费者对每个 Topic 都有一个 <code>offset</code> 用来表示读取到了第几条数据</li>
+<li>Kakfa 提供了两种策略来删除数据
+<ul>
+<li>基于时间</li>
+<li>基于 Partition 文件大小</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MMFile (Memory Mapped Files)
+<ul>
+<li>Kafka 的数据并不是实时的写入硬盘 ，它充分利用了现代操作系统分页存储来利用内存提高 I/O 效率</li>
+</ul>
+</li>
+</ul>
+<h5 id="读取数据">
+  读取数据
+  <a class="anchor" href="#%e8%af%bb%e5%8f%96%e6%95%b0%e6%8d%ae">#</a>
+</h5>
+<ul>
+<li>基于 sendfile 实现 Zero Copy
+<ul>
+<li>硬盘<code>—&gt;</code>内核 buf<code>—&gt;</code>用户 buf<code>—&gt;</code>socket 相关缓冲区<code>—&gt;</code>协议引擎</li>
+<li>内核版本 2.1 引进的 sendfile 已经减少了内核缓冲区到 user 缓冲区</li>
+<li>内核版本 2.4 之后，文件描述符结果被改变，sendfile 实现了更简单的方式，再次减少了一次 copy 操作</li>
+</ul>
+</li>
+<li>批量压缩
+<ul>
+<li>Kafka 使用了批量压缩，即将多个消息一起压缩</li>
+<li>Kafka 支持多种压缩协议，包括 Gzip 和 Snappy 压缩协议</li>
+</ul>
+</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/147054382">面试问：Kafka 为什么速度那么快？</a></li>
+</ul>
+<h4 id="nsq">
   NSQ
   <a class="anchor" href="#nsq">#</a>
-</h3>
+</h4>
 <p><a href="https://github.com/nsqio/nsq">nsqio/nsq</a> <img src="https://img.shields.io/github/stars/nsqio/nsq.svg" alt="Github stars" /></p>
 <p>NSQ is a realtime distributed messaging platform designed to operate at scale, handling billions of messages per day.</p>
+<p>Go 语言消息队列 NSQ</p>
+<p><img src="https://pic1.zhimg.com/v2-e7c2d63d53f9486acf031c307df86e7f_r.webp" alt="" /></p>
+<h4 id="nats">
+  NATS
+  <a class="anchor" href="#nats">#</a>
+</h4>
+<a href="https://github.com/nats-io/nats-server">nats-io/nats-server</a> <h5 id="nats-ionats-serverhttpsgithubcomnats-ionats-server-github-starshttpsimgshieldsiogithubstarsnats-ionats-serversvg">
+  <img src="https://img.shields.io/github/stars/nats-io/nats-server.svg" alt="Github stars" />
+  <a class="anchor" href="#nats-ionats-serverhttpsgithubcomnats-ionats-server-github-starshttpsimgshieldsiogithubstarsnats-ionats-serversvg">#</a>
+</h5>
+<p>High-Performance server for NATS, the cloud native messaging system.</p>
+<a href="https://github.com/nats-io/nats.go">nats-io/nats.go</a> <h5 id="nats-ionatsgohttpsgithubcomnats-ionatsgo-github-starshttpsimgshieldsiogithubstarsnats-ionatsgosvg">
+  <img src="https://img.shields.io/github/stars/nats-io/nats.go.svg" alt="Github stars" />
+  <a class="anchor" href="#nats-ionatsgohttpsgithubcomnats-ionatsgo-github-starshttpsimgshieldsiogithubstarsnats-ionatsgosvg">#</a>
+</h5>
+<p>Golang client for NATS, the cloud native messaging system.</p>
+<a href="https://github.com/nats-io/nats-streaming-server">nats-io/nats-streaming-server</a> <h5 id="nats-ionats-streaming-serverhttpsgithubcomnats-ionats-streaming-server-github-starshttpsimgshieldsiogithubstarsnats-ionats-streaming-serversvg">
+  <img src="https://img.shields.io/github/stars/nats-io/nats-streaming-server.svg" alt="Github stars" />
+  <a class="anchor" href="#nats-ionats-streaming-serverhttpsgithubcomnats-ionats-streaming-server-github-starshttpsimgshieldsiogithubstarsnats-ionats-streaming-serversvg">#</a>
+</h5>
+<p>NATS Streaming is an extremely performant, lightweight reliable streaming platform built on NATS.</p>
+<hr>
+<h4 id="pulsar">
+  Pulsar
+  <a class="anchor" href="#pulsar">#</a>
+</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/68809190">选择 Pulsar 而不是 Kafka 的 7 大理由</a></li>
+</ul>
 </article>
  
       
@@ -1137,7 +1344,7 @@ We recommend using <a href="https://maistra.io/docs/installation/">Maistra</a> w
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/c3f825e8ba468cc94ab73a8edd5bef3652e66652" title='Last modified by yewang | 2020-07-17' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/b81db0d0396ba32347d92c411f1e5b093403d996" title='Last modified by yewang | 2020-07-17' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-17</span>
     </a>
@@ -1201,7 +1408,27 @@ We recommend using <a href="https://maistra.io/docs/installation/">Maistra</a> w
             <li><a href="#maistra">Maistra</a></li>
           </ul>
         </li>
-        <li><a href="#nsq">NSQ</a></li>
+        <li><a href="#消息队列">消息队列</a>
+          <ul>
+            <li><a href="#redis-vs-kafka">Redis vs Kafka</a></li>
+            <li><a href="#rabbitmq-vs-kafka">RabbitMQ vs Kafka</a></li>
+            <li><a href="#kafka">Kafka</a>
+              <ul>
+                <li><a href="#写入数据">写入数据</a></li>
+                <li><a href="#读取数据">读取数据</a></li>
+              </ul>
+            </li>
+            <li><a href="#nsq">NSQ</a></li>
+            <li><a href="#nats">NATS</a>
+              <ul>
+                <li><a href="#nats-ionats-serverhttpsgithubcomnats-ionats-server-github-starshttpsimgshieldsiogithubstarsnats-ionats-serversvg"><a href="https://github.com/nats-io/nats-server">nats-io/nats-server</a> <img src="https://img.shields.io/github/stars/nats-io/nats-server.svg" alt="Github stars"></a></li>
+                <li><a href="#nats-ionatsgohttpsgithubcomnats-ionatsgo-github-starshttpsimgshieldsiogithubstarsnats-ionatsgosvg"><a href="https://github.com/nats-io/nats.go">nats-io/nats.go</a> <img src="https://img.shields.io/github/stars/nats-io/nats.go.svg" alt="Github stars"></a></li>
+                <li><a href="#nats-ionats-streaming-serverhttpsgithubcomnats-ionats-streaming-server-github-starshttpsimgshieldsiogithubstarsnats-ionats-streaming-serversvg"><a href="https://github.com/nats-io/nats-streaming-server">nats-io/nats-streaming-server</a> <img src="https://img.shields.io/github/stars/nats-io/nats-streaming-server.svg" alt="Github stars"></a></li>
+              </ul>
+            </li>
+            <li><a href="#pulsar">Pulsar</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
