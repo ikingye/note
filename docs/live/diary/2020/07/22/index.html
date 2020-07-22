@@ -19,12 +19,12 @@ IP QoS 是指 IP 网络的一种能力，即在跨越多种底层网络技术（
  Best-Effort service（尽力而为服务模型） Integrated service（综合服务模型，简称 Int-Serv） Differentiated service（区分服务模型，简称 Diff-Serv）。   C&#43;&#43; 深拷贝 vs 浅拷贝 #  问题：在 C&#43;&#43; 中 default constructor 对对象进行的是怎样的拷贝动作？" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/22/" />
-
+<meta property="article:modified_time" content="2020-07-22T15:02:40+08:00" />
 <title>2020-07-22 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.014f1c45431aa190d04337c3171ece19fc18dbc70c4430d3833b97ea02a45a59.js" integrity="sha256-AU8cRUMaoZDQQzfDFx7OGfwY28cMRDDTgzuX6gKkWlk="></script>
+<script defer src="/note/en.search.min.436a9cb1992ee9b14b09188bbadc6e7dd7390c1ac568cd5476e6932afc271dd7.js" integrity="sha256-Q2qcsZku6bFLCRiLutxufdc5DBrFaM1UduaTKvwnHdc="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -821,6 +821,22 @@ https://github.com/alex-shpak/hugo-book
             </li>
           </ul>
         </li>
+        <li><a href="#istio">Istio</a>
+          <ul>
+            <li><a href="#crd">CRD</a>
+              <ul>
+                <li><a href="#destinationrule">DestinationRule</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#code-generatorhttpsgithubcomkuberneteskubernetestreemasterstagingsrck8siocode-generator"><a href="https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/code-generator">code generator</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#openstackneutronhttpsgithubcomopenstackneutron-github-starshttpsimgshieldsiogithubstarsopenstackneutronsvg"><a href="https://github.com/openstack/neutron">openstack/neutron</a> <img src="https://img.shields.io/github/stars/openstack/neutron.svg" alt="Github stars"></a></li>
+        <li><a href="#mcp-mesh-configuration-protocol">MCP (Mesh Configuration Protocol)</a></li>
       </ul>
     </li>
   </ul>
@@ -952,6 +968,1236 @@ https://github.com/alex-shpak/hugo-book
 <li>需求重要体现部分与整体的层次结构时</li>
 <li>你希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。</li>
 </ol>
+<hr>
+<h3 id="istio">
+  Istio
+  <a class="anchor" href="#istio">#</a>
+</h3>
+<p><a href="https://github.com/istio/istio/blob/f508fdd78eb0d3444e2bc2b3f36966d904c5db52/pkg/kube/inject/initializer.go#L60">CRD 创建</a></p>
+<h4 id="crd">
+  CRD
+  <a class="anchor" href="#crd">#</a>
+</h4>
+<ul>
+<li>HTTPAPISpec</li>
+<li>HTTPAPISpecBinding</li>
+<li>QuotaSpec</li>
+<li>QuotaSpecBinding</li>
+<li>DestinationRule</li>
+<li>EnvoyFilter</li>
+<li>Gateway</li>
+<li>ServiceEntry</li>
+<li>Sidecar</li>
+<li>VirtualService</li>
+<li>WorkloadEntry</li>
+<li>attributemanifest</li>
+<li>handler</li>
+<li>instance</li>
+<li>rule</li>
+<li>ClusterRbacConfig</li>
+<li>RbacConfig</li>
+<li>ServiceRole</li>
+<li>ServiceRoleBinding</li>
+<li>AuthorizationPolicy</li>
+<li>PeerAuthentication</li>
+<li>RequestAuthentication</li>
+<li>adapter</li>
+<li>template</li>
+<li>IstioOperator</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ k get crd
+adapters.config.istio.io
+attributemanifests.config.istio.io
+handlers.config.istio.io
+httpapispecbindings.config.istio.io
+httpapispecs.config.istio.io
+instances.config.istio.io
+quotaspecbindings.config.istio.io
+quotaspecs.config.istio.io
+rules.config.istio.io
+templates.config.istio.io
+destinationrules.networking.istio.io
+envoyfilters.networking.istio.io
+gateways.networking.istio.io
+serviceentries.networking.istio.io
+sidecars.networking.istio.io
+virtualservices.networking.istio.io
+workloadentries.networking.istio.io
+clusterrbacconfigs.rbac.istio.io
+rbacconfigs.rbac.istio.io
+servicerolebindings.rbac.istio.io
+serviceroles.rbac.istio.io
+authorizationpolicies.security.istio.io
+peerauthentications.security.istio.io
+requestauthentications.security.istio.io
+istiooperators.install.istio.io
+</code></pre></div><h5 id="destinationrule">
+  DestinationRule
+  <a class="anchor" href="#destinationrule">#</a>
+</h5>
+<p><a href="https://github.com/istio/istio/blob/f508fdd78eb0d3444e2bc2b3f36966d904c5db52/manifests/charts/base/crds/crd-all.gen.yaml#L583">CRD DestinationRule 定义</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: apiextensions.k8s.io/v1beta1
+<span style="color:#66d9ef">kind</span>: CustomResourceDefinition
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">annotations</span>:
+    <span style="color:#66d9ef">&#34;helm.sh/resource-policy&#34;: </span>keep
+  <span style="color:#66d9ef">labels</span>:
+    <span style="color:#66d9ef">app</span>: istio-pilot
+    <span style="color:#66d9ef">chart</span>: istio
+    <span style="color:#66d9ef">heritage</span>: Tiller
+    <span style="color:#66d9ef">release</span>: istio
+  <span style="color:#66d9ef">name</span>: destinationrules.networking.istio.io
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">additionalPrinterColumns</span>:
+  - <span style="color:#66d9ef">JSONPath</span>: .spec.host
+    <span style="color:#66d9ef">description</span>: The name of a service from the service registry
+    <span style="color:#66d9ef">name</span>: Host
+    <span style="color:#66d9ef">type</span>: string
+  - <span style="color:#66d9ef">JSONPath</span>: .metadata.creationTimestamp
+    <span style="color:#66d9ef">description</span>: <span style="color:#e6db74">&#39;CreationTimestamp is a timestamp representing the server time when
+</span><span style="color:#e6db74">      this object was created. It is not guaranteed to be set in happens-before order
+</span><span style="color:#e6db74">      across separate operations. Clients may not set this value. It is represented
+</span><span style="color:#e6db74">      in RFC3339 form and is in UTC. Populated by the system. Read-only. Null for
+</span><span style="color:#e6db74">      lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata&#39;</span>
+    <span style="color:#66d9ef">name</span>: Age
+    <span style="color:#66d9ef">type</span>: date
+  <span style="color:#66d9ef">group</span>: networking.istio.io
+  <span style="color:#66d9ef">names</span>:
+    <span style="color:#66d9ef">categories</span>:
+    - istio-io
+    - networking-istio-io
+    <span style="color:#66d9ef">kind</span>: DestinationRule
+    <span style="color:#66d9ef">listKind</span>: DestinationRuleList
+    <span style="color:#66d9ef">plural</span>: destinationrules
+    <span style="color:#66d9ef">shortNames</span>:
+    - dr
+    <span style="color:#66d9ef">singular</span>: destinationrule
+  <span style="color:#66d9ef">preserveUnknownFields</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#66d9ef">scope</span>: Namespaced
+  <span style="color:#66d9ef">subresources</span>:
+    <span style="color:#66d9ef">status</span>: {}
+  <span style="color:#66d9ef">validation</span>:
+    <span style="color:#66d9ef">openAPIV3Schema</span>:
+      <span style="color:#66d9ef">properties</span>:
+        <span style="color:#66d9ef">spec</span>:
+          <span style="color:#66d9ef">description</span>: <span style="color:#e6db74">&#39;Configuration affecting load balancing, outlier detection,
+</span><span style="color:#e6db74">            etc. See more details at: https://istio.io/docs/reference/config/networking/destination-rule.html&#39;</span>
+          <span style="color:#66d9ef">properties</span>:
+            <span style="color:#66d9ef">exportTo</span>:
+              <span style="color:#66d9ef">description</span>: A list of namespaces to which this destination rule is
+                exported.
+              <span style="color:#66d9ef">items</span>:
+                <span style="color:#66d9ef">format</span>: string
+                <span style="color:#66d9ef">type</span>: string
+              <span style="color:#66d9ef">type</span>: array
+            <span style="color:#66d9ef">host</span>:
+              <span style="color:#66d9ef">description</span>: The name of a service from the service registry.
+              <span style="color:#66d9ef">format</span>: string
+              <span style="color:#66d9ef">type</span>: string
+            <span style="color:#66d9ef">subsets</span>:
+              <span style="color:#66d9ef">items</span>:
+                <span style="color:#66d9ef">properties</span>:
+                  <span style="color:#66d9ef">labels</span>:
+                    <span style="color:#66d9ef">additionalProperties</span>:
+                      <span style="color:#66d9ef">format</span>: string
+                      <span style="color:#66d9ef">type</span>: string
+                    <span style="color:#66d9ef">type</span>: object
+                  <span style="color:#66d9ef">name</span>:
+                    <span style="color:#66d9ef">description</span>: Name of the subset.
+                    <span style="color:#66d9ef">format</span>: string
+                    <span style="color:#66d9ef">type</span>: string
+                  <span style="color:#66d9ef">trafficPolicy</span>:
+                    <span style="color:#66d9ef">description</span>: Traffic policies that apply to this subset.
+                    <span style="color:#66d9ef">properties</span>:
+                      <span style="color:#66d9ef">connectionPool</span>:
+                        <span style="color:#66d9ef">properties</span>:
+                          <span style="color:#66d9ef">http</span>:
+                            <span style="color:#66d9ef">description</span>: HTTP connection pool settings.
+                            <span style="color:#66d9ef">properties</span>:
+                              <span style="color:#66d9ef">h2UpgradePolicy</span>:
+                                <span style="color:#66d9ef">description</span>: Specify if http1<span style="color:#ae81ff">.1</span> connection should
+                                  be upgraded to http2 for the associated destination.
+                                <span style="color:#66d9ef">enum</span>:
+                                - DEFAULT
+                                - DO_NOT_UPGRADE
+                                - UPGRADE
+                                <span style="color:#66d9ef">type</span>: string
+                              <span style="color:#66d9ef">http1MaxPendingRequests</span>:
+                                <span style="color:#66d9ef">description</span>: Maximum number of pending HTTP requests
+                                  to a destination.
+                                <span style="color:#66d9ef">format</span>: int32
+                                <span style="color:#66d9ef">type</span>: integer
+                              <span style="color:#66d9ef">http2MaxRequests</span>:
+                                <span style="color:#66d9ef">description</span>: Maximum number of requests to a backend.
+                                <span style="color:#66d9ef">format</span>: int32
+                                <span style="color:#66d9ef">type</span>: integer
+                              <span style="color:#66d9ef">idleTimeout</span>:
+                                <span style="color:#66d9ef">description</span>: The idle timeout for upstream connection
+                                  pool connections.
+                                <span style="color:#66d9ef">type</span>: string
+                              <span style="color:#66d9ef">maxRequestsPerConnection</span>:
+                                <span style="color:#66d9ef">description</span>: Maximum number of requests per connection
+                                  to a backend.
+                                <span style="color:#66d9ef">format</span>: int32
+                                <span style="color:#66d9ef">type</span>: integer
+                              <span style="color:#66d9ef">maxRetries</span>:
+                                <span style="color:#66d9ef">format</span>: int32
+                                <span style="color:#66d9ef">type</span>: integer
+                            <span style="color:#66d9ef">type</span>: object
+                          <span style="color:#66d9ef">tcp</span>:
+                            <span style="color:#66d9ef">description</span>: Settings common to both HTTP and TCP upstream
+                              connections.
+                            <span style="color:#66d9ef">properties</span>:
+                              <span style="color:#66d9ef">connectTimeout</span>:
+                                <span style="color:#66d9ef">description</span>: TCP connection timeout.
+                                <span style="color:#66d9ef">type</span>: string
+                              <span style="color:#66d9ef">maxConnections</span>:
+                                <span style="color:#66d9ef">description</span>: Maximum number of HTTP1 /TCP connections
+                                  to a destination host.
+                                <span style="color:#66d9ef">format</span>: int32
+                                <span style="color:#66d9ef">type</span>: integer
+                              <span style="color:#66d9ef">tcpKeepalive</span>:
+                                <span style="color:#66d9ef">description</span>: If set then set SO_KEEPALIVE on the socket
+                                  to enable TCP Keepalives.
+                                <span style="color:#66d9ef">properties</span>:
+                                  <span style="color:#66d9ef">interval</span>:
+                                    <span style="color:#66d9ef">description</span>: The time duration between keep-alive
+                                      probes.
+                                    <span style="color:#66d9ef">type</span>: string
+                                  <span style="color:#66d9ef">probes</span>:
+                                    <span style="color:#66d9ef">type</span>: integer
+                                  <span style="color:#66d9ef">time</span>:
+                                    <span style="color:#66d9ef">type</span>: string
+                                <span style="color:#66d9ef">type</span>: object
+                            <span style="color:#66d9ef">type</span>: object
+                        <span style="color:#66d9ef">type</span>: object
+                      <span style="color:#66d9ef">loadBalancer</span>:
+                        <span style="color:#66d9ef">description</span>: Settings controlling the load balancer algorithms.
+                        <span style="color:#66d9ef">oneOf</span>:
+                        - <span style="color:#66d9ef">not</span>:
+                            <span style="color:#66d9ef">anyOf</span>:
+                            - <span style="color:#66d9ef">required</span>:
+                              - simple
+                            - <span style="color:#66d9ef">properties</span>:
+                                <span style="color:#66d9ef">consistentHash</span>:
+                                  <span style="color:#66d9ef">oneOf</span>:
+                                  - <span style="color:#66d9ef">not</span>:
+                                      <span style="color:#66d9ef">anyOf</span>:
+                                      - <span style="color:#66d9ef">required</span>:
+                                        - httpHeaderName
+                                      - <span style="color:#66d9ef">required</span>:
+                                        - httpCookie
+                                      - <span style="color:#66d9ef">required</span>:
+                                        - useSourceIp
+                                      - <span style="color:#66d9ef">required</span>:
+                                        - httpQueryParameterName
+                                  - <span style="color:#66d9ef">required</span>:
+                                    - httpHeaderName
+                                  - <span style="color:#66d9ef">required</span>:
+                                    - httpCookie
+                                  - <span style="color:#66d9ef">required</span>:
+                                    - useSourceIp
+                                  - <span style="color:#66d9ef">required</span>:
+                                    - httpQueryParameterName
+                              <span style="color:#66d9ef">required</span>:
+                              - consistentHash
+                        - <span style="color:#66d9ef">required</span>:
+                          - simple
+                        - <span style="color:#66d9ef">properties</span>:
+                            <span style="color:#66d9ef">consistentHash</span>:
+                              <span style="color:#66d9ef">oneOf</span>:
+                              - <span style="color:#66d9ef">not</span>:
+                                  <span style="color:#66d9ef">anyOf</span>:
+                                  - <span style="color:#66d9ef">required</span>:
+                                    - httpHeaderName
+                                  - <span style="color:#66d9ef">required</span>:
+                                    - httpCookie
+                                  - <span style="color:#66d9ef">required</span>:
+                                    - useSourceIp
+                                  - <span style="color:#66d9ef">required</span>:
+                                    - httpQueryParameterName
+                              - <span style="color:#66d9ef">required</span>:
+                                - httpHeaderName
+                              - <span style="color:#66d9ef">required</span>:
+                                - httpCookie
+                              - <span style="color:#66d9ef">required</span>:
+                                - useSourceIp
+                              - <span style="color:#66d9ef">required</span>:
+                                - httpQueryParameterName
+                          <span style="color:#66d9ef">required</span>:
+                          - consistentHash
+                        <span style="color:#66d9ef">properties</span>:
+                          <span style="color:#66d9ef">consistentHash</span>:
+                            <span style="color:#66d9ef">properties</span>:
+                              <span style="color:#66d9ef">httpCookie</span>:
+                                <span style="color:#66d9ef">description</span>: Hash based on HTTP cookie.
+                                <span style="color:#66d9ef">properties</span>:
+                                  <span style="color:#66d9ef">name</span>:
+                                    <span style="color:#66d9ef">description</span>: Name of the cookie.
+                                    <span style="color:#66d9ef">format</span>: string
+                                    <span style="color:#66d9ef">type</span>: string
+                                  <span style="color:#66d9ef">path</span>:
+                                    <span style="color:#66d9ef">description</span>: Path to set for the cookie.
+                                    <span style="color:#66d9ef">format</span>: string
+                                    <span style="color:#66d9ef">type</span>: string
+                                  <span style="color:#66d9ef">ttl</span>:
+                                    <span style="color:#66d9ef">description</span>: Lifetime of the cookie.
+                                    <span style="color:#66d9ef">type</span>: string
+                                <span style="color:#66d9ef">type</span>: object
+                              <span style="color:#66d9ef">httpHeaderName</span>:
+                                <span style="color:#66d9ef">description</span>: Hash based on a specific HTTP header.
+                                <span style="color:#66d9ef">format</span>: string
+                                <span style="color:#66d9ef">type</span>: string
+                              <span style="color:#66d9ef">httpQueryParameterName</span>:
+                                <span style="color:#66d9ef">description</span>: Hash based on a specific HTTP query parameter.
+                                <span style="color:#66d9ef">format</span>: string
+                                <span style="color:#66d9ef">type</span>: string
+                              <span style="color:#66d9ef">minimumRingSize</span>:
+                                <span style="color:#66d9ef">type</span>: integer
+                              <span style="color:#66d9ef">useSourceIp</span>:
+                                <span style="color:#66d9ef">description</span>: Hash based on the source IP address.
+                                <span style="color:#66d9ef">type</span>: boolean
+                            <span style="color:#66d9ef">type</span>: object
+                          <span style="color:#66d9ef">localityLbSetting</span>:
+                            <span style="color:#66d9ef">properties</span>:
+                              <span style="color:#66d9ef">distribute</span>:
+                                <span style="color:#66d9ef">description: &#39;Optional</span>: only one of distribute or
+                                  failover can be set.<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">                                items:
+</span><span style="color:#e6db74">                                  properties:
+</span><span style="color:#e6db74">                                    from:
+</span><span style="color:#e6db74">                                      description: Originating locality, &#39;</span>/<span style="color:#e6db74">&#39; separated,
+</span><span style="color:#e6db74">                                        e.g.
+</span><span style="color:#e6db74">                                      format: string
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                    to:
+</span><span style="color:#e6db74">                                      additionalProperties:
+</span><span style="color:#e6db74">                                        type: integer
+</span><span style="color:#e6db74">                                      description: Map of upstream localities to traffic
+</span><span style="color:#e6db74">                                        distribution weights.
+</span><span style="color:#e6db74">                                      type: object
+</span><span style="color:#e6db74">                                  type: object
+</span><span style="color:#e6db74">                                type: array
+</span><span style="color:#e6db74">                              enabled:
+</span><span style="color:#e6db74">                                description: enable locality load balancing, this
+</span><span style="color:#e6db74">                                  is DestinationRule-level and will override mesh
+</span><span style="color:#e6db74">                                  wide settings in entirety.
+</span><span style="color:#e6db74">                                type: boolean
+</span><span style="color:#e6db74">                              failover:
+</span><span style="color:#e6db74">                                description: &#39;</span><span style="color:#66d9ef">Optional</span>: only failover or distribute
+                                  can be set.<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">                                items:
+</span><span style="color:#e6db74">                                  properties:
+</span><span style="color:#e6db74">                                    from:
+</span><span style="color:#e6db74">                                      description: Originating region.
+</span><span style="color:#e6db74">                                      format: string
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                    to:
+</span><span style="color:#e6db74">                                      format: string
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                  type: object
+</span><span style="color:#e6db74">                                type: array
+</span><span style="color:#e6db74">                            type: object
+</span><span style="color:#e6db74">                          simple:
+</span><span style="color:#e6db74">                            enum:
+</span><span style="color:#e6db74">                            - ROUND_ROBIN
+</span><span style="color:#e6db74">                            - LEAST_CONN
+</span><span style="color:#e6db74">                            - RANDOM
+</span><span style="color:#e6db74">                            - PASSTHROUGH
+</span><span style="color:#e6db74">                            type: string
+</span><span style="color:#e6db74">                        type: object
+</span><span style="color:#e6db74">                      outlierDetection:
+</span><span style="color:#e6db74">                        properties:
+</span><span style="color:#e6db74">                          baseEjectionTime:
+</span><span style="color:#e6db74">                            description: Minimum ejection duration.
+</span><span style="color:#e6db74">                            type: string
+</span><span style="color:#e6db74">                          consecutive5xxErrors:
+</span><span style="color:#e6db74">                            description: Number of 5xx errors before a host is ejected
+</span><span style="color:#e6db74">                              from the connection pool.
+</span><span style="color:#e6db74">                            type: integer
+</span><span style="color:#e6db74">                          consecutiveErrors:
+</span><span style="color:#e6db74">                            format: int32
+</span><span style="color:#e6db74">                            type: integer
+</span><span style="color:#e6db74">                          consecutiveGatewayErrors:
+</span><span style="color:#e6db74">                            description: Number of gateway errors before a host is
+</span><span style="color:#e6db74">                              ejected from the connection pool.
+</span><span style="color:#e6db74">                            type: integer
+</span><span style="color:#e6db74">                          interval:
+</span><span style="color:#e6db74">                            description: Time interval between ejection sweep analysis.
+</span><span style="color:#e6db74">                            type: string
+</span><span style="color:#e6db74">                          maxEjectionPercent:
+</span><span style="color:#e6db74">                            format: int32
+</span><span style="color:#e6db74">                            type: integer
+</span><span style="color:#e6db74">                          minHealthPercent:
+</span><span style="color:#e6db74">                            format: int32
+</span><span style="color:#e6db74">                            type: integer
+</span><span style="color:#e6db74">                        type: object
+</span><span style="color:#e6db74">                      portLevelSettings:
+</span><span style="color:#e6db74">                        description: Traffic policies specific to individual ports.
+</span><span style="color:#e6db74">                        items:
+</span><span style="color:#e6db74">                          properties:
+</span><span style="color:#e6db74">                            connectionPool:
+</span><span style="color:#e6db74">                              properties:
+</span><span style="color:#e6db74">                                http:
+</span><span style="color:#e6db74">                                  description: HTTP connection pool settings.
+</span><span style="color:#e6db74">                                  properties:
+</span><span style="color:#e6db74">                                    h2UpgradePolicy:
+</span><span style="color:#e6db74">                                      description: Specify if http1.1 connection should
+</span><span style="color:#e6db74">                                        be upgraded to http2 for the associated destination.
+</span><span style="color:#e6db74">                                      enum:
+</span><span style="color:#e6db74">                                      - DEFAULT
+</span><span style="color:#e6db74">                                      - DO_NOT_UPGRADE
+</span><span style="color:#e6db74">                                      - UPGRADE
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                    http1MaxPendingRequests:
+</span><span style="color:#e6db74">                                      description: Maximum number of pending HTTP
+</span><span style="color:#e6db74">                                        requests to a destination.
+</span><span style="color:#e6db74">                                      format: int32
+</span><span style="color:#e6db74">                                      type: integer
+</span><span style="color:#e6db74">                                    http2MaxRequests:
+</span><span style="color:#e6db74">                                      description: Maximum number of requests to a
+</span><span style="color:#e6db74">                                        backend.
+</span><span style="color:#e6db74">                                      format: int32
+</span><span style="color:#e6db74">                                      type: integer
+</span><span style="color:#e6db74">                                    idleTimeout:
+</span><span style="color:#e6db74">                                      description: The idle timeout for upstream connection
+</span><span style="color:#e6db74">                                        pool connections.
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                    maxRequestsPerConnection:
+</span><span style="color:#e6db74">                                      description: Maximum number of requests per
+</span><span style="color:#e6db74">                                        connection to a backend.
+</span><span style="color:#e6db74">                                      format: int32
+</span><span style="color:#e6db74">                                      type: integer
+</span><span style="color:#e6db74">                                    maxRetries:
+</span><span style="color:#e6db74">                                      format: int32
+</span><span style="color:#e6db74">                                      type: integer
+</span><span style="color:#e6db74">                                  type: object
+</span><span style="color:#e6db74">                                tcp:
+</span><span style="color:#e6db74">                                  description: Settings common to both HTTP and TCP
+</span><span style="color:#e6db74">                                    upstream connections.
+</span><span style="color:#e6db74">                                  properties:
+</span><span style="color:#e6db74">                                    connectTimeout:
+</span><span style="color:#e6db74">                                      description: TCP connection timeout.
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                    maxConnections:
+</span><span style="color:#e6db74">                                      description: Maximum number of HTTP1 /TCP connections
+</span><span style="color:#e6db74">                                        to a destination host.
+</span><span style="color:#e6db74">                                      format: int32
+</span><span style="color:#e6db74">                                      type: integer
+</span><span style="color:#e6db74">                                    tcpKeepalive:
+</span><span style="color:#e6db74">                                      description: If set then set SO_KEEPALIVE on
+</span><span style="color:#e6db74">                                        the socket to enable TCP Keepalives.
+</span><span style="color:#e6db74">                                      properties:
+</span><span style="color:#e6db74">                                        interval:
+</span><span style="color:#e6db74">                                          description: The time duration between keep-alive
+</span><span style="color:#e6db74">                                            probes.
+</span><span style="color:#e6db74">                                          type: string
+</span><span style="color:#e6db74">                                        probes:
+</span><span style="color:#e6db74">                                          type: integer
+</span><span style="color:#e6db74">                                        time:
+</span><span style="color:#e6db74">                                          type: string
+</span><span style="color:#e6db74">                                      type: object
+</span><span style="color:#e6db74">                                  type: object
+</span><span style="color:#e6db74">                              type: object
+</span><span style="color:#e6db74">                            loadBalancer:
+</span><span style="color:#e6db74">                              description: Settings controlling the load balancer
+</span><span style="color:#e6db74">                                algorithms.
+</span><span style="color:#e6db74">                              oneOf:
+</span><span style="color:#e6db74">                              - not:
+</span><span style="color:#e6db74">                                  anyOf:
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - simple
+</span><span style="color:#e6db74">                                  - properties:
+</span><span style="color:#e6db74">                                      consistentHash:
+</span><span style="color:#e6db74">                                        oneOf:
+</span><span style="color:#e6db74">                                        - not:
+</span><span style="color:#e6db74">                                            anyOf:
+</span><span style="color:#e6db74">                                            - required:
+</span><span style="color:#e6db74">                                              - httpHeaderName
+</span><span style="color:#e6db74">                                            - required:
+</span><span style="color:#e6db74">                                              - httpCookie
+</span><span style="color:#e6db74">                                            - required:
+</span><span style="color:#e6db74">                                              - useSourceIp
+</span><span style="color:#e6db74">                                            - required:
+</span><span style="color:#e6db74">                                              - httpQueryParameterName
+</span><span style="color:#e6db74">                                        - required:
+</span><span style="color:#e6db74">                                          - httpHeaderName
+</span><span style="color:#e6db74">                                        - required:
+</span><span style="color:#e6db74">                                          - httpCookie
+</span><span style="color:#e6db74">                                        - required:
+</span><span style="color:#e6db74">                                          - useSourceIp
+</span><span style="color:#e6db74">                                        - required:
+</span><span style="color:#e6db74">                                          - httpQueryParameterName
+</span><span style="color:#e6db74">                                    required:
+</span><span style="color:#e6db74">                                    - consistentHash
+</span><span style="color:#e6db74">                              - required:
+</span><span style="color:#e6db74">                                - simple
+</span><span style="color:#e6db74">                              - properties:
+</span><span style="color:#e6db74">                                  consistentHash:
+</span><span style="color:#e6db74">                                    oneOf:
+</span><span style="color:#e6db74">                                    - not:
+</span><span style="color:#e6db74">                                        anyOf:
+</span><span style="color:#e6db74">                                        - required:
+</span><span style="color:#e6db74">                                          - httpHeaderName
+</span><span style="color:#e6db74">                                        - required:
+</span><span style="color:#e6db74">                                          - httpCookie
+</span><span style="color:#e6db74">                                        - required:
+</span><span style="color:#e6db74">                                          - useSourceIp
+</span><span style="color:#e6db74">                                        - required:
+</span><span style="color:#e6db74">                                          - httpQueryParameterName
+</span><span style="color:#e6db74">                                    - required:
+</span><span style="color:#e6db74">                                      - httpHeaderName
+</span><span style="color:#e6db74">                                    - required:
+</span><span style="color:#e6db74">                                      - httpCookie
+</span><span style="color:#e6db74">                                    - required:
+</span><span style="color:#e6db74">                                      - useSourceIp
+</span><span style="color:#e6db74">                                    - required:
+</span><span style="color:#e6db74">                                      - httpQueryParameterName
+</span><span style="color:#e6db74">                                required:
+</span><span style="color:#e6db74">                                - consistentHash
+</span><span style="color:#e6db74">                              properties:
+</span><span style="color:#e6db74">                                consistentHash:
+</span><span style="color:#e6db74">                                  properties:
+</span><span style="color:#e6db74">                                    httpCookie:
+</span><span style="color:#e6db74">                                      description: Hash based on HTTP cookie.
+</span><span style="color:#e6db74">                                      properties:
+</span><span style="color:#e6db74">                                        name:
+</span><span style="color:#e6db74">                                          description: Name of the cookie.
+</span><span style="color:#e6db74">                                          format: string
+</span><span style="color:#e6db74">                                          type: string
+</span><span style="color:#e6db74">                                        path:
+</span><span style="color:#e6db74">                                          description: Path to set for the cookie.
+</span><span style="color:#e6db74">                                          format: string
+</span><span style="color:#e6db74">                                          type: string
+</span><span style="color:#e6db74">                                        ttl:
+</span><span style="color:#e6db74">                                          description: Lifetime of the cookie.
+</span><span style="color:#e6db74">                                          type: string
+</span><span style="color:#e6db74">                                      type: object
+</span><span style="color:#e6db74">                                    httpHeaderName:
+</span><span style="color:#e6db74">                                      description: Hash based on a specific HTTP header.
+</span><span style="color:#e6db74">                                      format: string
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                    httpQueryParameterName:
+</span><span style="color:#e6db74">                                      description: Hash based on a specific HTTP query
+</span><span style="color:#e6db74">                                        parameter.
+</span><span style="color:#e6db74">                                      format: string
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                    minimumRingSize:
+</span><span style="color:#e6db74">                                      type: integer
+</span><span style="color:#e6db74">                                    useSourceIp:
+</span><span style="color:#e6db74">                                      description: Hash based on the source IP address.
+</span><span style="color:#e6db74">                                      type: boolean
+</span><span style="color:#e6db74">                                  type: object
+</span><span style="color:#e6db74">                                localityLbSetting:
+</span><span style="color:#e6db74">                                  properties:
+</span><span style="color:#e6db74">                                    distribute:
+</span><span style="color:#e6db74">                                      description: &#39;</span><span style="color:#66d9ef">Optional</span>: only one of distribute
+                                        or failover can be set.<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">                                      items:
+</span><span style="color:#e6db74">                                        properties:
+</span><span style="color:#e6db74">                                          from:
+</span><span style="color:#e6db74">                                            description: Originating locality, &#39;</span>/<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">                                              separated, e.g.
+</span><span style="color:#e6db74">                                            format: string
+</span><span style="color:#e6db74">                                            type: string
+</span><span style="color:#e6db74">                                          to:
+</span><span style="color:#e6db74">                                            additionalProperties:
+</span><span style="color:#e6db74">                                              type: integer
+</span><span style="color:#e6db74">                                            description: Map of upstream localities
+</span><span style="color:#e6db74">                                              to traffic distribution weights.
+</span><span style="color:#e6db74">                                            type: object
+</span><span style="color:#e6db74">                                        type: object
+</span><span style="color:#e6db74">                                      type: array
+</span><span style="color:#e6db74">                                    enabled:
+</span><span style="color:#e6db74">                                      description: enable locality load balancing,
+</span><span style="color:#e6db74">                                        this is DestinationRule-level and will override
+</span><span style="color:#e6db74">                                        mesh wide settings in entirety.
+</span><span style="color:#e6db74">                                      type: boolean
+</span><span style="color:#e6db74">                                    failover:
+</span><span style="color:#e6db74">                                      description: &#39;</span><span style="color:#66d9ef">Optional</span>: only failover or distribute
+                                        can be set.<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">                                      items:
+</span><span style="color:#e6db74">                                        properties:
+</span><span style="color:#e6db74">                                          from:
+</span><span style="color:#e6db74">                                            description: Originating region.
+</span><span style="color:#e6db74">                                            format: string
+</span><span style="color:#e6db74">                                            type: string
+</span><span style="color:#e6db74">                                          to:
+</span><span style="color:#e6db74">                                            format: string
+</span><span style="color:#e6db74">                                            type: string
+</span><span style="color:#e6db74">                                        type: object
+</span><span style="color:#e6db74">                                      type: array
+</span><span style="color:#e6db74">                                  type: object
+</span><span style="color:#e6db74">                                simple:
+</span><span style="color:#e6db74">                                  enum:
+</span><span style="color:#e6db74">                                  - ROUND_ROBIN
+</span><span style="color:#e6db74">                                  - LEAST_CONN
+</span><span style="color:#e6db74">                                  - RANDOM
+</span><span style="color:#e6db74">                                  - PASSTHROUGH
+</span><span style="color:#e6db74">                                  type: string
+</span><span style="color:#e6db74">                              type: object
+</span><span style="color:#e6db74">                            outlierDetection:
+</span><span style="color:#e6db74">                              properties:
+</span><span style="color:#e6db74">                                baseEjectionTime:
+</span><span style="color:#e6db74">                                  description: Minimum ejection duration.
+</span><span style="color:#e6db74">                                  type: string
+</span><span style="color:#e6db74">                                consecutive5xxErrors:
+</span><span style="color:#e6db74">                                  description: Number of 5xx errors before a host
+</span><span style="color:#e6db74">                                    is ejected from the connection pool.
+</span><span style="color:#e6db74">                                  type: integer
+</span><span style="color:#e6db74">                                consecutiveErrors:
+</span><span style="color:#e6db74">                                  format: int32
+</span><span style="color:#e6db74">                                  type: integer
+</span><span style="color:#e6db74">                                consecutiveGatewayErrors:
+</span><span style="color:#e6db74">                                  description: Number of gateway errors before a host
+</span><span style="color:#e6db74">                                    is ejected from the connection pool.
+</span><span style="color:#e6db74">                                  type: integer
+</span><span style="color:#e6db74">                                interval:
+</span><span style="color:#e6db74">                                  description: Time interval between ejection sweep
+</span><span style="color:#e6db74">                                    analysis.
+</span><span style="color:#e6db74">                                  type: string
+</span><span style="color:#e6db74">                                maxEjectionPercent:
+</span><span style="color:#e6db74">                                  format: int32
+</span><span style="color:#e6db74">                                  type: integer
+</span><span style="color:#e6db74">                                minHealthPercent:
+</span><span style="color:#e6db74">                                  format: int32
+</span><span style="color:#e6db74">                                  type: integer
+</span><span style="color:#e6db74">                              type: object
+</span><span style="color:#e6db74">                            port:
+</span><span style="color:#e6db74">                              properties:
+</span><span style="color:#e6db74">                                number:
+</span><span style="color:#e6db74">                                  type: integer
+</span><span style="color:#e6db74">                              type: object
+</span><span style="color:#e6db74">                            tls:
+</span><span style="color:#e6db74">                              description: TLS related settings for connections to
+</span><span style="color:#e6db74">                                the upstream service.
+</span><span style="color:#e6db74">                              properties:
+</span><span style="color:#e6db74">                                caCertificates:
+</span><span style="color:#e6db74">                                  format: string
+</span><span style="color:#e6db74">                                  type: string
+</span><span style="color:#e6db74">                                clientCertificate:
+</span><span style="color:#e6db74">                                  description: REQUIRED if mode is `MUTUAL`.
+</span><span style="color:#e6db74">                                  format: string
+</span><span style="color:#e6db74">                                  type: string
+</span><span style="color:#e6db74">                                mode:
+</span><span style="color:#e6db74">                                  enum:
+</span><span style="color:#e6db74">                                  - DISABLE
+</span><span style="color:#e6db74">                                  - SIMPLE
+</span><span style="color:#e6db74">                                  - MUTUAL
+</span><span style="color:#e6db74">                                  - ISTIO_MUTUAL
+</span><span style="color:#e6db74">                                  type: string
+</span><span style="color:#e6db74">                                privateKey:
+</span><span style="color:#e6db74">                                  description: REQUIRED if mode is `MUTUAL`.
+</span><span style="color:#e6db74">                                  format: string
+</span><span style="color:#e6db74">                                  type: string
+</span><span style="color:#e6db74">                                sni:
+</span><span style="color:#e6db74">                                  description: SNI string to present to the server
+</span><span style="color:#e6db74">                                    during TLS handshake.
+</span><span style="color:#e6db74">                                  format: string
+</span><span style="color:#e6db74">                                  type: string
+</span><span style="color:#e6db74">                                subjectAltNames:
+</span><span style="color:#e6db74">                                  items:
+</span><span style="color:#e6db74">                                    format: string
+</span><span style="color:#e6db74">                                    type: string
+</span><span style="color:#e6db74">                                  type: array
+</span><span style="color:#e6db74">                              type: object
+</span><span style="color:#e6db74">                          type: object
+</span><span style="color:#e6db74">                        type: array
+</span><span style="color:#e6db74">                      tls:
+</span><span style="color:#e6db74">                        description: TLS related settings for connections to the upstream
+</span><span style="color:#e6db74">                          service.
+</span><span style="color:#e6db74">                        properties:
+</span><span style="color:#e6db74">                          caCertificates:
+</span><span style="color:#e6db74">                            format: string
+</span><span style="color:#e6db74">                            type: string
+</span><span style="color:#e6db74">                          clientCertificate:
+</span><span style="color:#e6db74">                            description: REQUIRED if mode is `MUTUAL`.
+</span><span style="color:#e6db74">                            format: string
+</span><span style="color:#e6db74">                            type: string
+</span><span style="color:#e6db74">                          mode:
+</span><span style="color:#e6db74">                            enum:
+</span><span style="color:#e6db74">                            - DISABLE
+</span><span style="color:#e6db74">                            - SIMPLE
+</span><span style="color:#e6db74">                            - MUTUAL
+</span><span style="color:#e6db74">                            - ISTIO_MUTUAL
+</span><span style="color:#e6db74">                            type: string
+</span><span style="color:#e6db74">                          privateKey:
+</span><span style="color:#e6db74">                            description: REQUIRED if mode is `MUTUAL`.
+</span><span style="color:#e6db74">                            format: string
+</span><span style="color:#e6db74">                            type: string
+</span><span style="color:#e6db74">                          sni:
+</span><span style="color:#e6db74">                            description: SNI string to present to the server during
+</span><span style="color:#e6db74">                              TLS handshake.
+</span><span style="color:#e6db74">                            format: string
+</span><span style="color:#e6db74">                            type: string
+</span><span style="color:#e6db74">                          subjectAltNames:
+</span><span style="color:#e6db74">                            items:
+</span><span style="color:#e6db74">                              format: string
+</span><span style="color:#e6db74">                              type: string
+</span><span style="color:#e6db74">                            type: array
+</span><span style="color:#e6db74">                        type: object
+</span><span style="color:#e6db74">                    type: object
+</span><span style="color:#e6db74">                type: object
+</span><span style="color:#e6db74">              type: array
+</span><span style="color:#e6db74">            trafficPolicy:
+</span><span style="color:#e6db74">              properties:
+</span><span style="color:#e6db74">                connectionPool:
+</span><span style="color:#e6db74">                  properties:
+</span><span style="color:#e6db74">                    http:
+</span><span style="color:#e6db74">                      description: HTTP connection pool settings.
+</span><span style="color:#e6db74">                      properties:
+</span><span style="color:#e6db74">                        h2UpgradePolicy:
+</span><span style="color:#e6db74">                          description: Specify if http1.1 connection should be upgraded
+</span><span style="color:#e6db74">                            to http2 for the associated destination.
+</span><span style="color:#e6db74">                          enum:
+</span><span style="color:#e6db74">                          - DEFAULT
+</span><span style="color:#e6db74">                          - DO_NOT_UPGRADE
+</span><span style="color:#e6db74">                          - UPGRADE
+</span><span style="color:#e6db74">                          type: string
+</span><span style="color:#e6db74">                        http1MaxPendingRequests:
+</span><span style="color:#e6db74">                          description: Maximum number of pending HTTP requests to
+</span><span style="color:#e6db74">                            a destination.
+</span><span style="color:#e6db74">                          format: int32
+</span><span style="color:#e6db74">                          type: integer
+</span><span style="color:#e6db74">                        http2MaxRequests:
+</span><span style="color:#e6db74">                          description: Maximum number of requests to a backend.
+</span><span style="color:#e6db74">                          format: int32
+</span><span style="color:#e6db74">                          type: integer
+</span><span style="color:#e6db74">                        idleTimeout:
+</span><span style="color:#e6db74">                          description: The idle timeout for upstream connection pool
+</span><span style="color:#e6db74">                            connections.
+</span><span style="color:#e6db74">                          type: string
+</span><span style="color:#e6db74">                        maxRequestsPerConnection:
+</span><span style="color:#e6db74">                          description: Maximum number of requests per connection to
+</span><span style="color:#e6db74">                            a backend.
+</span><span style="color:#e6db74">                          format: int32
+</span><span style="color:#e6db74">                          type: integer
+</span><span style="color:#e6db74">                        maxRetries:
+</span><span style="color:#e6db74">                          format: int32
+</span><span style="color:#e6db74">                          type: integer
+</span><span style="color:#e6db74">                      type: object
+</span><span style="color:#e6db74">                    tcp:
+</span><span style="color:#e6db74">                      description: Settings common to both HTTP and TCP upstream connections.
+</span><span style="color:#e6db74">                      properties:
+</span><span style="color:#e6db74">                        connectTimeout:
+</span><span style="color:#e6db74">                          description: TCP connection timeout.
+</span><span style="color:#e6db74">                          type: string
+</span><span style="color:#e6db74">                        maxConnections:
+</span><span style="color:#e6db74">                          description: Maximum number of HTTP1 /TCP connections to
+</span><span style="color:#e6db74">                            a destination host.
+</span><span style="color:#e6db74">                          format: int32
+</span><span style="color:#e6db74">                          type: integer
+</span><span style="color:#e6db74">                        tcpKeepalive:
+</span><span style="color:#e6db74">                          description: If set then set SO_KEEPALIVE on the socket
+</span><span style="color:#e6db74">                            to enable TCP Keepalives.
+</span><span style="color:#e6db74">                          properties:
+</span><span style="color:#e6db74">                            interval:
+</span><span style="color:#e6db74">                              description: The time duration between keep-alive probes.
+</span><span style="color:#e6db74">                              type: string
+</span><span style="color:#e6db74">                            probes:
+</span><span style="color:#e6db74">                              type: integer
+</span><span style="color:#e6db74">                            time:
+</span><span style="color:#e6db74">                              type: string
+</span><span style="color:#e6db74">                          type: object
+</span><span style="color:#e6db74">                      type: object
+</span><span style="color:#e6db74">                  type: object
+</span><span style="color:#e6db74">                loadBalancer:
+</span><span style="color:#e6db74">                  description: Settings controlling the load balancer algorithms.
+</span><span style="color:#e6db74">                  oneOf:
+</span><span style="color:#e6db74">                  - not:
+</span><span style="color:#e6db74">                      anyOf:
+</span><span style="color:#e6db74">                      - required:
+</span><span style="color:#e6db74">                        - simple
+</span><span style="color:#e6db74">                      - properties:
+</span><span style="color:#e6db74">                          consistentHash:
+</span><span style="color:#e6db74">                            oneOf:
+</span><span style="color:#e6db74">                            - not:
+</span><span style="color:#e6db74">                                anyOf:
+</span><span style="color:#e6db74">                                - required:
+</span><span style="color:#e6db74">                                  - httpHeaderName
+</span><span style="color:#e6db74">                                - required:
+</span><span style="color:#e6db74">                                  - httpCookie
+</span><span style="color:#e6db74">                                - required:
+</span><span style="color:#e6db74">                                  - useSourceIp
+</span><span style="color:#e6db74">                                - required:
+</span><span style="color:#e6db74">                                  - httpQueryParameterName
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - httpHeaderName
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - httpCookie
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - useSourceIp
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - httpQueryParameterName
+</span><span style="color:#e6db74">                        required:
+</span><span style="color:#e6db74">                        - consistentHash
+</span><span style="color:#e6db74">                  - required:
+</span><span style="color:#e6db74">                    - simple
+</span><span style="color:#e6db74">                  - properties:
+</span><span style="color:#e6db74">                      consistentHash:
+</span><span style="color:#e6db74">                        oneOf:
+</span><span style="color:#e6db74">                        - not:
+</span><span style="color:#e6db74">                            anyOf:
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - httpHeaderName
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - httpCookie
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - useSourceIp
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - httpQueryParameterName
+</span><span style="color:#e6db74">                        - required:
+</span><span style="color:#e6db74">                          - httpHeaderName
+</span><span style="color:#e6db74">                        - required:
+</span><span style="color:#e6db74">                          - httpCookie
+</span><span style="color:#e6db74">                        - required:
+</span><span style="color:#e6db74">                          - useSourceIp
+</span><span style="color:#e6db74">                        - required:
+</span><span style="color:#e6db74">                          - httpQueryParameterName
+</span><span style="color:#e6db74">                    required:
+</span><span style="color:#e6db74">                    - consistentHash
+</span><span style="color:#e6db74">                  properties:
+</span><span style="color:#e6db74">                    consistentHash:
+</span><span style="color:#e6db74">                      properties:
+</span><span style="color:#e6db74">                        httpCookie:
+</span><span style="color:#e6db74">                          description: Hash based on HTTP cookie.
+</span><span style="color:#e6db74">                          properties:
+</span><span style="color:#e6db74">                            name:
+</span><span style="color:#e6db74">                              description: Name of the cookie.
+</span><span style="color:#e6db74">                              format: string
+</span><span style="color:#e6db74">                              type: string
+</span><span style="color:#e6db74">                            path:
+</span><span style="color:#e6db74">                              description: Path to set for the cookie.
+</span><span style="color:#e6db74">                              format: string
+</span><span style="color:#e6db74">                              type: string
+</span><span style="color:#e6db74">                            ttl:
+</span><span style="color:#e6db74">                              description: Lifetime of the cookie.
+</span><span style="color:#e6db74">                              type: string
+</span><span style="color:#e6db74">                          type: object
+</span><span style="color:#e6db74">                        httpHeaderName:
+</span><span style="color:#e6db74">                          description: Hash based on a specific HTTP header.
+</span><span style="color:#e6db74">                          format: string
+</span><span style="color:#e6db74">                          type: string
+</span><span style="color:#e6db74">                        httpQueryParameterName:
+</span><span style="color:#e6db74">                          description: Hash based on a specific HTTP query parameter.
+</span><span style="color:#e6db74">                          format: string
+</span><span style="color:#e6db74">                          type: string
+</span><span style="color:#e6db74">                        minimumRingSize:
+</span><span style="color:#e6db74">                          type: integer
+</span><span style="color:#e6db74">                        useSourceIp:
+</span><span style="color:#e6db74">                          description: Hash based on the source IP address.
+</span><span style="color:#e6db74">                          type: boolean
+</span><span style="color:#e6db74">                      type: object
+</span><span style="color:#e6db74">                    localityLbSetting:
+</span><span style="color:#e6db74">                      properties:
+</span><span style="color:#e6db74">                        distribute:
+</span><span style="color:#e6db74">                          description: &#39;</span><span style="color:#66d9ef">Optional</span>: only one of distribute or failover
+                            can be set.<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">                          items:
+</span><span style="color:#e6db74">                            properties:
+</span><span style="color:#e6db74">                              from:
+</span><span style="color:#e6db74">                                description: Originating locality, &#39;</span>/<span style="color:#e6db74">&#39; separated,
+</span><span style="color:#e6db74">                                  e.g.
+</span><span style="color:#e6db74">                                format: string
+</span><span style="color:#e6db74">                                type: string
+</span><span style="color:#e6db74">                              to:
+</span><span style="color:#e6db74">                                additionalProperties:
+</span><span style="color:#e6db74">                                  type: integer
+</span><span style="color:#e6db74">                                description: Map of upstream localities to traffic
+</span><span style="color:#e6db74">                                  distribution weights.
+</span><span style="color:#e6db74">                                type: object
+</span><span style="color:#e6db74">                            type: object
+</span><span style="color:#e6db74">                          type: array
+</span><span style="color:#e6db74">                        enabled:
+</span><span style="color:#e6db74">                          description: enable locality load balancing, this is DestinationRule-level
+</span><span style="color:#e6db74">                            and will override mesh wide settings in entirety.
+</span><span style="color:#e6db74">                          type: boolean
+</span><span style="color:#e6db74">                        failover:
+</span><span style="color:#e6db74">                          description: &#39;</span><span style="color:#66d9ef">Optional</span>: only failover or distribute can
+                            be set.<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">                          items:
+</span><span style="color:#e6db74">                            properties:
+</span><span style="color:#e6db74">                              from:
+</span><span style="color:#e6db74">                                description: Originating region.
+</span><span style="color:#e6db74">                                format: string
+</span><span style="color:#e6db74">                                type: string
+</span><span style="color:#e6db74">                              to:
+</span><span style="color:#e6db74">                                format: string
+</span><span style="color:#e6db74">                                type: string
+</span><span style="color:#e6db74">                            type: object
+</span><span style="color:#e6db74">                          type: array
+</span><span style="color:#e6db74">                      type: object
+</span><span style="color:#e6db74">                    simple:
+</span><span style="color:#e6db74">                      enum:
+</span><span style="color:#e6db74">                      - ROUND_ROBIN
+</span><span style="color:#e6db74">                      - LEAST_CONN
+</span><span style="color:#e6db74">                      - RANDOM
+</span><span style="color:#e6db74">                      - PASSTHROUGH
+</span><span style="color:#e6db74">                      type: string
+</span><span style="color:#e6db74">                  type: object
+</span><span style="color:#e6db74">                outlierDetection:
+</span><span style="color:#e6db74">                  properties:
+</span><span style="color:#e6db74">                    baseEjectionTime:
+</span><span style="color:#e6db74">                      description: Minimum ejection duration.
+</span><span style="color:#e6db74">                      type: string
+</span><span style="color:#e6db74">                    consecutive5xxErrors:
+</span><span style="color:#e6db74">                      description: Number of 5xx errors before a host is ejected from
+</span><span style="color:#e6db74">                        the connection pool.
+</span><span style="color:#e6db74">                      type: integer
+</span><span style="color:#e6db74">                    consecutiveErrors:
+</span><span style="color:#e6db74">                      format: int32
+</span><span style="color:#e6db74">                      type: integer
+</span><span style="color:#e6db74">                    consecutiveGatewayErrors:
+</span><span style="color:#e6db74">                      description: Number of gateway errors before a host is ejected
+</span><span style="color:#e6db74">                        from the connection pool.
+</span><span style="color:#e6db74">                      type: integer
+</span><span style="color:#e6db74">                    interval:
+</span><span style="color:#e6db74">                      description: Time interval between ejection sweep analysis.
+</span><span style="color:#e6db74">                      type: string
+</span><span style="color:#e6db74">                    maxEjectionPercent:
+</span><span style="color:#e6db74">                      format: int32
+</span><span style="color:#e6db74">                      type: integer
+</span><span style="color:#e6db74">                    minHealthPercent:
+</span><span style="color:#e6db74">                      format: int32
+</span><span style="color:#e6db74">                      type: integer
+</span><span style="color:#e6db74">                  type: object
+</span><span style="color:#e6db74">                portLevelSettings:
+</span><span style="color:#e6db74">                  description: Traffic policies specific to individual ports.
+</span><span style="color:#e6db74">                  items:
+</span><span style="color:#e6db74">                    properties:
+</span><span style="color:#e6db74">                      connectionPool:
+</span><span style="color:#e6db74">                        properties:
+</span><span style="color:#e6db74">                          http:
+</span><span style="color:#e6db74">                            description: HTTP connection pool settings.
+</span><span style="color:#e6db74">                            properties:
+</span><span style="color:#e6db74">                              h2UpgradePolicy:
+</span><span style="color:#e6db74">                                description: Specify if http1.1 connection should
+</span><span style="color:#e6db74">                                  be upgraded to http2 for the associated destination.
+</span><span style="color:#e6db74">                                enum:
+</span><span style="color:#e6db74">                                - DEFAULT
+</span><span style="color:#e6db74">                                - DO_NOT_UPGRADE
+</span><span style="color:#e6db74">                                - UPGRADE
+</span><span style="color:#e6db74">                                type: string
+</span><span style="color:#e6db74">                              http1MaxPendingRequests:
+</span><span style="color:#e6db74">                                description: Maximum number of pending HTTP requests
+</span><span style="color:#e6db74">                                  to a destination.
+</span><span style="color:#e6db74">                                format: int32
+</span><span style="color:#e6db74">                                type: integer
+</span><span style="color:#e6db74">                              http2MaxRequests:
+</span><span style="color:#e6db74">                                description: Maximum number of requests to a backend.
+</span><span style="color:#e6db74">                                format: int32
+</span><span style="color:#e6db74">                                type: integer
+</span><span style="color:#e6db74">                              idleTimeout:
+</span><span style="color:#e6db74">                                description: The idle timeout for upstream connection
+</span><span style="color:#e6db74">                                  pool connections.
+</span><span style="color:#e6db74">                                type: string
+</span><span style="color:#e6db74">                              maxRequestsPerConnection:
+</span><span style="color:#e6db74">                                description: Maximum number of requests per connection
+</span><span style="color:#e6db74">                                  to a backend.
+</span><span style="color:#e6db74">                                format: int32
+</span><span style="color:#e6db74">                                type: integer
+</span><span style="color:#e6db74">                              maxRetries:
+</span><span style="color:#e6db74">                                format: int32
+</span><span style="color:#e6db74">                                type: integer
+</span><span style="color:#e6db74">                            type: object
+</span><span style="color:#e6db74">                          tcp:
+</span><span style="color:#e6db74">                            description: Settings common to both HTTP and TCP upstream
+</span><span style="color:#e6db74">                              connections.
+</span><span style="color:#e6db74">                            properties:
+</span><span style="color:#e6db74">                              connectTimeout:
+</span><span style="color:#e6db74">                                description: TCP connection timeout.
+</span><span style="color:#e6db74">                                type: string
+</span><span style="color:#e6db74">                              maxConnections:
+</span><span style="color:#e6db74">                                description: Maximum number of HTTP1 /TCP connections
+</span><span style="color:#e6db74">                                  to a destination host.
+</span><span style="color:#e6db74">                                format: int32
+</span><span style="color:#e6db74">                                type: integer
+</span><span style="color:#e6db74">                              tcpKeepalive:
+</span><span style="color:#e6db74">                                description: If set then set SO_KEEPALIVE on the socket
+</span><span style="color:#e6db74">                                  to enable TCP Keepalives.
+</span><span style="color:#e6db74">                                properties:
+</span><span style="color:#e6db74">                                  interval:
+</span><span style="color:#e6db74">                                    description: The time duration between keep-alive
+</span><span style="color:#e6db74">                                      probes.
+</span><span style="color:#e6db74">                                    type: string
+</span><span style="color:#e6db74">                                  probes:
+</span><span style="color:#e6db74">                                    type: integer
+</span><span style="color:#e6db74">                                  time:
+</span><span style="color:#e6db74">                                    type: string
+</span><span style="color:#e6db74">                                type: object
+</span><span style="color:#e6db74">                            type: object
+</span><span style="color:#e6db74">                        type: object
+</span><span style="color:#e6db74">                      loadBalancer:
+</span><span style="color:#e6db74">                        description: Settings controlling the load balancer algorithms.
+</span><span style="color:#e6db74">                        oneOf:
+</span><span style="color:#e6db74">                        - not:
+</span><span style="color:#e6db74">                            anyOf:
+</span><span style="color:#e6db74">                            - required:
+</span><span style="color:#e6db74">                              - simple
+</span><span style="color:#e6db74">                            - properties:
+</span><span style="color:#e6db74">                                consistentHash:
+</span><span style="color:#e6db74">                                  oneOf:
+</span><span style="color:#e6db74">                                  - not:
+</span><span style="color:#e6db74">                                      anyOf:
+</span><span style="color:#e6db74">                                      - required:
+</span><span style="color:#e6db74">                                        - httpHeaderName
+</span><span style="color:#e6db74">                                      - required:
+</span><span style="color:#e6db74">                                        - httpCookie
+</span><span style="color:#e6db74">                                      - required:
+</span><span style="color:#e6db74">                                        - useSourceIp
+</span><span style="color:#e6db74">                                      - required:
+</span><span style="color:#e6db74">                                        - httpQueryParameterName
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - httpHeaderName
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - httpCookie
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - useSourceIp
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - httpQueryParameterName
+</span><span style="color:#e6db74">                              required:
+</span><span style="color:#e6db74">                              - consistentHash
+</span><span style="color:#e6db74">                        - required:
+</span><span style="color:#e6db74">                          - simple
+</span><span style="color:#e6db74">                        - properties:
+</span><span style="color:#e6db74">                            consistentHash:
+</span><span style="color:#e6db74">                              oneOf:
+</span><span style="color:#e6db74">                              - not:
+</span><span style="color:#e6db74">                                  anyOf:
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - httpHeaderName
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - httpCookie
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - useSourceIp
+</span><span style="color:#e6db74">                                  - required:
+</span><span style="color:#e6db74">                                    - httpQueryParameterName
+</span><span style="color:#e6db74">                              - required:
+</span><span style="color:#e6db74">                                - httpHeaderName
+</span><span style="color:#e6db74">                              - required:
+</span><span style="color:#e6db74">                                - httpCookie
+</span><span style="color:#e6db74">                              - required:
+</span><span style="color:#e6db74">                                - useSourceIp
+</span><span style="color:#e6db74">                              - required:
+</span><span style="color:#e6db74">                                - httpQueryParameterName
+</span><span style="color:#e6db74">                          required:
+</span><span style="color:#e6db74">                          - consistentHash
+</span><span style="color:#e6db74">                        properties:
+</span><span style="color:#e6db74">                          consistentHash:
+</span><span style="color:#e6db74">                            properties:
+</span><span style="color:#e6db74">                              httpCookie:
+</span><span style="color:#e6db74">                                description: Hash based on HTTP cookie.
+</span><span style="color:#e6db74">                                properties:
+</span><span style="color:#e6db74">                                  name:
+</span><span style="color:#e6db74">                                    description: Name of the cookie.
+</span><span style="color:#e6db74">                                    format: string
+</span><span style="color:#e6db74">                                    type: string
+</span><span style="color:#e6db74">                                  path:
+</span><span style="color:#e6db74">                                    description: Path to set for the cookie.
+</span><span style="color:#e6db74">                                    format: string
+</span><span style="color:#e6db74">                                    type: string
+</span><span style="color:#e6db74">                                  ttl:
+</span><span style="color:#e6db74">                                    description: Lifetime of the cookie.
+</span><span style="color:#e6db74">                                    type: string
+</span><span style="color:#e6db74">                                type: object
+</span><span style="color:#e6db74">                              httpHeaderName:
+</span><span style="color:#e6db74">                                description: Hash based on a specific HTTP header.
+</span><span style="color:#e6db74">                                format: string
+</span><span style="color:#e6db74">                                type: string
+</span><span style="color:#e6db74">                              httpQueryParameterName:
+</span><span style="color:#e6db74">                                description: Hash based on a specific HTTP query parameter.
+</span><span style="color:#e6db74">                                format: string
+</span><span style="color:#e6db74">                                type: string
+</span><span style="color:#e6db74">                              minimumRingSize:
+</span><span style="color:#e6db74">                                type: integer
+</span><span style="color:#e6db74">                              useSourceIp:
+</span><span style="color:#e6db74">                                description: Hash based on the source IP address.
+</span><span style="color:#e6db74">                                type: boolean
+</span><span style="color:#e6db74">                            type: object
+</span><span style="color:#e6db74">                          localityLbSetting:
+</span><span style="color:#e6db74">                            properties:
+</span><span style="color:#e6db74">                              distribute:
+</span><span style="color:#e6db74">                                description: &#39;</span><span style="color:#66d9ef">Optional</span>: only one of distribute or
+                                  failover can be set.<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">                                items:
+</span><span style="color:#e6db74">                                  properties:
+</span><span style="color:#e6db74">                                    from:
+</span><span style="color:#e6db74">                                      description: Originating locality, &#39;</span>/<span style="color:#e6db74">&#39; separated,
+</span><span style="color:#e6db74">                                        e.g.
+</span><span style="color:#e6db74">                                      format: string
+</span><span style="color:#e6db74">                                      type: string
+</span><span style="color:#e6db74">                                    to:
+</span><span style="color:#e6db74">                                      additionalProperties:
+</span><span style="color:#e6db74">                                        type: integer
+</span><span style="color:#e6db74">                                      description: Map of upstream localities to traffic
+</span><span style="color:#e6db74">                                        distribution weights.
+</span><span style="color:#e6db74">                                      type: object
+</span><span style="color:#e6db74">                                  type: object
+</span><span style="color:#e6db74">                                type: array
+</span><span style="color:#e6db74">                              enabled:
+</span><span style="color:#e6db74">                                description: enable locality load balancing, this
+</span><span style="color:#e6db74">                                  is DestinationRule-level and will override mesh
+</span><span style="color:#e6db74">                                  wide settings in entirety.
+</span><span style="color:#e6db74">                                type: boolean
+</span><span style="color:#e6db74">                              failover:
+</span><span style="color:#e6db74">                                description: &#39;</span><span style="color:#66d9ef">Optional</span>: only failover or distribute
+                                  can be set.&#39;
+                                <span style="color:#66d9ef">items</span>:
+                                  <span style="color:#66d9ef">properties</span>:
+                                    <span style="color:#66d9ef">from</span>:
+                                      <span style="color:#66d9ef">description</span>: Originating region.
+                                      <span style="color:#66d9ef">format</span>: string
+                                      <span style="color:#66d9ef">type</span>: string
+                                    <span style="color:#66d9ef">to</span>:
+                                      <span style="color:#66d9ef">format</span>: string
+                                      <span style="color:#66d9ef">type</span>: string
+                                  <span style="color:#66d9ef">type</span>: object
+                                <span style="color:#66d9ef">type</span>: array
+                            <span style="color:#66d9ef">type</span>: object
+                          <span style="color:#66d9ef">simple</span>:
+                            <span style="color:#66d9ef">enum</span>:
+                            - ROUND_ROBIN
+                            - LEAST_CONN
+                            - RANDOM
+                            - PASSTHROUGH
+                            <span style="color:#66d9ef">type</span>: string
+                        <span style="color:#66d9ef">type</span>: object
+                      <span style="color:#66d9ef">outlierDetection</span>:
+                        <span style="color:#66d9ef">properties</span>:
+                          <span style="color:#66d9ef">baseEjectionTime</span>:
+                            <span style="color:#66d9ef">description</span>: Minimum ejection duration.
+                            <span style="color:#66d9ef">type</span>: string
+                          <span style="color:#66d9ef">consecutive5xxErrors</span>:
+                            <span style="color:#66d9ef">description</span>: Number of 5xx errors before a host is ejected
+                              from the connection pool.
+                            <span style="color:#66d9ef">type</span>: integer
+                          <span style="color:#66d9ef">consecutiveErrors</span>:
+                            <span style="color:#66d9ef">format</span>: int32
+                            <span style="color:#66d9ef">type</span>: integer
+                          <span style="color:#66d9ef">consecutiveGatewayErrors</span>:
+                            <span style="color:#66d9ef">description</span>: Number of gateway errors before a host is
+                              ejected from the connection pool.
+                            <span style="color:#66d9ef">type</span>: integer
+                          <span style="color:#66d9ef">interval</span>:
+                            <span style="color:#66d9ef">description</span>: Time interval between ejection sweep analysis.
+                            <span style="color:#66d9ef">type</span>: string
+                          <span style="color:#66d9ef">maxEjectionPercent</span>:
+                            <span style="color:#66d9ef">format</span>: int32
+                            <span style="color:#66d9ef">type</span>: integer
+                          <span style="color:#66d9ef">minHealthPercent</span>:
+                            <span style="color:#66d9ef">format</span>: int32
+                            <span style="color:#66d9ef">type</span>: integer
+                        <span style="color:#66d9ef">type</span>: object
+                      <span style="color:#66d9ef">port</span>:
+                        <span style="color:#66d9ef">properties</span>:
+                          <span style="color:#66d9ef">number</span>:
+                            <span style="color:#66d9ef">type</span>: integer
+                        <span style="color:#66d9ef">type</span>: object
+                      <span style="color:#66d9ef">tls</span>:
+                        <span style="color:#66d9ef">description</span>: TLS related settings for connections to the upstream
+                          service.
+                        <span style="color:#66d9ef">properties</span>:
+                          <span style="color:#66d9ef">caCertificates</span>:
+                            <span style="color:#66d9ef">format</span>: string
+                            <span style="color:#66d9ef">type</span>: string
+                          <span style="color:#66d9ef">clientCertificate</span>:
+                            <span style="color:#66d9ef">description</span>: REQUIRED if mode is `MUTUAL`.
+                            <span style="color:#66d9ef">format</span>: string
+                            <span style="color:#66d9ef">type</span>: string
+                          <span style="color:#66d9ef">mode</span>:
+                            <span style="color:#66d9ef">enum</span>:
+                            - DISABLE
+                            - SIMPLE
+                            - MUTUAL
+                            - ISTIO_MUTUAL
+                            <span style="color:#66d9ef">type</span>: string
+                          <span style="color:#66d9ef">privateKey</span>:
+                            <span style="color:#66d9ef">description</span>: REQUIRED if mode is `MUTUAL`.
+                            <span style="color:#66d9ef">format</span>: string
+                            <span style="color:#66d9ef">type</span>: string
+                          <span style="color:#66d9ef">sni</span>:
+                            <span style="color:#66d9ef">description</span>: SNI string to present to the server during
+                              TLS handshake.
+                            <span style="color:#66d9ef">format</span>: string
+                            <span style="color:#66d9ef">type</span>: string
+                          <span style="color:#66d9ef">subjectAltNames</span>:
+                            <span style="color:#66d9ef">items</span>:
+                              <span style="color:#66d9ef">format</span>: string
+                              <span style="color:#66d9ef">type</span>: string
+                            <span style="color:#66d9ef">type</span>: array
+                        <span style="color:#66d9ef">type</span>: object
+                    <span style="color:#66d9ef">type</span>: object
+                  <span style="color:#66d9ef">type</span>: array
+                <span style="color:#66d9ef">tls</span>:
+                  <span style="color:#66d9ef">description</span>: TLS related settings for connections to the upstream
+                    service.
+                  <span style="color:#66d9ef">properties</span>:
+                    <span style="color:#66d9ef">caCertificates</span>:
+                      <span style="color:#66d9ef">format</span>: string
+                      <span style="color:#66d9ef">type</span>: string
+                    <span style="color:#66d9ef">clientCertificate</span>:
+                      <span style="color:#66d9ef">description</span>: REQUIRED if mode is `MUTUAL`.
+                      <span style="color:#66d9ef">format</span>: string
+                      <span style="color:#66d9ef">type</span>: string
+                    <span style="color:#66d9ef">mode</span>:
+                      <span style="color:#66d9ef">enum</span>:
+                      - DISABLE
+                      - SIMPLE
+                      - MUTUAL
+                      - ISTIO_MUTUAL
+                      <span style="color:#66d9ef">type</span>: string
+                    <span style="color:#66d9ef">privateKey</span>:
+                      <span style="color:#66d9ef">description</span>: REQUIRED if mode is `MUTUAL`.
+                      <span style="color:#66d9ef">format</span>: string
+                      <span style="color:#66d9ef">type</span>: string
+                    <span style="color:#66d9ef">sni</span>:
+                      <span style="color:#66d9ef">description</span>: SNI string to present to the server during TLS
+                        handshake.
+                      <span style="color:#66d9ef">format</span>: string
+                      <span style="color:#66d9ef">type</span>: string
+                    <span style="color:#66d9ef">subjectAltNames</span>:
+                      <span style="color:#66d9ef">items</span>:
+                        <span style="color:#66d9ef">format</span>: string
+                        <span style="color:#66d9ef">type</span>: string
+                      <span style="color:#66d9ef">type</span>: array
+                  <span style="color:#66d9ef">type</span>: object
+              <span style="color:#66d9ef">type</span>: object
+          <span style="color:#66d9ef">type</span>: object
+        <span style="color:#66d9ef">status</span>:
+          <span style="color:#66d9ef">type</span>: object
+          <span style="color:#66d9ef">x-kubernetes-preserve-unknown-fields</span>: <span style="color:#66d9ef">true</span>
+      <span style="color:#66d9ef">type</span>: object
+  <span style="color:#66d9ef">versions</span>:
+  - <span style="color:#66d9ef">name</span>: v1alpha3
+    <span style="color:#66d9ef">served</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#66d9ef">storage</span>: <span style="color:#66d9ef">true</span>
+  - <span style="color:#66d9ef">name</span>: v1beta1
+    <span style="color:#66d9ef">served</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#66d9ef">storage</span>: <span style="color:#66d9ef">false</span>
+</code></pre></div><hr>
+<h3 id="kubernetes">
+  Kubernetes
+  <a class="anchor" href="#kubernetes">#</a>
+</h3>
+<h4 id="code-generatorhttpsgithubcomkuberneteskubernetestreemasterstagingsrck8siocode-generator">
+  <a href="https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/code-generator">code generator</a>
+  <a class="anchor" href="#code-generatorhttpsgithubcomkuberneteskubernetestreemasterstagingsrck8siocode-generator">#</a>
+</h4>
+<p>Golang code-generators used to implement <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md">Kubernetes-style API types</a>.</p>
+<hr>
+<a href="https://github.com/openstack/neutron">openstack/neutron</a> <h3 id="openstackneutronhttpsgithubcomopenstackneutron-github-starshttpsimgshieldsiogithubstarsopenstackneutronsvg">
+  <img src="https://img.shields.io/github/stars/openstack/neutron.svg" alt="Github stars" />
+  <a class="anchor" href="#openstackneutronhttpsgithubcomopenstackneutron-github-starshttpsimgshieldsiogithubstarsopenstackneutronsvg">#</a>
+</h3>
+<p>OpenStack Networking (Neutron). Mirror of code maintained at opendev.org.</p>
+<p><a href="https://opendev.org/openstack/neutron">https://opendev.org/openstack/neutron</a></p>
+<hr>
+<h3 id="mcp-mesh-configuration-protocol">
+  MCP (Mesh Configuration Protocol)
+  <a class="anchor" href="#mcp-mesh-configuration-protocol">#</a>
+</h3>
+<p>Istio API apply to <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">Kubernetes Custom Resource Definitions</a> and all <a href="https://developers.google.com/protocol-buffers/">proto files</a> that are used to configure Istio components through the <a href="https://docs.google.com/document/d/1o2-V4TLJ8fJACXdlsnxKxDv2Luryo48bAhR8ShxE5-k/edit">Mesh Configuration Protocol(MCP)</a>.</p>
+<p><code>MCP</code> is based on <em>proto3</em> and <em>gRPC</em>, which uses Google&rsquo;s <a href="https://cloud.google.com/apis/design">API Design Guide</a> (API 设计指南) as the baseline for protos.</p>
 </article>
  
       
@@ -961,6 +2207,12 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/7c82eda7b52a709bcd92b762808f2a8f17ed5d06" title='Last modified by yewang | 2020-07-22' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-22</span>
+    </a>
+  </div>
 
 
 
@@ -1017,6 +2269,22 @@ https://github.com/alex-shpak/hugo-book
             </li>
           </ul>
         </li>
+        <li><a href="#istio">Istio</a>
+          <ul>
+            <li><a href="#crd">CRD</a>
+              <ul>
+                <li><a href="#destinationrule">DestinationRule</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#code-generatorhttpsgithubcomkuberneteskubernetestreemasterstagingsrck8siocode-generator"><a href="https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/code-generator">code generator</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#openstackneutronhttpsgithubcomopenstackneutron-github-starshttpsimgshieldsiogithubstarsopenstackneutronsvg"><a href="https://github.com/openstack/neutron">openstack/neutron</a> <img src="https://img.shields.io/github/stars/openstack/neutron.svg" alt="Github stars"></a></li>
+        <li><a href="#mcp-mesh-configuration-protocol">MCP (Mesh Configuration Protocol)</a></li>
       </ul>
     </li>
   </ul>
