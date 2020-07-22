@@ -18,7 +18,7 @@ consul &#43; consul-template #  gcc vs g&#43;&#43; #   后缀为 .c 的  gcc 把
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.aab844d951e75f10c7565b882e4b9fa10b9971d1f73be7a3bc5fd881b1c8b41f.js" integrity="sha256-qrhE2VHnXxDHVluILkufoQuZcdH3O&#43;ejvF/YgbHItB8="></script>
+<script defer src="/note/en.search.min.014f1c45431aa190d04337c3171ece19fc18dbc70c4430d3833b97ea02a45a59.js" integrity="sha256-AU8cRUMaoZDQQzfDFx7OGfwY28cMRDDTgzuX6gKkWlk="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -420,6 +420,16 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/22/" class="">2020-07-22</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -1072,8 +1082,8 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#python-深拷贝-vs-浅拷贝">Python 深拷贝 vs 浅拷贝</a>
           <ul>
             <li><a href="#直接赋值">直接赋值</a></li>
-            <li><a href="#浅拷贝-copy">浅拷贝 (copy)</a></li>
-            <li><a href="#深拷贝-deepcopy">深拷贝 (deepcopy)</a></li>
+            <li><a href="#浅拷贝-shallow-copy">浅拷贝 (<code>shallow copy</code>)</a></li>
+            <li><a href="#深拷贝-deep-copy">深拷贝 (deep copy)</a></li>
             <li><a href="#应用场景">应用场景</a></li>
           </ul>
         </li>
@@ -1201,16 +1211,16 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#cas-%e7%ae%97%e6%b3%95">#</a>
 </h5>
 <p>CAS 适用于写比较少的情况下（多读场景，冲突一般较少）</p>
-<p>CAS (compare and swap) 比较并替换</p>
+<p>CAS (<code>compare and swap</code>) 比较并替换</p>
 <ul>
-<li>CAS (compare and swap) 比较并替换，比较和替换是线程并发算法时用到的一种技术</li>
+<li>CAS (<code>compare and swap</code>) 比较并替换，比较和替换是线程并发算法时用到的一种技术</li>
 <li>CAS 是原子操作，保证并发安全，而不是保证并发同步</li>
 <li>CAS 是 CPU 的一个指令</li>
 <li>CAS 是非阻塞的、轻量级的乐观锁</li>
 </ul>
 <p>乐观锁，严格来说并不是锁，通过原子性来保证数据的同步，比如说数据库的乐观锁，通过<code>版本控制</code>来实现等，
 所以 CAS 不会保证线程同步。</p>
-<p>CAS (compare and swap) 比较并替换，就是将内存值更新为需要的值，但是有个条件，内存值必须与期望值相同。</p>
+<p>CAS (<code>compare and swap</code>) 比较并替换，就是将内存值更新为需要的值，但是有个条件，内存值必须与期望值相同。</p>
 <p>举个例子，期望值 E、内存值 M、更新值 U，当 E == M 的时候将 M 更新为 U。</p>
 <p>由于 CAS 是 CPU 指令，我们只能通过 JNI 与操作系统交互，关于 CAS 的方法都在 sun.misc 包下 Unsafe 的类里 java.util.concurrent.atomic 包下的原子类等通过 CAS 来实现原子操作。</p>
 <h5 id="乐观锁的缺点">
@@ -1244,7 +1254,7 @@ https://github.com/alex-shpak/hugo-book
 </h4>
 <p>总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁</p>
 <p>传统的关系型数据库里边就用到了很多这种锁机制，比如<code>行锁</code>，<code>表锁</code>等，读锁，写锁等，都是在做操作之前先上锁。</p>
-<p>Java 中 <code>synchronized</code> 和 <code>ReentrantLock</code> 等独占锁就是悲观锁思想的实现</p>
+<p>Java 中 <code>synchronized</code> 和 <code>ReentrantLock</code> 等<strong>独占锁</strong>就是悲观锁思想的实现</p>
 <p>synchronized 适用于写比较多的情况下（多写场景，冲突一般较多）</p>
 <p>Java 并发编程这个领域中 synchronized 关键字一直都是元老级的角色，很久之前很多人都会称它为 “重量级锁” 。但是，在 JavaSE 1.6 之后进行了主要包括为了减少获得锁和释放锁带来的性能消耗而引入的 偏向锁 和 轻量级锁 以及其它各种优化之后变得在某些情况下并不是那么重了。synchronized 的底层实现主要依靠 Lock-Free 的队列，基本思路是 自旋后阻塞，竞争切换后继续竞争锁，稍微牺牲了公平性，但获得了高吞吐量。在线程冲突较少的情况下，可以获得和 CAS 类似的性能；而线程冲突严重的情况下，性能远高于 CAS。</p>
 <h3 id="java-主流锁">
@@ -1256,11 +1266,12 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/50098743">【基本功】不可不说的 Java “锁” 事</a></li>
 </ul>
+<hr>
 <h3 id="python-深拷贝-vs-浅拷贝">
   Python 深拷贝 vs 浅拷贝
   <a class="anchor" href="#python-%e6%b7%b1%e6%8b%b7%e8%b4%9d-vs-%e6%b5%85%e6%8b%b7%e8%b4%9d">#</a>
 </h3>
-<p>深拷贝和浅拷贝的不同仅仅是对组合对象而言，所谓的组合对象就是包含了其他对象的对象，如列表，类实例。
+<p>深拷贝和浅拷贝的不同仅仅是对<strong>组合对象</strong>而言，所谓的组合对象就是包含了其他对象的对象，如列表，类实例。
 而对于数字，字符串，没有拷贝这一说，产生的都是原对象的引用。</p>
 <h4 id="直接赋值">
   直接赋值
@@ -1268,15 +1279,16 @@ https://github.com/alex-shpak/hugo-book
 </h4>
 <p>其实就是对象的引用（别名）。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200427154218.png" alt="" /></p>
-<h4 id="浅拷贝-copy">
-  浅拷贝 (copy)
-  <a class="anchor" href="#%e6%b5%85%e6%8b%b7%e8%b4%9d-copy">#</a>
+<h4 id="浅拷贝-shallow-copy">
+  浅拷贝 (<code>shallow copy</code>)
+  <a class="anchor" href="#%e6%b5%85%e6%8b%b7%e8%b4%9d-shallow-copy">#</a>
 </h4>
+<p><code>copy.copy()</code></p>
 <p>拷贝父对象，不会拷贝对象的内部的子对象。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200427154242.png" alt="" /></p>
-<h4 id="深拷贝-deepcopy">
-  深拷贝 (deepcopy)
-  <a class="anchor" href="#%e6%b7%b1%e6%8b%b7%e8%b4%9d-deepcopy">#</a>
+<h4 id="深拷贝-deep-copy">
+  深拷贝 (deep copy)
+  <a class="anchor" href="#%e6%b7%b1%e6%8b%b7%e8%b4%9d-deep-copy">#</a>
 </h4>
 <p>copy 模块的 deepcopy 方法，完全拷贝了父对象及其子对象。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200427154258.png" alt="" /></p>
@@ -1284,9 +1296,23 @@ https://github.com/alex-shpak/hugo-book
   应用场景
   <a class="anchor" href="#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af">#</a>
 </h4>
+<p>是深拷贝还是浅拷贝，并不是取决于时间效率、空间效率或是语言等等，而是取决于哪一个是逻辑上正确的。</p>
+<ul>
+<li><code>浅拷贝</code>通常表明存在着一个 “<code>相识关系</code>”
+<ul>
+<li>当你实现一个 <code>Observer Pattern</code> 时，如果你需要拷贝 Observer, 你大概不会去拷贝 Subject，这时就要实现个浅拷贝</li>
+</ul>
+</li>
+<li><code>深拷贝</code>通常表明存在着一个 “<code>聚合关系</code>”，
+<ul>
+<li>当你实现一个 <code>Composite Pattern</code>，你通常都会实现一个深拷贝 (如果需要拷贝的话)，很少有要求同的 Composite 共享 Leaf 的</li>
+</ul>
+</li>
+</ul>
 <p>参考：</p>
 <ul>
 <li><a href="https://www.cnblogs.com/zhuifeng-mayi/p/9179647.html">简述 Python 的深浅拷贝以及应用场景</a></li>
+<li><a href="https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy">What is the difference between a deep copy and a shallow copy?</a></li>
 </ul>
 <hr>
 <h3 id="python-垃圾回收机制">
@@ -1300,10 +1326,12 @@ https://github.com/alex-shpak/hugo-book
 <p>跟踪和回收垃圾</p>
 <p>在 Python 中，大多数对象的生命周期都是通过对象的引用计数来管理的。
 从广义上来讲，引用计数也是一种垃圾收集机制，而且也是一种最直观，最简单的垃圾收集技术。</p>
-<p>原理：
-当一个对象的引用被创建或者复制时，对象的引用计数加 1；
-当一个对象的引用被销毁时，对象的引用计数减 1；
-当对象的引用计数减少为 0 时，就意味着对象已经没有被任何人使用了，可以将其所占用的内存释放了。</p>
+<p>原理：</p>
+<ul>
+<li>当一个对象的引用被创建或者复制时，对象的引用计数加 1；</li>
+<li>当一个对象的引用被销毁时，对象的引用计数减 1；</li>
+<li>当对象的引用计数减少为 0 时，就意味着对象已经没有被任何人使用了，可以将其所占用的内存释放了。</li>
+</ul>
 <h4 id="标记---清除">
   标记 - 清除
   <a class="anchor" href="#%e6%a0%87%e8%ae%b0---%e6%b8%85%e9%99%a4">#</a>
@@ -1542,8 +1570,8 @@ USE mydb
         <li><a href="#python-深拷贝-vs-浅拷贝">Python 深拷贝 vs 浅拷贝</a>
           <ul>
             <li><a href="#直接赋值">直接赋值</a></li>
-            <li><a href="#浅拷贝-copy">浅拷贝 (copy)</a></li>
-            <li><a href="#深拷贝-deepcopy">深拷贝 (deepcopy)</a></li>
+            <li><a href="#浅拷贝-shallow-copy">浅拷贝 (<code>shallow copy</code>)</a></li>
+            <li><a href="#深拷贝-deep-copy">深拷贝 (deep copy)</a></li>
             <li><a href="#应用场景">应用场景</a></li>
           </ul>
         </li>

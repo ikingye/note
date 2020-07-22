@@ -13,12 +13,12 @@ volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &#34;volume
 volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &#34;volumeMounts&#34;: [ { &#34;name&#34;: &#34;kubernetes-dashboard-certs&#34;, &#34;mountPath&#34;: &#34;/certs&#34; } ] } 使用 - 表示新的一组 #  多个成员中的若刚个" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/21/" />
-
+<meta property="article:modified_time" content="2020-07-21T15:21:47+08:00" />
 <title>2020-07-21 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.aab844d951e75f10c7565b882e4b9fa10b9971d1f73be7a3bc5fd881b1c8b41f.js" integrity="sha256-qrhE2VHnXxDHVluILkufoQuZcdH3O&#43;ejvF/YgbHItB8="></script>
+<script defer src="/note/en.search.min.014f1c45431aa190d04337c3171ece19fc18dbc70c4430d3833b97ea02a45a59.js" integrity="sha256-AU8cRUMaoZDQQzfDFx7OGfwY28cMRDDTgzuX6gKkWlk="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -425,6 +425,16 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
+    <a href="/note/docs/live/diary/2020/07/22/" class="">2020-07-22</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
     <a href="/note/docs/live/diary/2020/07/21/" class="active">2020-07-21</a>
   
 
@@ -803,6 +813,23 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#云上百度-vs-百度云">云上百度 vs 百度云</a></li>
           </ul>
         </li>
+        <li><a href="#istio">Istio</a>
+          <ul>
+            <li><a href="#熔断">熔断</a></li>
+            <li><a href="#istio-proxy">istio-proxy</a>
+              <ul>
+                <li><a href="#pilot-agent">pilot-agent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#kube-proxy">kube-proxy</a></li>
+          </ul>
+        </li>
+        <li><a href="#fortiofortiohttpsgithubcomfortiofortio-github-starshttpsimgshieldsiogithubstarsfortiofortiosvg"><a href="https://github.com/fortio/fortio">fortio/fortio</a> <img src="https://img.shields.io/github/stars/fortio/fortio.svg" alt="Github stars"></a></li>
+        <li><a href="#cla">CLA</a></li>
       </ul>
     </li>
   </ul>
@@ -898,6 +925,86 @@ https://github.com/alex-shpak/hugo-book
 </h4>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200721105951.png" alt="" /></p>
 <hr>
+<h3 id="istio">
+  Istio
+  <a class="anchor" href="#istio">#</a>
+</h3>
+<h4 id="熔断">
+  熔断
+  <a class="anchor" href="#%e7%86%94%e6%96%ad">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: networking.istio.io/v1alpha3
+<span style="color:#66d9ef">kind</span>: DestinationRule
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: httpbin
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">host</span>: httpbin
+  <span style="color:#66d9ef">trafficPolicy</span>:
+    <span style="color:#66d9ef">connectionPool</span>:
+      <span style="color:#66d9ef">tcp</span>:
+        <span style="color:#66d9ef">maxConnections</span>: <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">http</span>:
+        <span style="color:#66d9ef">http1MaxPendingRequests</span>: <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">maxRequestsPerConnection</span>: <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">outlierDetection</span>:
+      <span style="color:#66d9ef">consecutiveErrors</span>: <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">interval</span>: 1s
+      <span style="color:#66d9ef">baseEjectionTime</span>: 3m
+      <span style="color:#66d9ef">maxEjectionPercent</span>: <span style="color:#ae81ff">100</span>
+</code></pre></div><hr>
+<h4 id="istio-proxy">
+  istio-proxy
+  <a class="anchor" href="#istio-proxy">#</a>
+</h4>
+<h5 id="pilot-agent">
+  pilot-agent
+  <a class="anchor" href="#pilot-agent">#</a>
+</h5>
+<hr>
+<h3 id="kubernetes">
+  Kubernetes
+  <a class="anchor" href="#kubernetes">#</a>
+</h3>
+<h4 id="kube-proxy">
+  kube-proxy
+  <a class="anchor" href="#kube-proxy">#</a>
+</h4>
+<ul>
+<li>proxyMode
+<ul>
+<li>userspace (<code>v1.0</code> 及之前)</li>
+<li>iptables (<code>v1.1</code> 新增，<code>v1.2</code> 默认)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200721153559.png" alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200721153612.png" alt="" /></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://cloud.tencent.com/developer/article/1097449">kube-proxy 工作原理</a></li>
+</ul>
+<hr>
+<a href="https://github.com/fortio/fortio">fortio/fortio</a> <h3 id="fortiofortiohttpsgithubcomfortiofortio-github-starshttpsimgshieldsiogithubstarsfortiofortiosvg">
+  <img src="https://img.shields.io/github/stars/fortio/fortio.svg" alt="Github stars" />
+  <a class="anchor" href="#fortiofortiohttpsgithubcomfortiofortio-github-starshttpsimgshieldsiogithubstarsfortiofortiosvg">#</a>
+</h3>
+<p>Fortio load testing library, command line tool, advanced echo server and web UI in go (golang).
+Allows to specify a set query-per-second load and record latency histograms and other useful stats.</p>
+<p><code>性能测试</code>，<code>QPS 测试</code></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/267324145">有哪些好用、简单的性能测试工具？</a></li>
+</ul>
+<hr>
+<h3 id="cla">
+  CLA
+  <a class="anchor" href="#cla">#</a>
+</h3>
+<p><code>Contributor License Agreements</code></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://cla.developers.google.com/clas/new?domain=DOMAIN_GOOGLE&amp;kind=KIND_INDIVIDUAL">Google Individual Contributor License Agreement</a></li>
+</ul>
 </article>
  
       
@@ -907,6 +1014,12 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/f3e475d9bd4537655e9767ef67fa9d4b988dd6b2" title='Last modified by yewang | 2020-07-21' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-21</span>
+    </a>
+  </div>
 
 
 
@@ -961,6 +1074,23 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#云上百度-vs-百度云">云上百度 vs 百度云</a></li>
           </ul>
         </li>
+        <li><a href="#istio">Istio</a>
+          <ul>
+            <li><a href="#熔断">熔断</a></li>
+            <li><a href="#istio-proxy">istio-proxy</a>
+              <ul>
+                <li><a href="#pilot-agent">pilot-agent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#kube-proxy">kube-proxy</a></li>
+          </ul>
+        </li>
+        <li><a href="#fortiofortiohttpsgithubcomfortiofortio-github-starshttpsimgshieldsiogithubstarsfortiofortiosvg"><a href="https://github.com/fortio/fortio">fortio/fortio</a> <img src="https://img.shields.io/github/stars/fortio/fortio.svg" alt="Github stars"></a></li>
+        <li><a href="#cla">CLA</a></li>
       </ul>
     </li>
   </ul>

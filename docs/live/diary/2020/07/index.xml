@@ -10,6 +10,20 @@
     
     
     <item>
+      <title>2020-07-22</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/22/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/22/</guid>
+      <description>2020 年 7 月 22 日（星期三） #  今日待办 #      编程 #  算法 #  回溯法 #  回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。 但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择， 这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为 “回溯点”。
+回溯法其实就是递归算法的一种，但是有要注意的点：
+ 保留现场：在进行递归的时候，保存上一次的状态，递归回来之后仍然能回到上次的状态 结束条件：满足条件的时候保存结果   QOS #  Quality of Serivce
+IP QoS 是指 IP 网络的一种能力，即在跨越多种底层网络技术（MP、FR、ATM、Ethernet、SDH、MPLS 等）的 IP 网络上，为特定的业务提供其所需要的服务。服务质量包括：
+ 传输的带宽 传输的时延和抖动 数据的丢包率  通常 QoS 提供以下三种服务模型：
+ Best-Effort service（尽力而为服务模型） Integrated service（综合服务模型，简称 Int-Serv） Differentiated service（区分服务模型，简称 Diff-Serv）。   C++ 深拷贝 vs 浅拷贝 #  问题：在 C++ 中 default constructor 对对象进行的是怎样的拷贝动作？</description>
+    </item>
+    
+    <item>
       <title>2020-07-21</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/07/21/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
