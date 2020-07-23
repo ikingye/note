@@ -4,21 +4,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 7 月 21 日（星期二） #  今日待办 #      编程 #  YAML #  YAML 是 &ldquo;YAML Ain&#39;t a Markup Language&rdquo;（YAML 不是一种标记语言）的递归缩写。
-格式 #   缩排字符数目不重要，只要相同阶层的左侧对齐就可以了（不能使用 TAB 字符） 同时包含多个文件，并用 “---” 分隔 选择性的符号 “...” 可以用来表示档案结尾 字串不一定要用双引号标识 允许在文件中加入选择性的空行，以增加可读性  YAML Lists #  List 数组，使用连字符（-）表示，例如：
-volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &#34;volumeMounts&#34;: [ { &#34;name&#34;: &#34;kubernetes-dashboard-certs&#34;, &#34;mountPath&#34;: &#34;/certs&#34; } ] } 使用 - 表示新的一组 #  多个成员中的若刚个">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-21" />
-<meta property="og:description" content="2020 年 7 月 21 日（星期二） #  今日待办 #      编程 #  YAML #  YAML 是 &ldquo;YAML Ain&#39;t a Markup Language&rdquo;（YAML 不是一种标记语言）的递归缩写。
-格式 #   缩排字符数目不重要，只要相同阶层的左侧对齐就可以了（不能使用 TAB 字符） 同时包含多个文件，并用 “---” 分隔 选择性的符号 “...” 可以用来表示档案结尾 字串不一定要用双引号标识 允许在文件中加入选择性的空行，以增加可读性  YAML Lists #  List 数组，使用连字符（-）表示，例如：
-volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &#34;volumeMounts&#34;: [ { &#34;name&#34;: &#34;kubernetes-dashboard-certs&#34;, &#34;mountPath&#34;: &#34;/certs&#34; } ] } 使用 - 表示新的一组 #  多个成员中的若刚个" />
+<meta name="description" content="2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &ldquo;&quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
+map, value 是指针 #  package main import &#34;fmt&#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &#34;liu&#34;, Age: 21}, {Name: &#34;guan&#34;, Age: 22}, {Name: &#34;zhang&#34;, Age: 23}, } for _, stu := range stus { m[stu.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-23" />
+<meta property="og:description" content="2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &ldquo;&quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
+map, value 是指针 #  package main import &#34;fmt&#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &#34;liu&#34;, Age: 21}, {Name: &#34;guan&#34;, Age: 22}, {Name: &#34;zhang&#34;, Age: 23}, } for _, stu := range stus { m[stu." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/23/" />
-
-<title>2020-07-21 | 叶王笔记</title>
+<meta property="article:modified_time" content="2020-07-23T10:46:59+08:00" />
+<title>2020-07-23 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.4ff007abae5ef9d420b953575b3cdba89681c6df33fdb08d9f1066bbbe7cfbe1.js" integrity="sha256-T/AHq65e&#43;dQguVNXWzzbqJaBxt8z/bCNnxBmu758&#43;&#43;E="></script>
+<script defer src="/note/en.search.min.6d9f8fd764a1edff8250259b889ed712d27bba978203e9ce0f8e24d88291eb75.js" integrity="sha256-bZ&#43;P12Sh7f&#43;CUCWbiJ7XEtJ7upeCA&#43;nOD44k2IKR63U="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -425,6 +423,16 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
+    <a href="/note/docs/live/diary/2020/07/23/" class="active">2020-07-23</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
     <a href="/note/docs/live/diary/2020/07/22/" class="">2020-07-22</a>
   
 
@@ -436,16 +444,6 @@ https://github.com/alex-shpak/hugo-book
           
   
     <a href="/note/docs/live/diary/2020/07/21/" class="">2020-07-21</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-    <a href="/note/docs/live/diary/2020/07/23/" class="active">2020-07-21</a>
   
 
         </li>
@@ -786,7 +784,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>2020-07-21</strong>
+  <strong>2020-07-23</strong>
 
   <label for="toc-control">
     
@@ -804,42 +802,14 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#今日待办">今日待办</a></li>
     <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#yaml">YAML</a>
+        <li><a href="#go">Go</a>
           <ul>
-            <li><a href="#格式">格式</a>
-              <ul>
-                <li><a href="#yaml-lists">YAML Lists</a>
-                  <ul>
-                    <li><a href="#使用---表示新的一组">使用 <code>-</code> 表示新的一组</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
+            <li><a href="#零值">零值</a></li>
+            <li><a href="#map-value-是指针">map, value 是指针</a></li>
+            <li><a href="#逃逸分析">逃逸分析</a></li>
+            <li><a href="#contextcontext">context.Context</a></li>
           </ul>
         </li>
-        <li><a href="#云计算行业">云计算行业</a>
-          <ul>
-            <li><a href="#行业发展趋势">行业发展趋势</a></li>
-            <li><a href="#云上百度-vs-百度云">云上百度 vs 百度云</a></li>
-          </ul>
-        </li>
-        <li><a href="#istio">Istio</a>
-          <ul>
-            <li><a href="#熔断">熔断</a></li>
-            <li><a href="#istio-proxy">istio-proxy</a>
-              <ul>
-                <li><a href="#pilot-agent">pilot-agent</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#kubernetes">Kubernetes</a>
-          <ul>
-            <li><a href="#kube-proxy">kube-proxy</a></li>
-          </ul>
-        </li>
-        <li><a href="#fortiofortiohttpsgithubcomfortiofortio-github-starshttpsimgshieldsiogithubstarsfortiofortiosvg"><a href="https://github.com/fortio/fortio">fortio/fortio</a> <img src="https://img.shields.io/github/stars/fortio/fortio.svg" alt="Github stars"></a></li>
-        <li><a href="#cla">CLA</a></li>
       </ul>
     </li>
   </ul>
@@ -853,9 +823,9 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="2020-年-7-月-21-日星期二">
-  2020 年 7 月 21 日（星期二）
-  <a class="anchor" href="#2020-%e5%b9%b4-7-%e6%9c%88-21-%e6%97%a5%e6%98%9f%e6%9c%9f%e4%ba%8c">#</a>
+  <article class="markdown"><h1 id="2020-年-7-月-23-日星期四">
+  2020 年 7 月 23 日（星期四）
+  <a class="anchor" href="#2020-%e5%b9%b4-7-%e6%9c%88-23-%e6%97%a5%e6%98%9f%e6%9c%9f%e5%9b%9b">#</a>
 </h1>
 <h2 id="今日待办">
   今日待办
@@ -869,152 +839,67 @@ https://github.com/alex-shpak/hugo-book
   编程
   <a class="anchor" href="#%e7%bc%96%e7%a8%8b">#</a>
 </h2>
-<h3 id="yaml">
-  YAML
-  <a class="anchor" href="#yaml">#</a>
+<h3 id="go">
+  Go
+  <a class="anchor" href="#go">#</a>
 </h3>
-<p>YAML 是 &ldquo;<code>YAML Ain't a Markup Language</code>&rdquo;（YAML 不是一种标记语言）的<a href="https://www.wikiwand.com/zh-cn/%E9%80%92%E5%BD%92%E7%BC%A9%E5%86%99">递归缩写</a>。</p>
-<h4 id="格式">
-  格式
-  <a class="anchor" href="#%e6%a0%bc%e5%bc%8f">#</a>
+<h4 id="零值">
+  零值
+  <a class="anchor" href="#%e9%9b%b6%e5%80%bc">#</a>
 </h4>
-<ul>
-<li>缩排字符数目不重要，只要相同阶层的左侧对齐就可以了（<strong>不能使用 TAB 字符</strong>）</li>
-<li>同时包含多个文件，并用 “<code>---</code>” 分隔</li>
-<li>选择性的符号 “<code>...</code>” 可以用来表示档案结尾</li>
-<li>字串不一定要用双引号标识</li>
-<li>允许在文件中加入选择性的空行，以增加可读性</li>
-</ul>
-<h5 id="yaml-lists">
-  YAML Lists
-  <a class="anchor" href="#yaml-lists">#</a>
-</h5>
-<p>List 数组，使用连字符（<code>-</code>）表示，例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">volumeMounts</span>:
-  - <span style="color:#66d9ef">name</span>: kubernetes-dashboard-certs
-    <span style="color:#66d9ef">mountPath</span>: /certs
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;volumeMounts&#34;</span>: [
-    {
-      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;kubernetes-dashboard-certs&#34;</span>,
-      <span style="color:#f92672">&#34;mountPath&#34;</span>: <span style="color:#e6db74">&#34;/certs&#34;</span>
-    }
-  ]
+<p>在 Go 语言中，
+布尔类型的零值（初始值）为 false，
+数值类型的零值为 0，
+字符串类型的零值为空字符串 &ldquo;&quot;，
+而指针、切片、映射、通道、函数和接口的零值则是 <code>nil</code>。</p>
+<h4 id="map-value-是指针">
+  map, value 是指针
+  <a class="anchor" href="#map-value-%e6%98%af%e6%8c%87%e9%92%88">#</a>
+</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200723180557.png" alt="" /></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">student</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">int</span>
 }
-</code></pre></div><h6 id="使用---表示新的一组">
-  使用 <code>-</code> 表示新的一组
-  <a class="anchor" href="#%e4%bd%bf%e7%94%a8---%e8%a1%a8%e7%a4%ba%e6%96%b0%e7%9a%84%e4%b8%80%e7%bb%84">#</a>
-</h6>
-<p>多个成员中的若刚个</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">volumeMounts</span>:
-  - <span style="color:#66d9ef">name</span>: kubernetes-dashboard-certs
-  - <span style="color:#66d9ef">mountPath</span>: /certs
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;volumeMounts&#34;</span>: [
-    {
-      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;kubernetes-dashboard-certs&#34;</span>
-    },
-    {
-      <span style="color:#f92672">&#34;mountPath&#34;</span>: <span style="color:#e6db74">&#34;/certs&#34;</span>
-    }
-  ]
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pase_student</span>() {
+	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">student</span>)
+	<span style="color:#a6e22e">stus</span> <span style="color:#f92672">:=</span> []<span style="color:#a6e22e">student</span>{
+		{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;liu&#34;</span>, <span style="color:#a6e22e">Age</span>: <span style="color:#ae81ff">21</span>},
+		{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;guan&#34;</span>, <span style="color:#a6e22e">Age</span>: <span style="color:#ae81ff">22</span>},
+		{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;zhang&#34;</span>, <span style="color:#a6e22e">Age</span>: <span style="color:#ae81ff">23</span>},
+	}
+
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">stu</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">stus</span> {
+		<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">stu</span>.<span style="color:#a6e22e">Name</span>] = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">stu</span>
+	}
+
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">m</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;liu&#34;</span>])
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;guan&#34;</span>])
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;zhang&#34;</span>])
 }
-</code></pre></div><hr>
-<h3 id="云计算行业">
-  云计算行业
-  <a class="anchor" href="#%e4%ba%91%e8%ae%a1%e7%ae%97%e8%a1%8c%e4%b8%9a">#</a>
-</h3>
-<h4 id="行业发展趋势">
-  行业发展趋势
-  <a class="anchor" href="#%e8%a1%8c%e4%b8%9a%e5%8f%91%e5%b1%95%e8%b6%8b%e5%8a%bf">#</a>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">pase_student</span>()
+}
+
+<span style="color:#75715e">// map[guan:0xc00011a040 liu:0xc00011a040 zhang:0xc00011a040]
+</span><span style="color:#75715e">// &amp;{zhang 23}
+</span><span style="color:#75715e">// &amp;{zhang 23}
+</span><span style="color:#75715e">// &amp;{zhang 23}
+</span></code></pre></div><h4 id="逃逸分析">
+  逃逸分析
+  <a class="anchor" href="#%e9%80%83%e9%80%b8%e5%88%86%e6%9e%90">#</a>
 </h4>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200721104320.png" alt="" /></p>
-<h4 id="云上百度-vs-百度云">
-  云上百度 vs 百度云
-  <a class="anchor" href="#%e4%ba%91%e4%b8%8a%e7%99%be%e5%ba%a6-vs-%e7%99%be%e5%ba%a6%e4%ba%91">#</a>
+<h4 id="contextcontext">
+  context.Context
+  <a class="anchor" href="#contextcontext">#</a>
 </h4>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200721105951.png" alt="" /></p>
-<hr>
-<h3 id="istio">
-  Istio
-  <a class="anchor" href="#istio">#</a>
-</h3>
-<h4 id="熔断">
-  熔断
-  <a class="anchor" href="#%e7%86%94%e6%96%ad">#</a>
-</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: networking.istio.io/v1alpha3
-<span style="color:#66d9ef">kind</span>: DestinationRule
-<span style="color:#66d9ef">metadata</span>:
-  <span style="color:#66d9ef">name</span>: httpbin
-<span style="color:#66d9ef">spec</span>:
-  <span style="color:#66d9ef">host</span>: httpbin
-  <span style="color:#66d9ef">trafficPolicy</span>:
-    <span style="color:#66d9ef">connectionPool</span>:
-      <span style="color:#66d9ef">tcp</span>:
-        <span style="color:#66d9ef">maxConnections</span>: <span style="color:#ae81ff">1</span>
-      <span style="color:#66d9ef">http</span>:
-        <span style="color:#66d9ef">http1MaxPendingRequests</span>: <span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">maxRequestsPerConnection</span>: <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">outlierDetection</span>:
-      <span style="color:#66d9ef">consecutiveErrors</span>: <span style="color:#ae81ff">1</span>
-      <span style="color:#66d9ef">interval</span>: 1s
-      <span style="color:#66d9ef">baseEjectionTime</span>: 3m
-      <span style="color:#66d9ef">maxEjectionPercent</span>: <span style="color:#ae81ff">100</span>
-</code></pre></div><hr>
-<h4 id="istio-proxy">
-  istio-proxy
-  <a class="anchor" href="#istio-proxy">#</a>
-</h4>
-<h5 id="pilot-agent">
-  pilot-agent
-  <a class="anchor" href="#pilot-agent">#</a>
-</h5>
-<hr>
-<h3 id="kubernetes">
-  Kubernetes
-  <a class="anchor" href="#kubernetes">#</a>
-</h3>
-<h4 id="kube-proxy">
-  kube-proxy
-  <a class="anchor" href="#kube-proxy">#</a>
-</h4>
-<ul>
-<li>proxyMode
-<ul>
-<li>userspace (<code>v1.0</code> 及之前)</li>
-<li>iptables (<code>v1.1</code> 新增，<code>v1.2</code> 默认)</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200721153559.png" alt="" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200721153612.png" alt="" /></p>
-<p>参考：</p>
-<ul>
-<li><a href="https://cloud.tencent.com/developer/article/1097449">kube-proxy 工作原理</a></li>
-</ul>
-<hr>
-<a href="https://github.com/fortio/fortio">fortio/fortio</a> <h3 id="fortiofortiohttpsgithubcomfortiofortio-github-starshttpsimgshieldsiogithubstarsfortiofortiosvg">
-  <img src="https://img.shields.io/github/stars/fortio/fortio.svg" alt="Github stars" />
-  <a class="anchor" href="#fortiofortiohttpsgithubcomfortiofortio-github-starshttpsimgshieldsiogithubstarsfortiofortiosvg">#</a>
-</h3>
-<p>Fortio load testing library, command line tool, advanced echo server and web UI in go (golang).
-Allows to specify a set query-per-second load and record latency histograms and other useful stats.</p>
-<p><code>性能测试</code>，<code>QPS 测试</code></p>
-<p>参考：</p>
-<ul>
-<li><a href="https://www.zhihu.com/question/267324145">有哪些好用、简单的性能测试工具？</a></li>
-</ul>
-<hr>
-<h3 id="cla">
-  CLA
-  <a class="anchor" href="#cla">#</a>
-</h3>
-<p><code>Contributor License Agreements</code></p>
-<p>参考：</p>
-<ul>
-<li><a href="https://cla.developers.google.com/clas/new?domain=DOMAIN_GOOGLE&amp;kind=KIND_INDIVIDUAL">Google Individual Contributor License Agreement</a></li>
-</ul>
 </article>
  
       
@@ -1024,6 +909,12 @@ Allows to specify a set query-per-second load and record latency histograms and 
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/b91f5dfcd71e20d6dd4e6e0147f2278b714d2bfc" title='Last modified by yewang | 2020-07-23' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-23</span>
+    </a>
+  </div>
 
 
 
@@ -1059,42 +950,14 @@ Allows to specify a set query-per-second load and record latency histograms and 
     <li><a href="#今日待办">今日待办</a></li>
     <li><a href="#编程">编程</a>
       <ul>
-        <li><a href="#yaml">YAML</a>
+        <li><a href="#go">Go</a>
           <ul>
-            <li><a href="#格式">格式</a>
-              <ul>
-                <li><a href="#yaml-lists">YAML Lists</a>
-                  <ul>
-                    <li><a href="#使用---表示新的一组">使用 <code>-</code> 表示新的一组</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
+            <li><a href="#零值">零值</a></li>
+            <li><a href="#map-value-是指针">map, value 是指针</a></li>
+            <li><a href="#逃逸分析">逃逸分析</a></li>
+            <li><a href="#contextcontext">context.Context</a></li>
           </ul>
         </li>
-        <li><a href="#云计算行业">云计算行业</a>
-          <ul>
-            <li><a href="#行业发展趋势">行业发展趋势</a></li>
-            <li><a href="#云上百度-vs-百度云">云上百度 vs 百度云</a></li>
-          </ul>
-        </li>
-        <li><a href="#istio">Istio</a>
-          <ul>
-            <li><a href="#熔断">熔断</a></li>
-            <li><a href="#istio-proxy">istio-proxy</a>
-              <ul>
-                <li><a href="#pilot-agent">pilot-agent</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#kubernetes">Kubernetes</a>
-          <ul>
-            <li><a href="#kube-proxy">kube-proxy</a></li>
-          </ul>
-        </li>
-        <li><a href="#fortiofortiohttpsgithubcomfortiofortio-github-starshttpsimgshieldsiogithubstarsfortiofortiosvg"><a href="https://github.com/fortio/fortio">fortio/fortio</a> <img src="https://img.shields.io/github/stars/fortio/fortio.svg" alt="Github stars"></a></li>
-        <li><a href="#cla">CLA</a></li>
       </ul>
     </li>
   </ul>

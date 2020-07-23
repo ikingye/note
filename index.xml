@@ -318,6 +318,16 @@ HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例�
     </item>
     
     <item>
+      <title>2020-07-23</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/23/</guid>
+      <description>2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &amp;ldquo;&amp;quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
+map, value 是指针 #  package main import &amp;#34;fmt&amp;#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &amp;#34;liu&amp;#34;, Age: 21}, {Name: &amp;#34;guan&amp;#34;, Age: 22}, {Name: &amp;#34;zhang&amp;#34;, Age: 23}, } for _, stu := range stus { m[stu.</description>
+    </item>
+    
+    <item>
       <title>2020-04-22</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/22/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -376,17 +386,6 @@ MEC 是 5G 时代运营商新的蓝海市场，通过 MEC 平台，运营商可�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/21/</guid>
-      <description>2020 年 7 月 21 日（星期二） #  今日待办 #      编程 #  YAML #  YAML 是 &amp;ldquo;YAML Ain&#39;t a Markup Language&amp;rdquo;（YAML 不是一种标记语言）的递归缩写。
-格式 #   缩排字符数目不重要，只要相同阶层的左侧对齐就可以了（不能使用 TAB 字符） 同时包含多个文件，并用 “---” 分隔 选择性的符号 “...” 可以用来表示档案结尾 字串不一定要用双引号标识 允许在文件中加入选择性的空行，以增加可读性  YAML Lists #  List 数组，使用连字符（-）表示，例如：
-volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &amp;#34;volumeMounts&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;kubernetes-dashboard-certs&amp;#34;, &amp;#34;mountPath&amp;#34;: &amp;#34;/certs&amp;#34; } ] } 使用 - 表示新的一组 #  多个成员中的若刚个</description>
-    </item>
-    
-    <item>
-      <title>2020-07-21</title>
-      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/23/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/23/</guid>
       <description>2020 年 7 月 21 日（星期二） #  今日待办 #      编程 #  YAML #  YAML 是 &amp;ldquo;YAML Ain&#39;t a Markup Language&amp;rdquo;（YAML 不是一种标记语言）的递归缩写。
 格式 #   缩排字符数目不重要，只要相同阶层的左侧对齐就可以了（不能使用 TAB 字符） 同时包含多个文件，并用 “---” 分隔 选择性的符号 “...” 可以用来表示档案结尾 字串不一定要用双引号标识 允许在文件中加入选择性的空行，以增加可读性  YAML Lists #  List 数组，使用连字符（-）表示，例如：
 volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &amp;#34;volumeMounts&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;kubernetes-dashboard-certs&amp;#34;, &amp;#34;mountPath&amp;#34;: &amp;#34;/certs&amp;#34; } ] } 使用 - 表示新的一组 #  多个成员中的若刚个</description>
