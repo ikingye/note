@@ -382,6 +382,17 @@ volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &amp;#34;vo
     </item>
     
     <item>
+      <title>2020-07-21</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/23/</guid>
+      <description>2020 年 7 月 21 日（星期二） #  今日待办 #      编程 #  YAML #  YAML 是 &amp;ldquo;YAML Ain&#39;t a Markup Language&amp;rdquo;（YAML 不是一种标记语言）的递归缩写。
+格式 #   缩排字符数目不重要，只要相同阶层的左侧对齐就可以了（不能使用 TAB 字符） 同时包含多个文件，并用 “---” 分隔 选择性的符号 “...” 可以用来表示档案结尾 字串不一定要用双引号标识 允许在文件中加入选择性的空行，以增加可读性  YAML Lists #  List 数组，使用连字符（-）表示，例如：
+volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &amp;#34;volumeMounts&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;kubernetes-dashboard-certs&amp;#34;, &amp;#34;mountPath&amp;#34;: &amp;#34;/certs&amp;#34; } ] } 使用 - 表示新的一组 #  多个成员中的若刚个</description>
+    </item>
+    
+    <item>
       <title>2020-04-20</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/20/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
