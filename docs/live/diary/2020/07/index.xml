@@ -16,7 +16,8 @@
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/24/</guid>
       <description>2020 年 7 月 24 日（星期五） #  今日待办 #      编程 #  Istio #  Ingress vs Egress #  参考：
- Istio ingress and egress gateways  服务限流熔断 #  MaxConnections</description>
+ Istio ingress and egress gateways  服务限流熔断 #  MaxConnections
+ Python #  Python 编译器 #   CPython（Python 默认编译器） PyPy Psyco JPython（没有 GIL）  GIL (Global Interpreter Lock) #   GIL 并不是 Python 的特性，它是在实现 Python 解析器 (CPython) 时所引入的一个概念 全局解释器锁是计算机程序设计语言解释器用于同步线程的一种机制，它使得任何时刻仅有一个线程在执行。 即便在 多核心处理器上，使用 GIL 的解释器也只允许同一时间执行一个线程。 常见的使用 GIL 的解释器有：  CPython Ruby MRI   CPython 的线程是操作系统的原生线程。  在 Linux 上为 pthread，在 Windows 上为 Win thread，完全由操作系统调度线程的执行。   一个 Python 解释器进程内有一个主线程，以及多个用户程序的执行线程。  即便使用 多核心 CPU 平台，由于 GIL 的存在，也将禁止多线程的并行执行。   GIL 的存在是为了方便使用 C 语言编写 CPython 解释器的编写者  而顶层使用 Python 时依旧要考虑线程安全    </description>
     </item>
     
     <item>
@@ -28,7 +29,7 @@
       <description>2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  集合类型 #   数组 切片 哈希表 Channel  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &amp;ldquo;&amp;quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
 for range 取不到所有元素的指针 #  for range 其实是语法糖，内部调用还是 for 循环， 初始化会拷贝带遍历的列表（如 array，slice，map）， 然后每次遍历的 v 都是对同一个元素的遍历赋值
 对应的伪代码
-len_temp := len(range) range_temp := range for index_temp = 0; index_temp &amp;lt; len_temp; index_temp++ { value_temp = range_temp[index_temp] index = index_temp value = value_temp original body }  package main import &amp;#34;fmt&amp;#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &amp;#34;liu&amp;#34;, Age: 21}, {Name: &amp;#34;guan&amp;#34;, Age: 22}, {Name: &amp;#34;zhang&amp;#34;, Age: 23}, } for _, stu := range stus { m[stu.</description>
+len_temp := len(range) range_temp := range for index_temp = 0; index_temp &amp;lt; len_temp; index_temp++ { value_temp = range_temp[index_temp] index = index_temp value = value_temp original body }  package main import &amp;#34;fmt&amp;#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &amp;#34;liu&amp;#34;, Age: 21}, {Name: &amp;#34;guan&amp;#34;, Age: 22}, {Name: &amp;#34;zhang&amp;#34;, Age: 23}, } for _, stu := range stus { // 每次遍历，stu 的值不一样，但是 stu 是同一个变量，地址是一样的  // 修复：  // Copy into a new variable  // stu := stu 	m[stu.</description>
     </item>
     
     <item>
