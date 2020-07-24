@@ -4,11 +4,15 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &ldquo;&quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
-map, value 是指针 #  package main import &#34;fmt&#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &#34;liu&#34;, Age: 21}, {Name: &#34;guan&#34;, Age: 22}, {Name: &#34;zhang&#34;, Age: 23}, } for _, stu := range stus { m[stu.">
+<meta name="description" content="2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  集合类型 #   数组 切片 哈希表 Channel  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &ldquo;&quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
+for range 取不到所有元素的指针 #  for range 其实是语法糖，内部调用还是 for 循环， 初始化会拷贝带遍历的列表（如 array，slice，map）， 然后每次遍历的 v 都是对同一个元素的遍历赋值
+对应的伪代码
+len_temp := len(range) range_temp := range for index_temp = 0; index_temp &lt; len_temp; index_temp&#43;&#43; { value_temp = range_temp[index_temp] index = index_temp value = value_temp original body }  package main import &#34;fmt&#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &#34;liu&#34;, Age: 21}, {Name: &#34;guan&#34;, Age: 22}, {Name: &#34;zhang&#34;, Age: 23}, } for _, stu := range stus { m[stu.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-23" />
-<meta property="og:description" content="2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &ldquo;&quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
-map, value 是指针 #  package main import &#34;fmt&#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &#34;liu&#34;, Age: 21}, {Name: &#34;guan&#34;, Age: 22}, {Name: &#34;zhang&#34;, Age: 23}, } for _, stu := range stus { m[stu." />
+<meta property="og:description" content="2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  集合类型 #   数组 切片 哈希表 Channel  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &ldquo;&quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
+for range 取不到所有元素的指针 #  for range 其实是语法糖，内部调用还是 for 循环， 初始化会拷贝带遍历的列表（如 array，slice，map）， 然后每次遍历的 v 都是对同一个元素的遍历赋值
+对应的伪代码
+len_temp := len(range) range_temp := range for index_temp = 0; index_temp &lt; len_temp; index_temp&#43;&#43; { value_temp = range_temp[index_temp] index = index_temp value = value_temp original body }  package main import &#34;fmt&#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &#34;liu&#34;, Age: 21}, {Name: &#34;guan&#34;, Age: 22}, {Name: &#34;zhang&#34;, Age: 23}, } for _, stu := range stus { m[stu." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/23/" />
 <meta property="article:modified_time" content="2020-07-23T19:35:45+08:00" />
@@ -16,7 +20,7 @@ map, value 是指针 #  package main import &#34;fmt&#34; type student struct { 
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.1ef2da783405657e579505e332768bf1e6661fb7e9059df756feb3ca21163db8.js" integrity="sha256-HvLaeDQFZX5XlQXjMnaL8eZmH7fpBZ33Vv6zyiEWPbg="></script>
+<script defer src="/note/en.search.min.e8d2dc449bc17d5c6be74f673b5dca5263f4cc199d305bcf1c5af1121a0b2558.js" integrity="sha256-6NLcRJvBfVxr509nO13KUmP0zBmdMFvPHFrxEhoLJVg="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -814,8 +818,9 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#go">Go</a>
           <ul>
+            <li><a href="#集合类型">集合类型</a></li>
             <li><a href="#零值">零值</a></li>
-            <li><a href="#map-value-是指针">map, value 是指针</a></li>
+            <li><a href="#for-range-取不到所有元素的指针">for range 取不到所有元素的指针</a></li>
             <li><a href="#逃逸分析">逃逸分析</a></li>
             <li><a href="#contextcontext">context.Context</a></li>
           </ul>
@@ -853,6 +858,16 @@ https://github.com/alex-shpak/hugo-book
   Go
   <a class="anchor" href="#go">#</a>
 </h3>
+<h4 id="集合类型">
+  集合类型
+  <a class="anchor" href="#%e9%9b%86%e5%90%88%e7%b1%bb%e5%9e%8b">#</a>
+</h4>
+<ul>
+<li>数组</li>
+<li>切片</li>
+<li>哈希表</li>
+<li>Channel</li>
+</ul>
 <h4 id="零值">
   零值
   <a class="anchor" href="#%e9%9b%b6%e5%80%bc">#</a>
@@ -862,11 +877,23 @@ https://github.com/alex-shpak/hugo-book
 数值类型的零值为 0，
 字符串类型的零值为空字符串 &ldquo;&quot;，
 而指针、切片、映射、通道、函数和接口的零值则是 <code>nil</code>。</p>
-<h4 id="map-value-是指针">
-  map, value 是指针
-  <a class="anchor" href="#map-value-%e6%98%af%e6%8c%87%e9%92%88">#</a>
+<h4 id="for-range-取不到所有元素的指针">
+  for range 取不到所有元素的指针
+  <a class="anchor" href="#for-range-%e5%8f%96%e4%b8%8d%e5%88%b0%e6%89%80%e6%9c%89%e5%85%83%e7%b4%a0%e7%9a%84%e6%8c%87%e9%92%88">#</a>
 </h4>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200723180557.png" alt="" /></p>
+<p><code>for range</code> 其实是<strong>语法糖</strong>，内部调用还是 <code>for</code> 循环，
+初始化会拷贝带遍历的列表（如 <code>array</code>，<code>slice</code>，<code>map</code>），
+然后每次遍历的 v 都是对同一个元素的遍历赋值</p>
+<p>对应的<a href="https://github.com/golang/gofrontend/blob/e387439bfd24d5e142874b8e68e7039f74c744d7/go/statements.cc#L5501">伪代码</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">len_temp</span> <span style="color:#f92672">:=</span> len(<span style="color:#66d9ef">range</span>)
+<span style="color:#a6e22e">range_temp</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span>
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">index_temp</span> = <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index_temp</span> &lt; <span style="color:#a6e22e">len_temp</span>; <span style="color:#a6e22e">index_temp</span><span style="color:#f92672">++</span> {
+    <span style="color:#a6e22e">value_temp</span> = <span style="color:#a6e22e">range_temp</span>[<span style="color:#a6e22e">index_temp</span>]
+    <span style="color:#a6e22e">index</span> = <span style="color:#a6e22e">index_temp</span>
+    <span style="color:#a6e22e">value</span> = <span style="color:#a6e22e">value_temp</span>
+    <span style="color:#a6e22e">original</span> <span style="color:#a6e22e">body</span>
+  }
+</code></pre></div><hr>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -902,7 +929,11 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="color:#75715e">// &amp;{zhang 23}
 </span><span style="color:#75715e">// &amp;{zhang 23}
 </span><span style="color:#75715e">// &amp;{zhang 23}
-</span></code></pre></div><h4 id="逃逸分析">
+</span></code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://github.com/golang/go/wiki/CommonMistakes">Go 常见错误</a></li>
+</ul>
+<h4 id="逃逸分析">
   逃逸分析
   <a class="anchor" href="#%e9%80%83%e9%80%b8%e5%88%86%e6%9e%90">#</a>
 </h4>
@@ -962,8 +993,9 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#go">Go</a>
           <ul>
+            <li><a href="#集合类型">集合类型</a></li>
             <li><a href="#零值">零值</a></li>
-            <li><a href="#map-value-是指针">map, value 是指针</a></li>
+            <li><a href="#for-range-取不到所有元素的指针">for range 取不到所有元素的指针</a></li>
             <li><a href="#逃逸分析">逃逸分析</a></li>
             <li><a href="#contextcontext">context.Context</a></li>
           </ul>

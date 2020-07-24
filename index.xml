@@ -295,7 +295,7 @@ OpenTelemetry #  Specifications for OpenTelemetry https://opentelemetry.</descri
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/24/</guid>
       <description>2020 年 7 月 24 日（星期五） #  今日待办 #      编程 #  Istio #  Ingress vs Egress #  参考：
- Istio ingress and egress gateways  </description>
+ Istio ingress and egress gateways  服务限流熔断 #  MaxConnections</description>
     </item>
     
     <item>
@@ -333,8 +333,10 @@ HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/23/</guid>
-      <description>2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &amp;ldquo;&amp;quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
-map, value 是指针 #  package main import &amp;#34;fmt&amp;#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &amp;#34;liu&amp;#34;, Age: 21}, {Name: &amp;#34;guan&amp;#34;, Age: 22}, {Name: &amp;#34;zhang&amp;#34;, Age: 23}, } for _, stu := range stus { m[stu.</description>
+      <description>2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  集合类型 #   数组 切片 哈希表 Channel  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &amp;ldquo;&amp;quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
+for range 取不到所有元素的指针 #  for range 其实是语法糖，内部调用还是 for 循环， 初始化会拷贝带遍历的列表（如 array，slice，map）， 然后每次遍历的 v 都是对同一个元素的遍历赋值
+对应的伪代码
+len_temp := len(range) range_temp := range for index_temp = 0; index_temp &amp;lt; len_temp; index_temp++ { value_temp = range_temp[index_temp] index = index_temp value = value_temp original body }  package main import &amp;#34;fmt&amp;#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &amp;#34;liu&amp;#34;, Age: 21}, {Name: &amp;#34;guan&amp;#34;, Age: 22}, {Name: &amp;#34;zhang&amp;#34;, Age: 23}, } for _, stu := range stus { m[stu.</description>
     </item>
     
     <item>
