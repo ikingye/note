@@ -17,7 +17,7 @@
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/24/</guid>
       <description>2020 年 7 月 24 日（星期五） #  今日待办 #      编程 #  Istio #  Ingress vs Egress #  参考：
  Istio ingress and egress gateways  服务限流熔断 #  MaxConnections
- Python #  Python 编译器 #   CPython（Python 默认编译器） PyPy Psyco JPython（没有 GIL）  GIL (Global Interpreter Lock) #   GIL 并不是 Python 的特性，它是在实现 Python 解析器 (CPython) 时所引入的一个概念 全局解释器锁是计算机程序设计语言解释器用于同步线程的一种机制，它使得任何时刻仅有一个线程在执行。 即便在 多核心处理器上，使用 GIL 的解释器也只允许同一时间执行一个线程。 常见的使用 GIL 的解释器有：  CPython Ruby MRI   CPython 的线程是操作系统的原生线程。  在 Linux 上为 pthread，在 Windows 上为 Win thread，完全由操作系统调度线程的执行。   一个 Python 解释器进程内有一个主线程，以及多个用户程序的执行线程。  即便使用 多核心 CPU 平台，由于 GIL 的存在，也将禁止多线程的并行执行。   GIL 的存在是为了方便使用 C 语言编写 CPython 解释器的编写者  而顶层使用 Python 时依旧要考虑线程安全     Python 多进程 #  multiprocess #  </description>
+ Python #   对 CPU 密集型代码（比如循环计算），多进程效率更高 对 IO 密集型代码（比如文件操作，网络爬虫），多线程效率更高  CPU 非瓶颈，而且没有进程切换那么大消耗    Python 多进程 #  进程间通信 #   管道 / 匿名管道 (pipe)  管道的实质是一个内核缓冲区   有名管道 (FIFO)  有名管道的名字存在于文件系统中，内容存放在内存中   信号 信号量  信号量是一个计数器，用于多进程对共享数据的访问   套接字 共享内存 消息队列  消息队列存放在内核中，只有在内核重启 (即，操作系统重启) 或者显示地删除一个消息队列时，该消息队列才会被真正的删除    multiprocess #  Process #  from multiprocessing import Process, Queue # 使用队列进行数据共享和通信 # 父进程创建 Queue，并传给各个子进程 q = Queue() p1 = Process(target=long_time_task, args=(q,)) p1.</description>
     </item>
     
     <item>
