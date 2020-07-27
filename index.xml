@@ -230,6 +230,16 @@ consul + consul-template #  gcc vs g++ #   后缀为 .c 的  gcc 把它当做 C 
     </item>
     
     <item>
+      <title>2020-07-27</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/07/27/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/27/</guid>
+      <description>2020 年 7 月 27 日（星期一） #  今日待办 #      编程 #  Python #  异常 #  while True: try: x = int(input(&amp;#34;Please enter a number: &amp;#34;)) break except ValueError: print(&amp;#34;Oops! That was no valid number. Try again...&amp;#34;) else: print(&amp;#34;else&amp;#34;) finally: print(&amp;#34;goobye&amp;#34;) Python2 和 Python3 的 Exception 区别 #  Python2 是逗号，Python3 是 as
+# python2.x try: raise except Exception, e: print (e) return false # 现在 python3.</description>
+    </item>
+    
+    <item>
       <title>2020-04-26</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/26/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
