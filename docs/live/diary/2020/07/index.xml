@@ -16,7 +16,7 @@
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/27/</guid>
       <description>2020 年 7 月 27 日（星期一） #  今日待办 #      编程 #  Python #  异常 #  while True: try: x = int(input(&amp;#34;Please enter a number: &amp;#34;)) break except ValueError: print(&amp;#34;Oops! That was no valid number. Try again...&amp;#34;) else: print(&amp;#34;else&amp;#34;) finally: print(&amp;#34;goobye&amp;#34;) Python2 和 Python3 的 Exception 区别 #  Python2 是逗号，Python3 是 as
-# python2 try: raise except Exception, e: print (e) return false # python3 try: raise except Exception as e: print (e) return false import 兼容 python2 和 python3 #  try: # Python3 from configparser import ConfigParser except ImportError: # Python2 from ConfigParser import ConfigParser config = ConfigParser() </description>
+# python2 try: raise except Exception, e: print (e) return false # python3 try: raise except Exception as e: print (e) return false import 兼容 python2 和 python3 #  try: # Python3 from configparser import ConfigParser except ImportError: # Python2 from ConfigParser import ConfigParser config = ConfigParser()  Go #  函数 #  命名返回值 #  在函数有多个返回值时，只要有一个返回值有命名，其他的也必须命名。</description>
     </item>
     
     <item>
