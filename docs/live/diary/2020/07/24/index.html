@@ -13,12 +13,12 @@
  Python #   对 CPU 密集型代码（比如循环计算），多进程效率更高 对 IO 密集型代码（比如文件操作，网络爬虫），多线程效率更高  CPU 非瓶颈，而且没有进程切换那么大消耗    Python 多进程 #  进程间通信 #   管道 / 匿名管道 (pipe)  管道的实质是一个内核缓冲区   有名管道 (FIFO)  有名管道的名字存在于文件系统中，内容存放在内存中   信号 信号量  信号量是一个计数器，用于多进程对共享数据的访问   套接字 共享内存 消息队列  消息队列存放在内核中，只有在内核重启 (即，操作系统重启) 或者显示地删除一个消息队列时，该消息队列才会被真正的删除    multiprocess #  Process #  from multiprocessing import Process, Queue # 使用队列进行数据共享和通信 # 父进程创建 Queue，并传给各个子进程 q = Queue() p1 = Process(target=long_time_task, args=(q,)) p1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/24/" />
-<meta property="article:modified_time" content="2020-07-26T17:24:43+08:00" />
+<meta property="article:modified_time" content="2020-07-26T18:13:25+08:00" />
 <title>2020-07-24 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.cf07239655c85ad1d79c958e0a6cb9e443d64a3865e8bfa3d0d705141a72c770.js" integrity="sha256-zwcjllXIWtHXnJWOCmy55EPWSjhl6L&#43;j0NcFFBpyx3A="></script>
+<script defer src="/note/en.search.min.26a8dfefb91106d3457cc32db6931050930a88272aad0580dc35443804e6fdc7.js" integrity="sha256-Jqjf77kRBtNFfMMttpMQUJMKiCcqrQWA3DVEOATm/cc="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1071,9 +1071,10 @@ queue<span style="color:#f92672">.</span>get()
 </h4>
 <ul>
 <li>CPython（Python 默认编译器）</li>
-<li>PyPy</li>
+<li>PyPy（主线中也有 <code>GIL</code>）</li>
 <li>Psyco</li>
 <li>JPython（没有 <code>GIL</code>）</li>
+<li>IronPython</li>
 </ul>
 </article>
  
@@ -1085,7 +1086,7 @@ queue<span style="color:#f92672">.</span>get()
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/90dd6f68ae04b9749a6409fd3ce8eed6748b4e5b" title='Last modified by yewang | 2020-07-26' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/cc618d96d645ad886a90d69c04bbc8a71df52b45" title='Last modified by yewang | 2020-07-26' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-26</span>
     </a>
