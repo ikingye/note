@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="2020 年 7 月 27 日（星期一） #  今日待办 #      编程 #  Python #  异常 #  while True: try: x = int(input(&#34;Please enter a number: &#34;)) break except ValueError: print(&#34;Oops! That was no valid number. Try again...&#34;) else: print(&#34;else&#34;) finally: print(&#34;goobye&#34;) Python2 和 Python3 的 Exception 区别 #  Python2 是逗号，Python3 是 as
-# python2.x try: raise except Exception, e: print (e) return false # 现在 python3.">
+# python2 try: raise except Exception, e: print (e) return false # python3 try: raise except Exception as e: print (e) return false import 兼容 python2 和 python3 #  try: # Python3 from configparser import ConfigParser except ImportError: # Python2 from ConfigParser import ConfigParser config = ConfigParser() ">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-27" />
 <meta property="og:description" content="2020 年 7 月 27 日（星期一） #  今日待办 #      编程 #  Python #  异常 #  while True: try: x = int(input(&#34;Please enter a number: &#34;)) break except ValueError: print(&#34;Oops! That was no valid number. Try again...&#34;) else: print(&#34;else&#34;) finally: print(&#34;goobye&#34;) Python2 和 Python3 的 Exception 区别 #  Python2 是逗号，Python3 是 as
-# python2.x try: raise except Exception, e: print (e) return false # 现在 python3." />
+# python2 try: raise except Exception, e: print (e) return false # python3 try: raise except Exception as e: print (e) return false import 兼容 python2 和 python3 #  try: # Python3 from configparser import ConfigParser except ImportError: # Python2 from ConfigParser import ConfigParser config = ConfigParser() " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/27/" />
-
+<meta property="article:modified_time" content="2020-07-27T10:51:49+08:00" />
 <title>2020-07-27 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.b4e01c2d74968b40888eb4a8d776a962a17b85c45ea61ab2ab7d452e7c038589.js" integrity="sha256-tOAcLXSWi0CIjrSo13apYqF7hcRephqyq31FLnwDhYk="></script>
+<script defer src="/note/en.search.min.aa791886e726e1ab1b89bed5efad99ccbb171154c7278fc2d642e5fba9646012.js" integrity="sha256-qnkYhucm4asbib7V762ZzLsXEVTHJ4/C1kLl&#43;6lkYBI="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -884,14 +884,14 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#python2-%e5%92%8c-python3-%e7%9a%84-exception-%e5%8c%ba%e5%88%ab">#</a>
 </h5>
 <p>Python2 是逗号，Python3 是 <code>as</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># python2.x</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># python2</span>
 <span style="color:#66d9ef">try</span>:
     <span style="color:#66d9ef">raise</span>
 <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>, e:
     <span style="color:#66d9ef">print</span> (e)
     <span style="color:#66d9ef">return</span> false
 
-<span style="color:#75715e"># 现在 python3.x</span>
+<span style="color:#75715e"># python3</span>
 <span style="color:#66d9ef">try</span>:
     <span style="color:#66d9ef">raise</span>
 <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
@@ -918,6 +918,12 @@ config <span style="color:#f92672">=</span> ConfigParser()
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/32efb7554b4f44efa45100b9b2ef7ab4edbbf2a9" title='Last modified by yewang | 2020-07-27' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-27</span>
+    </a>
+  </div>
 
 
 

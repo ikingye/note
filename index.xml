@@ -236,7 +236,7 @@ consul + consul-template #  gcc vs g++ #   后缀为 .c 的  gcc 把它当做 C 
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/27/</guid>
       <description>2020 年 7 月 27 日（星期一） #  今日待办 #      编程 #  Python #  异常 #  while True: try: x = int(input(&amp;#34;Please enter a number: &amp;#34;)) break except ValueError: print(&amp;#34;Oops! That was no valid number. Try again...&amp;#34;) else: print(&amp;#34;else&amp;#34;) finally: print(&amp;#34;goobye&amp;#34;) Python2 和 Python3 的 Exception 区别 #  Python2 是逗号，Python3 是 as
-# python2.x try: raise except Exception, e: print (e) return false # 现在 python3.</description>
+# python2 try: raise except Exception, e: print (e) return false # python3 try: raise except Exception as e: print (e) return false import 兼容 python2 和 python3 #  try: # Python3 from configparser import ConfigParser except ImportError: # Python2 from ConfigParser import ConfigParser config = ConfigParser() </description>
     </item>
     
     <item>
@@ -345,9 +345,7 @@ HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例�
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/23/</guid>
       <description>2020 年 7 月 23 日（星期四） #  今日待办 #      编程 #  Go #  集合类型 #   数组 切片 哈希表 Channel  零值 #  在 Go 语言中， 布尔类型的零值（初始值）为 false， 数值类型的零值为 0， 字符串类型的零值为空字符串 &amp;ldquo;&amp;quot;， 而指针、切片、映射、通道、函数和接口的零值则是 nil。
-for range 取不到所有元素的指针 #  for range 其实是语法糖，内部调用还是 for 循环， 初始化会拷贝带遍历的列表（如 array，slice，map）， 然后每次遍历的 v 都是对同一个元素的遍历赋值
-对应的伪代码
-len_temp := len(range) range_temp := range for index_temp = 0; index_temp &amp;lt; len_temp; index_temp++ { value_temp = range_temp[index_temp] index = index_temp value = value_temp original body }  package main import &amp;#34;fmt&amp;#34; type student struct { Name string Age int } func pase_student() { m := make(map[string]*student) stus := []student{ {Name: &amp;#34;liu&amp;#34;, Age: 21}, {Name: &amp;#34;guan&amp;#34;, Age: 22}, {Name: &amp;#34;zhang&amp;#34;, Age: 23}, } for _, stu := range stus { // 每次遍历，stu 的值不一样，但是 stu 是同一个变量，地址是一样的  // 修复：  // Copy into a new variable  // stu := stu 	m[stu.</description>
+循环变量取地址错误 #  func main() { var out []*int for i := 0; i &amp;lt; 3; i++ { out = append(out, &amp;amp;i) } fmt.Println(&amp;#34;Values:&amp;#34;, *out[0], *out[1], *out[2]) fmt.</description>
     </item>
     
     <item>
