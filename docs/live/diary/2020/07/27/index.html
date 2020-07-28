@@ -16,7 +16,7 @@
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.9bd47231b6be93de719491542162490621b90afae27b70de5e92ecf7a0158515.js" integrity="sha256-m9RyMba&#43;k95xlJFUIWJJBiG5Cvrie3DeXpLs96AVhRU="></script>
+<script defer src="/note/en.search.min.b387bf778e3c5088e667eec20f5c563583ff613b32b241da0da3e91846319322.js" integrity="sha256-s4e/d448UIjmZ&#43;7CD1xWNYP/YTsyskHaDaPpGEYxkyI="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -839,7 +839,21 @@ https://github.com/alex-shpak/hugo-book
                 <li><a href="#命名返回值">命名返回值</a></li>
               </ul>
             </li>
-            <li><a href="#struct">Struct</a></li>
+            <li><a href="#struct">Struct</a>
+              <ul>
+                <li><a href="#含有-mapslice-类型的-struct-不能进行比较">含有 map、slice 类型的 struct 不能进行比较</a></li>
+              </ul>
+            </li>
+            <li><a href="#引号">引号</a>
+              <ul>
+                <li><a href="#单引号">单引号</a></li>
+                <li><a href="#反引号">反引号</a></li>
+              </ul>
+            </li>
+            <li><a href="#iota">iota</a></li>
+            <li><a href="#可变参数是指针传递">可变参数是指针传递</a></li>
+            <li><a href="#切片中两个冒号">切片中两个冒号</a></li>
+            <li><a href="#map">map</a></li>
           </ul>
         </li>
       </ul>
@@ -937,7 +951,10 @@ config <span style="color:#f92672">=</span> ConfigParser()
   Struct
   <a class="anchor" href="#struct">#</a>
 </h4>
-<p>含有 map、slice 类型的 struct 不能进行比较</p>
+<h5 id="含有-mapslice-类型的-struct-不能进行比较">
+  含有 map、slice 类型的 struct 不能进行比较
+  <a class="anchor" href="#%e5%90%ab%e6%9c%89-mapslice-%e7%b1%bb%e5%9e%8b%e7%9a%84-struct-%e4%b8%8d%e8%83%bd%e8%bf%9b%e8%a1%8c%e6%af%94%e8%be%83">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
@@ -972,7 +989,55 @@ config <span style="color:#f92672">=</span> ConfigParser()
 		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;sm1 == sm2&#34;</span>)
 	}
 }
-</code></pre></div><p>参考：</p>
+</code></pre></div><h4 id="引号">
+  引号
+  <a class="anchor" href="#%e5%bc%95%e5%8f%b7">#</a>
+</h4>
+<h5 id="单引号">
+  单引号
+  <a class="anchor" href="#%e5%8d%95%e5%bc%95%e5%8f%b7">#</a>
+</h5>
+<p><code>''</code> 中的内容表示<strong>单个字符</strong>（<code>rune</code>）</p>
+<h5 id="反引号">
+  反引号
+  <a class="anchor" href="#%e5%8f%8d%e5%bc%95%e5%8f%b7">#</a>
+</h5>
+<p>`` 中的内容表示<strong>不可转义</strong>的字符串</p>
+<hr>
+<h4 id="iota">
+  iota
+  <a class="anchor" href="#iota">#</a>
+</h4>
+<h4 id="可变参数是指针传递">
+  可变参数是指针传递
+  <a class="anchor" href="#%e5%8f%af%e5%8f%98%e5%8f%82%e6%95%b0%e6%98%af%e6%8c%87%e9%92%88%e4%bc%a0%e9%80%92">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">hello</span>(<span style="color:#a6e22e">num</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">num</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">18</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test13</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+	<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>}
+  <span style="color:#a6e22e">hello</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">...</span>)
+  <span style="color:#75715e">// 18
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>[<span style="color:#ae81ff">0</span>])
+}
+</code></pre></div><h4 id="切片中两个冒号">
+  切片中两个冒号
+  <a class="anchor" href="#%e5%88%87%e7%89%87%e4%b8%ad%e4%b8%a4%e4%b8%aa%e5%86%92%e5%8f%b7">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">slice</span>[<span style="color:#a6e22e">start</span>:<span style="color:#a6e22e">end</span>:<span style="color:#a6e22e">max</span>]
+<span style="color:#75715e">// len = end - start
+</span><span style="color:#75715e">// cap = max - start
+</span></code></pre></div><h4 id="map">
+  map
+  <a class="anchor" href="#map">#</a>
+</h4>
+<ul>
+<li>删除 map 不存在的键值对时，不会报错，相当于没有任何作用</li>
+<li>获取不存在的键值对时，返回值类型对应的零值。</li>
+</ul>
+<p>参考：</p>
 <ul>
 <li><a href="https://github.com/pibigstar/go-demo/tree/master/interview">Go 面试题及详解</a></li>
 </ul>
@@ -1043,7 +1108,21 @@ config <span style="color:#f92672">=</span> ConfigParser()
                 <li><a href="#命名返回值">命名返回值</a></li>
               </ul>
             </li>
-            <li><a href="#struct">Struct</a></li>
+            <li><a href="#struct">Struct</a>
+              <ul>
+                <li><a href="#含有-mapslice-类型的-struct-不能进行比较">含有 map、slice 类型的 struct 不能进行比较</a></li>
+              </ul>
+            </li>
+            <li><a href="#引号">引号</a>
+              <ul>
+                <li><a href="#单引号">单引号</a></li>
+                <li><a href="#反引号">反引号</a></li>
+              </ul>
+            </li>
+            <li><a href="#iota">iota</a></li>
+            <li><a href="#可变参数是指针传递">可变参数是指针传递</a></li>
+            <li><a href="#切片中两个冒号">切片中两个冒号</a></li>
+            <li><a href="#map">map</a></li>
           </ul>
         </li>
       </ul>
