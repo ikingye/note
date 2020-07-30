@@ -4,21 +4,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  静态库 vs 动态库 #  编译时链接 vs 运行时链接 #   C&#43;&#43; 构建工具 #  底层与编译直接相关的功能本质上都是对 gcc toolchain 的封装
-cmake #  Bazel #  bcloud #  百度内部的分布式编译系统
- ">
+<meta name="description" content="2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  编译过程 #  预处理 (Preprocess) #   将 #include 的头文件展开 将 #define 语句指定的值转换为变量 将将宏定义转换为具体代码 根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码  $ gcc -E hello.cpp -o hello.i 或 $ cpp hello.cpp &gt; hello.i 编译 (Compilation) #   对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则 检查通过后生成汇编文件 hello.s   静态库 vs 动态库 #  编译时链接 vs 运行时链接 #   C&#43;&#43; 构建工具 #  底层与编译直接相关的功能本质上都是对 gcc toolchain 的封装">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-30" />
-<meta property="og:description" content="2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  静态库 vs 动态库 #  编译时链接 vs 运行时链接 #   C&#43;&#43; 构建工具 #  底层与编译直接相关的功能本质上都是对 gcc toolchain 的封装
-cmake #  Bazel #  bcloud #  百度内部的分布式编译系统
- " />
+<meta property="og:description" content="2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  编译过程 #  预处理 (Preprocess) #   将 #include 的头文件展开 将 #define 语句指定的值转换为变量 将将宏定义转换为具体代码 根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码  $ gcc -E hello.cpp -o hello.i 或 $ cpp hello.cpp &gt; hello.i 编译 (Compilation) #   对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则 检查通过后生成汇编文件 hello.s   静态库 vs 动态库 #  编译时链接 vs 运行时链接 #   C&#43;&#43; 构建工具 #  底层与编译直接相关的功能本质上都是对 gcc toolchain 的封装" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/30/" />
-
+<meta property="article:modified_time" content="2020-07-30T10:41:03+08:00" />
 <title>2020-07-30 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.3aed00f150b4d62b94dd230ac2faada6fbf9c2a64b3065894ac16fc395193100.js" integrity="sha256-Ou0A8VC01iuU3SMKwvqtpvv5wqZLMGWJSsFvw5UZMQA="></script>
+<script defer src="/note/en.search.min.780b3c1a0dc392afc62a0a47fe33a5ffb9bfe853ef95c38ea669df287ddd3c5a.js" integrity="sha256-eAs8Gg3Dkq/GKgpH/jOl/7m/6FPvlcOOpmnfKH3dPFo="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -846,6 +842,12 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#编译">编译</a>
           <ul>
+            <li><a href="#编译过程">编译过程</a>
+              <ul>
+                <li><a href="#预处理-preprocess">预处理 (Preprocess)</a></li>
+                <li><a href="#编译-compilation">编译 (Compilation)</a></li>
+              </ul>
+            </li>
             <li><a href="#静态库-vs-动态库">静态库 vs 动态库</a></li>
             <li><a href="#编译时链接-vs-运行时链接">编译时链接 vs 运行时链接</a></li>
             <li><a href="#c-构建工具">C++ 构建工具</a>
@@ -890,6 +892,33 @@ https://github.com/alex-shpak/hugo-book
   编译
   <a class="anchor" href="#%e7%bc%96%e8%af%91">#</a>
 </h3>
+<h4 id="编译过程">
+  编译过程
+  <a class="anchor" href="#%e7%bc%96%e8%af%91%e8%bf%87%e7%a8%8b">#</a>
+</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200730104457.png" alt="" /></p>
+<h5 id="预处理-preprocess">
+  预处理 (Preprocess)
+  <a class="anchor" href="#%e9%a2%84%e5%a4%84%e7%90%86-preprocess">#</a>
+</h5>
+<ul>
+<li>将 #include 的头文件展开</li>
+<li>将 #define 语句指定的值转换为变量</li>
+<li>将将宏定义转换为具体代码</li>
+<li>根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ gcc -E hello.cpp -o hello.i
+或
+$ cpp hello.cpp &gt; hello.i
+</code></pre></div><h5 id="编译-compilation">
+  编译 (Compilation)
+  <a class="anchor" href="#%e7%bc%96%e8%af%91-compilation">#</a>
+</h5>
+<ul>
+<li>对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则</li>
+<li>检查通过后生成汇编文件 hello.s</li>
+</ul>
+<hr>
 <h4 id="静态库-vs-动态库">
   静态库 vs 动态库
   <a class="anchor" href="#%e9%9d%99%e6%80%81%e5%ba%93-vs-%e5%8a%a8%e6%80%81%e5%ba%93">#</a>
@@ -928,6 +957,12 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/d5b0a2c76be0894e781bbb14d760d9cafa96733e" title='Last modified by yewang | 2020-07-30' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-30</span>
+    </a>
+  </div>
+
 
 
 </div>
@@ -964,6 +999,12 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#编译">编译</a>
           <ul>
+            <li><a href="#编译过程">编译过程</a>
+              <ul>
+                <li><a href="#预处理-preprocess">预处理 (Preprocess)</a></li>
+                <li><a href="#编译-compilation">编译 (Compilation)</a></li>
+              </ul>
+            </li>
             <li><a href="#静态库-vs-动态库">静态库 vs 动态库</a></li>
             <li><a href="#编译时链接-vs-运行时链接">编译时链接 vs 运行时链接</a></li>
             <li><a href="#c-构建工具">C++ 构建工具</a>
