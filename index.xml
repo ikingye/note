@@ -95,7 +95,7 @@ MEC 使运营商能在网络边缘分流业务， 通过端到端整体方案为
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/30/</guid>
-      <description>2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  编译过程 #  预处理 (Preprocess) #   将 #include 的头文件展开 将 #define 语句指定的值转换为变量 将将宏定义转换为具体代码 根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码  $ gcc -E hello.cpp -o hello.i 或 $ cpp hello.cpp &amp;gt; hello.i 编译 (Compilation) #   对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则 检查通过后生成汇编文件 hello.s   静态库 vs 动态库 #  编译时链接 vs 运行时链接 #   C++ 构建工具 #  底层与编译直接相关的功能本质上都是对 gcc toolchain 的封装</description>
+      <description>2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  编译过程 #  预处理 (Preprocess) #   将 #include 的头文件展开 将 #define 语句指定的值转换为变量 将将宏定义转换为具体代码 根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码  $ gcc -E hello.cpp -o hello.i 或 $ cpp hello.cpp &amp;gt; hello.i 编译 (Compilation) #   对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则 检查通过后生成汇编文件 hello.s  $ gcc -S hello.i -o hello.</description>
     </item>
     
     <item>

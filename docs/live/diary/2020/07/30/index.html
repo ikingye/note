@@ -4,17 +4,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  编译过程 #  预处理 (Preprocess) #   将 #include 的头文件展开 将 #define 语句指定的值转换为变量 将将宏定义转换为具体代码 根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码  $ gcc -E hello.cpp -o hello.i 或 $ cpp hello.cpp &gt; hello.i 编译 (Compilation) #   对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则 检查通过后生成汇编文件 hello.s   静态库 vs 动态库 #  编译时链接 vs 运行时链接 #   C&#43;&#43; 构建工具 #  底层与编译直接相关的功能本质上都是对 gcc toolchain 的封装">
+<meta name="description" content="2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  编译过程 #  预处理 (Preprocess) #   将 #include 的头文件展开 将 #define 语句指定的值转换为变量 将将宏定义转换为具体代码 根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码  $ gcc -E hello.cpp -o hello.i 或 $ cpp hello.cpp &gt; hello.i 编译 (Compilation) #   对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则 检查通过后生成汇编文件 hello.s  $ gcc -S hello.i -o hello.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-30" />
-<meta property="og:description" content="2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  编译过程 #  预处理 (Preprocess) #   将 #include 的头文件展开 将 #define 语句指定的值转换为变量 将将宏定义转换为具体代码 根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码  $ gcc -E hello.cpp -o hello.i 或 $ cpp hello.cpp &gt; hello.i 编译 (Compilation) #   对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则 检查通过后生成汇编文件 hello.s   静态库 vs 动态库 #  编译时链接 vs 运行时链接 #   C&#43;&#43; 构建工具 #  底层与编译直接相关的功能本质上都是对 gcc toolchain 的封装" />
+<meta property="og:description" content="2020 年 7 月 30 日（星期三） #  今日待办 #      编程 #  编译 #  编译过程 #  预处理 (Preprocess) #   将 #include 的头文件展开 将 #define 语句指定的值转换为变量 将将宏定义转换为具体代码 根据 #if #elif 和 #endif 指定的位置包含或排除特定部分的代码  $ gcc -E hello.cpp -o hello.i 或 $ cpp hello.cpp &gt; hello.i 编译 (Compilation) #   对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则 检查通过后生成汇编文件 hello.s  $ gcc -S hello.i -o hello." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/30/" />
-<meta property="article:modified_time" content="2020-07-30T15:10:57+08:00" />
+<meta property="article:modified_time" content="2020-07-30T15:59:25+08:00" />
 <title>2020-07-30 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.3e6993ee40a0fcc31d9047a88877c190710834357de6490cbf003a372ddb6f3f.js" integrity="sha256-PmmT7kCg/MMdkEeoiHfBkHEINDV95kkMvwA6Ny3bbz8="></script>
+<script defer src="/note/en.search.min.78a059c3a8b6257088850f1c59ebc1a0cc384402b0af336ca1d2c1b2d7fb14db.js" integrity="sha256-eKBZw6i2JXCIhQ8cWevBoMw4RAKwrzNsodLBstf7FNs="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -846,8 +846,12 @@ https://github.com/alex-shpak/hugo-book
               <ul>
                 <li><a href="#预处理-preprocess">预处理 (Preprocess)</a></li>
                 <li><a href="#编译-compilation">编译 (Compilation)</a></li>
+                <li><a href="#汇编-assembly">汇编 (Assembly)</a></li>
+                <li><a href="#链接-link">链接 (Link)</a></li>
               </ul>
             </li>
+            <li><a href="#编译错误">编译错误</a></li>
+            <li><a href="#搜索路径">搜索路径</a></li>
             <li><a href="#静态库-vs-动态库">静态库 vs 动态库</a></li>
             <li><a href="#编译时链接-vs-运行时链接">编译时链接 vs 运行时链接</a></li>
             <li><a href="#c-构建工具">C++ 构建工具</a>
@@ -944,7 +948,77 @@ $ cpp hello.cpp &gt; hello.i
 <li>对展开后的源文件 hello.i 进行语法检查，确认代码是否满足语言相关的语法规则</li>
 <li>检查通过后生成汇编文件 hello.s</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ gcc -S hello.i -o hello.s
+</code></pre></div><h5 id="汇编-assembly">
+  汇编 (Assembly)
+  <a class="anchor" href="#%e6%b1%87%e7%bc%96-assembly">#</a>
+</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ gcc -c hello.s -o hello.o
+或者
+$ as hello.s -o hello.o
+</code></pre></div><h5 id="链接-link">
+  链接 (Link)
+  <a class="anchor" href="#%e9%93%be%e6%8e%a5-link">#</a>
+</h5>
 <hr>
+<h4 id="编译错误">
+  编译错误
+  <a class="anchor" href="#%e7%bc%96%e8%af%91%e9%94%99%e8%af%af">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th>错误描述</th>
+<th>阶段</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>头文件找不到</td>
+<td>第 1 阶段：预处理</td>
+<td></td>
+</tr>
+<tr>
+<td>语法错误</td>
+<td>第 2 阶段：编译</td>
+<td></td>
+</tr>
+<tr>
+<td>符号未定义</td>
+<td>第 4 阶段：链接</td>
+<td></td>
+</tr>
+<tr>
+<td>符号重定义</td>
+<td>第 4 阶段：链接</td>
+<td></td>
+</tr>
+<tr>
+<td>recompile with -fPIC</td>
+<td>第 4 阶段：链接</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="搜索路径">
+  搜索路径
+  <a class="anchor" href="#%e6%90%9c%e7%b4%a2%e8%b7%af%e5%be%84">#</a>
+</h4>
+<ul>
+<li>编译时也可以指定头文件和库文件目录，gcc 会到指定的目录下查找
+<ul>
+<li><strong>头文件</strong>搜索路径</li>
+<li><strong>编译时库文件</strong>搜索路径</li>
+</ul>
+</li>
+<li>程序运行时也可以指定<strong>动态库</strong>的搜索路径，<strong>加载器</strong>会到指定的目录下查找要链接的动态库
+<ul>
+<li><strong>运行时库文件</strong>搜索路径</li>
+</ul>
+</li>
+</ul>
 <h4 id="静态库-vs-动态库">
   静态库 vs 动态库
   <a class="anchor" href="#%e9%9d%99%e6%80%81%e5%ba%93-vs-%e5%8a%a8%e6%80%81%e5%ba%93">#</a>
@@ -1120,7 +1194,7 @@ $ cpp hello.cpp &gt; hello.i
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/4e49f85a46bde0c89e17f421001fb1ea2d6ef289" title='Last modified by yewang | 2020-07-30' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/1a81c5607fd8b688a77978dbfc8b28227270b7e2" title='Last modified by yewang | 2020-07-30' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-30</span>
     </a>
@@ -1166,8 +1240,12 @@ $ cpp hello.cpp &gt; hello.i
               <ul>
                 <li><a href="#预处理-preprocess">预处理 (Preprocess)</a></li>
                 <li><a href="#编译-compilation">编译 (Compilation)</a></li>
+                <li><a href="#汇编-assembly">汇编 (Assembly)</a></li>
+                <li><a href="#链接-link">链接 (Link)</a></li>
               </ul>
             </li>
+            <li><a href="#编译错误">编译错误</a></li>
+            <li><a href="#搜索路径">搜索路径</a></li>
             <li><a href="#静态库-vs-动态库">静态库 vs 动态库</a></li>
             <li><a href="#编译时链接-vs-运行时链接">编译时链接 vs 运行时链接</a></li>
             <li><a href="#c-构建工具">C++ 构建工具</a>
