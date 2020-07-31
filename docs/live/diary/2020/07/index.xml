@@ -16,7 +16,7 @@
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/07/31/</guid>
       <description>2020 年 7 月 31 日（星期四） #  今日待办 #      编程 #  Go #  map 的 value 没有意义 #  使用 bool 或者 struct{} 节省空间
-// 推荐使用 bool // 后面判断的时候，不需要 if _, ok := m[k]; ok {}，而可以直接用 if m[k] {} m := make(map[string]bool) key := &amp;#34;a&amp;#34; if m[key] { }  wiki 系统 #  Requarks/wiki #  Wiki.js | A modern, lightweight and powerful wiki app built on Node.</description>
+// 推荐使用 bool // 后面判断的时候，不需要 if _, ok := m[k]; ok {}，而可以直接用 if m[k] {} m := make(map[string]bool) key := &amp;#34;a&amp;#34; if m[key] { } slice 分页 #  func Paginate(pageNum int, pageSize int, sliceLength int) (int, int) { start := pageNum * pageSize if start &amp;gt; sliceLength { start = sliceLength } end := start + pageSize if end &amp;gt; sliceLength { end = sliceLength } return start, end } start, end := Paginate(pageNum, pageSize, len(someSlice)) pagedSlice := someSlice[start:end]  wiki 系统 #  Requarks/wiki #  Wiki.</description>
     </item>
     
     <item>

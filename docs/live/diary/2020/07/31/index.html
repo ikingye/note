@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="2020 年 7 月 31 日（星期四） #  今日待办 #      编程 #  Go #  map 的 value 没有意义 #  使用 bool 或者 struct{} 节省空间
-// 推荐使用 bool // 后面判断的时候，不需要 if _, ok := m[k]; ok {}，而可以直接用 if m[k] {} m := make(map[string]bool) key := &#34;a&#34; if m[key] { }  wiki 系统 #  Requarks/wiki #  Wiki.js | A modern, lightweight and powerful wiki app built on Node.">
+// 推荐使用 bool // 后面判断的时候，不需要 if _, ok := m[k]; ok {}，而可以直接用 if m[k] {} m := make(map[string]bool) key := &#34;a&#34; if m[key] { } slice 分页 #  func Paginate(pageNum int, pageSize int, sliceLength int) (int, int) { start := pageNum * pageSize if start &gt; sliceLength { start = sliceLength } end := start &#43; pageSize if end &gt; sliceLength { end = sliceLength } return start, end } start, end := Paginate(pageNum, pageSize, len(someSlice)) pagedSlice := someSlice[start:end]  wiki 系统 #  Requarks/wiki #  Wiki.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-07-31" />
 <meta property="og:description" content="2020 年 7 月 31 日（星期四） #  今日待办 #      编程 #  Go #  map 的 value 没有意义 #  使用 bool 或者 struct{} 节省空间
-// 推荐使用 bool // 后面判断的时候，不需要 if _, ok := m[k]; ok {}，而可以直接用 if m[k] {} m := make(map[string]bool) key := &#34;a&#34; if m[key] { }  wiki 系统 #  Requarks/wiki #  Wiki.js | A modern, lightweight and powerful wiki app built on Node." />
+// 推荐使用 bool // 后面判断的时候，不需要 if _, ok := m[k]; ok {}，而可以直接用 if m[k] {} m := make(map[string]bool) key := &#34;a&#34; if m[key] { } slice 分页 #  func Paginate(pageNum int, pageSize int, sliceLength int) (int, int) { start := pageNum * pageSize if start &gt; sliceLength { start = sliceLength } end := start &#43; pageSize if end &gt; sliceLength { end = sliceLength } return start, end } start, end := Paginate(pageNum, pageSize, len(someSlice)) pagedSlice := someSlice[start:end]  wiki 系统 #  Requarks/wiki #  Wiki." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/31/" />
-<meta property="article:modified_time" content="2020-07-31T15:03:48+08:00" />
+<meta property="article:modified_time" content="2020-07-31T15:12:54+08:00" />
 <title>2020-07-31 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.87e1f301fe3e0771a3da132a1163560aa2cd5693794a6d5b03744451b647d1db.js" integrity="sha256-h&#43;HzAf4&#43;B3Gj2hMqEWNWCqLNVpN5Sm1bA3REUbZH0ds="></script>
+<script defer src="/note/en.search.min.1ed282dd84400bd1bd9f28f23155022c53c2d848ab966079908a07799ae9b8a6.js" integrity="sha256-HtKC3YRAC9G9nyjyMVUCLFPC2EirlmB5kIoHeZrpuKY="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -855,6 +855,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#go">Go</a>
           <ul>
             <li><a href="#map-的-value-没有意义">map 的 value 没有意义</a></li>
+            <li><a href="#slice-分页">slice 分页</a></li>
           </ul>
         </li>
         <li><a href="#wiki-系统">wiki 系统</a>
@@ -916,6 +917,27 @@ https://github.com/alex-shpak/hugo-book
 <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>] {
 
 }
+</code></pre></div><h4 id="slice-分页">
+  slice 分页
+  <a class="anchor" href="#slice-%e5%88%86%e9%a1%b5">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Paginate</span>(<span style="color:#a6e22e">pageNum</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">pageSize</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">sliceLength</span> <span style="color:#66d9ef">int</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>) {
+    <span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pageNum</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">pageSize</span>
+
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">start</span> &gt; <span style="color:#a6e22e">sliceLength</span> {
+        <span style="color:#a6e22e">start</span> = <span style="color:#a6e22e">sliceLength</span>
+    }
+
+    <span style="color:#a6e22e">end</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">pageSize</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">end</span> &gt; <span style="color:#a6e22e">sliceLength</span> {
+        <span style="color:#a6e22e">end</span> = <span style="color:#a6e22e">sliceLength</span>
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">start</span>, <span style="color:#a6e22e">end</span>
+}
+
+<span style="color:#a6e22e">start</span>, <span style="color:#a6e22e">end</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Paginate</span>(<span style="color:#a6e22e">pageNum</span>, <span style="color:#a6e22e">pageSize</span>, len(<span style="color:#a6e22e">someSlice</span>))
+<span style="color:#a6e22e">pagedSlice</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">someSlice</span>[<span style="color:#a6e22e">start</span>:<span style="color:#a6e22e">end</span>]
 </code></pre></div><hr>
 <h3 id="wiki-系统">
   wiki 系统
@@ -1019,7 +1041,7 @@ To connect to your database directly from outside the K8s cluster:
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/68b56516878aaebbef7f07cc1436b6712a42b034" title='Last modified by yewang | 2020-07-31' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/684f11ad72253a850949714d84128f1e599af268" title='Last modified by yewang | 2020-07-31' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-31</span>
     </a>
@@ -1062,6 +1084,7 @@ To connect to your database directly from outside the K8s cluster:
         <li><a href="#go">Go</a>
           <ul>
             <li><a href="#map-的-value-没有意义">map 的 value 没有意义</a></li>
+            <li><a href="#slice-分页">slice 分页</a></li>
           </ul>
         </li>
         <li><a href="#wiki-系统">wiki 系统</a>
