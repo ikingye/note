@@ -7,12 +7,14 @@
 <meta name="description" content="2020 年 6 月 8 日（星期一） #  今日待办 #      编程 #  git #  git clone --depth 1 #  什么时候用？
 git clone --depth 1 之后，想拉取所有
 git pull --unshallow 参考：
- Pull updates with git after cloned with &ndash;depth 1   CPU #  amd64 #  386 #  arm64 #  arm_v7 #  arm_v6 #  arm_v5 #  mips64le #  mips64 #  mipsle #  mips #   操作系统内核 #  linux #  freebsd #  darwin #  windows #  ios #  android #  npc_sdk #  npc_syno #   linux #  top #  排序">
+ Pull updates with git after cloned with &ndash;depth 1   CPU #  指令集架构
+ amd64 386 arm_v7 arm_v6 arm_v5 mips64le mips64 mipsle mips  x86 #  x86 泛指一系列英特尔公司用于开发处理器的指令集架构，这类处理器最早为 1978 年面市的 Intel 8086 CPU。">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-06-08" />
 <meta property="og:description" content="2020 年 6 月 8 日（星期一） #  今日待办 #      编程 #  git #  git clone --depth 1 #  什么时候用？
 git clone --depth 1 之后，想拉取所有
 git pull --unshallow 参考：
- Pull updates with git after cloned with &ndash;depth 1   CPU #  amd64 #  386 #  arm64 #  arm_v7 #  arm_v6 #  arm_v5 #  mips64le #  mips64 #  mipsle #  mips #   操作系统内核 #  linux #  freebsd #  darwin #  windows #  ios #  android #  npc_sdk #  npc_syno #   linux #  top #  排序" />
+ Pull updates with git after cloned with &ndash;depth 1   CPU #  指令集架构
+ amd64 386 arm_v7 arm_v6 arm_v5 mips64le mips64 mipsle mips  x86 #  x86 泛指一系列英特尔公司用于开发处理器的指令集架构，这类处理器最早为 1978 年面市的 Intel 8086 CPU。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/06/08/" />
 <meta property="article:modified_time" content="2020-06-15T17:02:59+08:00" />
@@ -20,7 +22,7 @@ git pull --unshallow 参考：
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.1ed282dd84400bd1bd9f28f23155022c53c2d848ab966079908a07799ae9b8a6.js" integrity="sha256-HtKC3YRAC9G9nyjyMVUCLFPC2EirlmB5kIoHeZrpuKY="></script>
+<script defer src="/note/en.search.min.8eae1fde13e65627639cf442f22d2e396d6e3b5441be211a04f4ec269c9cc133.js" integrity="sha256-jq4f3hPmVidjnPRC8i0uOW1uO1RBviEaBPTsJpycwTM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1107,16 +1109,15 @@ https://github.com/alex-shpak/hugo-book
         </li>
         <li><a href="#cpu">CPU</a>
           <ul>
-            <li><a href="#amd64">amd64</a></li>
-            <li><a href="#386">386</a></li>
-            <li><a href="#arm64">arm64</a></li>
-            <li><a href="#arm_v7">arm_v7</a></li>
-            <li><a href="#arm_v6">arm_v6</a></li>
-            <li><a href="#arm_v5">arm_v5</a></li>
-            <li><a href="#mips64le">mips64le</a></li>
-            <li><a href="#mips64">mips64</a></li>
-            <li><a href="#mipsle">mipsle</a></li>
-            <li><a href="#mips">mips</a></li>
+            <li><a href="#x86httpswwwwikiwandcomzh-cnx86"><a href="https://www.wikiwand.com/zh-cn/X86">x86</a></a>
+              <ul>
+                <li><a href="#ia-32">IA-32</a></li>
+                <li><a href="#x86-64--x64">x86-64 / x64</a></li>
+                <li><a href="#ia-64">IA-64</a></li>
+              </ul>
+            </li>
+            <li><a href="#armhttpswwwwikiwandcomzh-cnarme69eb6e6a78b"><a href="https://www.wikiwand.com/zh-cn/ARM%E6%9E%B6%E6%A7%8B">ARM</a></a></li>
+            <li><a href="#mipshttpswwwwikiwandcomzh-cnmipse69eb6e6a78b"><a href="https://www.wikiwand.com/zh-cn/MIPS%E6%9E%B6%E6%A7%8B">MIPS</a></a></li>
           </ul>
         </li>
         <li><a href="#操作系统内核">操作系统内核</a>
@@ -1193,46 +1194,70 @@ https://github.com/alex-shpak/hugo-book
   CPU
   <a class="anchor" href="#cpu">#</a>
 </h3>
-<h4 id="amd64">
-  amd64
-  <a class="anchor" href="#amd64">#</a>
+<p><a href="https://www.wikiwand.com/zh-cn/%E6%8C%87%E4%BB%A4%E9%9B%86%E6%9E%B6%E6%A7%8B">指令集架构</a></p>
+<ul>
+<li>amd64</li>
+<li>386</li>
+<li>arm_v7</li>
+<li>arm_v6</li>
+<li>arm_v5</li>
+<li>mips64le</li>
+<li>mips64</li>
+<li>mipsle</li>
+<li>mips</li>
+</ul>
+<h4 id="x86httpswwwwikiwandcomzh-cnx86">
+  <a href="https://www.wikiwand.com/zh-cn/X86">x86</a>
+  <a class="anchor" href="#x86httpswwwwikiwandcomzh-cnx86">#</a>
 </h4>
-<h4 id="386">
-  386
-  <a class="anchor" href="#386">#</a>
+<p>x86 泛指一系列英特尔公司用于开发处理器的指令集架构，这类处理器最早为 1978 年面市的 <code>Intel 8086</code> CPU。</p>
+<p>该系列较早期的处理器名称是以数字来表示 80x86。由于以 <code>86</code> 作为结尾，包括 Intel 8086、80186、80286、80386 以及 80486，因此其架构被称为 <code>x86</code>。</p>
+<p>由于数字并不能作为<a href="https://www.wikiwand.com/zh-cn/%E5%95%86%E6%A0%87">注册商标</a>，因此 Intel 及其竞争者均在新一代处理器使用可注册的名称，如 Pentium，来描述 x86 架构下的处理器产品。</p>
+<h5 id="ia-32">
+  IA-32
+  <a class="anchor" href="#ia-32">#</a>
+</h5>
+<p>Intel Architecture, 32-bit</p>
+<p>一般情形下指代 32 位的架构</p>
+<h5 id="x86-64--x64">
+  x86-64 / x64
+  <a class="anchor" href="#x86-64--x64">#</a>
+</h5>
+<ul>
+<li>AMD64
+<ul>
+<li>AMD</li>
+</ul>
+</li>
+<li>Intel64
+<ul>
+<li>Intel</li>
+</ul>
+</li>
+</ul>
+<h5 id="ia-64">
+  IA-64
+  <a class="anchor" href="#ia-64">#</a>
+</h5>
+<p>英特尔早在 1990 年代就与惠普合作提出了一种用在安腾系列处理器中的独立的 64 位架构，这种架构被称为 IA-64。</p>
+<p>IA-64 是一种崭新的系统，和 x86 架构完全没有相似性；不应该把它与 x86-64 或 x64 弄混。</p>
+<hr>
+<h4 id="armhttpswwwwikiwandcomzh-cnarme69eb6e6a78b">
+  <a href="https://www.wikiwand.com/zh-cn/ARM%E6%9E%B6%E6%A7%8B">ARM</a>
+  <a class="anchor" href="#armhttpswwwwikiwandcomzh-cnarme69eb6e6a78b">#</a>
 </h4>
-<h4 id="arm64">
-  arm64
-  <a class="anchor" href="#arm64">#</a>
+<p>可配置大小端序（默认<strong>小端</strong>序）</p>
+<hr>
+<h4 id="mipshttpswwwwikiwandcomzh-cnmipse69eb6e6a78b">
+  <a href="https://www.wikiwand.com/zh-cn/MIPS%E6%9E%B6%E6%A7%8B">MIPS</a>
+  <a class="anchor" href="#mipshttpswwwwikiwandcomzh-cnmipse69eb6e6a78b">#</a>
 </h4>
-<h4 id="arm_v7">
-  arm_v7
-  <a class="anchor" href="#arm_v7">#</a>
-</h4>
-<h4 id="arm_v6">
-  arm_v6
-  <a class="anchor" href="#arm_v6">#</a>
-</h4>
-<h4 id="arm_v5">
-  arm_v5
-  <a class="anchor" href="#arm_v5">#</a>
-</h4>
-<h4 id="mips64le">
-  mips64le
-  <a class="anchor" href="#mips64le">#</a>
-</h4>
-<h4 id="mips64">
-  mips64
-  <a class="anchor" href="#mips64">#</a>
-</h4>
-<h4 id="mipsle">
-  mipsle
-  <a class="anchor" href="#mipsle">#</a>
-</h4>
-<h4 id="mips">
-  mips
-  <a class="anchor" href="#mips">#</a>
-</h4>
+<p>全称：<code>Microprocessor without Interlocked Pipeline Stages</code> 或 <code>Millions of Instructions Per Second</code></p>
+<p>是一种采取<a href="https://www.wikiwand.com/zh-cn/%E7%B2%BE%E7%B0%A1%E6%8C%87%E4%BB%A4%E9%9B%86">精简指令集</a>（RISC）的电子计算机中央处理器架构</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/47389187">x86/x64 的处理器和 32/64 位的系统有什么关系？</a></li>
+</ul>
 <hr>
 <h3 id="操作系统内核">
   操作系统内核
@@ -1388,16 +1413,15 @@ https://github.com/alex-shpak/hugo-book
         </li>
         <li><a href="#cpu">CPU</a>
           <ul>
-            <li><a href="#amd64">amd64</a></li>
-            <li><a href="#386">386</a></li>
-            <li><a href="#arm64">arm64</a></li>
-            <li><a href="#arm_v7">arm_v7</a></li>
-            <li><a href="#arm_v6">arm_v6</a></li>
-            <li><a href="#arm_v5">arm_v5</a></li>
-            <li><a href="#mips64le">mips64le</a></li>
-            <li><a href="#mips64">mips64</a></li>
-            <li><a href="#mipsle">mipsle</a></li>
-            <li><a href="#mips">mips</a></li>
+            <li><a href="#x86httpswwwwikiwandcomzh-cnx86"><a href="https://www.wikiwand.com/zh-cn/X86">x86</a></a>
+              <ul>
+                <li><a href="#ia-32">IA-32</a></li>
+                <li><a href="#x86-64--x64">x86-64 / x64</a></li>
+                <li><a href="#ia-64">IA-64</a></li>
+              </ul>
+            </li>
+            <li><a href="#armhttpswwwwikiwandcomzh-cnarme69eb6e6a78b"><a href="https://www.wikiwand.com/zh-cn/ARM%E6%9E%B6%E6%A7%8B">ARM</a></a></li>
+            <li><a href="#mipshttpswwwwikiwandcomzh-cnmipse69eb6e6a78b"><a href="https://www.wikiwand.com/zh-cn/MIPS%E6%9E%B6%E6%A7%8B">MIPS</a></a></li>
           </ul>
         </li>
         <li><a href="#操作系统内核">操作系统内核</a>

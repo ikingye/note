@@ -951,7 +951,8 @@ public class DataProcessor { private final DbManager manager; private final Calc
       <description>2020 年 6 月 8 日（星期一） #  今日待办 #      编程 #  git #  git clone --depth 1 #  什么时候用？
 git clone --depth 1 之后，想拉取所有
 git pull --unshallow 参考：
- Pull updates with git after cloned with &amp;ndash;depth 1   CPU #  amd64 #  386 #  arm64 #  arm_v7 #  arm_v6 #  arm_v5 #  mips64le #  mips64 #  mipsle #  mips #   操作系统内核 #  linux #  freebsd #  darwin #  windows #  ios #  android #  npc_sdk #  npc_syno #   linux #  top #  排序</description>
+ Pull updates with git after cloned with &amp;ndash;depth 1   CPU #  指令集架构
+ amd64 386 arm_v7 arm_v6 arm_v5 mips64le mips64 mipsle mips  x86 #  x86 泛指一系列英特尔公司用于开发处理器的指令集架构，这类处理器最早为 1978 年面市的 Intel 8086 CPU。</description>
     </item>
     
     <item>

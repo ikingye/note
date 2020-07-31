@@ -11,12 +11,12 @@
 // 推荐使用 bool // 后面判断的时候，不需要 if _, ok := m[k]; ok {}，而可以直接用 if m[k] {} m := make(map[string]bool) key := &#34;a&#34; if m[key] { } slice 分页 #  func Paginate(pageNum int, pageSize int, sliceLength int) (int, int) { start := pageNum * pageSize if start &gt; sliceLength { start = sliceLength } end := start &#43; pageSize if end &gt; sliceLength { end = sliceLength } return start, end } start, end := Paginate(pageNum, pageSize, len(someSlice)) pagedSlice := someSlice[start:end]  wiki 系统 #  Requarks/wiki #  Wiki." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/07/31/" />
-<meta property="article:modified_time" content="2020-07-31T15:12:54+08:00" />
+<meta property="article:modified_time" content="2020-07-31T17:15:16+08:00" />
 <title>2020-07-31 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.1ed282dd84400bd1bd9f28f23155022c53c2d848ab966079908a07799ae9b8a6.js" integrity="sha256-HtKC3YRAC9G9nyjyMVUCLFPC2EirlmB5kIoHeZrpuKY="></script>
+<script defer src="/note/en.search.min.8eae1fde13e65627639cf442f22d2e396d6e3b5441be211a04f4ec269c9cc133.js" integrity="sha256-jq4f3hPmVidjnPRC8i0uOW1uO1RBviEaBPTsJpycwTM="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1031,7 +1031,8 @@ To connect to your database directly from outside the K8s cluster:
     kubectl port-forward svc/mysql-1596179301 <span style="color:#ae81ff">3306</span>
 
     mysql -h <span style="color:#e6db74">${</span>MYSQL_HOST<span style="color:#e6db74">}</span> -P<span style="color:#e6db74">${</span>MYSQL_PORT<span style="color:#e6db74">}</span> -u root -p<span style="color:#e6db74">${</span>MYSQL_ROOT_PASSWORD<span style="color:#e6db74">}</span>
-</code></pre></div></article>
+</code></pre></div><hr>
+</article>
  
       
 
@@ -1041,7 +1042,7 @@ To connect to your database directly from outside the K8s cluster:
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/684f11ad72253a850949714d84128f1e599af268" title='Last modified by yewang | 2020-07-31' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/ff765e9d54480574daf1c25549bf156be5de20c3" title='Last modified by yewang | 2020-07-31' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-31</span>
     </a>
