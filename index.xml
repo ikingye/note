@@ -1231,7 +1231,10 @@ SELinux #  The SELinux stands for Security-Enhanced Linux where it is a linux ke
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/08/01/</guid>
-      <description>2020 年 8 月 1 日（星期六） #  今日待办 #      编程 #  Spring #   Spring Spring MVC Spring Boot Spring Cloud  </description>
+      <description>2020 年 8 月 1 日（星期六） #  今日待办 #      编程 #  Spring #   Spring Spring MVC Spring Framework Spring Boot Spring Cloud   控制反转 #  控制反转（Inversion of Control，缩写为 IoC）
+控制反转的常见方式：
+ 依赖注入（Dependency Injection，简称 DI） 依赖查找（Dependency Lookup)   敏捷软件开发 #  敏捷开发的方式：
+ 从 1991 年开始的迅速应用程序开发 从 1994 年开始的统一进程与动态系统开发法（DSDM） 从 1995 年开始的 Scrum 从 1996 年开始的水晶清透法 从 1996 年开始的极限编程 (Extreme programming，缩写为 XP) 从 1997 年开始的功能驱动开发  敏捷软件开发价值观 #   个体和互动：高于流程和工具 工作的软件：高于详尽的文档 客户合作：高于合同谈判 响应变化：高于遵循计划   Redis #  Redis 数据结构 #  zset #  参考：</description>
     </item>
     
     <item>
