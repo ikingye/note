@@ -16,7 +16,7 @@
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.2d19676e29b23580979d4d5a7c3ed8c695ec69550b26d3674536fedb5481509b.js" integrity="sha256-LRlnbimyNYCXnU1afD7YxpXsaVULJtNnRTb&#43;21SBUJs="></script>
+<script defer src="/note/en.search.min.dd6d3205d895ec924a840e6cb3adba454727e3db13282a1d91c1ea354a668ef6.js" integrity="sha256-3W0yBdiV7JJKhA5ss626RUcn49sTKCodkcHqNUpmjvY="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -899,7 +899,28 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#零值">零值</a></li>
             <li><a href="#循环变量取地址错误">循环变量取地址错误</a></li>
             <li><a href="#循环变量-goroutines-错误">循环变量 goroutines 错误</a></li>
-            <li><a href="#逃逸分析">逃逸分析</a></li>
+            <li><a href="#逃逸分析">逃逸分析</a>
+              <ul>
+                <li><a href="#是否发生逃逸总结">是否发生逃逸总结</a></li>
+                <li><a href="#分析方法">分析方法</a>
+                  <ul>
+                    <li><a href="#go-run--gcflags--m--l"><code>go run -gcflags &quot;-m -l&quot;</code></a></li>
+                    <li><a href="#go-tool-compile--s"><code>go tool compile -S</code></a></li>
+                  </ul>
+                </li>
+                <li><a href="#注意点">注意点</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#java">Java</a>
+          <ul>
+            <li><a href="#逃逸分析-1">逃逸分析</a>
+              <ul>
+                <li><a href="#分析方法-1">分析方法</a></li>
+                <li><a href="#注意点-1">注意点</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -1099,6 +1120,121 @@ https://github.com/alex-shpak/hugo-book
   逃逸分析
   <a class="anchor" href="#%e9%80%83%e9%80%b8%e5%88%86%e6%9e%90">#</a>
 </h4>
+<p>golang 的逃逸分析是在<strong>编译期</strong>完成的</p>
+<h5 id="是否发生逃逸总结">
+  是否发生逃逸总结
+  <a class="anchor" href="#%e6%98%af%e5%90%a6%e5%8f%91%e7%94%9f%e9%80%83%e9%80%b8%e6%80%bb%e7%bb%93">#</a>
+</h5>
+<ul>
+<li>必然发生逃逸
+<ul>
+<li>在某个函数中 new 或字面量创建出的变量，将其<strong>指针作为函数返回值</strong>，则该变量一定发生逃逸</li>
+<li>被已经逃逸的变量引用的指针，一定发生逃逸
+<ul>
+<li><code>interface{}</code> 类型的参数发生逃逸</li>
+<li><code>Printf</code> 的参数变量发生逃逸</li>
+</ul>
+</li>
+<li>被指针类型的 slice、map 和 chan 引用的指针一定发生逃逸</li>
+</ul>
+</li>
+<li>必然<strong>不会</strong>逃逸的情况：
+<ul>
+<li>指针被未发生逃逸的变量引用；</li>
+<li>仅仅在函数内对变量做取址操作，而未将指针传出；</li>
+</ul>
+</li>
+<li>有一些情况可能发生逃逸，也可能不会发生逃逸：
+<ul>
+<li>将指针作为入参传给别的函数；这里还是要看指针在被传入的函数中的处理过程，如果发生了上边的三种情况，则会逃逸；否则不会逃逸；</li>
+</ul>
+</li>
+</ul>
+<h5 id="分析方法">
+  分析方法
+  <a class="anchor" href="#%e5%88%86%e6%9e%90%e6%96%b9%e6%b3%95">#</a>
+</h5>
+<h6 id="go-run--gcflags--m--l">
+  <code>go run -gcflags &quot;-m -l&quot;</code>
+  <a class="anchor" href="#go-run--gcflags--m--l">#</a>
+</h6>
+<ul>
+<li><code>moved to heap:xxx</code>
+<ul>
+<li>当 xxx 变量为值类型时</li>
+</ul>
+</li>
+<li><code>xxx escapes to heap</code>
+<ul>
+<li>当 xxx 变量类型为指针时</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># -m 打印逃逸分析信息，-l 禁止内联编译</span>
+$ go run -gcflags <span style="color:#e6db74">&#34;-m -l&#34;</span> internal/test1/main.go
+<span style="color:#75715e"># command-line-arguments</span>
+internal/test1/main.go:4:2: moved to heap: a
+internal/test1/main.go:5:11: main make<span style="color:#f92672">([]</span>*int, 1<span style="color:#f92672">)</span> does not escape
+</code></pre></div><h6 id="go-tool-compile--s">
+  <code>go tool compile -S</code>
+  <a class="anchor" href="#go-tool-compile--s">#</a>
+</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 汇编代码中搜 runtime.newobject 指令，该指令用于生成堆对象</span>
+$ go tool compile -S internal/test1/main.go | grep newobject
+0x0028 <span style="color:#ae81ff">00040</span> <span style="color:#f92672">(</span>internal/test1/main.go:4<span style="color:#f92672">)</span> CALL    runtime.newobject<span style="color:#f92672">(</span>SB<span style="color:#f92672">)</span>
+</code></pre></div><hr>
+<h5 id="注意点">
+  注意点
+  <a class="anchor" href="#%e6%b3%a8%e6%84%8f%e7%82%b9">#</a>
+</h5>
+<p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/91559562">golang 逃逸分析详解</a></li>
+<li><a href="https://stackoverflow.com/questions/41178729/why-passing-pointers-to-channel-is-slower">Why passing pointers to channel is slower</a></li>
+</ul>
+<hr>
+<h3 id="java">
+  Java
+  <a class="anchor" href="#java">#</a>
+</h3>
+<h4 id="逃逸分析-1">
+  逃逸分析
+  <a class="anchor" href="#%e9%80%83%e9%80%b8%e5%88%86%e6%9e%90-1">#</a>
+</h4>
+<p>JVM 的逃逸分析会在<strong>运行时</strong>检测当前方法栈帧内 new 出来的对象的引用是否被传出当前栈帧，</p>
+<ul>
+<li>传出则发生逃逸</li>
+<li>未传出则未发生逃逸</li>
+</ul>
+<p>对于未发生逃逸的变量，则直接在栈上分配内存。因为栈上内存由在函数返回时自动回收，因此能减小 gc 压力。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
+    List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+    a<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span> <span style="color:#75715e">// a 未发生逃逸，因此在栈上分配
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">test1</span><span style="color:#f92672">(){</span>
+    List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+    a<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> a  <span style="color:#75715e">//a 发生逃逸，因此分配在堆上
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div><h5 id="分析方法-1">
+  分析方法
+  <a class="anchor" href="#%e5%88%86%e6%9e%90%e6%96%b9%e6%b3%95-1">#</a>
+</h5>
+<p>逃逸分析的 JVM 参数如下：</p>
+<ul>
+<li>开启逃逸分析：<code>-XX:+DoEscapeAnalysis</code></li>
+<li>关闭逃逸分析：<code>-XX:-DoEscapeAnalysis</code></li>
+<li>显示分析结果：<code>-XX:+PrintEscapeAnalysis</code></li>
+</ul>
+<p>逃逸分析技术在 Java SE 6u23+ 开始支持，并默认设置为启用状态，可以不用额外加这个参数。</p>
+<h5 id="注意点-1">
+  注意点
+  <a class="anchor" href="#%e6%b3%a8%e6%84%8f%e7%82%b9-1">#</a>
+</h5>
+<ul>
+<li>尽可能的控制变量的作用范围了，变量范围越小越好，让虚拟机尽可能有优化的空间</li>
+</ul>
 </article>
  
       
@@ -1155,7 +1291,28 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#零值">零值</a></li>
             <li><a href="#循环变量取地址错误">循环变量取地址错误</a></li>
             <li><a href="#循环变量-goroutines-错误">循环变量 goroutines 错误</a></li>
-            <li><a href="#逃逸分析">逃逸分析</a></li>
+            <li><a href="#逃逸分析">逃逸分析</a>
+              <ul>
+                <li><a href="#是否发生逃逸总结">是否发生逃逸总结</a></li>
+                <li><a href="#分析方法">分析方法</a>
+                  <ul>
+                    <li><a href="#go-run--gcflags--m--l"><code>go run -gcflags &quot;-m -l&quot;</code></a></li>
+                    <li><a href="#go-tool-compile--s"><code>go tool compile -S</code></a></li>
+                  </ul>
+                </li>
+                <li><a href="#注意点">注意点</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#java">Java</a>
+          <ul>
+            <li><a href="#逃逸分析-1">逃逸分析</a>
+              <ul>
+                <li><a href="#分析方法-1">分析方法</a></li>
+                <li><a href="#注意点-1">注意点</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>

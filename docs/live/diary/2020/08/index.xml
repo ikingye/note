@@ -15,7 +15,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/08/03/</guid>
-      <description>2020 年 8 月 3 日（星期一） #  今日待办 #      编程 #  </description>
+      <description>2020 年 8 月 3 日（星期一） #  今日待办 #      编程 #  Python #  setuptools #  字典 #  float 作为 key #  参考：
+ Why can a floating point dictionary key overwrite an integer key with the same value?   Java #  Synchronized #   AOP #  Spring AOP #  运行时进行织入
+AspectJ #  编译时织入， 当然 AspectJ 还提供了后编译器织入和类加载期织入</description>
     </item>
     
     <item>
