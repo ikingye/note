@@ -1158,8 +1158,7 @@ kernel-devel 是用做内核一般开发的，比如编写内核模块，原则�
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/08/03/</guid>
       <description>2020 年 8 月 3 日（星期一） #  今日待办 #      编程 #  Python #  setuptools #  字典 #  float 作为 key #  参考：
- Why can a floating point dictionary key overwrite an integer key with the same value?   Java #  Synchronized #   AOP #  Spring AOP #  运行时进行织入
-AspectJ #  编译时织入， 当然 AspectJ 还提供了后编译器织入和类加载期织入</description>
+ Why can a floating point dictionary key overwrite an integer key with the same value?  下划线命名方式 #   example：前后无下划线表示该变量、函数、成员或方法（以下简称内容）公有，可以以任何形式访问。 _example：前置单下划线表示该内容受保护。如果是变量或者函数，在 from a_instance import * 这种情况下，不会被导入。如果是成员或者方法，仅允许类内部使用及该类的子类继承。需要注意的是，受保护的内容在完整明确的引用下，仍然可以直接使用，例如 a_instance._a_method()。 __example：前置双下划线表示该内容私有，无法以任何方式被外部直接使用。类的私有成员及方法无法被子类继承，但对于本类来说，仍可以用 a_instance._ClassName__MethodName() 来调用。 __example__：前后双下划线的命名方式被 Python 用于命名各类 Magic 方法，具体内容请自行查询。此命名方式并没有被解释器禁止，但是 Python 官方建议最好避免这样做。 example_：后置单下划线，用于避免和 Python 关键词冲突，无特殊含义，例如：int_。  参考：</description>
     </item>
     
     <item>
