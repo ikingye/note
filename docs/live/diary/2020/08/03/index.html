@@ -11,12 +11,12 @@
  Why can a floating point dictionary key overwrite an integer key with the same value?  下划线命名方式 #   example：前后无下划线表示该变量、函数、成员或方法（以下简称内容）公有，可以以任何形式访问。 _example：前置单下划线表示该内容受保护。如果是变量或者函数，在 from a_instance import * 这种情况下，不会被导入。如果是成员或者方法，仅允许类内部使用及该类的子类继承。需要注意的是，受保护的内容在完整明确的引用下，仍然可以直接使用，例如 a_instance._a_method()。 __example：前置双下划线表示该内容私有，无法以任何方式被外部直接使用。类的私有成员及方法无法被子类继承，但对于本类来说，仍可以用 a_instance._ClassName__MethodName() 来调用。 __example__：前后双下划线的命名方式被 Python 用于命名各类 Magic 方法，具体内容请自行查询。此命名方式并没有被解释器禁止，但是 Python 官方建议最好避免这样做。 example_：后置单下划线，用于避免和 Python 关键词冲突，无特殊含义，例如：int_。  参考：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/08/03/" />
-<meta property="article:modified_time" content="2020-08-03T17:09:16+08:00" />
+<meta property="article:modified_time" content="2020-08-03T17:37:26+08:00" />
 <title>2020-08-03 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.f60b8eb6df22ddbd00f7deceaea09e53430fef0294d795003b78e73a81ff1440.js" integrity="sha256-9guOtt8i3b0A997OrqCeU0MP7wKU15UAO3jnOoH/FEA="></script>
+<script defer src="/note/en.search.min.846a6b78f888b0893908246a2d213d98b8dbd98623f09e084584371556947ffc.js" integrity="sha256-hGprePiIsIk5CCRqLSE9mLjb2YYj8J4IRYQ3FVaUf/w="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -692,6 +692,14 @@ https://github.com/alex-shpak/hugo-book
               </ul>
             </li>
             <li><a href="#composer">Composer</a></li>
+            <li><a href="#laravel">Laravel</a>
+              <ul>
+                <li><a href="#laravel-nova">Laravel Nova</a></li>
+                <li><a href="#laravel-forge">Laravel Forge</a></li>
+                <li><a href="#laravel-vapor">Laravel Vapor</a></li>
+                <li><a href="#laravel-envoy">Laravel Envoy</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#百度-ai-接入">百度 AI 接入</a></li>
@@ -887,6 +895,32 @@ composer config -g repo.packagist composer https://packagist.phpcomposer.com
 <span style="color:#75715e"># composer 升级</span>
 composer selfupdate
 </code></pre></div><hr>
+<h4 id="laravel">
+  Laravel
+  <a class="anchor" href="#laravel">#</a>
+</h4>
+<h5 id="laravel-nova">
+  Laravel Nova
+  <a class="anchor" href="#laravel-nova">#</a>
+</h5>
+<p>Laravel Nova is a beautifully designed administration panel for Laravel.</p>
+<h5 id="laravel-forge">
+  Laravel Forge
+  <a class="anchor" href="#laravel-forge">#</a>
+</h5>
+<p>Laravel Hosting &amp; Instant PHP Servers</p>
+<h5 id="laravel-vapor">
+  Laravel Vapor
+  <a class="anchor" href="#laravel-vapor">#</a>
+</h5>
+<p>Laravel Vapor 是由 AWS 驱动，可以对 Laravel 程序进行无服务器部署的一项服务。
+使用 Vapor 部署你的 Laravel 项目你会深深的爱上这种简便快捷的无服务。</p>
+<h5 id="laravel-envoy">
+  Laravel Envoy
+  <a class="anchor" href="#laravel-envoy">#</a>
+</h5>
+<p>优雅的 SSH 远程任务执行工具</p>
+<hr>
 <h3 id="百度-ai-接入">
   百度 AI 接入
   <a class="anchor" href="#%e7%99%be%e5%ba%a6-ai-%e6%8e%a5%e5%85%a5">#</a>
@@ -902,7 +936,7 @@ composer selfupdate
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/8a9081b600a9335d933fef25eddd986ed65e670b" title='Last modified by yewang | 2020-08-03' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/3c319d05e2833ab6f74e98915c6a064a68da3924" title='Last modified by yewang | 2020-08-03' target="_blank" rel="noopener">
       <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-08-03</span>
     </a>
@@ -975,6 +1009,14 @@ composer selfupdate
               </ul>
             </li>
             <li><a href="#composer">Composer</a></li>
+            <li><a href="#laravel">Laravel</a>
+              <ul>
+                <li><a href="#laravel-nova">Laravel Nova</a></li>
+                <li><a href="#laravel-forge">Laravel Forge</a></li>
+                <li><a href="#laravel-vapor">Laravel Vapor</a></li>
+                <li><a href="#laravel-envoy">Laravel Envoy</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#百度-ai-接入">百度 AI 接入</a></li>
