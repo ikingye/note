@@ -1130,7 +1130,7 @@ $ dmesg |grep -i virtual [0.000000] Booting paravirtualized kernel on Xen HVM [1
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/08/04/</guid>
-      <description>2020 年 8 月 4 日（星期二） #  今日待办 #      编程 #  Go #  Echo 协议 #  TCP Based Echo Service #  One echo service is defined as a connection based application on TCP. A server listens for TCP connections on TCP port 7. Once a connection is established any data received is sent back. This continues until the calling user terminates the connection.</description>
+      <description>2020 年 8 月 4 日（星期二） #  今日待办 #      编程 #  Go #  go 三个点 (three dots) #   函数声明：可变数量的函数参数 (func multiParam(args ...string)) 函数调用：切片直接传入到可变参数 (multiParam(names...) 或 append(stooges, lang...)) 数组：个数推测 (arr := [...]int{1, 2, 3}) go 命令: go test ./... 或 go get -v github.com/smallnest/rpcx/...  测试当前目录及其子目录中的所有软件包     Python #  编译打包成可执行文件 #  # 安装 pyinstaller pip install pyinstaller # 打包 pyinstaller -F test.</description>
     </item>
     
     <item>
