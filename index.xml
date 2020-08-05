@@ -409,6 +409,16 @@ IP QoS 是指 IP 网络的一种能力，即在跨越多种底层网络技术（
     </item>
     
     <item>
+      <title>Jupyter</title>
+      <link>https://ikingye.github.io/note/docs/study/docs/note/jupyter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/study/docs/note/jupyter/</guid>
+      <description>Jupyter #  Jupyter kernel #  Go #  gopherdata/gophernotes #  $ go get -u github.com/gopherdata/gophernotes $ mkdir -p ~/Library/Jupyter/kernels/gophernotes $ cp $GOPATH/src/github.com/gopherdata/gophernotes/kernel/* ~/Library/Jupyter/kernels/gophernotes  Java #  SpencerPark/IJava #  A Jupyter kernel for executing Java code.
+ PHP #  Litipk/Jupyter-PHP #   要安装 zmq  php72 -m | grep   phpto72 php jupyter-php-installer.phar install -vvv  使用 -vvv 查看详细信息     编辑器 #  nteract/nteract #  The interactive computing suite for you!</description>
+    </item>
+    
+    <item>
       <title>教程</title>
       <link>https://ikingye.github.io/note/docs/study/domain/operate/tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1065,6 +1075,17 @@ Packet Sender #  dannagle/PacketSender TCP, UDP, SSL 发包工具 https://packet
 图片在右侧 #  &amp;lt;img align=&amp;#34;right&amp;#34; src=&amp;#34;https://demo.png&amp;#34;/&amp;gt; 行首空格 #  需要借助 HTML 转义字符在行首添加空格来实现，
  &amp;amp;ensp; 代表半角空格， &amp;amp;emsp; 代表全角空格。  参考：
  关于 Markdown 的一些奇技淫巧  </description>
+    </item>
+    
+    <item>
+      <title>2020-08-05</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/08/05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/08/05/</guid>
+      <description>2020 年 8 月 5 日（星期三） #  今日待办 #      编程 #  Service Worker #  A service worker is an event-driven worker registered against an origin and a path.
+Service workers 本质上充当 Web 应用程序与浏览器之间的代理服务器，也可以在网络可用时作为浏览器和网络间的代理。
+The Worker interface of the Web Workers API represents a background task that can be created via script, which can send messages back to its creator. Creating a worker is done by calling the Worker(&amp;ldquo;path/to/worker/script&amp;rdquo;) constructor.</description>
     </item>
     
     <item>
