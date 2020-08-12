@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2020 年 8 月 11 日（星期二） #  今日待办 #      编程 #  Go #  Kubernetes #  endpoint #  若 service 定义中没有 selector 字段，service 被创建时，endpoint controller 不会自动创建 endpoint。
+参考：
+ What is an &lsquo;endpoint&rsquo; in Kubernetes?  securityContext #  kubectl 获取资源的过程 #  $ k get pod -v=9 I0811 19:40:52.668217 26685 loader.go:375] Config loaded from file: /etc/kubernetes/admin.conf I0811 19:40:52.696596 26685 round_trippers.go:423] curl -k -v -XGET -H &#34;Accept: application/json;as=Table;v=v1;g=meta.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2020-08-11" />
+<meta property="og:description" content="2020 年 8 月 11 日（星期二） #  今日待办 #      编程 #  Go #  Kubernetes #  endpoint #  若 service 定义中没有 selector 字段，service 被创建时，endpoint controller 不会自动创建 endpoint。
+参考：
+ What is an &lsquo;endpoint&rsquo; in Kubernetes?  securityContext #  kubectl 获取资源的过程 #  $ k get pod -v=9 I0811 19:40:52.668217 26685 loader.go:375] Config loaded from file: /etc/kubernetes/admin.conf I0811 19:40:52.696596 26685 round_trippers.go:423] curl -k -v -XGET -H &#34;Accept: application/json;as=Table;v=v1;g=meta." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/08/11/" />
+
+<title>2020-08-11 | 叶王笔记</title>
+<link rel="manifest" href="/note/manifest.json">
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
+<script defer src="/note/en.search.min.7d3c1ab07e6344fbd2087ca1c17841f00f57fbfc3962c73950193e8b66da09a2.js" integrity="sha256-fTwasH5jRPvSCHyhwXhB8A9X&#43;/w5Ysc5UBk&#43;i2baCaI="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/note"><span>叶王笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">
+    Github  <img src="https://img.shields.io/github/followers/ikingye.svg?label=%E5%85%B3%E6%B3%A8">
+  </a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">
+    微博  <img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_16x16.png">
+  </a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+  <li><a href="//shang.qq.com/wpa/qunwpa?idkey=04022778c1def4c4938c6d1e1880f6db3abf67bbfccc9ff74baa4fa9d73c377f&source_id=1_40001" target="_blank" rel="noopener noreferrer">Q 群</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/natural/" class="">第一部分 自然科学</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/natural/math/" class="collapsed ">1.2 数学</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/natural/computer/" class="">1.5 计算机</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/" class="">第二部分 人文科学</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/language/" class="collapsed ">2.2 语言</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/music/" class="collapsed ">2.5 音乐</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/humanities/movie/" class="collapsed ">2.7 电影</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/" class="">第三部分 社会科学</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/history/" class="collapsed ">3.2 历史</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/social/economic/" class="collapsed ">3.4 经济</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/" class="">第四部分 学习</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/book/" class="collapsed ">4.1 读书</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/course/" class="collapsed ">4.2 课程</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/degree/" class="collapsed ">4.3 学位</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/docs/" class="collapsed ">4.4 文档</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/study/domain/" class="collapsed ">4.5 领域</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/" class="">第五部分 生活</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/" class="collapsed ">5.1 日记</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/" class="">2020 年</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/" class="">8 月</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/12/" class="">2020-08-12</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/11/" class="active">2020-08-11</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/10/" class="">2020-08-10</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/07/" class="">2020-08-07</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/06/" class="">2020-08-06</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/05/" class="">2020-08-05</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/04/" class="">2020-08-04</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/03/" class="">2020-08-03</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/01/" class="">2020-08-01</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/07/" class="collapsed ">7 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/06/" class="collapsed ">6 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/05/" class="collapsed ">5 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/04/" class="collapsed ">4 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/03/" class="collapsed ">3 月</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/parenting/" class="collapsed ">5.2 养育</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/cook/" class="collapsed ">5.5 下厨房</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/travel/" class="collapsed ">5.9 旅行</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">加我微信</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png" target="_blank" rel="noopener noreferrer">请我喝饮料</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">关注微信公众号</a></li>
+</ul>
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2020-08-11</strong>
+
+  <label for="toc-control">
+    
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
+      <ul>
+        <li><a href="#go">Go</a></li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#endpointhttpskubernetesiodocsconceptsservices-networkingservice"><a href="https://kubernetes.io/docs/concepts/services-networking/service/">endpoint</a></a></li>
+            <li><a href="#securitycontext">securityContext</a></li>
+            <li><a href="#kubectl-获取资源的过程">kubectl 获取资源的过程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="2020-年-8-月-11-日星期二">
+  2020 年 8 月 11 日（星期二）
+  <a class="anchor" href="#2020-%e5%b9%b4-8-%e6%9c%88-11-%e6%97%a5%e6%98%9f%e6%9c%9f%e4%ba%8c">#</a>
+</h1>
+<h2 id="今日待办">
+  今日待办
+  <a class="anchor" href="#%e4%bb%8a%e6%97%a5%e5%be%85%e5%8a%9e">#</a>
+</h2>
+<ul>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<hr>
+<h2 id="编程">
+  编程
+  <a class="anchor" href="#%e7%bc%96%e7%a8%8b">#</a>
+</h2>
+<h3 id="go">
+  Go
+  <a class="anchor" href="#go">#</a>
+</h3>
+<h3 id="kubernetes">
+  Kubernetes
+  <a class="anchor" href="#kubernetes">#</a>
+</h3>
+<h4 id="endpointhttpskubernetesiodocsconceptsservices-networkingservice">
+  <a href="https://kubernetes.io/docs/concepts/services-networking/service/">endpoint</a>
+  <a class="anchor" href="#endpointhttpskubernetesiodocsconceptsservices-networkingservice">#</a>
+</h4>
+<p>若 service 定义中没有 selector 字段，service 被创建时，endpoint controller 不会自动创建 endpoint。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/52857825/what-is-an-endpoint-in-kubernetes">What is an &lsquo;endpoint&rsquo; in Kubernetes?</a></li>
+</ul>
+<h4 id="securitycontext">
+  securityContext
+  <a class="anchor" href="#securitycontext">#</a>
+</h4>
+<h4 id="kubectl-获取资源的过程">
+  kubectl 获取资源的过程
+  <a class="anchor" href="#kubectl-%e8%8e%b7%e5%8f%96%e8%b5%84%e6%ba%90%e7%9a%84%e8%bf%87%e7%a8%8b">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ k get pod -v<span style="color:#f92672">=</span><span style="color:#ae81ff">9</span>
+I0811 19:40:52.668217   <span style="color:#ae81ff">26685</span> loader.go:375<span style="color:#f92672">]</span> Config loaded from file:  /etc/kubernetes/admin.conf
+I0811 19:40:52.696596   <span style="color:#ae81ff">26685</span> round_trippers.go:423<span style="color:#f92672">]</span> curl -k -v -XGET  -H <span style="color:#e6db74">&#34;Accept: application/json;as=Table;v=v1;g=meta.k8s.io,application/json;as=Table;v=v1beta1;g=meta.k8s.io,application/json&#34;</span> -H <span style="color:#e6db74">&#34;User-Agent: kubectl/v1.18.3 (linux/amd64) kubernetes/2e7996e&#34;</span> <span style="color:#e6db74">&#39;https://10.197.34.39:6443/api/v1/namespaces/default/pods?limit=500&#39;</span>
+I0811 19:40:52.723790   <span style="color:#ae81ff">26685</span> round_trippers.go:443<span style="color:#f92672">]</span> GET https://10.197.34.39:6443/api/v1/namespaces/default/pods?limit<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span> <span style="color:#ae81ff">200</span> OK in <span style="color:#ae81ff">27</span> milliseconds
+I0811 19:40:52.723826   <span style="color:#ae81ff">26685</span> round_trippers.go:449<span style="color:#f92672">]</span> Response Headers:
+I0811 19:40:52.723843   <span style="color:#ae81ff">26685</span> round_trippers.go:452<span style="color:#f92672">]</span>     Cache-Control: no-cache, private
+I0811 19:40:52.723858   <span style="color:#ae81ff">26685</span> round_trippers.go:452<span style="color:#f92672">]</span>     Content-Type: application/json
+I0811 19:40:52.723890   <span style="color:#ae81ff">26685</span> round_trippers.go:452<span style="color:#f92672">]</span>     Date: Tue, <span style="color:#ae81ff">11</span> Aug <span style="color:#ae81ff">2020</span> 11:40:52 GMT
+I0811 19:40:52.724446   <span style="color:#ae81ff">26685</span> request.go:1068<span style="color:#f92672">]</span> Response Body: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;Table&#34;</span>,<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;meta.k8s.io/v1&#34;</span>,<span style="color:#e6db74">&#34;metadata&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;selfLink&#34;</span>:<span style="color:#e6db74">&#34;/api/v1/namespaces/default/pods&#34;</span>,<span style="color:#e6db74">&#34;resourceVersion&#34;</span>:<span style="color:#e6db74">&#34;6276549&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;columnDefinitions&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Name&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;name&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:0<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Ready&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;The aggregate readiness state of this pod for accepting traffic.&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:0<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Status&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;The aggregate status of the containers in this pod.&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:0<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Restarts&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;integer&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;The number of times the containers in this pod have been restarted.&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:0<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Age&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:0<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;IP&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;IP address allocated to the pod. Routable at least within the cluster. Empty if not yet allocated.&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:1<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Node&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:1<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Nominated Node&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;nominatedNodeName is set only when this pod preempts other pods on the node, but it cannot be scheduled right away as preemption victims receive their graceful termination periods. This field does not guarantee that the pod will be scheduled on this node. Scheduler may decide to place the pod elsewhere if other nodes become available sooner. Scheduler may also decide to give the resources on this node to a higher priority pod that is created after preemption. As a result, this field may be different than PodSpec.nodeName when the pod is scheduled.&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:1<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Readiness Gates&#34;</span>,<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#e6db74">&#34;format&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;If specified, all readiness gates will be evaluated for pod readiness. A pod is ready when all its containers are ready AND all conditions specified in the readiness gates have status equal to \&#34;True\&#34; More info: https://git.k8s.io/enhancements/keps/sig-network/0007-pod-ready%2B%2B.md&#34;</span>,<span style="color:#e6db74">&#34;priority&#34;</span>:1<span style="color:#f92672">}]</span>,<span style="color:#e6db74">&#34;rows&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;cells&#34;</span>:<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;details-v1-6c9f8bcbcb-bqwb6&#34;</span>,<span style="color:#e6db74">&#34;2/2&#34;</span>,<span style="color:#e6db74">&#34;Running&#34;</span>,12,<span style="color:#e6db74">&#34;26d&#34;</span>,<span style="color:#e6db74">&#34;10.244.2.41&#34;</span>,<span style="color:#e6db74">&#34;yq01-sys-ote03.yq01.baidu.com&#34;</span>,<span style="color:#e6db74">&#34;\u003cnone\u003e&#34;</span>,<span style="color:#e6db74">&#34;\u003cnone\u003e&#34;</span><span style="color:#f92672">]</span>,<span style="color:#e6db74">&#34;object&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;PartialObjectMetadata&#34;</span>,<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;meta.k8s.io/v1&#34;</span>,<span style="color:#e6db74">&#34;metadata&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;details-v1-6c9f8bcbcb-bqwb6&#34;</span>,<span style="color:#e6db74">&#34;generateName&#34;</span>:<span style="color:#e6db74">&#34;details-v1-6c9f8bcbcb-&#34;</span>,<span style="color:#e6db74">&#34;namespace&#34;</span>:<span style="color:#e6db74">&#34;default&#34;</span>,<span style="color:#e6db74">&#34;selfLink&#34;</span>:<span style="color:#e6db74">&#34;/api/v1/namespaces/default/pods/details-v1-6c9f8bcbcb-bqwb6&#34;</span>,<span style="color:#e6db74">&#34;uid&#34;</span>:<span style="color:#e6db74">&#34;d4ac32fd-6581-43cb-931d-22650138a1a9&#34;</span>,<span style="color:#e6db74">&#34;resourceVersion&#34;</span>:<span style="color:#e6db74">&#34;1204675&#34;</span>,<span style="color:#e6db74">&#34;creationTimestamp&#34;</span>:<span style="color:#e6db74">&#34;2020-07-16T08:09:33Z&#34;</span>,<span style="color:#e6db74">&#34;labels&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;app&#34;</span>:<span style="color:#e6db74">&#34;details&#34;</span>,<span style="color:#e6db74">&#34;istio.io/rev&#34;</span>:<span style="color:#e6db74">&#34;default&#34;</span>,<span style="color:#e6db74">&#34;pod-template-hash&#34;</span>:<span style="color:#e6db74">&#34;6c9f8bcbcb&#34;</span>,<span style="color:#e6db74">&#34;security.istio.io/tlsMode&#34;</span>:<span style="color:#e6db74">&#34;istio&#34;</span>,<span style="color:#e6db74">&#34;service.istio.io/canonical-name&#34;</span>:<span style="color:#e6db74">&#34;details&#34;</span>,<span style="color:#e6db74">&#34;service.istio.io/canonical-revision&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span>,<span style="color:#e6db74">&#34;version&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;annotations&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;sidecar.istio.io/status&#34;</span>:<span style="color:#e6db74">&#34;{\&#34;version\&#34;:\&#34;ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e\&#34;,\&#34;initContainers\&#34;:[\&#34;istio-init\&#34;],\&#34;containers\&#34;:[\&#34;istio-proxy\&#34;],\&#34;volumes\&#34;:[\&#34;istio-envoy\&#34;,\&#34;istio-data\&#34;,\&#34;istio-podinfo\&#34;,\&#34;istiod-ca-cert\&#34;],\&#34;imagePullSecrets\&#34;:null}&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;ownerReferences&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;apps/v1&#34;</span>,<span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;ReplicaSet&#34;</span>,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;details-v1-6c9f8bcbcb&#34;</span>,<span style="color:#e6db74">&#34;uid&#34;</span>:<span style="color:#e6db74">&#34;6947c5a1-a949-432f-94fe-516d54ed7ff2&#34;</span>,<span style="color:#e6db74">&#34;controller&#34;</span>:true,<span style="color:#e6db74">&#34;blockOwnerDeletion&#34;</span>:true<span style="color:#f92672">}]</span>,<span style="color:#e6db74">&#34;managedFields&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;manager&#34;</span>:<span style="color:#e6db74">&#34;kube-controller-manager&#34;</span>,<span style="color:#e6db74">&#34;operation&#34;</span>:<span style="color:#e6db74">&#34;Update&#34;</span>,<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span>,<span style="color:#e6db74">&#34;time&#34;</span>:<span style="color:#e6db74">&#34;2020-07-16T08:09:33Z&#34;</span>,<span style="color:#e6db74">&#34;fieldsType&#34;</span>:<span style="color:#e6db74">&#34;FieldsV1&#34;</span>,<span style="color:#e6db74">&#34;fieldsV1&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:metadata&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:generateName&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:labels&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:app&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:pod-template-hash&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:version&#34;</span>:<span style="color:#f92672">{}}</span>,<span style="color:#e6db74">&#34;f:ownerReferences&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;k:{\&#34;uid\&#34;:\&#34;6947c5a1-a949-432f-94fe-516d54ed7ff2\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:apiVersion&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:blockOwnerDeletion&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:controller&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:kind&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:name&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:uid&#34;</span>:<span style="color:#f92672">{}}}}</span>,<span style="color:#e6db74">&#34;f:spec&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:containers&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;k:{\&#34;name\&#34;:\&#34;details\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:image&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:imagePullPolicy&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:name&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:ports&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;k:{\&#34;containerPort\&#34;:9080,\&#34;protocol\&#34;:\&#34;TCP\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:containerPort&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:protocol&#34;</span>:<span style="color:#f92672">{}}}</span>,<span style="color:#e6db74">&#34;f:resources&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:terminationMessagePath&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:terminationMessagePolicy&#34;</span>:<span style="color:#f92672">{}}}</span>,<span style="color:#e6db74">&#34;f:dnsPolicy&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:enableServiceLinks&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:restartPolicy&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:schedulerName&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:securityContext&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:serviceAccount&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:serviceAccountName&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:terminationGracePeriodSeconds&#34;</span>:<span style="color:#f92672">{}}}}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;manager&#34;</span>:<span style="color:#e6db74">&#34;kubelet&#34;</span>,<span style="color:#e6db74">&#34;operation&#34;</span>:<span style="color:#e6db74">&#34;Update&#34;</span>,<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span>,<span style="color:#e6db74">&#34;time&#34;</span>:<span style="color:#e6db74">&#34;2020-07-21T07:24:27Z&#34;</span>,<span style="color:#e6db74">&#34;fieldsType&#34;</span>:<span style="color:#e6db74">&#34;FieldsV1&#34;</span>,<span style="color:#e6db74">&#34;fieldsV1&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:status&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:conditions&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;k:{\&#34;type\&#34;:\&#34;ContainersReady\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastProbeTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastTransitionTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:status&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:type&#34;</span>:<span style="color:#f92672">{}}</span>,<span style="color:#e6db74">&#34;k:{\&#34;type\&#34;:\&#34;Initialized\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastProbeTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastTransitionTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:status&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:type&#34;</span>:<span style="color:#f92672">{}}</span>,<span style="color:#e6db74">&#34;k:{\&#34;type\&#34;:\&#34;Ready\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastProbeTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastTransitionTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:status&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:type&#34;</span>:<span style="color:#f92672">{}}}</span>,<span style="color:#e6db74">&#34;f:containerStatuses&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:hostIP&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:initContainerStatuses&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:phase&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:podIP&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:podIPs&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;k:{\&#34;ip\&#34;:\&#34;10.244.2.41\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:ip&#34;</span>:<span style="color:#f92672">{}}}</span>,<span style="color:#e6db74">&#34;f:startTime&#34;</span>:<span style="color:#f92672">{}}}}]}}}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;cells&#34;</span>:<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;fortio-deploy-6dc9b4d7d9-hx5ds&#34;</span>,<span style="color:#e6db74">&#34;2/2&#34;</span>,<span style="color:#e6db74">&#34;Running&#34;</span>,0,<span style="color:#e6db74">&#34;13d&#34;</span>,<span style="color:#e6db74">&#34;10.244.2.51&#34;</span>,<span style="color:#e6db74">&#34;yq01-sys-ote03.yq01.baidu.com&#34;</span>,<span style="color:#e6db74">&#34;\u003cnone\u003e&#34;</span>,<span style="color:#e6db74">&#34;\u003cnone\u003e&#34;</span><span style="color:#f92672">]</span>,<span style="color:#e6db74">&#34;object&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;PartialObjectMetadata&#34;</span>,<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;meta.k8s.io/v1&#34;</span>,<span style="color:#e6db74">&#34;metadata&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;fortio-deploy-6dc9b4d7d9-hx5ds&#34;</span>,<span style="color:#e6db74">&#34;generateName&#34;</span>:<span style="color:#e6db74">&#34;fortio-deploy-6dc9b4d7d9-&#34;</span>,<span style="color:#e6db74">&#34;namespace&#34;</span>:<span style="color:#e6db74">&#34;default&#34;</span>,<span style="color:#e6db74">&#34;selfLink&#34;</span>:<span style="color:#e6db74">&#34;/api/v1/namespaces/default/pods/fortio-deploy-6dc9b4d7d9-hx5ds&#34;</span>,<span style="color:#e6db74">&#34;uid&#34;</span>:<span style="color:#e6db74">&#34;77938d04-2bb1-47d1-90e7-517bc036a5b9&#34;</span>,<span style="color:#e6db74">&#34;resourceVersion&#34;</span>:<span style="color:#e6db74">&#34;2963500&#34;</span>,<span style="color:#e6db74">&#34;creationTimestamp&#34;</span>:<span style="color:#e6db74">&#34;2020-07-28T15:45:50Z&#34;</span>,<span style="color:#e6db74">&#34;labels&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;app&#34;</span>:<span style="color:#e6db74">&#34;fortio&#34;</span>,<span style="color:#e6db74">&#34;istio.io/rev&#34;</span>:<span style="color:#e6db74">&#34;default&#34;</span>,<span style="color:#e6db74">&#34;pod-template-hash&#34;</span>:<span style="color:#e6db74">&#34;6dc9b4d7d9&#34;</span>,<span style="color:#e6db74">&#34;security.istio.io/tlsMode&#34;</span>:<span style="color:#e6db74">&#34;istio&#34;</span>,<span style="color:#e6db74">&#34;service.istio.io/canonical-name&#34;</span>:<span style="color:#e6db74">&#34;fortio&#34;</span>,<span style="color:#e6db74">&#34;service.istio.io/canonical-revision&#34;</span>:<span style="color:#e6db74">&#34;latest&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;annotations&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;sidecar.istio.io/statsInclusionPrefixes&#34;</span>:<span style="color:#e6db74">&#34;cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grpc&#34;</span>,<span style="color:#e6db74">&#34;sidecar.istio.io/status&#34;</span>:<span style="color:#e6db74">&#34;{\&#34;version\&#34;:\&#34;ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e\&#34;,\&#34;initContainers\&#34;:[\&#34;istio-init\&#34;],\&#34;containers\&#34;:[\&#34;istio-proxy\&#34;],\&#34;volumes\&#34;:[\&#34;istio-envoy\&#34;,\&#34;istio-data\&#34;,\&#34;istio-podinfo\&#34;,\&#34;istiod-ca-cert\&#34;],\&#34;imagePullSecrets\&#34;:null}&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;ownerReferences&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;apps/v1&#34;</span>,<span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;ReplicaSet&#34;</span>,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;fortio-deploy-6dc9b4d7d9&#34;</span>,<span style="color:#e6db74">&#34;uid&#34;</span>:<span style="color:#e6db74">&#34;cb562002-a087-49e1-8efb-03362177f837&#34;</span>,<span style="color:#e6db74">&#34;controller&#34;</span>:true,<span style="color:#e6db74">&#34;blockOwnerDeletion&#34;</span>:true<span style="color:#f92672">}]</span>,<span style="color:#e6db74">&#34;managedFields&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;manager&#34;</span>:<span style="color:#e6db74">&#34;kube-controller-manager&#34;</span>,<span style="color:#e6db74">&#34;operation&#34;</span>:<span style="color:#e6db74">&#34;Update&#34;</span>,<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span>,<span style="color:#e6db74">&#34;time&#34;</span>:<span style="color:#e6db74">&#34;2020-07-28T15:45:50Z&#34;</span>,<span style="color:#e6db74">&#34;fieldsType&#34;</span>:<span style="color:#e6db74">&#34;FieldsV1&#34;</span>,<span style="color:#e6db74">&#34;fieldsV1&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:metadata&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:annotations&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:sidecar.istio.io/statsInclusionPrefixes&#34;</span>:<span style="color:#f92672">{}}</span>,<span style="color:#e6db74">&#34;f:generateName&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:labels&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:app&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:pod-template-hash&#34;</span>:<span style="color:#f92672">{}}</span>,<span style="color:#e6db74">&#34;f:ownerReferences&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;k:{\&#34;uid\&#34;:\&#34;cb562002-a087-49e1-8efb-03362177f837\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:apiVersion&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:blockOwnerDeletion&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:controller&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:kind&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:name&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:uid&#34;</span>:<span style="color:#f92672">{}}}}</span>,<span style="color:#e6db74">&#34;f:spec&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:containers&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;k:{\&#34;name\&#34;:\&#34;fortio\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:image&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:imagePullPolicy&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:name&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:ports&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;k:{\&#34;containerPort\&#34;:8079,\&#34;protocol\&#34;:\&#34;TCP\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:containerPort&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:name&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:protocol&#34;</span>:<span style="color:#f92672">{}}</span>,<span style="color:#e6db74">&#34;k:{\&#34;containerPort\&#34;:8080,\&#34;protocol\&#34;:\&#34;TCP\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:containerPort&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:name&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:protocol&#34;</span>:<span style="color:#f92672">{}}}</span>,<span style="color:#e6db74">&#34;f:resources&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:terminationMessagePath&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:terminationMessagePolicy&#34;</span>:<span style="color:#f92672">{}}}</span>,<span style="color:#e6db74">&#34;f:dnsPolicy&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:enableServiceLinks&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:restartPolicy&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:schedulerName&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:securityContext&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:terminationGracePeriodSeconds&#34;</span>:<span style="color:#f92672">{}}}}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;manager&#34;</span>:<span style="color:#e6db74">&#34;kubelet&#34;</span>,<span style="color:#e6db74">&#34;operation&#34;</span>:<span style="color:#e6db74">&#34;Update&#34;</span>,<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span>,<span style="color:#e6db74">&#34;time&#34;</span>:<span style="color:#e6db74">&#34;2020-07-28T15:46:07Z&#34;</span>,<span style="color:#e6db74">&#34;fieldsType&#34;</span>:<span style="color:#e6db74">&#34;FieldsV1&#34;</span>,<span style="color:#e6db74">&#34;fieldsV1&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:status&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;f:conditions&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;k:{\&#34;type\&#34;:\&#34;ContainersReady\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastProbeTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastTransitionTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:status&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:type&#34;</span>:<span style="color:#f92672">{}}</span>,<span style="color:#e6db74">&#34;k:{\&#34;type\&#34;:\&#34;Initialized\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastProbeTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastTransitionTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:status&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:type&#34;</span>:<span style="color:#f92672">{}}</span>,<span style="color:#e6db74">&#34;k:{\&#34;type\&#34;:\&#34;Ready\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastProbeTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:lastTransitionTime&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:status&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:type&#34;</span>:<span style="color:#f92672">{}}}</span>,<span style="color:#e6db74">&#34;f:containerStatuses&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:hostIP&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:initContainerStatuses&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:phase&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:podIP&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:podIPs&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;k:{\&#34;ip\&#34;:\&#34;10.244.2.51\&#34;}&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;.&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;f:ip&#34;</span>:<span style="color:#f92672">{}}}</span>,<span style="color:#e6db74">&#34;f:startTime&#34;</span>:<span style="color:#f92672">{}}}}]}}}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;cells&#34;</span>:<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;httpbin-66cdbdb6c5-6zhpz&#34;</span>,<span style="color:#e6db74">&#34;2/2&#34;</span>,<span style="color:#e6db74">&#34;Running&#34;</span>,0,<span style="color:#e6db74">&#34;13d&#34;</span>,<span style="color:#e6db74">&#34;10.244.2.50&#34;</span>,<span style="color:#e6db74">&#34;yq01-sys-ote03.yq01.baidu.com&#34;</span>,<span style="color:#e6db74">&#34;\u003cnone\u003e&#34;</span>,<span style="color:#e6db74">&#34;\u003cnone\u003e&#34;</span><span style="color:#f92672">]</span>,<span style="color:#e6db74">&#34;object&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;PartialObjectMetadata&#34;</span>,<span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;meta.k8s.io/v1&#34;</span>,<span style="color:#e6db74">&#34;metadata&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;httpbin-66cdbdb6c5-6zhpz&#34;</span>,<span style="color:#e6db74">&#34;generateName&#34;</span>:<span style="color:#e6db74">&#34;httpbin-66cdbdb6c5-&#34;</span>,<span style="color:#e6db74">&#34;namespace&#34;</span>:<span style="color:#e6db74">&#34;default&#34;</span>,<span style="color:#e6db74">&#34;selfLink&#34;</span>:<span style="color:#e6db74">&#34;/api/v1/namespaces/default/pods/httpbin-66cdbdb6c5-6zhpz&#34;</span>,<span style="color:#e6db74">&#34;uid&#34;</span>:<span style="color:#e6db74">&#34;59633e26-ee39-4320-802d-105ddcab0383&#34;</span>,<span style="color:#e6db74">&#34;resourceVersion&#34;</span>:<span style="color:#e6db74">&#34;2963353&#34;</span>,<span style="color:#e6db74">&#34;creationTimestamp&#34;</span>:<span style="color:#e6db74">&#34;2020-07-28T15:45:13Z&#34;</span>,<span style="color:#e6db74">&#34;labels&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;app&#34;</span>:<span style="color:#e6db74">&#34;httpbin&#34;</span>,<span style="color:#e6db74">&#34;istio.io/rev&#34;</span>:<span style="color:#e6db74">&#34;default&#34;</span>,<span style="color:#e6db74">&#34;pod-template-hash&#34;</span>:<span style="color:#e6db74">&#34;66cdbdb6c5&#34;</span>,<span style="color:#e6db74">&#34;security.istio.io/tlsMode&#34;</span>:<span style="color:#e6db74">&#34;istio&#34;</span>,<span style="color:#e6db74">&#34;service.istio.io/canonical-name&#34;</span>:<span style="color:#e6db74">&#34;httpbin&#34;</span>,<span style="color:#e6db74">&#34;service.istio.io/canonical-revision&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span>,<span style="color:#e6db74">&#34;version&#34;</span>:<span style="color:#e6db74">&#34;v1&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;annotations&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;sidecar.istio.io/status&#34;</span>:<span style="color:#e6db74">&#34;{\&#34;version\&#34;:\&#34;ed4e6e8ed4ffa03fe7d5b9d2c27cc8c478625ade64be2859cae3da0db9e5ee2e\&#34;,\&#34;initContainers\&#34;:[\&#34;istio-init\&#34;],\&#34;containers\&#34;:[\&#34;istio-proxy\&#34;],\&#34;volumes\&#34;:[\&#34;istio-envoy\&#34;,\&#34;istio-data\&#34;,\&#34;istio-podinfo\&#34;,\&#34;istiod-ca-cert\&#34;],\&#34;imagePullSecrets\&#34;:null}&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;ownerReferences&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;apps/v1&#34;</span>,<span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;ReplicaSet&#34;</span>,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;httpbin-66cdbdb6c5&#34;</span>,<span style="color:#e6db74">&#34;uid&#34;</span>:<span style="color:#e6db74">&#34;3253707b-3bc1-46bc-afb0-a95b2a1278c6&#34;</span>,<span style="color:#e6db74">&#34;controller&#34;</span>:true,<span style="color:#e6db74">&#34;blockOwnerDeletion&#34;</span>:true<span style="color:#f92672">}]</span>,<span style="color:#e6db74">&#34;managedFields&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;manager&#34;</span>:<span style="color:#e6db74">&#34;kube-controller-manager&#34;</span>,<span style="color:#e6db74">&#34;operation&#34;</span>:<span style="color:#e6db74">&#34;Update&#34;</span>,<span style="color:#e6db74">&#34;apiVer [truncated 21270 chars]
+</span><span style="color:#e6db74">NAME                                READY   STATUS    RESTARTS   AGE
+</span><span style="color:#e6db74">details-v1-6c9f8bcbcb-bqwb6         2/2     Running   12         26d
+</span><span style="color:#e6db74">fortio-deploy-6dc9b4d7d9-hx5ds      2/2     Running   0          13d
+</span><span style="color:#e6db74">httpbin-66cdbdb6c5-6zhpz            2/2     Running   0          13d
+</span><span style="color:#e6db74">mysql-1596179301-867c5d5667-rplpd   0/2     Pending   0          11d
+</span><span style="color:#e6db74">productpage-v1-7df7cb7f86-xzftp     2/2     Running   7          26d
+</span><span style="color:#e6db74">ratings-v1-65cff55fb8-xwxc5         2/2     Running   10         26d
+</span><span style="color:#e6db74">reviews-v1-7bccdbbf96-f4pgf         2/2     Running   5          25d
+</span><span style="color:#e6db74">reviews-v2-7c9685df46-7b784         2/2     Running   4          26d
+</span><span style="color:#e6db74">reviews-v3-58fc46b64-4bc7d          2/2     Running   3          25d
+</span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#今日待办">今日待办</a></li>
+    <li><a href="#编程">编程</a>
+      <ul>
+        <li><a href="#go">Go</a></li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#endpointhttpskubernetesiodocsconceptsservices-networkingservice"><a href="https://kubernetes.io/docs/concepts/services-networking/service/">endpoint</a></a></li>
+            <li><a href="#securitycontext">securityContext</a></li>
+            <li><a href="#kubectl-获取资源的过程">kubectl 获取资源的过程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+<a href="https://github.com/ikingye/note"
+class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+  <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+  <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+  <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+</svg></a>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
