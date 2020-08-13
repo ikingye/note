@@ -729,6 +729,18 @@ Vert.x 的底层 IO 基于 Netty4 实现，核心模块 Vertx Core，支持非�
     </item>
     
     <item>
+      <title>2020-08-13</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/08/13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/08/13/</guid>
+      <description>2020 年 8 月 13 日（星期四） #  今日待办 #      编程 #  网络 #  MTU #  Maximum Transmission Unit
+ 最大传输单元（Maximum Transmission Unit）是指一种通信协议的某一层上面所能通过的最大数据包大小（以字节为单位）。 我们在使用互联网时进行的各种网络操作，都是通过一个又一个 “数据包” 传输来实现的，而 MTU 指定了网络中可传输数据包的最大尺寸。 在我们常用的以太网中，MTU 是 1500 字节，超过此大小的数据包就会将多余的部分拆分再单独传输 。  检测需要设置的合理的值： 大部分网络设备都是 1500。 如果本机的 MTU 比网关的 MTU 大，大的数据包就会被拆开来传送，这样会产生很多数据包碎片，增加丢包率，降低网络速度。
+把本机的 MTU 设成比网关的 MTU 小或相同，就可以减少丢包。
+Linux OS: # ping -s 1472 -M do 172.21.0.118 含义： 发送大小包大小是 1472（+28）字节，禁止路由器拆分数据包。 【 1472 + 8 (ICMP 回显示请求和回显应答报文格式长度) + 20 (IP 首部) = 1500 】 回复结果： 1.</description>
+    </item>
+    
+    <item>
       <title>2020-04-12</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/04/12/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
