@@ -18,7 +18,7 @@ HyperKit 是基于 xHyve 和 vHyve 项目，与其他相关功能模块（例�
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.ed5e26b46115a49bd664ed32ed3fd386b6952de7b89342ac4edea38509dae548.js" integrity="sha256-7V4mtGEVpJvWZO0y7T/ThraVLee4k0KsTt6jhQna5Ug="></script>
+<script defer src="/note/en.search.min.358b62631a014fed269b10cda6f25a0e0e7f04eff1e88743f08d605f64993ada.js" integrity="sha256-NYtiYxoBT&#43;0mmxDNpvJaDg5/BO/x6IdD8I1gX2SZOto="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -420,6 +420,26 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/18/" class="">2020-08-18</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/note/docs/live/diary/2020/08/17/" class="">2020-08-17</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -992,9 +1012,11 @@ https://github.com/alex-shpak/hugo-book
         </li>
         <li><a href="#hyperkit">hyperkit</a></li>
         <li><a href="#k3s-安装-istio">k3s 安装 istio</a></li>
-        <li><a href="#k8s-ingress-controller">k8s <code>Ingress controller</code></a>
+        <li><a href="#kubernetes-ingress-controller">Kubernetes Ingress controller</a>
           <ul>
+            <li><a href="#kubernetesingress-nginxhttpsgithubcomkubernetesingress-nginx-github-starshttpsimgshieldsiogithubstarskubernetesingress-nginxsvg"><a href="https://github.com/kubernetes/ingress-nginx">kubernetes/ingress-nginx</a> <img src="https://img.shields.io/github/stars/kubernetes/ingress-nginx.svg" alt="Github stars"></a></li>
             <li><a href="#containoustraefikhttpsgithubcomcontainoustraefik-github-starshttpsimgshieldsiogithubstarscontainoustraefiksvg"><a href="https://github.com/containous/traefik">containous/traefik</a> <img src="https://img.shields.io/github/stars/containous/traefik.svg" alt="Github stars"></a></li>
+            <li><a href="#projectcontourcontourhttpsgithubcomprojectcontourcontour-github-starshttpsimgshieldsiogithubstarsprojectcontourcontoursvg"><a href="https://github.com/projectcontour/contour">projectcontour/contour</a> <img src="https://img.shields.io/github/stars/projectcontour/contour.svg" alt="Github stars"></a></li>
           </ul>
         </li>
         <li><a href="#openwrt">OpenWrt</a></li>
@@ -1066,15 +1088,30 @@ curl -sfL https://get.k3s.io |INSTALL_K3S_EXEC<span style="color:#f92672">=</spa
 <li><a href="https://cloud.tencent.com/developer/article/1600978">在 k3d 上快速安装 Istio，助你在本地灵活使用 K8S！</a></li>
 </ul>
 <hr>
-<h3 id="k8s-ingress-controller">
-  k8s <code>Ingress controller</code>
-  <a class="anchor" href="#k8s-ingress-controller">#</a>
+<h3 id="kubernetes-ingress-controller">
+  Kubernetes Ingress controller
+  <a class="anchor" href="#kubernetes-ingress-controller">#</a>
 </h3>
+<ul>
+<li>Nginx</li>
+<li>Traefik</li>
+<li>Envoy + Contour</li>
+</ul>
+<a href="https://github.com/kubernetes/ingress-nginx">kubernetes/ingress-nginx</a> <h4 id="kubernetesingress-nginxhttpsgithubcomkubernetesingress-nginx-github-starshttpsimgshieldsiogithubstarskubernetesingress-nginxsvg">
+  <img src="https://img.shields.io/github/stars/kubernetes/ingress-nginx.svg" alt="Github stars" />
+  <a class="anchor" href="#kubernetesingress-nginxhttpsgithubcomkubernetesingress-nginx-github-starshttpsimgshieldsiogithubstarskubernetesingress-nginxsvg">#</a>
+</h4>
+<p>NGINX Ingress Controller for Kubernetes</p>
 <a href="https://github.com/containous/traefik">containous/traefik</a> <h4 id="containoustraefikhttpsgithubcomcontainoustraefik-github-starshttpsimgshieldsiogithubstarscontainoustraefiksvg">
   <img src="https://img.shields.io/github/stars/containous/traefik.svg" alt="Github stars" />
   <a class="anchor" href="#containoustraefikhttpsgithubcomcontainoustraefik-github-starshttpsimgshieldsiogithubstarscontainoustraefiksvg">#</a>
 </h4>
 <p>The Cloud Native Edge Router</p>
+<a href="https://github.com/projectcontour/contour">projectcontour/contour</a> <h4 id="projectcontourcontourhttpsgithubcomprojectcontourcontour-github-starshttpsimgshieldsiogithubstarsprojectcontourcontoursvg">
+  <img src="https://img.shields.io/github/stars/projectcontour/contour.svg" alt="Github stars" />
+  <a class="anchor" href="#projectcontourcontourhttpsgithubcomprojectcontourcontour-github-starshttpsimgshieldsiogithubstarsprojectcontourcontoursvg">#</a>
+</h4>
+<p>Contour is a Kubernetes ingress controller using Envoy proxy.</p>
 <hr>
 <h3 id="openwrt">
   OpenWrt
@@ -1184,9 +1221,11 @@ the Nokia Research Center. Sofia-SIP is licensed under the LGPL.</p>
         </li>
         <li><a href="#hyperkit">hyperkit</a></li>
         <li><a href="#k3s-安装-istio">k3s 安装 istio</a></li>
-        <li><a href="#k8s-ingress-controller">k8s <code>Ingress controller</code></a>
+        <li><a href="#kubernetes-ingress-controller">Kubernetes Ingress controller</a>
           <ul>
+            <li><a href="#kubernetesingress-nginxhttpsgithubcomkubernetesingress-nginx-github-starshttpsimgshieldsiogithubstarskubernetesingress-nginxsvg"><a href="https://github.com/kubernetes/ingress-nginx">kubernetes/ingress-nginx</a> <img src="https://img.shields.io/github/stars/kubernetes/ingress-nginx.svg" alt="Github stars"></a></li>
             <li><a href="#containoustraefikhttpsgithubcomcontainoustraefik-github-starshttpsimgshieldsiogithubstarscontainoustraefiksvg"><a href="https://github.com/containous/traefik">containous/traefik</a> <img src="https://img.shields.io/github/stars/containous/traefik.svg" alt="Github stars"></a></li>
+            <li><a href="#projectcontourcontourhttpsgithubcomprojectcontourcontour-github-starshttpsimgshieldsiogithubstarsprojectcontourcontoursvg"><a href="https://github.com/projectcontour/contour">projectcontour/contour</a> <img src="https://img.shields.io/github/stars/projectcontour/contour.svg" alt="Github stars"></a></li>
           </ul>
         </li>
         <li><a href="#openwrt">OpenWrt</a></li>
