@@ -15,12 +15,12 @@
  Amazon s3 #  Amazon S3 的操作包括三部分：Service、Buckets 和 Objects" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/note/docs/live/diary/2020/08/19/" />
-
+<meta property="article:modified_time" content="2020-08-19T15:13:47+08:00" />
 <title>2020-08-19 | 叶王笔记</title>
 <link rel="manifest" href="/note/manifest.json">
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.054d088be523033861c169923260cc3eacd88fa7d58c8be9c5071b5a83323017.css" integrity="sha256-BU0Ii&#43;UjAzhhwWmSMmDMPqzYj6fVjIvpxQcbWoMyMBc=">
-<script defer src="/note/en.search.min.1484517942536a076044531cfe4617e086934f5c58e330d77e350f87ef2d5e11.js" integrity="sha256-FIRReUJTagdgRFMc/kYX4IaTT1xY4zDXfjUPh&#43;8tXhE="></script>
+<script defer src="/note/en.search.min.10f485cdd2bb65faa4e3819d9e8c7a428f4c057f579e4c8914a30689dcc27dca.js" integrity="sha256-EPSFzdK7Zfqk44Gdnox6Qo9MBX9XnkyJFKMGidzCfco="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -789,6 +789,28 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#mysql-高可用">Mysql 高可用</a></li>
           </ul>
         </li>
+        <li><a href="#akraino">Akraino</a></li>
+        <li><a href="#数据库">数据库</a>
+          <ul>
+            <li><a href="#时间序列数据库">时间序列数据库</a></li>
+            <li><a href="#键值存储数据库">键值存储数据库</a></li>
+            <li><a href="#图数据库">图数据库</a>
+              <ul>
+                <li><a href="#neo4jneo4jhttpsgithubcomneo4jneo4j-github-starshttpsimgshieldsiogithubstarsneo4jneo4jsvg"><a href="https://github.com/neo4j/neo4j">neo4j/neo4j</a> <img src="https://img.shields.io/github/stars/neo4j/neo4j.svg" alt="Github stars"></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#docker">Docker</a>
+          <ul>
+            <li><a href="#docker-vs-containerd">Docker vs Containerd</a></li>
+          </ul>
+        </li>
+        <li><a href="#git">git</a>
+          <ul>
+            <li><a href="#git-stash">git stash</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -893,6 +915,112 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://zhuanlan.zhihu.com/p/25960208">五大常见的 MySQL 高可用方案</a></li>
 <li><a href="https://blog.csdn.net/wutian713/article/details/50682360">Mysql “集群” 和” 主从 “两者的区别</a></li>
 </ul>
+<hr>
+<h3 id="akraino">
+  Akraino
+  <a class="anchor" href="#akraino">#</a>
+</h3>
+<p>Akraino Edge Stack 是一个 Linux 基金会项目，支持针对边缘计算系统和应用程序优化的高可用性云服务。</p>
+<p>该项目成员有 ARM、AT&amp;T、戴尔 EMC、爱立信、华为、英特尔公司、inwinSTACK、瞻博网络、诺基亚、高通、Radisys、红帽和风河等。</p>
+<p>Akraino Edge Stack 代码基于 AT&amp;T 的 Network Cloud 开发，在虚拟机（VM）和容器中开发运行的运营商级计算应用程序，Linux Foundation 使用该代码构成 Akraino 项目，并向 Linux 社区开放和提供。提供的方案将实现为边缘和远程边缘的电信相关用例创建集成堆栈，并达到 5 毫秒到 20 毫秒的延迟，企业和工业物联网堆栈则低于 5 毫秒的延迟。</p>
+<p><a href="https://www.lfedge.org/2020/08/12/lf-edges-akraino-project-release-3-now-available-unifying-open-source-blueprints-across-mec-ai-cloud-and-telecom-edge/"><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200819153048.png" alt="" /></a></p>
+<hr>
+<h3 id="数据库">
+  数据库
+  <a class="anchor" href="#%e6%95%b0%e6%8d%ae%e5%ba%93">#</a>
+</h3>
+<p>参考：</p>
+<ul>
+<li><a href="https://db-engines.com/en/ranking">DB-Engines Ranking</a></li>
+</ul>
+<hr>
+<h4 id="时间序列数据库">
+  时间序列数据库
+  <a class="anchor" href="#%e6%97%b6%e9%97%b4%e5%ba%8f%e5%88%97%e6%95%b0%e6%8d%ae%e5%ba%93">#</a>
+</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://db-engines.com/en/ranking/time&#43;series&#43;dbms">DB-Engines Ranking of Time Series DBMS</a></li>
+</ul>
+<h4 id="键值存储数据库">
+  键值存储数据库
+  <a class="anchor" href="#%e9%94%ae%e5%80%bc%e5%ad%98%e5%82%a8%e6%95%b0%e6%8d%ae%e5%ba%93">#</a>
+</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://db-engines.com/en/ranking/key-value&#43;store">DB-Engines Ranking of Key-value Stores</a></li>
+</ul>
+<h4 id="图数据库">
+  图数据库
+  <a class="anchor" href="#%e5%9b%be%e6%95%b0%e6%8d%ae%e5%ba%93">#</a>
+</h4>
+<a href="https://github.com/neo4j/neo4j">neo4j/neo4j</a> <h5 id="neo4jneo4jhttpsgithubcomneo4jneo4j-github-starshttpsimgshieldsiogithubstarsneo4jneo4jsvg">
+  <img src="https://img.shields.io/github/stars/neo4j/neo4j.svg" alt="Github stars" />
+  <a class="anchor" href="#neo4jneo4jhttpsgithubcomneo4jneo4j-github-starshttpsimgshieldsiogithubstarsneo4jneo4jsvg">#</a>
+</h5>
+<p>Java 编写</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/24662864">图数据库是怎样一种数据库，和传统关系数据库的主要区别在哪里？</a></li>
+</ul>
+<hr>
+<h3 id="docker">
+  Docker
+  <a class="anchor" href="#docker">#</a>
+</h3>
+<h4 id="docker-vs-containerd">
+  Docker vs Containerd
+  <a class="anchor" href="#docker-vs-containerd">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th align="left">镜像相关功能</th>
+<th align="left">Docker</th>
+<th align="left">Containerd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">显示本地镜像列表</td>
+<td align="left">docker images</td>
+<td align="left">crictl images</td>
+</tr>
+<tr>
+<td align="left">下载镜像</td>
+<td align="left">docker pull</td>
+<td align="left">crictl pull</td>
+</tr>
+<tr>
+<td align="left">上传镜像</td>
+<td align="left">docker push</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">删除本地镜像</td>
+<td align="left">docker rmi</td>
+<td align="left">crictl rmi</td>
+</tr>
+<tr>
+<td align="left">查看镜像详情</td>
+<td align="left">docker inspect IMAGE-ID</td>
+<td align="left">crictl inspecti IMAGE-ID</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="git">
+  git
+  <a class="anchor" href="#git">#</a>
+</h3>
+<h4 id="git-stash">
+  git stash
+  <a class="anchor" href="#git-stash">#</a>
+</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/28948567">如何恢复丢弃的 git stash 数据</a></li>
+</ul>
 </article>
  
       
@@ -902,6 +1030,12 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/note/commit/458f6f91c47e7fc22b31ac851a39cd321a67d182" title='Last modified by yewang | 2020-08-19' target="_blank" rel="noopener">
+      <img src="/note/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-08-19</span>
+    </a>
+  </div>
 
 
 
@@ -951,6 +1085,28 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#mysql">Mysql</a>
           <ul>
             <li><a href="#mysql-高可用">Mysql 高可用</a></li>
+          </ul>
+        </li>
+        <li><a href="#akraino">Akraino</a></li>
+        <li><a href="#数据库">数据库</a>
+          <ul>
+            <li><a href="#时间序列数据库">时间序列数据库</a></li>
+            <li><a href="#键值存储数据库">键值存储数据库</a></li>
+            <li><a href="#图数据库">图数据库</a>
+              <ul>
+                <li><a href="#neo4jneo4jhttpsgithubcomneo4jneo4j-github-starshttpsimgshieldsiogithubstarsneo4jneo4jsvg"><a href="https://github.com/neo4j/neo4j">neo4j/neo4j</a> <img src="https://img.shields.io/github/stars/neo4j/neo4j.svg" alt="Github stars"></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#docker">Docker</a>
+          <ul>
+            <li><a href="#docker-vs-containerd">Docker vs Containerd</a></li>
+          </ul>
+        </li>
+        <li><a href="#git">git</a>
+          <ul>
+            <li><a href="#git-stash">git stash</a></li>
           </ul>
         </li>
       </ul>
