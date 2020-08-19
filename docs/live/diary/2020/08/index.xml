@@ -10,6 +10,18 @@
     
     
     <item>
+      <title>2020-08-19</title>
+      <link>https://ikingye.github.io/note/docs/live/diary/2020/08/19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/live/diary/2020/08/19/</guid>
+      <description>2020 年 8 月 19 日（星期三） #  今日待办 #      编程 #  分布式存储 #   块存储 文件存储  HDFS (Hadoop) GPFS GFS (google)   对象存储  Swift   统一存储（支持块存储、对象存储和文件存储）  Ceph    参考：
+ OpenStack 中的 Swift 是对象存储？  ceph/ceph #  Ceph is a distributed object, block, and file storage platform
+版本 #  13.2.10
+ Amazon s3 #  Amazon S3 的操作包括三部分：Service、Buckets 和 Objects</description>
+    </item>
+    
+    <item>
       <title>2020-08-18</title>
       <link>https://ikingye.github.io/note/docs/live/diary/2020/08/18/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
