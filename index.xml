@@ -456,7 +456,13 @@ volumeMounts: - name: kubernetes-dashboard-certs mountPath: /certs { &amp;#34;vo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/note/docs/live/diary/2020/08/21/</guid>
-      <description>2020 年 8 月 21 日（星期五） #  今日待办 #      编程 #  </description>
+      <description>2020 年 8 月 21 日（星期五） #  今日待办 #      编程 #  Java #  Maven #  Apache Maven
+读音：
+ 美: [&amp;lsquo;meɪvən] 英: [&amp;lsquo;meɪvən]  POM #  Project Object Model
+项目对象模型是 Maven 工程的基本工作单元，是一个 XML 文件
+POM 中可以指定以下配置：
+ 项目依赖 插件 执行目标 项目构建 profile 项目版本 项目开发者列表 相关邮件列表信息   POM 元素 #  所有 POM 文件都需要 project 元素和三个必需字段：
+ groupId artifactId version  &amp;lt;project xmlns = &amp;#34;http://maven.</description>
     </item>
     
     <item>
