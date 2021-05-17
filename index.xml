@@ -109,6 +109,15 @@
     </item>
     
     <item>
+      <title>1.3 计算机</title>
+      <link>https://ikingye.github.io/note/docs/natural/computer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/note/docs/natural/computer/</guid>
+      <description>计算机 #  见：计算机学习笔记</description>
+    </item>
+    
+    <item>
       <title>Anki</title>
       <link>https://ikingye.github.io/note/docs/study/tool/study/anki/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -159,15 +168,6 @@ MBA 分类 #  </description>
  As a&amp;hellip; (作为&amp;hellip;角色或岗位) I want&amp;hellip; (我想&amp;hellip;希望做什么) So that&amp;hellip; (以便&amp;hellip;达到什么目的或商业价值)  需求拆分时应该满足 INVEST 原则：
  I：Independent：独立的 N：Negotiable：可协商的 V：Valuable：有价值的 E：Estimate：可评估的 S：Small ：小粒度的 T：Testable：可测试的  评定需求优先级时可参考 MoSCoW 原则：
  Must：必须有 Should：应该有 Could：可有可无 Won&amp;rsquo;t：没有  </description>
-    </item>
-    
-    <item>
-      <title>1.5 计算机</title>
-      <link>https://ikingye.github.io/note/docs/natural/computer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/note/docs/natural/computer/</guid>
-      <description>计算机 #  见：计算机学习笔记</description>
     </item>
     
   </channel>
