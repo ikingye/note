@@ -11,11 +11,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kingye.me/note/docs/study/domain/product/requirement/</guid>
-      <description>需求 #  需求又称为 user story，是从用户的角度描述的独立功能点。
+      <description> 需求 # 需求又称为 user story，是从用户的角度描述的独立功能点。
 在敏捷中对一个需求的描述应当包括 3 个方面：
- As a&amp;hellip; (作为&amp;hellip;角色或岗位) I want&amp;hellip; (我想&amp;hellip;希望做什么) So that&amp;hellip; (以便&amp;hellip;达到什么目的或商业价值)  需求拆分时应该满足 INVEST 原则：
- I：Independent：独立的 N：Negotiable：可协商的 V：Valuable：有价值的 E：Estimate：可评估的 S：Small ：小粒度的 T：Testable：可测试的  评定需求优先级时可参考 MoSCoW 原则：
- Must：必须有 Should：应该有 Could：可有可无 Won&amp;rsquo;t：没有  </description>
+As a&amp;hellip; (作为&amp;hellip;角色或岗位) I want&amp;hellip; (我想&amp;hellip;希望做什么) So that&amp;hellip; (以便&amp;hellip;达到什么目的或商业价值) 需求拆分时应该满足 INVEST 原则：
+I：Independent：独立的 N：Negotiable：可协商的 V：Valuable：有价值的 E：Estimate：可评估的 S：Small ：小粒度的 T：Testable：可测试的 评定需求优先级时可参考 MoSCoW 原则：
+Must：必须有 Should：应该有 Could：可有可无 Won&amp;rsquo;t：没有 </description>
     </item>
     
   </channel>
