@@ -179,5 +179,45 @@ MBA 分类 #  </description>
  Must：必须有 Should：应该有 Could：可有可无 Won&amp;rsquo;t：没有  </description>
     </item>
     
+    <item>
+      <title>MBTI</title>
+      <link>https://kingye.me/note/docs/social/psychology/mbti/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kingye.me/note/docs/social/psychology/mbti/</guid>
+      <description>MBTI #  迈尔斯-布里格斯性格分类指标（英语：Myers-Briggs Type Indicator，简称 MBTI）是人格类型学中一种内省的自我报告问卷，它表明人们在感知和决策的方式上存在不同心理偏好。该评量为以下四个向度分别指定一个倾向：内向（Introversion）或外向（Extraversion）、实感（Sensing）或直觉（Intuition）、思考（Thinking）或情感（Feeling）、判断（Judging）或感知（Perceiving），并取各倾向的英文名称首字母来组成四个字母的评量结果，如“INFJ”或“ENFP”等 16 种人格类型。
+MBTI 是由两名美国人——凯瑟琳·库克·布里格斯（英语：Katharine Cook Briggs）和她的女儿伊莎贝尔·布里格斯·迈尔斯（英语：Isabel Briggs Myers）所建构，最早于 1944 年发表。这项指标的理论基础来自瑞士精神科医师兼精神分析师卡尔·荣格（Carl Jung）的著作《心理类型》（德语：Psychologische Typen，英语：Psychological Type）。迈尔斯认为荣格的著作对大众而言过于复杂难懂，于是尝试将荣格认知功能（英语：Jungian cognitive functions）整理得更加易于理解。
+上图描述了 MBTI 的十六种人格类型，以及该理论核心的四个评量向度</description>
+    </item>
+    
+    <item>
+      <title>KaTeX</title>
+      <link>https://kingye.me/note/docs/study/tool/KaTeX/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kingye.me/note/docs/study/tool/KaTeX/</guid>
+      <description>KaTeX #    \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]   \(f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\)  $$ L(Y,f(X))=\left{\begin{matrix} 1,Y\neq f(X) \ 0,Y = f(X)\end{matrix}\right. $$</description>
+    </item>
+    
+    <item>
+      <title>LaTeX</title>
+      <link>https://kingye.me/note/docs/study/tool/LaTeX/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kingye.me/note/docs/study/tool/LaTeX/</guid>
+      <description>LaTeX #  参考：
+ LaTeX 在线编辑器 一份其实很短的 LaTeX 入门文档 LaTeX 数学符号对应表  </description>
+    </item>
+    
+    <item>
+      <title>MathJax</title>
+      <link>https://kingye.me/note/docs/study/tool/MathJax/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kingye.me/note/docs/study/tool/MathJax/</guid>
+      <description>MathJax #  参考：
+ MathJax input  TeX and LaTeX MathML AsciiMath    </description>
+    </item>
+    
   </channel>
 </rss>

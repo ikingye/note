@@ -14,5 +14,34 @@
       <description>计算机相关工具 #  更多内容见：计算机相关工具</description>
     </item>
     
+    <item>
+      <title>KaTeX</title>
+      <link>https://kingye.me/note/docs/study/tool/KaTeX/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kingye.me/note/docs/study/tool/KaTeX/</guid>
+      <description>KaTeX #    \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]   \(f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\)  $$ L(Y,f(X))=\left{\begin{matrix} 1,Y\neq f(X) \ 0,Y = f(X)\end{matrix}\right. $$</description>
+    </item>
+    
+    <item>
+      <title>LaTeX</title>
+      <link>https://kingye.me/note/docs/study/tool/LaTeX/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kingye.me/note/docs/study/tool/LaTeX/</guid>
+      <description>LaTeX #  参考：
+ LaTeX 在线编辑器 一份其实很短的 LaTeX 入门文档 LaTeX 数学符号对应表  </description>
+    </item>
+    
+    <item>
+      <title>MathJax</title>
+      <link>https://kingye.me/note/docs/study/tool/MathJax/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kingye.me/note/docs/study/tool/MathJax/</guid>
+      <description>MathJax #  参考：
+ MathJax input  TeX and LaTeX MathML AsciiMath    </description>
+    </item>
+    
   </channel>
 </rss>
