@@ -20,7 +20,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kingye.me/note/docs/study/tool/KaTeX/</guid>
-      <description>KaTeX #    \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]   \(f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\)  $$ L(Y,f(X))=\left{\begin{matrix} 1,Y\neq f(X) \ 0,Y = f(X)\end{matrix}\right. $$</description>
+      <description>KaTeX #    \[f(x) = \int\_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]   \(f(x) = \int\_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\)  $$ L(Y,f(X))=\left{\begin{matrix} 1,Y\neq f(X) \ 0,Y = f(X)\end{matrix}\right. $$</description>
     </item>
     
     <item>
