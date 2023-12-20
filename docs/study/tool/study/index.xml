@@ -4,18 +4,15 @@
     <title>4.5.3 学习 on 叶王笔记</title>
     <link>https://kingye.me/note/docs/study/tool/study/</link>
     <description>Recent content in 4.5.3 学习 on 叶王笔记</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://kingye.me/note/docs/study/tool/study/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="https://kingye.me/note/docs/study/tool/study/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Anki</title>
       <link>https://kingye.me/note/docs/study/tool/study/anki/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kingye.me/note/docs/study/tool/study/anki/</guid>
-      <description>Anki #  插件 #  glutanimate/review-heatmap #  Anki add-on to help you keep track of your review activity
-ninja33/ODH #  在线词典助手
-AnkiConnect #  该插件用于 Anki PC 客户端扩展功能，配合 Chrome 插件《Anki 划词制卡助手》 或者 《在线词典助手》使用。 https://www.laohuang.net/20160817/ankiconnect-py-file/
-Notes for Mac OS X Users #  Starting with Mac OS X Mavericks, a feature named App Nap has been introduced to the operating system. This feature causes certain applications which are open (but not visible) to be placed in a suspended state.</description>
+      <description>Anki # 插件 # glutanimate/review-heatmap # Anki add-on to help you keep track of your review activity&#xA;ninja33/ODH # 在线词典助手&#xA;AnkiConnect # 该插件用于 Anki PC 客户端扩展功能，配合 Chrome 插件《Anki 划词制卡助手》 或者 《在线词典助手》使用。 https://www.laohuang.net/20160817/ankiconnect-py-file/&#xA;Notes for Mac OS X Users # Starting with Mac OS X Mavericks, a feature named App Nap has been introduced to the operating system. This feature causes certain applications which are open (but not visible) to be placed in a suspended state.</description>
     </item>
-    
   </channel>
 </rss>
