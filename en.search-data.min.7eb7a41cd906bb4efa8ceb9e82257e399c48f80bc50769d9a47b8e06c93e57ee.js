@@ -127,6 +127,7 @@ X 安福在新升级的版本里，也不得不带上了高发。
 by Gilbert Strang, MIT 作者主页
 线性代数 # Course Introduction of 18.065 by Professor Strang 【10/10】 # [b 站] MIT 线性代数 18.065
 by Gilbert Strang, MIT 作者主页
+The Art of Linear Algebra # kenjihiranabe/The-Art-of-Linear-Algebra Graphic notes on Gilbert Strang&rsquo;s &ldquo;Linear Algebra for Everyone&rdquo;
 `}),e.add({id:25,href:"/note/docs/study/domain/operate/tutorial/",title:"教程",section:"运营",content:` 教程 # 书籍 # 有哪些互联网运营方面的书值得推荐？
 `}),e.add({id:26,href:"/note/docs/study/book/natural/math/",title:"数学",section:"自然科学",content:" 数学 # "}),e.add({id:27,href:"/note/docs/study/book/natural/",title:"自然科学",section:"4.1 读书",content:" 自然科学 # "}),e.add({id:28,href:"/note/docs/study/course/natural/",title:"自然科学",section:"4.2 课程",content:" 自然科学 # "}),e.add({id:29,href:"/note/docs/study/book/natural/cs/",title:"计算机科学",section:"自然科学",content:" 计算机科学 # "}),e.add({id:30,href:"/note/docs/study/course/natural/cs/",title:"计算机科学",section:"自然科学",content:" 计算机科学 # "}),e.add({id:31,href:"/note/docs/natural/math/",title:"1.2 数学",section:"第一部分 自然科学",content:` 数学主要的学科最先产生于商业上计算的需要、了解数字间的关系、测量土地及预测天文事件。这四种需要大致地与数量（算术）、结构（代数）、空间（几何）及变化（分析）等数学上广泛的子领域相关连着。
 基础与哲学
