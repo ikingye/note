@@ -201,4 +201,4 @@ MBTI 是由两名美国人——凯瑟琳·库克·布里格斯（英语：Katha
 上图描述了 MBTI 的十六种人格类型，以及该理论核心的四个评量向度
 `}),e.add({id:77,href:"/note/docs/humanities/movie/",title:"2.7 电影",section:"第二部分 人文科学",content:" 电影 # "}),e.add({id:78,href:"/note/docs/live/travel/",title:"5.9 旅行",section:"第五部分 生活",content:" 旅行 # "}),e.add({id:79,href:"/note/docs/study/tool/KaTeX/",title:"KaTeX",section:"4.5 工具",content:" KaTeX # \\[f(x) = \\int\\_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi\\] \\(f(x) = \\int\\_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi\\) $$ L(Y,f(X))=\\left{\\begin{matrix} 1,Y\\neq f(X) \\ 0,Y = f(X)\\end{matrix}\\right. $$\n"}),e.add({id:80,href:"/note/docs/study/tool/LaTeX/",title:"LaTeX",section:"4.5 工具",content:` LaTeX # 参考：
 LaTeX 在线编辑器 一份其实很短的 LaTeX 入门文档 LaTeX 数学符号对应表 `}),e.add({id:81,href:"/note/docs/study/tool/MathJax/",title:"MathJax",section:"4.5 工具",content:` MathJax # 参考：
-MathJax input TeX and LaTeX MathML AsciiMath `})})()
+MathJax input TeX and LaTeX MathML AsciiMath `}),e.add({id:82,href:"/note/docs/study/tool/zhihu/",title:"Zhihu",section:"4.5 工具",content:" 知乎好问题 # 有哪些理论或学说颠覆了你原先对这个世界的理解？ "})})()

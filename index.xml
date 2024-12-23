@@ -175,5 +175,12 @@
       <guid>https://kingye.me/note/docs/study/tool/MathJax/</guid>
       <description> MathJax # 参考：&#xA;MathJax input TeX and LaTeX MathML AsciiMath </description>
     </item>
+    <item>
+      <title></title>
+      <link>https://kingye.me/note/docs/study/tool/zhihu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kingye.me/note/docs/study/tool/zhihu/</guid>
+      <description> 知乎好问题 # 有哪些理论或学说颠覆了你原先对这个世界的理解？ </description>
+    </item>
   </channel>
 </rss>
