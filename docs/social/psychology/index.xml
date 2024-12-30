@@ -1,18 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>3.6 心理学 on 叶王笔记</title>
-    <link>https://kingye.me/note/docs/social/psychology/</link>
-    <description>Recent content in 3.6 心理学 on 叶王笔记</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <atom:link href="https://kingye.me/note/docs/social/psychology/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>MBTI</title>
-      <link>https://kingye.me/note/docs/social/psychology/mbti/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kingye.me/note/docs/social/psychology/mbti/</guid>
-      <description>&lt;h1 id=&#34;mbti&#34;&gt;&#xA;  MBTI&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#mbti&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.wikiwand.com/zh-cn/%E9%82%81%E7%88%BE%E6%96%AF-%E5%B8%83%E9%87%8C%E6%A0%BC%E6%96%AF%E6%80%A7%E6%A0%BC%E5%88%86%E9%A1%9E%E6%B3%95&#34;&gt;迈尔斯-布里格斯性格分类指标&lt;/a&gt;（英语：&lt;code&gt;Myers-Briggs Type Indicator&lt;/code&gt;，简称 MBTI）是人格类型学中一种内省的自我报告问卷，它表明人们在感知和决策的方式上存在不同心理偏好。该评量为以下四个向度分别指定一个倾向：内向（Introversion）或外向（Extraversion）、实感（Sensing）或直觉（Intuition）、思考（Thinking）或情感（Feeling）、判断（Judging）或感知（Perceiving），并取各倾向的英文名称首字母来组成四个字母的评量结果，如“INFJ”或“ENFP”等 16 种人格类型。&lt;/p&gt;&#xA;&lt;p&gt;MBTI 是由两名美国人——凯瑟琳·库克·布里格斯（英语：&lt;code&gt;Katharine Cook Briggs&lt;/code&gt;）和她的女儿伊莎贝尔·布里格斯·迈尔斯（英语：&lt;code&gt;Isabel Briggs Myers&lt;/code&gt;）所建构，最早于 1944 年发表。这项指标的理论基础来自瑞士精神科医师兼精神分析师卡尔·荣格（Carl Jung）的著作《心理类型》（德语：Psychologische Typen，英语：Psychological Type）。迈尔斯认为荣格的著作对大众而言过于复杂难懂，于是尝试将荣格认知功能（英语：Jungian cognitive functions）整理得更加易于理解。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20230918212423.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;上图描述了 MBTI 的十六种人格类型，以及该理论核心的四个评量向度&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>3.6 心理学 on 叶王笔记</title><link>https://kingye.me/note/docs/social/psychology/</link><description>Recent content in 3.6 心理学 on 叶王笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/note/docs/social/psychology/index.xml" rel="self" type="application/rss+xml"/><item><title>MBTI</title><link>https://kingye.me/note/docs/social/psychology/mbti/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/note/docs/social/psychology/mbti/</guid><description>&lt;h1 id="mbti">
+ MBTI
+ &lt;a class="anchor" href="#mbti">#&lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="https://www.wikiwand.com/zh-cn/%E9%82%81%E7%88%BE%E6%96%AF-%E5%B8%83%E9%87%8C%E6%A0%BC%E6%96%AF%E6%80%A7%E6%A0%BC%E5%88%86%E9%A1%9E%E6%B3%95">迈尔斯-布里格斯性格分类指标&lt;/a>（英语：&lt;code>Myers-Briggs Type Indicator&lt;/code>，简称 MBTI）是人格类型学中一种内省的自我报告问卷，它表明人们在感知和决策的方式上存在不同心理偏好。该评量为以下四个向度分别指定一个倾向：内向（Introversion）或外向（Extraversion）、实感（Sensing）或直觉（Intuition）、思考（Thinking）或情感（Feeling）、判断（Judging）或感知（Perceiving），并取各倾向的英文名称首字母来组成四个字母的评量结果，如“INFJ”或“ENFP”等 16 种人格类型。&lt;/p>
+&lt;p>MBTI 是由两名美国人——凯瑟琳·库克·布里格斯（英语：&lt;code>Katharine Cook Briggs&lt;/code>）和她的女儿伊莎贝尔·布里格斯·迈尔斯（英语：&lt;code>Isabel Briggs Myers&lt;/code>）所建构，最早于 1944 年发表。这项指标的理论基础来自瑞士精神科医师兼精神分析师卡尔·荣格（Carl Jung）的著作《心理类型》（德语：Psychologische Typen，英语：Psychological Type）。迈尔斯认为荣格的著作对大众而言过于复杂难懂，于是尝试将荣格认知功能（英语：Jungian cognitive functions）整理得更加易于理解。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20230918212423.png" alt="" />&lt;/p>
+&lt;p>上图描述了 MBTI 的十六种人格类型，以及该理论核心的四个评量向度&lt;/p></description></item></channel></rss>

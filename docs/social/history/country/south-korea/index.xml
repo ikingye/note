@@ -1,18 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>韩国 on 叶王笔记</title>
-    <link>https://kingye.me/note/docs/social/history/country/south-korea/</link>
-    <description>Recent content in 韩国 on 叶王笔记</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <atom:link href="https://kingye.me/note/docs/social/history/country/south-korea/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>总统</title>
-      <link>https://kingye.me/note/docs/social/history/country/south-korea/president/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kingye.me/note/docs/social/history/country/south-korea/president/</guid>
-      <description>&lt;h1 id=&#34;韩国总统&#34;&gt;&#xA;  韩国总统&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e9%9f%a9%e5%9b%bd%e6%80%bb%e7%bb%9f&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/zh/timeline/35ba872c336684f0c73d9a39826bcd3a.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200315215558.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>韩国 on 叶王笔记</title><link>https://kingye.me/note/docs/social/history/country/south-korea/</link><description>Recent content in 韩国 on 叶王笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/note/docs/social/history/country/south-korea/index.xml" rel="self" type="application/rss+xml"/><item><title>总统</title><link>https://kingye.me/note/docs/social/history/country/south-korea/president/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/note/docs/social/history/country/south-korea/president/</guid><description>&lt;h1 id="韩国总统">
+ 韩国总统
+ &lt;a class="anchor" href="#%e9%9f%a9%e5%9b%bd%e6%80%bb%e7%bb%9f">#&lt;/a>
+&lt;/h1>
+&lt;p>&lt;img src="https://upload.wikimedia.org/wikipedia/zh/timeline/35ba872c336684f0c73d9a39826bcd3a.png" alt="" />&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200315215558.png" alt="" />&lt;/p></description></item></channel></rss>
