@@ -1,36 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>1.2 数学 on 叶王笔记</title><link>https://kingye.me/note/docs/natural/math/</link><description>Recent content in 1.2 数学 on 叶王笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/note/docs/natural/math/index.xml" rel="self" type="application/rss+xml"/><item><title>教程</title><link>https://kingye.me/note/docs/natural/math/tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/note/docs/natural/math/tutorial/</guid><description>&lt;h1 id="教程">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>1.2 数学 on 叶王笔记</title><link>https://kingye.me/note/docs/natural/math/</link><description>Recent content in 1.2 数学 on 叶王笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/note/docs/natural/math/index.xml" rel="self" type="application/rss+xml"/><item><title>教程</title><link>https://kingye.me/note/docs/natural/math/tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/note/docs/natural/math/tutorial/</guid><description>&lt;h1 id="教程"&gt;
  教程
- &lt;a class="anchor" href="#%e6%95%99%e7%a8%8b">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="微积分">
+ 
+ &lt;a class="anchor" href="#%e6%95%99%e7%a8%8b"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="微积分"&gt;
  微积分
- &lt;a class="anchor" href="#%e5%be%ae%e7%a7%af%e5%88%86">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="微积分的本质httpswwwbilibilicomvideobv1qw411n7fu-810">
- &lt;a href="https://www.bilibili.com/video/BV1qW411N7FU">微积分的本质&lt;/a> 【8/10】
- &lt;a class="anchor" href="#%e5%be%ae%e7%a7%af%e5%88%86%e7%9a%84%e6%9c%ac%e8%b4%a8httpswwwbilibilicomvideobv1qw411n7fu-810">#&lt;/a>
-&lt;/h3>
-&lt;p>by &lt;a href="https://space.bilibili.com/88461692">3Blue1Brown&lt;/a>&lt;/p>
-&lt;h3 id="英文原版-highlights-of-calculushttpocwmiteduresourcesres-18-005-highlights-of-calculus-spring-2010-910">
- &lt;a href="http://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/">[英文原版] Highlights of Calculus&lt;/a> 【9/10】
- &lt;a class="anchor" href="#%e8%8b%b1%e6%96%87%e5%8e%9f%e7%89%88-highlights-of-calculushttpocwmiteduresourcesres-18-005-highlights-of-calculus-spring-2010-910">#&lt;/a>
-&lt;/h3>
-&lt;p>&lt;a href="https://www.bilibili.com/video/BV1Jt41157Jr">[b 站] 微积分重点&lt;/a>&lt;/p>
-&lt;p>by &lt;a href="https://www.wikiwand.com/en/Gilbert_Strang">Gilbert Strang&lt;/a>, &lt;a href="http://math.mit.edu/~gs/">MIT 作者主页&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="线性代数">
+ 
+ &lt;a class="anchor" href="#%e5%be%ae%e7%a7%af%e5%88%86"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="微积分的本质-810"&gt;
+ &lt;a href="https://www.bilibili.com/video/BV1qW411N7FU"&gt;微积分的本质&lt;/a&gt; 【8/10】
+ 
+ &lt;a class="anchor" href="#%e5%be%ae%e7%a7%af%e5%88%86%e7%9a%84%e6%9c%ac%e8%b4%a8-810"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;by &lt;a href="https://space.bilibili.com/88461692"&gt;3Blue1Brown&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="-910"&gt;
+ &lt;a href="http://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/"&gt;[英文原版] Highlights of Calculus&lt;/a&gt; 【9/10】
+ 
+ &lt;a class="anchor" href="#-910"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.bilibili.com/video/BV1Jt41157Jr"&gt;[b 站] 微积分重点&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;by &lt;a href="https://www.wikiwand.com/en/Gilbert_Strang"&gt;Gilbert Strang&lt;/a&gt;, &lt;a href="http://math.mit.edu/~gs/"&gt;MIT 作者主页&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="线性代数"&gt;
  线性代数
- &lt;a class="anchor" href="#%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="course-introduction-of-18065-by-professor-stranghttpswwwyoutubecomwatchvcx5z-oslnwe-1010">
- &lt;a href="https://www.youtube.com/watch?v=Cx5Z-OslNWE">Course Introduction of 18.065 by Professor Strang&lt;/a> 【10/10】
- &lt;a class="anchor" href="#course-introduction-of-18065-by-professor-stranghttpswwwyoutubecomwatchvcx5z-oslnwe-1010">#&lt;/a>
-&lt;/h3>
-&lt;p>&lt;a href="https://www.bilibili.com/video/BV1a7411M7wH">[b 站] MIT 线性代数 18.065&lt;/a>&lt;/p>
-&lt;p>by &lt;a href="https://www.wikiwand.com/en/Gilbert_Strang">Gilbert Strang&lt;/a>, &lt;a href="http://math.mit.edu/~gs/">MIT 作者主页&lt;/a>&lt;/p>
-&lt;h4 id="the-art-of-linear-algebra">
+ 
+ &lt;a class="anchor" href="#%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="course-introduction-of-18065-by-professor-strang-1010"&gt;
+ &lt;a href="https://www.youtube.com/watch?v=Cx5Z-OslNWE"&gt;Course Introduction of 18.065 by Professor Strang&lt;/a&gt; 【10/10】
+ 
+ &lt;a class="anchor" href="#course-introduction-of-18065-by-professor-strang-1010"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.bilibili.com/video/BV1a7411M7wH"&gt;[b 站] MIT 线性代数 18.065&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;by &lt;a href="https://www.wikiwand.com/en/Gilbert_Strang"&gt;Gilbert Strang&lt;/a&gt;, &lt;a href="http://math.mit.edu/~gs/"&gt;MIT 作者主页&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="the-art-of-linear-algebra"&gt;
  The Art of Linear Algebra
- &lt;a class="anchor" href="#the-art-of-linear-algebra">#&lt;/a>
-&lt;/h4>
-&lt;p>&lt;a href="https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra">kenjihiranabe/The-Art-of-Linear-Algebra&lt;/a> &lt;img src="https://img.shields.io/github/stars/kenjihiranabe/The-Art-of-Linear-Algebra.svg" alt="Github stars" /> &lt;img src="https://img.shields.io/github/forks/kenjihiranabe/The-Art-of-Linear-Algebra.svg" alt="Github forks" /> &lt;img src="https://img.shields.io/github/languages/top/kenjihiranabe/The-Art-of-Linear-Algebra.svg" alt="Language" /> &lt;img src="https://img.shields.io/github/v/tag/kenjihiranabe/The-Art-of-Linear-Algebra.svg?sort=semver" alt="Last Tag" /> &lt;img src="https://img.shields.io/github/last-commit/kenjihiranabe/The-Art-of-Linear-Algebra.svg" alt="Last commit" />&lt;/p>
-&lt;p>Graphic notes on Gilbert Strang&amp;rsquo;s &amp;ldquo;Linear Algebra for Everyone&amp;rdquo;&lt;/p></description></item></channel></rss>
+ 
+ &lt;a class="anchor" href="#the-art-of-linear-algebra"&gt;#&lt;/a&gt;
+ 
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href="https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra"&gt;kenjihiranabe/The-Art-of-Linear-Algebra&lt;/a&gt; &lt;img src="https://img.shields.io/github/stars/kenjihiranabe/The-Art-of-Linear-Algebra.svg" alt="Github stars" /&gt; &lt;img src="https://img.shields.io/github/forks/kenjihiranabe/The-Art-of-Linear-Algebra.svg" alt="Github forks" /&gt; &lt;img src="https://img.shields.io/github/languages/top/kenjihiranabe/The-Art-of-Linear-Algebra.svg" alt="Language" /&gt; &lt;img src="https://img.shields.io/github/v/tag/kenjihiranabe/The-Art-of-Linear-Algebra.svg?sort=semver" alt="Last Tag" /&gt; &lt;img src="https://img.shields.io/github/last-commit/kenjihiranabe/The-Art-of-Linear-Algebra.svg" alt="Last commit" /&gt;&lt;/p&gt;
+&lt;p&gt;Graphic notes on Gilbert Strang&amp;rsquo;s &amp;ldquo;Linear Algebra for Everyone&amp;rdquo;&lt;/p&gt;</description></item></channel></rss>

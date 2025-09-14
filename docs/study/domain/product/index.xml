@@ -1,27 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>产品 on 叶王笔记</title><link>https://kingye.me/note/docs/study/domain/product/</link><description>Recent content in 产品 on 叶王笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/note/docs/study/domain/product/index.xml" rel="self" type="application/rss+xml"/><item><title>需求</title><link>https://kingye.me/note/docs/study/domain/product/requirement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/note/docs/study/domain/product/requirement/</guid><description>&lt;h1 id="需求">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>产品 on 叶王笔记</title><link>https://kingye.me/note/docs/study/domain/product/</link><description>Recent content in 产品 on 叶王笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/note/docs/study/domain/product/index.xml" rel="self" type="application/rss+xml"/><item><title>需求</title><link>https://kingye.me/note/docs/study/domain/product/requirement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/note/docs/study/domain/product/requirement/</guid><description>&lt;h1 id="需求"&gt;
  需求
- &lt;a class="anchor" href="#%e9%9c%80%e6%b1%82">#&lt;/a>
-&lt;/h1>
-&lt;p>需求又称为 &lt;code>user story&lt;/code>，是从用户的角度描述的独立功能点。&lt;/p>
-&lt;p>在敏捷中对一个需求的描述应当包括 3 个方面：&lt;/p>
-&lt;ul>
-&lt;li>As a&amp;hellip; (作为&amp;hellip;角色或岗位)&lt;/li>
-&lt;li>I want&amp;hellip; (我想&amp;hellip;希望做什么)&lt;/li>
-&lt;li>So that&amp;hellip; (以便&amp;hellip;达到什么目的或商业价值)&lt;/li>
-&lt;/ul>
-&lt;p>需求拆分时应该满足 &lt;code>INVEST&lt;/code> 原则：&lt;/p>
-&lt;ul>
-&lt;li>I：Independent：独立的&lt;/li>
-&lt;li>N：Negotiable：可协商的&lt;/li>
-&lt;li>V：Valuable：有价值的&lt;/li>
-&lt;li>E：Estimate：可评估的&lt;/li>
-&lt;li>S：Small ：小粒度的&lt;/li>
-&lt;li>T：Testable：可测试的&lt;/li>
-&lt;/ul>
-&lt;p>评定需求优先级时可参考 &lt;code>MoSCoW&lt;/code> 原则：&lt;/p>
-&lt;ul>
-&lt;li>Must：必须有&lt;/li>
-&lt;li>Should：应该有&lt;/li>
-&lt;li>Could：可有可无&lt;/li>
-&lt;li>Won&amp;rsquo;t：没有&lt;/li>
-&lt;/ul></description></item></channel></rss>
+ 
+ &lt;a class="anchor" href="#%e9%9c%80%e6%b1%82"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;p&gt;需求又称为 &lt;code&gt;user story&lt;/code&gt;，是从用户的角度描述的独立功能点。&lt;/p&gt;
+&lt;p&gt;在敏捷中对一个需求的描述应当包括 3 个方面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a&amp;hellip; (作为&amp;hellip;角色或岗位)&lt;/li&gt;
+&lt;li&gt;I want&amp;hellip; (我想&amp;hellip;希望做什么)&lt;/li&gt;
+&lt;li&gt;So that&amp;hellip; (以便&amp;hellip;达到什么目的或商业价值)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;需求拆分时应该满足 &lt;code&gt;INVEST&lt;/code&gt; 原则：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I：Independent：独立的&lt;/li&gt;
+&lt;li&gt;N：Negotiable：可协商的&lt;/li&gt;
+&lt;li&gt;V：Valuable：有价值的&lt;/li&gt;
+&lt;li&gt;E：Estimate：可评估的&lt;/li&gt;
+&lt;li&gt;S：Small ：小粒度的&lt;/li&gt;
+&lt;li&gt;T：Testable：可测试的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;评定需求优先级时可参考 &lt;code&gt;MoSCoW&lt;/code&gt; 原则：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Must：必须有&lt;/li&gt;
+&lt;li&gt;Should：应该有&lt;/li&gt;
+&lt;li&gt;Could：可有可无&lt;/li&gt;
+&lt;li&gt;Won&amp;rsquo;t：没有&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
